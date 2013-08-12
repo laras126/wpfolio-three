@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Custom Page Example
+Template Name: Home Page
 */
 ?>
 
@@ -23,7 +23,6 @@ Template Name: Custom Page Example
 										printf(__('Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time> by <span class="author">%3$s</span>.', 'bonestheme'), get_the_time('Y-m-j'), get_the_time(__('F jS, Y', 'bonestheme')), bones_get_the_author_posts_link());
 									?></p>
 
-
 								</header> <!-- end article header -->
 
 								<section class="entry-content clearfix" itemprop="articleBody">
@@ -32,7 +31,6 @@ Template Name: Custom Page Example
 
 								<footer class="article-footer">
 									<p class="clearfix"><?php the_tags('<span class="tags">' . __('Tags:', 'bonestheme') . '</span> ', ', ', ''); ?></p>
-
 								</footer> <!-- end article footer -->
 
 								<?php comments_template(); ?>

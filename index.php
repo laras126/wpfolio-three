@@ -20,6 +20,8 @@
 								</header> <!-- end article header -->
 
 								<section class="entry-content clearfix">
+									<?php echo of_get_option('example_text_mini', 'no entry'); ?>
+
 									<?php the_content(); ?>
 								</section> <!-- end article section -->
 

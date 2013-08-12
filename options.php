@@ -28,12 +28,10 @@ function optionsframework_option_name() {
 function optionsframework_options() {
 
 	// Test data
-	$test_array = array(
-		'one' => __('One', 'options_check'),
-		'two' => __('Two', 'options_check'),
-		'three' => __('Three', 'options_check'),
-		'four' => __('Four', 'options_check'),
-		'five' => __('Five', 'options_check')
+	$comments_arr = array(
+		'all' => __('Keep all comments', 'options_check'),
+		'blog' => __('Show only in the Blog category', 'options_check'),
+		'none' => __('Disable all comments', 'options_check'),
 	);
 
 	// Multicheck Array
@@ -59,20 +57,39 @@ function optionsframework_options() {
 		'position' => 'top center',
 		'attachment'=>'scroll' );
 
-	// Typography Defaults
-	$typography_defaults = array(
-		'size' => '15px',
-		'face' => 'georgia',
-		'style' => 'bold',
-		'color' => '#bada55' );
-		
-	// Typography Options
-	$typography_options = array(
-		'sizes' => array( '6','12','14','16','20' ),
+
+	//
+	// Body Typography
+	//
+
+	$body_typography_defaults = array(
+		'size' => '12px',
+		'face' => 'Helvetica'
+	);
+	
+
+	$body_typography_options = array(
+		'sizes' => array('12', '16', '18'),
 		'faces' => array( 'Helvetica Neue' => 'Helvetica Neue','Arial' => 'Arial' ),
-		'styles' => array( 'normal' => 'Normal','bold' => 'Bold' ),
+		'styles' => false,
+	);
+
+
+	//
+	// Heading Typography
+	//
+
+	$heading_typography_options = array(
+		'sizes' => false,
+		'faces' => array( 'Helvetica Neue' => 'Helvetica Neue','Arial' => 'Arial' ),
+		'styles' => false,
 		'color' => false
 	);
+
+	$heading_typography_defaults = array(
+		'face' => 'helvetica',
+		 );
+	
 
 	// Pull all the categories into an array
 	$options_categories = array();
@@ -80,30 +97,172 @@ function optionsframework_options() {
 	foreach ($options_categories_obj as $category) {
 		$options_categories[$category->cat_ID] = $category->cat_name;
 	}
-	
-	// Pull all tags into an array
-	$options_tags = array();
-	$options_tags_obj = get_tags();
-	foreach ( $options_tags_obj as $tag ) {
-		$options_tags[$tag->term_id] = $tag->name;
-	}
-
-	// Pull all the pages into an array
-	$options_pages = array();
-	$options_pages_obj = get_pages('sort_column=post_parent,menu_order');
-	$options_pages[''] = 'Select a page:';
-	foreach ($options_pages_obj as $page) {
-		$options_pages[$page->ID] = $page->post_title;
-	}
 
 	// If using image radio buttons, define a directory path
 	$imagepath =  get_template_directory_uri() . '/images/';
+	
+
+	/************* BASIC SETTINGS ********************/
+
+	/* 	This includes:
+		- Blog Category (select)
+		- Comments (radio)
+		- Custom Favicon (upload)
+	*/
 
 	$options = array();
 
 	$options[] = array(
 		'name' => __('Basic Settings', 'options_check'),
 		'type' => 'heading');
+
+
+	$options[] = array(
+		'name' => __('Blog Category', 'options_check'),
+		'desc' => __('Select a category to be used for your blog or news posts. All other categories will use the portfolio layout.', 'options_check'),
+		'id' => 'example_select_categories',
+		'class' => 'small', //mini, tiny, small
+		'type' => 'select',
+		'options' => $options_categories);
+	
+	$options[] = array(
+		'name' => __('Comments', 'options_check'),
+		'desc' => __('Radio select with default options "one".', 'options_check'),
+		'id' => 'comments',
+		'std' => 'all',
+		'type' => 'radio',
+		'options' => $comments_arr);
+
+	$options[] = array(
+		'name' => __('Custom Favicon', 'options_check'),
+		'desc' => __('Upload a 16px x 16px png/gif/ico image for your website\'s favicon. You can create a favicon from a larger image with the <a href="http://www.degraeve.com/favicon/" taget="blank">Favicon Generator</a> then upload it here.', 'options_check'),
+		'id' => 'example_uploader',
+		'type' => 'upload');
+
+
+
+	/************* STYLES ********************/
+	
+	/* 	This includes:
+		- Body Typography
+		- Heading Typography
+		- Secondary Color
+		- Custom CSS
+		- Background color
+		- Container color
+	*/
+
+	$options[] = array(
+		'name' => __('Styles', 'options_check'),
+		'type' => 'heading');
+
+	/*
+	*	Typography
+	*/
+
+	$options[] = array( 
+		'name' => __('Body Typography', 'options_check'),
+		'desc' => __('Choose the font, color, and base size for your websites text.', 'options_check'),
+		'id' => "body_typography",
+		'std' => $body_typography_defaults,
+		'type' => 'typography', 
+		'options' => $body_typography_options );
+	
+	$options[] = array( 
+		'name' => __('Heading Typography', 'options_check'),
+		'desc' => __('You can choose a different font and color for the heading text.', 'options_check'),
+		'id' => "heading_typography",
+		'std' => $heading_typography_defaults,
+		'type' => 'typography',
+		'options' => $heading_typography_options );
+		
+	$options[] = array(
+		'name' => __('Secondary Font Color', 'options_check'),
+		'desc' => __('Blog description, post meta, menu items, prev/next navigation, borders, widget text.', 'options_check'),
+		'id' => 'secondary_font_color',
+		'std' => '#f0f0f0',
+		'type' => 'color' );
+	
+	$options[] = array(
+		'name' => __('Menu Highlight Color', 'options_check'),
+		'desc' => __('The hover color.', 'options_check'),
+		'id' => 'menu_highlight_color',
+		'std' => '#f0f0f0',
+		'type' => 'color' );
+
+
+	/* 
+	*	Background
+	*/
+
+	$options[] = array(
+		'name' =>  __('Background', 'options_check'),
+		'desc' => __('Choose a color for the background, or you can upload an image. Check out <a href="http://subtlepatterns.com" target="blank">Subtle Patterns</a> for some, well, subtle patterns to use on your site.', 'options_check'),
+		'id' => 'example_background',
+		'std' => $background_defaults,
+		'type' => 'background' );
+
+
+
+
+
+	$options[] = array(
+		'name' => __('Custom CSS', 'options_check'),
+		'desc' => __('Quickly add some CSS by typing it here. If you are adding more than 5 or 6 styles, consider using a <a href="http://themeshaper.com/modify-wordpress-themes/" target="blank">Child Theme.</a>', 'options_check'),
+		'id' => 'custom_css',
+		'std' => '#wrapper {'."\n\t".'border-radius: 0.3em;'."\n".'}',
+		'type' => 'textarea');
+
+
+
+	$options[] = array(
+		'name' => __('Blerg', 'options_check'),
+		'type' => 'heading' );
+
+
+
+	/**
+	 * For $settings options see:
+	 * http://codex.wordpress.org/Function_Reference/wp_editor
+	 *
+	 * 'media_buttons' are not supported as there is no post to attach items to
+	 * 'textarea_name' is set by the 'id' you choose
+	 */
+
+	$wp_editor_settings = array(
+		'wpautop' => true, // Default
+		'textarea_rows' => 10,
+		'tinymce' => array( 'plugins' => 'wordpress' )
+	);
+	
+	$options[] = array(
+		'name' => __('Default Text Editor', 'options_check'),
+		'desc' => sprintf( __( 'You can also pass settings to the editor.  Read more about wp_editor in <a href="%1$s" target="_blank">the WordPress codex</a>', 'options_check' ), 'http://codex.wordpress.org/Function_Reference/wp_editor' ),
+		'id' => 'example_editor',
+		'type' => 'textarea',
+		'class' => 'large',
+		'settings' => $wp_editor_settings );
+
+
+	
+
+
+
+
+
+
+
+
+
+
+	$options[] = array(
+		'name' => __('Custom Typography', 'options_check'),
+		'desc' => __('Custom typography options.', 'options_check'),
+		'id' => "custom_typography",
+		'std' => $typography_defaults,
+		'type' => 'typography',
+		'options' => $typography_options );
+
 
 	$options[] = array(
 		'name' => __('Input Text Mini', 'options_check'),
@@ -126,30 +285,6 @@ function optionsframework_options() {
 		'id' => 'example_textarea',
 		'std' => 'Default Text',
 		'type' => 'textarea');
-
-	$options[] = array(
-		'name' => __('Input Select Small', 'options_check'),
-		'desc' => __('Small Select Box.', 'options_check'),
-		'id' => 'example_select',
-		'std' => 'three',
-		'type' => 'select',
-		'class' => 'mini', //mini, tiny, small
-		'options' => $test_array);
-
-	$options[] = array(
-		'name' => __('Input Select Wide', 'options_check'),
-		'desc' => __('A wider select box.', 'options_check'),
-		'id' => 'example_select_wide',
-		'std' => 'two',
-		'type' => 'select',
-		'options' => $test_array);
-
-	$options[] = array(
-		'name' => __('Select a Category', 'options_check'),
-		'desc' => __('Passed an array of categories with cat_ID and cat_name', 'options_check'),
-		'id' => 'example_select_categories',
-		'type' => 'select',
-		'options' => $options_categories);
 		
 	$options[] = array(
 		'name' => __('Select a Tag', 'options_check'),
@@ -165,14 +300,7 @@ function optionsframework_options() {
 		'type' => 'select',
 		'options' => $options_pages);
 
-	$options[] = array(
-		'name' => __('Input Radio (one)', 'options_check'),
-		'desc' => __('Radio select with default options "one".', 'options_check'),
-		'id' => 'example_radio',
-		'std' => 'one',
-		'type' => 'radio',
-		'options' => $test_array);
-
+	
 	$options[] = array(
 		'name' => __('Example Info', 'options_check'),
 		'desc' => __('This is just some example information you can put in the panel.', 'options_check'),
@@ -221,13 +349,7 @@ function optionsframework_options() {
 			'2c-r-fixed' => $imagepath . '2cr.png')
 	);
 
-	$options[] = array(
-		'name' =>  __('Example Background', 'options_check'),
-		'desc' => __('Change the background CSS.', 'options_check'),
-		'id' => 'example_background',
-		'std' => $background_defaults,
-		'type' => 'background' );
-
+	
 	$options[] = array(
 		'name' => __('Multicheck', 'options_check'),
 		'desc' => __('Multicheck description.', 'options_check'),
@@ -249,38 +371,6 @@ function optionsframework_options() {
 		'std' => $typography_defaults,
 		'type' => 'typography' );
 		
-	$options[] = array(
-		'name' => __('Custom Typography', 'options_check'),
-		'desc' => __('Custom typography options.', 'options_check'),
-		'id' => "custom_typography",
-		'std' => $typography_defaults,
-		'type' => 'typography',
-		'options' => $typography_options );
-
-	$options[] = array(
-		'name' => __('Text Editor', 'options_check'),
-		'type' => 'heading' );
-
-	/**
-	 * For $settings options see:
-	 * http://codex.wordpress.org/Function_Reference/wp_editor
-	 *
-	 * 'media_buttons' are not supported as there is no post to attach items to
-	 * 'textarea_name' is set by the 'id' you choose
-	 */
-
-	$wp_editor_settings = array(
-		'wpautop' => true, // Default
-		'textarea_rows' => 5,
-		'tinymce' => array( 'plugins' => 'wordpress' )
-	);
-	
-	$options[] = array(
-		'name' => __('Default Text Editor', 'options_check'),
-		'desc' => sprintf( __( 'You can also pass settings to the editor.  Read more about wp_editor in <a href="%1$s" target="_blank">the WordPress codex</a>', 'options_check' ), 'http://codex.wordpress.org/Function_Reference/wp_editor' ),
-		'id' => 'example_editor',
-		'type' => 'editor',
-		'settings' => $wp_editor_settings );
 
 	return $options;
 }
