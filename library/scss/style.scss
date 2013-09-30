@@ -1,6 +1,6 @@
 /******************************************************************
-Site Name:
-Author:
+Site Name: WPFolio Three
+Author: Lara Schenck
 
 Stylesheet: Main Stylesheet
 
@@ -10,16 +10,25 @@ and is called at the beginning, after that we call the rest
 of the styles inside media queries.
 ******************************************************************/
 
-
 //
-// IMPORTING STYLES
+// IMPORTING THINGS
 //
 
 // import normalize
-@import "normalize";
+// @import "normalize";
 
-// import mixins
-@import "mixins";
+// // import mixins
+// @import "mixins";
+
+// ::Imports pre-render. Must be after reset
+// ------------------------------------------------------------
+@import "compass/typography/vertical_rhythm";
+@import "compass/css3";
+@import "compass/utilities";
+
+@import "libs/reset";
+@import "libs/settings";
+@import "libs/mixins";
 
 /*
 BASE (MOBILE) SIZE
@@ -28,8 +37,39 @@ you set a great foundation, you won't need to add too many styles in
 the other stylesheets. Remember, keep it light: Speed is Important.
 */
 
+/* ::Clearfixs and extends. Use which suits best */
+/* ----------------------------------------------------------- */
+
+// CHOOSE YOUR CLEARFIX, OR YOU KNOW USE BOTH. WHATEVER, I'M NOT YOUR MOTHER
+
+// Use clearfix if you need general clearfixing
+.clearfix 			{ @include clearfix; }
+
+
+// Use pie-clearfix if you need clearfixing that doesn't use overflow: hidden
+.pie-clearfix 		{ @include pie-clearfix; }
+
+
+// OTHER EXTENDS
+
+// Max width, for images etc... in RWD
+.max-width 			{ max-width: 100%; height: auto; }
+
+
+
+/* ::Base styles Almost exclusively single element selectors */
+/* ------------------------------------------------------------ */
+
 // styles in base.scss
 @import "base";
+
+// Import base typography into the cascade (if required)
+@import "libs/typography";
+
+// Import form styles into the cascade (if required)
+@import "libs/forms";
+
+
 
 /*
 LARGER MOBILE DEVICES
@@ -37,7 +77,7 @@ This is for devices like the Galaxy Note or something that's
 larger than an iPhone but smaller than a tablet. Let's call them
 tweeners.
 */
-@media only screen and (min-width: 481px) {
+@media only screen and (min-width: em-font(481px)) {
 
 	// styles in 481up.scss
 	@import "481up";
@@ -50,11 +90,11 @@ This is the average viewing window. So Desktops, Laptops, and
 in general anyone not viewing on a mobile device. Here's where
 you can add resource intensive styles.
 */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: em-font(768px)) {
 
-	// import grids
-	@import "grid";
-
+	// add grid
+	@import "libs/grid";
+	
 	// styles in 768up.scss
 	@import "768up";
 
@@ -66,7 +106,7 @@ This is the average viewing window. So Desktops, Laptops, and
 in general anyone not viewing on a mobile device. Here's where
 you can add resource intensive styles.
 */
-@media only screen and (min-width: 1030px) {
+@media only screen and (min-width: em-font(1030px)) {
 
 	// styles in 1030up.scss
 	@import "1030up";
@@ -77,7 +117,7 @@ you can add resource intensive styles.
 LARGE VIEWING SIZE
 This is for the larger monitors and possibly full screen viewers.
 */
-@media only screen and (min-width: 1240px) {
+@media only screen and (min-width: em-font(1240px)) {
 
 	// styles in 1240up.scss
 	@import "1240up";
@@ -118,3 +158,5 @@ be set to display none.
 @media print {
 	@import "print";
 }
+
+

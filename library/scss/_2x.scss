@@ -40,3 +40,10 @@ the original dimensions and you are good to go.
 
 */
 
+.nav-toggle {
+    background-image: url("../images/hamburger-retina.gif");
+    -webkit-background-size: 100px 100px;
+    -moz-background-size: 100px 100px;
+    -o-background-size: 100px 100px;
+    background-size: 100px 100px;
+  }

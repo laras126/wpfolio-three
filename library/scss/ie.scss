@@ -1,6 +1,6 @@
 /******************************************************************
-Site Name: 
-Author: 
+Site Name: WPFolio Three
+Author: Lara Schenck
 
 Stylesheet: IE Stylesheet
 
@@ -19,9 +19,15 @@ import the mixins file so SASS can understand the variables.
 */
 
 /* import mixins */
-@import "mixins";
+@import "compass/typography/vertical_rhythm";
+@import "compass/css3";
+@import "compass/utilities";
 
-@import "grid";
+@import "libs/reset";
+@import "libs/settings";
+@import "libs/mixins";
+
+@import "base";
 @import "481up";
 @import "768up";
 @import "1030up";

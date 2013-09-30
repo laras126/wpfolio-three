@@ -1,6 +1,6 @@
 /******************************************************************
-Site Name:
-Author:
+Site Name: WPFolio Three
+Author: Lara Schenck
 
 Stylesheet: Tablet & Small Desktop Stylesheet
 
@@ -12,7 +12,6 @@ come into play. Have fun!
 
 ******************************************************************/
 
-
 /*********************
 GENERAL STYLES
 *********************/
@@ -23,15 +22,14 @@ body {}
 LAYOUT & GRID STYLES
 *********************/
 
-.wrap {
-	max-width: 1140px;
-}
 
 /*********************
 HEADER STYLES
 *********************/
 
-.header {}
+.header {
+	
+}
 
 	#logo {}
 
@@ -40,11 +38,11 @@ NAVIGATION STYLES
 *********************/
 
 .nav {
-	background: #eee;
 	border: 0;
-
+	float: right;
+	
 	li {
-		float: left;
+		
 		position: relative;
 
 		a {
@@ -55,7 +53,7 @@ NAVIGATION STYLES
 			has the possibility of being a mobile device.
 			*/
 			&:hover, &:focus {
-				background-color: #dedede;
+				background-color: $secondary;
 
 			}
 		}
@@ -132,6 +130,38 @@ NAVIGATION STYLES
 
 } /* end .nav */
 
+/*! responsive-nav.js v1.0.22 by @viljamis */
+
+.nav-collapse li {
+    width: auto;
+  }
+
+.nav-collapse a {
+    margin: 0;
+    padding: 1em;
+    float: left;
+    text-align: center;
+    border-bottom: 0;
+   
+  }
+
+.nav-collapse ul ul a {
+	display: none;
+}
+
+.js .nav-collapse {
+	position: relative;
+}
+
+.js .nav-collapse.closed {
+	max-height: none;
+}
+
+.nav-toggle {
+	display: none;
+}
+
+
 /*********************
 SIDEBARS & ASIDES
 *********************/
@@ -141,7 +171,6 @@ SIDEBARS & ASIDES
 }
 
 	.widgettitle {
-		border-bottom: 2px solid #444;
 		margin-bottom: 0.75em;
 	}
 

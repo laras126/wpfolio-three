@@ -2,6 +2,7 @@
 /*
 Template Name: Home Page
 */
+// Large image only, with fade in
 ?>
 
 <?php get_header(); ?>
@@ -10,7 +11,7 @@ Template Name: Home Page
 
 				<div id="inner-content" class="wrap clearfix">
 
-						<div id="main" class="eightcol first clearfix" role="main">
+						<div id="main" class="clearfix" role="main">
 
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -33,8 +34,6 @@ Template Name: Home Page
 									<p class="clearfix"><?php the_tags('<span class="tags">' . __('Tags:', 'bonestheme') . '</span> ', ', ', ''); ?></p>
 								</footer> <!-- end article footer -->
 
-								<?php comments_template(); ?>
-
 							</article> <!-- end article -->
 
 							<?php endwhile; else : ?>
@@ -54,8 +53,6 @@ Template Name: Home Page
 							<?php endif; ?>
 
 						</div> <!-- end #main -->
-
-						<?php get_sidebar(); ?>
 
 				</div> <!-- end #inner-content -->
 

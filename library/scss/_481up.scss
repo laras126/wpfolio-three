@@ -15,7 +15,10 @@ upon your base.scss styles.
 
 ******************************************************************/
 
-
+.wrap {
+	max-width: 35em;
+	margin: 0 auto;
+}
 	
 /*********************
 NAVIGATION STYLES
@@ -66,6 +69,7 @@ NAVIGATION STYLES
 			}  /* end current highlighters */
 		} /* end .menu ul */
 	} /* end .menu */
+
 
 /*********************
 POSTS & CONTENT STYLES

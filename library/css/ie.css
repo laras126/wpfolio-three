@@ -1,6 +1,6 @@
 /******************************************************************
-Site Name: 
-Author: 
+Site Name: WPFolio Three
+Author: Lara Schenck
 
 Stylesheet: IE Stylesheet
 
@@ -17,206 +17,740 @@ understand (what's inside the media queries). We also need to
 import the mixins file so SASS can understand the variables.
 */
 /* import mixins */
-/******************************************************************
-Site Name:
-Author:
-
-Stylesheet: Mixins & Constants Stylesheet
-
-This is where you can take advantage of Sass' great features:
-Mixins & Constants. I won't go in-depth on how they work exactly,
-there are a few articles below that will help do that. What I will
-tell you is that this will help speed up simple changes like
-changing a color or adding CSS3 techniques gradients.
-
-A WORD OF WARNING: It's very easy to overdo it here. Be careful and
-remember less is more.
-
-******************************************************************/
-/*********************
-CLEARFIXIN'
-*********************/
-.clearfix {
-  zoom: 1; }
-  .clearfix:before, .clearfix:after {
-    content: "";
-    display: table; }
-  .clearfix:after {
-    clear: both; }
-
-/*********************
-TOOLS
-*********************/
+/* line 4, ../scss/libs/_reset.scss */
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
-.image-replacement {
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden; }
+/* line 6, ../scss/libs/_reset.scss */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
 
-/*********************
-COLORS
-Need help w/ choosing your colors? Try this site out:
-http://0to255.com/
-*********************/
-/*
-Here's a great tutorial on how to
-use color variables properly:
-http://sachagreif.com/sass-color-variables/
-*/
-/*********************
-TYPOGRAPHY
-*********************/
-/* 	To embed your own fonts, use this syntax
-	and place your fonts inside the
-	library/fonts folder. For more information
-	on embedding fonts, go to:
-	http://www.fontsquirrel.com/
-	Be sure to remove the comment brackets.
-*/
-/*	@font-face {
-    	font-family: 'Font Name';
-    	src: url('library/fonts/font-name.eot');
-    	src: url('library/fonts/font-name.eot?#iefix') format('embedded-opentype'),
-             url('library/fonts/font-name.woff') format('woff'),
-             url('library/fonts/font-name.ttf') format('truetype'),
-             url('library/fonts/font-name.svg#font-name') format('svg');
-    	font-weight: normal;
-    	font-style: normal;
-	}
-*/
-/*
-use the best ampersand
-http://simplebits.com/notebook/2008/08/14/ampersands-2/
-*/
-span.amp {
-  font-family: Baskerville,'Goudy Old Style',Palatino,'Book Antiqua',serif !important;
-  font-style: italic; }
+/* line 7, ../scss/libs/_reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
 
-.text-left {
-  text-align: left; }
+/* line 8, ../scss/libs/_reset.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
 
-.text-center {
-  text-align: center; }
+/* line 9, ../scss/libs/_reset.scss */
+q, blockquote {
+  quotes: none;
+}
 
-.text-right {
-  text-align: right; }
+/* line 10, ../scss/libs/_reset.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
 
-.alert-help, .alert-info, .alert-error, .alert-success {
-  margin: 10px;
-  padding: 5px 18px;
-  border: 1px solid; }
+/* line 11, ../scss/libs/_reset.scss */
+a img {
+  border: none;
+}
 
-.alert-help {
-  border-color: #e8dc59;
-  background: #ebe16f; }
+/* line 12, ../scss/libs/_reset.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
 
-.alert-info {
-  border-color: #bfe4f4;
-  background: #d5edf8; }
+/* line 18, ../scss/libs/_reset.scss */
+button, input {
+  line-height: normal;
+}
 
-.alert-error {
-  border-color: #f8cdce;
-  background: #fbe3e4; }
+/* line 19, ../scss/libs/_reset.scss */
+button, input, select, textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle;
+}
 
-.alert-success {
-  border-color: #deeaae;
-  background: #e6efc2; }
-
-/*********************
-TRANISTION
-*********************/
-/*
-I totally rewrote this to be cleaner and easier to use.
-You'll need to be using Sass 3.2+ for these to work.
-Thanks to @anthonyshort for the inspiration on these.
-USAGE: @include transition(all 0.2s ease-in-out);
-*/
-/*********************
-CSS3 GRADIENTS
-Be careful with these since they can
-really slow down your CSS. Don't overdue it.
-*********************/
-/* @include css-gradient(#dfdfdf,#f8f8f8); */
-/*********************
-BOX SIZING
-*********************/
-/* @include box-sizing(border-box); */
-/* NOTE: value of "padding-box" is only supported in Gecko. So
-probably best not to use it. I mean, were you going to anyway? */
-/*********************
-BUTTONS
-*********************/
-.button, .button:visited {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  border: 1px solid #be0d37;
-  border-top-color: #db0f3f;
-  border-left-color: #db0f3f;
-  padding: 4px 12px;
-  color: white;
-  display: inline-block;
-  font-size: 11px;
-  font-weight: bold;
-  text-decoration: none;
-  text-shadow: 0 1px rgba(0, 0, 0, 0.75);
+/* line 20, ../scss/libs/_reset.scss */
+button, input[type="button"], input[type="reset"], input[type="submit"] {
   cursor: pointer;
-  margin-bottom: 20px;
-  line-height: 21px;
-  border-radius: 4px;
-  background-color: #e40f42;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#f01d4f), to(#e40f42));
-  background-image: -webkit-linear-gradient(top, #f01d4f, #e40f42);
-  background-image: -moz-linear-gradient(top, #f01d4f, #e40f42);
-  background-image: -o-linear-gradient(top, #f01d4f, #e40f42);
-  background-image: linear-gradient(to bottom, #f01d4f, #e40f42); }
-  .button:hover, .button:focus, .button:visited:hover, .button:visited:focus {
-    color: white;
-    border: 1px solid #be0d37;
-    border-top-color: #9d0a2d;
-    border-left-color: #9d0a2d;
-    background-color: #cc0e3b;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#e40f42), to(#cc0e3b));
-    background-image: -webkit-linear-gradient(top, #e40f42, #cc0e3b);
-    background-image: -moz-linear-gradient(top, #e40f42, #cc0e3b);
-    background-image: -o-linear-gradient(top, #e40f42, #cc0e3b);
-    background-image: linear-gradient(to bottom, #e40f42, #cc0e3b); }
-  .button:active, .button:visited:active {
-    background-color: #f01d4f;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#e40f42), to(#f01d4f));
-    background-image: -webkit-linear-gradient(top, #e40f42, #f01d4f);
-    background-image: -moz-linear-gradient(top, #e40f42, #f01d4f);
-    background-image: -o-linear-gradient(top, #e40f42, #f01d4f);
-    background-image: linear-gradient(to bottom, #e40f42, #f01d4f); }
+  *overflow: visible;
+}
 
-.blue-button, .blue-button:visited {
-  border-color: #1472ad;
-  text-shadow: 0 1px 1px #1472ad;
-  background-color: #1681c4;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#1990db), to(#1681c4));
-  background-image: -webkit-linear-gradient(top, #1990db, #1681c4);
-  background-image: -moz-linear-gradient(top, #1990db, #1681c4);
-  background-image: -o-linear-gradient(top, #1990db, #1681c4);
-  background-image: linear-gradient(to bottom, #1990db, #1681c4);
-  box-shadow: inset 0 0 3px #59b3ec; }
-  .blue-button:hover, .blue-button:focus, .blue-button:visited:hover, .blue-button:visited:focus {
-    border-color: #116396;
-    background-color: #1472ad;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#1784c9), to(#1472ad));
-    background-image: -webkit-linear-gradient(top, #1784c9, #1472ad);
-    background-image: -moz-linear-gradient(top, #1784c9, #1472ad);
-    background-image: -o-linear-gradient(top, #1784c9, #1472ad);
-    background-image: linear-gradient(to bottom, #1784c9, #1472ad); }
-  .blue-button:active, .blue-button:visited:active {
-    background-color: #1990db;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#1681c4), to(#1990db));
-    background-image: -webkit-linear-gradient(top, #1681c4, #1990db);
-    background-image: -moz-linear-gradient(top, #1681c4, #1990db);
-    background-image: -o-linear-gradient(top, #1681c4, #1990db);
-    background-image: linear-gradient(to bottom, #1681c4, #1990db); }
+/* line 21, ../scss/libs/_reset.scss */
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
 
+/* line 22, ../scss/libs/_reset.scss */
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical;
+}
+
+/******************************************************************
+Site Name: WPFolio Three
+Author: Lara Schenck
+
+Stylesheet: Variables, hello!
+
+http://sass.fffunction.co/
+
+Define a few useful values to be used throughout the stylesheet. Keeping it to three main colors for consistency.
+
+******************************************************************/
+/******************************************************************
+Site Name: WPFolio Three
+Author: Lara Schenck
+
+Stylesheet: Variables, hello!
+
+http://sass.fffunction.co/
+
+Define a few useful values to be used throughout the stylesheet. Keeping it to three main colors for consistency.
+
+******************************************************************/
+/******************************************************************
+Site Name: WPFolio Three
+Author: Lara Schenck
+
+Stylesheet: Base Mobile Stylesheet
+
+Be light and don't over style since everything here will be
+loaded by mobile devices. You want to keep it as minimal as
+possible. This is called at the top of the main stylsheet
+and will be used across all viewports.
+
+******************************************************************/
+/********************
+WORDPRESS BODY CLASSES
+style a page via class
+********************/
+/* for sites that are read right to left (i.e. hebrew) */
+/* home page */
+/* blog template page */
+/* archive page */
+/* date archive page */
+/* replace the number to the corresponding page number */
+/* search page */
+/* search result page */
+/* no results search page */
+/* individual paged search (i.e. body.search-paged-3) */
+/* 404 page */
+/* single post page */
+/* individual post page by id (i.e. body.postid-73) */
+/* individual paged single (i.e. body.single-paged-3) */
+/* attatchment page */
+/* individual attatchment page (i.e. body.attachmentid-763) */
+/* style mime type pages */
+/* author page */
+/* user nicename (i.e. body.author-samueladams) */
+/* paged author archives (i.e. body.author-paged-4) for page 4 */
+/* category page */
+/* individual category page (i.e. body.category-6) */
+/* replace the number to the corresponding page number */
+/* tag page */
+/* individual tag page (i.e. body.tag-news) */
+/* replace the number to the corresponding page number */
+/* custom page template page */
+/* individual page template (i.e. body.page-template-contact-php */
+/* replace the number to the corresponding page number */
+/* parent page template */
+/* child page template */
+/* replace the number to the corresponding page number */
+/* if user is logged in */
+/* paged items like search results or archives */
+/* individual paged (i.e. body.paged-3) */
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+/* line 59, ../scss/_base.scss */
+.wrap {
+  width: 93%;
+  margin: 0 auto;
+}
+
+/*********************
+LINK STYLES
+*********************/
+/* line 68, ../scss/_base.scss */
+a, a:visited {
+  color: #666666;
+  text-decoration: none;
+  /* on hover */
+  /* on click */
+  /* mobile tap color */
+}
+/* line 73, ../scss/_base.scss */
+a:hover, a:focus, a:visited:hover, a:visited:focus {
+  color: #222222;
+}
+/* line 78, ../scss/_base.scss */
+a:active, a:visited:active {
+  color: #666666;
+}
+/* line 83, ../scss/_base.scss */
+a:link, a:visited:link {
+  /*
+  this highlights links on iPhones/iPads.
+  so it basically works like the :hover selector
+  for mobile devices.
+  */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
+}
+
+/*********************
+HEADER STYLES
+*********************/
+/*********************
+NAVIGATION STYLES
+*********************/
+/*
+all navs have a .nav class applied via
+the wp_menu function; this is so we can
+easily write one group of styles for
+the navs on the site so our css is cleaner
+and more scalable.
+*/
+/* line 111, ../scss/_base.scss */
+.nav {
+  border: 1px solid #ccc;
+  border-bottom: 0;
+  /* end .menu li */
+  /* highlight current page */
+  /* end current highlighters */
+}
+/* line 115, ../scss/_base.scss */
+.nav li {
+  /*
+  so you really have to rethink your dropdowns for mobile.
+  you don't want to have it expand too much because the
+  screen is so small. How you manage your menu should
+  depend on the project. Here's some great info on it:
+  http://www.alistapart.com/articles/organizing-mobile/
+  */
+}
+/* line 117, ../scss/_base.scss */
+.nav li a {
+  display: block;
+  text-decoration: none;
+  padding: 10px 10px;
+  border-bottom: 1px solid #ccc;
+  /*
+  remember this is for mobile ONLY, so there's no need
+  to even declare hover styles here, you can do it in
+  the style.scss file where it's relevant. We want to
+  keep this file as small as possible!
+  */
+}
+/* line 151, ../scss/_base.scss */
+.nav li ul.sub-menu li a,
+.nav li ul.children li a {
+  padding-left: 30px;
+}
+/* line 176, ../scss/_base.scss */
+.nav li.current-menu-item a,
+.nav li.current_page_item a,
+.nav li.current-page-ancestor a {
+  background-color: #444444;
+}
+
+/* end .nav */
+/*! responsive-nav.js v1.0.22 by @viljamis */
+/* line 187, ../scss/_base.scss */
+.nav-collapse,
+.nav-collapse * {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 194, ../scss/_base.scss */
+.nav-collapse,
+.nav-collapse ul {
+  list-style: none;
+  width: 100%;
+  float: left;
+}
+
+/* line 200, ../scss/_base.scss */
+.nav-collapse li {
+  float: left;
+  width: 100%;
+}
+
+/* line 205, ../scss/_base.scss */
+.nav-collapse ul ul a {
+  background: #ca3716;
+  padding-left: 2em;
+}
+
+/* line 210, ../scss/_base.scss */
+.nav-toggle {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 70px;
+  height: 55px;
+  float: right;
+  text-indent: -9999px;
+  overflow: hidden;
+  background: #f4421a url("../images/hamburger.gif") no-repeat 50% 33%;
+}
+
+/* line 224, ../scss/_base.scss */
+.nav-collapse ul {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: block;
+  list-style: none;
+}
+
+/* line 232, ../scss/_base.scss */
+.nav-collapse li {
+  width: 100%;
+  display: block;
+}
+
+/* line 237, ../scss/_base.scss */
+.js .nav-collapse {
+  clip: rect(0 0 0 0);
+  max-height: 0;
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  zoom: 1;
+}
+
+/* line 246, ../scss/_base.scss */
+.nav-collapse.opened {
+  max-height: 9999px;
+}
+
+/* line 250, ../scss/_base.scss */
+.nav-toggle {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+/* line 264, ../scss/_base.scss */
+#content {
+  margin-top: 2.2em;
+}
+
+/* end .hentry */
+/* want to style individual post classes? Booya! */
+/* post by id (i.e. post-3) */
+/* general post style */
+/* general article on a page style */
+/* general style on an attatchment */
+/* sticky post style */
+/* hentry class */
+/* style by category (i.e. category-videos) */
+/* style by tag (i.e. tag-news) */
+/* post meta */
+/* line 296, ../scss/_base.scss */
+.byline {
+  color: #999;
+}
+
+/* entry content */
+/* line 303, ../scss/_base.scss */
+.entry-content {
+  /*
+  image alignment on a screen this size may be
+  a bit difficult. It's set to start aligning
+  and floating images at the next breakpoint,
+  but it's up to you. Feel free to change it up.
+  */
+}
+/* line 338, ../scss/_base.scss */
+.entry-content dd {
+  margin-left: 0;
+  font-size: 0.9em;
+  color: #787878;
+  margin-bottom: 1.5em;
+}
+/* line 345, ../scss/_base.scss */
+.entry-content img {
+  margin: 0 0 1.5em 0;
+  max-width: 100%;
+  height: auto;
+}
+/* line 361, ../scss/_base.scss */
+.entry-content video, .entry-content object {
+  max-width: 100%;
+  height: auto;
+}
+/* line 366, ../scss/_base.scss */
+.entry-content pre {
+  background: #eee;
+  border: 1px solid #cecece;
+  padding: 10px;
+}
+
+/* end .entry-content */
+/* line 374, ../scss/_base.scss */
+.wp-caption {
+  max-width: 100%;
+  background: #eee;
+  padding: 5px;
+  /* images inside wp-caption */
+}
+/* line 380, ../scss/_base.scss */
+.wp-caption img {
+  max-width: 100%;
+  margin-bottom: 0;
+  width: 100%;
+}
+/* line 386, ../scss/_base.scss */
+.wp-caption p.wp-caption-text {
+  font-size: 0.85em;
+  margin: 4px 0 7px;
+  text-align: center;
+}
+
+/* end .wp-caption */
+/* image gallery styles */
+/* end .gallery */
+/* gallery caption styles */
+/******************************************************************
+PAGE NAVI STYLES
+******************************************************************/
+/* line 424, ../scss/_base.scss */
+.page-navigation,
+.wp-prev-next {
+  margin: 1.1em 0 2.2em;
+}
+
+/* line 427, ../scss/_base.scss */
+.bones_page_navi {
+  /* current page link */
+  /* end .bones_page_navi .bpn-current */
+  /* common styles for page-navi links */
+  /* remove the bg on end links */
+  /* previous link */
+  /* next page link */
+  /* first page link */
+  /* last page link */
+}
+/* line 429, ../scss/_base.scss */
+.bones_page_navi li {
+  float: left;
+  margin-left: 10px;
+}
+/* line 433, ../scss/_base.scss */
+.bones_page_navi li a {
+  padding: 3px 6px;
+  display: block;
+  text-decoration: none;
+  position: relative;
+}
+/* line 440, ../scss/_base.scss */
+.bones_page_navi li a:hover, .bones_page_navi li a:focus {
+  color: #f01d4f;
+  text-decoration: underline;
+}
+/* line 449, ../scss/_base.scss */
+.bones_page_navi li.bpn-current {
+  padding: 3px 6px;
+  border-bottom: 2px solid #f01d4f;
+  position: relative;
+}
+/* line 454, ../scss/_base.scss */
+.bones_page_navi li.bpn-current a {
+  /* hovering on current page link */
+}
+/* line 465, ../scss/_base.scss */
+.bones_page_navi li.bpn-prev-link,
+.bones_page_navi li.bpn-next-link {
+  font-weight: 700;
+}
+/* line 468, ../scss/_base.scss */
+.bones_page_navi li.bpn-prev-link a,
+.bones_page_navi li.bpn-next-link a {
+  padding: 0;
+}
+/* line 477, ../scss/_base.scss */
+.bones_page_navi li.bpn-prev-link a:hover,
+.bones_page_navi li.bpn-next-link a:hover,
+.bones_page_navi li.bpn-first-page-link a:hover,
+.bones_page_navi li.bpn-last-page-link a:hover {
+  background: none;
+}
+
+/* end .bones_page_navi */
+/* fallback previous & next links */
+/* line 520, ../scss/_base.scss */
+.wp-prev-next .prev-link {
+  float: left;
+}
+/* line 524, ../scss/_base.scss */
+.wp-prev-next .next-link {
+  float: right;
+}
+
+/* end .wp-prev-next */
+/******************************************************************
+COMMENT STYLES
+******************************************************************/
+/* h3 comment title */
+/* line 535, ../scss/_base.scss */
+#comments {
+  /* number of comments span */
+}
+
+/* line 552, ../scss/_base.scss */
+.commentlist {
+  /* general comment classes */
+  /* vcard */
+  /* end .commentlist .vcard */
+  /* comment meta */
+  /* comment content */
+  /* end .commentlist .comment_content */
+  /* comment reply link */
+  /* end .commentlist .comment-reply-link */
+}
+/* line 554, ../scss/_base.scss */
+.commentlist li {
+  position: relative;
+  clear: both;
+  overflow: hidden;
+  list-style-type: none;
+  margin-bottom: 1.5em;
+  padding: 0.7335em 10px;
+  /* end .commentlist li ul.children */
+}
+/* line 562, ../scss/_base.scss */
+.commentlist li:last-child {
+  margin-bottom: 0;
+}
+/* line 566, ../scss/_base.scss */
+.commentlist li ul.children {
+  margin: 0;
+  /* variations */
+  /* change number for different depth */
+}
+/* line 584, ../scss/_base.scss */
+.commentlist li[class*=depth-] {
+  margin-top: 1.1em;
+}
+/* line 588, ../scss/_base.scss */
+.commentlist li.depth-1 {
+  margin-left: 0;
+  margin-top: 0;
+}
+/* line 593, ../scss/_base.scss */
+.commentlist li:not(.depth-1) {
+  margin-right: -10px;
+  margin-left: -10px;
+  margin-top: 0;
+  padding-bottom: 0;
+}
+/* line 607, ../scss/_base.scss */
+.commentlist .odd {
+  background: #eee;
+}
+/* line 610, ../scss/_base.scss */
+.commentlist .even {
+  background: #fefefe;
+}
+/* line 625, ../scss/_base.scss */
+.commentlist .vcard {
+  margin-left: 50px;
+}
+/* line 628, ../scss/_base.scss */
+.commentlist .vcard cite.fn {
+  font-weight: 700;
+  font-style: normal;
+}
+/* line 636, ../scss/_base.scss */
+.commentlist .vcard time {
+  float: right;
+}
+/* line 639, ../scss/_base.scss */
+.commentlist .vcard time a {
+  color: #999;
+  text-decoration: none;
+}
+/* line 643, ../scss/_base.scss */
+.commentlist .vcard time a:hover {
+  text-decoration: underline;
+}
+/* line 653, ../scss/_base.scss */
+.commentlist .vcard img.avatar {
+  position: absolute;
+  left: 10px;
+  padding: 2px;
+  border: 1px solid #cecece;
+  background: #fff;
+}
+/* line 678, ../scss/_base.scss */
+.commentlist .comment_content {
+  margin-left: 50px;
+}
+/* line 681, ../scss/_base.scss */
+.commentlist .comment_content p {
+  margin: 0.7335em 0 1.5em;
+  font-size: 1em;
+  line-height: 1.5em;
+}
+/* line 690, ../scss/_base.scss */
+.commentlist .comment-reply-link {
+  text-decoration: none;
+  float: right;
+  background: #4598bb;
+  padding: 3px 5px;
+  color: #fff;
+  opacity: 0.65;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 0.9em;
+}
+/* line 702, ../scss/_base.scss */
+.commentlist .comment-reply-link:hover, .commentlist .comment-reply-link:focus {
+  opacity: 1;
+}
+
+/* end .commentlist */
+/******************************************************************
+COMMENT FORM STYLES
+******************************************************************/
+/* line 714, ../scss/_base.scss */
+.respond-form {
+  margin: 1.5em 10px;
+  padding-bottom: 2.2em;
+}
+/* line 718, ../scss/_base.scss */
+.respond-form form {
+  margin: 0.75em 0;
+}
+/* line 721, ../scss/_base.scss */
+.respond-form form li {
+  list-style-type: none;
+  clear: both;
+  margin-bottom: 0.7335em;
+}
+/* line 727, ../scss/_base.scss */
+.respond-form form li label,
+.respond-form form li small {
+  display: none;
+}
+/* line 735, ../scss/_base.scss */
+.respond-form form input[type=text],
+.respond-form form input[type=email],
+.respond-form form input[type=url],
+.respond-form form textarea {
+  padding: 3px 6px;
+  background: #efefef;
+  border: 2px solid #cecece;
+  line-height: 1.5em;
+  /* form validation */
+}
+/* line 741, ../scss/_base.scss */
+.respond-form form input[type=text]:focus,
+.respond-form form input[type=email]:focus,
+.respond-form form input[type=url]:focus,
+.respond-form form textarea:focus {
+  background: #fff;
+}
+/* line 746, ../scss/_base.scss */
+.respond-form form input[type=text]:invalid,
+.respond-form form input[type=email]:invalid,
+.respond-form form input[type=url]:invalid,
+.respond-form form textarea:invalid {
+  outline: none;
+  border-color: #fbc2c4;
+  background-color: #f6e7eb;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -ms-box-shadow: none;
+  box-shadow: none;
+}
+/* line 759, ../scss/_base.scss */
+.respond-form form input[type=text],
+.respond-form form input[type=email],
+.respond-form form input[type=url] {
+  max-width: 400px;
+  min-width: 250px;
+}
+/* line 764, ../scss/_base.scss */
+.respond-form form textarea {
+  resize: none;
+  width: 97.3%;
+  height: 150px;
+}
+
+/* comment submit button */
+/* comment form title */
+/* line 777, ../scss/_base.scss */
+#comment-form-title {
+  margin: 0 0 1.1em;
+}
+
+/* cancel comment reply link */
+/* logged in comments */
+/* allowed tags */
+/* line 790, ../scss/_base.scss */
+#allowed_tags {
+  margin: 1.5em 10px 0.7335em 0;
+}
+
+/* no comments */
+/* line 795, ../scss/_base.scss */
+.nocomments {
+  margin: 0 20px 1.1em;
+}
+
+/*********************
+SIDEBARS & ASIDES
+*********************/
+/* line 811, ../scss/_base.scss */
+.widget ul li {
+  /* deep nesting */
+}
+
+/*********************
+FOOTER STYLES
+*********************/
+/* line 832, ../scss/_base.scss */
+.footer {
+  clear: both;
+}
+
+/*
+if you checked out the link above:
+http://www.alistapart.com/articles/organizing-mobile/
+you'll want to style the footer nav
+a bit more in-depth. Remember to keep
+it simple because you'll have to
+override these styles for the desktop
+view.
+*/
+/* end .footer-links */
 /******************************************************************
 Site Name: 
 Author: 
@@ -233,46 +767,68 @@ so you still want to keep it pretty light and simply expand
 upon your base.scss styles.
 
 ******************************************************************/
+/* line 18, ../scss/_481up.scss */
+.wrap {
+  max-width: 35em;
+  margin: 0 auto;
+}
+
 /*********************
 NAVIGATION STYLES
 *********************/
 /* .menu is clearfixed inside mixins.scss */
+/* line 30, ../scss/_481up.scss */
 .menu {
-  /* end .menu ul */ }
-  .menu ul {
-    /* end .menu ul li */
-    /* highlight current page */
-    /* end current highlighters */ }
-    .menu ul li {
-      /*
-      plan your menus and drop-downs wisely.
-      */ }
-      .menu ul li a {
-        /*
-        you can use hover styles here even though this size
-        has the possibility of being a mobile device.
-        */ }
+  /* end .menu ul */
+}
+/* line 31, ../scss/_481up.scss */
+.menu ul {
+  /* end .menu ul li */
+  /* highlight current page */
+  /* end current highlighters */
+}
+/* line 32, ../scss/_481up.scss */
+.menu ul li {
+  /*
+  plan your menus and drop-downs wisely.
+  */
+}
+/* line 33, ../scss/_481up.scss */
+.menu ul li a {
+  /*
+  you can use hover styles here even though this size
+  has the possibility of being a mobile device.
+  */
+}
 
 /* end .menu */
 /*********************
 POSTS & CONTENT STYLES
 *********************/
 /* entry content */
+/* line 79, ../scss/_481up.scss */
 .entry-content {
-  /* at this larger size, we can start to align images */ }
-  .entry-content .alignleft, .entry-content img.alignleft {
-    margin-right: 1.5em;
-    display: inline;
-    float: left; }
-  .entry-content .alignright, .entry-content img.alignright {
-    margin-left: 1.5em;
-    display: inline;
-    float: right; }
-  .entry-content .aligncenter, .entry-content img.aligncenter {
-    margin-right: auto;
-    margin-left: auto;
-    display: block;
-    clear: both; }
+  /* at this larger size, we can start to align images */
+}
+/* line 83, ../scss/_481up.scss */
+.entry-content .alignleft, .entry-content img.alignleft {
+  margin-right: 1.5em;
+  display: inline;
+  float: left;
+}
+/* line 88, ../scss/_481up.scss */
+.entry-content .alignright, .entry-content img.alignright {
+  margin-left: 1.5em;
+  display: inline;
+  float: right;
+}
+/* line 93, ../scss/_481up.scss */
+.entry-content .aligncenter, .entry-content img.aligncenter {
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  clear: both;
+}
 
 /* end .entry-content */
 /*********************
@@ -284,8 +840,8 @@ do they need tweaking?
 */
 /* end .footer-links */
 /******************************************************************
-Site Name:
-Author:
+Site Name: WPFolio Three
+Author: Lara Schenck
 
 Stylesheet: Tablet & Small Desktop Stylesheet
 
@@ -302,86 +858,144 @@ GENERAL STYLES
 /*********************
 LAYOUT & GRID STYLES
 *********************/
-.wrap {
-  max-width: 1140px; }
-
 /*********************
 HEADER STYLES
 *********************/
 /*********************
 NAVIGATION STYLES
 *********************/
+/* line 40, ../scss/_768up.scss */
 .nav {
-  background: #eee;
   border: 0;
+  float: right;
   /* end .menu ul li */
   /* highlight current page */
-  /* end current highlighters */ }
-  .nav li {
-    float: left;
-    position: relative;
-    /*
-    plan your menus and drop-downs wisely.
-    */
-    /* showing sub-menus */ }
-    .nav li a {
-      border-bottom: 0;
-      /*
-      you can use hover styles here even though this size
-      has the possibility of being a mobile device.
-      */ }
-      .nav li a:hover, .nav li a:focus {
-        background-color: #dedede; }
-    .nav li ul.sub-menu,
-    .nav li ul.children {
-      width: 200px;
-      border: 1px solid #ccc;
-      border-top: 0;
-      position: absolute;
-      display: none;
-      z-index: 8999;
-      /* highlight sub-menu current page */ }
-      .nav li ul.sub-menu li,
-      .nav li ul.children li {
-        /*
-        if you need to go deeper, go nuts
-        just remember deeper menus suck
-        for usability. k, bai.
-        */ }
-        .nav li ul.sub-menu li a,
-        .nav li ul.children li a {
-          padding-left: 10px;
-          border-right: 0;
-          display: block;
-          width: 180px;
-          border-bottom: 1px solid #ccc; }
-        .nav li ul.sub-menu li:last-child a,
-        .nav li ul.children li:last-child a {
-          border-bottom: 0; }
-    .nav li:hover ul {
-      top: auto;
-      display: block; }
+  /* end current highlighters */
+}
+/* line 44, ../scss/_768up.scss */
+.nav li {
+  position: relative;
+  /*
+  plan your menus and drop-downs wisely.
+  */
+  /* showing sub-menus */
+}
+/* line 48, ../scss/_768up.scss */
+.nav li a {
+  border-bottom: 0;
+  /*
+  you can use hover styles here even though this size
+  has the possibility of being a mobile device.
+  */
+}
+/* line 55, ../scss/_768up.scss */
+.nav li a:hover, .nav li a:focus {
+  background-color: #222222;
+}
+/* line 68, ../scss/_768up.scss */
+.nav li ul.sub-menu,
+.nav li ul.children {
+  margin-top: 0;
+  border: 1px solid #ccc;
+  border-top: 0;
+  position: absolute;
+  display: none;
+  z-index: 8999;
+  /* highlight sub-menu current page */
+}
+/* line 76, ../scss/_768up.scss */
+.nav li ul.sub-menu li,
+.nav li ul.children li {
+  /*
+  if you need to go deeper, go nuts
+  just remember deeper menus suck
+  for usability. k, bai.
+  */
+}
+/* line 78, ../scss/_768up.scss */
+.nav li ul.sub-menu li a,
+.nav li ul.children li a {
+  padding-left: 10px;
+  border-right: 0;
+  display: block;
+  width: 180px;
+  border-bottom: 1px solid #ccc;
+}
+/* line 95, ../scss/_768up.scss */
+.nav li ul.sub-menu li:last-child a,
+.nav li ul.children li:last-child a {
+  border-bottom: 0;
+}
+/* line 117, ../scss/_768up.scss */
+.nav li:hover ul {
+  top: auto;
+  display: block;
+}
 
 /* end .nav */
+/*! responsive-nav.js v1.0.22 by @viljamis */
+/* line 135, ../scss/_768up.scss */
+.nav-collapse li {
+  width: auto;
+}
+
+/* line 139, ../scss/_768up.scss */
+.nav-collapse a {
+  margin: 0;
+  padding: 1em;
+  float: left;
+  text-align: center;
+  border-bottom: 0;
+}
+
+/* line 148, ../scss/_768up.scss */
+.nav-collapse ul ul a {
+  display: none;
+}
+
+/* line 152, ../scss/_768up.scss */
+.js .nav-collapse {
+  position: relative;
+}
+
+/* line 156, ../scss/_768up.scss */
+.js .nav-collapse.closed {
+  max-height: none;
+}
+
+/* line 160, ../scss/_768up.scss */
+.nav-toggle {
+  display: none;
+}
+
 /*********************
 SIDEBARS & ASIDES
 *********************/
+/* line 169, ../scss/_768up.scss */
 .sidebar {
-  margin-top: 2.2em; }
+  margin-top: 2.2em;
+}
 
+/* line 173, ../scss/_768up.scss */
 .widgettitle {
-  border-bottom: 2px solid #444;
-  margin-bottom: 0.75em; }
+  margin-bottom: 0.75em;
+}
 
+/* line 177, ../scss/_768up.scss */
 .widget {
   padding: 0 10px;
-  margin: 2.2em 0; }
-  .widget ul li {
-    margin-bottom: 0.75em;
-    /* deep nesting */ }
-    .widget ul li ul {
-      margin-top: 0.75em;
-      padding-left: 1em; }
+  margin: 2.2em 0;
+}
+/* line 182, ../scss/_768up.scss */
+.widget ul li {
+  margin-bottom: 0.75em;
+  /* deep nesting */
+}
+/* line 190, ../scss/_768up.scss */
+.widget ul li ul {
+  margin-top: 0.75em;
+  padding-left: 1em;
+}
 
 /* links widget */
 /* meta widget */
@@ -402,12 +1016,14 @@ you'll probably need to do quite a bit
 of overriding here if you styled them for
 mobile. Make sure to double check these!
 */
+/* line 298, ../scss/_768up.scss */
 .footer-links ul li {
   /*
   be careful with the depth of your menus.
   it's very rare to have multi-depth menus in
   the footer.
-  */ }
+  */
+}
 
 /* end .footer-links */
 /******************************************************************
@@ -420,6 +1036,11 @@ This is the desktop size. It's larger than an iPad so it will only
 be seen on the Desktop. 
 
 ******************************************************************/
+/* line 12, ../scss/_1030up.scss */
+.wrap {
+  max-width: 960px;
+}
+
 /* 
 you can call the larger styles if you want, but there's really no need 
 */
