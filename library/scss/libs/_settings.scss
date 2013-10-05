@@ -27,6 +27,7 @@ $base-color: 				$primary;
 $heading-color:				$secondary;
 $secondary-heading-color: 	$tertiary;
 
+$primary-light:				#eee;
 
 
 // Links
@@ -35,7 +36,6 @@ $action:					$primary;
 $action-respond: 			$secondary;
 $secondary-action:			$action-respond;
 $secondary-action-respond:	$action;
-
 
 
 // Alerts, errors and UI interface
@@ -49,6 +49,13 @@ $success:					green;
 // Fonts, measure, leading and typefaces
 // ------------------------------------------------------------
 
+// Font families
+$sans-serif:        "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serif:             "Georgia", Cambria, Times New Roman, Times, serif;
+
+
+$primary-font:				$sans-serif;
+$secondary-font:			$serif;
 
 // Fonts size and line height defaults for our calculations
 
@@ -78,7 +85,6 @@ $round-to-nearest-half-line:false;
 @function em-font($target, $context: $base-font-size) {
    @return emify($target, $context);
 }
-
 
 // Make px to ems using base-line-height
 // echo as: font-size: em-base(#px);

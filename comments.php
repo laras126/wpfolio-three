@@ -19,7 +19,7 @@ The comments page for Bones
 <!-- You can start editing here. -->
 <?php 
 // If diable comments option is not enabled
-if ( of_get_option('example_radio') != 'none' ) :
+if ( of_get_option('comments') != 'none' ) :
 ?>
 
 <?php if ( have_comments() ) : ?>
