@@ -36,11 +36,63 @@ function optionsframework_options() {
 
 	// Background Defaults
 	$background_defaults = array(
-		'color' => '',
+		'color' => '#ffffff',
 		'image' => '',
 		'repeat' => 'repeat',
 		'position' => 'top center',
 		'attachment'=>'scroll' );
+
+
+	// Use a mixture of Google Fonts and system fonts
+	// What an excellent tutorial by Devin at WP Theming!
+	// http://wptheming.com/2012/06/loading-google-fonts-from-theme-options/
+
+	/**
+	 * Returns a select list of Google fonts
+	 */
+	function options_typography_get_google_fonts() {
+		// Google Font Defaults
+		$google_faces = array(
+			'Abril Fatface, serif' => 'Abril Fatface',
+			'Arvo, serif' => 'Arvo',
+			'Droid Serif, serif' => 'Droid Serif',
+			'Gentium Book Basic, serif' => 'Gentium Book Basic',
+			'Josefin Slab, sans-serif' => 'Josefin Slab',
+			'Merriweather, serif' => 'Merriweather',
+			'Open Sans, sans-serif' => 'Open Sans',
+			'Oswald, sans-serif' => 'Oswald',
+			'Pacifico, cursive' => 'Pacifico',
+			'PT Sans, sans-serif' => 'PT Sans',
+			'Quattrocento, serif' => 'Quattrocento',
+			'Old Standard TT, serif' => 'Old Standard TT',
+			'Raleway, cursive' => 'Raleway',
+			'Ubuntu, sans-serif' => 'Ubuntu',
+			'Yanone Kaffeesatz, sans-serif' => 'Yanone Kaffeesatz',
+		);
+		return $google_faces;
+	}
+
+	/**
+	 * Returns an array of system fonts
+	 */
+	function options_typography_get_os_fonts() {
+		// OS Font Defaults
+		$os_faces = array(
+			'Arial, sans-serif' => 'Arial',
+			'"Avant Garde", sans-serif' => 'Avant Garde',
+			'Cambria, Georgia, serif' => 'Cambria',
+			'Copse, sans-serif' => 'Copse',
+			'Garamond, "Hoefler Text", Times New Roman, Times, serif' => 'Garamond',
+			'Georgia, serif' => 'Georgia',
+			'"Helvetica Neue", Helvetica, sans-serif' => 'Helvetica Neue',
+			'Tahoma, Geneva, sans-serif' => 'Tahoma'
+		);
+		return $os_faces;
+	}
+
+	// Merge the OS and Google font arrays
+	$typography_mixed_fonts = array_merge( options_typography_get_os_fonts() , options_typography_get_google_fonts() );
+	asort($typography_mixed_fonts);
 
 
 	//
@@ -48,14 +100,13 @@ function optionsframework_options() {
 	//
 
 	$body_typography_defaults = array(
-		'size' => '12px',
-		'face' => 'Helvetica'
+		'size' => '14px',
+		'face' => 'Open Sans'
 	);
-	
 
 	$body_typography_options = array(
-		'sizes' => array('12', '16', '18'),
-		'faces' => array( 'Helvetica Neue' => 'Helvetica Neue','Arial' => 'Arial' ),
+		'sizes' => array('12', '14', '16', '18'),
+		'faces' => $typography_mixed_fonts,
 		'styles' => false,
 	);
 
@@ -66,15 +117,18 @@ function optionsframework_options() {
 
 	$heading_typography_options = array(
 		'sizes' => false,
-		'faces' => array( 'Helvetica Neue' => 'Helvetica Neue','Arial' => 'Arial' ),
+		'faces' => $typography_mixed_fonts,
 		'styles' => false,
-		'color' => false
+		'colors' => false,
 	);
 
 	$heading_typography_defaults = array(
-		'face' => 'helvetica',
+		'face' => 'Arvo',
 		 );
 	
+
+
+
 
 	// Pull all the categories into an array
 	$options_categories = array();
@@ -141,9 +195,12 @@ function optionsframework_options() {
 		-- is that too many?
 	*/
 
+
 	$options[] = array(
 		'name' => __('Styles', 'options_check'),
 		'type' => 'heading');
+
+
 
 	/*
 	*	Typography
@@ -151,13 +208,13 @@ function optionsframework_options() {
 
 	// 1. Choose font, base font size, and color for body typography
 	$options[] = array( 
-		'name' => __('Body Typography', 'options_check'),
-		'desc' => __('Choose the font, color, and base size for your websites text.', 'options_check'),
+		'name' => __('Main Typography', 'options_check'),
+		'desc' => __('Choose the font, color, and base size for your website\'s text.', 'options_check'),
 		'id' => "body_typography",
 		'std' => $body_typography_defaults,
 		'type' => 'typography', 
 		'options' => $body_typography_options );
-	
+
 	// 2. Header font
 	$options[] = array( 
 		'name' => __('Heading Typography', 'options_check'),
@@ -167,8 +224,10 @@ function optionsframework_options() {
 		'type' => 'typography',
 		'options' => $heading_typography_options );
 		
+	//	
 	// TODO: add logo option
-		
+	//
+
 	// 3. The color for links, blog description, post meta, menu items, prev/next navigation, borders, widget text.
 	$options[] = array(
 		'name' => __('Secondary Font Color', 'options_check'),
@@ -194,7 +253,7 @@ function optionsframework_options() {
 	$options[] = array(
 		'name' =>  __('Background', 'options_check'),
 		'desc' => __('Choose a color for the background, or you can upload an image. Check out <a href="http://subtlepatterns.com" target="blank">Subtle Patterns</a> for some, well, subtle patterns to use on your site.', 'options_check'),
-		'id' => 'example_background',
+		'id' => 'body_background',
 		'std' => $background_defaults,
 		'type' => 'background' );
 
@@ -207,6 +266,12 @@ function optionsframework_options() {
 		'type' => 'textarea');
 
 
+
+
+
+
+
+// Example options
 
 	$options[] = array(
 		'name' => __('Blerg', 'options_check'),
@@ -235,18 +300,6 @@ function optionsframework_options() {
 		'type' => 'textarea',
 		'class' => 'large',
 		'settings' => $wp_editor_settings );
-
-
-	
-
-
-
-
-
-
-
-
-
 
 	$options[] = array(
 		'name' => __('Custom Typography', 'options_check'),
@@ -342,7 +395,6 @@ function optionsframework_options() {
 			'2c-r-fixed' => $imagepath . '2cr.png')
 	);
 
-	
 	$options[] = array(
 		'name' => __('Multicheck', 'options_check'),
 		'desc' => __('Multicheck description.', 'options_check'),
@@ -366,4 +418,145 @@ function optionsframework_options() {
 		
 
 	return $options;
+} // end main options function
+
+
+
+
+
+
+
+
+/***********************/
+/**** OUTPUT STYLES ****/
+/***********************/
+
+// Applying options here
+
+
+/**
+ * Checks font options to see if a Google font is selected.
+ * If so, options_typography_enqueue_google_font is called to enqueue the font.
+ * Ensures that each Google font is only enqueued once.
+ */
+
+if ( !function_exists( 'options_typography_google_fonts' ) ) {
+    function options_typography_google_fonts() {
+        $all_google_fonts = array_keys( options_typography_get_google_fonts() );
+        
+        // Define all the options that possibly have a unique Google font
+        $body_google_mixed = of_get_option('body_typography', false);
+		$heading_google_mixed = of_get_option('heading_typography', false);
+		
+        // Get the font face for each option and put it in an array
+        $selected_fonts = array(
+            $body_google_mixed['face'],
+            $heading_google_mixed['face']
+            );
+
+        // Remove any duplicates in the list
+        $selected_fonts = array_unique($selected_fonts);
+        
+        // Check each of the unique fonts against the defined Google fonts
+        // If it is a Google font, go ahead and call the function to enqueue it
+        foreach ( $selected_fonts as $font ) {
+            if ( in_array( $font, $all_google_fonts ) ) {
+                options_typography_enqueue_google_font($font);
+            }
+        }
+    }
 }
+add_action( 'wp_enqueue_scripts', 'options_typography_google_fonts' );
+
+/**
+ * Enqueues the Google $font that is passed
+ */
+function options_typography_enqueue_google_font($font) {
+	$font = explode(',', $font);
+	$font = $font[0];
+	// Certain Google fonts need slight tweaks in order to load properly
+	// Like our friend "Raleway"
+	if ( $font == 'Raleway' )
+		$font = 'Raleway:100';
+	$font = str_replace(" ", "+", $font);
+	wp_enqueue_style( "options_typography_$font", "http://fonts.googleapis.com/css?family=$font", false, null, 'all' );
+}
+
+/*
+ * Outputs the selected option panel styles inline into the <head>
+ */
+function options_output_styles() {
+	$output = '';
+	$input = '';
+	
+	if ( of_get_option( 'body_typography' ) ) {
+		$input = of_get_option( 'body_typography' );
+		$output .= options_typography_font_styles( $input , 'body');
+	}
+
+	if ( of_get_option( 'heading_typography' ) ) {
+		$input = of_get_option( 'heading_typography' );
+		$output .= options_typography_font_styles( $input , 'h1,h2,h3,h4,h5,h6');
+	}
+
+	if ( of_get_option( 'body_background' ) ) {
+		$input = of_get_option( 'body_background' );
+		$output .= options_background_style( $input , 'body');
+	}
+
+	if ( $output != '' ) {
+		$output = "\n<style>\n" . $output . "</style>\n";
+		echo $output;
+     }
+
+}
+
+add_action('wp_head', 'options_output_styles');
+
+
+/*
+ * Returns a typography option in a format that can be outputted as inline CSS
+ */
+function options_typography_font_styles($option, $selectors) {
+	$output = $selectors . ' {';
+	$output .= ' color:' . $option['color'] .'; ';
+	$output .= 'font-family:' . $option['face'] . '; ';
+	$output .= 'font-weight:' . $option['style'] . '; ';
+	$output .= 'font-size:' . $option['size'] . '; ';
+	$output .= '}';
+	$output .= "\n";
+	// $output = $scss_var . ':';
+	// $output .= $option['face'];
+	// $output .= ';';
+
+	return $output;
+
+	// // Open the file to get existing content
+	// $current = file_get_contents($file);
+	// // Append a new person to the file
+	// $current .= $output;
+	// // Write the contents back to the file
+	// file_put_contents($file, $current);
+
+	// Could write to a separate stylesheet, that would be cool
+	// $file = STYLESHEETPATH . '/library/scss/libs/_options.scss';
+	// $handle = fopen($file, 'w') or die('Cannot open file:  '.$my_file);
+	// $data = $output;
+	// fwrite($handle, $data);
+	// fclose($handle);
+}
+
+function options_background_style($option, $selectors) {
+	$output = $selectors . ' {';
+	if ( $option['image'] != '') {
+		$output .= 'background-image:' . $option['image'];
+	}
+	$output .= '}';
+	$output .= "\n";
+	
+}
+
+
+
+
+?>

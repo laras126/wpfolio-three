@@ -478,6 +478,7 @@ PAGE NAVI STYLES
 
 /* line 460, ../scss/_base.scss */
 .bones_page_navi {
+  list-style-type: none;
   /* current page link */
   /* end .bones_page_navi .bpn-current */
   /* common styles for page-navi links */
@@ -786,6 +787,11 @@ it simple because you'll have to
 override these styles for the desktop
 view.
 */
+/* line 883, ../scss/_base.scss */
+.footer-nav {
+  list-style-type: none;
+}
+
 /* end .footer-links */
 /******************************************************************
 Site Name: 
@@ -1061,7 +1067,7 @@ of overriding here if you styled them for
 mobile. Make sure to double check these!
 */
 /* line 315, ../scss/_768up.scss */
-.footer-nav ul li {
+.footer-nav li {
   /*
   be careful with the depth of your menus.
   it's very rare to have multi-depth menus in
@@ -1069,11 +1075,16 @@ mobile. Make sure to double check these!
   */
 }
 /* line 316, ../scss/_768up.scss */
-.footer-nav ul li a {
+.footer-nav li a {
   padding-top: 0;
 }
 
-/* end .footer-links */
+/* end .footer-nav */
+/* line 330, ../scss/_768up.scss */
+.copyright {
+  text-align: right;
+}
+
 /******************************************************************
 Site Name: 
 Author: 

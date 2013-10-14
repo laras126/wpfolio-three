@@ -122,13 +122,13 @@ the other stylesheets. Remember, keep it light: Speed is Important.
 */
 /* ::Clearfixs and extends. Use which suits best */
 /* ----------------------------------------------------------- */
-/* line 46, ../scss/style.scss */
+/* line 48, ../scss/style.scss */
 .clearfix {
   overflow: hidden;
   *zoom: 1;
 }
 
-/* line 50, ../scss/style.scss */
+/* line 52, ../scss/style.scss */
 .pie-clearfix {
   *zoom: 1;
 }
@@ -139,7 +139,7 @@ the other stylesheets. Remember, keep it light: Speed is Important.
   clear: both;
 }
 
-/* line 56, ../scss/style.scss */
+/* line 58, ../scss/style.scss */
 .max-width {
   max-width: 100%;
   height: auto;
@@ -147,6 +147,235 @@ the other stylesheets. Remember, keep it light: Speed is Important.
 
 /* ::Base styles Almost exclusively single element selectors */
 /* ------------------------------------------------------------ */
+/******************************************************************
+Site Name: WPFolio Three
+Author: Lara Schenck
+
+Stylesheet: Variables, hello!
+
+http://sass.fffunction.co/
+
+Define a few useful values to be used throughout the stylesheet. Keeping it to three main colors for consistency.
+
+******************************************************************/
+/******************************************************************
+Site Name: WPFolio Three
+Author: Lara Schenck
+
+Stylesheet: Variables, hello!
+
+http://sass.fffunction.co/
+
+Define a few useful values to be used throughout the stylesheet. Keeping it to three main colors for consistency.
+
+******************************************************************/
+/* line 14, ../scss/libs/_typography.scss */
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* line 18, ../scss/libs/_typography.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Georgia", Cambria, Times New Roman, Times, serif;
+}
+
+/* line 22, ../scss/libs/_typography.scss */
+h1 {
+  font-size: 2.25em;
+  line-height: 1.11111em;
+  margin: 0 0 0.66667em 0;
+}
+
+/* line 27, ../scss/libs/_typography.scss */
+h2 {
+  font-size: 1.875em;
+  line-height: 1.33333em;
+  margin: 1.06667em 0 0.53333em 0;
+}
+
+/* line 32, ../scss/libs/_typography.scss */
+h3 {
+  font-size: 1.375em;
+  line-height: 1.45455em;
+  margin: 1.45455em 0 0.72727em 0;
+}
+
+/* line 37, ../scss/libs/_typography.scss */
+h4 {
+  font-size: 1.25em;
+  line-height: 1.2em;
+  margin: 0 0 0.4em 0;
+}
+
+/* line 42, ../scss/libs/_typography.scss */
+h5 {
+  font-size: 1.125em;
+  line-height: 1.33333em;
+  margin: 0 0 0.44444em 0;
+}
+
+/* line 47, ../scss/libs/_typography.scss */
+h6 {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin: 0 0 0.5em 0;
+}
+
+/* line 52, ../scss/libs/_typography.scss */
+p, pre, label {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin: 0 0 1em 0;
+}
+
+/* line 57, ../scss/libs/_typography.scss */
+ol, ul {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin: 0 0 2em 0;
+}
+
+/* line 62, ../scss/libs/_typography.scss */
+li {
+  line-height: auto;
+}
+
+/* line 69, ../scss/libs/_typography.scss */
+ul {
+  list-style-position: outside;
+  list-style-type: disc;
+}
+
+/* line 70, ../scss/libs/_typography.scss */
+ol {
+  list-style-position: outside;
+  list-style-type: decimal;
+}
+
+/* line 71, ../scss/libs/_typography.scss */
+strong, b {
+  font-weight: 600;
+}
+
+/* line 72, ../scss/libs/_typography.scss */
+em, i, q {
+  font-style: italic;
+}
+
+/* line 74, ../scss/libs/_typography.scss */
+blockquote {
+  padding-left: 1em;
+  border-left: 0.125em solid #eeeeee;
+  line-height: normal;
+  margin: 0;
+}
+/* line 79, ../scss/libs/_typography.scss */
+blockquote p {
+  font-style: italic;
+  margin: 0;
+  font-size: 1.25em;
+  line-height: 1.2em;
+  margin: 1.2em 0 1.2em 0;
+}
+
+/******************************************************************
+Site Name: WPFolio Three
+Author: Lara Schenck
+
+Stylesheet: Variables, hello!
+
+http://sass.fffunction.co/
+
+Define a few useful values to be used throughout the stylesheet. Keeping it to three main colors for consistency.
+
+******************************************************************/
+/* line 8, ../scss/libs/_forms.scss */
+label, select {
+  display: block;
+}
+
+/* line 12, ../scss/libs/_forms.scss */
+input[type="search"] {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  -webkit-appearance: textfield;
+  box-sizing: content-box;
+}
+
+/* line 20, ../scss/libs/_forms.scss */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+/* line 24, ../scss/libs/_forms.scss */
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+
+/* line 42, ../scss/libs/_forms.scss */
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"] {
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+  transition: border linear 0.2s, box-shadow linear 0.2s;
+}
+
+/* line 53, ../scss/libs/_forms.scss */
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 4px 0 0;
+  margin-top: 1px \9;
+  *margin-top: 0;
+  line-height: normal;
+  cursor: pointer;
+}
+
+/* line 67, ../scss/libs/_forms.scss */
+input[type="file"],
+input[type="image"],
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input[type="radio"],
+input[type="checkbox"] {
+  width: auto;
+}
+
+/* line 72, ../scss/libs/_forms.scss */
+select,
+input[type="file"] {
+  *margin-top: 4px;
+  /* In IE7, the height of the select element cannot be changed by height, only font-size */
+}
+
+/* line 79, ../scss/libs/_forms.scss */
+select:focus,
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
 /******************************************************************
 Site Name: WPFolio Three
 Author: Lara Schenck
@@ -503,6 +732,7 @@ PAGE NAVI STYLES
 
 /* line 460, ../scss/_base.scss */
 .bones_page_navi {
+  list-style-type: none;
   /* current page link */
   /* end .bones_page_navi .bpn-current */
   /* common styles for page-navi links */
@@ -811,236 +1041,12 @@ it simple because you'll have to
 override these styles for the desktop
 view.
 */
+/* line 883, ../scss/_base.scss */
+.footer-nav {
+  list-style-type: none;
+}
+
 /* end .footer-links */
-/******************************************************************
-Site Name: WPFolio Three
-Author: Lara Schenck
-
-Stylesheet: Variables, hello!
-
-http://sass.fffunction.co/
-
-Define a few useful values to be used throughout the stylesheet. Keeping it to three main colors for consistency.
-
-******************************************************************/
-/******************************************************************
-Site Name: WPFolio Three
-Author: Lara Schenck
-
-Stylesheet: Variables, hello!
-
-http://sass.fffunction.co/
-
-Define a few useful values to be used throughout the stylesheet. Keeping it to three main colors for consistency.
-
-******************************************************************/
-/* line 14, ../scss/libs/_typography.scss */
-body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-/* line 18, ../scss/libs/_typography.scss */
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Georgia", Cambria, Times New Roman, Times, serif;
-}
-
-/* line 22, ../scss/libs/_typography.scss */
-h1 {
-  font-size: 2.25em;
-  line-height: 1.11111em;
-  margin: 0 0 0.66667em 0;
-}
-
-/* line 27, ../scss/libs/_typography.scss */
-h2 {
-  font-size: 1.875em;
-  line-height: 1.33333em;
-  margin: 1.06667em 0 0.53333em 0;
-}
-
-/* line 32, ../scss/libs/_typography.scss */
-h3 {
-  font-size: 1.375em;
-  line-height: 1.45455em;
-  margin: 1.45455em 0 0.72727em 0;
-}
-
-/* line 37, ../scss/libs/_typography.scss */
-h4 {
-  font-size: 1.25em;
-  line-height: 1.2em;
-  margin: 0 0 0.4em 0;
-}
-
-/* line 42, ../scss/libs/_typography.scss */
-h5 {
-  font-size: 1.125em;
-  line-height: 1.33333em;
-  margin: 0 0 0.44444em 0;
-}
-
-/* line 47, ../scss/libs/_typography.scss */
-h6 {
-  font-size: 1em;
-  line-height: 1.5em;
-  margin: 0 0 0.5em 0;
-}
-
-/* line 52, ../scss/libs/_typography.scss */
-p, pre, label {
-  font-size: 1em;
-  line-height: 1.5em;
-  margin: 0 0 1em 0;
-}
-
-/* line 57, ../scss/libs/_typography.scss */
-ol, ul {
-  font-size: 1em;
-  line-height: 1.5em;
-  margin: 0 0 2em 0;
-}
-
-/* line 62, ../scss/libs/_typography.scss */
-li {
-  line-height: auto;
-}
-
-/* line 69, ../scss/libs/_typography.scss */
-ul {
-  list-style-position: outside;
-  list-style-type: disc;
-}
-
-/* line 70, ../scss/libs/_typography.scss */
-ol {
-  list-style-position: outside;
-  list-style-type: decimal;
-}
-
-/* line 71, ../scss/libs/_typography.scss */
-strong, b {
-  font-weight: 600;
-}
-
-/* line 72, ../scss/libs/_typography.scss */
-em, i, q {
-  font-style: italic;
-}
-
-/* line 74, ../scss/libs/_typography.scss */
-blockquote {
-  padding-left: 1em;
-  border-left: 0.125em solid #eeeeee;
-  line-height: normal;
-  margin: 0;
-}
-/* line 79, ../scss/libs/_typography.scss */
-blockquote p {
-  font-style: italic;
-  margin: 0;
-  font-size: 1.25em;
-  line-height: 1.2em;
-  margin: 1.2em 0 1.2em 0;
-}
-
-/******************************************************************
-Site Name: WPFolio Three
-Author: Lara Schenck
-
-Stylesheet: Variables, hello!
-
-http://sass.fffunction.co/
-
-Define a few useful values to be used throughout the stylesheet. Keeping it to three main colors for consistency.
-
-******************************************************************/
-/* line 8, ../scss/libs/_forms.scss */
-label, select {
-  display: block;
-}
-
-/* line 12, ../scss/libs/_forms.scss */
-input[type="search"] {
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  -webkit-appearance: textfield;
-  box-sizing: content-box;
-}
-
-/* line 20, ../scss/libs/_forms.scss */
-input[type="search"]::-webkit-search-decoration,
-input[type="search"]::-webkit-search-cancel-button {
-  -webkit-appearance: none;
-}
-
-/* line 24, ../scss/libs/_forms.scss */
-textarea {
-  overflow: auto;
-  vertical-align: top;
-}
-
-/* line 42, ../scss/libs/_forms.scss */
-textarea,
-input[type="text"],
-input[type="password"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="date"],
-input[type="month"],
-input[type="time"],
-input[type="week"],
-input[type="number"],
-input[type="email"],
-input[type="url"],
-input[type="search"],
-input[type="tel"] {
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
-  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
-  -o-transition: border linear 0.2s, box-shadow linear 0.2s;
-  transition: border linear 0.2s, box-shadow linear 0.2s;
-}
-
-/* line 53, ../scss/libs/_forms.scss */
-input[type="radio"],
-input[type="checkbox"] {
-  margin: 4px 0 0;
-  margin-top: 1px \9;
-  *margin-top: 0;
-  line-height: normal;
-  cursor: pointer;
-}
-
-/* line 67, ../scss/libs/_forms.scss */
-input[type="file"],
-input[type="image"],
-input[type="submit"],
-input[type="reset"],
-input[type="button"],
-input[type="radio"],
-input[type="checkbox"] {
-  width: auto;
-}
-
-/* line 72, ../scss/libs/_forms.scss */
-select,
-input[type="file"] {
-  *margin-top: 4px;
-  /* In IE7, the height of the select element cannot be changed by height, only font-size */
-}
-
-/* line 79, ../scss/libs/_forms.scss */
-select:focus,
-input[type="file"]:focus,
-input[type="radio"]:focus,
-input[type="checkbox"]:focus {
-  outline: thin dotted #333;
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px;
-}
-
 /*
 LARGER MOBILE DEVICES
 This is for devices like the Galaxy Note or something that's
@@ -1441,7 +1447,7 @@ you can add resource intensive styles.
   mobile. Make sure to double check these!
   */
   /* line 315, ../scss/_768up.scss */
-  .footer-nav ul li {
+  .footer-nav li {
     /*
     be careful with the depth of your menus.
     it's very rare to have multi-depth menus in
@@ -1449,11 +1455,15 @@ you can add resource intensive styles.
     */
   }
   /* line 316, ../scss/_768up.scss */
-  .footer-nav ul li a {
+  .footer-nav li a {
     padding-top: 0;
   }
 
-  /* end .footer-links */
+  /* end .footer-nav */
+  /* line 330, ../scss/_768up.scss */
+  .copyright {
+    text-align: right;
+  }
 }
 /*
 DESKTOP

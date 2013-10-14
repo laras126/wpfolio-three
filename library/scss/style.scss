@@ -29,6 +29,8 @@ of the styles inside media queries.
 @import "libs/reset";
 @import "libs/settings";
 @import "libs/mixins";
+// Something really clever here! Overwride color variables and such if the options are set
+@import "libs/options"; 
 
 /*
 BASE (MOBILE) SIZE
@@ -60,8 +62,6 @@ the other stylesheets. Remember, keep it light: Speed is Important.
 /* ::Base styles Almost exclusively single element selectors */
 /* ------------------------------------------------------------ */
 
-// styles in base.scss
-@import "base";
 
 // Import base typography into the cascade (if required)
 @import "libs/typography";
@@ -69,7 +69,8 @@ the other stylesheets. Remember, keep it light: Speed is Important.
 // Import form styles into the cascade (if required)
 @import "libs/forms";
 
-
+// Styles for all devices
+@import "base";
 
 /*
 LARGER MOBILE DEVICES
