@@ -47,14 +47,15 @@
 
 				<div id="inner-header" class="wrap clearfix">
 
-					<div class="site-info">
-						<h1><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></h1>
-						<?php bloginfo('description'); ?>
-					</div>
 					
-					<nav role="navigation" class="nav-collapse">
+					<nav role="navigation" class="nav-collapse eightcol last">
 						<?php bones_main_nav(); ?>
 					</nav>
+
+					<div class="site-info fourcol first">
+						<h1><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></h1>
+						<p><?php bloginfo('description'); ?></p>
+					</div>
 
 					
 				</div> <!-- end #inner-header -->

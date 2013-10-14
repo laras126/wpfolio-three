@@ -23,6 +23,7 @@ LAYOUT & GRID STYLES
 *********************/
 
 
+
 /*********************
 HEADER STYLES
 *********************/
@@ -31,19 +32,26 @@ HEADER STYLES
 	
 }
 
-	#logo {}
+	.site-info {
+		text-align: left;
+	}
+
 
 /*********************
 NAVIGATION STYLES
 *********************/
 
 .nav {
-	border: 0;
-	float: right;
-	
+
 	li {
-		
+		float: left;
 		position: relative;
+	}
+}
+.top-nav {
+	border: 0;
+
+	li {
 
 		a {
 			border-bottom: 0;
@@ -53,7 +61,7 @@ NAVIGATION STYLES
 			has the possibility of being a mobile device.
 			*/
 			&:hover, &:focus {
-				background-color: $primary-light;
+				background-color: $accent-light;
 
 			}
 		}
@@ -130,6 +138,12 @@ NAVIGATION STYLES
 
 } /* end .nav */
 
+
+.top-nav {
+	float: right;
+}
+
+
 /*! responsive-nav.js v1.0.22 by @viljamis */
 
 .nav-collapse li {
@@ -145,8 +159,10 @@ NAVIGATION STYLES
    
   }
 
-.nav-collapse ul ul a {
-	display: none;
+.nav-collapse ul {
+	ul a {
+		display: none;
+	}
 }
 
 .js .nav-collapse {
@@ -293,10 +309,13 @@ you'll probably need to do quite a bit
 of overriding here if you styled them for
 mobile. Make sure to double check these!
 */
-.footer-links {
+.footer-nav {
 	ul {
+
 		li {
 			a {
+				padding-top: 0;
+
 				&:hover {}
 			}
 			/*

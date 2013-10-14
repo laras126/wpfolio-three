@@ -98,7 +98,13 @@ a, a:visited {
 HEADER STYLES
 *********************/
 
-.header {}
+.header {
+	padding-top: 2.2em;
+}
+
+	.site-info {
+		text-align: center;
+	}
 
 /*********************
 NAVIGATION STYLES
@@ -113,15 +119,35 @@ and more scalable.
 */
 
 .nav {
+	li a {
+		padding-left: 10px;
+		padding-right: 10px;
+		display: block;
+		text-decoration: none;		
+	}
+
+	ul.sub-menu,
+	ul.children {
+
+		li {
+
+			a {
+				padding-left: 30px;
+			}
+		}
+	}
+
+}
+
+.top-nav {
 	border: 1px solid #ccc;
 	border-bottom: 0;
 
 	li {
 
 		a {
-			display: block;
-			text-decoration: none;
-			padding: 10px 10px;
+			padding-top: rhythm(1, 16px);
+			padding-bottom: rhythm(1, 16px);
 			border-bottom: 1px solid #ccc;
 
 			/*
@@ -153,7 +179,6 @@ and more scalable.
 			li {
 
 				a {
-					padding-left: 30px;
 
 					&:hover,
 					&:focus {}
@@ -185,6 +210,7 @@ and more scalable.
 
 } /* end .nav */
 
+
 /*! responsive-nav.js v1.0.22 by @viljamis */
 
 .nav-collapse,
@@ -197,8 +223,6 @@ and more scalable.
 .nav-collapse,
 .nav-collapse ul {
   list-style: none;
-  width: 100%;
-  float: left;
 }
 
 .nav-collapse li {
@@ -207,7 +231,7 @@ and more scalable.
 }
 
 .nav-collapse ul ul a {
-  background: #ca3716;
+  background: $accent-light;
   padding-left: 2em;
 }
 
@@ -222,13 +246,12 @@ and more scalable.
   float: right;
   text-indent: -9999px;
   overflow: hidden;
-  background: #f4421a url("../images/hamburger.gif") no-repeat 50% 33%;
+  background: $accent url("../images/hamburger.gif") no-repeat 50% 33%;
 }
 
 .nav-collapse ul {
   margin: 0;
   padding: 0;
-  width: 100%;
   display: block;
   list-style: none;
 }
@@ -278,7 +301,13 @@ POSTS & CONTENT STYLES
 		} /* end .hentry */
 
 		.single-title,
-		.page-title {}
+		.page-title {
+			@include adjust-font-size-to(18px);
+			text-transform: uppercase;
+			text-align: center;
+			letter-spacing: 1px;
+			margin-bottom: rhythm(4, 18px);
+		}
 
 		.single-title {}
 
@@ -835,6 +864,11 @@ FOOTER STYLES
 
 .footer {
 	clear: both;
+	@include adjust-font-size-to(14px);
+
+	.wrap {
+		border-top: 1px solid $accent-light;
+	}
 }
 
 	/*
@@ -846,11 +880,13 @@ FOOTER STYLES
 	override these styles for the desktop
 	view.
 	*/
-	.footer-links {
+	.footer-nav {
 
 		ul {
 
-			li {}
+			li {
+				
+			}
 
 		}
 

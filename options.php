@@ -27,26 +27,11 @@ function optionsframework_option_name() {
 
 function optionsframework_options() {
 
-	// Test data
+	// Comments options
 	$comments_arr = array(
 		'all' => __('Keep all comments', 'options_check'),
-		'blog' => __('Show only in the Blog category', 'options_check'),
+		'blog' => __('Show only on the Blog', 'options_check'),
 		'none' => __('Disable all comments', 'options_check'),
-	);
-
-	// Multicheck Array
-	$multicheck_array = array(
-		'one' => __('French Toast', 'options_check'),
-		'two' => __('Pancake', 'options_check'),
-		'three' => __('Omelette', 'options_check'),
-		'four' => __('Crepe', 'options_check'),
-		'five' => __('Waffle', 'options_check')
-	);
-
-	// Multicheck Defaults
-	$multicheck_defaults = array(
-		'one' => '1',
-		'five' => '1'
 	);
 
 	// Background Defaults
@@ -105,9 +90,9 @@ function optionsframework_options() {
 	/************* BASIC SETTINGS ********************/
 
 	/* 	This includes:
-		- Blog Category (select)
-		- Comments (radio)
-		- Custom Favicon (upload)
+		1. Blog Category (multicheck)
+		2. Comments (radio)
+		3. Custom Favicon (upload)
 	*/
 
 	$options = array();
@@ -116,23 +101,25 @@ function optionsframework_options() {
 		'name' => __('Basic Settings', 'options_check'),
 		'type' => 'heading');
 
-
+	// 1. Select the blog categories
 	$options[] = array(
-		'name' => __('Blog Category', 'options_check'),
-		'desc' => __('Select a category to be used for your blog or news posts. All other categories will use the portfolio layout.', 'options_check'),
-		'id' => 'example_select_categories',
-		'class' => 'small', //mini, tiny, small
-		'type' => 'select',
+		'name' => __('Blog Layout Categories', 'options_check'),
+		'desc' => __('Select the categories be used in your blog. These posts will use the blog layout, all other categories will use the portfolio layout.', 'options_check'),
+		'id' => 'blog_cats',
+		'std' => '1',
+		'type' => 'multicheck',
 		'options' => $options_categories);
 	
+	// 2. Comments?
 	$options[] = array(
 		'name' => __('Comments', 'options_check'),
-		'desc' => __('Radio select with default options "one".', 'options_check'),
+		'desc' => __('Where would you like to see comments to show? By default they are only in the Blog category.', 'options_check'),
 		'id' => 'comments',
 		'std' => 'all',
 		'type' => 'radio',
 		'options' => $comments_arr);
 
+	// 3. Favicon
 	$options[] = array(
 		'name' => __('Custom Favicon', 'options_check'),
 		'desc' => __('Upload a 16px x 16px png/gif/ico image for your website\'s favicon. You can create a favicon from a larger image with the <a href="http://www.degraeve.com/favicon/" taget="blank">Favicon Generator</a> then upload it here.', 'options_check'),
@@ -144,12 +131,14 @@ function optionsframework_options() {
 	/************* STYLES ********************/
 	
 	/* 	This includes:
-		- Body Typography
-		- Heading Typography
-		- Secondary Color
-		- Custom CSS
-		- Background color
-		- Container color
+		1. Body Typography
+		2. Heading Typography
+		3. Secondary Color
+		4. Custom CSS
+		5. Background color
+		6. Container color
+
+		-- is that too many?
 	*/
 
 	$options[] = array(
@@ -160,6 +149,7 @@ function optionsframework_options() {
 	*	Typography
 	*/
 
+	// 1. Choose font, base font size, and color for body typography
 	$options[] = array( 
 		'name' => __('Body Typography', 'options_check'),
 		'desc' => __('Choose the font, color, and base size for your websites text.', 'options_check'),
@@ -168,6 +158,7 @@ function optionsframework_options() {
 		'type' => 'typography', 
 		'options' => $body_typography_options );
 	
+	// 2. Header font
 	$options[] = array( 
 		'name' => __('Heading Typography', 'options_check'),
 		'desc' => __('You can choose a different font and color for the heading text.', 'options_check'),
@@ -176,6 +167,9 @@ function optionsframework_options() {
 		'type' => 'typography',
 		'options' => $heading_typography_options );
 		
+	// TODO: add logo option
+		
+	// 3. The color for links, blog description, post meta, menu items, prev/next navigation, borders, widget text.
 	$options[] = array(
 		'name' => __('Secondary Font Color', 'options_check'),
 		'desc' => __('Blog description, post meta, menu items, prev/next navigation, borders, widget text.', 'options_check'),
@@ -183,6 +177,7 @@ function optionsframework_options() {
 		'std' => '#f0f0f0',
 		'type' => 'color' );
 	
+	// Color for the menu highlight
 	$options[] = array(
 		'name' => __('Menu Highlight Color', 'options_check'),
 		'desc' => __('The hover color.', 'options_check'),
@@ -195,6 +190,7 @@ function optionsframework_options() {
 	*	Background
 	*/
 
+	// Change the background color or upload an image
 	$options[] = array(
 		'name' =>  __('Background', 'options_check'),
 		'desc' => __('Choose a color for the background, or you can upload an image. Check out <a href="http://subtlepatterns.com" target="blank">Subtle Patterns</a> for some, well, subtle patterns to use on your site.', 'options_check'),
@@ -202,10 +198,7 @@ function optionsframework_options() {
 		'std' => $background_defaults,
 		'type' => 'background' );
 
-
-
-
-
+	// Custom CSS ftw
 	$options[] = array(
 		'name' => __('Custom CSS', 'options_check'),
 		'desc' => __('Quickly add some CSS by typing it here. If you are adding more than 5 or 6 styles, consider using a <a href="http://themeshaper.com/modify-wordpress-themes/" target="blank">Child Theme.</a>', 'options_check'),

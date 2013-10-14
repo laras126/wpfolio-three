@@ -147,4 +147,63 @@ function wpf_initialize_cmb_meta_boxes() {
 }
 
 
+/************* BODY CLASSES & LAYOUT ********************/
+
+/*  Add a specific classes for news and portfolio layouts.
+    Check to see if it's the blog category
+*/
+
+// Add portfolio body class to anything that isn't the blog 
+function add_body_class($class) {
+
+    global $post;
+    
+    if ( in_category('blog') || is_home() ) {
+        $class[] = 'news-layout';
+        return $class;
+    } else {
+        $class[] = 'portfolio-layout';
+        return $class;  
+    }
+}
+
+add_filter('body_class','add_body_class');
+
+// Use the appropriate markup according to the body class
+
+function show_layout_according_to_bodyclass() {
+    $classes = get_body_class();
+    if (in_array('news-layout',$classes)) {
+        if(is_single()) {
+            get_template_part('include/single', 'news');    
+        } else {
+            get_template_part('inclue/loop','news');
+        }
+    } else {
+        if(is_single()) {
+            get_template_part('include/single', 'portfolio');
+        } else {
+            get_template_part('include/loop', 'portfolio');
+        }
+    }
+}
+
+// Get all posts from category specified in the Blog Category option. This is the only category displayed on the blog page. 
+
+function query_blog_cat()   {
+    global $blog_catid;
+    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; query_posts("cat=" . $blog_catid . "&paged=".$paged);
+}
+
+
+//add_action('thematic_above_indexloop', 'query_blog_cat');
+
+function wpf_comments_option() {
+    global $blog_catid, $comment_option;
+
+    if ( $comment_option == 1 || ($comment_option == 2 && in_category($blog_catid)) ) {
+        thematic_comments_template();
+    }
+}
+
 ?>

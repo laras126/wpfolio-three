@@ -18,7 +18,7 @@ The comments page for Bones
 
 <!-- You can start editing here. -->
 <?php 
-// If diable comments option is not enabled
+// If disable comments option is not enabled
 if ( of_get_option('comments') != 'none' ) :
 ?>
 
