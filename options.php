@@ -157,11 +157,11 @@ function optionsframework_options() {
 
 	// 1. Select the blog categories
 	$options[] = array(
-		'name' => __('Blog Layout Categories', 'options_check'),
-		'desc' => __('Select the categories be used in your blog. These posts will use the blog layout, all other categories will use the portfolio layout.', 'options_check'),
-		'id' => 'blog_cats',
+		'name' => __('Blog Category', 'options_check'),
+		'desc' => __('Select the category to be used for your blog. Posts in this category will use the blog layout, all others will use the portfolio layout.', 'options_check'),
+		'id' => 'blog_cat',
 		'std' => '1',
-		'type' => 'multicheck',
+		'type' => 'select',
 		'options' => $options_categories);
 	
 	// 2. Comments?
