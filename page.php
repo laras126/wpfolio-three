@@ -1,4 +1,15 @@
-<?php get_header(); ?>
+<?php 
+
+// ********* NOTE NOTE NOTE!! ********* //
+
+/*  WPFolio Three's default page template 
+	has no sidebar because, well, who wants a sidebar?
+	If the answer is you, use the Sidebar 
+	template in the Page Attributes->Template option */
+
+// ************* END NOTE ************* //
+
+get_header(); ?>
 
 			<div id="content">
 

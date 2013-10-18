@@ -2,19 +2,23 @@
 
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-			<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+			<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
 
-				<section class="entry-content clearfix" itemprop="articleBody">
+				<header class="article-header">
+					<h1 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
+				</header> <!-- end article header -->
+
+				<section class="entry-content clearfix">
 					<?php the_content(); ?>
+					<?php include('artwork-meta.php'); ?>
 				</section> <!-- end article section -->
 
 				<footer class="article-footer">
-					<p class="clearfix"><?php the_tags('<span class="tags">' . __('Tags:', 'bonestheme') . '</span> ', ', ', ''); ?></p>
+					<p class="tags"><?php the_tags('<span class="tags-title">' . __('Tags:', 'bonestheme') . '</span> ', ', ', ''); ?></p>
 				</footer> <!-- end article footer -->
-
-
+				
 				<?php comments_template(); ?>
-
+			
 			</article> <!-- end article -->
 
 		<?php endwhile; ?>

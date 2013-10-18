@@ -99,17 +99,18 @@ function optionsframework_options() {
 	// Body Typography
 	//
 
-	$body_typography_defaults = array(
-		'size' => '14px',
-		'face' => 'Open Sans'
-	);
-
 	$body_typography_options = array(
 		'sizes' => array('12', '14', '16', '18'),
 		'faces' => $typography_mixed_fonts,
 		'styles' => false,
 	);
 
+
+	$body_typography_defaults = array(
+		'size' => '14px',
+		'face' => 'Merriweather',
+		'color' => '#444444'
+	);
 
 	//
 	// Heading Typography
@@ -124,11 +125,8 @@ function optionsframework_options() {
 
 	$heading_typography_defaults = array(
 		'face' => 'Arvo',
-		 );
+	);
 	
-
-
-
 
 	// Pull all the categories into an array
 	$options_categories = array();
@@ -160,7 +158,7 @@ function optionsframework_options() {
 		'name' => __('Blog Category', 'options_check'),
 		'desc' => __('Select the category to be used for your blog. Posts in this category will use the blog layout, all others will use the portfolio layout.', 'options_check'),
 		'id' => 'blog_cat',
-		'std' => '1',
+		'std' => '0',
 		'type' => 'select',
 		'options' => $options_categories);
 	
@@ -199,7 +197,6 @@ function optionsframework_options() {
 	$options[] = array(
 		'name' => __('Styles', 'options_check'),
 		'type' => 'heading');
-
 
 
 	/*
