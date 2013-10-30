@@ -29,8 +29,6 @@ of the styles inside media queries.
 @import "libs/reset";
 @import "libs/settings";
 @import "libs/mixins";
-// Something really clever here! Overwride color variables and such if the options are set
-@import "libs/options"; 
 
 /*
 BASE (MOBILE) SIZE

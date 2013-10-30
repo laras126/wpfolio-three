@@ -4,11 +4,9 @@ Author: Lara Schenck
 
 Stylesheet: Tablet & Small Desktop Stylesheet
 
-Here's where you can start getting into the good stuff.
-This size will work on iPads, other tablets, and desktops.
-So you can start working with more styles, background images,
-and other resources. You'll also notice the grid starts to
-come into play. Have fun!
+Hey grid, come on in!
+Widemargins shortcode styles, hey!
+More detailed menu styling, nice to see you!
 
 ******************************************************************/
 
@@ -22,7 +20,10 @@ body {}
 LAYOUT & GRID STYLES
 *********************/
 
-
+// Wide margins shortcode
+.widemargins {
+	margin: 0 $base-font-size*6;
+}
 
 /*********************
 HEADER STYLES
@@ -31,7 +32,6 @@ HEADER STYLES
 .header {
 	
 }
-
 	.site-info {
 		text-align: left;
 	}
@@ -177,6 +177,23 @@ NAVIGATION STYLES
 	display: none;
 }
 
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+
+// Loop through .gallery-columns-.. classes and make the width a percentage
+// for a responsive gallery
+// Sass circlejerk, commence.
+
+$width: 100%;
+
+@for $col from 1 through 9 {
+	
+	.gallery-columns-#{$col} dl { 
+		width: $width/$col;
+	}
+	
+}
 
 /*********************
 SIDEBARS & ASIDES
@@ -330,3 +347,4 @@ mobile. Make sure to double check these!
 .copyright {
 	text-align: right;
 }
+

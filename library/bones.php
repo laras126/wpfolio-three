@@ -172,18 +172,20 @@ function bones_theme_support() {
 	add_theme_support('post-thumbnails');
 
 	// default thumb size
-	set_post_thumbnail_size(125, 125, true);
+	set_post_thumbnail_size(300, 300, true);
 
-	// wp custom background (thx to @bransonwerner for update)
-	add_theme_support( 'custom-background',
-	    array(
-	    'default-image' => '',  // background image default
-	    'default-color' => '', // background color default (dont add the #)
-	    'wp-head-callback' => '_custom_background_cb',
-	    'admin-head-callback' => '',
-	    'admin-preview-callback' => ''
-	    )
-	);
+	// Note: Do we need both of these? Is one not necessary at all?
+
+	// Customize the Media option defaults
+	// http://wordpress.org/support/topic/how-set-default-image-size
+	update_option('thumbnail_size_w', 300);
+	update_option('thumbnail_size_h', 300);
+
+	update_option('medium_size_w', 450);
+	update_option('medium_size_h', 450);
+
+	update_option('large_size_w', 600);
+	update_option('large_size_h', 600);
 
 	// rss thingy
 	add_theme_support('automatic-feed-links');
@@ -193,15 +195,11 @@ function bones_theme_support() {
 	// adding post format support
 	add_theme_support( 'post-formats',
 		array(
-			'aside',             // title less blurb
 			'gallery',           // gallery of images
 			'link',              // quick link to other site
 			'image',             // an image
-			'quote',             // a quick quote
-			'status',            // a Facebook like status update
 			'video',             // video
 			'audio',             // audio
-			'chat'               // chat transcript
 		)
 	);
 

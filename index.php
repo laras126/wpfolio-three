@@ -19,17 +19,18 @@ get_header(); ?>
 
 						<?php 
 						// Only show posts in the blog category
-						// If the blog category hasn't been selected yet, prompt them to select it
+
+						// If the blog cat option has been selected, query the posts
 
 						// Get the blog category id from the option
 						$cat_id = of_get_option('blog_cat');
 
-						// Query posts for that category
-						global $query_string;
-						query_posts ($query_string . '&cat='.$cat_id);
+						if($cat_id != '') {
+							// Query posts for that category
+							global $query_string;
+							query_posts ($query_string . '&cat='.$cat_id);
+						} ?>							
 						
-						// If the blog cat option has been selected
-						if($cat_id != '') { ?>
 
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 							
@@ -85,19 +86,6 @@ get_header(); ?>
 									</article>
 
 							<?php endif; ?>
-
-					<?php // And if the blog cat option has not been selected, show a prompt to select it
-
-					} else { ?>
-						<h1>Yo, set yer blog cat!</h1>
-					<?php }?>
-
-					<?php 
-					
-					// Reset the query cuz, well, yer sposed to.
-					wp_reset_query(); 
-
-					?>
 
 					</div> <!-- end #main -->
 

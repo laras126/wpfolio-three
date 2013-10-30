@@ -207,7 +207,7 @@ function optionsframework_options() {
 	$options[] = array( 
 		'name' => __('Main Typography', 'options_check'),
 		'desc' => __('Choose the font, color, and base size for your website\'s text.', 'options_check'),
-		'id' => "body_typography",
+		'id' => 'body_typography',
 		'std' => $body_typography_defaults,
 		'type' => 'typography', 
 		'options' => $body_typography_options );

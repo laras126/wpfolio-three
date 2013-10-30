@@ -36,6 +36,7 @@ $action-respond: 			$secondary;
 $secondary-action:			$action-respond;
 $secondary-action-respond:	$action;
 
+$current-menu-item:			$accent-light;
 
 // Alerts, errors and UI interface
 
@@ -60,6 +61,11 @@ $secondary-font:			$serif;
 
 $base-font-size:			16px;
 // Sets the browser default size. Shouldn't need to change this.
+
+// Use the base font size to determine margins, padding, 
+// and other values
+
+$small-margin:				$base-font-size;
 
 $base-line-height:			8px;
 // Baseline grid. Set to a sensible, small size.

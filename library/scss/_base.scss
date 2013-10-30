@@ -203,7 +203,7 @@ and more scalable.
 	li.current-page-ancestor {
 
 		a {
-			background-color: $tertiary;
+			background-color: $current-menu-item;
 		}
 
 	}  /* end current highlighters */
@@ -376,7 +376,7 @@ POSTS & CONTENT STYLES
 			}
 
 			img {
-				margin: 0 0 1.5em 0;
+				margin: 0 0 $base-font-size 0;
 				max-width: 100%;
 				height: auto;
 			}
@@ -426,12 +426,16 @@ POSTS & CONTENT STYLES
 
 		/* image gallery styles */
 		.gallery {
+			img {
+				@include resp-img;
+				padding: $small-margin $small-margin 0 $small-margin;
+			}
 
 			dl {
-
+				float: left;
+				
 				a {}
 
-				img {}
 
 			}
 
@@ -893,3 +897,6 @@ FOOTER STYLES
 	.copyright {}
 
 
+.resp-img {
+
+}
