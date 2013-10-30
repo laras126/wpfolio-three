@@ -15,7 +15,7 @@ get_header(); ?>
 
 			<div id="inner-content" class="wrap clearfix">
 
-					<div id="main" class="eightcol first clearfix" role="main">
+					<div id="main" class="ninecol first clearfix" role="main">
 
 						<?php 
 						// Only show posts in the blog category

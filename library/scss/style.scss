@@ -4,10 +4,12 @@ Author: Lara Schenck
 
 Stylesheet: Main Stylesheet
 
-Here's where the magic happens. Here, you'll see we are calling in
-the separate media queries. The base mobile goes outside any query
-and is called at the beginning, after that we call the rest
-of the styles inside media queries.
+Import all necessary libraries and call in all separate 
+media queries. The base mobile goes outside any query
+and is called at the beginning, after that we call the 
+rest of the styles inside media queries. 
+
+Don't add styles here.
 ******************************************************************/
 
 //
@@ -36,25 +38,6 @@ This are the mobile styles. It's what people see on their phones. If
 you set a great foundation, you won't need to add too many styles in
 the other stylesheets. Remember, keep it light: Speed is Important.
 */
-
-/* ::Clearfixs and extends. Use which suits best */
-/* ----------------------------------------------------------- */
-
-// CHOOSE YOUR CLEARFIX, OR YOU KNOW USE BOTH. WHATEVER, I'M NOT YOUR MOTHER
-
-// Use clearfix if you need general clearfixing
-.clearfix 			{ @include clearfix; }
-
-
-// Use pie-clearfix if you need clearfixing that doesn't use overflow: hidden
-.pie-clearfix 		{ @include pie-clearfix; }
-
-
-// OTHER EXTENDS
-
-// Max width, for images etc... in RWD
-.max-width 			{ max-width: 100%; height: auto; }
-
 
 
 /* ::Base styles Almost exclusively single element selectors */

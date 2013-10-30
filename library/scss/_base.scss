@@ -1,3 +1,5 @@
+@import "libs/extends";
+
 /******************************************************************
 Site Name: WPFolio Three
 Author: Lara Schenck
@@ -70,17 +72,17 @@ LINK STYLES
 *********************/
 
 a, a:visited {
-	color: $action;
+	color: $link-color;
 	text-decoration: none;
 
 	/* on hover */
 	&:hover, &:focus {
-		color: $action-respond;
+		color: $link-hover;
 	}
 
 	/* on click */
 	&:active {
-		color: $secondary-action-respond;
+		color: $link-active;
 	}
 
 	/* mobile tap color */
@@ -427,7 +429,7 @@ POSTS & CONTENT STYLES
 		/* image gallery styles */
 		.gallery {
 			img {
-				@include resp-img;
+				@extend .max-width;
 				padding: $small-margin $small-margin 0 $small-margin;
 			}
 
@@ -727,18 +729,7 @@ COMMENT STYLES
 	.comment-reply-link {
 		text-decoration: none;
 		float: right;
-		background: #4598bb;
-		padding: 3px 5px;
-		color: #fff;
-		opacity: 0.65;
-		margin-bottom: 10px;
-		font-weight: 700;
-		font-size: 0.9em;
-
-		&:hover,
-		&:focus {
-			opacity: 1;
-		}
+		@extend .button;
 
 	} /* end .commentlist .comment-reply-link */
 
@@ -839,7 +830,10 @@ SIDEBARS & ASIDES
 
 .sidebar {}
 
-	.widgettitle {}
+	.widgettitle {
+		@extend .single-title;
+		@extend .text-left;
+	}
 
 	.widget {
 
@@ -897,6 +891,3 @@ FOOTER STYLES
 	.copyright {}
 
 
-.resp-img {
-
-}

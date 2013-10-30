@@ -203,7 +203,27 @@ function optionsframework_options() {
 	*	Typography
 	*/
 
-	// 1. Choose font, base font size, and color for body typography
+	// 1. Title Font
+	$options[] = array( 
+		'name' => __('Title Font', 'options_check'),
+		'desc' => __('Choose a fancy font for your site\'s title. Browse the Google WebFonts directory and type the name of the font here', 'options_check'),
+		'id' => "heading_typography",
+		'std' => $heading_typography_defaults,
+		'type' => 'typography',
+		'options' => $heading_typography_options );
+	
+
+	// 2. Header font
+	$options[] = array( 
+		'name' => __('Headings Typography', 'options_check'),
+		'desc' => __('You can choose a different font and color for the heading text.', 'options_check'),
+		'id' => "heading_typography",
+		'std' => $heading_typography_defaults,
+		'type' => 'typography',
+		'options' => $heading_typography_options );
+	
+
+	// 3. Choose font, base font size, and color for body typography
 	$options[] = array( 
 		'name' => __('Main Typography', 'options_check'),
 		'desc' => __('Choose the font, color, and base size for your website\'s text.', 'options_check'),
@@ -212,14 +232,6 @@ function optionsframework_options() {
 		'type' => 'typography', 
 		'options' => $body_typography_options );
 
-	// 2. Header font
-	$options[] = array( 
-		'name' => __('Heading Typography', 'options_check'),
-		'desc' => __('You can choose a different font and color for the heading text.', 'options_check'),
-		'id' => "heading_typography",
-		'std' => $heading_typography_defaults,
-		'type' => 'typography',
-		'options' => $heading_typography_options );
 		
 	//	
 	// TODO: add logo option
@@ -522,25 +534,7 @@ function options_typography_font_styles($option, $selectors) {
 	$output .= 'font-size:' . $option['size'] . '; ';
 	$output .= '}';
 	$output .= "\n";
-	// $output = $scss_var . ':';
-	// $output .= $option['face'];
-	// $output .= ';';
-
 	return $output;
-
-	// // Open the file to get existing content
-	// $current = file_get_contents($file);
-	// // Append a new person to the file
-	// $current .= $output;
-	// // Write the contents back to the file
-	// file_put_contents($file, $current);
-
-	// Could write to a separate stylesheet, that would be cool
-	// $file = STYLESHEETPATH . '/library/scss/libs/_options.scss';
-	// $handle = fopen($file, 'w') or die('Cannot open file:  '.$my_file);
-	// $data = $output;
-	// fwrite($handle, $data);
-	// fclose($handle);
 }
 
 function options_background_style($option, $selectors) {

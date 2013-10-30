@@ -5,7 +5,7 @@
 			<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
 
 				<header class="article-header">
-					<h1 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
+					<h1 class="h2 single-title" itemprop="headline"><?php the_title(); ?></h1>
 				</header> <!-- end article header -->
 
 				<section class="entry-content clearfix">
