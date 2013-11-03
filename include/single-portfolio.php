@@ -10,11 +10,11 @@
 
 				<section class="entry-content clearfix">
 					<?php the_content(); ?>
-					<?php include('artwork-meta.php'); ?>
 				</section> <!-- end article section -->
 
 				<footer class="article-footer">
-					<p class="tags"><?php the_tags('<span class="tags-title">' . __('Tags:', 'bonestheme') . '</span> ', ', ', ''); ?></p>
+					<?php include('artwork-meta.php'); ?>
+					<p class="tags"><?php the_tags('<span class="tags-title">' . __('Tagged:', 'bonestheme') . '</span> ', ', ', ''); ?></p>
 				</footer> <!-- end article footer -->
 				
 				<?php comments_template(); ?>

@@ -32,7 +32,7 @@ HEADER STYLES
 .header {
 	
 }
-	.site-info {
+	#site-title {
 		text-align: left;
 	}
 
@@ -48,6 +48,7 @@ NAVIGATION STYLES
 		position: relative;
 	}
 }
+
 .top-nav {
 	border: 0;
 
@@ -139,11 +140,6 @@ NAVIGATION STYLES
 } /* end .nav */
 
 
-.top-nav {
-	float: right;
-}
-
-
 /*! responsive-nav.js v1.0.22 by @viljamis */
 
 .nav-collapse li {
@@ -180,20 +176,6 @@ NAVIGATION STYLES
 /*********************
 POSTS & CONTENT STYLES
 *********************/
-
-// Loop through .gallery-columns-.. classes and make the width a percentage
-// for a responsive gallery
-// Sass circlejerk, commence.
-
-$width: 100%;
-
-@for $col from 1 through 9 {
-	
-	.gallery-columns-#{$col} dl { 
-		width: $width/$col;
-	}
-	
-}
 
 /*********************
 SIDEBARS & ASIDES

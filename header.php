@@ -47,16 +47,14 @@
 
 				<div id="inner-header" class="wrap clearfix">
 
-					
-					<nav role="navigation" class="nav-collapse eightcol last">
-						<?php bones_main_nav(); ?>
-					</nav>
-
-					<div class="site-info fourcol first">
+					<div id="site-title">
 						<h1><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></h1>
 						<p><?php bloginfo('description'); ?></p>
 					</div>
 
+					<nav id="main-nav" role="navigation" class="nav-collapse">
+						<?php bones_main_nav(); ?>
+					</nav>
 					
 				</div> <!-- end #inner-header -->
 

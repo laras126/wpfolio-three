@@ -27,10 +27,12 @@ Don't add styles here.
 @import "compass/typography/vertical_rhythm";
 @import "compass/css3";
 @import "compass/utilities";
+@import "susy";
 
-@import "libs/reset";
+@import "libs/normalize";
 @import "libs/settings";
 @import "libs/mixins";
+@import "libs/grid";
 
 /*
 BASE (MOBILE) SIZE
@@ -73,9 +75,6 @@ in general anyone not viewing on a mobile device. Here's where
 you can add resource intensive styles.
 */
 @media only screen and (min-width: em-font(768px)) {
-
-	// add grid
-	@import "libs/grid";
 	
 	// styles in 768up.scss
 	@import "768up";
