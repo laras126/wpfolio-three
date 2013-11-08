@@ -7,18 +7,18 @@
 /* ----------------------------------------------------------- */
 
 // Use clearfix if you need general clearfixing
-.clearfix 			{ @include clearfix; }
+.clearfix { @include clearfix; }
 
 
 // Use pie-clearfix if you need clearfixing that doesn't use overflow: hidden
-.pie-clearfix 		{ @include pie-clearfix; }
+.pie-clearfix { @include pie-clearfix; }
 
 
 // OTHER EXTENDS
 
 // Max width, for images etc... in RWD
 // Keeping the max-width at auto so we don't pixelate the pics
-.max-width 			{ width: 100%; max-width: auto; height: auto; }
+.max-width { max-width: 100%; height: auto; }
 
 /*
 use the best ampersand

@@ -36,7 +36,15 @@ style a page via class
 .single {}                        /* single post page */
 	.postid-1 {}                    /* individual post page by id (i.e. body.postid-73) */
 	.single-paged-1 {}              /* individual paged single (i.e. body.single-paged-3) */
-.attachment {}                    /* attatchment page */
+.attachment { 						/* attatchment page */
+	img {
+		display: block;
+		margin: 0 auto;
+	}
+}                    
+	.attachment-meta {
+		text-align: center;
+	}
 	.attachmentid-1 {}              /* individual attatchment page (i.e. body.attachmentid-763) */
 	.attachment-mime-type {}        /* style mime type pages */
 .author {}                        /* author page */
@@ -373,7 +381,7 @@ POSTS & CONTENT STYLES
 			}
 
 			img {
-				@extend .max-width
+				@extend .max-width !optional;
 			}
 
 			/*
