@@ -1,5 +1,5 @@
 
-<div id="main" class="eightcol first clearfix" role="main">
+<div id="main" class="clearfix" role="main">
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -20,7 +20,7 @@
 
 			<footer class="article-footer">
 				<?php the_tags('<p class="tags"><span class="tags-title">' . __('Tags:', 'bonestheme') . '</span> ', ', ', '</p>'); ?>
-
+				<?php edit_post_link('edit', '<p>', '</p>'); ?>
 			</footer> <!-- end article footer -->
 
 			<?php comments_template(); ?>

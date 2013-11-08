@@ -22,6 +22,7 @@ import the mixins file so SASS can understand the variables.
 @import "compass/typography/vertical_rhythm";
 @import "compass/css3";
 @import "compass/utilities";
+@import "susy";
 
 @import "libs/normalize";
 @import "libs/settings";

@@ -122,6 +122,14 @@ http://sass.fffunction.co/
 Define a few useful values to be used throughout the stylesheet. Keeping it to three main colors for consistency.
 
 ******************************************************************/
+/* line 98, ../scss/libs/_mixins.scss */
+.gallery {
+  width: 100%;
+  float: left;
+  margin-right: 1.69492%;
+  display: inline;
+}
+
 /******************************************************************
 Site Name: WPFolio Three
 Author: Lara Schenck

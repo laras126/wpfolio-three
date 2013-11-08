@@ -15,6 +15,7 @@
 				<footer class="article-footer">
 					<?php include('artwork-meta.php'); ?>
 					<p class="tags"><?php the_tags('<span class="tags-title">' . __('Tagged:', 'bonestheme') . '</span> ', ', ', ''); ?></p>
+					<?php edit_post_link('edit', '<p>', '</p>'); ?>
 				</footer> <!-- end article footer -->
 				
 				<?php comments_template(); ?>

@@ -170,8 +170,9 @@ function add_body_class($class) {
 add_filter('body_class','add_body_class');
 
 // Use the appropriate markup according to the body class
+// http://stackoverflow.com/questions/15033888/how-to-check-for-class-in-body-class-in-wordpress
 
-function show_layout_according_to_bodyclass() {
+function wpf_show_layout_according_to_bodyclass() {
     $classes = get_body_class();
     if (in_array('news-layout',$classes)) {
         if(is_single()) {
@@ -188,22 +189,12 @@ function show_layout_according_to_bodyclass() {
     }
 }
 
-// Get all posts from category specified in the Blog Category option. This is the only category displayed on the blog page. 
-
-function query_blog_cat()   {
-    global $blog_catid;
-    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; query_posts("cat=" . $blog_catid . "&paged=".$paged);
-}
-
-
-//add_action('thematic_above_indexloop', 'query_blog_cat');
-
-function wpf_comments_option() {
-    global $blog_catid, $comment_option;
-
-    if ( $comment_option == 1 || ($comment_option == 2 && in_category($blog_catid)) ) {
-        thematic_comments_template();
-    }
+// Only show the sidebars on news layouts
+function wpf_show_sidebar_according_to_bodyclass() {
+    $classes = get_body_class();
+    if (in_array('news-layout',$classes)) {
+        get_sidebar();
+    } 
 }
 
 

@@ -95,23 +95,17 @@
 // - Add grid according the columns specified in WP
 // - Pat self on back for this clever solution
 
+.gallery {
+	@include span-columns(12 full, 12);
+}
+
 @mixin gallery-layout {
 	$width: 100%;
 
 	@for $col from 1 through 9 {
-		.gallery-columns-#{$col} dl {
-			@include span-columns(round(12/$col), 12);
-			&:nth-child(#{$col}n) {
-				// Note: I would use omega, but it is the nth-child
-				// is not working properly for 3 columns - the style is 
-				//@include omega;
-				margin-right: 0;
-			}
-
-			img {
-				// Make the bottom margin the same as the gutter
-				margin-bottom: $gutter-width;
-			}
+		.gallery-columns-#{$col} .gallery-item {
+			@include isolate-grid(round(12/$col));
 		}
 	}
 }
+

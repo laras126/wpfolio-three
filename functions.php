@@ -70,6 +70,9 @@ You can change the names and dimensions to whatever
 you like. Enjoy!
 */
 
+// remove inline style for gallery shortcode
+add_filter( 'use_default_gallery_style', '__return_false' );
+
 /************* ACTIVE SIDEBARS ********************/
 
 // Sidebars & Widgetizes Areas

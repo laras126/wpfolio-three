@@ -1,15 +1,12 @@
-<?php 
+<?php
+/*
+Template Name: Sidebar
+*/
 
-// ********* NOTE NOTE NOTE!! ********* //
+// Oh hey, a sidebar.
+?>
 
-/*  WPFolio Three's default page template 
-	has no sidebar because, well, who wants a sidebar?
-	If the answer is you, use the Sidebar 
-	template in the Page Attributes->Template option */
-
-// ************* END NOTE ************* //
-
-get_header(); ?>
+<?php get_header(); ?>
 
 	<div id="content">
 
@@ -57,6 +54,8 @@ get_header(); ?>
 					<?php endif; ?>
 
 				</div> <!-- end #main -->
+
+				<?php get_sidebar(); ?>
 
 		</div> <!-- end #inner-content -->
 

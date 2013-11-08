@@ -1,0 +1,87 @@
+@import "settings";
+@import "compass/css3";
+@import "compass/utilities";
+
+
+/* ::Clearfixs and extends. Use which suits best */
+/* ----------------------------------------------------------- */
+
+// Use clearfix if you need general clearfixing
+.clearfix 			{ @include clearfix; }
+
+
+// Use pie-clearfix if you need clearfixing that doesn't use overflow: hidden
+.pie-clearfix 		{ @include pie-clearfix; }
+
+
+// OTHER EXTENDS
+
+// Max width, for images etc... in RWD
+.max-width 			{ max-width: 100%; height: auto; }
+.flex-img			{ width: 100%; @extend .max-width; }
+
+/*
+use the best ampersand
+http://simplebits.com/notebook/2008/08/14/ampersands-2/
+*/
+span.amp {
+  font-family: Baskerville,'Goudy Old Style',Palatino,'Book Antiqua',serif !important;
+  font-style: italic;
+}
+
+// text alignment
+.text-left   { text-align: left; }
+.text-center { text-align: center; }
+.text-right  { text-align: right; }
+
+
+/*********************
+BUTTONS
+*********************/
+
+.button, .button:visited {
+	font-family: $sans-serif;
+	border: 1px solid darken($link-color, 13%);
+	border-top-color: darken($link-color, 7%);
+	border-left-color: darken($link-color, 7%);
+	padding: 4px 12px;
+	color: $white;
+	display: inline-block;
+	font-size: em-font($base-font-size*0.9);
+	font-weight: normal;
+	text-decoration: none;
+	text-shadow: 0 1px rgba(0,0,0, .75);
+	cursor: pointer;
+	margin-bottom: 20px;
+	line-height: 21px;
+	border-radius: 4px;
+	background: linear-gradient($link-color, darken($link-color, 5%));
+
+
+	&:hover, &:focus {
+		color: $white;
+	  	border: 1px solid darken($link-color, 13%);
+	  	border-top-color: darken($link-color, 20%);
+	 	border-left-color: darken($link-color, 20%);
+		background: linear-gradient(darken($link-color, 5%), darken($link-color, 10%));
+	}
+
+	&:active {
+		background: linear-gradient(darken($link-color, 5%), $link-color);
+	}
+}
+
+.blue-button, .blue-button:visited {
+	border-color: darken($btn-color, 10%);
+	text-shadow: 0 1px 1px darken($btn-color, 10%);
+	background: linear-gradient( $btn-color, darken($btn-color, 5%) );
+	box-shadow: inset 0 0 3px lighten($btn-color, 16%);
+
+	&:hover, &:focus {
+		border-color: darken($btn-color, 15%);
+		background: linear-gradient( darken($btn-color, 4%), darken($btn-color, 10%) );
+	}
+	&:active {
+		background: linear-gradient( darken($btn-color, 5%), $btn-color );
+	}
+}

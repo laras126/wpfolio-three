@@ -8,10 +8,10 @@
 					
 					// Use template according to the news or portfolio body class
 					// In wpfolio.php
-					show_layout_according_to_bodyclass(); 
+					wpf_show_layout_according_to_bodyclass(); 
 
 					?>
-
+					
 				</div> <!-- end #inner-content -->
 
 			</div> <!-- end #content -->

@@ -5,16 +5,14 @@ Author: Lara Schenck
 Stylesheet: Grid Stylesheet
 
 Susy! http://susy.oddbird.net/
-
 ******************************************************************/
 
 // Susy settings
 
 $total-columns  : 12;             // a 12-column grid
 $column-width   : 4em;            // each column is 4em wide
-$gutter-width   : 1em;            // 1em gutters between columns
+$gutter-width   : 2em;            // 1em gutters between columns
 $grid-padding   : $gutter-width;  // grid-padding equal to gutters
-
 
 
 .wrap {
@@ -27,10 +25,32 @@ $grid-padding   : $gutter-width;  // grid-padding equal to gutters
 		- Float the main nav to the right
 */
 
+// Phonez
+@include at-breakpoint(26em) {
+	.archive.portfolio-layout .post {
+		@include span-columns(1, 2);	
+		// width: 50%;
+		float: left;
+	}
+}
+
+// Tablet size
+@include at-breakpoint(40em 8) {
+	.archive.portfolio-layout .post {
+		@include span-columns(4, 8);	
+	}
+}
+
+// Computer screen size
 @include at-breakpoint(60em 12) {
 	
-	.news-layout #main {
-		@include span-columns(9,12);
+	// TODO: make a single class for these, like sidebar-layout or something
+	// (WordPress, why the hell to you add a '-php' to this class?!)
+	// (more likely I am doing something wrong...)
+	.news-layout, .page-template-page-sidebar-php {
+		 #main {
+			@include span-columns(9,12);
+		}
 	}
 
 	.sidebar {
@@ -53,4 +73,24 @@ $grid-padding   : $gutter-width;  // grid-padding equal to gutters
 	// Add the gallery grid
 	@include gallery-layout;
 
+	.archive.portfolio-layout .post {
+		@include span-columns(4, 12);	
+	}
+
 }
+
+// .archive.portfolio-layout .post {
+	
+// 	@include at-breakpoint(60em 12) {
+// 		@include span-columns(4, 12);	
+// 	}
+
+// 	@include at-breakpoint(40em 8) {
+// 		@include span-columns(4, 8);	
+// 	}
+
+// 	@include at-breakpoint(20em 2) {
+// 		@include span-columns(1, 2);	
+// 	}
+// }
+

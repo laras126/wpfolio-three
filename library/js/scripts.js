@@ -68,6 +68,9 @@ jQuery(document).ready(function($) {
 	
 	// add all your scripts here
 	
+    // Remove break tags from galleries
+    $('.gallery').find('br').remove();
+
     var navigation = responsiveNav(".nav-collapse", {
         animate: true,        // Boolean: Use CSS3 transitions, true or false
         transition: 250,      // Integer: Speed of the transition, in milliseconds

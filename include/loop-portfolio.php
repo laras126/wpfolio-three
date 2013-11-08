@@ -1,13 +1,11 @@
-<?php require('constants.php'); ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
 
 	<header class="article-header">
-		<h1 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
+		<h5 class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h5>
 	</header> <!-- end article header -->
 
 	<section class="entry-content clearfix">
-		<?php the_content(); ?>
+		<?php the_post_thumbnail(); ?>
 	</section> <!-- end article section -->
 
 	<footer class="article-footer">
