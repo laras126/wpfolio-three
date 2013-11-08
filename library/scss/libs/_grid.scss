@@ -7,6 +7,7 @@ Stylesheet: Grid Stylesheet
 Susy! http://susy.oddbird.net/
 ******************************************************************/
 
+
 // Susy settings
 
 $total-columns  : 12;             // a 12-column grid
@@ -27,34 +28,34 @@ $grid-padding   : $gutter-width;  // grid-padding equal to gutters
 
 // Phonez
 @include at-breakpoint(26em) {
-	.archive.portfolio-layout .post {
-		@include span-columns(1, 2);	
-		// width: 50%;
-		float: left;
-	}
+	// TODO Will be changing this to the custom type
+	// .archive.portfolio-layout .post {
+	// 	@include span-columns(1, 2);	
+	// 	// width: 50%;
+	// 	float: left;
+	// }
 }
 
 // Tablet size
 @include at-breakpoint(40em 8) {
-	.archive.portfolio-layout .post {
-		@include span-columns(4, 8);	
-	}
+	// TODO Will be changing this to the custom type
+	// .archive.portfolio-layout .post {
+	// 	@include span-columns(4, 8);	
+	// }
 }
 
 // Computer screen size
 @include at-breakpoint(60em 12) {
 	
-	// TODO: make a single class for these, like sidebar-layout or something
+	// TODO make a single class for these, like sidebar-layout or something
 	// (WordPress, why the hell to you add a '-php' to this class?!)
-	// (more likely I am doing something wrong...)
-	.news-layout, .page-template-page-sidebar-php {
-		 #main {
-			@include span-columns(9,12);
-		}
+	// (more likely I am doing something wrong/inefficient...)
+	 .sidebar-layout {
+	 	@include span-columns(8,12);
 	}
 
 	.sidebar {
-		@include span-columns(3 omega,12);
+		@include span-columns(4 omega,12);
 	}
 
 	#site-title {
@@ -73,11 +74,9 @@ $grid-padding   : $gutter-width;  // grid-padding equal to gutters
 	// Add the gallery grid
 	@include gallery-layout;
 
-	.archive.portfolio-layout .post {
-		@include span-columns(4, 12);	
-	}
-
 }
+
+// TODO Will be changing this to the custom type
 
 // .archive.portfolio-layout .post {
 	

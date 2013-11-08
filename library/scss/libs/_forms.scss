@@ -1,6 +1,7 @@
 @import "settings";
+@import "extends";
 
-// SET UP YOUR FORMS IN THIS FILE
+// FORMS STYLES IN DIS FILE
 
 // -----------------------------------------------------------
 
@@ -68,6 +69,11 @@ input[type="button"],
 input[type="radio"],
 input[type="checkbox"] {
 	width: auto;
+}
+
+input[type="submit"],
+button {
+	@extend .button;
 }
 
 select,

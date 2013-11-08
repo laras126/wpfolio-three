@@ -298,13 +298,12 @@ POSTS & CONTENT STYLES
 
 		} /* end .hentry */
 
-		.single-title,
-		.page-title {
+		.project-title {	
 			@include adjust-font-size-to(18px);
 			text-transform: uppercase;
 			text-align: center;
 			letter-spacing: 1px;
-			margin-bottom: rhythm(4, 18px);
+			margin-bottom: rhythm(4, 18px);	
 		}
 
 		.single-title {}
@@ -374,7 +373,7 @@ POSTS & CONTENT STYLES
 			}
 
 			img {
-				@extend .flex-img;
+				@extend .max-width
 			}
 
 			/*
@@ -791,7 +790,9 @@ COMMENT FORM STYLES
 }
 
 	/* comment submit button */
-	#submit {}
+	#submit {
+		@extend .button;
+	}
 
 	/* comment form title */
 	#comment-form-title {
@@ -822,10 +823,7 @@ SIDEBARS & ASIDES
 
 .sidebar {}
 
-	.widgettitle {
-		@extend .single-title;
-		@extend .text-left;
-	}
+	.widgettitle {}
 
 	.widget {
 

@@ -142,7 +142,7 @@ function optionsframework_options() {
 	/************* BASIC SETTINGS ********************/
 
 	/* 	This includes:
-		1. Blog Category (multicheck)
+		1. Blog Category (multicheck) #removing!
 		2. Comments (radio)
 		3. Custom Favicon (upload)
 	*/
@@ -153,14 +153,19 @@ function optionsframework_options() {
 		'name' => __('Basic Settings', 'options_check'),
 		'type' => 'heading');
 
+	/////// -- Bye bye blog cat
+	// Replacing you with a custom type
+	// Because you are too hard to understand
+	
 	// 1. Select the blog categories
-	$options[] = array(
-		'name' => __('Blog Category', 'options_check'),
-		'desc' => __('Select the category to be used for your blog. Posts in this category will use the blog layout, all others will use the portfolio layout.', 'options_check'),
-		'id' => 'blog_cat',
-		'std' => '0',
-		'type' => 'select',
-		'options' => $options_categories);
+
+	// $options[] = array(
+	// 	'name' => __('Blog Category', 'options_check'),
+	// 	'desc' => __('Select the category to be used for your blog. Posts in this category will use the blog layout, all others will use the portfolio layout.', 'options_check'),
+	// 	'id' => 'blog_cat',
+	// 	'std' => '0',
+	// 	'type' => 'select',
+	// 	'options' => $options_categories);
 	
 	// 2. Comments?
 	$options[] = array(

@@ -12,7 +12,7 @@ Template Name: Sidebar
 
 		<div id="inner-content" class="wrap clearfix">
 
-				<div id="main" class="clearfix" role="main">
+				<div id="main" class="clearfix sidebar-layout" role="main">
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 

@@ -17,8 +17,8 @@
 // OTHER EXTENDS
 
 // Max width, for images etc... in RWD
-.max-width 			{ max-width: 100%; height: auto; }
-.flex-img			{ width: 100%; @extend .max-width; }
+// Keeping the max-width at auto so we don't pixelate the pics
+.max-width 			{ width: 100%; max-width: auto; height: auto; }
 
 /*
 use the best ampersand

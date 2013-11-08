@@ -25,9 +25,18 @@ sidebars, comments, ect.
 */
 require_once('library/bones.php'); // if you remove this, bones will break
 /*
-2. library/wpfolio.php
+
+2. library/custom-post-type.php
+	- Project custom post type
+	- Medium Taxonomy
+	- Custom fields
+*/
+require_once( 'library/custom-post-type.php' );
+
+/* 
+3. library/wpfolio.php
 	- WPFolio features functions
-	- artwork info metaboxes
+		- Wide margins shortcode
 */
 require_once('library/wpfolio.php'); // you can disable this if you like
 /*
@@ -48,6 +57,9 @@ require_once('library/wpfolio.php'); // you can disable this if you like
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes
+
+// TODO customize these
+
 add_image_size( 'bones-thumb-600', 600, 150, true );
 add_image_size( 'bones-thumb-300', 300, 100, true );
 /*

@@ -29,35 +29,6 @@ if ( !function_exists( 'of_get_option' ) ) {
 	}
 }
 
-/************* MEDIUM TAXONOMY ********************/
-
-/* 	Not using this yet. 
-	Unsure how useful it will be - 
-	it seems like many users have more extensive mediums, 
-	such as many sculptural materials. 
-	It might be limiting to have them contrained to a dropdown */
-
-// register_taxonomy( 'medium', 
-// 	array('post'),
-// 	array('hierarchical' => true,     /* if this is true, it acts like categories */             
-// 		'labels' => array(
-// 			'name' => __( 'Mediums', 'bonestheme' ), /* name of the custom taxonomy */
-// 			'singular_name' => __( 'Medium', 'bonestheme' ), /* single taxonomy name */
-// 			'search_items' =>  __( 'Search Mediums', 'bonestheme' ), /* search title for taxomony */
-// 			'all_items' => __( 'All Mediums', 'bonestheme' ), /* all title for taxonomies */
-// 			'parent_item' => __( 'Parent Medium', 'bonestheme' ),  parent title for taxonomy 
-// 			'parent_item_colon' => __( 'Parent Medium:', 'bonestheme' ), /* parent taxonomy title */
-// 			'edit_item' => __( 'Edit Medium', 'bonestheme' ), /* edit custom taxonomy title */
-// 			'update_item' => __( 'Update Medium', 'bonestheme' ), /* update title for taxonomy */
-// 			'add_new_item' => __( 'Add New Medium', 'bonestheme' ), /* add new title for taxonomy */
-// 			'new_item_name' => __( 'New Medium', 'bonestheme' ) /* name title for taxonomy */
-// 		),
-// 		'show_admin_column' => true, 
-// 		'show_ui' => true,
-// 		'query_var' => true,
-// 		'rewrite' => array( 'slug' => 'medium' ),
-// 	)
-// );  
 
 /************* ARTWORK METABOX ********************/
 
@@ -68,7 +39,7 @@ function wpf_artinfo_metaboxes( $meta_boxes ) {
     $meta_boxes[] = array(
             'id' => 'artwork-info',
             'title' => 'Artwork Info',
-            'pages' => array('post'), // post type
+            'pages' => array('project_type'), // post type
             'context' => 'normal',
             'priority' => 'high',
             'show_names' => true, // Show field names on left
@@ -149,53 +120,59 @@ function wpf_initialize_cmb_meta_boxes() {
 
 /************* BODY CLASSES & LAYOUT ********************/
 
+/////----
+// ATTENTION!!
+// Using a custom type now which negates this section
+/////----
+
+
 /*  Add a specific classes for news and portfolio layouts.
     Check to see if it's the blog category
 */
 
 // Add portfolio body class to anything that isn't the blog 
-function add_body_class($class) {
+// function add_body_class($class) {
 
-    global $post;
+//     global $post;
     
-    if ( in_category('blog') || is_home() ) {
-        $class[] = 'news-layout';
-        return $class;
-    } else {
-        $class[] = 'portfolio-layout';
-        return $class;  
-    }
-}
+//     if ( in_category('blog') || is_home() ) {
+//         $class[] = 'news-layout';
+//         return $class;
+//     } else {
+//         $class[] = 'portfolio-layout';
+//         return $class;  
+//     }
+// }
 
-add_filter('body_class','add_body_class');
+// add_filter('body_class','add_body_class');
 
 // Use the appropriate markup according to the body class
 // http://stackoverflow.com/questions/15033888/how-to-check-for-class-in-body-class-in-wordpress
 
-function wpf_show_layout_according_to_bodyclass() {
-    $classes = get_body_class();
-    if (in_array('news-layout',$classes)) {
-        if(is_single()) {
-            get_template_part('include/single', 'news');    
-        } else {
-            get_template_part('inclue/loop','news');
-        }
-    } else {
-        if(is_single()) {
-            get_template_part('include/single', 'portfolio');
-        } else {
-            get_template_part('include/loop', 'portfolio');
-        }
-    }
-}
+// function wpf_show_layout_according_to_bodyclass() {
+//     $classes = get_body_class();
+//     if (in_array('news-layout',$classes)) {
+//         if(is_single()) {
+//             get_template_part('include/single', 'news');    
+//         } else {
+//             get_template_part('inclue/loop','news');
+//         }
+//     } else {
+//         if(is_single()) {
+//             get_template_part('include/single', 'portfolio');
+//         } else {
+//             get_template_part('include/loop', 'portfolio');
+//         }
+//     }
+// }
 
-// Only show the sidebars on news layouts
-function wpf_show_sidebar_according_to_bodyclass() {
-    $classes = get_body_class();
-    if (in_array('news-layout',$classes)) {
-        get_sidebar();
-    } 
-}
+// // Only show the sidebars on news layouts
+// function wpf_show_sidebar_according_to_bodyclass() {
+//     $classes = get_body_class();
+//     if (in_array('news-layout',$classes)) {
+//         get_sidebar();
+//     } 
+// }
 
 
 /************* SHORTCODES ********************/
