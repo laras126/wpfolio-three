@@ -25,7 +25,7 @@ function bones_flush_rewrite_rules() {
 // let's create the function for the custom type
 function project_type() { 
 	// creating (registering) the custom type 
-	register_post_type( 'project_type', /* (http://codex.wordpress.org/Function_Reference/register_post_type) */
+	register_post_type( 'project', /* (http://codex.wordpress.org/Function_Reference/register_post_type) */
 		// let's now add all the options for this post type
 		array( 'labels' => array(
 			'name' => __( 'Portfolio', 'bonestheme' ), /* This is the Title of the Group */
@@ -36,8 +36,8 @@ function project_type() {
 			'edit' => __( 'Edit', 'bonestheme' ), /* Edit Dialog */
 			'edit_item' => __( 'Edit Project', 'bonestheme' ), /* Edit Display Title */
 			'new_item' => __( 'New Project', 'bonestheme' ), /* New Display Title */
-			'view_item' => __( 'View Post Type', 'bonestheme' ), /* View Display Title */
-			'search_items' => __( 'Search Post Type', 'bonestheme' ), /* Search Custom Type Title */ 
+			'view_item' => __( 'View Project', 'bonestheme' ), /* View Display Title */
+			'search_items' => __( 'Search Portfolio', 'bonestheme' ), /* Search Custom Type Title */ 
 			'not_found' =>  __( 'Nothing found in the Database.', 'bonestheme' ), /* This displays if there are no entries yet */ 
 			'not_found_in_trash' => __( 'Nothing found in Trash', 'bonestheme' ), /* This displays if there is nothing in the trash */
 			'parent_item_colon' => ''
@@ -50,7 +50,7 @@ function project_type() {
 			'query_var' => true,
 			'menu_position' => 8, /* this is what order you want it to appear in on the left hand side menu */ 
 			'menu_icon' => get_stylesheet_directory_uri() . '/library/images/custom-post-icon.png', /* the icon for the Project type menu */
-			'rewrite'	=> array( 'slug' => 'project_type', 'with_front' => false ), /* you can specify its url slug */
+			'rewrite'	=> array( 'slug' => 'project', 'with_front' => false ), /* you can specify its url slug */
 			'has_archive' => 'portfolio', /* you can rename the slug here */
 			'capability_type' => 'post',
 			'hierarchical' => false,
@@ -62,7 +62,7 @@ function project_type() {
 
 	// Medium taxonomy (like Project categories)
 	register_taxonomy( 'medium', 
-		array('project_type'),
+		array('project'),
 		array('hierarchical' => true,     /* if this is true, it acts like categories */             
 			'labels' => array(
 				'name' => __( 'Mediums', 'bonestheme' ), /* name of the custom taxonomy */
@@ -84,9 +84,9 @@ function project_type() {
 	);  
 
 	/* adds medium taxonomy (categories) to Portfolio */
-	register_taxonomy_for_object_type( 'medium', 'project_type' );
+	register_taxonomy_for_object_type( 'medium', 'project' );
 	/* adds post tags to the project */
-	register_taxonomy_for_object_type( 'post_tag', 'project_type' );
+	register_taxonomy_for_object_type( 'post_tag', 'project' );
 	
 }
 

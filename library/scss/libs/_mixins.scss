@@ -1,10 +1,11 @@
+
 @import "settings";
 @import "compass/css3";
 @import "compass/utilities";
 
 
-// Custom mixins and helpers aqui!
-// -------------------------------------------------------
+// Mixins and helper functions
+// Again, code in large part from: http://sass.fffunction.co/ 
 
 
 // List styles
@@ -35,20 +36,6 @@
 	list-style-type: none;
 }
 
-// Advanced typography settings
-// -------------------------------------------------------
-
-// Get advanced with type if needed for ligatures etc...
-
-@mixin advancedtype {
-	//font-variant-ligatures: contextual;  				// Set the default for ligatures
-	//-moz-font-feature-settings: "liga=1,dlig=1";    	// Ligature settings for mozilla
-	font-kerning: normal; 								// Set the default for kerning
-	//-webkit-font-smoothing: antialiased; 				// Improve (or in some cases royally screw with) safari's legibility somewhat
-	//font-synthesis: none; 							// Don't allow the font to create sythetic bold/italic
-	//text-rendering: optimizeLegibility; 				// Improve kerning pairs. Webkit gets funny with this sometimes
-}
-
 
 // Retina images. 
 // Use with care - http://37signals.com/svn/posts/3271-easy-retina-ready-images-using-scss
@@ -66,6 +53,7 @@
   }
 }
 
+
 // Transitions
 // -------------------------------------------------------
 
@@ -76,6 +64,7 @@
 	@include transition-duration(0.3s); 
 	@include transition-timing-function(ease-in-out);
 }
+
 
 // HEX to RGB
 // http://codepen.io/sturobson/pen/hdKyv
@@ -91,21 +80,27 @@
 // Responsive WP gallery
 // -------------------------------------------------------
 
+// UPDATE: Oh man! Just use Justin Tadlock's 
+// Cleaner Gallery Plugin :(. 
+
+// Anyways, this is what it did:
 // - Loop through .gallery-columns-.. classes 
 // - Add grid according the columns specified in WP
 // - Pat self on back for this clever solution
 
-.gallery {
-	@include span-columns(12 full, 12);
-}
+// .gallery {
+// 	@include span-columns(12 full, 12);
+// }
 
-@mixin gallery-layout {
-	$width: 100%;
+// @mixin gallery-layout {
+// 	$width: 100%;
 
-	@for $col from 1 through 9 {
-		.gallery-columns-#{$col} .gallery-item {
-			@include isolate-grid(round(12/$col));
-		}
-	}
-}
+// 	@for $col from 1 through 9 {
+// 		.gallery-columns-#{$col} .gallery-item {
+// 			@include isolate-grid(round(12/$col));
+// 		}
+// 	}
+// }
+
+
 

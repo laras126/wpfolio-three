@@ -42,8 +42,8 @@ input[type="url"],
 input[type="search"],
 input[type="tel"] {
 	@include border-radius(4px);
-	padding: $small-margin/3;
-	margin: $small-margin 0;
+	padding: $base-size/3;
+	margin: $base-size 0;
 	border: 2px solid $accent-light;
 
 	&:focus {

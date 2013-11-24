@@ -22,21 +22,22 @@ WORDPRESS BODY CLASSES
 style a page via class
 ********************/
 
-.rtl {}                           /* for sites that are read right to left (i.e. hebrew) */
-.home {}                          /* home page */
-.blog {}                          /* blog template page */
-.archive {}                       /* archive page */
-.date {}                          /* date archive page */
-	.date-paged-1 {}                /* replace the number to the corresponding page number */
-.search {}                        /* search page */
-	.search-results {}              /* search result page */
-	.search-no-results {}           /* no results search page */
-	.search-paged-1 {}              /* individual paged search (i.e. body.search-paged-3) */
-.error404 {}                      /* 404 page */
-.single {}                        /* single post page */
-	.postid-1 {}                    /* individual post page by id (i.e. body.postid-73) */
-	.single-paged-1 {}              /* individual paged single (i.e. body.single-paged-3) */
-.attachment { 						/* attatchment page */
+.rtl {}                           //for sites that are read right to left (i.e. hebrew)
+.home {}                          // home page
+.blog {}                          // blog template page
+.archive {}                       // archive page
+.date {}                          // date archive page
+	.date-paged-1 {}                // replace the number to the corresponding page number
+.search {}                        // search page
+	.search-results {}              // search result page
+	.search-no-results {}           // no results search page
+	.search-paged-1 {}              // individual paged search (i.e. body.search-paged-3)
+.error404 {}                      // 404 page
+.single {}                        // single post page
+	.postid-1 {}                    // individual post page by id (i.e. body.postid-73)
+	.single-paged-1 {}              // individual paged single (i.e. body.single-paged-3)
+.attachment { 						// attachment page
+	// Center images on attachment pages
 	img {
 		display: block;
 		margin: 0 auto;
@@ -45,60 +46,31 @@ style a page via class
 	.attachment-meta {
 		text-align: center;
 	}
-	.attachmentid-1 {}              /* individual attatchment page (i.e. body.attachmentid-763) */
-	.attachment-mime-type {}        /* style mime type pages */
-.author {}                        /* author page */
-	.author-nicename {}             /* user nicename (i.e. body.author-samueladams) */
-	.author-paged-1 {}              /* paged author archives (i.e. body.author-paged-4) for page 4 */
-.category {}                      /* category page */
-	.category-1 {}                  /* individual category page (i.e. body.category-6) */
-	.category-paged-1 {}            /* replace the number to the corresponding page number */
-.tag {}                           /* tag page */
-	.tag-slug {}                    /* individual tag page (i.e. body.tag-news) */
-	.tag-paged-1 {}                 /* replace the number to the corresponding page number */
-.page-template {}                 /* custom page template page */
-	.page-template-page-php {}      /* individual page template (i.e. body.page-template-contact-php */
-	.page-paged-1 {}                /* replace the number to the corresponding page number */
-	.page-parent {}                 /* parent page template */
-	.page-child {}                  /* child page template */
-	.parent-pageid-1 {}             /* replace the number to the corresponding page number */
-.logged-in {}                     /* if user is logged in */
-.paged {}                         /* paged items like search results or archives */
-	.paged-1 {}                     /* individual paged (i.e. body.paged-3) */
+	.attachmentid-1 {}              // individual attatchment page (i.e. body.attachmentid-763)
+	.attachment-mime-type {}        // style mime type pages
+.author {}                        // author page
+	.author-nicename {}             // user nicename (i.e. body.author-samueladams)
+	.author-paged-1 {}              // paged author archives (i.e. body.author-paged-4) for page 4
+.category {}                      // category page
+	.category-1 {}                  // individual category page (i.e. body.category-6)
+	.category-paged-1 {}            // replace the number to the corresponding page number
+.tag {}                           // tag page
+	.tag-slug {}                    // individual tag page (i.e. body.tag-news)
+	.tag-paged-1 {}                 // replace the number to the corresponding page number
+.page-template {}                 // custom page template page
+	.page-template-page-php {}      // individual page template (i.e. body.page-template-contact-php
+	.page-paged-1 {}                // replace the number to the corresponding page number
+	.page-parent {}                 // parent page template
+	.page-child {}                  // child page template
+	.parent-pageid-1 {}             // replace the number to the corresponding page number
+.logged-in {}                     // if user is logged in
+.paged {}                         // paged items like search results or archives
+	.paged-1 {}                     // individual paged (i.e. body.paged-3)
 
 /*********************
 LAYOUT & GRID STYLES
 *********************/
 
-
-/*********************
-LINK STYLES
-*********************/
-
-a, a:visited {
-	color: $link-color;
-	text-decoration: none;
-
-	/* on hover */
-	&:hover, &:focus {
-		color: $link-hover;
-	}
-
-	/* on click */
-	&:active {
-		color: $link-active;
-	}
-
-	/* mobile tap color */
-	&:link {
-		/*
-		this highlights links on iPhones/iPads.
-		so it basically works like the :hover selector
-		for mobile devices.
-		*/
-		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
-	}
-}
 
 /*********************
 HEADER STYLES
@@ -216,79 +188,40 @@ and more scalable.
 
 } /* end .nav */
 
+// Brad Frost toggle menu
+// http://codepen.io/bradfrost/pen/sHvaz
 
-/*! responsive-nav.js v1.0.22 by @viljamis */
-
-.nav-collapse,
-.nav-collapse * {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+a.menu-link {
+    float: right;
+    display: block;
+    padding: 1em;
+}
+nav[role=navigation] {
+	clear: both;
+	-webkit-transition: all 0.3s ease-out;  
+	-moz-transition: all 0.3s ease-out;
+	-ms-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+}
+.js nav[role=navigation] {
+	overflow: hidden;
+	max-height: 0;
+}
+nav[role=navigation].active {
+	max-height: 15em;
+}
+nav[role=navigation] ul {
+	margin: 0;
+	padding: 0;
+	border-top: 1px solid #808080;
+}
+nav[role=navigation] li a {
+	display: block;
+	padding: 0.8em;
+	border-bottom: 1px solid #808080;
 }
 
-.nav-collapse,
-.nav-collapse ul {
-  list-style: none;
-}
-
-.nav-collapse li {
-  float: left;
-  width: 100%;
-}
-
-.nav-collapse ul ul a {
-  background: $accent-light;
-  padding-left: 2em;
-}
-
-.nav-toggle {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  width: 70px;
-  height: 55px;
-  float: right;
-  text-indent: -9999px;
-  overflow: hidden;
-  background: $accent url("../images/hamburger.gif") no-repeat 50% 33%;
-}
-
-.nav-collapse ul {
-  margin: 0;
-  padding: 0;
-  display: block;
-  list-style: none;
-}
-
-.nav-collapse li {
-  width: 100%;
-  display: block;
-}
-
-.js .nav-collapse {
-  clip: rect(0 0 0 0);
-  max-height: 0;
-  position: absolute;
-  display: block;
-  overflow: hidden;
-  zoom: 1;
-}
-
-.nav-collapse.opened {
-  max-height: 9999px;
-}
-
-.nav-toggle {
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-}
 
 /*********************
 POSTS & CONTENT STYLES
@@ -306,17 +239,9 @@ POSTS & CONTENT STYLES
 
 		} /* end .hentry */
 
-		.project-title {	
-			@include adjust-font-size-to(18px);
-			text-transform: uppercase;
+		.single-title, .page-title, .archive-title, .project-thumb-title {
 			text-align: center;
-			letter-spacing: 1px;
-			margin-bottom: rhythm(4, 18px);	
 		}
-
-		.single-title {}
-
-		.page-title {}
 
 		.archive-title { }
 
@@ -429,6 +354,7 @@ POSTS & CONTENT STYLES
 
 		/* image gallery styles */
 		.gallery {
+			margin: $base-font-size 0;
 			img {
 				@extend .max-width;
 			}
@@ -453,6 +379,22 @@ POSTS & CONTENT STYLES
 		.size-large {}
 		.size-medium {}
 		.size-thumbnail {}
+
+
+// Project type styles
+
+.project-title {	
+	@include adjust-font-size-to(18px);
+	text-transform: uppercase;
+	text-align: center;
+	letter-spacing: 1px;
+	margin-bottom: rhythm(4, 18px);	
+}
+
+.project-thumb img {
+	@extend .max-width !optional;
+}
+
 
 /******************************************************************
 PAGE NAVI STYLES

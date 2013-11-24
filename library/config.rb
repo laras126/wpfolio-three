@@ -1,5 +1,5 @@
 
-
+require 'modular-scale'
 require 'susy'
 
 # Compass is a great cross-platform tool for compiling SASS. 

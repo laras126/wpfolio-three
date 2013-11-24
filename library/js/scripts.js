@@ -65,25 +65,33 @@ jQuery(document).ready(function($) {
         
     }
     
-	
-	// add all your scripts here
-	
-    // Remove break tags from galleries
-    $('.gallery').find('br').remove();
 
-    var navigation = responsiveNav(".nav-collapse", {
-        animate: true,        // Boolean: Use CSS3 transitions, true or false
-        transition: 250,      // Integer: Speed of the transition, in milliseconds
-        label: "Menu",        // String: Label for the navigation toggle
-        insert: "after",      // String: Insert the toggle before or after the navigation
-        customToggle: "",     // Selector: Specify the ID of a custom toggle
-        openPos: "relative",  // String: Position of the opened nav, relative or static
-        jsClass: "js",        // String: 'JS enabled' class which is added to <html> el
-        init: function(){},   // Function: Init callback
-        open: function(){},   // Function: Open callback
-        close: function(){}   // Function: Close callback
+
+
+	// ------------------
+	// Author scripts (i.e. not from Bones)
+    // ------------------
+
+    // Gosh, Brad Frost is a genius!
+    // Toggle menu for mobile
+    // http://codepen.io/bradfrost/pen/sHvaz
+
+    $('body').addClass('js');
+    var $menu = $('#main-nav'),
+        $menulink = $('.menu-link');
+  
+    $menulink.click(function() {
+        $menulink.toggleClass('active');
+        $menu.toggleClass('active');
+        return false;
     });
+	
  
+
+
+
+
+
 }); /* end of as page load scripts */
 
 

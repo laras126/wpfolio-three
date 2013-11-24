@@ -1,9 +1,10 @@
 @import "settings";
 @import "mixins";
 
-
 // Set up core font-sizing and rhythm
+// http://sass.fffunction.co/
 
+// TODO: incorporate modular-scale?
 
 // Default Sizing and spacing
 // ------------------------------------------------------------
@@ -81,5 +82,30 @@ blockquote {
 		margin: 0;
 		@include adjust-font-size-to(20px); 
 		margin: rhythm(3, 20px) 0 rhythm(3, 20px) 0; 		//  3 lines above / 3 lines below, based on font size
+	}
+}
+
+a, a:visited {
+	color: $link-color;
+	text-decoration: none;
+
+	/* on hover */
+	&:hover, &:focus {
+		color: $link-hover;
+	}
+
+	/* on click */
+	&:active {
+		color: $link-active;
+	}
+
+	/* mobile tap color */
+	&:link {
+		/*
+		this highlights links on iPhones/iPads.
+		so it basically works like the :hover selector
+		for mobile devices.
+		*/
+		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
 	}
 }

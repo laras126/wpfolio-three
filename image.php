@@ -79,10 +79,12 @@ Should it be differentiated more?
 
 								<p class="attachment-meta byline">
 									<?php
+										// TODO there is some extra information being pulled in here (i.e. width, height)
+										// Remove it!
 										$metadata = wp_get_attachment_metadata();
-										printf( __( '<span class="entry-date"><abbr class="published" title="%1$s">%2$s</abbr></span><a href="%6$s" title="Return to %7$s" rel="gallery">%7$s</a>', 'portfoliopress' ),
+										printf( __( '<span class="entry-date"><abbr class="published" title="%1$s">%2$s</abbr></span> | <a href="%6$s" title="Return to %7$s" rel="gallery">%7$s</a>', 'portfoliopress' ),
 											esc_attr( get_the_time() ),
-											get_the_date(),
+											get_the_date('Y'),
 											wp_get_attachment_url(),
 											$metadata['width'],
 											$metadata['height'],
@@ -90,10 +92,10 @@ Should it be differentiated more?
 											get_the_title( $post->post_parent )
 										);
 									?>
-									<?php edit_post_link( __( 'Edit', 'portfoliopress' ), '<span class="sep">|</span> <span class="edit-link">', '</span>' ); ?>
+									<?php edit_post_link( __( 'Edit', 'portfoliopress' ), ' | <span class="edit-link">', '</span>' ); ?>
 								</p>
 
-								<nav class="prev-next clearfix">
+								<nav class="prev-next">
 									<span class="prev"><?php previous_image_link( false, __( '&larr; Previous' , 'portfoliopress' ) ); ?></span>
 									<span class="next"><?php next_image_link( false, __( 'Next &rarr;' , 'portfoliopress' ) ); ?></span>
 								</nav><!-- .prev-next -->

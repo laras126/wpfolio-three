@@ -21,7 +21,7 @@ What's the difference between WPFolios Two and Three?
 So far, these things:
 - Responsive
 - Webfonts for both body and title text
-- Better typography overall
+- Typography overall
 - Styled with Sass
 - Uses the Options Framework plugin rather than embedding it in the theme
 - No more Thematic, hello Bones!
@@ -31,11 +31,18 @@ So, about Bones:
 - A lightweight WordPress development theme
 - Designed by the fantastic Eddie Machado
 - Adorable skeleton character
-- I FUCKING LOVE IT
+- OMG IT IS WONDERFUL
 
 WPFolio Three is now truly it's own theme - before I used Thematic, which was fine, but made it very diffcult to really customize templates. 
 Gosh, Bones is great.
 
+Other tools/frameworks I used:
+- Compass, of course: http://compass-style.org
+- Sassaparilla for typgraphy and general stylesheet structure: http://sass.fffunction.co/
+- Susy for grids: http://susy.oddbird.net
+- Modular scale: https://github.com/Team-Sass/modular-scale
+
 /******************************************************************/
 
 WPF3 ain't ready for a changes log yet, but it will be here soon enough.
+

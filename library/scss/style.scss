@@ -9,22 +9,14 @@ media queries. The base mobile goes outside any query
 and is called at the beginning, after that we call the 
 rest of the styles inside media queries. 
 
-Don't add styles here.
+Don't add styles here! Use a child theme.
 ******************************************************************/
 
 //
 // IMPORTING THINGS
 //
 
-// import normalize
-// @import "normalize";
-
-// // import mixins
-// @import "mixins";
-
-// ::Imports pre-render. Must be after reset
-// ------------------------------------------------------------
-@import "compass/typography/vertical_rhythm";
+@import "modular-scale";
 @import "compass/css3";
 @import "compass/utilities";
 @import "susy";
@@ -34,15 +26,19 @@ Don't add styles here.
 @import "libs/mixins";
 @import "libs/grid";
 
+
 /*
 BASE (MOBILE) SIZE
-This are the mobile styles. It's what people see on their phones. If
-you set a great foundation, you won't need to add too many styles in
-the other stylesheets. Remember, keep it light: Speed is Important.
+These are the mobile styles.
+I set a solid foundation 
+so their aren't too many styles 
+in the other stylesheets. 
+
+Isn't that kind of like a poem?
 */
 
 
-/* ::Base styles Almost exclusively single element selectors */
+/* Base styles: Almost exclusively single element selectors */
 /* ------------------------------------------------------------ */
 
 
@@ -59,7 +55,7 @@ the other stylesheets. Remember, keep it light: Speed is Important.
 LARGER MOBILE DEVICES
 This is for devices like the Galaxy Note or something that's
 larger than an iPhone but smaller than a tablet. Let's call them
-tweeners.
+phablets.
 */
 @media only screen and (min-width: em-font(481px)) {
 
@@ -72,7 +68,7 @@ tweeners.
 TABLET & SMALLER LAPTOPS
 This is the average viewing window. So Desktops, Laptops, and
 in general anyone not viewing on a mobile device. Here's where
-you can add resource intensive styles.
+the resource intensive styles are added, like the grid.
 */
 @media only screen and (min-width: em-font(768px)) {
 	
@@ -84,8 +80,7 @@ you can add resource intensive styles.
 /*
 DESKTOP
 This is the average viewing window. So Desktops, Laptops, and
-in general anyone not viewing on a mobile device. Here's where
-you can add resource intensive styles.
+in general anyone not viewing on a mobile device.
 */
 @media only screen and (min-width: em-font(1030px)) {
 
@@ -97,6 +92,7 @@ you can add resource intensive styles.
 /*
 LARGE VIEWING SIZE
 This is for the larger monitors and possibly full screen viewers.
+Not really using it.
 */
 @media only screen and (min-width: em-font(1240px)) {
 
@@ -104,6 +100,7 @@ This is for the larger monitors and possibly full screen viewers.
 	@import "1240up";
 
 } // end of media query
+
 
 /*
 RETINA (2x RESOLUTION DEVICES)
@@ -120,9 +117,11 @@ query for retina AND a certain size if you want. Go Nuts.
 
 } // end of media query
 
+
 /*
 iPHONE 5 MEDIA QUERY
 Want to get fancy for no good reason? Knock yourself out.
+I didn't.
 */
 @media (device-height: 568px) and (-webkit-min-device-pixel-ratio: 2) {
   

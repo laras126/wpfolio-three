@@ -1,14 +1,11 @@
-/******************************************************************
-Site Name: WPFolio Three
-Author: Lara Schenck
 
-Stylesheet: Grid Stylesheet
 
-Susy! http://susy.oddbird.net/
-******************************************************************/
+// Grid Stylesheet
+// Susy! http://susy.oddbird.net/
 
 
 // Susy settings
+// TODO: incorporate modular scale here
 
 $total-columns  : 12;             // a 12-column grid
 $column-width   : 4em;            // each column is 4em wide
@@ -56,10 +53,7 @@ $container-style: fluid;
 // Computer screen size
 @include at-breakpoint(60em 12) {
 	
-	// TODO make a single class for these, like sidebar-layout or something
-	// (WordPress, why the hell to you add a '-php' to this class?!)
-	// (more likely I am doing something wrong/inefficient...)
-	 .sidebar-layout {
+	.sidebar-layout {
 	 	@include span-columns(8,12);
 	}
 
@@ -80,14 +74,18 @@ $container-style: fluid;
 		float: right;
 	}
 
-	// Add the gallery grid
-	@include gallery-layout;
+	// Portfolio layout
+
+	.project-thumb {
+		@include span-columns(3,9); // each gallery-image is 3 of 9 cols.
+		&:nth-child(3n) { @include omega; } // every third image completes a row.
+	}
 
 }
 
 // TODO Will be changing this to the custom type
 
-// .archive.portfolio-layout .post {
+// .project-thumb {
 	
 // 	@include at-breakpoint(60em 12) {
 // 		@include span-columns(4, 12);	

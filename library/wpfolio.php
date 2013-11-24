@@ -39,7 +39,7 @@ function wpf_artinfo_metaboxes( $meta_boxes ) {
     $meta_boxes[] = array(
             'id' => 'artwork-info',
             'title' => 'Artwork Info',
-            'pages' => array('project_type'), // post type
+            'pages' => array('project'), // post type
             'context' => 'normal',
             'priority' => 'high',
             'show_names' => true, // Show field names on left
@@ -183,6 +183,13 @@ function wide_margins_shortcode ($atts, $content = null) {
     return '<div class="widemargins">' . do_shortcode($content) . '</div>';
 } 
 add_shortcode('margin', 'wide_margins_shortcode');
+
+
+
+
+/************* REQUIRE SOME PLUGINS ********************/
+// TODO: Use this, not doing this immediately though.
+
 
 
 ?>

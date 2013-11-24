@@ -51,8 +51,10 @@
 						<h1><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></h1>
 						<p><?php bloginfo('description'); ?></p>
 					</div>
-
-					<nav id="main-nav" role="navigation" class="nav-collapse">
+					
+					<a href="#main-nav" class="menu-link">Menu</a>
+					
+					<nav id="main-nav" role="navigation" class="nav-collapse">	
 						<?php bones_main_nav(); ?>
 					</nav>
 					

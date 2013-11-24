@@ -1,15 +1,8 @@
-/******************************************************************
-Site Name: WPFolio Three
-Author: Lara Schenck
 
-Stylesheet: Variables, hello!
-
-http://sass.fffunction.co/
-
-Define a few useful values to be used throughout the stylesheet. Keeping it to three main colors for consistency.
-
-******************************************************************/
-
+//
+// Set up useful variables and base sizes
+// Modified http://sass.fffunction.co/
+//
 
 // Colors
 // ------------------------------------------------------------
@@ -18,7 +11,7 @@ $black:             #000;
 $white:             #fff;
 
 
-// Define your main color palette
+// Define the main color palette
 
 $primary:					#666;
 $secondary:					#222;
