@@ -9,6 +9,7 @@
 
 global $post;
 
+// TODO: do we need all of these?
 // Artwork Info Metabox fields
 $aw_title = '<h4>' . get_post_meta( $post->ID, '_ctmb_title', true ) . '</h4>';
 $aw_date = get_post_meta( $post->ID, '_ctmb_date', true );

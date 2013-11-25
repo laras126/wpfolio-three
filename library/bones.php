@@ -196,7 +196,6 @@ function bones_theme_support() {
 	add_theme_support( 'post-formats',
 		array(
 			'gallery',           // gallery of images
-			'link',              // quick link to other site
 			'image',             // an image
 			'video',             // video
 			'audio',             // audio

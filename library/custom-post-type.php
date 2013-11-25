@@ -55,7 +55,7 @@ function project_type() {
 			'capability_type' => 'post',
 			'hierarchical' => false,
 			/* the next one is important, it tells what's enabled in the post editor */
-			'supports' => array( 'title', 'editor', 'thumbnail', 'comments', 'revisions')
+			'supports' => array( 'title', 'editor', 'thumbnail', 'comments', 'revisions', 'post-formats')
 		) /* end of options */
 	); /* end of register post type */
 	
@@ -65,7 +65,7 @@ function project_type() {
 		array('project'),
 		array('hierarchical' => true,     /* if this is true, it acts like categories */             
 			'labels' => array(
-				'name' => __( 'Mediums', 'bonestheme' ), /* name of the custom taxonomy */
+				'name' => __( 'Medium', 'bonestheme' ), /* name of the custom taxonomy */
 				'singular_name' => __( 'Medium', 'bonestheme' ), /* single taxonomy name */
 				'search_items' =>  __( 'Search Mediums', 'bonestheme' ), /* search title for taxomony */
 				'all_items' => __( 'All Mediums', 'bonestheme' ), /* all title for taxonomies */

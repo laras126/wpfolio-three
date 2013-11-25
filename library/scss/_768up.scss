@@ -87,7 +87,7 @@ nav[role=navigation] {
 
 		a {
 			border-bottom: 0;
-
+			padding: rhythm(1, 18px);
 			/*
 			you can use hover styles here even though this size
 			has the possibility of being a mobile device.
@@ -173,6 +173,19 @@ nav[role=navigation] {
 /*********************
 POSTS & CONTENT STYLES
 *********************/
+
+// Project type styles
+.project-thumb img {
+	@include transition(opacity 0.2s ease-in);
+	&:hover {
+		opacity: 0.6;
+		@include transition(opacity 0.2s ease-in);
+	}
+	&:active {
+		opacity: 1;
+		@include transition(opacity 0.2s ease-in);
+	}
+}
 
 /*********************
 SIDEBARS & ASIDES

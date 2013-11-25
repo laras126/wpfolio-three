@@ -20,14 +20,27 @@ Template for single Projects
 
 					<h1 class="single-title project-title"><?php the_title(); ?></h1>
 
-					<section class="entry-content clearfix">
+					<section class="entry-content clearfix widemargins">
 
-						<?php the_content(); ?>
+						<?php 
+						
+						if ( has_post_format( 'video' )) {
+							get_template_part('include/project', 'video'); 
+						} else if ( has_post_format( 'audio' )) {
+							get_template_part('include/project', 'audio'); 
+						} else if ( has_post_format( 'gallery' )) {
+							get_template_part('include/project', 'gallery'); 
+						} else if ( has_post_format( 'image' )) {
+							get_template_part('include/project', 'image'); 
+						} else if ( has_post_format( 'standard' )) {
+							get_template_part('include/project', 'standard'); 
+						}
+
+						?>
 
 					</section>
 
 					<footer class="article-footer">
-						<?php include('include/artwork-meta.php'); ?>
 						<p class="tags"><?php echo get_the_term_list( get_the_ID(), 'post_tag', '<span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ' ) ?></p>
 					</footer>
 
@@ -39,17 +52,7 @@ Template for single Projects
 
 				<?php else : ?>
 
-						<article id="post-not-found" class="hentry clearfix">
-							<header class="article-header">
-								<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
-							</header>
-							<section class="entry-content">
-								<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
-							</section>
-							<footer class="article-footer">
-									<p><?php _e( 'This is the error message in the single-project_type.php template.', 'bonestheme' ); ?></p>
-							</footer>
-						</article>
+						<?php get_template_part('include/post', 'notfound'); ?>
 
 				<?php endif; ?>
 

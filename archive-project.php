@@ -4,9 +4,9 @@
 
 				<div id="inner-content" class="wrap clearfix">
 
-						<div id="main" class="eightcol first clearfix" role="main">
+						<div id="main" class="clearfix" role="main">
 
-						<h1 class="archive-title h2"><?php post_type_archive_title(); ?></h1>
+						<h1 class="project-title h2"><?php post_type_archive_title(); ?></h1>
 
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 

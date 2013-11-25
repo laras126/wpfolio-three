@@ -61,7 +61,7 @@ $container-style: fluid;
 		@include span-columns(4 omega,12);
 	}
 
-	#site-title {
+	#site-name {
 		@include span-columns(4, 12);	
 	}
 

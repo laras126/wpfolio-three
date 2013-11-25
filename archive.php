@@ -4,16 +4,16 @@
 
 				<div id="inner-content" class="wrap clearfix">
 
-						<div id="main" class="eightcol first clearfix" role="main">
+						<div id="main" class="sidebar-layout clearfix" role="main">
 
 							<?php if (is_category()) { ?>
 								<h1 class="archive-title h2">
-									<span><?php _e( 'Posts Categorized:', 'bonestheme' ); ?></span> <?php single_cat_title(); ?>
+									<span><?php _e( '', 'bonestheme' ); ?></span> <?php single_cat_title(); ?>
 								</h1>
 
 							<?php } elseif (is_tag()) { ?>
 								<h1 class="archive-title h2">
-									<span><?php _e( 'Posts Tagged:', 'bonestheme' ); ?></span> <?php single_tag_title(); ?>
+									<span><?php _e( 'Tagged:', 'bonestheme' ); ?></span> <?php single_tag_title(); ?>
 								</h1>
 
 							<?php } elseif (is_author()) {

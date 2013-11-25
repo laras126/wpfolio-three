@@ -14,13 +14,17 @@ Template for the medium taxonomy.
 
 			<div id="main" class="clearfix" role="main">
 
-				<h1 class="archive-title"><span><?php _e( '', 'bonestheme' ); ?></span> <?php single_cat_title(); ?></h1>
+				<h1 class="medium-title"><span><?php _e( '', 'bonestheme' ); ?></span> <?php single_cat_title(); ?></h1>
 
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix project-thumb' ); ?> role="article">
 					<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
-						<?php the_post_thumbnail(); ?>
+						<?php if ( has_post_thumbnail() ) {
+							the_post_thumbnail();
+						} else { ?>
+							<img src="<?php bloginfo('template_directory'); ?>/library/images/default-thumb.png" alt="<?php the_title(); ?>"/>
+						<?php } ?>
 						<h3 class="project-thumb-title"><?php the_title(); ?></h3>
 					</a>
 				</article>

@@ -81,7 +81,7 @@ HEADER STYLES
 }
 
 	#site-title {
-		text-align: center;
+		margin: 0 0 rhythm(1, 36px) 0;
 	}
 
 /*********************
@@ -196,6 +196,7 @@ a.menu-link {
     display: block;
     padding: 1em;
 }
+
 nav[role=navigation] {
 	clear: both;
 	-webkit-transition: all 0.3s ease-out;  
@@ -204,21 +205,24 @@ nav[role=navigation] {
 	-o-transition: all 0.3s ease-out;
 	transition: all 0.3s ease-out;
 }
+
 .js nav[role=navigation] {
 	overflow: hidden;
 	max-height: 0;
 }
+
 nav[role=navigation].active {
 	max-height: 15em;
 }
+
 nav[role=navigation] ul {
 	margin: 0;
 	padding: 0;
 	border-top: 1px solid #808080;
 }
+
 nav[role=navigation] li a {
 	display: block;
-	padding: 0.8em;
 	border-bottom: 1px solid #808080;
 }
 
@@ -239,7 +243,8 @@ POSTS & CONTENT STYLES
 
 		} /* end .hentry */
 
-		.single-title, .page-title, .archive-title, .project-thumb-title {
+		// TODO: make these one class
+		.page-title, .project-title, .project-thumb-title, .medium-title {
 			text-align: center;
 		}
 
@@ -261,6 +266,12 @@ POSTS & CONTENT STYLES
 
 			time {}
 		}
+
+		.tags-title {
+			text-transform: uppercase;
+			@include adjust-font-size-to(12px); 
+		}
+
 
 		/* entry content */
 		.entry-content {
@@ -395,6 +406,18 @@ POSTS & CONTENT STYLES
 	@extend .max-width !optional;
 }
 
+.artwork-meta {
+	@include nobullet;
+}
+
+.single-project {
+	&.single-format-video {
+		iframe {
+			width: 100%;
+			height: 400px;
+		}
+	}
+}
 
 /******************************************************************
 PAGE NAVI STYLES
