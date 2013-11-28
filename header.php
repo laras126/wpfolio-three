@@ -11,7 +11,7 @@
 		<!-- Google Chrome Frame for IE -->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-		<title><?php bloginfo('name'); ?><?php wp_title('|'); ?></title>
+		<title><?php wp_title(''); ?></title>
 
 		<!-- mobile meta (hooray!) -->
 		<meta name="HandheldFriendly" content="True">
@@ -54,7 +54,7 @@
 					
 					<a href="#main-nav" class="menu-link">Menu</a>
 					
-					<nav id="main-nav" role="navigation">	
+					<nav id="main-nav" role="navigation" class="nav-collapse">	
 						<?php bones_main_nav(); ?>
 					</nav>
 					

@@ -180,6 +180,10 @@ POSTS & CONTENT STYLES
 // Project type styles
 .project-thumb {
 	height: 300px;
+}
+
+// Hover styles for gallery and project thumbs
+.project-thumb, .gallery-item {
 	opacity: 1;
 	
 	&:hover {
@@ -190,7 +194,6 @@ POSTS & CONTENT STYLES
 		opacity: 1;
 	}
 }
-
 
 .line-clamp {
 	overflow: hidden;
@@ -205,7 +208,7 @@ SIDEBARS & ASIDES
 *********************/
 
 .sidebar {
-	margin-top: 2.2em;
+	
 }
 
 	.widgettitle {

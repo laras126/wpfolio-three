@@ -126,7 +126,7 @@ and more scalable.
 
 }
 
-.top-nav {
+.nav {
 	border: 1px solid #ccc;
 	border-bottom: 0;
 
@@ -244,6 +244,17 @@ POSTS & CONTENT STYLES
 	margin-top: rhythm(2, 18px);
 }
 
+		.article-header {
+			margin-bottom: rhythm(4, 18px);
+		}
+			.entry-title {
+				margin-bottom: rhythm(1, 22px);
+				a {
+					color: $primary;
+				}
+			}
+			
+
 		.hentry {
 
 			header {}
@@ -261,7 +272,10 @@ POSTS & CONTENT STYLES
 
 		/* want to style individual post classes? Booya! */
 		.post-id {}         /* post by id (i.e. post-3) */
-		.post {}            /* general post style */
+		.post {
+			padding: rhythm(4, 22px) 0;
+			border-top: $accent-light 1px solid;
+		}            /* general post style */
 		.page {}            /* general article on a page style */
 		.attachment {}      /* general style on an attatchment */
 		.sticky {}          /* sticky post style */
@@ -271,13 +285,14 @@ POSTS & CONTENT STYLES
 
 		/* post meta */
 		.byline {
-			color: #999;
+			font-style: italic;
 
 			time {}
 		}
 
-		.tags {
+		.tags, .byline {
 			@include adjust-font-size-to(14px); 
+			color: #999;
 		}
 
 		.tags-title {
@@ -403,6 +418,12 @@ POSTS & CONTENT STYLES
 		.size-medium {}
 		.size-thumbnail {}
 
+
+		.post-edit-link {
+			color: #a30e17;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
 
 // Project type styles
 
@@ -717,8 +738,8 @@ COMMENT FORM STYLES
 ******************************************************************/
 
 .respond-form {
-	//margin: 1.5em 10px;
-	padding-bottom: 2.2em;
+	margin-top: rhythm(4, 18px);
+	padding-bottom: rhythm(1, 18px);
 
 	form {
 		margin: 0.75em 0;
