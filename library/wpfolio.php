@@ -191,5 +191,26 @@ add_shortcode('margin', 'wide_margins_shortcode');
 // TODO: Use this, not doing this immediately though.
 
 
+/************* MISC FILTERS ********************/
+
+// Remove taxonomy title from wp_title
+// http://wordpress.stackexchange.com/questions/29020/how-to-remove-taxonomy-name-from-wp-title
+
+function wpf_remove_tax_name( $title, $sep, $seplocation ) {
+    if ( is_tax() ) {
+        $term_title = single_term_title( '', false );
+
+        // Determines position of separator
+        if ( 'right' == $seplocation ) {
+            $title = $term_title . " $sep ";
+        } else {
+            $title = " $sep " . $term_title;
+        }
+    }
+
+    return $title;
+}
+add_filter( 'wp_title', 'wpf_remove_tax_name', 10, 3 );
+
 
 ?>

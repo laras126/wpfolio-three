@@ -46,17 +46,7 @@
 
 							<?php else : ?>
 
-									<article id="post-not-found" class="hentry clearfix">
-										<header class="article-header">
-											<h1><?php _e("Sorry, No Results.", "bonestheme"); ?></h1>
-										</header>
-										<section class="entry-content">
-											<p><?php _e("Try your search again.", "bonestheme"); ?></p>
-										</section>
-										<footer class="article-footer">
-												<p><?php _e("This is the error message in the search.php template.", "bonestheme"); ?></p>
-										</footer>
-									</article>
+									<?php get_template_part('include/post', 'notfound'); ?>
 
 							<?php endif; ?>
 

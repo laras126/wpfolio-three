@@ -80,8 +80,17 @@ HEADER STYLES
 	padding-top: 2.2em;
 }
 
-	#site-title {
+	.site-title {
 		margin: 0 0 rhythm(1, 36px) 0;
+
+		a {
+			@include unstyled-link;
+		}
+	}
+
+	.site-description {
+		font-style: italic;
+		@include adjust-font-size-to(18px); 
 	}
 
 /*********************
@@ -232,7 +241,7 @@ POSTS & CONTENT STYLES
 *********************/
 
 #content {
-	margin-top: 2.2em;
+	margin-top: rhythm(2, 18px);
 }
 
 		.hentry {
@@ -267,9 +276,12 @@ POSTS & CONTENT STYLES
 			time {}
 		}
 
+		.tags {
+			@include adjust-font-size-to(14px); 
+		}
+
 		.tags-title {
 			text-transform: uppercase;
-			@include adjust-font-size-to(12px); 
 		}
 
 
@@ -404,6 +416,7 @@ POSTS & CONTENT STYLES
 
 .project-thumb img {
 	@extend .max-width !optional;
+	margin-bottom: rhythm(1, 16px);
 }
 
 .artwork-meta {

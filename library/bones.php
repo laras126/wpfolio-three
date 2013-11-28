@@ -195,7 +195,6 @@ function bones_theme_support() {
 	// adding post format support
 	add_theme_support( 'post-formats',
 		array(
-			'gallery',           // gallery of images
 			'image',             // an image
 			'video',             // video
 			'audio',             // audio

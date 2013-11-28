@@ -11,7 +11,7 @@
 		<!-- Google Chrome Frame for IE -->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-		<title><?php wp_title(''); ?></title>
+		<title><?php bloginfo('name'); ?><?php wp_title('|'); ?></title>
 
 		<!-- mobile meta (hooray!) -->
 		<meta name="HandheldFriendly" content="True">
@@ -48,13 +48,13 @@
 				<div id="inner-header" class="wrap clearfix">
 
 					<div id="site-name">
-						<h1 id="site-title"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></h1>
-						<p><?php bloginfo('description'); ?></p>
+						<h1 class="site-title"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></h1>
+						<p class="site-description"><?php bloginfo('description'); ?></p>
 					</div>
 					
 					<a href="#main-nav" class="menu-link">Menu</a>
 					
-					<nav id="main-nav" role="navigation" class="nav-collapse">	
+					<nav id="main-nav" role="navigation">	
 						<?php bones_main_nav(); ?>
 					</nav>
 					

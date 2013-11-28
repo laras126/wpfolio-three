@@ -167,9 +167,9 @@ textarea {
 
   /* line 79, ../scss/libs/_grid.scss */
   .project-thumb {
-    width: 30.76923%;
+    width: 22.85714%;
     float: left;
-    margin-right: 3.84615%;
+    margin-right: 2.85714%;
   }
   /* line 81, ../scss/libs/_grid.scss */
   .project-thumb:nth-child(3n) {
@@ -299,7 +299,7 @@ blockquote p {
 
 /* line 88, ../scss/libs/_typography.scss */
 a, a:visited {
-  color: #7eb8ee;
+  color: #aaaaaa;
   text-decoration: none;
   /* on hover */
   /* on click */
@@ -307,11 +307,11 @@ a, a:visited {
 }
 /* line 93, ../scss/libs/_typography.scss */
 a:hover, a:focus, a:visited:hover, a:visited:focus {
-  color: #5aa4e9;
+  color: #969696;
 }
 /* line 98, ../scss/libs/_typography.scss */
 a:active, a:visited:active {
-  color: #489ae7;
+  color: #8b8b8b;
 }
 /* line 103, ../scss/libs/_typography.scss */
 a:link, a:visited:link {
@@ -381,9 +381,9 @@ BUTTONS
 button, .commentlist .comment-reply-link, #submit, .button:visited, input[type="submit"]:visited,
 button:visited, .commentlist .comment-reply-link:visited, #submit:visited {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  border: 1px solid #4398e6;
-  border-top-color: #5ea7ea;
-  border-left-color: #5ea7ea;
+  border: 1px solid #898989;
+  border-top-color: #989898;
+  border-left-color: #989898;
   padding: 4px 12px;
   color: white;
   display: inline-block;
@@ -395,7 +395,7 @@ button:visited, .commentlist .comment-reply-link:visited, #submit:visited {
   margin-bottom: 20px;
   line-height: 21px;
   border-radius: 4px;
-  background: linear-gradient(#7eb8ee, #67aceb);
+  background: linear-gradient(#aaaaaa, #9d9d9d);
 }
 /* line 61, ../scss/libs/_extends.scss */
 .button:hover, input[type="submit"]:hover,
@@ -404,16 +404,16 @@ button:focus, .commentlist .comment-reply-link:focus, #submit:focus, .button:vis
 button:visited:hover, .commentlist .comment-reply-link:visited:hover, #submit:visited:hover, .button:visited:focus, input[type="submit"]:visited:focus,
 button:visited:focus, .commentlist .comment-reply-link:visited:focus, #submit:visited:focus {
   color: white;
-  border: 1px solid #4398e6;
-  border-top-color: #2486e2;
-  border-left-color: #2486e2;
-  background: linear-gradient(#67aceb, #519fe8);
+  border: 1px solid #898989;
+  border-top-color: #777777;
+  border-left-color: #777777;
+  background: linear-gradient(#9d9d9d, #909090);
 }
 /* line 69, ../scss/libs/_extends.scss */
 .button:active, input[type="submit"]:active,
 button:active, .commentlist .comment-reply-link:active, #submit:active, .button:visited:active, input[type="submit"]:visited:active,
 button:visited:active, .commentlist .comment-reply-link:visited:active, #submit:visited:active {
-  background: linear-gradient(#67aceb, #7eb8ee);
+  background: linear-gradient(#9d9d9d, #aaaaaa);
 }
 
 /* line 74, ../scss/libs/_extends.scss */
@@ -497,7 +497,7 @@ input[type="email"]:focus,
 input[type="url"]:focus,
 input[type="search"]:focus,
 input[type="tel"]:focus {
-  border-color: #7eb8ee;
+  border-color: #aaaaaa;
   outline: none;
 }
 
@@ -597,9 +597,9 @@ BUTTONS
 button, .commentlist .comment-reply-link, #submit, .button:visited, input[type="submit"]:visited,
 button:visited, .commentlist .comment-reply-link:visited, #submit:visited {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  border: 1px solid #4398e6;
-  border-top-color: #5ea7ea;
-  border-left-color: #5ea7ea;
+  border: 1px solid #898989;
+  border-top-color: #989898;
+  border-left-color: #989898;
   padding: 4px 12px;
   color: white;
   display: inline-block;
@@ -611,7 +611,7 @@ button:visited, .commentlist .comment-reply-link:visited, #submit:visited {
   margin-bottom: 20px;
   line-height: 21px;
   border-radius: 4px;
-  background: linear-gradient(#7eb8ee, #67aceb);
+  background: linear-gradient(#aaaaaa, #9d9d9d);
 }
 /* line 61, ../scss/libs/_extends.scss */
 .button:hover, input[type="submit"]:hover,
@@ -620,16 +620,16 @@ button:focus, .commentlist .comment-reply-link:focus, #submit:focus, .button:vis
 button:visited:hover, .commentlist .comment-reply-link:visited:hover, #submit:visited:hover, .button:visited:focus, input[type="submit"]:visited:focus,
 button:visited:focus, .commentlist .comment-reply-link:visited:focus, #submit:visited:focus {
   color: white;
-  border: 1px solid #4398e6;
-  border-top-color: #2486e2;
-  border-left-color: #2486e2;
-  background: linear-gradient(#67aceb, #519fe8);
+  border: 1px solid #898989;
+  border-top-color: #777777;
+  border-left-color: #777777;
+  background: linear-gradient(#9d9d9d, #909090);
 }
 /* line 69, ../scss/libs/_extends.scss */
 .button:active, input[type="submit"]:active,
 button:active, .commentlist .comment-reply-link:active, #submit:active, .button:visited:active, input[type="submit"]:visited:active,
 button:visited:active, .commentlist .comment-reply-link:visited:active, #submit:visited:active {
-  background: linear-gradient(#67aceb, #7eb8ee);
+  background: linear-gradient(#9d9d9d, #aaaaaa);
 }
 
 /* line 74, ../scss/libs/_extends.scss */
@@ -693,8 +693,25 @@ HEADER STYLES
 }
 
 /* line 83, ../scss/_base.scss */
-#site-title {
+.site-title {
   margin: 0 0 0.22222em 0;
+}
+/* line 86, ../scss/_base.scss */
+.site-title a {
+  color: inherit;
+  text-decoration: inherit;
+  cursor: inherit;
+}
+/* line 6, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_unstyled-link.scss */
+.site-title a:active, .site-title a:focus {
+  outline: none;
+}
+
+/* line 91, ../scss/_base.scss */
+.site-description {
+  font-style: italic;
+  font-size: 1.125em;
+  line-height: 1.33333em;
 }
 
 /*********************
@@ -707,20 +724,20 @@ easily write one group of styles for
 the navs on the site so our css is cleaner
 and more scalable.
 */
-/* line 100, ../scss/_base.scss */
+/* line 109, ../scss/_base.scss */
 .nav li a {
   padding-left: 10px;
   padding-right: 10px;
   display: block;
   text-decoration: none;
 }
-/* line 112, ../scss/_base.scss */
+/* line 121, ../scss/_base.scss */
 .nav ul.sub-menu li a,
 .nav ul.children li a {
   padding-left: 30px;
 }
 
-/* line 120, ../scss/_base.scss */
+/* line 129, ../scss/_base.scss */
 .top-nav {
   border: 1px solid #ccc;
   border-bottom: 0;
@@ -728,7 +745,7 @@ and more scalable.
   /* highlight current page */
   /* end current highlighters */
 }
-/* line 124, ../scss/_base.scss */
+/* line 133, ../scss/_base.scss */
 .top-nav li {
   /*
   so you really have to rethink your dropdowns for mobile.
@@ -738,7 +755,7 @@ and more scalable.
   http://www.alistapart.com/articles/organizing-mobile/
   */
 }
-/* line 126, ../scss/_base.scss */
+/* line 135, ../scss/_base.scss */
 .top-nav li a {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
@@ -750,7 +767,7 @@ and more scalable.
   keep this file as small as possible!
   */
 }
-/* line 183, ../scss/_base.scss */
+/* line 192, ../scss/_base.scss */
 .top-nav li.current-menu-item a,
 .top-nav li.current_page_item a,
 .top-nav li.current-page-ancestor a {
@@ -758,14 +775,14 @@ and more scalable.
 }
 
 /* end .nav */
-/* line 194, ../scss/_base.scss */
+/* line 203, ../scss/_base.scss */
 a.menu-link {
   float: right;
   display: block;
   padding: 1em;
 }
 
-/* line 200, ../scss/_base.scss */
+/* line 209, ../scss/_base.scss */
 nav[role=navigation] {
   clear: both;
   -webkit-transition: all 0.3s ease-out;
@@ -775,25 +792,25 @@ nav[role=navigation] {
   transition: all 0.3s ease-out;
 }
 
-/* line 209, ../scss/_base.scss */
+/* line 218, ../scss/_base.scss */
 .js nav[role=navigation] {
   overflow: hidden;
   max-height: 0;
 }
 
-/* line 214, ../scss/_base.scss */
+/* line 223, ../scss/_base.scss */
 nav[role=navigation].active {
   max-height: 15em;
 }
 
-/* line 218, ../scss/_base.scss */
+/* line 227, ../scss/_base.scss */
 nav[role=navigation] ul {
   margin: 0;
   padding: 0;
   border-top: 1px solid #808080;
 }
 
-/* line 224, ../scss/_base.scss */
+/* line 233, ../scss/_base.scss */
 nav[role=navigation] li a {
   display: block;
   border-bottom: 1px solid #808080;
@@ -802,13 +819,13 @@ nav[role=navigation] li a {
 /*********************
 POSTS & CONTENT STYLES
 *********************/
-/* line 234, ../scss/_base.scss */
+/* line 243, ../scss/_base.scss */
 #content {
-  margin-top: 2.2em;
+  margin-top: 0.88889em;
 }
 
 /* end .hentry */
-/* line 247, ../scss/_base.scss */
+/* line 256, ../scss/_base.scss */
 .page-title, .project-title, .project-thumb-title, .medium-title {
   text-align: center;
 }
@@ -823,20 +840,24 @@ POSTS & CONTENT STYLES
 /* style by category (i.e. category-videos) */
 /* style by tag (i.e. tag-news) */
 /* post meta */
-/* line 264, ../scss/_base.scss */
+/* line 273, ../scss/_base.scss */
 .byline {
   color: #999;
 }
 
-/* line 270, ../scss/_base.scss */
+/* line 279, ../scss/_base.scss */
+.tags {
+  font-size: 0.875em;
+  line-height: 1.71429em;
+}
+
+/* line 283, ../scss/_base.scss */
 .tags-title {
   text-transform: uppercase;
-  font-size: 0.75em;
-  line-height: 1.33333em;
 }
 
 /* entry content */
-/* line 277, ../scss/_base.scss */
+/* line 289, ../scss/_base.scss */
 .entry-content {
   /*
   image alignment on a screen this size may be
@@ -845,19 +866,19 @@ POSTS & CONTENT STYLES
   but it's up to you. Feel free to change it up.
   */
 }
-/* line 312, ../scss/_base.scss */
+/* line 324, ../scss/_base.scss */
 .entry-content dd {
   margin-left: 0;
   font-size: 0.9em;
   color: #787878;
   margin-bottom: 1.5em;
 }
-/* line 333, ../scss/_base.scss */
+/* line 345, ../scss/_base.scss */
 .entry-content video, .entry-content object {
   max-width: 100%;
   height: auto;
 }
-/* line 338, ../scss/_base.scss */
+/* line 350, ../scss/_base.scss */
 .entry-content pre {
   background: #eee;
   border: 1px solid #cecece;
@@ -865,20 +886,20 @@ POSTS & CONTENT STYLES
 }
 
 /* end .entry-content */
-/* line 346, ../scss/_base.scss */
+/* line 358, ../scss/_base.scss */
 .wp-caption {
   max-width: 100%;
   background: #eee;
   padding: 5px;
   /* images inside wp-caption */
 }
-/* line 352, ../scss/_base.scss */
+/* line 364, ../scss/_base.scss */
 .wp-caption img {
   max-width: 100%;
   margin-bottom: 0;
   width: 100%;
 }
-/* line 358, ../scss/_base.scss */
+/* line 370, ../scss/_base.scss */
 .wp-caption p.wp-caption-text {
   font-size: 0.85em;
   margin: 4px 0 7px;
@@ -887,14 +908,14 @@ POSTS & CONTENT STYLES
 
 /* end .wp-caption */
 /* image gallery styles */
-/* line 367, ../scss/_base.scss */
+/* line 379, ../scss/_base.scss */
 .gallery {
   margin: 16px 0;
 }
 
 /* end .gallery */
 /* gallery caption styles */
-/* line 397, ../scss/_base.scss */
+/* line 409, ../scss/_base.scss */
 .project-title {
   font-size: 1.125em;
   line-height: 1.33333em;
@@ -904,12 +925,17 @@ POSTS & CONTENT STYLES
   margin-bottom: 1.77778em;
 }
 
-/* line 409, ../scss/_base.scss */
+/* line 417, ../scss/_base.scss */
+.project-thumb img {
+  margin-bottom: 0.5em;
+}
+
+/* line 422, ../scss/_base.scss */
 .artwork-meta {
   list-style-type: none;
 }
 
-/* line 415, ../scss/_base.scss */
+/* line 428, ../scss/_base.scss */
 .single-project.single-format-video iframe {
   width: 100%;
   height: 400px;
@@ -918,13 +944,13 @@ POSTS & CONTENT STYLES
 /******************************************************************
 PAGE NAVI STYLES
 ******************************************************************/
-/* line 427, ../scss/_base.scss */
+/* line 440, ../scss/_base.scss */
 .page-navigation,
 .wp-prev-next {
   margin: 1.1em 0 2.2em;
 }
 
-/* line 430, ../scss/_base.scss */
+/* line 443, ../scss/_base.scss */
 .bones_page_navi {
   list-style-type: none;
   /* current page link */
@@ -936,44 +962,44 @@ PAGE NAVI STYLES
   /* first page link */
   /* last page link */
 }
-/* line 432, ../scss/_base.scss */
+/* line 445, ../scss/_base.scss */
 .bones_page_navi li {
   float: left;
   margin-left: 10px;
 }
-/* line 436, ../scss/_base.scss */
+/* line 449, ../scss/_base.scss */
 .bones_page_navi li a {
   padding: 3px 6px;
   display: block;
   text-decoration: none;
   position: relative;
 }
-/* line 443, ../scss/_base.scss */
+/* line 456, ../scss/_base.scss */
 .bones_page_navi li a:hover, .bones_page_navi li a:focus {
   color: #f01d4f;
   text-decoration: underline;
 }
-/* line 452, ../scss/_base.scss */
+/* line 465, ../scss/_base.scss */
 .bones_page_navi li.bpn-current {
   padding: 3px 6px;
   border-bottom: 2px solid #f01d4f;
   position: relative;
 }
-/* line 457, ../scss/_base.scss */
+/* line 470, ../scss/_base.scss */
 .bones_page_navi li.bpn-current a {
   /* hovering on current page link */
 }
-/* line 468, ../scss/_base.scss */
+/* line 481, ../scss/_base.scss */
 .bones_page_navi li.bpn-prev-link,
 .bones_page_navi li.bpn-next-link {
   font-weight: 700;
 }
-/* line 471, ../scss/_base.scss */
+/* line 484, ../scss/_base.scss */
 .bones_page_navi li.bpn-prev-link a,
 .bones_page_navi li.bpn-next-link a {
   padding: 0;
 }
-/* line 480, ../scss/_base.scss */
+/* line 493, ../scss/_base.scss */
 .bones_page_navi li.bpn-prev-link a:hover,
 .bones_page_navi li.bpn-next-link a:hover,
 .bones_page_navi li.bpn-first-page-link a:hover,
@@ -983,11 +1009,11 @@ PAGE NAVI STYLES
 
 /* end .bones_page_navi */
 /* fallback previous & next links */
-/* line 523, ../scss/_base.scss */
+/* line 536, ../scss/_base.scss */
 .wp-prev-next .prev-link {
   float: left;
 }
-/* line 527, ../scss/_base.scss */
+/* line 540, ../scss/_base.scss */
 .wp-prev-next .next-link {
   float: right;
 }
@@ -997,12 +1023,12 @@ PAGE NAVI STYLES
 COMMENT STYLES
 ******************************************************************/
 /* h3 comment title */
-/* line 538, ../scss/_base.scss */
+/* line 551, ../scss/_base.scss */
 #comments {
   /* number of comments span */
 }
 
-/* line 555, ../scss/_base.scss */
+/* line 568, ../scss/_base.scss */
 .commentlist {
   /* general comment classes */
   /* vcard */
@@ -1013,7 +1039,7 @@ COMMENT STYLES
   /* comment reply link */
   /* end .commentlist .comment-reply-link */
 }
-/* line 557, ../scss/_base.scss */
+/* line 570, ../scss/_base.scss */
 .commentlist li {
   position: relative;
   clear: both;
@@ -1023,63 +1049,63 @@ COMMENT STYLES
   padding: 0.7335em 10px;
   /* end .commentlist li ul.children */
 }
-/* line 565, ../scss/_base.scss */
+/* line 578, ../scss/_base.scss */
 .commentlist li:last-child {
   margin-bottom: 0;
 }
-/* line 569, ../scss/_base.scss */
+/* line 582, ../scss/_base.scss */
 .commentlist li ul.children {
   margin: 0;
   /* variations */
   /* change number for different depth */
 }
-/* line 587, ../scss/_base.scss */
+/* line 600, ../scss/_base.scss */
 .commentlist li[class*=depth-] {
   margin-top: 1.1em;
 }
-/* line 591, ../scss/_base.scss */
+/* line 604, ../scss/_base.scss */
 .commentlist li.depth-1 {
   margin-left: 0;
   margin-top: 0;
 }
-/* line 596, ../scss/_base.scss */
+/* line 609, ../scss/_base.scss */
 .commentlist li:not(.depth-1) {
   margin-right: -10px;
   margin-left: -10px;
   margin-top: 0;
   padding-bottom: 0;
 }
-/* line 610, ../scss/_base.scss */
+/* line 623, ../scss/_base.scss */
 .commentlist .odd {
   background: #eee;
 }
-/* line 613, ../scss/_base.scss */
+/* line 626, ../scss/_base.scss */
 .commentlist .even {
   background: #fefefe;
 }
-/* line 628, ../scss/_base.scss */
+/* line 641, ../scss/_base.scss */
 .commentlist .vcard {
   margin-left: 50px;
 }
-/* line 631, ../scss/_base.scss */
+/* line 644, ../scss/_base.scss */
 .commentlist .vcard cite.fn {
   font-weight: 700;
   font-style: normal;
 }
-/* line 639, ../scss/_base.scss */
+/* line 652, ../scss/_base.scss */
 .commentlist .vcard time {
   float: right;
 }
-/* line 642, ../scss/_base.scss */
+/* line 655, ../scss/_base.scss */
 .commentlist .vcard time a {
   color: #999;
   text-decoration: none;
 }
-/* line 646, ../scss/_base.scss */
+/* line 659, ../scss/_base.scss */
 .commentlist .vcard time a:hover {
   text-decoration: underline;
 }
-/* line 656, ../scss/_base.scss */
+/* line 669, ../scss/_base.scss */
 .commentlist .vcard img.avatar {
   position: absolute;
   left: 10px;
@@ -1087,17 +1113,17 @@ COMMENT STYLES
   border: 1px solid #cecece;
   background: #fff;
 }
-/* line 681, ../scss/_base.scss */
+/* line 694, ../scss/_base.scss */
 .commentlist .comment_content {
   margin-left: 50px;
 }
-/* line 684, ../scss/_base.scss */
+/* line 697, ../scss/_base.scss */
 .commentlist .comment_content p {
   margin: 0.7335em 0 1.5em;
   font-size: 1em;
   line-height: 1.5em;
 }
-/* line 693, ../scss/_base.scss */
+/* line 706, ../scss/_base.scss */
 .commentlist .comment-reply-link {
   text-decoration: none;
   float: right;
@@ -1107,26 +1133,26 @@ COMMENT STYLES
 /******************************************************************
 COMMENT FORM STYLES
 ******************************************************************/
-/* line 706, ../scss/_base.scss */
+/* line 719, ../scss/_base.scss */
 .respond-form {
   padding-bottom: 2.2em;
 }
-/* line 710, ../scss/_base.scss */
+/* line 723, ../scss/_base.scss */
 .respond-form form {
   margin: 0.75em 0;
 }
-/* line 713, ../scss/_base.scss */
+/* line 726, ../scss/_base.scss */
 .respond-form form li {
   list-style-type: none;
   clear: both;
   margin-bottom: 0.7335em;
 }
-/* line 719, ../scss/_base.scss */
+/* line 732, ../scss/_base.scss */
 .respond-form form li label,
 .respond-form form li small {
   display: none;
 }
-/* line 727, ../scss/_base.scss */
+/* line 740, ../scss/_base.scss */
 .respond-form form input[type=text],
 .respond-form form input[type=email],
 .respond-form form input[type=url],
@@ -1137,14 +1163,14 @@ COMMENT FORM STYLES
   line-height: 1.5em;
   /* form validation */
 }
-/* line 733, ../scss/_base.scss */
+/* line 746, ../scss/_base.scss */
 .respond-form form input[type=text]:focus,
 .respond-form form input[type=email]:focus,
 .respond-form form input[type=url]:focus,
 .respond-form form textarea:focus {
   background: #fff;
 }
-/* line 738, ../scss/_base.scss */
+/* line 751, ../scss/_base.scss */
 .respond-form form input[type=text]:invalid,
 .respond-form form input[type=email]:invalid,
 .respond-form form input[type=url]:invalid,
@@ -1157,14 +1183,14 @@ COMMENT FORM STYLES
   -ms-box-shadow: none;
   box-shadow: none;
 }
-/* line 751, ../scss/_base.scss */
+/* line 764, ../scss/_base.scss */
 .respond-form form input[type=text],
 .respond-form form input[type=email],
 .respond-form form input[type=url] {
   max-width: 400px;
   min-width: 250px;
 }
-/* line 756, ../scss/_base.scss */
+/* line 769, ../scss/_base.scss */
 .respond-form form textarea {
   resize: none;
   width: 97.3%;
@@ -1173,7 +1199,7 @@ COMMENT FORM STYLES
 
 /* comment submit button */
 /* comment form title */
-/* line 771, ../scss/_base.scss */
+/* line 784, ../scss/_base.scss */
 #comment-form-title {
   margin: 0 0 1.1em;
 }
@@ -1181,13 +1207,13 @@ COMMENT FORM STYLES
 /* cancel comment reply link */
 /* logged in comments */
 /* allowed tags */
-/* line 784, ../scss/_base.scss */
+/* line 797, ../scss/_base.scss */
 #allowed_tags {
   margin: 1.5em 10px 0.7335em 0;
 }
 
 /* no comments */
-/* line 789, ../scss/_base.scss */
+/* line 802, ../scss/_base.scss */
 .nocomments {
   margin: 0 20px 1.1em;
 }
@@ -1195,7 +1221,7 @@ COMMENT FORM STYLES
 /*********************
 SIDEBARS & ASIDES
 *********************/
-/* line 805, ../scss/_base.scss */
+/* line 818, ../scss/_base.scss */
 .widget ul li {
   /* deep nesting */
 }
@@ -1203,13 +1229,13 @@ SIDEBARS & ASIDES
 /*********************
 FOOTER STYLES
 *********************/
-/* line 826, ../scss/_base.scss */
+/* line 839, ../scss/_base.scss */
 .footer {
   clear: both;
   font-size: 0.875em;
   line-height: 1.71429em;
 }
-/* line 830, ../scss/_base.scss */
+/* line 843, ../scss/_base.scss */
 .footer .wrap {
   border-top: 1px solid #eeeeee;
 }
@@ -1223,7 +1249,7 @@ it simple because you'll have to
 override these styles for the desktop
 view.
 */
-/* line 844, ../scss/_base.scss */
+/* line 857, ../scss/_base.scss */
 .footer-nav {
   list-style-type: none;
 }
@@ -1354,6 +1380,11 @@ the resource intensive styles are added, like the grid.
   LAYOUT & GRID STYLES
   *********************/
   /* line 26, ../scss/_768up.scss */
+  .wrap {
+    max-width: 960px;
+  }
+
+  /* line 31, ../scss/_768up.scss */
   .widemargins {
     margin: 0 96px;
   }
@@ -1361,112 +1392,110 @@ the resource intensive styles are added, like the grid.
   /*********************
   HEADER STYLES
   *********************/
-  /* line 37, ../scss/_768up.scss */
-  #site-title {
+  /* line 42, ../scss/_768up.scss */
+  .site-title {
     text-align: left;
   }
 
   /*********************
   NAVIGATION STYLES
   *********************/
-  /* line 49, ../scss/_768up.scss */
+  /* line 54, ../scss/_768up.scss */
   a.menu-link {
     display: none;
   }
 
-  /* line 53, ../scss/_768up.scss */
+  /* line 58, ../scss/_768up.scss */
   .js nav[role=navigation] {
     max-height: none;
   }
 
-  /* line 57, ../scss/_768up.scss */
+  /* line 62, ../scss/_768up.scss */
   nav[role=navigation] {
     clear: none;
   }
-  /* line 60, ../scss/_768up.scss */
+  /* line 65, ../scss/_768up.scss */
   nav[role=navigation] ul {
     margin: 0 0 0 -0.25em;
     border: 0;
   }
-  /* line 64, ../scss/_768up.scss */
+  /* line 69, ../scss/_768up.scss */
   nav[role=navigation] li {
     display: inline-block;
-    margin: 0 0.25em;
   }
-  /* line 68, ../scss/_768up.scss */
+  /* line 72, ../scss/_768up.scss */
   nav[role=navigation] li a {
     border: 0;
   }
 
-  /* line 77, ../scss/_768up.scss */
+  /* line 81, ../scss/_768up.scss */
   .nav li {
     float: left;
     position: relative;
   }
 
-  /* line 83, ../scss/_768up.scss */
-  .top-nav {
+  /* line 87, ../scss/_768up.scss */
+  .nav {
     border: 0;
     /* end .menu ul li */
     /* highlight current page */
     /* end current highlighters */
   }
-  /* line 86, ../scss/_768up.scss */
-  .top-nav li {
+  /* line 90, ../scss/_768up.scss */
+  .nav li {
     /*
     plan your menus and drop-downs wisely.
     */
     /* showing sub-menus */
   }
-  /* line 88, ../scss/_768up.scss */
-  .top-nav li a {
+  /* line 92, ../scss/_768up.scss */
+  .nav li a {
     border-bottom: 0;
-    padding: 0.44444em;
+    padding: 0.44444em 0.88889em;
     /*
     you can use hover styles here even though this size
     has the possibility of being a mobile device.
     */
   }
-  /* line 95, ../scss/_768up.scss */
-  .top-nav li a:hover, .top-nav li a:focus {
+  /* line 99, ../scss/_768up.scss */
+  .nav li a:hover, .nav li a:focus {
     background-color: #eeeeee;
   }
-  /* line 108, ../scss/_768up.scss */
-  .top-nav li ul.sub-menu,
-  .top-nav li ul.children {
+  /* line 112, ../scss/_768up.scss */
+  .nav li ul.sub-menu,
+  .nav li ul.children {
     margin-top: 0;
     border: 1px solid #ccc;
     border-top: 0;
     position: absolute;
-    display: none;
     z-index: 8999;
     /* highlight sub-menu current page */
   }
-  /* line 116, ../scss/_768up.scss */
-  .top-nav li ul.sub-menu li,
-  .top-nav li ul.children li {
+  /* line 119, ../scss/_768up.scss */
+  .nav li ul.sub-menu li,
+  .nav li ul.children li {
     /*
     if you need to go deeper, go nuts
     just remember deeper menus suck
     for usability. k, bai.
     */
   }
-  /* line 118, ../scss/_768up.scss */
-  .top-nav li ul.sub-menu li a,
-  .top-nav li ul.children li a {
+  /* line 121, ../scss/_768up.scss */
+  .nav li ul.sub-menu li a,
+  .nav li ul.children li a {
     padding-left: 10px;
     border-right: 0;
     display: block;
     width: 180px;
     border-bottom: 1px solid #ccc;
   }
-  /* line 135, ../scss/_768up.scss */
-  .top-nav li ul.sub-menu li:last-child a,
-  .top-nav li ul.children li:last-child a {
+  /* line 138, ../scss/_768up.scss */
+  .nav li ul.sub-menu li:last-child a,
+  .nav li ul.children li:last-child a {
     border-bottom: 0;
   }
-  /* line 157, ../scss/_768up.scss */
-  .top-nav li:hover ul {
+  /* line 160, ../scss/_768up.scss */
+  .nav li:hover ul {
     top: auto;
     display: block;
   }
@@ -1475,59 +1504,57 @@ the resource intensive styles are added, like the grid.
   /*********************
   POSTS & CONTENT STYLES
   *********************/
-  /* line 178, ../scss/_768up.scss */
-  .project-thumb img {
-    -webkit-transition: opacity 0.2s ease-in;
-    -moz-transition: opacity 0.2s ease-in;
-    -o-transition: opacity 0.2s ease-in;
-    transition: opacity 0.2s ease-in;
-  }
-  /* line 180, ../scss/_768up.scss */
-  .project-thumb img:hover {
-    opacity: 0.6;
-    -webkit-transition: opacity 0.2s ease-in;
-    -moz-transition: opacity 0.2s ease-in;
-    -o-transition: opacity 0.2s ease-in;
-    transition: opacity 0.2s ease-in;
-  }
-  /* line 184, ../scss/_768up.scss */
-  .project-thumb img:active {
+  /* line 181, ../scss/_768up.scss */
+  .project-thumb {
+    height: 300px;
     opacity: 1;
-    -webkit-transition: opacity 0.2s ease-in;
-    -moz-transition: opacity 0.2s ease-in;
-    -o-transition: opacity 0.2s ease-in;
-    transition: opacity 0.2s ease-in;
+  }
+  /* line 185, ../scss/_768up.scss */
+  .project-thumb:hover {
+    opacity: 0.6;
+  }
+  /* line 189, ../scss/_768up.scss */
+  .project-thumb:active {
+    opacity: 1;
+  }
+
+  /* line 195, ../scss/_768up.scss */
+  .line-clamp {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
 
   /*********************
   SIDEBARS & ASIDES
   *********************/
-  /* line 194, ../scss/_768up.scss */
+  /* line 207, ../scss/_768up.scss */
   .sidebar {
     margin-top: 2.2em;
   }
 
-  /* line 198, ../scss/_768up.scss */
+  /* line 211, ../scss/_768up.scss */
   .widgettitle {
     text-align: left;
   }
 
-  /* line 202, ../scss/_768up.scss */
+  /* line 215, ../scss/_768up.scss */
   .widget {
     padding: 0 12px;
     margin: 32px 0;
     border-left: #eeeeee 1px solid;
   }
-  /* line 207, ../scss/_768up.scss */
+  /* line 220, ../scss/_768up.scss */
   .widget ul {
     list-style-type: none;
   }
-  /* line 210, ../scss/_768up.scss */
+  /* line 223, ../scss/_768up.scss */
   .widget ul li {
     margin-bottom: 0.75em;
     /* deep nesting */
   }
-  /* line 218, ../scss/_768up.scss */
+  /* line 231, ../scss/_768up.scss */
   .widget ul li ul {
     margin-top: 0.75em;
     padding-left: 1em;
@@ -1552,7 +1579,7 @@ the resource intensive styles are added, like the grid.
   of overriding here if you styled them for
   mobile. Make sure to double check these!
   */
-  /* line 327, ../scss/_768up.scss */
+  /* line 340, ../scss/_768up.scss */
   .footer-nav li {
     /*
     be careful with the depth of your menus.
@@ -1560,13 +1587,13 @@ the resource intensive styles are added, like the grid.
     the footer.
     */
   }
-  /* line 328, ../scss/_768up.scss */
+  /* line 341, ../scss/_768up.scss */
   .footer-nav li a {
     padding-top: 0;
   }
 
   /* end .footer-nav */
-  /* line 342, ../scss/_768up.scss */
+  /* line 355, ../scss/_768up.scss */
   .copyright {
     text-align: right;
   }
@@ -1587,10 +1614,6 @@ in general anyone not viewing on a mobile device.
   be seen on the Desktop. 
   
   ******************************************************************/
-  /* line 12, ../scss/_1030up.scss */
-  .wrap {
-    max-width: 960px;
-  }
 }
 /*
 LARGE VIEWING SIZE

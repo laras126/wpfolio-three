@@ -22,10 +22,17 @@ Template for the medium taxonomy.
 					<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
 						<?php if ( has_post_thumbnail() ) {
 							the_post_thumbnail();
-						} else { ?>
-							<img src="<?php bloginfo('template_directory'); ?>/library/images/default-thumb.png" alt="<?php the_title(); ?>"/>
+						} else { 
+							// Use thumbnails based on post format
+							if ( has_post_format( 'video' )) { ?>
+								<img src="<?php bloginfo('template_directory'); ?>/library/images/default-thumb-video.png" alt="<?php the_title(); ?>"/>
+							<?php } else if ( has_post_format( 'audio' )) { ?>
+								<img src="<?php bloginfo('template_directory'); ?>/library/images/default-thumb-audio.png" alt="<?php the_title(); ?>"/>
+							<?php } else { ?>
+								<img src="<?php bloginfo('template_directory'); ?>/library/images/default-thumb-image.png" alt="<?php the_title(); ?>"/>
+							<?php } ?>
 						<?php } ?>
-						<h3 class="project-thumb-title"><?php the_title(); ?></h3>
+						<h4 class="project-thumb-title line-clamp"><?php the_title(); ?></h4>
 					</a>
 				</article>
 
@@ -44,17 +51,7 @@ Template for the medium taxonomy.
 
 				<?php else : ?>
 
-						<article id="post-not-found" class="hentry clearfix">
-							<header class="article-header">
-								<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
-							</header>
-							<section class="entry-content">
-								<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
-							</section>
-							<footer class="article-footer">
-									<p><?php _e( 'This is the error message in the taxonomy-medium.php template.', 'bonestheme' ); ?></p>
-							</footer>
-						</article>
+						<?php get_template_part('include/post', 'notfound'); ?>
 
 				<?php endif; ?>
 

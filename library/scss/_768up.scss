@@ -22,6 +22,11 @@ body {}
 LAYOUT & GRID STYLES
 *********************/
 
+
+.wrap {
+	max-width: 960px;
+}
+
 // Wide margins shortcode
 .widemargins {
 	margin: 0 $base-font-size*6;
@@ -34,7 +39,7 @@ HEADER STYLES
 .header {
 	
 }
-	#site-title {
+	.site-title {
 		text-align: left;
 	}
 
@@ -63,7 +68,6 @@ nav[role=navigation] {
 	}
 		li {
 			display: inline-block;
-			margin: 0 0.25em;
 
 			a {
 				border: 0;
@@ -80,14 +84,14 @@ nav[role=navigation] {
 	}
 }
 
-.top-nav {
+.nav {
 	border: 0;
 
 	li {
 
 		a {
 			border-bottom: 0;
-			padding: rhythm(1, 18px);
+			padding: rhythm(1, 18px) rhythm(2, 18px);
 			/*
 			you can use hover styles here even though this size
 			has the possibility of being a mobile device.
@@ -110,7 +114,6 @@ nav[role=navigation] {
 			border: 1px solid #ccc;
 			border-top: 0;
 			position: absolute;
-			display: none;
 			z-index: 8999;
 
 			li {
@@ -175,17 +178,27 @@ POSTS & CONTENT STYLES
 *********************/
 
 // Project type styles
-.project-thumb img {
-	@include transition(opacity 0.2s ease-in);
+.project-thumb {
+	height: 300px;
+	opacity: 1;
+	
 	&:hover {
 		opacity: 0.6;
-		@include transition(opacity 0.2s ease-in);
 	}
+
 	&:active {
 		opacity: 1;
-		@include transition(opacity 0.2s ease-in);
 	}
 }
+
+
+.line-clamp {
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;  
+}
+
 
 /*********************
 SIDEBARS & ASIDES

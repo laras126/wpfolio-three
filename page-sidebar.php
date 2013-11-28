@@ -37,21 +37,11 @@ Template Name: Sidebar
 
 					</article> <!-- end article -->
 
-					<?php endwhile; else : ?>
+					<?php endwhile; else :
 
-							<article id="post-not-found" class="hentry clearfix">
-								<header class="article-header">
-									<h1><?php _e("Oops, Post Not Found!", "bonestheme"); ?></h1>
-								</header>
-								<section class="entry-content">
-									<p><?php _e("Uh Oh. Something is missing. Try double checking things.", "bonestheme"); ?></p>
-								</section>
-								<footer class="article-footer">
-										<p><?php _e("This is the error message in the page.php template.", "bonestheme"); ?></p>
-								</footer>
-							</article>
+							get_template_part('include/post', 'notfound');
 
-					<?php endif; ?>
+					endif; ?>
 
 				</div> <!-- end #main -->
 
