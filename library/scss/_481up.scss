@@ -95,9 +95,17 @@ POSTS & CONTENT STYLES
 			
 } /* end .entry-content */
 
-.gallery dl {
-	float: left;
-	// make this threecols
+
+// Project styles
+
+// Video format
+.single-project {
+	&.single-format-video {
+		iframe {
+			width: 100%;
+			height: 300px;
+		}
+	}
 }
 
 /*********************

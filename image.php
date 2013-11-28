@@ -95,7 +95,7 @@ Should it be differentiated more?
 									<?php edit_post_link( __( 'Edit', 'portfoliopress' ), ' | <span class="edit-link">', '</span>' ); ?>
 								</p>
 
-								<nav class="prev-next">
+								<nav class="prev-next widemargins">
 									<span class="prev"><?php previous_image_link( false, __( '&larr; Previous' , 'portfoliopress' ) ); ?></span>
 									<span class="next"><?php next_image_link( false, __( 'Next &rarr;' , 'portfoliopress' ) ); ?></span>
 								</nav><!-- .prev-next -->

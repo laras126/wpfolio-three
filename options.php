@@ -96,6 +96,38 @@ function optionsframework_options() {
 
 
 	//
+	// Title Font
+	//
+
+	$title_font_options = array(
+		'sizes' => false,
+		'faces' => $typography_mixed_fonts,
+		'styles' => false,
+		'color' => false,
+	);
+
+	$title_font_defaults = array(
+		'face' => 'Oswald',
+	);
+	
+
+	//
+	// Heading Typography
+	//
+
+	$heading_font_options = array(
+		'sizes' => false,
+		'faces' => $typography_mixed_fonts,
+		'styles' => false,
+		'color' => false,
+	);
+
+	$heading_font_defaults = array(
+		'face' => 'Oswald',
+	);
+
+
+	//
 	// Body Typography
 	//
 
@@ -112,23 +144,11 @@ function optionsframework_options() {
 		'color' => '#444444'
 	);
 
-	//
-	// Heading Typography
-	//
-
-	$heading_typography_options = array(
-		'sizes' => false,
-		'faces' => $typography_mixed_fonts,
-		'styles' => false,
-		'colors' => false,
-	);
-
-	$heading_typography_defaults = array(
-		'face' => 'Arvo',
-	);
 	
 
 	// Pull all the categories into an array
+	// TODO: remove this when you decide to take 
+	// all of blog cat option out
 	$options_categories = array();
 	$options_categories_obj = get_categories();
 	foreach ($options_categories_obj as $category) {
@@ -142,7 +162,7 @@ function optionsframework_options() {
 	/************* BASIC SETTINGS ********************/
 
 	/* 	This includes:
-		1. Blog Category (multicheck) #removing!
+		1. Blog Category (multicheck) ##removing this!
 		2. Comments (radio)
 		3. Custom Favicon (upload)
 	*/
@@ -177,6 +197,7 @@ function optionsframework_options() {
 		'options' => $comments_arr);
 
 	// 3. Favicon
+	// TODO: Did I add this yet?
 	$options[] = array(
 		'name' => __('Custom Favicon', 'options_check'),
 		'desc' => __('Upload a 16px x 16px png/gif/ico image for your website\'s favicon. You can create a favicon from a larger image with the <a href="http://www.degraeve.com/favicon/" taget="blank">Favicon Generator</a> then upload it here.', 'options_check'),
@@ -211,11 +232,12 @@ function optionsframework_options() {
 	// 1. Title Font
 	$options[] = array( 
 		'name' => __('Title Font', 'options_check'),
-		'desc' => __('Choose a fancy font for your site\'s title. Browse the Google WebFonts directory and type the name of the font here', 'options_check'),
-		'id' => "heading_typography",
-		'std' => $heading_typography_defaults,
+		'desc' => __('Choose a font for your site title.'),
+		'id' => "title_font",
+		'std' => $title_font_defaults,
 		'type' => 'typography',
-		'options' => $heading_typography_options );
+		// Using same font set for headings and title
+		'options' => $heading_font_options );
 	
 
 	// 2. Header font
@@ -223,9 +245,9 @@ function optionsframework_options() {
 		'name' => __('Headings Typography', 'options_check'),
 		'desc' => __('You can choose a different font and color for the heading text.', 'options_check'),
 		'id' => "heading_typography",
-		'std' => $heading_typography_defaults,
+		'std' => $heading_font_defaults,
 		'type' => 'typography',
-		'options' => $heading_typography_options );
+		'options' => $heading_font_options );
 	
 
 	// 3. Choose font, base font size, and color for body typography
@@ -503,9 +525,9 @@ function options_output_styles() {
 	$output = '';
 	$input = '';
 	
-	if ( of_get_option( 'body_typography' ) ) {
-		$input = of_get_option( 'body_typography' );
-		$output .= options_typography_font_styles( $input , 'body');
+	if ( of_get_option( 'title_typography' ) ) {
+		$input = of_get_option( 'title_typography' );
+		$output .= options_title_font( $input , '.site-title a');
 	}
 
 	if ( of_get_option( 'heading_typography' ) ) {
@@ -531,6 +553,15 @@ add_action('wp_head', 'options_output_styles');
 /*
  * Returns a typography option in a format that can be outputted as inline CSS
  */
+
+function options_title_font($option, $selectors) {
+	$output = $selectors . ' {';
+	$output .= 'font-family:' . $option['title_typography'] . '; ';
+	$output .= '}';
+	$output .= "\n";
+	return $output;
+}
+
 function options_typography_font_styles($option, $selectors) {
 	$output = $selectors . ' {';
 	$output .= ' color:' . $option['color'] .'; ';

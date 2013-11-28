@@ -57,7 +57,7 @@ p, pre, label {
 
 ol, ul {
 	@include adjust-font-size-to(16px);
-	margin: 0 0 rhythm(4, 16px) 0;							// 4 lines below, based on font size
+	margin: 0 0 rhythm(2, 16px) 0;							// 4 lines below, based on font size
 }
 
 li {
@@ -74,7 +74,7 @@ em, i, q 	{ font-style: italic; }
 
 blockquote {
 	padding-left: em-font(16px);
-	border-left: em-font(2px) solid $accent-light;
+	border-left: em-font(1px) solid $accent-light;
 	line-height: normal;
 	margin: 0;
 	p {

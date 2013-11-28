@@ -57,6 +57,9 @@ jQuery(document).ready(function($) {
         $('.comment img[data-gravatar]').each(function(){
             $(this).attr('src',$(this).attr('data-gravatar'));
         });
+
+        // Fade in homepage
+        $('.home #content, .home .footer').fadeIn(700);
         
     }
     

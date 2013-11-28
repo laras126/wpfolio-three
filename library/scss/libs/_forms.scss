@@ -43,8 +43,8 @@ input[type="search"],
 input[type="tel"] {
 	@include border-radius(4px);
 	padding: $base-size/3;
-	margin: $base-size 0;
-	border: 2px solid $accent-light;
+	margin: rhythm(1, 18px) 0 0;
+	border: 1px solid $accent-light;
 
 	&:focus {
 		border-color: $accent-med;

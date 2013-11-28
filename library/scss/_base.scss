@@ -249,12 +249,18 @@ POSTS & CONTENT STYLES
 		}
 			.entry-title {
 				margin-bottom: rhythm(1, 22px);
+				@include adjust-font-size-to(30px); 
+
 				a {
 					color: $primary;
 				}
 			}
 			
 
+		// TODO: is this getting to be too detailed margin-wise?
+		.article-footer {
+			margin-top: rhythm(4, 18px);
+		}
 		.hentry {
 
 			header {}
@@ -419,8 +425,8 @@ POSTS & CONTENT STYLES
 		.size-thumbnail {}
 
 
-		.post-edit-link {
-			color: #a30e17;
+		.post-edit-link, .post-edit-link:visited {
+			color: darken($alert-red, 30%);
 			font-weight: bold;
 			text-transform: uppercase;
 		}
@@ -442,13 +448,15 @@ POSTS & CONTENT STYLES
 
 .artwork-meta {
 	@include nobullet;
+	// TODO: I feel like these are getting arbitrary
+	margin-top: rhythm(2, 16px);
 }
 
 .single-project {
 	&.single-format-video {
 		iframe {
 			width: 100%;
-			height: 400px;
+			height: 200px;
 		}
 	}
 }
@@ -759,9 +767,10 @@ COMMENT FORM STYLES
 		input[type=email],
 		input[type=url],
 		textarea {
-			padding: 3px 6px;
+			padding: em-font(3px) em-font(6px);
 			background: #efefef;
-			border: 2px solid #cecece;
+			color: $primary;
+			border: em-font(1px) solid #cecece;
 			line-height: 1.5em;
 
 			&:focus {
@@ -860,9 +869,12 @@ FOOTER STYLES
 .footer {
 	clear: both;
 	@include adjust-font-size-to(14px);
+	
 
 	.wrap {
 		border-top: 1px solid $accent-light;
+		margin-top: rhythm(1, 18px);
+		padding: rhythm(1, 18px) 0;
 	}
 }
 

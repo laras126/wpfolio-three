@@ -32,7 +32,7 @@ Template for the medium taxonomy.
 								<img src="<?php bloginfo('template_directory'); ?>/library/images/default-thumb-image.png" alt="<?php the_title(); ?>"/>
 							<?php } ?>
 						<?php } ?>
-						<h4 class="project-thumb-title line-clamp"><?php the_title(); ?></h4>
+						<h5 class="project-thumb-title line-clamp"><?php the_title(); ?></h5>
 					</a>
 				</article>
 
@@ -42,10 +42,10 @@ Template for the medium taxonomy.
 								<?php bones_page_navi(); ?>
 						<?php } else { ?>
 								<nav class="wp-prev-next">
-										<ul class="clearfix">
-											<li class="prev-link"><?php next_posts_link( __( '&laquo; Older Entries', 'bonestheme' )) ?></li>
-											<li class="next-link"><?php previous_posts_link( __( 'Newer Entries &raquo;', 'bonestheme' )) ?></li>
-										</ul>
+									<ul class="clearfix">
+										<li class="prev-link"><?php next_posts_link( __( '&laquo; Older Entries', 'bonestheme' )) ?></li>
+										<li class="next-link"><?php previous_posts_link( __( 'Newer Entries &raquo;', 'bonestheme' )) ?></li>
+									</ul>
 								</nav>
 						<?php } ?>
 
