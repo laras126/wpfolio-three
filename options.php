@@ -138,11 +138,11 @@ function optionsframework_options() {
 	);
 
 
-	$body_typography_defaults = array(
+	$typography_defaults = array(
 		'size' => '14px',
-		'face' => 'Merriweather',
-		'color' => '#444444'
-	);
+		'face' => 'Georgia',
+		'style' => 'normal',
+		'color' => '#bada55' );
 
 	
 
@@ -244,7 +244,7 @@ function optionsframework_options() {
 	$options[] = array( 
 		'name' => __('Headings Typography', 'options_check'),
 		'desc' => __('You can choose a different font and color for the heading text.', 'options_check'),
-		'id' => "heading_typography",
+		'id' => "heading_font",
 		'std' => $heading_font_defaults,
 		'type' => 'typography',
 		'options' => $heading_font_options );
@@ -267,16 +267,16 @@ function optionsframework_options() {
 	// 3. The color for links, blog description, post meta, menu items, prev/next navigation, borders, widget text.
 	$options[] = array(
 		'name' => __('Secondary Font Color', 'options_check'),
-		'desc' => __('Blog description, post meta, menu items, prev/next navigation, borders, widget text.', 'options_check'),
+		'desc' => __('Color for links and borders.', 'options_check'),
 		'id' => 'secondary_font_color',
 		'std' => '#f0f0f0',
 		'type' => 'color' );
 	
-	// Color for the menu highlight
+	// Color for link hover
 	$options[] = array(
-		'name' => __('Menu Highlight Color', 'options_check'),
-		'desc' => __('The hover color.', 'options_check'),
-		'id' => 'menu_highlight_color',
+		'name' => __('Link Hover Color', 'options_check'),
+		'desc' => __('The color for hovering over links, and the main menu highlight color.', 'options_check'),
+		'id' => 'link_hover_color',
 		'std' => '#f0f0f0',
 		'type' => 'color' );
 
@@ -288,7 +288,7 @@ function optionsframework_options() {
 	// Change the background color or upload an image
 	$options[] = array(
 		'name' =>  __('Background', 'options_check'),
-		'desc' => __('Choose a color for the background, or you can upload an image. Check out <a href="http://subtlepatterns.com" target="blank">Subtle Patterns</a> for some, well, subtle patterns to use on your site.', 'options_check'),
+		'desc' => __('Choose a color or texture or upload an image for your background. Check out <a href="http://subtlepatterns.com" target="blank">Subtle Patterns</a> for some excellent quality textures.<br />Note that an image will override a color.', 'options_check'),
 		'id' => 'body_background',
 		'std' => $background_defaults,
 		'type' => 'background' );
@@ -300,8 +300,6 @@ function optionsframework_options() {
 		'id' => 'custom_css',
 		'std' => '#wrapper {'."\n\t".'border-radius: 0.3em;'."\n".'}',
 		'type' => 'textarea');
-
-
 
 
 
@@ -482,7 +480,7 @@ if ( !function_exists( 'options_typography_google_fonts' ) ) {
         
         // Define all the options that possibly have a unique Google font
         $body_google_mixed = of_get_option('body_typography', false);
-		$heading_google_mixed = of_get_option('heading_typography', false);
+		$heading_google_mixed = of_get_option('heading_font', false);
 		
         // Get the font face for each option and put it in an array
         $selected_fonts = array(
@@ -525,19 +523,36 @@ function options_output_styles() {
 	$output = '';
 	$input = '';
 	
-	if ( of_get_option( 'title_typography' ) ) {
-		$input = of_get_option( 'title_typography' );
-		$output .= options_title_font( $input , '.site-title a');
-	}
+	
 
-	if ( of_get_option( 'heading_typography' ) ) {
-		$input = of_get_option( 'heading_typography' );
-		$output .= options_typography_font_styles( $input , 'h1,h2,h3,h4,h5,h6');
+	if ( of_get_option( 'body_typography' ) ) {
+		$input = of_get_option( 'body_typography' );
+		$output .= options_body_typography_styles( $input , 'body');
 	}
 
 	if ( of_get_option( 'body_background' ) ) {
 		$input = of_get_option( 'body_background' );
 		$output .= options_background_style( $input , 'body');
+	}
+
+	if ( of_get_option( 'secondary_font_color' ) ) {
+		$input = of_get_option( 'secondary_font_color' );
+		$output .= options_secondary_font_color( $input , 'a, a:link, a:visited, a:focus, a:visited:hover, a:visited:focus');
+	}
+
+	if ( of_get_option( 'link_hover_color' ) ) {
+		$input = of_get_option( 'link_hover_color' );
+		$output .= options_hover_color( $input , '.nav li a:hover, .nav li.current-menu-item a, .nav li.current_page_item a, .nav li.current-page-ancestor a', '#content a:hover, .footer a:hover');
+	}
+
+	if ( of_get_option( 'heading_font' ) ) {
+		$input = of_get_option( 'heading_font' );
+		$output .= options_font_only_styles( $input , 'h1,h2,h3,h4,h5,h6');
+	}
+
+	if ( of_get_option( 'title_font' ) ) {
+		$input = of_get_option( 'title_font' );
+		$output .= options_font_only_styles( $input , '.site-title a');
 	}
 
 	if ( $output != '' ) {
@@ -551,35 +566,89 @@ add_action('wp_head', 'options_output_styles');
 
 
 /*
- * Returns a typography option in a format that can be outputted as inline CSS
+ * Returns a typography option in a format that can be outputted as inline CSS in the <head>
  */
 
 function options_title_font($option, $selectors) {
 	$output = $selectors . ' {';
-	$output .= 'font-family:' . $option['title_typography'] . '; ';
+	$output .= 'font-family:' . $option['face'] . '; ';
 	$output .= '}';
 	$output .= "\n";
 	return $output;
 }
 
-function options_typography_font_styles($option, $selectors) {
+function options_body_typography_styles($option, $selectors) {
 	$output = $selectors . ' {';
 	$output .= ' color:' . $option['color'] .'; ';
 	$output .= 'font-family:' . $option['face'] . '; ';
-	$output .= 'font-weight:' . $option['style'] . '; ';
 	$output .= 'font-size:' . $option['size'] . '; ';
 	$output .= '}';
 	$output .= "\n";
 	return $output;
 }
 
-function options_background_style($option, $selectors) {
+function options_font_only_styles($option, $selectors) {
 	$output = $selectors . ' {';
-	if ( $option['image'] != '') {
-		$output .= 'background-image:' . $option['image'];
-	}
+	$output .= 'font-family:' . $option['face'] . '; ';
 	$output .= '}';
 	$output .= "\n";
+	return $output;
+}
+
+function options_secondary_font_color($option, $selectors) {
+	if( $option ) {
+		$output = $selectors . ' {';
+		$output .= 'color:' . $option . '; ';
+		$output .= '}';
+		$output .= "\n";
+		return $output;	
+	}
+}
+
+function options_hover_color($option, $selectors, $selectors2) {
+	if( $option ) {
+		
+		$output = $selectors2 . ' {';
+		$output .= 'color:' . $option . '; ';
+		$output .= '}';
+		$output .= "\n";
+
+		$output .= $selectors . ' {';
+		$output .= 'background-color:' . $option . '; ';
+		$output .= '}';
+		$output .= "\n";
+
+		return $output;
+	}
+}
+
+
+function options_background_style($option, $selectors) {
+	
+	// http://stackoverflow.com/questions/13906286/php-css-output-options-framework-content
+    
+    $background = $option;
+    $output = $selectors . ' {';
+
+    if ($background['color'] || $background['image']) {
+
+        if ($background['color']) {   
+            $output .= '
+            background: ' .$background['color']. ';';
+        }
+
+        if ($background['image']) {
+            $output .=  '
+            background: url('.$background['image']. ') ';
+            $output .= ''.$background['repeat']. ' ';
+            $output .=  ''.$background['position']. ' ';
+            $output .=  ''.$background['attachment']. ';';
+        } 
+        $output .=  '
+        }';
+
+        return $output;
+    }
 	
 }
 

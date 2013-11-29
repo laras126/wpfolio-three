@@ -1041,11 +1041,7 @@ nav[role=navigation] li a {
   has the possibility of being a mobile device.
   */
 }
-/* line 103, ../scss/_768up.scss */
-.nav li a:hover, .nav li a:focus {
-  background-color: #eeeeee;
-}
-/* line 116, ../scss/_768up.scss */
+/* line 113, ../scss/_768up.scss */
 .nav li ul.sub-menu,
 .nav li ul.children {
   margin-top: 0;
@@ -1055,7 +1051,7 @@ nav[role=navigation] li a {
   z-index: 8999;
   /* highlight sub-menu current page */
 }
-/* line 123, ../scss/_768up.scss */
+/* line 120, ../scss/_768up.scss */
 .nav li ul.sub-menu li,
 .nav li ul.children li {
   /*
@@ -1064,7 +1060,7 @@ nav[role=navigation] li a {
   for usability. k, bai.
   */
 }
-/* line 125, ../scss/_768up.scss */
+/* line 122, ../scss/_768up.scss */
 .nav li ul.sub-menu li a,
 .nav li ul.children li a {
   padding-left: 10px;
@@ -1073,12 +1069,12 @@ nav[role=navigation] li a {
   width: 180px;
   border-bottom: 1px solid #ccc;
 }
-/* line 142, ../scss/_768up.scss */
+/* line 139, ../scss/_768up.scss */
 .nav li ul.sub-menu li:last-child a,
 .nav li ul.children li:last-child a {
   border-bottom: 0;
 }
-/* line 164, ../scss/_768up.scss */
+/* line 161, ../scss/_768up.scss */
 .nav li:hover ul {
   top: auto;
   display: block;
@@ -1088,25 +1084,25 @@ nav[role=navigation] li a {
 /*********************
 POSTS & CONTENT STYLES
 *********************/
-/* line 185, ../scss/_768up.scss */
+/* line 182, ../scss/_768up.scss */
 .project-thumb {
   height: 300px;
 }
 
-/* line 190, ../scss/_768up.scss */
-.project-thumb, .gallery-item {
+/* line 188, ../scss/_768up.scss */
+.project-thumb img, .gallery-item img {
   opacity: 1;
 }
-/* line 193, ../scss/_768up.scss */
-.project-thumb:hover, .gallery-item:hover {
+/* line 191, ../scss/_768up.scss */
+.project-thumb img:hover, .gallery-item img:hover {
   opacity: 0.6;
 }
-/* line 197, ../scss/_768up.scss */
-.project-thumb:active, .gallery-item:active {
+/* line 195, ../scss/_768up.scss */
+.project-thumb img:active, .gallery-item img:active {
   opacity: 1;
 }
 
-/* line 202, ../scss/_768up.scss */
+/* line 201, ../scss/_768up.scss */
 .line-clamp {
   overflow: hidden;
   display: -webkit-box;
@@ -1114,7 +1110,7 @@ POSTS & CONTENT STYLES
   -webkit-box-orient: vertical;
 }
 
-/* line 213, ../scss/_768up.scss */
+/* line 212, ../scss/_768up.scss */
 .single-project.single-format-video iframe {
   width: 100%;
   height: 500px;
@@ -1123,27 +1119,27 @@ POSTS & CONTENT STYLES
 /*********************
 SIDEBARS & ASIDES
 *********************/
-/* line 228, ../scss/_768up.scss */
+/* line 227, ../scss/_768up.scss */
 .widgettitle {
   text-align: left;
 }
 
-/* line 232, ../scss/_768up.scss */
+/* line 231, ../scss/_768up.scss */
 .widget {
   padding: 0 12px;
   margin: 32px 0;
   border-left: #eeeeee 1px solid;
 }
-/* line 237, ../scss/_768up.scss */
+/* line 236, ../scss/_768up.scss */
 .widget ul {
   list-style-type: none;
 }
-/* line 240, ../scss/_768up.scss */
+/* line 239, ../scss/_768up.scss */
 .widget ul li {
   margin-bottom: 0.75em;
   /* deep nesting */
 }
-/* line 248, ../scss/_768up.scss */
+/* line 247, ../scss/_768up.scss */
 .widget ul li ul {
   margin-top: 0.75em;
   padding-left: 1em;
@@ -1168,7 +1164,7 @@ you'll probably need to do quite a bit
 of overriding here if you styled them for
 mobile. Make sure to double check these!
 */
-/* line 357, ../scss/_768up.scss */
+/* line 356, ../scss/_768up.scss */
 .footer-nav li {
   /*
   be careful with the depth of your menus.
@@ -1176,13 +1172,13 @@ mobile. Make sure to double check these!
   the footer.
   */
 }
-/* line 358, ../scss/_768up.scss */
+/* line 357, ../scss/_768up.scss */
 .footer-nav li a {
   padding-top: 0;
 }
 
 /* end .footer-nav */
-/* line 372, ../scss/_768up.scss */
+/* line 371, ../scss/_768up.scss */
 .copyright {
   text-align: right;
 }
