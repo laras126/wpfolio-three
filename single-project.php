@@ -22,19 +22,7 @@ Template for single Projects
 
 					<section class="entry-content clearfix">
 
-						<?php 
-						
-						if ( has_post_format( 'video' )) {
-							get_template_part('include/project', 'video'); 
-						} else if ( has_post_format( 'audio' )) {
-							get_template_part('include/project', 'audio'); 
-						} else if ( has_post_format( 'gallery' )) {
-							get_template_part('include/project', 'gallery'); 
-						} else {
-							get_template_part('include/project', 'standard'); 
-						}
-
-						?>
+						<?php the_content(); ?>
 
 					</section>
 

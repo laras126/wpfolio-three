@@ -24,13 +24,13 @@ Template for the medium taxonomy.
 							the_post_thumbnail();
 						} else { 
 							// Use thumbnails based on post format
-							if ( has_post_format( 'video' )) { ?>
-								<img src="<?php bloginfo('template_directory'); ?>/library/images/default-thumb-video.png" alt="<?php the_title(); ?>"/>
-							<?php } else if ( has_post_format( 'audio' )) { ?>
-								<img src="<?php bloginfo('template_directory'); ?>/library/images/default-thumb-audio.png" alt="<?php the_title(); ?>"/>
-							<?php } else { ?>
+							//if ( has_post_format( 'video' )) { ?>
+								<!-- <img src="<?php bloginfo('template_directory'); ?>/library/images/default-thumb-video.png" alt="<?php the_title(); ?>"/> -->
+							<?php// } else if ( has_post_format( 'audio' )) { ?>
+								<!-- <img src="<?php bloginfo('template_directory'); ?>/library/images/default-thumb-audio.png" alt="<?php the_title(); ?>"/> -->
+							<?php //} else { ?>
 								<img src="<?php bloginfo('template_directory'); ?>/library/images/default-thumb-image.png" alt="<?php the_title(); ?>"/>
-							<?php } ?>
+							<?php //} ?>
 						<?php } ?>
 						<h5 class="project-thumb-title line-clamp"><?php the_title(); ?></h5>
 					</a>
