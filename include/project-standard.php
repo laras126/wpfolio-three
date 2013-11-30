@@ -1,4 +1,3 @@
-This is a standard project!
-
+Standard project template
 
 <?php the_content(); ?>

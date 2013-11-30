@@ -77,7 +77,7 @@ Should it be differentiated more?
 
 							<footer class="article-footer">
 
-								<p class="attachment-meta byline">
+								<p class="attachment-meta">
 									<?php
 										// TODO there is some extra information being pulled in here (i.e. width, height)
 										// Remove it!
@@ -108,17 +108,7 @@ Should it be differentiated more?
 
 						<?php else : ?>
 
-								<article id="post-not-found" class="hentry clearfix">
-									<header class="article-header">
-										<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
-									</header>
-									<section class="entry-content">
-										<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
-									</section>
-									<footer class="article-footer">
-											<p><?php _e( 'This is the error message in the single-project_type.php template.', 'bonestheme' ); ?></p>
-									</footer>
-								</article>
+								<?php get_template_part('include/post', 'notfound'); ?>
 
 						<?php endif; ?>
 

@@ -46,7 +46,7 @@ function wpf_artinfo_metaboxes( $meta_boxes ) {
             'fields' => array(
 					array(
 						'name' => '',
-						'desc' => '<span class="metabox-desc">Use these fields to add information below an image of your artwork (added to the post editor above). Any fields left blank will not be displayed.</span>
+						'desc' => '<p>Print this information by typing the shortcode <code>[artwork_info]</code> in the post editor. Blank fields will not display.</p>
 						',
 						'type' => 'title',
 						'id' => $prefix . 'test_title'
@@ -57,17 +57,9 @@ function wpf_artinfo_metaboxes( $meta_boxes ) {
                             'id' => $prefix . 'title',
                             'type' => 'text'
                         ),
-                    // Not sure if we want a select medium or text medium
-                    // array(
-                    //         'name' => 'Medium',
-                    //         'desc' => 'Choose your work\'s medium. You can add and edit mediums here.',
-                    //         'id' => $prefix . 'taxonomy',
-                    //         'taxonomy' => 'medium',
-                    //         'type' => 'taxonomy_select'
-                    //     ),
                     array(
                             'name' => 'Medium',
-                            'desc' => 'Type your work\'s medium.',
+                            'desc' => 'Your work\'s medium.',
                             'id' => $prefix . 'medium',
                             'type' => 'text'
                         ),
@@ -81,13 +73,13 @@ function wpf_artinfo_metaboxes( $meta_boxes ) {
                             'name' => 'Description',
                             'desc' => 'A short, text description of the work. Use the post editor for longer descriptions that include photos or video.',
                             'id' => $prefix . 'description',
-                            'type' => 'textarea'
+                            'type' => 'wysiwyg'
                         ),
 					array(
-                            'name' => 'Collaborators',
+                            'name' => 'Acknowledgments',
                             'desc' => 'List the names of any collaborators.',
                             'id' => $prefix . 'collaborators',
-                            'type' => 'text'
+                            'type' => 'wysiwyg'
                         ),
 					array(
                             'name' => 'Link',
@@ -97,7 +89,7 @@ function wpf_artinfo_metaboxes( $meta_boxes ) {
                         ),
 					array(
 						'name' => '',
-						'desc' => '<span class="metabox-desc">Are these fields useful? Do you have suggestions for other ones? <a href="mailto:lara@notlaura.com">Let me know.</a></span>',
+						'desc' => '<p>Are these fields useful? Do you have suggestions for other ones? <a href="mailto:lara@notlaura.com">Let me know.</a></p>',
 						'type' => 'title',
 						'id' => $prefix . 'test_title'
 					),
@@ -183,6 +175,17 @@ function wide_margins_shortcode ($atts, $content = null) {
     return '<div class="widemargins">' . do_shortcode($content) . '</div>';
 } 
 add_shortcode('margin', 'wide_margins_shortcode');
+
+
+// Shortcode to print artwork meta info
+
+function artwork_meta_shortcode ($atts) {
+    ob_start();
+    $path = get_template_directory();
+    include($path . '/include/artwork-meta.php');
+    return ob_get_clean();
+} 
+add_shortcode('artwork_info', 'artwork_meta_shortcode');
 
 
 

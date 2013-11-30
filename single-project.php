@@ -30,9 +30,7 @@ Template for single Projects
 							get_template_part('include/project', 'audio'); 
 						} else if ( has_post_format( 'gallery' )) {
 							get_template_part('include/project', 'gallery'); 
-						} else if ( has_post_format( 'image' )) {
-							get_template_part('include/project', 'image'); 
-						} else if ( has_post_format( 'standard' )) {
+						} else {
 							get_template_part('include/project', 'standard'); 
 						}
 

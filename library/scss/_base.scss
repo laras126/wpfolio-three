@@ -448,8 +448,6 @@ POSTS & CONTENT STYLES
 
 .artwork-meta {
 	@include nobullet;
-	// TODO: I feel like these are getting arbitrary
-	margin-top: rhythm(2, 16px);
 }
 
 .single-project {
@@ -768,13 +766,13 @@ COMMENT FORM STYLES
 		input[type=url],
 		textarea {
 			padding: em-font(3px) em-font(6px);
-			background: #efefef;
+			background: #fff;
 			color: $primary;
-			border: em-font(1px) solid #cecece;
+			border: em-font(2px) solid #ccc;
 			line-height: 1.5em;
 
 			&:focus {
-				background: #fff;
+				border: em-font(2px) solid #999;
 			}
 
 			/* form validation */

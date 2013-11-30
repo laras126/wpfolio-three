@@ -527,7 +527,7 @@ function options_output_styles() {
 
 	if ( of_get_option( 'body_typography' ) ) {
 		$input = of_get_option( 'body_typography' );
-		$output .= options_body_typography_styles( $input , 'body');
+		$output .= options_body_typography_styles( $input , 'body, input, textarea, button');
 	}
 
 	if ( of_get_option( 'body_background' ) ) {

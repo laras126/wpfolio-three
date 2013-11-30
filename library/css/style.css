@@ -395,7 +395,6 @@ BUTTONS
 .button, input[type="submit"],
 button, .commentlist .comment-reply-link, #submit, .button:visited, input[type="submit"]:visited,
 button:visited, .commentlist .comment-reply-link:visited, #submit:visited {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   border: 1px solid #898989;
   border-top-color: #989898;
   border-left-color: #989898;
@@ -405,14 +404,13 @@ button:visited, .commentlist .comment-reply-link:visited, #submit:visited {
   font-size: 0.9em;
   font-weight: normal;
   text-decoration: none;
-  text-shadow: 0 1px rgba(0, 0, 0, 0.75);
   cursor: pointer;
   margin-bottom: 20px;
   line-height: 21px;
   border-radius: 4px;
   background: linear-gradient(#aaaaaa, #9d9d9d);
 }
-/* line 61, ../scss/libs/_extends.scss */
+/* line 60, ../scss/libs/_extends.scss */
 .button:hover, input[type="submit"]:hover,
 button:hover, .commentlist .comment-reply-link:hover, #submit:hover, .button:focus, input[type="submit"]:focus,
 button:focus, .commentlist .comment-reply-link:focus, #submit:focus, .button:visited:hover, input[type="submit"]:visited:hover,
@@ -424,26 +422,26 @@ button:visited:focus, .commentlist .comment-reply-link:visited:focus, #submit:vi
   border-left-color: #777777;
   background: linear-gradient(#9d9d9d, #909090);
 }
-/* line 69, ../scss/libs/_extends.scss */
+/* line 68, ../scss/libs/_extends.scss */
 .button:active, input[type="submit"]:active,
 button:active, .commentlist .comment-reply-link:active, #submit:active, .button:visited:active, input[type="submit"]:visited:active,
 button:visited:active, .commentlist .comment-reply-link:visited:active, #submit:visited:active {
   background: linear-gradient(#9d9d9d, #aaaaaa);
 }
 
-/* line 74, ../scss/libs/_extends.scss */
+/* line 73, ../scss/libs/_extends.scss */
 .blue-button, .blue-button:visited {
   border-color: #a9daf1;
   text-shadow: 0 1px 1px #a9daf1;
   background: linear-gradient(#d5edf8, #bfe4f4);
   box-shadow: inset 0 0 3px white;
 }
-/* line 80, ../scss/libs/_extends.scss */
+/* line 79, ../scss/libs/_extends.scss */
 .blue-button:hover, .blue-button:focus, .blue-button:visited:hover, .blue-button:visited:focus {
   border-color: #93d1ed;
   background: linear-gradient(#c4e6f5, #a9daf1);
 }
-/* line 84, ../scss/libs/_extends.scss */
+/* line 83, ../scss/libs/_extends.scss */
 .blue-button:active, .blue-button:visited:active {
   background: linear-gradient(#bfe4f4, #d5edf8);
 }
@@ -611,7 +609,6 @@ BUTTONS
 .button, input[type="submit"],
 button, .commentlist .comment-reply-link, #submit, .button:visited, input[type="submit"]:visited,
 button:visited, .commentlist .comment-reply-link:visited, #submit:visited {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   border: 1px solid #898989;
   border-top-color: #989898;
   border-left-color: #989898;
@@ -621,14 +618,13 @@ button:visited, .commentlist .comment-reply-link:visited, #submit:visited {
   font-size: 0.9em;
   font-weight: normal;
   text-decoration: none;
-  text-shadow: 0 1px rgba(0, 0, 0, 0.75);
   cursor: pointer;
   margin-bottom: 20px;
   line-height: 21px;
   border-radius: 4px;
   background: linear-gradient(#aaaaaa, #9d9d9d);
 }
-/* line 61, ../scss/libs/_extends.scss */
+/* line 60, ../scss/libs/_extends.scss */
 .button:hover, input[type="submit"]:hover,
 button:hover, .commentlist .comment-reply-link:hover, #submit:hover, .button:focus, input[type="submit"]:focus,
 button:focus, .commentlist .comment-reply-link:focus, #submit:focus, .button:visited:hover, input[type="submit"]:visited:hover,
@@ -640,26 +636,26 @@ button:visited:focus, .commentlist .comment-reply-link:visited:focus, #submit:vi
   border-left-color: #777777;
   background: linear-gradient(#9d9d9d, #909090);
 }
-/* line 69, ../scss/libs/_extends.scss */
+/* line 68, ../scss/libs/_extends.scss */
 .button:active, input[type="submit"]:active,
 button:active, .commentlist .comment-reply-link:active, #submit:active, .button:visited:active, input[type="submit"]:visited:active,
 button:visited:active, .commentlist .comment-reply-link:visited:active, #submit:visited:active {
   background: linear-gradient(#9d9d9d, #aaaaaa);
 }
 
-/* line 74, ../scss/libs/_extends.scss */
+/* line 73, ../scss/libs/_extends.scss */
 .blue-button, .blue-button:visited {
   border-color: #a9daf1;
   text-shadow: 0 1px 1px #a9daf1;
   background: linear-gradient(#d5edf8, #bfe4f4);
   box-shadow: inset 0 0 3px white;
 }
-/* line 80, ../scss/libs/_extends.scss */
+/* line 79, ../scss/libs/_extends.scss */
 .blue-button:hover, .blue-button:focus, .blue-button:visited:hover, .blue-button:visited:focus {
   border-color: #93d1ed;
   background: linear-gradient(#c4e6f5, #a9daf1);
 }
-/* line 84, ../scss/libs/_extends.scss */
+/* line 83, ../scss/libs/_extends.scss */
 .blue-button:active, .blue-button:visited:active {
   background: linear-gradient(#bfe4f4, #d5edf8);
 }
@@ -983,10 +979,9 @@ POSTS & CONTENT STYLES
 /* line 449, ../scss/_base.scss */
 .artwork-meta {
   list-style-type: none;
-  margin-top: 1em;
 }
 
-/* line 457, ../scss/_base.scss */
+/* line 455, ../scss/_base.scss */
 .single-project.single-format-video iframe {
   width: 100%;
   height: 200px;
@@ -995,13 +990,13 @@ POSTS & CONTENT STYLES
 /******************************************************************
 PAGE NAVI STYLES
 ******************************************************************/
-/* line 469, ../scss/_base.scss */
+/* line 467, ../scss/_base.scss */
 .page-navigation,
 .wp-prev-next {
   margin: 1.1em 0 2.2em;
 }
 
-/* line 472, ../scss/_base.scss */
+/* line 470, ../scss/_base.scss */
 .bones_page_navi {
   list-style-type: none;
   /* current page link */
@@ -1013,44 +1008,44 @@ PAGE NAVI STYLES
   /* first page link */
   /* last page link */
 }
-/* line 474, ../scss/_base.scss */
+/* line 472, ../scss/_base.scss */
 .bones_page_navi li {
   float: left;
   margin-left: 10px;
 }
-/* line 478, ../scss/_base.scss */
+/* line 476, ../scss/_base.scss */
 .bones_page_navi li a {
   padding: 3px 6px;
   display: block;
   text-decoration: none;
   position: relative;
 }
-/* line 485, ../scss/_base.scss */
+/* line 483, ../scss/_base.scss */
 .bones_page_navi li a:hover, .bones_page_navi li a:focus {
   color: #f01d4f;
   text-decoration: underline;
 }
-/* line 494, ../scss/_base.scss */
+/* line 492, ../scss/_base.scss */
 .bones_page_navi li.bpn-current {
   padding: 3px 6px;
   border-bottom: 2px solid #f01d4f;
   position: relative;
 }
-/* line 499, ../scss/_base.scss */
+/* line 497, ../scss/_base.scss */
 .bones_page_navi li.bpn-current a {
   /* hovering on current page link */
 }
-/* line 510, ../scss/_base.scss */
+/* line 508, ../scss/_base.scss */
 .bones_page_navi li.bpn-prev-link,
 .bones_page_navi li.bpn-next-link {
   font-weight: 700;
 }
-/* line 513, ../scss/_base.scss */
+/* line 511, ../scss/_base.scss */
 .bones_page_navi li.bpn-prev-link a,
 .bones_page_navi li.bpn-next-link a {
   padding: 0;
 }
-/* line 522, ../scss/_base.scss */
+/* line 520, ../scss/_base.scss */
 .bones_page_navi li.bpn-prev-link a:hover,
 .bones_page_navi li.bpn-next-link a:hover,
 .bones_page_navi li.bpn-first-page-link a:hover,
@@ -1060,11 +1055,11 @@ PAGE NAVI STYLES
 
 /* end .bones_page_navi */
 /* fallback previous & next links */
-/* line 565, ../scss/_base.scss */
+/* line 563, ../scss/_base.scss */
 .wp-prev-next .prev-link {
   float: left;
 }
-/* line 569, ../scss/_base.scss */
+/* line 567, ../scss/_base.scss */
 .wp-prev-next .next-link {
   float: right;
 }
@@ -1074,12 +1069,12 @@ PAGE NAVI STYLES
 COMMENT STYLES
 ******************************************************************/
 /* h3 comment title */
-/* line 580, ../scss/_base.scss */
+/* line 578, ../scss/_base.scss */
 #comments {
   /* number of comments span */
 }
 
-/* line 597, ../scss/_base.scss */
+/* line 595, ../scss/_base.scss */
 .commentlist {
   /* general comment classes */
   /* vcard */
@@ -1090,7 +1085,7 @@ COMMENT STYLES
   /* comment reply link */
   /* end .commentlist .comment-reply-link */
 }
-/* line 599, ../scss/_base.scss */
+/* line 597, ../scss/_base.scss */
 .commentlist li {
   position: relative;
   clear: both;
@@ -1100,63 +1095,63 @@ COMMENT STYLES
   padding: 0.7335em 10px;
   /* end .commentlist li ul.children */
 }
-/* line 607, ../scss/_base.scss */
+/* line 605, ../scss/_base.scss */
 .commentlist li:last-child {
   margin-bottom: 0;
 }
-/* line 611, ../scss/_base.scss */
+/* line 609, ../scss/_base.scss */
 .commentlist li ul.children {
   margin: 0;
   /* variations */
   /* change number for different depth */
 }
-/* line 629, ../scss/_base.scss */
+/* line 627, ../scss/_base.scss */
 .commentlist li[class*=depth-] {
   margin-top: 1.1em;
 }
-/* line 633, ../scss/_base.scss */
+/* line 631, ../scss/_base.scss */
 .commentlist li.depth-1 {
   margin-left: 0;
   margin-top: 0;
 }
-/* line 638, ../scss/_base.scss */
+/* line 636, ../scss/_base.scss */
 .commentlist li:not(.depth-1) {
   margin-right: -10px;
   margin-left: -10px;
   margin-top: 0;
   padding-bottom: 0;
 }
-/* line 652, ../scss/_base.scss */
+/* line 650, ../scss/_base.scss */
 .commentlist .odd {
   background: #eee;
 }
-/* line 655, ../scss/_base.scss */
+/* line 653, ../scss/_base.scss */
 .commentlist .even {
   background: #fefefe;
 }
-/* line 670, ../scss/_base.scss */
+/* line 668, ../scss/_base.scss */
 .commentlist .vcard {
   margin-left: 50px;
 }
-/* line 673, ../scss/_base.scss */
+/* line 671, ../scss/_base.scss */
 .commentlist .vcard cite.fn {
   font-weight: 700;
   font-style: normal;
 }
-/* line 681, ../scss/_base.scss */
+/* line 679, ../scss/_base.scss */
 .commentlist .vcard time {
   float: right;
 }
-/* line 684, ../scss/_base.scss */
+/* line 682, ../scss/_base.scss */
 .commentlist .vcard time a {
   color: #999;
   text-decoration: none;
 }
-/* line 688, ../scss/_base.scss */
+/* line 686, ../scss/_base.scss */
 .commentlist .vcard time a:hover {
   text-decoration: underline;
 }
-/* line 698, ../scss/_base.scss */
+/* line 696, ../scss/_base.scss */
 .commentlist .vcard img.avatar {
   position: absolute;
   left: 10px;
@@ -1164,17 +1159,17 @@ COMMENT STYLES
   border: 1px solid #cecece;
   background: #fff;
 }
-/* line 723, ../scss/_base.scss */
+/* line 721, ../scss/_base.scss */
 .commentlist .comment_content {
   margin-left: 50px;
 }
-/* line 726, ../scss/_base.scss */
+/* line 724, ../scss/_base.scss */
 .commentlist .comment_content p {
   margin: 0.7335em 0 1.5em;
   font-size: 1em;
   line-height: 1.5em;
 }
-/* line 735, ../scss/_base.scss */
+/* line 733, ../scss/_base.scss */
 .commentlist .comment-reply-link {
   text-decoration: none;
   float: right;
@@ -1184,46 +1179,46 @@ COMMENT STYLES
 /******************************************************************
 COMMENT FORM STYLES
 ******************************************************************/
-/* line 748, ../scss/_base.scss */
+/* line 746, ../scss/_base.scss */
 .respond-form {
   margin-top: 1.77778em;
   padding-bottom: 0.44444em;
 }
-/* line 752, ../scss/_base.scss */
+/* line 750, ../scss/_base.scss */
 .respond-form form {
   margin: 0.75em 0;
 }
-/* line 755, ../scss/_base.scss */
+/* line 753, ../scss/_base.scss */
 .respond-form form li {
   list-style-type: none;
   clear: both;
   margin-bottom: 0.7335em;
 }
-/* line 761, ../scss/_base.scss */
+/* line 759, ../scss/_base.scss */
 .respond-form form li label,
 .respond-form form li small {
   display: none;
 }
-/* line 769, ../scss/_base.scss */
+/* line 767, ../scss/_base.scss */
 .respond-form form input[type=text],
 .respond-form form input[type=email],
 .respond-form form input[type=url],
 .respond-form form textarea {
   padding: 0.1875em 0.375em;
-  background: #efefef;
+  background: #fff;
   color: #666666;
-  border: 0.0625em solid #cecece;
+  border: 0.125em solid #cccccc;
   line-height: 1.5em;
   /* form validation */
 }
-/* line 776, ../scss/_base.scss */
+/* line 774, ../scss/_base.scss */
 .respond-form form input[type=text]:focus,
 .respond-form form input[type=email]:focus,
 .respond-form form input[type=url]:focus,
 .respond-form form textarea:focus {
-  background: #fff;
+  border: 0.125em solid #999999;
 }
-/* line 781, ../scss/_base.scss */
+/* line 779, ../scss/_base.scss */
 .respond-form form input[type=text]:invalid,
 .respond-form form input[type=email]:invalid,
 .respond-form form input[type=url]:invalid,
@@ -1236,14 +1231,14 @@ COMMENT FORM STYLES
   -ms-box-shadow: none;
   box-shadow: none;
 }
-/* line 794, ../scss/_base.scss */
+/* line 792, ../scss/_base.scss */
 .respond-form form input[type=text],
 .respond-form form input[type=email],
 .respond-form form input[type=url] {
   max-width: 400px;
   min-width: 250px;
 }
-/* line 799, ../scss/_base.scss */
+/* line 797, ../scss/_base.scss */
 .respond-form form textarea {
   resize: none;
   width: 97.3%;
@@ -1252,7 +1247,7 @@ COMMENT FORM STYLES
 
 /* comment submit button */
 /* comment form title */
-/* line 814, ../scss/_base.scss */
+/* line 812, ../scss/_base.scss */
 #comment-form-title {
   margin: 0 0 1.1em;
 }
@@ -1260,13 +1255,13 @@ COMMENT FORM STYLES
 /* cancel comment reply link */
 /* logged in comments */
 /* allowed tags */
-/* line 827, ../scss/_base.scss */
+/* line 825, ../scss/_base.scss */
 #allowed_tags {
   margin: 1.5em 10px 0.7335em 0;
 }
 
 /* no comments */
-/* line 832, ../scss/_base.scss */
+/* line 830, ../scss/_base.scss */
 .nocomments {
   margin: 0 20px 1.1em;
 }
@@ -1274,7 +1269,7 @@ COMMENT FORM STYLES
 /*********************
 SIDEBARS & ASIDES
 *********************/
-/* line 848, ../scss/_base.scss */
+/* line 846, ../scss/_base.scss */
 .widget ul li {
   /* deep nesting */
 }
@@ -1282,13 +1277,13 @@ SIDEBARS & ASIDES
 /*********************
 FOOTER STYLES
 *********************/
-/* line 869, ../scss/_base.scss */
+/* line 867, ../scss/_base.scss */
 .footer {
   clear: both;
   font-size: 0.875em;
   line-height: 1.71429em;
 }
-/* line 874, ../scss/_base.scss */
+/* line 872, ../scss/_base.scss */
 .footer .wrap {
   border-top: 1px solid #eeeeee;
   margin-top: 0.44444em;
@@ -1304,7 +1299,7 @@ it simple because you'll have to
 override these styles for the desktop
 view.
 */
-/* line 890, ../scss/_base.scss */
+/* line 888, ../scss/_base.scss */
 .footer-nav {
   list-style-type: none;
 }
