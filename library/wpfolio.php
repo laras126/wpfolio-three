@@ -35,6 +35,7 @@ if ( !function_exists( 'of_get_option' ) ) {
 // This metabox shows up in all posts
 
 function wpf_artinfo_metaboxes( $meta_boxes ) {
+    $post_title = the_title();
     $prefix = '_ctmb_'; // Prefix for all fields
     $meta_boxes[] = array(
             'id' => 'artwork-info',
@@ -59,7 +60,7 @@ function wpf_artinfo_metaboxes( $meta_boxes ) {
                         ),
                     array(
                             'name' => 'Medium',
-                            'desc' => 'Your work\'s medium.',
+                            'desc' => 'A few words describing your work\'s medium.',
                             'id' => $prefix . 'medium',
                             'type' => 'text'
                         ),
@@ -77,8 +78,8 @@ function wpf_artinfo_metaboxes( $meta_boxes ) {
                         ),
 					array(
                             'name' => 'Acknowledgments',
-                            'desc' => 'List the names of any collaborators.',
-                            'id' => $prefix . 'collaborators',
+                            'desc' => 'Use this space to describe any people or places related to this project.',
+                            'id' => $prefix . 'acknowledgments',
                             'type' => 'wysiwyg'
                         ),
 					array(
@@ -186,6 +187,7 @@ function artwork_meta_shortcode ($atts) {
     return ob_get_clean();
 } 
 add_shortcode('artwork_info', 'artwork_meta_shortcode');
+
 
 
 

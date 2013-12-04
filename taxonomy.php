@@ -14,7 +14,8 @@ Template for the medium taxonomy.
 
 			<div id="main" class="clearfix" role="main">
 
-				<h1 class="medium-title"><span><?php _e( '', 'bonestheme' ); ?></span> <?php single_cat_title(); ?></h1>
+				<!-- TODO: conditionally show taxonomy term (i.e. People: Lara Schenck, Places: Louvre) -->
+				<h2 class="medium-title"><span><?php _e( '', 'bonestheme' ); ?></span> <?php single_cat_title(); ?></h2>
 
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -23,7 +24,7 @@ Template for the medium taxonomy.
 						<?php if ( has_post_thumbnail() ) {
 							the_post_thumbnail();
 						} else { 
-							// Use thumbnails based on post format
+							// TODO: somehow print different default thumbs w/out formats?
 							//if ( has_post_format( 'video' )) { ?>
 								<!-- <img src="<?php bloginfo('template_directory'); ?>/library/images/default-thumb-video.png" alt="<?php the_title(); ?>"/> -->
 							<?php// } else if ( has_post_format( 'audio' )) { ?>

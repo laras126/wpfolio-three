@@ -14,7 +14,7 @@ $aw_title = get_post_meta( $post->ID, '_ctmb_title', true ) . '</h4>';
 $aw_date = get_post_meta( $post->ID, '_ctmb_date', true );
 $aw_medium = get_post_meta( $post->ID, '_ctmb_medium', true );
 $aw_desc = get_post_meta( $post->ID, '_ctmb_description', true );
-$aw_collabs = get_post_meta( $post->ID, '_ctmb_collaborators', true );
+$aw_acknow = get_post_meta( $post->ID, '_ctmb_acknowledgements', true );
 $aw_link = get_post_meta( $post->ID, '_ctmb_link', true );
 ?>
 
@@ -36,7 +36,7 @@ $aw_link = get_post_meta( $post->ID, '_ctmb_link', true );
 		}
 
 		if ( $aw_collabs ) {
-			echo '<li><strong>Collaborators:</strong> ' . $aw_collabs . '</li>';
+			echo '<li><strong>Acknowledgements:</strong> ' . $aw_acknow . '</li>';
 		}
 
 		if ( $aw_link ) {

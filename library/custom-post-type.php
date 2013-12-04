@@ -60,26 +60,26 @@ function project_type() {
 	); /* end of register post type */
 	
 
-	// Medium taxonomy (like Project categories)
-	register_taxonomy( 'medium', 
+	// Project Categories)
+	register_taxonomy( 'project_category', 
 		array('project'),
 		array('hierarchical' => true,     /* if this i8s true, it acts like categories */             
 			'labels' => array(
-				'name' => __( 'Medium', 'bonestheme' ), /* name of the custom taxonomy */
-				'singular_name' => __( 'Medium', 'bonestheme' ), /* single taxonomy name */
-				'search_items' =>  __( 'Search Mediums', 'bonestheme' ), /* search title for taxomony */
-				'all_items' => __( 'All Mediums', 'bonestheme' ), /* all title for taxonomies */
-				'parent_item' => __( 'Parent Medium', 'bonestheme' ),  /* parent title for taxonomy */
-				'parent_item_colon' => __( 'Parent Medium:', 'bonestheme' ), /* parent taxonomy title */
-				'edit_item' => __( 'Edit Medium', 'bonestheme' ), /* edit custom taxonomy title */
-				'update_item' => __( 'Update Medium', 'bonestheme' ), /* update title for taxonomy */
-				'add_new_item' => __( 'Add New Medium', 'bonestheme' ), /* add new title for taxonomy */
-				'new_item_name' => __( 'New Medium', 'bonestheme' ) /* name title for taxonomy */
+				'name' => __( 'Project Categories', 'bonestheme' ), /* name of the custom taxonomy */
+				'singular_name' => __( 'Project Category', 'bonestheme' ), /* single taxonomy name */
+				'search_items' =>  __( 'Search Project Categories', 'bonestheme' ), /* search title for taxomony */
+				'all_items' => __( 'All Project Categories', 'bonestheme' ), /* all title for taxonomies */
+				'parent_item' => __( 'Parent Project Category', 'bonestheme' ),  /* parent title for taxonomy */
+				'parent_item_colon' => __( 'Parent Project Category:', 'bonestheme' ), /* parent taxonomy title */
+				'edit_item' => __( 'Edit Project Category', 'bonestheme' ), /* edit custom taxonomy title */
+				'update_item' => __( 'Update Project Category', 'bonestheme' ), /* update title for taxonomy */
+				'add_new_item' => __( 'Add New Project Category', 'bonestheme' ), /* add new title for taxonomy */
+				'new_item_name' => __( 'New Project Category', 'bonestheme' ) /* name title for taxonomy */
 			),
 			'show_admin_column' => true, 
 			'show_ui' => true,
 			'query_var' => true,
-			'rewrite' => array( 'slug' => 'medium' ),
+			'rewrite' => array( 'slug' => 'category' ),
 		)
 	);  
 
@@ -87,30 +87,52 @@ function project_type() {
 		array('project'),
 		array('hierarchical' => false,     /* if this i8s true, it acts like categories */             
 			'labels' => array(
-				'name' => __( 'Medium', 'bonestheme' ), /* name of the custom taxonomy */
-				'singular_name' => __( 'Medium', 'bonestheme' ), /* single taxonomy name */
-				'search_items' =>  __( 'Search Mediums', 'bonestheme' ), /* search title for taxomony */
-				'all_items' => __( 'All Mediums', 'bonestheme' ), /* all title for taxonomies */
-				'parent_item' => __( 'Parent Medium', 'bonestheme' ),  /* parent title for taxonomy */
-				'parent_item_colon' => __( 'Parent Medium:', 'bonestheme' ), /* parent taxonomy title */
-				'edit_item' => __( 'Edit Medium', 'bonestheme' ), /* edit custom taxonomy title */
-				'update_item' => __( 'Update Medium', 'bonestheme' ), /* update title for taxonomy */
-				'add_new_item' => __( 'Add New Medium', 'bonestheme' ), /* add new title for taxonomy */
-				'new_item_name' => __( 'New Medium', 'bonestheme' ) /* name title for taxonomy */
+				'name' => __( 'People', 'bonestheme' ), /* name of the custom taxonomy */
+				'singular_name' => __( 'People', 'bonestheme' ), /* single taxonomy name */
+				'search_items' =>  __( 'Search People', 'bonestheme' ), /* search title for taxomony */
+				'all_items' => __( 'All People', 'bonestheme' ), /* all title for taxonomies */
+				'parent_item' => __( 'Parent Person', 'bonestheme' ),  /* parent title for taxonomy */
+				'parent_item_colon' => __( 'Parent Person:', 'bonestheme' ), /* parent taxonomy title */
+				'edit_item' => __( 'Edit People', 'bonestheme' ), /* edit custom taxonomy title */
+				'update_item' => __( 'Update People', 'bonestheme' ), /* update title for taxonomy */
+				'add_new_item' => __( 'Add New Person', 'bonestheme' ), /* add new title for taxonomy */
+				'new_item_name' => __( 'New Person', 'bonestheme' ) /* name title for taxonomy */
 			),
 			'show_admin_column' => true, 
 			'show_ui' => true,
 			'query_var' => true,
-			'rewrite' => array( 'slug' => 'medium' ),
+			'rewrite' => array( 'slug' => 'people' ),
+		)
+	);  
+
+	register_taxonomy( 'places', 
+		array('project'),
+		array('hierarchical' => false,     /* if this i8s true, it acts like categories */             
+			'labels' => array(
+				'name' => __( 'Places', 'bonestheme' ), /* name of the custom taxonomy */
+				'singular_name' => __( 'Places', 'bonestheme' ), /* single taxonomy name */
+				'search_items' =>  __( 'Search Places', 'bonestheme' ), /* search title for taxomony */
+				'all_items' => __( 'All Places', 'bonestheme' ), /* all title for taxonomies */
+				'edit_item' => __( 'Edit Places', 'bonestheme' ), /* edit custom taxonomy title */
+				'update_item' => __( 'Update Place', 'bonestheme' ), /* update title for taxonomy */
+				'add_new_item' => __( 'Add New Place', 'bonestheme' ), /* add new title for taxonomy */
+				'new_item_name' => __( 'New Place', 'bonestheme' ) /* name title for taxonomy */
+			),
+			'show_admin_column' => true, 
+			'show_ui' => true,
+			'query_var' => true,
+			'rewrite' => array( 'slug' => 'people' ),
 		)
 	);  
 
 	/* adds medium taxonomy (categories) to Portfolio */
-	register_taxonomy_for_object_type( 'medium', 'project' );
+	register_taxonomy_for_object_type( 'project_category', 'project' );
 	register_taxonomy_for_object_type( 'people', 'project' );
+	register_taxonomy_for_object_type( 'place', 'project' );
 
 	/* adds post tags to the project */
-	register_taxonomy_for_object_type( 'post_tag', 'project' );
+	// TODO: Is it right to remove these?
+	//register_taxonomy_for_object_type( 'post_tag', 'project' );
 	
 }
 

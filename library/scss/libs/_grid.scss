@@ -84,8 +84,8 @@ $container-style: fluid;
 
 	// Portfolio layout
 	.project-thumb {
-		@include span-columns(3,12); // each gallery-image is 3 of 9 cols.
-		&:nth-child(4n) { @include omega; } // every third image completes a row.
+		@include span-columns(3,12); // four column posts
+		&:nth-child(4n) { @include omega; } // every fourth image completes a row.
 	}
 
 	// Comments

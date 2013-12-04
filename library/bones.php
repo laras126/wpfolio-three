@@ -1,3 +1,4 @@
+
 <?php
 /* Welcome to Bones :)
 This is the core Bones file where most of the
@@ -192,13 +193,14 @@ function bones_theme_support() {
 
 	// to add header image support go here: http://themble.com/support/adding-header-background-image-support/
 
-	// adding post format support
-	add_theme_support( 'post-formats',
-		array(
-			'video',             // video
-			'audio',             // audio
-		)
-	);
+	// No support for post formats - sorry, WP, they aren't that useful! IMHO
+	// // adding post format support
+	// add_theme_support( 'post-formats',
+	// 	array(
+	// 		'video',             // video
+	// 		'audio',             // audio
+	// 	)
+	// );
 
 	// wp menus
 	add_theme_support( 'menus' );

@@ -27,7 +27,13 @@ Template for single Projects
 					</section>
 
 					<footer class="article-footer">
-						<p class="tags"><?php echo get_the_term_list( get_the_ID(), 'post_tag', '<span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ' ) ?></p>
+						
+						<ul>
+							<li class="tags"><?php echo get_the_term_list( get_the_ID(), 'people', '<span class="tags-title">' . __( 'People:', 'bonestheme' ) . '</span> ', ', ' ) ?></li>
+							
+							<li class="tags"><?php echo get_the_term_list( get_the_ID(), 'places', '<span class="tags-title">' . __( 'Places:', 'bonestheme' ) . '</span> ', ', ' ) ?></li>
+						</ul>
+						
 						<?php edit_post_link('edit', '<p>', '</p>'); ?>
 					</footer>
 
