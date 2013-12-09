@@ -94,7 +94,7 @@ textarea {
   resize: vertical;
 }
 
-/* line 16, ../scss/libs/_grid.scss */
+/* line 21, ../scss/libs/_grid.scss */
 .wrap {
   *zoom: 1;
   padding-left: 2em;
@@ -109,7 +109,7 @@ textarea {
   clear: both;
 }
 
-/* line 20, ../scss/libs/_grid.scss */
+/* line 25, ../scss/libs/_grid.scss */
 .prev {
   width: 48.57143%;
   float: left;
@@ -117,7 +117,7 @@ textarea {
   display: inline;
 }
 
-/* line 24, ../scss/libs/_grid.scss */
+/* line 29, ../scss/libs/_grid.scss */
 .next {
   width: 48.57143%;
   float: right;
@@ -131,61 +131,66 @@ textarea {
 		- The sidebar to the news layout
 		- Float the main nav to the right
 */
-@media (min-width: 40em) {
-  /* line 56, ../scss/libs/_grid.scss */
-  .artwork-meta {
-    width: 48.57143%;
+@media (min-width: 481px) {
+  /* line 45, ../scss/libs/_grid.scss */
+  .project-thumb {
+    width: 45.45455%;
     float: left;
-    margin-right: 2.85714%;
+    margin-right: 9.09091%;
+  }
+  /* line 47, ../scss/libs/_grid.scss */
+  .project-thumb:nth-child(2n) {
+    float: right;
+    margin-right: 0;
   }
 }
-@media (min-width: 60em) {
-  /* line 64, ../scss/libs/_grid.scss */
+@media (min-width: 960px) {
+  /* line 69, ../scss/libs/_grid.scss */
   .sidebar-layout {
     width: 65.71429%;
     float: left;
     margin-right: 2.85714%;
   }
 
-  /* line 68, ../scss/libs/_grid.scss */
+  /* line 73, ../scss/libs/_grid.scss */
   .sidebar {
     width: 31.42857%;
     float: right;
     margin-right: 0;
   }
 
-  /* line 72, ../scss/libs/_grid.scss */
+  /* line 77, ../scss/libs/_grid.scss */
   #site-name {
     width: 31.42857%;
     float: left;
     margin-right: 2.85714%;
   }
 
-  /* line 76, ../scss/libs/_grid.scss */
+  /* line 81, ../scss/libs/_grid.scss */
   #main-nav {
     width: 65.71429%;
     float: right;
     margin-right: 0;
   }
 
-  /* line 81, ../scss/libs/_grid.scss */
+  /* line 86, ../scss/libs/_grid.scss */
   .top-nav {
     float: right;
   }
 
-  /* line 86, ../scss/libs/_grid.scss */
+  /* line 91, ../scss/libs/_grid.scss */
   .project-thumb {
     width: 22.85714%;
     float: left;
     margin-right: 2.85714%;
   }
-  /* line 88, ../scss/libs/_grid.scss */
+  /* line 93, ../scss/libs/_grid.scss */
   .project-thumb:nth-child(4n) {
     float: right;
     margin-right: 0;
   }
 
-  /* line 92, ../scss/libs/_grid.scss */
+  /* line 97, ../scss/libs/_grid.scss */
   .project .respond-form {
     width: 65.71429%;
     float: left;

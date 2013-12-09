@@ -50,7 +50,7 @@ function wpf_artinfo_metaboxes( $meta_boxes ) {
 						'desc' => '<p>Print this information by typing the shortcode <code>[artwork_info]</code> in the post editor. Blank fields will not display.</p>
 						',
 						'type' => 'title',
-						'id' => $prefix . 'test_title'
+						'id' => $prefix . 'fields_description'
 					),
                     array(
                             'name' => 'Title',

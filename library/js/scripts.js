@@ -46,8 +46,9 @@ jQuery(document).ready(function($) {
     } /* end smallest screen */
     
     /* if is larger than 481px */
-    if (responsive_viewport > 481) {
-        
+    if (responsive_viewport > 768) {
+        $('.project-thumb:')
+
     } /* end larger than 481px */
     
     /* if is above or equal to 768px */
@@ -64,7 +65,7 @@ jQuery(document).ready(function($) {
     }
     
     /* off the bat large screen actions */
-    if (responsive_viewport > 1030) {
+    if (responsive_viewport > 960) {
         
     }
     
