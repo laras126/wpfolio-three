@@ -47,7 +47,7 @@
 
 				<div id="inner-header" class="wrap clearfix">
 
-					<div id="site-name">
+					<div class="site-name">
 						<h1 class="site-title"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></h1>
 						<p class="site-description"><?php bloginfo('description'); ?></p>
 					</div>

@@ -78,6 +78,7 @@ HEADER STYLES
 
 .header {
 	padding-top: 2.2em;
+	text-align: center;
 }
 
 	.site-title {
@@ -740,7 +741,7 @@ COMMENT STYLES
 	.comment-reply-link {
 		text-decoration: none;
 		float: right;
-		@extend .button;
+		@include button($secondary);
 
 	} /* end .commentlist .comment-reply-link */
 
@@ -812,7 +813,7 @@ COMMENT FORM STYLES
 
 	/* comment submit button */
 	#submit {
-		@extend .button;
+		@include button($secondary);
 	}
 
 	/* comment form title */

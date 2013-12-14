@@ -42,7 +42,7 @@ $desktop 		: 960px;
 
 // Phonez
 @include at-breakpoint(30.0625em 4) {
-	
+
 	.project-thumb {
 		@include span-columns(2,4);
 		&:nth-child(3n), &:nth-child(4n) { @include remove-omega; }
@@ -76,7 +76,7 @@ $desktop 		: 960px;
 	}
 
 	.artwork-meta {
-		@include span-columns(6, 12);
+		@include span-columns(6, 9);
 	}
 }
 
@@ -91,7 +91,7 @@ $desktop 		: 960px;
 		@include span-columns(4 omega,12);
 	}
 
-	#site-name {
+	.site-name {
 		@include span-columns(4, 12);	
 	}
 
@@ -106,11 +106,11 @@ $desktop 		: 960px;
 
 	// Portfolio layout
 	.project-thumb {
-		@include span-columns(3,12); // four column posts
+		@include span-columns(3,12); // four columns
 		&:nth-child(2n) { @include remove-omega; }
 		&:nth-child(3n) { @include remove-omega; }
 		&:nth-child(4n) { @include omega; } // every fourth image completes a row.
-		height: 18.75em;
+		height: 20em;
 	}
 
 	// Comments

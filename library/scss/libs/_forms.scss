@@ -41,6 +41,7 @@ input[type="email"],
 input[type="url"],
 input[type="search"],
 input[type="tel"] {
+	font-family: Helvetica;
 	@include border-radius(4px);
 	padding: $base-size/3;
 	margin: rhythm(1, 18px) 0 0;
@@ -73,7 +74,7 @@ input[type="checkbox"] {
 
 input[type="submit"],
 button {
-	@extend .button;
+	@include button($primary);
 }
 
 select,

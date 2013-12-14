@@ -30,6 +30,10 @@ if (!window.getComputedStyle) {
 // as the page loads, call these scripts
 jQuery(document).ready(function($) {
 
+
+    // Fade in homepage
+    $('.home #content, .home .footer').fadeIn(700);
+
     /*
     Responsive jQuery is a tricky thing.
     There's a bunch of different ways to handle
@@ -57,11 +61,7 @@ jQuery(document).ready(function($) {
         /* load gravatars */
         $('.comment img[data-gravatar]').each(function(){
             $(this).attr('src',$(this).attr('data-gravatar'));
-        });
-
-        // Fade in homepage
-        $('.home #content, .home .footer').fadeIn(700);
-        
+        });        
     }
     
     /* off the bat large screen actions */
