@@ -1,5 +1,5 @@
-
 <?php
+
 /* Welcome to Bones :)
 This is the core Bones file where most of the
 main functions & features reside. If you have
@@ -193,7 +193,7 @@ function bones_theme_support() {
 
 	// to add header image support go here: http://themble.com/support/adding-header-background-image-support/
 
-	// No support for post formats - sorry, WP, they aren't that useful! IMHO
+	// No support for post formats - sorry, WP, they aren't that useful! (IMHO)
 	// // adding post format support
 	// add_theme_support( 'post-formats',
 	// 	array(

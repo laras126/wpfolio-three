@@ -1,7 +1,7 @@
 <?php
 /*
 
-Template for the medium taxonomy. 
+Template for the medium taxonomy archive. 
 
 */
 ?>
@@ -23,23 +23,14 @@ Template for the medium taxonomy.
 					<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
 						<?php if ( has_post_thumbnail() ) {
 							the_post_thumbnail();
-						} else { 
-							// TODO: somehow print different default thumbs w/out formats?
-							//if ( has_post_format( 'video' )) { ?>
-								<!-- <img src="<?php bloginfo('template_directory'); ?>/library/images/default-thumb-video.png" alt="<?php the_title(); ?>"/> -->
-							<?php// } else if ( has_post_format( 'audio' )) { ?>
-								<!-- <img src="<?php bloginfo('template_directory'); ?>/library/images/default-thumb-audio.png" alt="<?php the_title(); ?>"/> -->
-							<?php //} else { ?>
-								<img src="<?php bloginfo('template_directory'); ?>/library/images/default-thumb-image.png" alt="<?php the_title(); ?>"/>
-							<?php //} ?>
+						} else { ?>
+							<img src="<?php bloginfo('template_directory'); ?>/library/images/default-thumb-image.png" alt="<?php the_title(); ?>"/>
 						<?php } ?>
 						<h5 class="project-thumb-title line-clamp"><?php the_title(); ?></h5>
 					</a>
 				</article>
 
 				<?php endwhile; ?>
-
-				
 
 				<?php else : ?>
 

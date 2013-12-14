@@ -443,7 +443,14 @@ POSTS & CONTENT STYLES
 
 .project-thumb img {
 	@extend .max-width !optional;
+	display: block;
+	margin: auto;
 	margin-bottom: rhythm(1, 16px);
+}
+
+.project-thumb-title {
+	margin-bottom: rhythm(4, 18px);		
+	@include adjust-font-size-to(14px);
 }
 
 .artwork-meta {

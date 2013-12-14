@@ -178,11 +178,6 @@ nav[role=navigation] {
 POSTS & CONTENT STYLES
 *********************/
 
-// Project type styles
-.project-thumb {
-	height: 300px;
-}
-
 // Hover styles for gallery and project thumbs
 .project-thumb, .gallery-item {
 	img {
@@ -198,12 +193,6 @@ POSTS & CONTENT STYLES
 	}
 }
 
-.line-clamp {
-	overflow: hidden;
-	display: -webkit-box;
-	-webkit-line-clamp: 2;
-	-webkit-box-orient: vertical;  
-}
 
 // Video post format
 

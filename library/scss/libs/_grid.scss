@@ -13,6 +13,7 @@ $gutter-width   : 2em;            // 1em gutters between columns
 $grid-padding   : $gutter-width;  // grid-padding equal to gutters
 $container-style: fluid;
 
+// Sass not liking these in variables for some reason
 $mobile 		: 481px;
 $tablet 		: 768px;
 $desktop 		: 960px;
@@ -40,22 +41,38 @@ $desktop 		: 960px;
 // TODO: responsive post thumb grid not working
 
 // Phonez
-@include at-breakpoint($mobile 4) {
+@include at-breakpoint(30.0625em 4) {
 	
 	.project-thumb {
 		@include span-columns(2,4);
-			&:nth-child(2n) { @include omega; } // every third image completes a row.
-		}
+		&:nth-child(3n), &:nth-child(4n) { @include remove-omega; }
+		&:nth-child(2n) { @include omega; } // every third image completes a row.
+		height: 18.75em;
+	}
+}
+
+@include at-breakpoint(33.25em 4) {
+	.project-thumb {
+		height: 21em;
+	}
+}
+
+@include at-breakpoint(40em 4) {
+	.project-thumb {
+		height: 25em;
+	}
 }
 
 // Tablet size
-@include at-breakpoint($tablet) {
+@include at-breakpoint(48em 9) {
 
 	// Portfolio layout
 
 	.project-thumb {
-		@include span-columns(1,3);
+		@include span-columns(3,9);
+		&:nth-child(2n), &:nth-child(4n) { @include remove-omega; }
 		&:nth-child(3n) { @include omega; } // every third image completes a row.
+		height: 21.875em;
 	}
 
 	.artwork-meta {
@@ -64,7 +81,7 @@ $desktop 		: 960px;
 }
 
 // Computer screen size
-@include at-breakpoint($desktop 12) {
+@include at-breakpoint(60em 12) {
 	
 	.sidebar-layout {
 	 	@include span-columns(8,12);
@@ -90,7 +107,10 @@ $desktop 		: 960px;
 	// Portfolio layout
 	.project-thumb {
 		@include span-columns(3,12); // four column posts
+		&:nth-child(2n) { @include remove-omega; }
+		&:nth-child(3n) { @include remove-omega; }
 		&:nth-child(4n) { @include omega; } // every fourth image completes a row.
+		height: 18.75em;
 	}
 
 	// Comments
@@ -99,21 +119,4 @@ $desktop 		: 960px;
 	}
 
 }
-
-// TODO Will be changing this to the custom type
-
-// .project-thumb {
-	
-// 	@include at-breakpoint(60em 12) {
-// 		@include span-columns(4, 12);	
-// 	}
-
-// 	@include at-breakpoint(40em 8) {
-// 		@include span-columns(4, 8);	
-// 	}
-
-// 	@include at-breakpoint(20em 2) {
-// 		@include span-columns(1, 2);	
-// 	}
-// }
 
