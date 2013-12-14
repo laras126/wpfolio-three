@@ -140,7 +140,7 @@ textarea {
     width: 45.45455%;
     float: left;
     margin-right: 9.09091%;
-    height: 18.75em;
+    height: 21em;
   }
   /* line 48, ../scss/libs/_grid.scss */
   .project-thumb:nth-child(3n), .project-thumb:nth-child(4n) {
@@ -156,13 +156,13 @@ textarea {
 @media (min-width: 33.25em) {
   /* line 55, ../scss/libs/_grid.scss */
   .project-thumb {
-    height: 21em;
+    height: 23em;
   }
 }
 @media (min-width: 40em) {
   /* line 61, ../scss/libs/_grid.scss */
   .project-thumb {
-    height: 25em;
+    height: 26em;
   }
 }
 @media (min-width: 48em) {
@@ -171,7 +171,6 @@ textarea {
     width: 30.76923%;
     float: left;
     margin-right: 3.84615%;
-    height: 21.875em;
   }
   /* line 73, ../scss/libs/_grid.scss */
   .project-thumb:nth-child(2n), .project-thumb:nth-child(4n) {

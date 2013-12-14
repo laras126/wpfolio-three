@@ -47,19 +47,19 @@ $desktop 		: 960px;
 		@include span-columns(2,4);
 		&:nth-child(3n), &:nth-child(4n) { @include remove-omega; }
 		&:nth-child(2n) { @include omega; } // every third image completes a row.
-		height: 18.75em;
+		height: 21em;
 	}
 }
 
 @include at-breakpoint(33.25em 4) {
 	.project-thumb {
-		height: 21em;
+		height: 23em;
 	}
 }
 
 @include at-breakpoint(40em 4) {
 	.project-thumb {
-		height: 25em;
+		height: 26em;
 	}
 }
 
@@ -72,7 +72,7 @@ $desktop 		: 960px;
 		@include span-columns(3,9);
 		&:nth-child(2n), &:nth-child(4n) { @include remove-omega; }
 		&:nth-child(3n) { @include omega; } // every third image completes a row.
-		height: 21.875em;
+		
 	}
 
 	.artwork-meta {
