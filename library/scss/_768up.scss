@@ -22,11 +22,6 @@ body {}
 LAYOUT & GRID STYLES
 *********************/
 
-
-.wrap {
-	max-width: 960px;
-}
-
 .home #content, .home .footer {
 	display: none;
 }
@@ -200,6 +195,10 @@ POSTS & CONTENT STYLES
 			height: 500px;
 		}
 	}
+}
+
+.comment_content {
+	margin-left: 50px;
 }
 
 /*********************

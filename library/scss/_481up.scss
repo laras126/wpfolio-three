@@ -20,9 +20,19 @@ upon your base.scss styles.
 NAVIGATION STYLES
 *********************/
 
-.nav {}
+// Center the menu
+// TODO: does this look okay?
+.nav {
+	display: inline-block;
 
+	li {
+		text-align: center;
+	}
+}
+	
 	/* .menu is clearfixed inside mixins.scss */
+	
+
 	.menu {
 		ul {
 			li {

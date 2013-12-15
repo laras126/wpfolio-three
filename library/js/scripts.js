@@ -51,7 +51,7 @@ jQuery(document).ready(function($) {
     
     /* if is larger than 481px */
     if (responsive_viewport > 768) {
-        $('.project-thumb:')
+        
 
     } /* end larger than 481px */
     
@@ -76,24 +76,30 @@ jQuery(document).ready(function($) {
 	// Author scripts (i.e. not from Bones)
     // ------------------
 
-    // Gosh, Brad Frost is a genius!
+    // Gosh, this is great!
     // Toggle menu for mobile
     // http://codepen.io/bradfrost/pen/sHvaz
 
     $('body').addClass('js');
     var $menu = $('#main-nav'),
         $menulink = $('.menu-link');
+        $menuicon = $('.menu-link .fa');
   
     $menulink.click(function() {
         $menulink.toggleClass('active');
         $menu.toggleClass('active');
+        $menuicon.toggleClass('fa-caret-down fa-caret-up');
         return false;
     });
 	
- 
 
 
 
+    
+    // Wrap all media in a figure element 
+    // that is styled to make them fluid
+    var $media = $('iframe, object, embed');
+    $media.wrap( '<figure class="media-wrap"></figure>' );
 
 
 }); /* end of as page load scripts */

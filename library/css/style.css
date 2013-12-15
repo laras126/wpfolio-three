@@ -11,6 +11,2153 @@ rest of the styles inside media queries.
 
 Don't add styles here! Use a child theme.
 ******************************************************************/
+/*!
+ *  Font Awesome 4.0.3 by @davegandy - http://fontawesome.io - @fontawesome
+ *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+ */
+/* FONT PATH
+ * -------------------------- */
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("../fonts/fontawesome-webfont.eot?v=4.0.3");
+  src: url("../fonts/fontawesome-webfont.eot?#iefix&v=4.0.3") format("embedded-opentype"), url("../fonts/fontawesome-webfont.woff?v=4.0.3") format("woff"), url("../fonts/fontawesome-webfont.ttf?v=4.0.3") format("truetype"), url("../fonts/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* line 4, ../font/font-awesome/scss/_core.scss */
+.fa {
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* makes the font 33% larger relative to the icon container */
+/* line 5, ../font/font-awesome/scss/_larger.scss */
+.fa-lg {
+  font-size: 1.33333em;
+  line-height: 0.75em;
+  vertical-align: -15%;
+}
+
+/* line 10, ../font/font-awesome/scss/_larger.scss */
+.fa-2x {
+  font-size: 2em;
+}
+
+/* line 11, ../font/font-awesome/scss/_larger.scss */
+.fa-3x {
+  font-size: 3em;
+}
+
+/* line 12, ../font/font-awesome/scss/_larger.scss */
+.fa-4x {
+  font-size: 4em;
+}
+
+/* line 13, ../font/font-awesome/scss/_larger.scss */
+.fa-5x {
+  font-size: 5em;
+}
+
+/* line 3, ../font/font-awesome/scss/_fixed-width.scss */
+.fa-fw {
+  width: 1.28571em;
+  text-align: center;
+}
+
+/* line 4, ../font/font-awesome/scss/_list.scss */
+.fa-ul {
+  padding-left: 0;
+  margin-left: 2.14286em;
+  list-style-type: none;
+}
+/* line 8, ../font/font-awesome/scss/_list.scss */
+.fa-ul > li {
+  position: relative;
+}
+
+/* line 10, ../font/font-awesome/scss/_list.scss */
+.fa-li {
+  position: absolute;
+  left: -2.14286em;
+  width: 2.14286em;
+  top: 0.14286em;
+  text-align: center;
+}
+/* line 16, ../font/font-awesome/scss/_list.scss */
+.fa-li.fa-lg {
+  left: -1.85714em;
+}
+
+/* line 4, ../font/font-awesome/scss/_bordered-pulled.scss */
+.fa-border {
+  padding: .2em .25em .15em;
+  border: solid 0.08em #eeeeee;
+  border-radius: .1em;
+}
+
+/* line 10, ../font/font-awesome/scss/_bordered-pulled.scss */
+.pull-right {
+  float: right;
+}
+
+/* line 11, ../font/font-awesome/scss/_bordered-pulled.scss */
+.pull-left {
+  float: left;
+}
+
+/* line 14, ../font/font-awesome/scss/_bordered-pulled.scss */
+.fa.pull-left {
+  margin-right: .3em;
+}
+/* line 15, ../font/font-awesome/scss/_bordered-pulled.scss */
+.fa.pull-right {
+  margin-left: .3em;
+}
+
+/* line 4, ../font/font-awesome/scss/_spinning.scss */
+.fa-spin {
+  -webkit-animation: spin 2s infinite linear;
+  -moz-animation: spin 2s infinite linear;
+  -o-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+}
+
+@-moz-keyframes spin {
+  /* line 12, ../font/font-awesome/scss/_spinning.scss */
+  0% {
+    -moz-transform: rotate(0deg);
+  }
+
+  /* line 13, ../font/font-awesome/scss/_spinning.scss */
+  100% {
+    -moz-transform: rotate(359deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  /* line 16, ../font/font-awesome/scss/_spinning.scss */
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  /* line 17, ../font/font-awesome/scss/_spinning.scss */
+  100% {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@-o-keyframes spin {
+  /* line 20, ../font/font-awesome/scss/_spinning.scss */
+  0% {
+    -o-transform: rotate(0deg);
+  }
+
+  /* line 21, ../font/font-awesome/scss/_spinning.scss */
+  100% {
+    -o-transform: rotate(359deg);
+  }
+}
+
+@-ms-keyframes spin {
+  /* line 24, ../font/font-awesome/scss/_spinning.scss */
+  0% {
+    -ms-transform: rotate(0deg);
+  }
+
+  /* line 25, ../font/font-awesome/scss/_spinning.scss */
+  100% {
+    -ms-transform: rotate(359deg);
+  }
+}
+
+@keyframes spin {
+  /* line 28, ../font/font-awesome/scss/_spinning.scss */
+  0% {
+    transform: rotate(0deg);
+  }
+
+  /* line 29, ../font/font-awesome/scss/_spinning.scss */
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+/* line 4, ../font/font-awesome/scss/_rotated-flipped.scss */
+.fa-rotate-90 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=$rotation);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+/* line 5, ../font/font-awesome/scss/_rotated-flipped.scss */
+.fa-rotate-180 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=$rotation);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+/* line 6, ../font/font-awesome/scss/_rotated-flipped.scss */
+.fa-rotate-270 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=$rotation);
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
+
+/* line 8, ../font/font-awesome/scss/_rotated-flipped.scss */
+.fa-flip-horizontal {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=$rotation);
+  -webkit-transform: scale(-1, 1);
+  -moz-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  -o-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+}
+
+/* line 9, ../font/font-awesome/scss/_rotated-flipped.scss */
+.fa-flip-vertical {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=$rotation);
+  -webkit-transform: scale(1, -1);
+  -moz-transform: scale(1, -1);
+  -ms-transform: scale(1, -1);
+  -o-transform: scale(1, -1);
+  transform: scale(1, -1);
+}
+
+/* line 4, ../font/font-awesome/scss/_stacked.scss */
+.fa-stack {
+  position: relative;
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  vertical-align: middle;
+}
+
+/* line 12, ../font/font-awesome/scss/_stacked.scss */
+.fa-stack-1x, .fa-stack-2x {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+/* line 18, ../font/font-awesome/scss/_stacked.scss */
+.fa-stack-1x {
+  line-height: inherit;
+}
+
+/* line 19, ../font/font-awesome/scss/_stacked.scss */
+.fa-stack-2x {
+  font-size: 2em;
+}
+
+/* line 20, ../font/font-awesome/scss/_stacked.scss */
+.fa-inverse {
+  color: white;
+}
+
+/* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
+   readers do not read off random characters that represent icons */
+/* line 4, ../font/font-awesome/scss/_icons.scss */
+.fa-glass:before {
+  content: "\f000";
+}
+
+/* line 5, ../font/font-awesome/scss/_icons.scss */
+.fa-music:before {
+  content: "\f001";
+}
+
+/* line 6, ../font/font-awesome/scss/_icons.scss */
+.fa-search:before {
+  content: "\f002";
+}
+
+/* line 7, ../font/font-awesome/scss/_icons.scss */
+.fa-envelope-o:before {
+  content: "\f003";
+}
+
+/* line 8, ../font/font-awesome/scss/_icons.scss */
+.fa-heart:before {
+  content: "\f004";
+}
+
+/* line 9, ../font/font-awesome/scss/_icons.scss */
+.fa-star:before {
+  content: "\f005";
+}
+
+/* line 10, ../font/font-awesome/scss/_icons.scss */
+.fa-star-o:before {
+  content: "\f006";
+}
+
+/* line 11, ../font/font-awesome/scss/_icons.scss */
+.fa-user:before {
+  content: "\f007";
+}
+
+/* line 12, ../font/font-awesome/scss/_icons.scss */
+.fa-film:before {
+  content: "\f008";
+}
+
+/* line 13, ../font/font-awesome/scss/_icons.scss */
+.fa-th-large:before {
+  content: "\f009";
+}
+
+/* line 14, ../font/font-awesome/scss/_icons.scss */
+.fa-th:before {
+  content: "\f00a";
+}
+
+/* line 15, ../font/font-awesome/scss/_icons.scss */
+.fa-th-list:before {
+  content: "\f00b";
+}
+
+/* line 16, ../font/font-awesome/scss/_icons.scss */
+.fa-check:before {
+  content: "\f00c";
+}
+
+/* line 17, ../font/font-awesome/scss/_icons.scss */
+.fa-times:before {
+  content: "\f00d";
+}
+
+/* line 18, ../font/font-awesome/scss/_icons.scss */
+.fa-search-plus:before {
+  content: "\f00e";
+}
+
+/* line 19, ../font/font-awesome/scss/_icons.scss */
+.fa-search-minus:before {
+  content: "\f010";
+}
+
+/* line 20, ../font/font-awesome/scss/_icons.scss */
+.fa-power-off:before {
+  content: "\f011";
+}
+
+/* line 21, ../font/font-awesome/scss/_icons.scss */
+.fa-signal:before {
+  content: "\f012";
+}
+
+/* line 23, ../font/font-awesome/scss/_icons.scss */
+.fa-gear:before,
+.fa-cog:before {
+  content: "\f013";
+}
+
+/* line 24, ../font/font-awesome/scss/_icons.scss */
+.fa-trash-o:before {
+  content: "\f014";
+}
+
+/* line 25, ../font/font-awesome/scss/_icons.scss */
+.fa-home:before {
+  content: "\f015";
+}
+
+/* line 26, ../font/font-awesome/scss/_icons.scss */
+.fa-file-o:before {
+  content: "\f016";
+}
+
+/* line 27, ../font/font-awesome/scss/_icons.scss */
+.fa-clock-o:before {
+  content: "\f017";
+}
+
+/* line 28, ../font/font-awesome/scss/_icons.scss */
+.fa-road:before {
+  content: "\f018";
+}
+
+/* line 29, ../font/font-awesome/scss/_icons.scss */
+.fa-download:before {
+  content: "\f019";
+}
+
+/* line 30, ../font/font-awesome/scss/_icons.scss */
+.fa-arrow-circle-o-down:before {
+  content: "\f01a";
+}
+
+/* line 31, ../font/font-awesome/scss/_icons.scss */
+.fa-arrow-circle-o-up:before {
+  content: "\f01b";
+}
+
+/* line 32, ../font/font-awesome/scss/_icons.scss */
+.fa-inbox:before {
+  content: "\f01c";
+}
+
+/* line 33, ../font/font-awesome/scss/_icons.scss */
+.fa-play-circle-o:before {
+  content: "\f01d";
+}
+
+/* line 35, ../font/font-awesome/scss/_icons.scss */
+.fa-rotate-right:before,
+.fa-repeat:before {
+  content: "\f01e";
+}
+
+/* line 36, ../font/font-awesome/scss/_icons.scss */
+.fa-refresh:before {
+  content: "\f021";
+}
+
+/* line 37, ../font/font-awesome/scss/_icons.scss */
+.fa-list-alt:before {
+  content: "\f022";
+}
+
+/* line 38, ../font/font-awesome/scss/_icons.scss */
+.fa-lock:before {
+  content: "\f023";
+}
+
+/* line 39, ../font/font-awesome/scss/_icons.scss */
+.fa-flag:before {
+  content: "\f024";
+}
+
+/* line 40, ../font/font-awesome/scss/_icons.scss */
+.fa-headphones:before {
+  content: "\f025";
+}
+
+/* line 41, ../font/font-awesome/scss/_icons.scss */
+.fa-volume-off:before {
+  content: "\f026";
+}
+
+/* line 42, ../font/font-awesome/scss/_icons.scss */
+.fa-volume-down:before {
+  content: "\f027";
+}
+
+/* line 43, ../font/font-awesome/scss/_icons.scss */
+.fa-volume-up:before {
+  content: "\f028";
+}
+
+/* line 44, ../font/font-awesome/scss/_icons.scss */
+.fa-qrcode:before {
+  content: "\f029";
+}
+
+/* line 45, ../font/font-awesome/scss/_icons.scss */
+.fa-barcode:before {
+  content: "\f02a";
+}
+
+/* line 46, ../font/font-awesome/scss/_icons.scss */
+.fa-tag:before {
+  content: "\f02b";
+}
+
+/* line 47, ../font/font-awesome/scss/_icons.scss */
+.fa-tags:before {
+  content: "\f02c";
+}
+
+/* line 48, ../font/font-awesome/scss/_icons.scss */
+.fa-book:before {
+  content: "\f02d";
+}
+
+/* line 49, ../font/font-awesome/scss/_icons.scss */
+.fa-bookmark:before {
+  content: "\f02e";
+}
+
+/* line 50, ../font/font-awesome/scss/_icons.scss */
+.fa-print:before {
+  content: "\f02f";
+}
+
+/* line 51, ../font/font-awesome/scss/_icons.scss */
+.fa-camera:before {
+  content: "\f030";
+}
+
+/* line 52, ../font/font-awesome/scss/_icons.scss */
+.fa-font:before {
+  content: "\f031";
+}
+
+/* line 53, ../font/font-awesome/scss/_icons.scss */
+.fa-bold:before {
+  content: "\f032";
+}
+
+/* line 54, ../font/font-awesome/scss/_icons.scss */
+.fa-italic:before {
+  content: "\f033";
+}
+
+/* line 55, ../font/font-awesome/scss/_icons.scss */
+.fa-text-height:before {
+  content: "\f034";
+}
+
+/* line 56, ../font/font-awesome/scss/_icons.scss */
+.fa-text-width:before {
+  content: "\f035";
+}
+
+/* line 57, ../font/font-awesome/scss/_icons.scss */
+.fa-align-left:before {
+  content: "\f036";
+}
+
+/* line 58, ../font/font-awesome/scss/_icons.scss */
+.fa-align-center:before {
+  content: "\f037";
+}
+
+/* line 59, ../font/font-awesome/scss/_icons.scss */
+.fa-align-right:before {
+  content: "\f038";
+}
+
+/* line 60, ../font/font-awesome/scss/_icons.scss */
+.fa-align-justify:before {
+  content: "\f039";
+}
+
+/* line 61, ../font/font-awesome/scss/_icons.scss */
+.fa-list:before {
+  content: "\f03a";
+}
+
+/* line 63, ../font/font-awesome/scss/_icons.scss */
+.fa-dedent:before,
+.fa-outdent:before {
+  content: "\f03b";
+}
+
+/* line 64, ../font/font-awesome/scss/_icons.scss */
+.fa-indent:before {
+  content: "\f03c";
+}
+
+/* line 65, ../font/font-awesome/scss/_icons.scss */
+.fa-video-camera:before {
+  content: "\f03d";
+}
+
+/* line 66, ../font/font-awesome/scss/_icons.scss */
+.fa-picture-o:before {
+  content: "\f03e";
+}
+
+/* line 67, ../font/font-awesome/scss/_icons.scss */
+.fa-pencil:before {
+  content: "\f040";
+}
+
+/* line 68, ../font/font-awesome/scss/_icons.scss */
+.fa-map-marker:before {
+  content: "\f041";
+}
+
+/* line 69, ../font/font-awesome/scss/_icons.scss */
+.fa-adjust:before {
+  content: "\f042";
+}
+
+/* line 70, ../font/font-awesome/scss/_icons.scss */
+.fa-tint:before {
+  content: "\f043";
+}
+
+/* line 72, ../font/font-awesome/scss/_icons.scss */
+.fa-edit:before,
+.fa-pencil-square-o:before {
+  content: "\f044";
+}
+
+/* line 73, ../font/font-awesome/scss/_icons.scss */
+.fa-share-square-o:before {
+  content: "\f045";
+}
+
+/* line 74, ../font/font-awesome/scss/_icons.scss */
+.fa-check-square-o:before {
+  content: "\f046";
+}
+
+/* line 75, ../font/font-awesome/scss/_icons.scss */
+.fa-arrows:before {
+  content: "\f047";
+}
+
+/* line 76, ../font/font-awesome/scss/_icons.scss */
+.fa-step-backward:before {
+  content: "\f048";
+}
+
+/* line 77, ../font/font-awesome/scss/_icons.scss */
+.fa-fast-backward:before {
+  content: "\f049";
+}
+
+/* line 78, ../font/font-awesome/scss/_icons.scss */
+.fa-backward:before {
+  content: "\f04a";
+}
+
+/* line 79, ../font/font-awesome/scss/_icons.scss */
+.fa-play:before {
+  content: "\f04b";
+}
+
+/* line 80, ../font/font-awesome/scss/_icons.scss */
+.fa-pause:before {
+  content: "\f04c";
+}
+
+/* line 81, ../font/font-awesome/scss/_icons.scss */
+.fa-stop:before {
+  content: "\f04d";
+}
+
+/* line 82, ../font/font-awesome/scss/_icons.scss */
+.fa-forward:before {
+  content: "\f04e";
+}
+
+/* line 83, ../font/font-awesome/scss/_icons.scss */
+.fa-fast-forward:before {
+  content: "\f050";
+}
+
+/* line 84, ../font/font-awesome/scss/_icons.scss */
+.fa-step-forward:before {
+  content: "\f051";
+}
+
+/* line 85, ../font/font-awesome/scss/_icons.scss */
+.fa-eject:before {
+  content: "\f052";
+}
+
+/* line 86, ../font/font-awesome/scss/_icons.scss */
+.fa-chevron-left:before {
+  content: "\f053";
+}
+
+/* line 87, ../font/font-awesome/scss/_icons.scss */
+.fa-chevron-right:before {
+  content: "\f054";
+}
+
+/* line 88, ../font/font-awesome/scss/_icons.scss */
+.fa-plus-circle:before {
+  content: "\f055";
+}
+
+/* line 89, ../font/font-awesome/scss/_icons.scss */
+.fa-minus-circle:before {
+  content: "\f056";
+}
+
+/* line 90, ../font/font-awesome/scss/_icons.scss */
+.fa-times-circle:before {
+  content: "\f057";
+}
+
+/* line 91, ../font/font-awesome/scss/_icons.scss */
+.fa-check-circle:before {
+  content: "\f058";
+}
+
+/* line 92, ../font/font-awesome/scss/_icons.scss */
+.fa-question-circle:before {
+  content: "\f059";
+}
+
+/* line 93, ../font/font-awesome/scss/_icons.scss */
+.fa-info-circle:before {
+  content: "\f05a";
+}
+
+/* line 94, ../font/font-awesome/scss/_icons.scss */
+.fa-crosshairs:before {
+  content: "\f05b";
+}
+
+/* line 95, ../font/font-awesome/scss/_icons.scss */
+.fa-times-circle-o:before {
+  content: "\f05c";
+}
+
+/* line 96, ../font/font-awesome/scss/_icons.scss */
+.fa-check-circle-o:before {
+  content: "\f05d";
+}
+
+/* line 97, ../font/font-awesome/scss/_icons.scss */
+.fa-ban:before {
+  content: "\f05e";
+}
+
+/* line 98, ../font/font-awesome/scss/_icons.scss */
+.fa-arrow-left:before {
+  content: "\f060";
+}
+
+/* line 99, ../font/font-awesome/scss/_icons.scss */
+.fa-arrow-right:before {
+  content: "\f061";
+}
+
+/* line 100, ../font/font-awesome/scss/_icons.scss */
+.fa-arrow-up:before {
+  content: "\f062";
+}
+
+/* line 101, ../font/font-awesome/scss/_icons.scss */
+.fa-arrow-down:before {
+  content: "\f063";
+}
+
+/* line 103, ../font/font-awesome/scss/_icons.scss */
+.fa-mail-forward:before,
+.fa-share:before {
+  content: "\f064";
+}
+
+/* line 104, ../font/font-awesome/scss/_icons.scss */
+.fa-expand:before {
+  content: "\f065";
+}
+
+/* line 105, ../font/font-awesome/scss/_icons.scss */
+.fa-compress:before {
+  content: "\f066";
+}
+
+/* line 106, ../font/font-awesome/scss/_icons.scss */
+.fa-plus:before {
+  content: "\f067";
+}
+
+/* line 107, ../font/font-awesome/scss/_icons.scss */
+.fa-minus:before {
+  content: "\f068";
+}
+
+/* line 108, ../font/font-awesome/scss/_icons.scss */
+.fa-asterisk:before {
+  content: "\f069";
+}
+
+/* line 109, ../font/font-awesome/scss/_icons.scss */
+.fa-exclamation-circle:before {
+  content: "\f06a";
+}
+
+/* line 110, ../font/font-awesome/scss/_icons.scss */
+.fa-gift:before {
+  content: "\f06b";
+}
+
+/* line 111, ../font/font-awesome/scss/_icons.scss */
+.fa-leaf:before {
+  content: "\f06c";
+}
+
+/* line 112, ../font/font-awesome/scss/_icons.scss */
+.fa-fire:before {
+  content: "\f06d";
+}
+
+/* line 113, ../font/font-awesome/scss/_icons.scss */
+.fa-eye:before {
+  content: "\f06e";
+}
+
+/* line 114, ../font/font-awesome/scss/_icons.scss */
+.fa-eye-slash:before {
+  content: "\f070";
+}
+
+/* line 116, ../font/font-awesome/scss/_icons.scss */
+.fa-warning:before,
+.fa-exclamation-triangle:before {
+  content: "\f071";
+}
+
+/* line 117, ../font/font-awesome/scss/_icons.scss */
+.fa-plane:before {
+  content: "\f072";
+}
+
+/* line 118, ../font/font-awesome/scss/_icons.scss */
+.fa-calendar:before {
+  content: "\f073";
+}
+
+/* line 119, ../font/font-awesome/scss/_icons.scss */
+.fa-random:before {
+  content: "\f074";
+}
+
+/* line 120, ../font/font-awesome/scss/_icons.scss */
+.fa-comment:before {
+  content: "\f075";
+}
+
+/* line 121, ../font/font-awesome/scss/_icons.scss */
+.fa-magnet:before {
+  content: "\f076";
+}
+
+/* line 122, ../font/font-awesome/scss/_icons.scss */
+.fa-chevron-up:before {
+  content: "\f077";
+}
+
+/* line 123, ../font/font-awesome/scss/_icons.scss */
+.fa-chevron-down:before {
+  content: "\f078";
+}
+
+/* line 124, ../font/font-awesome/scss/_icons.scss */
+.fa-retweet:before {
+  content: "\f079";
+}
+
+/* line 125, ../font/font-awesome/scss/_icons.scss */
+.fa-shopping-cart:before {
+  content: "\f07a";
+}
+
+/* line 126, ../font/font-awesome/scss/_icons.scss */
+.fa-folder:before {
+  content: "\f07b";
+}
+
+/* line 127, ../font/font-awesome/scss/_icons.scss */
+.fa-folder-open:before {
+  content: "\f07c";
+}
+
+/* line 128, ../font/font-awesome/scss/_icons.scss */
+.fa-arrows-v:before {
+  content: "\f07d";
+}
+
+/* line 129, ../font/font-awesome/scss/_icons.scss */
+.fa-arrows-h:before {
+  content: "\f07e";
+}
+
+/* line 130, ../font/font-awesome/scss/_icons.scss */
+.fa-bar-chart-o:before {
+  content: "\f080";
+}
+
+/* line 131, ../font/font-awesome/scss/_icons.scss */
+.fa-twitter-square:before {
+  content: "\f081";
+}
+
+/* line 132, ../font/font-awesome/scss/_icons.scss */
+.fa-facebook-square:before {
+  content: "\f082";
+}
+
+/* line 133, ../font/font-awesome/scss/_icons.scss */
+.fa-camera-retro:before {
+  content: "\f083";
+}
+
+/* line 134, ../font/font-awesome/scss/_icons.scss */
+.fa-key:before {
+  content: "\f084";
+}
+
+/* line 136, ../font/font-awesome/scss/_icons.scss */
+.fa-gears:before,
+.fa-cogs:before {
+  content: "\f085";
+}
+
+/* line 137, ../font/font-awesome/scss/_icons.scss */
+.fa-comments:before {
+  content: "\f086";
+}
+
+/* line 138, ../font/font-awesome/scss/_icons.scss */
+.fa-thumbs-o-up:before {
+  content: "\f087";
+}
+
+/* line 139, ../font/font-awesome/scss/_icons.scss */
+.fa-thumbs-o-down:before {
+  content: "\f088";
+}
+
+/* line 140, ../font/font-awesome/scss/_icons.scss */
+.fa-star-half:before {
+  content: "\f089";
+}
+
+/* line 141, ../font/font-awesome/scss/_icons.scss */
+.fa-heart-o:before {
+  content: "\f08a";
+}
+
+/* line 142, ../font/font-awesome/scss/_icons.scss */
+.fa-sign-out:before {
+  content: "\f08b";
+}
+
+/* line 143, ../font/font-awesome/scss/_icons.scss */
+.fa-linkedin-square:before {
+  content: "\f08c";
+}
+
+/* line 144, ../font/font-awesome/scss/_icons.scss */
+.fa-thumb-tack:before {
+  content: "\f08d";
+}
+
+/* line 145, ../font/font-awesome/scss/_icons.scss */
+.fa-external-link:before {
+  content: "\f08e";
+}
+
+/* line 146, ../font/font-awesome/scss/_icons.scss */
+.fa-sign-in:before {
+  content: "\f090";
+}
+
+/* line 147, ../font/font-awesome/scss/_icons.scss */
+.fa-trophy:before {
+  content: "\f091";
+}
+
+/* line 148, ../font/font-awesome/scss/_icons.scss */
+.fa-github-square:before {
+  content: "\f092";
+}
+
+/* line 149, ../font/font-awesome/scss/_icons.scss */
+.fa-upload:before {
+  content: "\f093";
+}
+
+/* line 150, ../font/font-awesome/scss/_icons.scss */
+.fa-lemon-o:before {
+  content: "\f094";
+}
+
+/* line 151, ../font/font-awesome/scss/_icons.scss */
+.fa-phone:before {
+  content: "\f095";
+}
+
+/* line 152, ../font/font-awesome/scss/_icons.scss */
+.fa-square-o:before {
+  content: "\f096";
+}
+
+/* line 153, ../font/font-awesome/scss/_icons.scss */
+.fa-bookmark-o:before {
+  content: "\f097";
+}
+
+/* line 154, ../font/font-awesome/scss/_icons.scss */
+.fa-phone-square:before {
+  content: "\f098";
+}
+
+/* line 155, ../font/font-awesome/scss/_icons.scss */
+.fa-twitter:before {
+  content: "\f099";
+}
+
+/* line 156, ../font/font-awesome/scss/_icons.scss */
+.fa-facebook:before {
+  content: "\f09a";
+}
+
+/* line 157, ../font/font-awesome/scss/_icons.scss */
+.fa-github:before {
+  content: "\f09b";
+}
+
+/* line 158, ../font/font-awesome/scss/_icons.scss */
+.fa-unlock:before {
+  content: "\f09c";
+}
+
+/* line 159, ../font/font-awesome/scss/_icons.scss */
+.fa-credit-card:before {
+  content: "\f09d";
+}
+
+/* line 160, ../font/font-awesome/scss/_icons.scss */
+.fa-rss:before {
+  content: "\f09e";
+}
+
+/* line 161, ../font/font-awesome/scss/_icons.scss */
+.fa-hdd-o:before {
+  content: "\f0a0";
+}
+
+/* line 162, ../font/font-awesome/scss/_icons.scss */
+.fa-bullhorn:before {
+  content: "\f0a1";
+}
+
+/* line 163, ../font/font-awesome/scss/_icons.scss */
+.fa-bell:before {
+  content: "\f0f3";
+}
+
+/* line 164, ../font/font-awesome/scss/_icons.scss */
+.fa-certificate:before {
+  content: "\f0a3";
+}
+
+/* line 165, ../font/font-awesome/scss/_icons.scss */
+.fa-hand-o-right:before {
+  content: "\f0a4";
+}
+
+/* line 166, ../font/font-awesome/scss/_icons.scss */
+.fa-hand-o-left:before {
+  content: "\f0a5";
+}
+
+/* line 167, ../font/font-awesome/scss/_icons.scss */
+.fa-hand-o-up:before {
+  content: "\f0a6";
+}
+
+/* line 168, ../font/font-awesome/scss/_icons.scss */
+.fa-hand-o-down:before {
+  content: "\f0a7";
+}
+
+/* line 169, ../font/font-awesome/scss/_icons.scss */
+.fa-arrow-circle-left:before {
+  content: "\f0a8";
+}
+
+/* line 170, ../font/font-awesome/scss/_icons.scss */
+.fa-arrow-circle-right:before {
+  content: "\f0a9";
+}
+
+/* line 171, ../font/font-awesome/scss/_icons.scss */
+.fa-arrow-circle-up:before {
+  content: "\f0aa";
+}
+
+/* line 172, ../font/font-awesome/scss/_icons.scss */
+.fa-arrow-circle-down:before {
+  content: "\f0ab";
+}
+
+/* line 173, ../font/font-awesome/scss/_icons.scss */
+.fa-globe:before {
+  content: "\f0ac";
+}
+
+/* line 174, ../font/font-awesome/scss/_icons.scss */
+.fa-wrench:before {
+  content: "\f0ad";
+}
+
+/* line 175, ../font/font-awesome/scss/_icons.scss */
+.fa-tasks:before {
+  content: "\f0ae";
+}
+
+/* line 176, ../font/font-awesome/scss/_icons.scss */
+.fa-filter:before {
+  content: "\f0b0";
+}
+
+/* line 177, ../font/font-awesome/scss/_icons.scss */
+.fa-briefcase:before {
+  content: "\f0b1";
+}
+
+/* line 178, ../font/font-awesome/scss/_icons.scss */
+.fa-arrows-alt:before {
+  content: "\f0b2";
+}
+
+/* line 180, ../font/font-awesome/scss/_icons.scss */
+.fa-group:before,
+.fa-users:before {
+  content: "\f0c0";
+}
+
+/* line 182, ../font/font-awesome/scss/_icons.scss */
+.fa-chain:before,
+.fa-link:before {
+  content: "\f0c1";
+}
+
+/* line 183, ../font/font-awesome/scss/_icons.scss */
+.fa-cloud:before {
+  content: "\f0c2";
+}
+
+/* line 184, ../font/font-awesome/scss/_icons.scss */
+.fa-flask:before {
+  content: "\f0c3";
+}
+
+/* line 186, ../font/font-awesome/scss/_icons.scss */
+.fa-cut:before,
+.fa-scissors:before {
+  content: "\f0c4";
+}
+
+/* line 188, ../font/font-awesome/scss/_icons.scss */
+.fa-copy:before,
+.fa-files-o:before {
+  content: "\f0c5";
+}
+
+/* line 189, ../font/font-awesome/scss/_icons.scss */
+.fa-paperclip:before {
+  content: "\f0c6";
+}
+
+/* line 191, ../font/font-awesome/scss/_icons.scss */
+.fa-save:before,
+.fa-floppy-o:before {
+  content: "\f0c7";
+}
+
+/* line 192, ../font/font-awesome/scss/_icons.scss */
+.fa-square:before {
+  content: "\f0c8";
+}
+
+/* line 193, ../font/font-awesome/scss/_icons.scss */
+.fa-bars:before {
+  content: "\f0c9";
+}
+
+/* line 194, ../font/font-awesome/scss/_icons.scss */
+.fa-list-ul:before {
+  content: "\f0ca";
+}
+
+/* line 195, ../font/font-awesome/scss/_icons.scss */
+.fa-list-ol:before {
+  content: "\f0cb";
+}
+
+/* line 196, ../font/font-awesome/scss/_icons.scss */
+.fa-strikethrough:before {
+  content: "\f0cc";
+}
+
+/* line 197, ../font/font-awesome/scss/_icons.scss */
+.fa-underline:before {
+  content: "\f0cd";
+}
+
+/* line 198, ../font/font-awesome/scss/_icons.scss */
+.fa-table:before {
+  content: "\f0ce";
+}
+
+/* line 199, ../font/font-awesome/scss/_icons.scss */
+.fa-magic:before {
+  content: "\f0d0";
+}
+
+/* line 200, ../font/font-awesome/scss/_icons.scss */
+.fa-truck:before {
+  content: "\f0d1";
+}
+
+/* line 201, ../font/font-awesome/scss/_icons.scss */
+.fa-pinterest:before {
+  content: "\f0d2";
+}
+
+/* line 202, ../font/font-awesome/scss/_icons.scss */
+.fa-pinterest-square:before {
+  content: "\f0d3";
+}
+
+/* line 203, ../font/font-awesome/scss/_icons.scss */
+.fa-google-plus-square:before {
+  content: "\f0d4";
+}
+
+/* line 204, ../font/font-awesome/scss/_icons.scss */
+.fa-google-plus:before {
+  content: "\f0d5";
+}
+
+/* line 205, ../font/font-awesome/scss/_icons.scss */
+.fa-money:before {
+  content: "\f0d6";
+}
+
+/* line 206, ../font/font-awesome/scss/_icons.scss */
+.fa-caret-down:before {
+  content: "\f0d7";
+}
+
+/* line 207, ../font/font-awesome/scss/_icons.scss */
+.fa-caret-up:before {
+  content: "\f0d8";
+}
+
+/* line 208, ../font/font-awesome/scss/_icons.scss */
+.fa-caret-left:before {
+  content: "\f0d9";
+}
+
+/* line 209, ../font/font-awesome/scss/_icons.scss */
+.fa-caret-right:before {
+  content: "\f0da";
+}
+
+/* line 210, ../font/font-awesome/scss/_icons.scss */
+.fa-columns:before {
+  content: "\f0db";
+}
+
+/* line 212, ../font/font-awesome/scss/_icons.scss */
+.fa-unsorted:before,
+.fa-sort:before {
+  content: "\f0dc";
+}
+
+/* line 214, ../font/font-awesome/scss/_icons.scss */
+.fa-sort-down:before,
+.fa-sort-asc:before {
+  content: "\f0dd";
+}
+
+/* line 216, ../font/font-awesome/scss/_icons.scss */
+.fa-sort-up:before,
+.fa-sort-desc:before {
+  content: "\f0de";
+}
+
+/* line 217, ../font/font-awesome/scss/_icons.scss */
+.fa-envelope:before {
+  content: "\f0e0";
+}
+
+/* line 218, ../font/font-awesome/scss/_icons.scss */
+.fa-linkedin:before {
+  content: "\f0e1";
+}
+
+/* line 220, ../font/font-awesome/scss/_icons.scss */
+.fa-rotate-left:before,
+.fa-undo:before {
+  content: "\f0e2";
+}
+
+/* line 222, ../font/font-awesome/scss/_icons.scss */
+.fa-legal:before,
+.fa-gavel:before {
+  content: "\f0e3";
+}
+
+/* line 224, ../font/font-awesome/scss/_icons.scss */
+.fa-dashboard:before,
+.fa-tachometer:before {
+  content: "\f0e4";
+}
+
+/* line 225, ../font/font-awesome/scss/_icons.scss */
+.fa-comment-o:before {
+  content: "\f0e5";
+}
+
+/* line 226, ../font/font-awesome/scss/_icons.scss */
+.fa-comments-o:before {
+  content: "\f0e6";
+}
+
+/* line 228, ../font/font-awesome/scss/_icons.scss */
+.fa-flash:before,
+.fa-bolt:before {
+  content: "\f0e7";
+}
+
+/* line 229, ../font/font-awesome/scss/_icons.scss */
+.fa-sitemap:before {
+  content: "\f0e8";
+}
+
+/* line 230, ../font/font-awesome/scss/_icons.scss */
+.fa-umbrella:before {
+  content: "\f0e9";
+}
+
+/* line 232, ../font/font-awesome/scss/_icons.scss */
+.fa-paste:before,
+.fa-clipboard:before {
+  content: "\f0ea";
+}
+
+/* line 233, ../font/font-awesome/scss/_icons.scss */
+.fa-lightbulb-o:before {
+  content: "\f0eb";
+}
+
+/* line 234, ../font/font-awesome/scss/_icons.scss */
+.fa-exchange:before {
+  content: "\f0ec";
+}
+
+/* line 235, ../font/font-awesome/scss/_icons.scss */
+.fa-cloud-download:before {
+  content: "\f0ed";
+}
+
+/* line 236, ../font/font-awesome/scss/_icons.scss */
+.fa-cloud-upload:before {
+  content: "\f0ee";
+}
+
+/* line 237, ../font/font-awesome/scss/_icons.scss */
+.fa-user-md:before {
+  content: "\f0f0";
+}
+
+/* line 238, ../font/font-awesome/scss/_icons.scss */
+.fa-stethoscope:before {
+  content: "\f0f1";
+}
+
+/* line 239, ../font/font-awesome/scss/_icons.scss */
+.fa-suitcase:before {
+  content: "\f0f2";
+}
+
+/* line 240, ../font/font-awesome/scss/_icons.scss */
+.fa-bell-o:before {
+  content: "\f0a2";
+}
+
+/* line 241, ../font/font-awesome/scss/_icons.scss */
+.fa-coffee:before {
+  content: "\f0f4";
+}
+
+/* line 242, ../font/font-awesome/scss/_icons.scss */
+.fa-cutlery:before {
+  content: "\f0f5";
+}
+
+/* line 243, ../font/font-awesome/scss/_icons.scss */
+.fa-file-text-o:before {
+  content: "\f0f6";
+}
+
+/* line 244, ../font/font-awesome/scss/_icons.scss */
+.fa-building-o:before {
+  content: "\f0f7";
+}
+
+/* line 245, ../font/font-awesome/scss/_icons.scss */
+.fa-hospital-o:before {
+  content: "\f0f8";
+}
+
+/* line 246, ../font/font-awesome/scss/_icons.scss */
+.fa-ambulance:before {
+  content: "\f0f9";
+}
+
+/* line 247, ../font/font-awesome/scss/_icons.scss */
+.fa-medkit:before {
+  content: "\f0fa";
+}
+
+/* line 248, ../font/font-awesome/scss/_icons.scss */
+.fa-fighter-jet:before {
+  content: "\f0fb";
+}
+
+/* line 249, ../font/font-awesome/scss/_icons.scss */
+.fa-beer:before {
+  content: "\f0fc";
+}
+
+/* line 250, ../font/font-awesome/scss/_icons.scss */
+.fa-h-square:before {
+  content: "\f0fd";
+}
+
+/* line 251, ../font/font-awesome/scss/_icons.scss */
+.fa-plus-square:before {
+  content: "\f0fe";
+}
+
+/* line 252, ../font/font-awesome/scss/_icons.scss */
+.fa-angle-double-left:before {
+  content: "\f100";
+}
+
+/* line 253, ../font/font-awesome/scss/_icons.scss */
+.fa-angle-double-right:before {
+  content: "\f101";
+}
+
+/* line 254, ../font/font-awesome/scss/_icons.scss */
+.fa-angle-double-up:before {
+  content: "\f102";
+}
+
+/* line 255, ../font/font-awesome/scss/_icons.scss */
+.fa-angle-double-down:before {
+  content: "\f103";
+}
+
+/* line 256, ../font/font-awesome/scss/_icons.scss */
+.fa-angle-left:before {
+  content: "\f104";
+}
+
+/* line 257, ../font/font-awesome/scss/_icons.scss */
+.fa-angle-right:before {
+  content: "\f105";
+}
+
+/* line 258, ../font/font-awesome/scss/_icons.scss */
+.fa-angle-up:before {
+  content: "\f106";
+}
+
+/* line 259, ../font/font-awesome/scss/_icons.scss */
+.fa-angle-down:before {
+  content: "\f107";
+}
+
+/* line 260, ../font/font-awesome/scss/_icons.scss */
+.fa-desktop:before {
+  content: "\f108";
+}
+
+/* line 261, ../font/font-awesome/scss/_icons.scss */
+.fa-laptop:before {
+  content: "\f109";
+}
+
+/* line 262, ../font/font-awesome/scss/_icons.scss */
+.fa-tablet:before {
+  content: "\f10a";
+}
+
+/* line 264, ../font/font-awesome/scss/_icons.scss */
+.fa-mobile-phone:before,
+.fa-mobile:before {
+  content: "\f10b";
+}
+
+/* line 265, ../font/font-awesome/scss/_icons.scss */
+.fa-circle-o:before {
+  content: "\f10c";
+}
+
+/* line 266, ../font/font-awesome/scss/_icons.scss */
+.fa-quote-left:before {
+  content: "\f10d";
+}
+
+/* line 267, ../font/font-awesome/scss/_icons.scss */
+.fa-quote-right:before {
+  content: "\f10e";
+}
+
+/* line 268, ../font/font-awesome/scss/_icons.scss */
+.fa-spinner:before {
+  content: "\f110";
+}
+
+/* line 269, ../font/font-awesome/scss/_icons.scss */
+.fa-circle:before {
+  content: "\f111";
+}
+
+/* line 271, ../font/font-awesome/scss/_icons.scss */
+.fa-mail-reply:before,
+.fa-reply:before {
+  content: "\f112";
+}
+
+/* line 272, ../font/font-awesome/scss/_icons.scss */
+.fa-github-alt:before {
+  content: "\f113";
+}
+
+/* line 273, ../font/font-awesome/scss/_icons.scss */
+.fa-folder-o:before {
+  content: "\f114";
+}
+
+/* line 274, ../font/font-awesome/scss/_icons.scss */
+.fa-folder-open-o:before {
+  content: "\f115";
+}
+
+/* line 275, ../font/font-awesome/scss/_icons.scss */
+.fa-smile-o:before {
+  content: "\f118";
+}
+
+/* line 276, ../font/font-awesome/scss/_icons.scss */
+.fa-frown-o:before {
+  content: "\f119";
+}
+
+/* line 277, ../font/font-awesome/scss/_icons.scss */
+.fa-meh-o:before {
+  content: "\f11a";
+}
+
+/* line 278, ../font/font-awesome/scss/_icons.scss */
+.fa-gamepad:before {
+  content: "\f11b";
+}
+
+/* line 279, ../font/font-awesome/scss/_icons.scss */
+.fa-keyboard-o:before {
+  content: "\f11c";
+}
+
+/* line 280, ../font/font-awesome/scss/_icons.scss */
+.fa-flag-o:before {
+  content: "\f11d";
+}
+
+/* line 281, ../font/font-awesome/scss/_icons.scss */
+.fa-flag-checkered:before {
+  content: "\f11e";
+}
+
+/* line 282, ../font/font-awesome/scss/_icons.scss */
+.fa-terminal:before {
+  content: "\f120";
+}
+
+/* line 283, ../font/font-awesome/scss/_icons.scss */
+.fa-code:before {
+  content: "\f121";
+}
+
+/* line 284, ../font/font-awesome/scss/_icons.scss */
+.fa-reply-all:before {
+  content: "\f122";
+}
+
+/* line 285, ../font/font-awesome/scss/_icons.scss */
+.fa-mail-reply-all:before {
+  content: "\f122";
+}
+
+/* line 288, ../font/font-awesome/scss/_icons.scss */
+.fa-star-half-empty:before,
+.fa-star-half-full:before,
+.fa-star-half-o:before {
+  content: "\f123";
+}
+
+/* line 289, ../font/font-awesome/scss/_icons.scss */
+.fa-location-arrow:before {
+  content: "\f124";
+}
+
+/* line 290, ../font/font-awesome/scss/_icons.scss */
+.fa-crop:before {
+  content: "\f125";
+}
+
+/* line 291, ../font/font-awesome/scss/_icons.scss */
+.fa-code-fork:before {
+  content: "\f126";
+}
+
+/* line 293, ../font/font-awesome/scss/_icons.scss */
+.fa-unlink:before,
+.fa-chain-broken:before {
+  content: "\f127";
+}
+
+/* line 294, ../font/font-awesome/scss/_icons.scss */
+.fa-question:before {
+  content: "\f128";
+}
+
+/* line 295, ../font/font-awesome/scss/_icons.scss */
+.fa-info:before {
+  content: "\f129";
+}
+
+/* line 296, ../font/font-awesome/scss/_icons.scss */
+.fa-exclamation:before {
+  content: "\f12a";
+}
+
+/* line 297, ../font/font-awesome/scss/_icons.scss */
+.fa-superscript:before {
+  content: "\f12b";
+}
+
+/* line 298, ../font/font-awesome/scss/_icons.scss */
+.fa-subscript:before {
+  content: "\f12c";
+}
+
+/* line 299, ../font/font-awesome/scss/_icons.scss */
+.fa-eraser:before {
+  content: "\f12d";
+}
+
+/* line 300, ../font/font-awesome/scss/_icons.scss */
+.fa-puzzle-piece:before {
+  content: "\f12e";
+}
+
+/* line 301, ../font/font-awesome/scss/_icons.scss */
+.fa-microphone:before {
+  content: "\f130";
+}
+
+/* line 302, ../font/font-awesome/scss/_icons.scss */
+.fa-microphone-slash:before {
+  content: "\f131";
+}
+
+/* line 303, ../font/font-awesome/scss/_icons.scss */
+.fa-shield:before {
+  content: "\f132";
+}
+
+/* line 304, ../font/font-awesome/scss/_icons.scss */
+.fa-calendar-o:before {
+  content: "\f133";
+}
+
+/* line 305, ../font/font-awesome/scss/_icons.scss */
+.fa-fire-extinguisher:before {
+  content: "\f134";
+}
+
+/* line 306, ../font/font-awesome/scss/_icons.scss */
+.fa-rocket:before {
+  content: "\f135";
+}
+
+/* line 307, ../font/font-awesome/scss/_icons.scss */
+.fa-maxcdn:before {
+  content: "\f136";
+}
+
+/* line 308, ../font/font-awesome/scss/_icons.scss */
+.fa-chevron-circle-left:before {
+  content: "\f137";
+}
+
+/* line 309, ../font/font-awesome/scss/_icons.scss */
+.fa-chevron-circle-right:before {
+  content: "\f138";
+}
+
+/* line 310, ../font/font-awesome/scss/_icons.scss */
+.fa-chevron-circle-up:before {
+  content: "\f139";
+}
+
+/* line 311, ../font/font-awesome/scss/_icons.scss */
+.fa-chevron-circle-down:before {
+  content: "\f13a";
+}
+
+/* line 312, ../font/font-awesome/scss/_icons.scss */
+.fa-html5:before {
+  content: "\f13b";
+}
+
+/* line 313, ../font/font-awesome/scss/_icons.scss */
+.fa-css3:before {
+  content: "\f13c";
+}
+
+/* line 314, ../font/font-awesome/scss/_icons.scss */
+.fa-anchor:before {
+  content: "\f13d";
+}
+
+/* line 315, ../font/font-awesome/scss/_icons.scss */
+.fa-unlock-alt:before {
+  content: "\f13e";
+}
+
+/* line 316, ../font/font-awesome/scss/_icons.scss */
+.fa-bullseye:before {
+  content: "\f140";
+}
+
+/* line 317, ../font/font-awesome/scss/_icons.scss */
+.fa-ellipsis-h:before {
+  content: "\f141";
+}
+
+/* line 318, ../font/font-awesome/scss/_icons.scss */
+.fa-ellipsis-v:before {
+  content: "\f142";
+}
+
+/* line 319, ../font/font-awesome/scss/_icons.scss */
+.fa-rss-square:before {
+  content: "\f143";
+}
+
+/* line 320, ../font/font-awesome/scss/_icons.scss */
+.fa-play-circle:before {
+  content: "\f144";
+}
+
+/* line 321, ../font/font-awesome/scss/_icons.scss */
+.fa-ticket:before {
+  content: "\f145";
+}
+
+/* line 322, ../font/font-awesome/scss/_icons.scss */
+.fa-minus-square:before {
+  content: "\f146";
+}
+
+/* line 323, ../font/font-awesome/scss/_icons.scss */
+.fa-minus-square-o:before {
+  content: "\f147";
+}
+
+/* line 324, ../font/font-awesome/scss/_icons.scss */
+.fa-level-up:before {
+  content: "\f148";
+}
+
+/* line 325, ../font/font-awesome/scss/_icons.scss */
+.fa-level-down:before {
+  content: "\f149";
+}
+
+/* line 326, ../font/font-awesome/scss/_icons.scss */
+.fa-check-square:before {
+  content: "\f14a";
+}
+
+/* line 327, ../font/font-awesome/scss/_icons.scss */
+.fa-pencil-square:before {
+  content: "\f14b";
+}
+
+/* line 328, ../font/font-awesome/scss/_icons.scss */
+.fa-external-link-square:before {
+  content: "\f14c";
+}
+
+/* line 329, ../font/font-awesome/scss/_icons.scss */
+.fa-share-square:before {
+  content: "\f14d";
+}
+
+/* line 330, ../font/font-awesome/scss/_icons.scss */
+.fa-compass:before {
+  content: "\f14e";
+}
+
+/* line 332, ../font/font-awesome/scss/_icons.scss */
+.fa-toggle-down:before,
+.fa-caret-square-o-down:before {
+  content: "\f150";
+}
+
+/* line 334, ../font/font-awesome/scss/_icons.scss */
+.fa-toggle-up:before,
+.fa-caret-square-o-up:before {
+  content: "\f151";
+}
+
+/* line 336, ../font/font-awesome/scss/_icons.scss */
+.fa-toggle-right:before,
+.fa-caret-square-o-right:before {
+  content: "\f152";
+}
+
+/* line 338, ../font/font-awesome/scss/_icons.scss */
+.fa-euro:before,
+.fa-eur:before {
+  content: "\f153";
+}
+
+/* line 339, ../font/font-awesome/scss/_icons.scss */
+.fa-gbp:before {
+  content: "\f154";
+}
+
+/* line 341, ../font/font-awesome/scss/_icons.scss */
+.fa-dollar:before,
+.fa-usd:before {
+  content: "\f155";
+}
+
+/* line 343, ../font/font-awesome/scss/_icons.scss */
+.fa-rupee:before,
+.fa-inr:before {
+  content: "\f156";
+}
+
+/* line 347, ../font/font-awesome/scss/_icons.scss */
+.fa-cny:before,
+.fa-rmb:before,
+.fa-yen:before,
+.fa-jpy:before {
+  content: "\f157";
+}
+
+/* line 350, ../font/font-awesome/scss/_icons.scss */
+.fa-ruble:before,
+.fa-rouble:before,
+.fa-rub:before {
+  content: "\f158";
+}
+
+/* line 352, ../font/font-awesome/scss/_icons.scss */
+.fa-won:before,
+.fa-krw:before {
+  content: "\f159";
+}
+
+/* line 354, ../font/font-awesome/scss/_icons.scss */
+.fa-bitcoin:before,
+.fa-btc:before {
+  content: "\f15a";
+}
+
+/* line 355, ../font/font-awesome/scss/_icons.scss */
+.fa-file:before {
+  content: "\f15b";
+}
+
+/* line 356, ../font/font-awesome/scss/_icons.scss */
+.fa-file-text:before {
+  content: "\f15c";
+}
+
+/* line 357, ../font/font-awesome/scss/_icons.scss */
+.fa-sort-alpha-asc:before {
+  content: "\f15d";
+}
+
+/* line 358, ../font/font-awesome/scss/_icons.scss */
+.fa-sort-alpha-desc:before {
+  content: "\f15e";
+}
+
+/* line 359, ../font/font-awesome/scss/_icons.scss */
+.fa-sort-amount-asc:before {
+  content: "\f160";
+}
+
+/* line 360, ../font/font-awesome/scss/_icons.scss */
+.fa-sort-amount-desc:before {
+  content: "\f161";
+}
+
+/* line 361, ../font/font-awesome/scss/_icons.scss */
+.fa-sort-numeric-asc:before {
+  content: "\f162";
+}
+
+/* line 362, ../font/font-awesome/scss/_icons.scss */
+.fa-sort-numeric-desc:before {
+  content: "\f163";
+}
+
+/* line 363, ../font/font-awesome/scss/_icons.scss */
+.fa-thumbs-up:before {
+  content: "\f164";
+}
+
+/* line 364, ../font/font-awesome/scss/_icons.scss */
+.fa-thumbs-down:before {
+  content: "\f165";
+}
+
+/* line 365, ../font/font-awesome/scss/_icons.scss */
+.fa-youtube-square:before {
+  content: "\f166";
+}
+
+/* line 366, ../font/font-awesome/scss/_icons.scss */
+.fa-youtube:before {
+  content: "\f167";
+}
+
+/* line 367, ../font/font-awesome/scss/_icons.scss */
+.fa-xing:before {
+  content: "\f168";
+}
+
+/* line 368, ../font/font-awesome/scss/_icons.scss */
+.fa-xing-square:before {
+  content: "\f169";
+}
+
+/* line 369, ../font/font-awesome/scss/_icons.scss */
+.fa-youtube-play:before {
+  content: "\f16a";
+}
+
+/* line 370, ../font/font-awesome/scss/_icons.scss */
+.fa-dropbox:before {
+  content: "\f16b";
+}
+
+/* line 371, ../font/font-awesome/scss/_icons.scss */
+.fa-stack-overflow:before {
+  content: "\f16c";
+}
+
+/* line 372, ../font/font-awesome/scss/_icons.scss */
+.fa-instagram:before {
+  content: "\f16d";
+}
+
+/* line 373, ../font/font-awesome/scss/_icons.scss */
+.fa-flickr:before {
+  content: "\f16e";
+}
+
+/* line 374, ../font/font-awesome/scss/_icons.scss */
+.fa-adn:before {
+  content: "\f170";
+}
+
+/* line 375, ../font/font-awesome/scss/_icons.scss */
+.fa-bitbucket:before {
+  content: "\f171";
+}
+
+/* line 376, ../font/font-awesome/scss/_icons.scss */
+.fa-bitbucket-square:before {
+  content: "\f172";
+}
+
+/* line 377, ../font/font-awesome/scss/_icons.scss */
+.fa-tumblr:before {
+  content: "\f173";
+}
+
+/* line 378, ../font/font-awesome/scss/_icons.scss */
+.fa-tumblr-square:before {
+  content: "\f174";
+}
+
+/* line 379, ../font/font-awesome/scss/_icons.scss */
+.fa-long-arrow-down:before {
+  content: "\f175";
+}
+
+/* line 380, ../font/font-awesome/scss/_icons.scss */
+.fa-long-arrow-up:before {
+  content: "\f176";
+}
+
+/* line 381, ../font/font-awesome/scss/_icons.scss */
+.fa-long-arrow-left:before {
+  content: "\f177";
+}
+
+/* line 382, ../font/font-awesome/scss/_icons.scss */
+.fa-long-arrow-right:before {
+  content: "\f178";
+}
+
+/* line 383, ../font/font-awesome/scss/_icons.scss */
+.fa-apple:before {
+  content: "\f179";
+}
+
+/* line 384, ../font/font-awesome/scss/_icons.scss */
+.fa-windows:before {
+  content: "\f17a";
+}
+
+/* line 385, ../font/font-awesome/scss/_icons.scss */
+.fa-android:before {
+  content: "\f17b";
+}
+
+/* line 386, ../font/font-awesome/scss/_icons.scss */
+.fa-linux:before {
+  content: "\f17c";
+}
+
+/* line 387, ../font/font-awesome/scss/_icons.scss */
+.fa-dribbble:before {
+  content: "\f17d";
+}
+
+/* line 388, ../font/font-awesome/scss/_icons.scss */
+.fa-skype:before {
+  content: "\f17e";
+}
+
+/* line 389, ../font/font-awesome/scss/_icons.scss */
+.fa-foursquare:before {
+  content: "\f180";
+}
+
+/* line 390, ../font/font-awesome/scss/_icons.scss */
+.fa-trello:before {
+  content: "\f181";
+}
+
+/* line 391, ../font/font-awesome/scss/_icons.scss */
+.fa-female:before {
+  content: "\f182";
+}
+
+/* line 392, ../font/font-awesome/scss/_icons.scss */
+.fa-male:before {
+  content: "\f183";
+}
+
+/* line 393, ../font/font-awesome/scss/_icons.scss */
+.fa-gittip:before {
+  content: "\f184";
+}
+
+/* line 394, ../font/font-awesome/scss/_icons.scss */
+.fa-sun-o:before {
+  content: "\f185";
+}
+
+/* line 395, ../font/font-awesome/scss/_icons.scss */
+.fa-moon-o:before {
+  content: "\f186";
+}
+
+/* line 396, ../font/font-awesome/scss/_icons.scss */
+.fa-archive:before {
+  content: "\f187";
+}
+
+/* line 397, ../font/font-awesome/scss/_icons.scss */
+.fa-bug:before {
+  content: "\f188";
+}
+
+/* line 398, ../font/font-awesome/scss/_icons.scss */
+.fa-vk:before {
+  content: "\f189";
+}
+
+/* line 399, ../font/font-awesome/scss/_icons.scss */
+.fa-weibo:before {
+  content: "\f18a";
+}
+
+/* line 400, ../font/font-awesome/scss/_icons.scss */
+.fa-renren:before {
+  content: "\f18b";
+}
+
+/* line 401, ../font/font-awesome/scss/_icons.scss */
+.fa-pagelines:before {
+  content: "\f18c";
+}
+
+/* line 402, ../font/font-awesome/scss/_icons.scss */
+.fa-stack-exchange:before {
+  content: "\f18d";
+}
+
+/* line 403, ../font/font-awesome/scss/_icons.scss */
+.fa-arrow-circle-o-right:before {
+  content: "\f18e";
+}
+
+/* line 404, ../font/font-awesome/scss/_icons.scss */
+.fa-arrow-circle-o-left:before {
+  content: "\f190";
+}
+
+/* line 406, ../font/font-awesome/scss/_icons.scss */
+.fa-toggle-left:before,
+.fa-caret-square-o-left:before {
+  content: "\f191";
+}
+
+/* line 407, ../font/font-awesome/scss/_icons.scss */
+.fa-dot-circle-o:before {
+  content: "\f192";
+}
+
+/* line 408, ../font/font-awesome/scss/_icons.scss */
+.fa-wheelchair:before {
+  content: "\f193";
+}
+
+/* line 409, ../font/font-awesome/scss/_icons.scss */
+.fa-vimeo-square:before {
+  content: "\f194";
+}
+
+/* line 411, ../font/font-awesome/scss/_icons.scss */
+.fa-turkish-lira:before,
+.fa-try:before {
+  content: "\f195";
+}
+
+/* line 412, ../font/font-awesome/scss/_icons.scss */
+.fa-plus-square-o:before {
+  content: "\f196";
+}
+
 /* line 4, ../scss/libs/_normalize.scss */
 * {
   -webkit-box-sizing: border-box;
@@ -95,24 +2242,25 @@ textarea {
 }
 
 /*
- * Doh! Stole this from 3.8. Thanks, WP, doll.
+ * Doh! Stole this from 3.8. Thanks, WP, you doll.
  */
-/* line 22, ../scss/libs/_grid.scss */
-.wrap {
+/* line 25, ../scss/libs/_grid.scss */
+#container {
   *zoom: 1;
   padding-left: 2em;
   padding-right: 2em;
   margin-left: auto;
   margin-right: auto;
+  max-width: 1030px;
 }
 /* line 38, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
-.wrap:after {
+#container:after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* line 26, ../scss/libs/_grid.scss */
+/* line 30, ../scss/libs/_grid.scss */
 .prev {
   width: 48.57143%;
   float: left;
@@ -120,7 +2268,7 @@ textarea {
   display: inline;
 }
 
-/* line 30, ../scss/libs/_grid.scss */
+/* line 34, ../scss/libs/_grid.scss */
 .next {
   width: 48.57143%;
   float: right;
@@ -132,58 +2280,59 @@ textarea {
 
 /* Get in there, grid! At about tablet size, we add:
 		- The sidebar to the news layout
-		- Float the main nav to the right
+		- Float the site nav to the right
 */
 @media (min-width: 30.0625em) {
-  /* line 46, ../scss/libs/_grid.scss */
+  /* line 49, ../scss/libs/_grid.scss */
   .project-thumb {
     width: 45.45455%;
     float: left;
     margin-right: 9.09091%;
     height: 21em;
   }
-  /* line 48, ../scss/libs/_grid.scss */
+  /* line 51, ../scss/libs/_grid.scss */
   .project-thumb:nth-child(3n), .project-thumb:nth-child(4n) {
     float: left;
     margin-right: 9.09091%;
   }
-  /* line 49, ../scss/libs/_grid.scss */
+  /* line 52, ../scss/libs/_grid.scss */
   .project-thumb:nth-child(2n) {
     float: right;
     margin-right: 0;
   }
 }
 @media (min-width: 33.25em) {
-  /* line 55, ../scss/libs/_grid.scss */
+  /* line 58, ../scss/libs/_grid.scss */
   .project-thumb {
     height: 23em;
   }
 }
 @media (min-width: 40em) {
-  /* line 61, ../scss/libs/_grid.scss */
+  /* line 64, ../scss/libs/_grid.scss */
   .project-thumb {
-    height: 26em;
+    height: 27em;
   }
 }
 @media (min-width: 48em) {
-  /* line 71, ../scss/libs/_grid.scss */
+  /* line 74, ../scss/libs/_grid.scss */
   .project-thumb {
     width: 30.76923%;
     float: left;
     margin-right: 3.84615%;
+    height: 25em;
   }
-  /* line 73, ../scss/libs/_grid.scss */
+  /* line 76, ../scss/libs/_grid.scss */
   .project-thumb:nth-child(2n), .project-thumb:nth-child(4n) {
     float: left;
     margin-right: 3.84615%;
   }
-  /* line 74, ../scss/libs/_grid.scss */
+  /* line 77, ../scss/libs/_grid.scss */
   .project-thumb:nth-child(3n) {
     float: right;
     margin-right: 0;
   }
 
-  /* line 78, ../scss/libs/_grid.scss */
+  /* line 81, ../scss/libs/_grid.scss */
   .artwork-meta {
     width: 65.38462%;
     float: left;
@@ -191,67 +2340,50 @@ textarea {
   }
 }
 @media (min-width: 60em) {
-  /* line 86, ../scss/libs/_grid.scss */
+  /* line 89, ../scss/libs/_grid.scss */
   .sidebar-layout {
     width: 65.71429%;
     float: left;
     margin-right: 2.85714%;
   }
 
-  /* line 90, ../scss/libs/_grid.scss */
+  /* line 93, ../scss/libs/_grid.scss */
   .sidebar {
     width: 31.42857%;
     float: right;
     margin-right: 0;
   }
 
-  /* line 94, ../scss/libs/_grid.scss */
+  /* line 97, ../scss/libs/_grid.scss */
   .site-name {
     width: 31.42857%;
     float: left;
     margin-right: 2.85714%;
   }
 
-  /* line 98, ../scss/libs/_grid.scss */
-  #main-nav {
+  /* line 101, ../scss/libs/_grid.scss */
+  .site-nav {
     width: 65.71429%;
     float: right;
     margin-right: 0;
   }
 
-  /* line 103, ../scss/libs/_grid.scss */
+  /* line 106, ../scss/libs/_grid.scss */
   .top-nav {
     float: right;
   }
 
-  /* line 108, ../scss/libs/_grid.scss */
-  .project-thumb {
-    width: 22.85714%;
-    float: left;
-    margin-right: 2.85714%;
-    height: 20em;
-  }
-  /* line 110, ../scss/libs/_grid.scss */
-  .project-thumb:nth-child(2n) {
-    float: left;
-    margin-right: 2.85714%;
-  }
   /* line 111, ../scss/libs/_grid.scss */
-  .project-thumb:nth-child(3n) {
-    float: left;
-    margin-right: 2.85714%;
-  }
-  /* line 112, ../scss/libs/_grid.scss */
-  .project-thumb:nth-child(4n) {
-    float: right;
-    margin-right: 0;
+  .project-thumb {
+    height: 26em;
   }
 
-  /* line 117, ../scss/libs/_grid.scss */
-  .project .respond-form {
+  /* line 116, ../scss/libs/_grid.scss */
+  .commentlist, .respond-form {
     width: 65.71429%;
     float: left;
     margin-right: 2.85714%;
+    margin-right: 34.28571%;
   }
 }
 /*
@@ -266,7 +2398,7 @@ Isn't that kind of like a poem?
 /* Base styles: Almost exclusively single element selectors */
 /* ------------------------------------------------------------ */
 /*
- * Doh! Stole this from 3.8. Thanks, WP, doll.
+ * Doh! Stole this from 3.8. Thanks, WP, you doll.
  */
 /* line 15, ../scss/libs/_typography.scss */
 body {
@@ -457,11 +2589,16 @@ span.amp {
 BUTTONS
 *********************/
 /* line 9, ../scss/libs/_forms.scss */
+*:focus {
+  outline: 0;
+}
+
+/* line 13, ../scss/libs/_forms.scss */
 label, select {
   display: block;
 }
 
-/* line 13, ../scss/libs/_forms.scss */
+/* line 17, ../scss/libs/_forms.scss */
 input[type="search"] {
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
@@ -469,19 +2606,19 @@ input[type="search"] {
   box-sizing: content-box;
 }
 
-/* line 21, ../scss/libs/_forms.scss */
+/* line 25, ../scss/libs/_forms.scss */
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button {
   -webkit-appearance: none;
 }
 
-/* line 25, ../scss/libs/_forms.scss */
+/* line 29, ../scss/libs/_forms.scss */
 textarea {
   overflow: auto;
   vertical-align: top;
 }
 
-/* line 43, ../scss/libs/_forms.scss */
+/* line 47, ../scss/libs/_forms.scss */
 textarea,
 input[type="text"],
 input[type="password"],
@@ -497,16 +2634,13 @@ input[type="url"],
 input[type="search"],
 input[type="tel"] {
   font-family: Helvetica;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
-  border-radius: 4px;
-  padding: 5.33333px;
-  margin: 0.44444em 0 0;
-  border: 1px solid #eeeeee;
+  padding: 0.1875em 0.375em;
+  background: #fff;
+  color: #666666;
+  border: 0.125em solid #cccccc;
+  line-height: 1.5em;
 }
-/* line 50, ../scss/libs/_forms.scss */
+/* line 55, ../scss/libs/_forms.scss */
 textarea:focus,
 input[type="text"]:focus,
 input[type="password"]:focus,
@@ -521,11 +2655,10 @@ input[type="email"]:focus,
 input[type="url"]:focus,
 input[type="search"]:focus,
 input[type="tel"]:focus {
-  border-color: #aaaaaa;
-  outline: none;
+  border: 0.125em solid #999999;
 }
 
-/* line 57, ../scss/libs/_forms.scss */
+/* line 61, ../scss/libs/_forms.scss */
 input[type="radio"],
 input[type="checkbox"] {
   margin: 4px 0 0;
@@ -535,7 +2668,7 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 
-/* line 71, ../scss/libs/_forms.scss */
+/* line 75, ../scss/libs/_forms.scss */
 input[type="file"],
 input[type="image"],
 input[type="submit"],
@@ -546,59 +2679,58 @@ input[type="checkbox"] {
   width: auto;
 }
 
-/* line 76, ../scss/libs/_forms.scss */
+/* line 80, ../scss/libs/_forms.scss */
 input[type="submit"],
 button {
   font-family: Helvetica;
-  font-size: 0.75em;
-  line-height: 1.33333em;
-  background: #666666;
-  border-color: #616161;
+  background: #999999;
+  border: none;
+  text-shadow: 0.08em 0.08em 0.91em #666;
+  border-width: 0.2em;
   color: white;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  -ms-border-radius: 2px;
-  -o-border-radius: 2px;
-  border-radius: 2px;
+  padding: 0.3em 0.5em;
+  line-height: 1.5;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
 }
-/* line 118, ../scss/libs/_mixins.scss */
+/* line 121, ../scss/libs/_mixins.scss */
 input[type="submit"]:hover, input[type="submit"]:focus,
 button:hover,
 button:focus {
-  background: #525252;
-  border-color: #404040;
+  background: #666666;
   color: white;
-  -webkit-box-shadow: inset 0 1px 0 gray, 0 1px 0 rgba(0, 0, 0, 0.15);
-  box-shadow: inset 0 1px 0 gray, 0 1px 0 rgba(0, 0, 0, 0.15);
 }
-/* line 126, ../scss/libs/_mixins.scss */
+/* line 129, ../scss/libs/_mixins.scss */
 input[type="submit"]:active,
 button:active {
-  background: #525252;
-  border-color: #404040;
+  background: #7a7a7a;
+  border-color: #737373;
   color: white;
   -webkit-box-shadow: inset 0 2px 5px -3px rgba(0, 0, 0, 0.5);
   box-shadow: inset 0 2px 5px -3px rgba(0, 0, 0, 0.5);
 }
-/* line 136, ../scss/libs/_mixins.scss */
+/* line 139, ../scss/libs/_mixins.scss */
 input[type="submit"][disabled], input[type="submit"]:disabled, input[type="submit"].button-primary-disabled,
 button[disabled],
 button:disabled,
 button.button-primary-disabled {
   color: #d1c7c7 !important;
-  background: #525252 !important;
-  border-color: #404040 !important;
+  background: #858585 !important;
+  border-color: #737373 !important;
   text-shadow: none !important;
 }
 
-/* line 81, ../scss/libs/_forms.scss */
+/* line 85, ../scss/libs/_forms.scss */
 select,
 input[type="file"] {
   *margin-top: 4px;
   /* In IE7, the height of the select element cannot be changed by height, only font-size */
 }
 
-/* line 88, ../scss/libs/_forms.scss */
+/* line 92, ../scss/libs/_forms.scss */
 select:focus,
 input[type="file"]:focus,
 input[type="radio"]:focus,
@@ -694,22 +2826,28 @@ style a page via class
 }
 
 /*********************
-LAYOUT & GRID STYLES
+GENERAL STYLES
 *********************/
+/* line 74, ../scss/_base.scss */
+video {
+  width: 100%    !important;
+  height: auto   !important;
+}
+
 /*********************
 HEADER STYLES
 *********************/
-/* line 79, ../scss/_base.scss */
+/* line 84, ../scss/_base.scss */
 .header {
   padding-top: 2.2em;
   text-align: center;
 }
 
-/* line 84, ../scss/_base.scss */
+/* line 89, ../scss/_base.scss */
 .site-title {
   margin: 0 0 0.22222em 0;
 }
-/* line 87, ../scss/_base.scss */
+/* line 92, ../scss/_base.scss */
 .site-title a {
   color: inherit;
   text-decoration: inherit;
@@ -720,7 +2858,7 @@ HEADER STYLES
   outline: none;
 }
 
-/* line 92, ../scss/_base.scss */
+/* line 97, ../scss/_base.scss */
 .site-description {
   font-style: italic;
   font-size: 1.125em;
@@ -737,20 +2875,24 @@ easily write one group of styles for
 the navs on the site so our css is cleaner
 and more scalable.
 */
-/* line 110, ../scss/_base.scss */
+/* line 116, ../scss/_base.scss */
+.nav {
+  text-align: center;
+}
+/* line 119, ../scss/_base.scss */
 .nav li a {
   padding-left: 10px;
   padding-right: 10px;
   display: block;
   text-decoration: none;
 }
-/* line 122, ../scss/_base.scss */
+/* line 131, ../scss/_base.scss */
 .nav ul.sub-menu li a,
 .nav ul.children li a {
   padding-left: 30px;
 }
 
-/* line 130, ../scss/_base.scss */
+/* line 139, ../scss/_base.scss */
 .nav {
   border: 1px solid #ccc;
   border-bottom: 0;
@@ -758,7 +2900,7 @@ and more scalable.
   /* highlight current page */
   /* end current highlighters */
 }
-/* line 134, ../scss/_base.scss */
+/* line 143, ../scss/_base.scss */
 .nav li {
   /*
   so you really have to rethink your dropdowns for mobile.
@@ -768,19 +2910,13 @@ and more scalable.
   http://www.alistapart.com/articles/organizing-mobile/
   */
 }
-/* line 136, ../scss/_base.scss */
+/* line 145, ../scss/_base.scss */
 .nav li a {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   border-bottom: 1px solid #ccc;
-  /*
-  remember this is for mobile ONLY, so there's no need
-  to even declare hover styles here, you can do it in
-  the style.scss file where it's relevant. We want to
-  keep this file as small as possible!
-  */
 }
-/* line 193, ../scss/_base.scss */
+/* line 196, ../scss/_base.scss */
 .nav li.current-menu-item a,
 .nav li.current_page_item a,
 .nav li.current-page-ancestor a {
@@ -788,14 +2924,21 @@ and more scalable.
 }
 
 /* end .nav */
-/* line 204, ../scss/_base.scss */
+/* line 208, ../scss/_base.scss */
 a.menu-link {
-  float: right;
   display: block;
-  padding: 1em;
+  text-align: center;
+  color: #666666;
+  background: #eee;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  padding: 0.57143em;
 }
 
-/* line 210, ../scss/_base.scss */
+/* line 217, ../scss/_base.scss */
 nav[role=navigation] {
   clear: both;
   -webkit-transition: all 0.3s ease-out;
@@ -805,25 +2948,25 @@ nav[role=navigation] {
   transition: all 0.3s ease-out;
 }
 
-/* line 219, ../scss/_base.scss */
+/* line 226, ../scss/_base.scss */
 .js nav[role=navigation] {
   overflow: hidden;
   max-height: 0;
 }
 
-/* line 224, ../scss/_base.scss */
+/* line 231, ../scss/_base.scss */
 nav[role=navigation].active {
   max-height: 15em;
 }
 
-/* line 228, ../scss/_base.scss */
+/* line 235, ../scss/_base.scss */
 nav[role=navigation] ul {
   margin: 0;
   padding: 0;
   border-top: 1px solid #808080;
 }
 
-/* line 234, ../scss/_base.scss */
+/* line 241, ../scss/_base.scss */
 nav[role=navigation] li a {
   display: block;
   border-bottom: 1px solid #808080;
@@ -832,41 +2975,41 @@ nav[role=navigation] li a {
 /*********************
 POSTS & CONTENT STYLES
 *********************/
-/* line 244, ../scss/_base.scss */
+/* line 251, ../scss/_base.scss */
 #content {
   margin-top: 0.88889em;
 }
 
-/* line 248, ../scss/_base.scss */
+/* line 255, ../scss/_base.scss */
 .article-header {
   margin-bottom: 1.77778em;
 }
 
-/* line 251, ../scss/_base.scss */
+/* line 258, ../scss/_base.scss */
 .entry-title {
   margin-bottom: 0.36364em;
   font-size: 1.875em;
   line-height: 1.33333em;
 }
-/* line 255, ../scss/_base.scss */
+/* line 262, ../scss/_base.scss */
 .entry-title a {
   color: #666666;
 }
 
-/* line 262, ../scss/_base.scss */
+/* line 269, ../scss/_base.scss */
 .article-footer {
   margin-top: 1.77778em;
 }
 
 /* end .hentry */
-/* line 274, ../scss/_base.scss */
+/* line 281, ../scss/_base.scss */
 .page-title, .project-title, .project-thumb-title, .medium-title {
   text-align: center;
 }
 
 /* want to style individual post classes? Booya! */
 /* post by id (i.e. post-3) */
-/* line 282, ../scss/_base.scss */
+/* line 289, ../scss/_base.scss */
 .post {
   padding: 1.45455em 0;
   border-top: #eeeeee 1px solid;
@@ -880,25 +3023,25 @@ POSTS & CONTENT STYLES
 /* style by category (i.e. category-videos) */
 /* style by tag (i.e. tag-news) */
 /* post meta */
-/* line 294, ../scss/_base.scss */
+/* line 301, ../scss/_base.scss */
 .byline {
   font-style: italic;
 }
 
-/* line 300, ../scss/_base.scss */
+/* line 307, ../scss/_base.scss */
 .tags, .byline {
   font-size: 0.875em;
   line-height: 1.71429em;
   color: #999;
 }
 
-/* line 305, ../scss/_base.scss */
+/* line 312, ../scss/_base.scss */
 .tags-title {
   text-transform: uppercase;
 }
 
 /* entry content */
-/* line 311, ../scss/_base.scss */
+/* line 318, ../scss/_base.scss */
 .entry-content {
   /*
   image alignment on a screen this size may be
@@ -907,19 +3050,19 @@ POSTS & CONTENT STYLES
   but it's up to you. Feel free to change it up.
   */
 }
-/* line 346, ../scss/_base.scss */
+/* line 353, ../scss/_base.scss */
 .entry-content dd {
   margin-left: 0;
   font-size: 0.9em;
   color: #787878;
   margin-bottom: 1.5em;
 }
-/* line 367, ../scss/_base.scss */
+/* line 374, ../scss/_base.scss */
 .entry-content video, .entry-content object {
   max-width: 100%;
   height: auto;
 }
-/* line 372, ../scss/_base.scss */
+/* line 379, ../scss/_base.scss */
 .entry-content pre {
   background: #eee;
   border: 1px solid #cecece;
@@ -927,20 +3070,20 @@ POSTS & CONTENT STYLES
 }
 
 /* end .entry-content */
-/* line 380, ../scss/_base.scss */
+/* line 387, ../scss/_base.scss */
 .wp-caption {
   max-width: 100%;
   background: #eee;
   padding: 5px;
   /* images inside wp-caption */
 }
-/* line 386, ../scss/_base.scss */
+/* line 393, ../scss/_base.scss */
 .wp-caption img {
   max-width: 100%;
   margin-bottom: 0;
   width: 100%;
 }
-/* line 392, ../scss/_base.scss */
+/* line 399, ../scss/_base.scss */
 .wp-caption p.wp-caption-text {
   font-size: 0.85em;
   margin: 4px 0 7px;
@@ -949,21 +3092,21 @@ POSTS & CONTENT STYLES
 
 /* end .wp-caption */
 /* image gallery styles */
-/* line 401, ../scss/_base.scss */
+/* line 408, ../scss/_base.scss */
 .gallery {
   margin: 16px 0;
 }
 
 /* end .gallery */
 /* gallery caption styles */
-/* line 429, ../scss/_base.scss */
+/* line 436, ../scss/_base.scss */
 .post-edit-link, .post-edit-link:visited {
   color: #e85d63;
   font-weight: bold;
   text-transform: uppercase;
 }
 
-/* line 437, ../scss/_base.scss */
+/* line 444, ../scss/_base.scss */
 .project-title {
   font-size: 1.125em;
   line-height: 1.33333em;
@@ -973,26 +3116,26 @@ POSTS & CONTENT STYLES
   margin-bottom: 1.77778em;
 }
 
-/* line 445, ../scss/_base.scss */
+/* line 452, ../scss/_base.scss */
 .project-thumb img {
   display: block;
   margin: auto;
   margin-bottom: 0.5em;
 }
 
-/* line 452, ../scss/_base.scss */
+/* line 459, ../scss/_base.scss */
 .project-thumb-title {
   margin-bottom: 1.77778em;
   font-size: 0.875em;
   line-height: 1.71429em;
 }
 
-/* line 457, ../scss/_base.scss */
+/* line 464, ../scss/_base.scss */
 .artwork-meta {
   list-style-type: none;
 }
 
-/* line 463, ../scss/_base.scss */
+/* line 470, ../scss/_base.scss */
 .single-project.single-format-video iframe {
   width: 100%;
   height: 200px;
@@ -1001,13 +3144,13 @@ POSTS & CONTENT STYLES
 /******************************************************************
 PAGE NAVI STYLES
 ******************************************************************/
-/* line 475, ../scss/_base.scss */
+/* line 482, ../scss/_base.scss */
 .page-navigation,
 .wp-prev-next {
   margin: 1.1em 0 2.2em;
 }
 
-/* line 478, ../scss/_base.scss */
+/* line 485, ../scss/_base.scss */
 .bones_page_navi {
   list-style-type: none;
   /* current page link */
@@ -1019,44 +3162,44 @@ PAGE NAVI STYLES
   /* first page link */
   /* last page link */
 }
-/* line 480, ../scss/_base.scss */
+/* line 487, ../scss/_base.scss */
 .bones_page_navi li {
   float: left;
   margin-left: 10px;
 }
-/* line 484, ../scss/_base.scss */
+/* line 491, ../scss/_base.scss */
 .bones_page_navi li a {
   padding: 3px 6px;
   display: block;
   text-decoration: none;
   position: relative;
 }
-/* line 491, ../scss/_base.scss */
+/* line 498, ../scss/_base.scss */
 .bones_page_navi li a:hover, .bones_page_navi li a:focus {
   color: #f01d4f;
   text-decoration: underline;
 }
-/* line 500, ../scss/_base.scss */
+/* line 507, ../scss/_base.scss */
 .bones_page_navi li.bpn-current {
   padding: 3px 6px;
   border-bottom: 2px solid #f01d4f;
   position: relative;
 }
-/* line 505, ../scss/_base.scss */
+/* line 512, ../scss/_base.scss */
 .bones_page_navi li.bpn-current a {
   /* hovering on current page link */
 }
-/* line 516, ../scss/_base.scss */
+/* line 523, ../scss/_base.scss */
 .bones_page_navi li.bpn-prev-link,
 .bones_page_navi li.bpn-next-link {
   font-weight: 700;
 }
-/* line 519, ../scss/_base.scss */
+/* line 526, ../scss/_base.scss */
 .bones_page_navi li.bpn-prev-link a,
 .bones_page_navi li.bpn-next-link a {
   padding: 0;
 }
-/* line 528, ../scss/_base.scss */
+/* line 535, ../scss/_base.scss */
 .bones_page_navi li.bpn-prev-link a:hover,
 .bones_page_navi li.bpn-next-link a:hover,
 .bones_page_navi li.bpn-first-page-link a:hover,
@@ -1066,11 +3209,11 @@ PAGE NAVI STYLES
 
 /* end .bones_page_navi */
 /* fallback previous & next links */
-/* line 571, ../scss/_base.scss */
+/* line 578, ../scss/_base.scss */
 .wp-prev-next .prev-link {
   float: left;
 }
-/* line 575, ../scss/_base.scss */
+/* line 582, ../scss/_base.scss */
 .wp-prev-next .next-link {
   float: right;
 }
@@ -1080,12 +3223,12 @@ PAGE NAVI STYLES
 COMMENT STYLES
 ******************************************************************/
 /* h3 comment title */
-/* line 586, ../scss/_base.scss */
+/* line 593, ../scss/_base.scss */
 #comments {
   /* number of comments span */
 }
 
-/* line 603, ../scss/_base.scss */
+/* line 610, ../scss/_base.scss */
 .commentlist {
   /* general comment classes */
   /* vcard */
@@ -1096,7 +3239,7 @@ COMMENT STYLES
   /* comment reply link */
   /* end .commentlist .comment-reply-link */
 }
-/* line 605, ../scss/_base.scss */
+/* line 612, ../scss/_base.scss */
 .commentlist li {
   position: relative;
   clear: both;
@@ -1106,63 +3249,67 @@ COMMENT STYLES
   padding: 0.7335em 10px;
   /* end .commentlist li ul.children */
 }
-/* line 613, ../scss/_base.scss */
+/* line 620, ../scss/_base.scss */
 .commentlist li:last-child {
   margin-bottom: 0;
 }
-/* line 617, ../scss/_base.scss */
+/* line 624, ../scss/_base.scss */
 .commentlist li ul.children {
   margin: 0;
   /* variations */
   /* change number for different depth */
 }
-/* line 635, ../scss/_base.scss */
+/* line 642, ../scss/_base.scss */
 .commentlist li[class*=depth-] {
   margin-top: 1.1em;
 }
-/* line 639, ../scss/_base.scss */
+/* line 646, ../scss/_base.scss */
 .commentlist li.depth-1 {
   margin-left: 0;
   margin-top: 0;
 }
-/* line 644, ../scss/_base.scss */
+/* line 651, ../scss/_base.scss */
 .commentlist li:not(.depth-1) {
   margin-right: -10px;
   margin-left: -10px;
   margin-top: 0;
   padding-bottom: 0;
 }
-/* line 658, ../scss/_base.scss */
+/* line 665, ../scss/_base.scss */
 .commentlist .odd {
   background: #eee;
 }
-/* line 661, ../scss/_base.scss */
+/* line 668, ../scss/_base.scss */
 .commentlist .even {
   background: #fefefe;
 }
-/* line 676, ../scss/_base.scss */
+/* line 683, ../scss/_base.scss */
 .commentlist .vcard {
   margin-left: 50px;
 }
-/* line 679, ../scss/_base.scss */
+/* line 686, ../scss/_base.scss */
 .commentlist .vcard cite.fn {
   font-weight: 700;
   font-style: normal;
 }
-/* line 687, ../scss/_base.scss */
+/* line 694, ../scss/_base.scss */
 .commentlist .vcard time {
-  float: right;
+  clear: both;
 }
-/* line 690, ../scss/_base.scss */
+/* line 696, ../scss/_base.scss */
+.commentlist .vcard time:before {
+  content: ' | ';
+}
+/* line 700, ../scss/_base.scss */
 .commentlist .vcard time a {
   color: #999;
   text-decoration: none;
 }
-/* line 694, ../scss/_base.scss */
+/* line 704, ../scss/_base.scss */
 .commentlist .vcard time a:hover {
   text-decoration: underline;
 }
-/* line 704, ../scss/_base.scss */
+/* line 714, ../scss/_base.scss */
 .commentlist .vcard img.avatar {
   position: absolute;
   left: 10px;
@@ -1170,53 +3317,48 @@ COMMENT STYLES
   border: 1px solid #cecece;
   background: #fff;
 }
-/* line 729, ../scss/_base.scss */
-.commentlist .comment_content {
-  margin-left: 50px;
-}
-/* line 732, ../scss/_base.scss */
+/* line 741, ../scss/_base.scss */
 .commentlist .comment_content p {
   margin: 0.7335em 0 1.5em;
   font-size: 1em;
   line-height: 1.5em;
 }
-/* line 741, ../scss/_base.scss */
+/* line 750, ../scss/_base.scss */
 .commentlist .comment-reply-link {
   text-decoration: none;
   float: right;
   font-family: Helvetica;
-  font-size: 0.75em;
-  line-height: 1.33333em;
-  background: #222222;
-  border-color: #1d1d1d;
+  background: #999999;
+  border: none;
+  text-shadow: 0.08em 0.08em 0.91em #666;
+  border-width: 0.2em;
   color: white;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  -ms-border-radius: 2px;
-  -o-border-radius: 2px;
-  border-radius: 2px;
+  padding: 0.3em 0.5em;
+  line-height: 1.5;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
 }
-/* line 118, ../scss/libs/_mixins.scss */
+/* line 121, ../scss/libs/_mixins.scss */
 .commentlist .comment-reply-link:hover, .commentlist .comment-reply-link:focus {
-  background: #0e0e0e;
-  border-color: black;
+  background: #666666;
   color: white;
-  -webkit-box-shadow: inset 0 1px 0 #3c3c3c, 0 1px 0 rgba(0, 0, 0, 0.15);
-  box-shadow: inset 0 1px 0 #3c3c3c, 0 1px 0 rgba(0, 0, 0, 0.15);
 }
-/* line 126, ../scss/libs/_mixins.scss */
+/* line 129, ../scss/libs/_mixins.scss */
 .commentlist .comment-reply-link:active {
-  background: #0e0e0e;
-  border-color: black;
+  background: #7a7a7a;
+  border-color: #737373;
   color: white;
   -webkit-box-shadow: inset 0 2px 5px -3px rgba(0, 0, 0, 0.5);
   box-shadow: inset 0 2px 5px -3px rgba(0, 0, 0, 0.5);
 }
-/* line 136, ../scss/libs/_mixins.scss */
+/* line 139, ../scss/libs/_mixins.scss */
 .commentlist .comment-reply-link[disabled], .commentlist .comment-reply-link:disabled, .commentlist .comment-reply-link.button-primary-disabled {
   color: #d1c7c7 !important;
-  background: #0e0e0e !important;
-  border-color: black !important;
+  background: #858585 !important;
+  border-color: #737373 !important;
   text-shadow: none !important;
 }
 
@@ -1224,46 +3366,34 @@ COMMENT STYLES
 /******************************************************************
 COMMENT FORM STYLES
 ******************************************************************/
-/* line 754, ../scss/_base.scss */
+/* line 763, ../scss/_base.scss */
 .respond-form {
   margin-top: 1.77778em;
   padding-bottom: 0.44444em;
 }
-/* line 758, ../scss/_base.scss */
+/* line 767, ../scss/_base.scss */
 .respond-form form {
   margin: 0.75em 0;
 }
-/* line 761, ../scss/_base.scss */
+/* line 770, ../scss/_base.scss */
 .respond-form form li {
   list-style-type: none;
   clear: both;
   margin-bottom: 0.7335em;
 }
-/* line 767, ../scss/_base.scss */
+/* line 776, ../scss/_base.scss */
 .respond-form form li label,
 .respond-form form li small {
   display: none;
 }
-/* line 775, ../scss/_base.scss */
+/* line 784, ../scss/_base.scss */
 .respond-form form input[type=text],
 .respond-form form input[type=email],
 .respond-form form input[type=url],
 .respond-form form textarea {
-  padding: 0.1875em 0.375em;
-  background: #fff;
-  color: #666666;
-  border: 0.125em solid #cccccc;
-  line-height: 1.5em;
   /* form validation */
 }
-/* line 782, ../scss/_base.scss */
-.respond-form form input[type=text]:focus,
-.respond-form form input[type=email]:focus,
-.respond-form form input[type=url]:focus,
-.respond-form form textarea:focus {
-  border: 0.125em solid #999999;
-}
-/* line 787, ../scss/_base.scss */
+/* line 788, ../scss/_base.scss */
 .respond-form form input[type=text]:invalid,
 .respond-form form input[type=email]:invalid,
 .respond-form form input[type=url]:invalid,
@@ -1276,14 +3406,14 @@ COMMENT FORM STYLES
   -ms-box-shadow: none;
   box-shadow: none;
 }
-/* line 800, ../scss/_base.scss */
+/* line 801, ../scss/_base.scss */
 .respond-form form input[type=text],
 .respond-form form input[type=email],
 .respond-form form input[type=url] {
   max-width: 400px;
   min-width: 250px;
 }
-/* line 805, ../scss/_base.scss */
+/* line 806, ../scss/_base.scss */
 .respond-form form textarea {
   resize: none;
   width: 97.3%;
@@ -1291,46 +3421,45 @@ COMMENT FORM STYLES
 }
 
 /* comment submit button */
-/* line 815, ../scss/_base.scss */
+/* line 816, ../scss/_base.scss */
 #submit {
   font-family: Helvetica;
-  font-size: 0.75em;
-  line-height: 1.33333em;
-  background: #222222;
-  border-color: #1d1d1d;
+  background: #999999;
+  border: none;
+  text-shadow: 0.08em 0.08em 0.91em #666;
+  border-width: 0.2em;
   color: white;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  -ms-border-radius: 2px;
-  -o-border-radius: 2px;
-  border-radius: 2px;
+  padding: 0.3em 0.5em;
+  line-height: 1.5;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
 }
-/* line 118, ../scss/libs/_mixins.scss */
+/* line 121, ../scss/libs/_mixins.scss */
 #submit:hover, #submit:focus {
-  background: #0e0e0e;
-  border-color: black;
+  background: #666666;
   color: white;
-  -webkit-box-shadow: inset 0 1px 0 #3c3c3c, 0 1px 0 rgba(0, 0, 0, 0.15);
-  box-shadow: inset 0 1px 0 #3c3c3c, 0 1px 0 rgba(0, 0, 0, 0.15);
 }
-/* line 126, ../scss/libs/_mixins.scss */
+/* line 129, ../scss/libs/_mixins.scss */
 #submit:active {
-  background: #0e0e0e;
-  border-color: black;
+  background: #7a7a7a;
+  border-color: #737373;
   color: white;
   -webkit-box-shadow: inset 0 2px 5px -3px rgba(0, 0, 0, 0.5);
   box-shadow: inset 0 2px 5px -3px rgba(0, 0, 0, 0.5);
 }
-/* line 136, ../scss/libs/_mixins.scss */
+/* line 139, ../scss/libs/_mixins.scss */
 #submit[disabled], #submit:disabled, #submit.button-primary-disabled {
   color: #d1c7c7 !important;
-  background: #0e0e0e !important;
-  border-color: black !important;
+  background: #858585 !important;
+  border-color: #737373 !important;
   text-shadow: none !important;
 }
 
 /* comment form title */
-/* line 820, ../scss/_base.scss */
+/* line 821, ../scss/_base.scss */
 #comment-form-title {
   margin: 0 0 1.1em;
 }
@@ -1338,13 +3467,13 @@ COMMENT FORM STYLES
 /* cancel comment reply link */
 /* logged in comments */
 /* allowed tags */
-/* line 833, ../scss/_base.scss */
+/* line 834, ../scss/_base.scss */
 #allowed_tags {
   margin: 1.5em 10px 0.7335em 0;
 }
 
 /* no comments */
-/* line 838, ../scss/_base.scss */
+/* line 839, ../scss/_base.scss */
 .nocomments {
   margin: 0 20px 1.1em;
 }
@@ -1352,7 +3481,7 @@ COMMENT FORM STYLES
 /*********************
 SIDEBARS & ASIDES
 *********************/
-/* line 854, ../scss/_base.scss */
+/* line 855, ../scss/_base.scss */
 .widget ul li {
   /* deep nesting */
 }
@@ -1360,13 +3489,13 @@ SIDEBARS & ASIDES
 /*********************
 FOOTER STYLES
 *********************/
-/* line 875, ../scss/_base.scss */
+/* line 876, ../scss/_base.scss */
 .footer {
   clear: both;
   font-size: 0.875em;
   line-height: 1.71429em;
 }
-/* line 880, ../scss/_base.scss */
+/* line 881, ../scss/_base.scss */
 .footer .wrap {
   border-top: 1px solid #eeeeee;
   margin-top: 0.44444em;
@@ -1382,7 +3511,7 @@ it simple because you'll have to
 override these styles for the desktop
 view.
 */
-/* line 896, ../scss/_base.scss */
+/* line 897, ../scss/_base.scss */
 .footer-nav {
   list-style-type: none;
 }
@@ -1391,6 +3520,26 @@ view.
 /*********************
 WPFOLIO FEATURES
 *********************/
+/* line 917, ../scss/_base.scss */
+.media-wrap {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* proportion value to aspect ratio 16:9 (9 / 16 = 0.5625 or 56.25%) */
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+  margin: 0 auto 2.2em;
+}
+
+/* line 927, ../scss/_base.scss */
+.media-wrap iframe, .media-wrap object, .media-wrap embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 /*
 LARGER MOBILE DEVICES
 This is for devices like the Galaxy Note or something that's
@@ -1417,24 +3566,33 @@ phablets.
   /*********************
   NAVIGATION STYLES
   *********************/
+  /* line 25, ../scss/_481up.scss */
+  .nav {
+    display: inline-block;
+  }
+  /* line 28, ../scss/_481up.scss */
+  .nav li {
+    text-align: center;
+  }
+
   /* .menu is clearfixed inside mixins.scss */
-  /* line 26, ../scss/_481up.scss */
+  /* line 36, ../scss/_481up.scss */
   .menu {
     /* end .menu ul */
   }
-  /* line 27, ../scss/_481up.scss */
+  /* line 37, ../scss/_481up.scss */
   .menu ul {
     /* end .menu ul li */
     /* highlight current page */
     /* end current highlighters */
   }
-  /* line 28, ../scss/_481up.scss */
+  /* line 38, ../scss/_481up.scss */
   .menu ul li {
     /*
     plan your menus and drop-downs wisely.
     */
   }
-  /* line 29, ../scss/_481up.scss */
+  /* line 39, ../scss/_481up.scss */
   .menu ul li a {
     /*
     you can use hover styles here even though this size
@@ -1447,23 +3605,23 @@ phablets.
   POSTS & CONTENT STYLES
   *********************/
   /* entry content */
-  /* line 75, ../scss/_481up.scss */
+  /* line 85, ../scss/_481up.scss */
   .entry-content {
     /* at this larger size, we can start to align images */
   }
-  /* line 79, ../scss/_481up.scss */
+  /* line 89, ../scss/_481up.scss */
   .entry-content .alignleft, .entry-content img.alignleft {
     margin-right: 1.5em;
     display: inline;
     float: left;
   }
-  /* line 84, ../scss/_481up.scss */
+  /* line 94, ../scss/_481up.scss */
   .entry-content .alignright, .entry-content img.alignright {
     margin-left: 1.5em;
     display: inline;
     float: right;
   }
-  /* line 89, ../scss/_481up.scss */
+  /* line 99, ../scss/_481up.scss */
   .entry-content .aligncenter, .entry-content img.aligncenter {
     margin-right: auto;
     margin-left: auto;
@@ -1472,13 +3630,13 @@ phablets.
   }
 
   /* end .entry-content */
-  /* line 104, ../scss/_481up.scss */
+  /* line 114, ../scss/_481up.scss */
   .single-project.single-format-video iframe {
     width: 100%;
     height: 300px;
   }
 
-  /* line 111, ../scss/_481up.scss */
+  /* line 121, ../scss/_481up.scss */
   .line-clamp {
     overflow: hidden;
     display: -webkit-box;
@@ -1521,17 +3679,12 @@ the resource intensive styles are added, like the grid.
   /*********************
   LAYOUT & GRID STYLES
   *********************/
-  /* line 26, ../scss/_768up.scss */
-  .wrap {
-    max-width: 960px;
-  }
-
-  /* line 30, ../scss/_768up.scss */
+  /* line 25, ../scss/_768up.scss */
   .home #content, .home .footer {
     display: none;
   }
 
-  /* line 35, ../scss/_768up.scss */
+  /* line 30, ../scss/_768up.scss */
   .widemargins {
     margin: 0 96px;
   }
@@ -1542,55 +3695,55 @@ the resource intensive styles are added, like the grid.
   /*********************
   NAVIGATION STYLES
   *********************/
-  /* line 55, ../scss/_768up.scss */
+  /* line 50, ../scss/_768up.scss */
   a.menu-link {
     display: none;
   }
 
-  /* line 59, ../scss/_768up.scss */
+  /* line 54, ../scss/_768up.scss */
   .js nav[role=navigation] {
     max-height: none;
   }
 
-  /* line 63, ../scss/_768up.scss */
+  /* line 58, ../scss/_768up.scss */
   nav[role=navigation] {
     clear: none;
   }
-  /* line 66, ../scss/_768up.scss */
+  /* line 61, ../scss/_768up.scss */
   nav[role=navigation] ul {
     margin: 0 0 0 -0.25em;
     border: 0;
   }
-  /* line 70, ../scss/_768up.scss */
+  /* line 65, ../scss/_768up.scss */
   nav[role=navigation] li {
     display: inline-block;
   }
-  /* line 73, ../scss/_768up.scss */
+  /* line 68, ../scss/_768up.scss */
   nav[role=navigation] li a {
     border: 0;
   }
 
-  /* line 82, ../scss/_768up.scss */
+  /* line 77, ../scss/_768up.scss */
   .nav li {
     float: left;
     position: relative;
   }
 
-  /* line 88, ../scss/_768up.scss */
+  /* line 83, ../scss/_768up.scss */
   .nav {
     border: 0;
     /* end .menu ul li */
     /* highlight current page */
     /* end current highlighters */
   }
-  /* line 91, ../scss/_768up.scss */
+  /* line 86, ../scss/_768up.scss */
   .nav li {
     /*
     plan your menus and drop-downs wisely.
     */
     /* showing sub-menus */
   }
-  /* line 93, ../scss/_768up.scss */
+  /* line 88, ../scss/_768up.scss */
   .nav li a {
     border-bottom: 0;
     padding: 0.44444em 0.88889em;
@@ -1599,7 +3752,7 @@ the resource intensive styles are added, like the grid.
     has the possibility of being a mobile device.
     */
   }
-  /* line 110, ../scss/_768up.scss */
+  /* line 105, ../scss/_768up.scss */
   .nav li ul.sub-menu,
   .nav li ul.children {
     margin-top: 0;
@@ -1609,7 +3762,7 @@ the resource intensive styles are added, like the grid.
     z-index: 8999;
     /* highlight sub-menu current page */
   }
-  /* line 117, ../scss/_768up.scss */
+  /* line 112, ../scss/_768up.scss */
   .nav li ul.sub-menu li,
   .nav li ul.children li {
     /*
@@ -1618,7 +3771,7 @@ the resource intensive styles are added, like the grid.
     for usability. k, bai.
     */
   }
-  /* line 119, ../scss/_768up.scss */
+  /* line 114, ../scss/_768up.scss */
   .nav li ul.sub-menu li a,
   .nav li ul.children li a {
     padding-left: 10px;
@@ -1627,12 +3780,12 @@ the resource intensive styles are added, like the grid.
     width: 180px;
     border-bottom: 1px solid #ccc;
   }
-  /* line 136, ../scss/_768up.scss */
+  /* line 131, ../scss/_768up.scss */
   .nav li ul.sub-menu li:last-child a,
   .nav li ul.children li:last-child a {
     border-bottom: 0;
   }
-  /* line 158, ../scss/_768up.scss */
+  /* line 153, ../scss/_768up.scss */
   .nav li:hover ul {
     top: auto;
     display: block;
@@ -1642,49 +3795,54 @@ the resource intensive styles are added, like the grid.
   /*********************
   POSTS & CONTENT STYLES
   *********************/
-  /* line 180, ../scss/_768up.scss */
+  /* line 175, ../scss/_768up.scss */
   .project-thumb img, .gallery-item img {
     opacity: 1;
   }
-  /* line 183, ../scss/_768up.scss */
+  /* line 178, ../scss/_768up.scss */
   .project-thumb img:hover, .gallery-item img:hover {
     opacity: 0.6;
   }
-  /* line 187, ../scss/_768up.scss */
+  /* line 182, ../scss/_768up.scss */
   .project-thumb img:active, .gallery-item img:active {
     opacity: 1;
   }
 
-  /* line 198, ../scss/_768up.scss */
+  /* line 193, ../scss/_768up.scss */
   .single-project.single-format-video iframe {
     width: 100%;
     height: 500px;
   }
 
+  /* line 200, ../scss/_768up.scss */
+  .comment_content {
+    margin-left: 50px;
+  }
+
   /*********************
   SIDEBARS & ASIDES
   *********************/
-  /* line 213, ../scss/_768up.scss */
+  /* line 212, ../scss/_768up.scss */
   .widgettitle {
     text-align: left;
   }
 
-  /* line 217, ../scss/_768up.scss */
+  /* line 216, ../scss/_768up.scss */
   .widget {
     padding: 0 12px;
     margin: 32px 0;
     border-left: #eeeeee 1px solid;
   }
-  /* line 222, ../scss/_768up.scss */
+  /* line 221, ../scss/_768up.scss */
   .widget ul {
     list-style-type: none;
   }
-  /* line 225, ../scss/_768up.scss */
+  /* line 224, ../scss/_768up.scss */
   .widget ul li {
     margin-bottom: 0.75em;
     /* deep nesting */
   }
-  /* line 233, ../scss/_768up.scss */
+  /* line 232, ../scss/_768up.scss */
   .widget ul li ul {
     margin-top: 0.75em;
     padding-left: 1em;
@@ -1709,7 +3867,7 @@ the resource intensive styles are added, like the grid.
   of overriding here if you styled them for
   mobile. Make sure to double check these!
   */
-  /* line 342, ../scss/_768up.scss */
+  /* line 341, ../scss/_768up.scss */
   .footer-nav li {
     /*
     be careful with the depth of your menus.
@@ -1717,13 +3875,13 @@ the resource intensive styles are added, like the grid.
     the footer.
     */
   }
-  /* line 343, ../scss/_768up.scss */
+  /* line 342, ../scss/_768up.scss */
   .footer-nav li a {
     padding-top: 0;
   }
 
   /* end .footer-nav */
-  /* line 357, ../scss/_768up.scss */
+  /* line 356, ../scss/_768up.scss */
   .copyright {
     text-align: right;
   }
@@ -1812,12 +3970,8 @@ query for retina AND a certain size if you want. Go Nuts.
   
   */
   /* line 43, ../scss/_2x.scss */
-  .nav-toggle {
-    background-image: url("../images/hamburger-retina.gif");
-    -webkit-background-size: 100px 100px;
-    -moz-background-size: 100px 100px;
-    -o-background-size: 100px 100px;
-    background-size: 100px 100px;
+  body {
+    font-size: 0.9em;
   }
 }
 /*

@@ -3,6 +3,9 @@
 // Grid Stylesheet
 // Susy! http://susy.oddbird.net/
 
+// TODO:
+// Note about the post thumb grid - is there a better way to do the heights?
+// It's pretty verbose and arbitrary as it...
 
 // Susy settings
 // TODO: incorporate modular scale here
@@ -19,8 +22,9 @@ $tablet 		: 768px;
 $desktop 		: 960px;
 
 
-.wrap {
+#container {
 	@include container;
+	max-width: 1030px;
 }
 
 .prev {
@@ -35,10 +39,9 @@ $desktop 		: 960px;
 	
 /* Get in there, grid! At about tablet size, we add:
 		- The sidebar to the news layout
-		- Float the main nav to the right
+		- Float the site nav to the right
 */
 
-// TODO: responsive post thumb grid not working
 
 // Phonez
 @include at-breakpoint(30.0625em 4) {
@@ -59,7 +62,7 @@ $desktop 		: 960px;
 
 @include at-breakpoint(40em 4) {
 	.project-thumb {
-		height: 26em;
+		height: 27em;
 	}
 }
 
@@ -71,8 +74,8 @@ $desktop 		: 960px;
 	.project-thumb {
 		@include span-columns(3,9);
 		&:nth-child(2n), &:nth-child(4n) { @include remove-omega; }
-		&:nth-child(3n) { @include omega; } // every third image completes a row.
-		
+		&:nth-child(3n) { @include omega; } // every third image completes a row.	
+		height: 25em;
 	}
 
 	.artwork-meta {
@@ -84,19 +87,19 @@ $desktop 		: 960px;
 @include at-breakpoint(60em 12) {
 	
 	.sidebar-layout {
-	 	@include span-columns(8,12);
+	 	@include span-columns(8);
 	}
 
 	.sidebar {
-		@include span-columns(4 omega,12);
+		@include span-columns(4 omega);
 	}
 
 	.site-name {
-		@include span-columns(4, 12);	
+		@include span-columns(4);	
 	}
 
-	#main-nav {
-		@include span-columns(8 omega,12);
+	.site-nav {
+		@include span-columns(8 omega);
 	}
 	
 	// Make the list float right too
@@ -106,17 +109,22 @@ $desktop 		: 960px;
 
 	// Portfolio layout
 	.project-thumb {
-		@include span-columns(3,12); // four columns
-		&:nth-child(2n) { @include remove-omega; }
-		&:nth-child(3n) { @include remove-omega; }
-		&:nth-child(4n) { @include omega; } // every fourth image completes a row.
-		height: 20em;
+		height: 26em;
 	}
 
 	// Comments
-	.project .respond-form {	
-		@include span-columns(8,12);
+	.commentlist, .respond-form {	
+		@include span-columns(8);
+		@include post(4);
 	}
 
 }
 
+// // Large desktop
+// @include at-breakpoint(74em 12) {
+
+// 	// Portfolio layout
+// 	.project-thumb {
+// 		height: 22em;
+// 	}
+// }

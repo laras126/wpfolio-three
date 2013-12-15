@@ -34,16 +34,16 @@ $aw_link = get_post_meta( $post->ID, '_ctmb_link', true );
 			echo '<li>' . $aw_medium . '</li>';
 		}
 
-		if ( $aw_collabs ) {
+		if ( $aw_acknow ) {
 			echo '<li><strong>Acknowledgements:</strong> ' . $aw_acknow . '</li>';
-		}
-
-		if ( $aw_link ) {
-			echo '<li><a href="' . $aw_link . '">Project Link</a></li>';
 		}
 
 		if ( $aw_desc ) {
 			echo '<li>' . $aw_desc . '</li>';
+		}
+
+		if ( $aw_link ) {
+			echo '<li><a href="' . $aw_link . '">Project Link</a></li>';
 		}
 		
 		?>

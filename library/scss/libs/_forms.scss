@@ -5,6 +5,10 @@
 
 // -----------------------------------------------------------
 
+// Remove the blue outline from Chrome
+*:focus {
+    outline: 0;
+}
 
 label, select {
 	display: block;
@@ -42,14 +46,14 @@ input[type="url"],
 input[type="search"],
 input[type="tel"] {
 	font-family: Helvetica;
-	@include border-radius(4px);
-	padding: $base-size/3;
-	margin: rhythm(1, 18px) 0 0;
-	border: 1px solid $accent-light;
+	padding: em-font(3px) em-font(6px);
+	background: #fff;
+	color: $primary;
+	border: em-font(2px) solid #ccc;
+	line-height: 1.5em;
 
 	&:focus {
-		border-color: $accent-med;
-		outline: none;		
+		border: em-font(2px) solid #999;
 	}
 }
 
@@ -74,7 +78,7 @@ input[type="checkbox"] {
 
 input[type="submit"],
 button {
-	@include button($primary);
+	@include button($secondary);
 }
 
 select,
