@@ -151,12 +151,13 @@ function bones_scripts_and_styles() {
 
     $wp_styles->add_data( 'bones-ie-only', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet
 
-    /*
-    I recommend using a plugin to call jQuery
-    using the google cdn. That way it stays cached
-    and your site will load faster.
-    */
-    wp_enqueue_script( 'jquery' );
+    // Load jquery in the footer using Google CDN
+    if( !is_admin()){
+		wp_deregister_script('jquery');
+		wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"), false, '1.3.2', true);
+		wp_enqueue_script('jquery');
+	}
+	
     wp_enqueue_script( 'bones-js' );
 	wp_enqueue_script( 'bones-plugins' );
   }

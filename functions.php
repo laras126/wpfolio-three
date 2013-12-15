@@ -22,6 +22,7 @@ sidebars, comments, ect.
 	- customizing the post excerpt
 	- custom google+ integration
 	- adding custom fields to user profiles
+	- include jquery in site footer
 */
 require_once('library/bones.php'); // if you remove this, bones will break
 /*
