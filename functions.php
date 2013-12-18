@@ -55,6 +55,9 @@ require_once('library/wpfolio.php'); // you can disable this if you like
 */
 // require_once('library/translation/translation.php'); // this comes turned off by default
 
+require_once('library/options-functions.php');
+ 
+
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes

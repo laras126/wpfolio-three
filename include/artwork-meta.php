@@ -9,7 +9,7 @@
 global $post;
 
 // Artwork Info Metabox fields
-$aw_title = get_post_meta( $post->ID, '_ctmb_title', true ) . '</h4>';
+//$aw_title = the_title();
 $aw_date = get_post_meta( $post->ID, '_ctmb_date', true );
 $aw_medium = get_post_meta( $post->ID, '_ctmb_medium', true );
 $aw_desc = get_post_meta( $post->ID, '_ctmb_description', true );
@@ -18,9 +18,7 @@ $aw_link = get_post_meta( $post->ID, '_ctmb_link', true );
 ?>
 
 <div class="clearfix">
-	<?php if ( $aw_title ) {
-		echo '<h4>' . $aw_title . '</h4>';
-	} ?>
+	<h4><?php echo the_title(); ?></h4>
 
 	<ul class="artwork-meta">
 		<?php 

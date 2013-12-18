@@ -47,17 +47,17 @@ function wpf_artinfo_metaboxes( $meta_boxes ) {
             'fields' => array(
 					array(
 						'name' => '',
-						'desc' => '<p>Print this information by typing the shortcode <code>[artwork_info]</code> in the post editor. Blank fields will not display.</p>
+						'desc' => '<p>This information will display by default at the bottom of the post. You should add any images or embed content in the main WordPress editor above.</p>
 						',
 						'type' => 'title',
 						'id' => $prefix . 'fields_description'
 					),
-                    array(
-                            'name' => 'Title',
-                            'desc' => 'The title of your artwork.',
-                            'id' => $prefix . 'title',
-                            'type' => 'text'
-                        ),
+                    // array(
+                    //         'name' => 'Title',
+                    //         'desc' => 'The title of your artwork.',
+                    //         'id' => $prefix . 'title',
+                    //         'type' => 'text'
+                    //     ),
                     array(
                             'name' => 'Medium',
                             'desc' => 'A few words describing your work\'s medium.',
@@ -196,6 +196,10 @@ add_shortcode('artwork_info', 'artwork_meta_shortcode');
 // TODO: Use this, not doing this immediately though.
 
 
+
+
+
+
 /************* MISC FILTERS ********************/
 
 // Remove taxonomy title from wp_title
@@ -216,6 +220,8 @@ function wpf_remove_tax_name( $title, $sep, $seplocation ) {
     return $title;
 }
 add_filter( 'wp_title', 'wpf_remove_tax_name', 10, 3 );
+
+
 
 
 ?>

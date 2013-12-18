@@ -2291,7 +2291,7 @@ textarea {
     height: 21em;
   }
   /* line 51, ../scss/libs/_grid.scss */
-  .project-thumb:nth-child(3n), .project-thumb:nth-child(4n) {
+  .project-thumb:nth-child(3n) {
     float: left;
     margin-right: 9.09091%;
   }
@@ -2322,7 +2322,7 @@ textarea {
     height: 25em;
   }
   /* line 76, ../scss/libs/_grid.scss */
-  .project-thumb:nth-child(2n), .project-thumb:nth-child(4n) {
+  .project-thumb:nth-child(2n) {
     float: left;
     margin-right: 3.84615%;
   }
@@ -2633,14 +2633,13 @@ input[type="email"],
 input[type="url"],
 input[type="search"],
 input[type="tel"] {
-  font-family: Helvetica;
   padding: 0.1875em 0.375em;
   background: #fff;
   color: #666666;
   border: 0.125em solid #cccccc;
   line-height: 1.5em;
 }
-/* line 55, ../scss/libs/_forms.scss */
+/* line 54, ../scss/libs/_forms.scss */
 textarea:focus,
 input[type="text"]:focus,
 input[type="password"]:focus,
@@ -2658,7 +2657,7 @@ input[type="tel"]:focus {
   border: 0.125em solid #999999;
 }
 
-/* line 61, ../scss/libs/_forms.scss */
+/* line 60, ../scss/libs/_forms.scss */
 input[type="radio"],
 input[type="checkbox"] {
   margin: 4px 0 0;
@@ -2668,7 +2667,7 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 
-/* line 75, ../scss/libs/_forms.scss */
+/* line 74, ../scss/libs/_forms.scss */
 input[type="file"],
 input[type="image"],
 input[type="submit"],
@@ -2679,7 +2678,7 @@ input[type="checkbox"] {
   width: auto;
 }
 
-/* line 80, ../scss/libs/_forms.scss */
+/* line 79, ../scss/libs/_forms.scss */
 input[type="submit"],
 button {
   font-family: Helvetica;
@@ -2723,14 +2722,14 @@ button.button-primary-disabled {
   text-shadow: none !important;
 }
 
-/* line 85, ../scss/libs/_forms.scss */
+/* line 84, ../scss/libs/_forms.scss */
 select,
 input[type="file"] {
   *margin-top: 4px;
   /* In IE7, the height of the select element cannot be changed by height, only font-size */
 }
 
-/* line 92, ../scss/libs/_forms.scss */
+/* line 91, ../scss/libs/_forms.scss */
 select:focus,
 input[type="file"]:focus,
 input[type="radio"]:focus,

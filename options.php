@@ -132,17 +132,11 @@ function optionsframework_options() {
 	//
 
 	$body_typography_options = array(
-		'sizes' => array('12', '14', '16', '18'),
+		'sizes' => false,
 		'faces' => $typography_mixed_fonts,
 		'styles' => false,
+		'color' => false
 	);
-
-
-	$typography_defaults = array(
-		'size' => '14px',
-		'face' => 'Georgia',
-		'style' => 'normal',
-		'color' => '#bada55' );
 
 	
 
@@ -162,9 +156,8 @@ function optionsframework_options() {
 	/************* BASIC SETTINGS ********************/
 
 	/* 	This includes:
-		1. Blog Category (multicheck) ##removing this!
-		2. Comments (radio)
-		3. Custom Favicon (upload)
+		1. Comments (radio)
+		2. Custom Favicon (upload)
 	*/
 
 	$options = array();
@@ -172,22 +165,8 @@ function optionsframework_options() {
 	$options[] = array(
 		'name' => __('Basic Settings', 'options_check'),
 		'type' => 'heading');
-
-	/////// -- Bye bye blog cat
-	// Replacing you with a custom type
-	// Because you are too hard to understand
 	
-	// 1. Select the blog categories
-
-	// $options[] = array(
-	// 	'name' => __('Blog Category', 'options_check'),
-	// 	'desc' => __('Select the category to be used for your blog. Posts in this category will use the blog layout, all others will use the portfolio layout.', 'options_check'),
-	// 	'id' => 'blog_cat',
-	// 	'std' => '0',
-	// 	'type' => 'select',
-	// 	'options' => $options_categories);
-	
-	// 2. Comments?
+	// 1. Comments
 	$options[] = array(
 		'name' => __('Comments', 'options_check'),
 		'desc' => __('Where would you like to see comments to show? By default they are only in the Blog category.', 'options_check'),
@@ -196,7 +175,7 @@ function optionsframework_options() {
 		'type' => 'radio',
 		'options' => $comments_arr);
 
-	// 3. Favicon
+	// 2. Favicon
 	// TODO: Did I add this yet?
 	$options[] = array(
 		'name' => __('Custom Favicon', 'options_check'),
@@ -211,7 +190,7 @@ function optionsframework_options() {
 	/* 	This includes:
 		1. Body Typography
 		2. Heading Typography
-		3. Secondary Color
+		3. Color Scheme
 		4. Custom CSS
 		5. Background color
 		6. Container color
@@ -225,15 +204,13 @@ function optionsframework_options() {
 		'type' => 'heading');
 
 
-	/*
-	*	Typography
-	*/
+	// --- TYPOGRAPHY --- //
 
 	// 1. Title Font
 	$options[] = array( 
 		'name' => __('Title Font', 'options_check'),
 		'desc' => __('Choose a font for your site title.'),
-		'id' => "title_font",
+		'id' => 'title_font',
 		'std' => $title_font_defaults,
 		'type' => 'typography',
 		// Using same font set for headings and title
@@ -252,8 +229,8 @@ function optionsframework_options() {
 
 	// 3. Choose font, base font size, and color for body typography
 	$options[] = array( 
-		'name' => __('Main Typography', 'options_check'),
-		'desc' => __('Choose the font, color, and base size for your website\'s text.', 'options_check'),
+		'name' => __('Body Font', 'options_check'),
+		'desc' => __('Choose the font for your website\'s content text.', 'options_check'),
 		'id' => 'body_typography',
 		'std' => $body_typography_defaults,
 		'type' => 'typography', 
@@ -264,23 +241,11 @@ function optionsframework_options() {
 	// TODO: add logo option
 	//
 
-	// 3. The color for links, blog description, post meta, menu items, prev/next navigation, borders, widget text.
-	$options[] = array(
-		'name' => __('Secondary Font Color', 'options_check'),
-		'desc' => __('Color for links and borders.', 'options_check'),
-		'id' => 'secondary_font_color',
-		'std' => '#f0f0f0',
-		'type' => 'color' );
+	//
+	// TODO: add color scheme option instead of specific colors
+	//
+
 	
-	// Color for link hover
-	$options[] = array(
-		'name' => __('Link Hover Color', 'options_check'),
-		'desc' => __('The color for hovering over links, and the main menu highlight color.', 'options_check'),
-		'id' => 'link_hover_color',
-		'std' => '#f0f0f0',
-		'type' => 'color' );
-
-
 	/* 
 	*	Background
 	*/
@@ -301,357 +266,8 @@ function optionsframework_options() {
 		'std' => '#wrapper {'."\n\t".'border-radius: 0.3em;'."\n".'}',
 		'type' => 'textarea');
 
-
-
-
-
-// Example options
-
-	$options[] = array(
-		'name' => __('Blerg', 'options_check'),
-		'type' => 'heading' );
-
-
-
-	/**
-	 * For $settings options see:
-	 * http://codex.wordpress.org/Function_Reference/wp_editor
-	 *
-	 * 'media_buttons' are not supported as there is no post to attach items to
-	 * 'textarea_name' is set by the 'id' you choose
-	 */
-
-	$wp_editor_settings = array(
-		'wpautop' => true, // Default
-		'textarea_rows' => 10,
-		'tinymce' => array( 'plugins' => 'wordpress' )
-	);
-	
-	$options[] = array(
-		'name' => __('Default Text Editor', 'options_check'),
-		'desc' => sprintf( __( 'You can also pass settings to the editor.  Read more about wp_editor in <a href="%1$s" target="_blank">the WordPress codex</a>', 'options_check' ), 'http://codex.wordpress.org/Function_Reference/wp_editor' ),
-		'id' => 'example_editor',
-		'type' => 'textarea',
-		'class' => 'large',
-		'settings' => $wp_editor_settings );
-
-	$options[] = array(
-		'name' => __('Custom Typography', 'options_check'),
-		'desc' => __('Custom typography options.', 'options_check'),
-		'id' => "custom_typography",
-		'std' => $typography_defaults,
-		'type' => 'typography',
-		'options' => $typography_options );
-
-
-	$options[] = array(
-		'name' => __('Input Text Mini', 'options_check'),
-		'desc' => __('A mini text input field.', 'options_check'),
-		'id' => 'example_text_mini',
-		'std' => 'Default',
-		'class' => 'mini',
-		'type' => 'text');
-
-	$options[] = array(
-		'name' => __('Input Text', 'options_check'),
-		'desc' => __('A text input field.', 'options_check'),
-		'id' => 'example_text',
-		'std' => 'Default Value',
-		'type' => 'text');
-
-	$options[] = array(
-		'name' => __('Textarea', 'options_check'),
-		'desc' => __('Textarea description.', 'options_check'),
-		'id' => 'example_textarea',
-		'std' => 'Default Text',
-		'type' => 'textarea');
-		
-	$options[] = array(
-		'name' => __('Select a Tag', 'options_check'),
-		'desc' => __('Passed an array of tags with term_id and term_name', 'options_check'),
-		'id' => 'example_select_tags',
-		'type' => 'select',
-		'options' => $options_tags);
-
-	$options[] = array(
-		'name' => __('Select a Page', 'options_check'),
-		'desc' => __('Passed an pages with ID and post_title', 'options_check'),
-		'id' => 'example_select_pages',
-		'type' => 'select',
-		'options' => $options_pages);
-
-	
-	$options[] = array(
-		'name' => __('Example Info', 'options_check'),
-		'desc' => __('This is just some example information you can put in the panel.', 'options_check'),
-		'type' => 'info');
-
-	$options[] = array(
-		'name' => __('Input Checkbox', 'options_check'),
-		'desc' => __('Example checkbox, defaults to true.', 'options_check'),
-		'id' => 'example_checkbox',
-		'std' => '1',
-		'type' => 'checkbox');
-
-	$options[] = array(
-		'name' => __('Advanced Settings', 'options_check'),
-		'type' => 'heading');
-
-	$options[] = array(
-		'name' => __('Check to Show a Hidden Text Input', 'options_check'),
-		'desc' => __('Click here and see what happens.', 'options_check'),
-		'id' => 'example_showhidden',
-		'type' => 'checkbox');
-		
-	$options[] = array(
-		'name' => __('Hidden Text Input', 'options_check'),
-		'desc' => __('This option is hidden unless activated by a checkbox click.', 'options_check'),
-		'id' => 'example_text_hidden',
-		'std' => 'Hello',
-		'class' => 'hidden',
-		'type' => 'text');
-
-	$options[] = array(
-		'name' => __('Uploader Test', 'options_check'),
-		'desc' => __('This creates a full size uploader that previews the image.', 'options_check'),
-		'id' => 'example_uploader',
-		'type' => 'upload');
-
-	$options[] = array(
-		'name' => "Example Image Selector",
-		'desc' => "Images for layout.",
-		'id' => "example_images",
-		'std' => "2c-l-fixed",
-		'type' => "images",
-		'options' => array(
-			'1col-fixed' => $imagepath . '1col.png',
-			'2c-l-fixed' => $imagepath . '2cl.png',
-			'2c-r-fixed' => $imagepath . '2cr.png')
-	);
-
-	$options[] = array(
-		'name' => __('Multicheck', 'options_check'),
-		'desc' => __('Multicheck description.', 'options_check'),
-		'id' => 'example_multicheck',
-		'std' => $multicheck_defaults, // These items get checked by default
-		'type' => 'multicheck',
-		'options' => $multicheck_array);
-
-	$options[] = array(
-		'name' => __('Colorpicker', 'options_check'),
-		'desc' => __('No color selected by default.', 'options_check'),
-		'id' => 'example_colorpicker',
-		'std' => '',
-		'type' => 'color' );
-		
-	$options[] = array( 'name' => __('Typography', 'options_check'),
-		'desc' => __('Example typography.', 'options_check'),
-		'id' => "example_typography",
-		'std' => $typography_defaults,
-		'type' => 'typography' );
-		
-
 	return $options;
 } // end main options function
-
-
-
-
-
-
-
-
-/***********************/
-/**** OUTPUT STYLES ****/
-/***********************/
-
-// Applying options here
-
-
-/**
- * Checks font options to see if a Google font is selected.
- * If so, options_typography_enqueue_google_font is called to enqueue the font.
- * Ensures that each Google font is only enqueued once.
- */
-
-if ( !function_exists( 'options_typography_google_fonts' ) ) {
-    function options_typography_google_fonts() {
-        $all_google_fonts = array_keys( options_typography_get_google_fonts() );
-        
-        // Define all the options that possibly have a unique Google font
-        $body_google_mixed = of_get_option('body_typography', false);
-		$heading_google_mixed = of_get_option('heading_font', false);
-		
-        // Get the font face for each option and put it in an array
-        $selected_fonts = array(
-            $body_google_mixed['face'],
-            $heading_google_mixed['face']
-            );
-
-        // Remove any duplicates in the list
-        $selected_fonts = array_unique($selected_fonts);
-        
-        // Check each of the unique fonts against the defined Google fonts
-        // If it is a Google font, go ahead and call the function to enqueue it
-        foreach ( $selected_fonts as $font ) {
-            if ( in_array( $font, $all_google_fonts ) ) {
-                options_typography_enqueue_google_font($font);
-            }
-        }
-    }
-}
-add_action( 'wp_enqueue_scripts', 'options_typography_google_fonts' );
-
-/**
- * Enqueues the Google $font that is passed
- */
-function options_typography_enqueue_google_font($font) {
-	$font = explode(',', $font);
-	$font = $font[0];
-	// Certain Google fonts need slight tweaks in order to load properly
-	// Like our friend "Raleway"
-	if ( $font == 'Raleway' )
-		$font = 'Raleway:100';
-	$font = str_replace(" ", "+", $font);
-	wp_enqueue_style( "options_typography_$font", "http://fonts.googleapis.com/css?family=$font", false, null, 'all' );
-}
-
-/*
- * Outputs the selected option panel styles inline into the <head>
- */
-function options_output_styles() {
-	$output = '';
-	$input = '';
-	
-	
-
-	if ( of_get_option( 'body_typography' ) ) {
-		$input = of_get_option( 'body_typography' );
-		$output .= options_body_typography_styles( $input , 'body, input, textarea, button');
-	}
-
-	if ( of_get_option( 'body_background' ) ) {
-		$input = of_get_option( 'body_background' );
-		$output .= options_background_style( $input , 'body');
-	}
-
-	if ( of_get_option( 'secondary_font_color' ) ) {
-		$input = of_get_option( 'secondary_font_color' );
-		$output .= options_secondary_font_color( $input , 'a, a:link, a:visited, a:focus, a:visited:hover, a:visited:focus');
-	}
-
-	if ( of_get_option( 'link_hover_color' ) ) {
-		$input = of_get_option( 'link_hover_color' );
-		$output .= options_hover_color( $input , '.nav li a:hover, .nav li.current-menu-item a, .nav li.current_page_item a, .nav li.current-page-ancestor a', '#content a:hover, .footer a:hover');
-	}
-
-	if ( of_get_option( 'heading_font' ) ) {
-		$input = of_get_option( 'heading_font' );
-		$output .= options_font_only_styles( $input , 'h1,h2,h3,h4,h5,h6');
-	}
-
-	if ( of_get_option( 'title_font' ) ) {
-		$input = of_get_option( 'title_font' );
-		$output .= options_font_only_styles( $input , '.site-title a');
-	}
-
-	if ( $output != '' ) {
-		$output = "\n<style>\n" . $output . "</style>\n";
-		echo $output;
-     }
-
-}
-
-add_action('wp_head', 'options_output_styles');
-
-
-/*
- * Returns a typography option in a format that can be outputted as inline CSS in the <head>
- */
-
-function options_title_font($option, $selectors) {
-	$output = $selectors . ' {';
-	$output .= 'font-family:' . $option['face'] . '; ';
-	$output .= '}';
-	$output .= "\n";
-	return $output;
-}
-
-function options_body_typography_styles($option, $selectors) {
-	$output = $selectors . ' {';
-	$output .= ' color:' . $option['color'] .'; ';
-	$output .= 'font-family:' . $option['face'] . '; ';
-	$output .= 'font-size:' . $option['size'] . '; ';
-	$output .= '}';
-	$output .= "\n";
-	return $output;
-}
-
-function options_font_only_styles($option, $selectors) {
-	$output = $selectors . ' {';
-	$output .= 'font-family:' . $option['face'] . '; ';
-	$output .= '}';
-	$output .= "\n";
-	return $output;
-}
-
-function options_secondary_font_color($option, $selectors) {
-	if( $option ) {
-		$output = $selectors . ' {';
-		$output .= 'color:' . $option . '; ';
-		$output .= '}';
-		$output .= "\n";
-		return $output;	
-	}
-}
-
-function options_hover_color($option, $selectors, $selectors2) {
-	if( $option ) {
-		
-		$output = $selectors2 . ' {';
-		$output .= 'color:' . $option . '; ';
-		$output .= '}';
-		$output .= "\n";
-
-		$output .= $selectors . ' {';
-		$output .= 'background-color:' . $option . '; ';
-		$output .= '}';
-		$output .= "\n";
-
-		return $output;
-	}
-}
-
-
-function options_background_style($option, $selectors) {
-	
-	// http://stackoverflow.com/questions/13906286/php-css-output-options-framework-content
-    
-    $background = $option;
-    $output = $selectors . ' {';
-
-    if ($background['color'] || $background['image']) {
-
-        if ($background['color']) {   
-            $output .= '
-            background: ' .$background['color']. ';';
-        }
-
-        if ($background['image']) {
-            $output .=  '
-            background: url('.$background['image']. ') ';
-            $output .= ''.$background['repeat']. ' ';
-            $output .=  ''.$background['position']. ' ';
-            $output .=  ''.$background['attachment']. ';';
-        } 
-        $output .=  '
-        }';
-
-        return $output;
-    }
-	
-}
-
 
 
 
