@@ -3538,6 +3538,17 @@ WPFOLIO FEATURES
   height: 100%;
 }
 
+/* 
+* Overriding Options Framework admin styles
+* Got a little messed up when only 
+* using font in typography type
+*/
+/* line 9, ../scss/_admin.scss */
+#optionsframework .controls .of-typography-face {
+  width: 54% !important;
+  min-width: 350px;
+}
+
 /*
 LARGER MOBILE DEVICES
 This is for devices like the Galaxy Note or something that's

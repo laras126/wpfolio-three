@@ -1,4 +1,12 @@
-#section-custom_css {
-	width: 100%;
-	font-family: 'Courier';
+/* 
+* Overriding Options Framework admin styles
+* Got a little messed up when only 
+* using font in typography type
+*/
+
+
+// Not working atm
+#optionsframework .controls .of-typography-face {
+	width: 54% !important;
+	min-width: 350px;
 }

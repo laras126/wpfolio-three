@@ -22,7 +22,7 @@ Template for the medium taxonomy archive.
 					<article id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix project-thumb' ); ?> role="article">
 						<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
 							<?php if ( has_post_thumbnail() ) {
-								the_post_thumbnail();
+								the_post_thumbnail('wpf-thumb-300');
 							} else { ?>
 								<img src="<?php bloginfo('template_directory'); ?>/library/images/default-thumb-image.png" alt="<?php the_title(); ?>"/>
 							<?php } ?>

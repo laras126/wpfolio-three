@@ -6,6 +6,11 @@
  *
  */
 
+
+// Functions to apply the options
+require_once('library/options-functions.php');
+
+
 function optionsframework_option_name() {
 
 	// This gets the theme name from the stylesheet (lowercase and without spaces)
@@ -55,19 +60,19 @@ function optionsframework_options() {
 		$google_faces = array(
 			'Abril Fatface, serif' => 'Abril Fatface',
 			'Arvo, serif' => 'Arvo',
-			'Droid Serif, serif' => 'Droid Serif',
-			'Gentium Book Basic, serif' => 'Gentium Book Basic',
+			// 'Droid Serif, serif' => 'Droid Serif',
+			// 'Gentium Book Basic, serif' => 'Gentium Book Basic',
 			'Josefin Slab, sans-serif' => 'Josefin Slab',
 			'Merriweather, serif' => 'Merriweather',
 			'Open Sans, sans-serif' => 'Open Sans',
-			'Oswald, sans-serif' => 'Oswald',
-			'Pacifico, cursive' => 'Pacifico',
-			'PT Sans, sans-serif' => 'PT Sans',
-			'Quattrocento, serif' => 'Quattrocento',
-			'Old Standard TT, serif' => 'Old Standard TT',
-			'Raleway, cursive' => 'Raleway',
-			'Ubuntu, sans-serif' => 'Ubuntu',
-			'Yanone Kaffeesatz, sans-serif' => 'Yanone Kaffeesatz',
+			// 'Oswald, sans-serif' => 'Oswald',
+			// 'Pacifico, cursive' => 'Pacifico',
+			// 'PT Sans, sans-serif' => 'PT Sans',
+			// 'Quattrocento, serif' => 'Quattrocento',
+			// 'Old Standard TT, serif' => 'Old Standard TT',
+			// 'Raleway, cursive' => 'Raleway',
+			// 'Ubuntu, sans-serif' => 'Ubuntu',
+			// 'Yanone Kaffeesatz, sans-serif' => 'Yanone Kaffeesatz',
 		);
 		return $google_faces;
 	}
@@ -75,17 +80,18 @@ function optionsframework_options() {
 	/**
 	 * Returns an array of system fonts
 	 */
+
 	function options_typography_get_os_fonts() {
 		// OS Font Defaults
 		$os_faces = array(
 			'Arial, sans-serif' => 'Arial',
-			'"Avant Garde", sans-serif' => 'Avant Garde',
-			'Cambria, Georgia, serif' => 'Cambria',
-			'Copse, sans-serif' => 'Copse',
-			'Garamond, "Hoefler Text", Times New Roman, Times, serif' => 'Garamond',
+			//'"Avant Garde", sans-serif' => 'Avant Garde',
+			//'Cambria, Georgia, serif' => 'Cambria',
+			//'Copse, sans-serif' => 'Copse',
+			//'Garamond, "Hoefler Text", Times New Roman, Times, serif' => 'Garamond',
 			'Georgia, serif' => 'Georgia',
 			'"Helvetica Neue", Helvetica, sans-serif' => 'Helvetica Neue',
-			'Tahoma, Geneva, sans-serif' => 'Tahoma'
+			//'Tahoma, Geneva, sans-serif' => 'Tahoma'
 		);
 		return $os_faces;
 	}
@@ -153,6 +159,8 @@ function optionsframework_options() {
 	$imagepath =  get_template_directory_uri() . '/images/';
 	
 
+
+
 	/************* BASIC SETTINGS ********************/
 
 	/* 	This includes:
@@ -185,6 +193,8 @@ function optionsframework_options() {
 
 
 
+
+
 	/************* STYLES ********************/
 	
 	/* 	This includes:
@@ -192,8 +202,7 @@ function optionsframework_options() {
 		2. Heading Typography
 		3. Color Scheme
 		4. Custom CSS
-		5. Background color
-		6. Container color
+		5. Background
 
 		-- is that too many?
 	*/
@@ -213,6 +222,7 @@ function optionsframework_options() {
 		'id' => 'title_font',
 		'std' => $title_font_defaults,
 		'type' => 'typography',
+		'class' => 'small',
 		// Using same font set for headings and title
 		'options' => $heading_font_options );
 	
@@ -253,7 +263,7 @@ function optionsframework_options() {
 	// Change the background color or upload an image
 	$options[] = array(
 		'name' =>  __('Background', 'options_check'),
-		'desc' => __('Choose a color or texture or upload an image for your background. Check out <a href="http://subtlepatterns.com" target="blank">Subtle Patterns</a> for some excellent quality textures.<br />Note that an image will override a color.', 'options_check'),
+		'desc' => __('Choose a color or texture or upload an image for your background. Check out <a href="http://subtlepatterns.com" target="blank">Subtle Patterns</a> for some excellent quality textures. Note that an image will override a color.', 'options_check'),
 		'id' => 'body_background',
 		'std' => $background_defaults,
 		'type' => 'background' );
@@ -267,7 +277,11 @@ function optionsframework_options() {
 		'type' => 'textarea');
 
 	return $options;
+
 } // end main options function
+
+
+
 
 
 
