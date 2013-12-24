@@ -36,16 +36,16 @@
 
 						<?php else : ?>
 
-								<?php get_template_part('include/post', 'notfound'); ?>
+							<?php get_template_part('include/post', 'notfound'); ?>
 
-							<?php endif; ?>
+						<?php endif; ?>
 
-					</div>
+					</div> <!-- end #main -->
 
 					<?php get_sidebar(); ?>
 
-				</div>
+				</div> <!-- end #inner-content -->
 
-			</div>
+			</div> <!-- end #content -->
 
 <?php get_footer(); ?>

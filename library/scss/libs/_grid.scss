@@ -21,8 +21,7 @@ $mobile 		: 481px;
 $tablet 		: 768px;
 $desktop 		: 960px;
 
-
-#container {
+.wrap {
 	@include container;
 	max-width: 1030px;
 }
