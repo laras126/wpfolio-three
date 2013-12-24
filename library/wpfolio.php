@@ -1,34 +1,5 @@
 <?php 
 
-/************* OPTIONS FRAMEWORK ********************/
-
-/* 
- * Helper function to return the theme option value. If no value has been saved, it returns $default.
- * Needed because options are saved as serialized strings.
- *
- * This code allows the theme to work without errors if the Options Framework plugin has been disabled.
- */
-
-if ( !function_exists( 'of_get_option' ) ) {
-	function of_get_option($name, $default = false) {
-		
-		$optionsframework_settings = get_option('optionsframework');
-		
-		// Gets the unique option id
-		$option_name = $optionsframework_settings['id'];
-		
-		if ( get_option($option_name) ) {
-			$options = get_option($option_name);
-		}
-			
-		if ( isset($options[$name]) ) {
-			return $options[$name];
-		} else {
-			return $default;
-		}
-	}
-}
-
 
 /************* ARTWORK METABOX ********************/
 
@@ -89,10 +60,10 @@ function wpf_artinfo_metaboxes( $meta_boxes ) {
                             'type' => 'text'
                         ),
 					array(
-						'name' => '',
-						'desc' => '<p>Are these fields useful? Do you have suggestions for other ones? <a href="mailto:lara@notlaura.com">Let me know.</a></p>',
-						'type' => 'title',
-						'id' => $prefix . 'test_title'
+    						'name' => '',
+    						'desc' => '<p>Are these fields useful? Do you have suggestions for other ones? <a href="mailto:lara@notlaura.com">Let me know.</a></p>',
+    						'type' => 'title',
+    						'id' => $prefix . 'test_title'
 					),
                     
                 ),
@@ -103,69 +74,14 @@ function wpf_artinfo_metaboxes( $meta_boxes ) {
 
 add_filter( 'cmb_meta_boxes', 'wpf_artinfo_metaboxes');
 
-add_action( 'init', 'wpf_initialize_cmb_meta_boxes', 999);
+
 function wpf_initialize_cmb_meta_boxes() {
     if ( !class_exists('cmb_Meta_Box') ) {
         require_once('metabox/init.php');
     }
 }
 
-
-/************* BODY CLASSES & LAYOUT ********************/
-
-/////----
-// ATTENTION!!
-// Using a custom type now which negates this section
-/////----
-
-
-/*  Add a specific classes for news and portfolio layouts.
-    Check to see if it's the blog category
-*/
-
-// Add portfolio body class to anything that isn't the blog 
-// function add_body_class($class) {
-
-//     global $post;
-    
-//     if ( in_category('blog') || is_home() ) {
-//         $class[] = 'news-layout';
-//         return $class;
-//     } else {
-//         $class[] = 'portfolio-layout';
-//         return $class;  
-//     }
-// }
-
-// add_filter('body_class','add_body_class');
-
-// Use the appropriate markup according to the body class
-// http://stackoverflow.com/questions/15033888/how-to-check-for-class-in-body-class-in-wordpress
-
-// function wpf_show_layout_according_to_bodyclass() {
-//     $classes = get_body_class();
-//     if (in_array('news-layout',$classes)) {
-//         if(is_single()) {
-//             get_template_part('include/single', 'news');    
-//         } else {
-//             get_template_part('inclue/loop','news');
-//         }
-//     } else {
-//         if(is_single()) {
-//             get_template_part('include/single', 'portfolio');
-//         } else {
-//             get_template_part('include/loop', 'portfolio');
-//         }
-//     }
-// }
-
-// // Only show the sidebars on news layouts
-// function wpf_show_sidebar_according_to_bodyclass() {
-//     $classes = get_body_class();
-//     if (in_array('news-layout',$classes)) {
-//         get_sidebar();
-//     } 
-// }
+add_action( 'init', 'wpf_initialize_cmb_meta_boxes', 999);
 
 
 /************* SHORTCODES ********************/
@@ -193,7 +109,7 @@ add_shortcode('artwork_info', 'artwork_meta_shortcode');
 
 
 /************* REQUIRE SOME PLUGINS ********************/
-// TODO: Use this, not doing this immediately though.
+// TODO: Use this
 
 
 

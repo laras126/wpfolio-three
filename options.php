@@ -6,23 +6,14 @@
  *
  */
 
-
-// Functions to apply the options
-require_once('library/options-functions.php');
-
-
 function optionsframework_option_name() {
-
-	// This gets the theme name from the stylesheet (lowercase and without spaces)
-	$themename = get_option( 'stylesheet' );
-	$themename = preg_replace("/\W/", "_", strtolower($themename) );
-
+	
 	$optionsframework_settings = get_option('optionsframework');
-	$optionsframework_settings['id'] = $themename;
+	$optionsframework_settings['id'] = 'wpfolio';
 	update_option('optionsframework', $optionsframework_settings);
-
-	// echo $themename;
+	
 }
+
 
 /**
  * Defines an array of options that will be used to generate the settings page and be saved in the database.
@@ -184,11 +175,10 @@ function optionsframework_options() {
 		'options' => $comments_arr);
 
 	// 2. Favicon
-	// TODO: Did I add this yet?
 	$options[] = array(
 		'name' => __('Custom Favicon', 'options_check'),
 		'desc' => __('Upload a 16px x 16px png/gif/ico image for your website\'s favicon. You can create a favicon from a larger image with the <a href="http://www.degraeve.com/favicon/" taget="blank">Favicon Generator</a> then upload it here.', 'options_check'),
-		'id' => 'example_uploader',
+		'id' => 'custom_favicon',
 		'type' => 'upload');
 
 
@@ -254,7 +244,6 @@ function optionsframework_options() {
 	//
 	// TODO: add color scheme option instead of specific colors
 	//
-
 	
 	/* 
 	*	Background
@@ -282,6 +271,8 @@ function optionsframework_options() {
 
 
 
+// Include functions to return options
+require_once( TEMPLATEPATH . '/library/options-functions.php' );
 
 
 

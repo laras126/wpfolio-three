@@ -1,7 +1,31 @@
 <?php
 
 // All the functions for applying the Options Framework
-// Included in options.php
+// Included in wpfolio.php
+
+
+if ( !function_exists( 'of_get_option' ) ) {
+    function of_get_option($name, $default = false) {
+        
+        $optionsframework_settings = get_option('optionsframework');
+        
+        // Gets the unique option id
+        $option_name = $optionsframework_settings['id'];
+        
+        if ( get_option($option_name) ) {
+            $options = get_option($option_name);
+        }
+            
+        if ( isset($options[$name]) ) {
+            return $options[$name];
+        } else {
+            return $default;
+        }
+    }
+}
+
+
+
 
 // --- GOOGLE FONTS FUNCTIONS --- //
 
@@ -64,12 +88,11 @@ function options_typography_enqueue_google_font($font) {
 
 
 
-// --- RETURNING OPTIONS --- //
+// --- RETURN STLYE OPTIONS --- //
 
 /*
- * Returns a typography option in a format that can be outputted as inline CSS in the <head>
+ * Returns styling options so they can be printed in the <head>
  */
-
 
 function options_background_style($option, $selectors) {
     
@@ -141,9 +164,27 @@ function options_head_css() {
         echo $output;
     }
 
+    
+
 }
 
 add_action('wp_head', 'options_head_css');
+
+
+
+// --- FAVICON OPTION --- //
+
+function options_favicon() {
+    $favicon = of_get_option('custom_favicon', false);
+    if ( $favicon ) {
+        echo '<link rel="shortcut icon" href="'.  $favicon  .'"/>'."\n";
+    }
+}
+
+add_action('wp_head', 'options_favicon');
+
+
+
 
 
 
