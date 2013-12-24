@@ -196,12 +196,11 @@ function bones_theme_support() {
 
 	// No support for post formats - sorry, WP, they aren't that useful! (IMHO)
 	// // adding post format support
-	// add_theme_support( 'post-formats',
-	// 	array(
-	// 		'video',             // video
-	// 		'audio',             // audio
-	// 	)
-	// );
+	add_theme_support( 'post-formats',
+		array(
+			'image',
+		)
+	);
 
 	// wp menus
 	add_theme_support( 'menus' );

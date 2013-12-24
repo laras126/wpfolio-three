@@ -54,7 +54,7 @@ function project_type() {
 			'capability_type' => 'post',
 			'hierarchical' => false,
 			/* the next one is important, it tells what's enabled in the post editor */
-			'supports' => array( 'title', 'editor', 'thumbnail', 'comments', 'revisions', 'post-formats')
+			'supports' => array( 'title', 'editor', 'thumbnail', 'comments', 'revisions' )
 		) /* end of options */
 	); /* end of register post type */
 	

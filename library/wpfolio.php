@@ -222,6 +222,4 @@ function wpf_remove_tax_name( $title, $sep, $seplocation ) {
 add_filter( 'wp_title', 'wpf_remove_tax_name', 10, 3 );
 
 
-
-
 ?>

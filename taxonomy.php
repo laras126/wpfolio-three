@@ -45,3 +45,35 @@ Template for the medium taxonomy archive.
 	</div>
 
 <?php get_footer(); ?>
+
+
+
+<?php
+
+
+// Loop through gallery images and output as list
+// Called in index/....
+function show_gallery_images_in_slideshow( $content ) {
+
+ 	global $post;
+
+ 	// Retrieve the first gallery in the post
+ 	$gallery = get_post_gallery_images( $post );
+
+	$image_list = '<ul class="carousel">';
+
+	// Loop through each image in each gallery
+	foreach( $gallery as $image ) {
+
+		$image_list .= '<li><img src="' . $image . '" /></li>';
+
+	}
+
+	$image_list .= '</ul>';
+
+	// Append our image list to the content of our post
+	return $image_list;
+
+}
+
+?>
