@@ -57,7 +57,8 @@ p, pre, label {
 
 ol, ul {
 	@include adjust-font-size-to(16px);
-	margin: 0 0 rhythm(2, 16px) 0;							// 4 lines below, based on font size
+	margin: 0;							// 4 lines below, based on font size
+	// NTOE: Made it 0, here's the orig: margin: 0 0 rhythm(2, 16px) 0;
 }
 
 li {
@@ -69,7 +70,7 @@ li {
 
 ul 			{ @include unordered; } 						// Include unordered list from mixins by default
 ol 			{ @include ordered;	}							// Include ordered list from mixins by default
-strong, b 	{ font-weight: 600; }
+strong, b 	{ font-weight: 700; letter-spacing: 0; }
 em, i, q 	{ font-style: italic; }
 
 blockquote {

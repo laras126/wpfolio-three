@@ -42,8 +42,8 @@ function wpf_artinfo_metaboxes( $meta_boxes ) {
                             'type' => 'text'
                         ),
                     array(
-                            'name' => 'Description',
-                            'desc' => 'A short, text description of the work. Use the post editor for longer descriptions that include photos or video.',
+                            'name' => 'Short Description',
+                            'desc' => 'A short, text description of the work. Good for things like price or dimensions.',
                             'id' => $prefix . 'description',
                             'type' => 'wysiwyg'
                         ),
@@ -56,14 +56,20 @@ function wpf_artinfo_metaboxes( $meta_boxes ) {
 					array(
                             'name' => 'Link',
                             'desc' => 'If the project has it\'s own website, paste the URL here.',
-                            'id' => $prefix . 'url',
+                            'id' => $prefix . 'link',
+                            'type' => 'text'
+                        ),
+                    array(
+                            'name' => 'Link Text',
+                            'desc' => 'What do you want the text of the link to be? e.g. Project Link, Download, View it on Etsy, etc.',
+                            'id' => $prefix . 'link_text',
                             'type' => 'text'
                         ),
 					array(
     						'name' => '',
     						'desc' => '<p>Are these fields useful? Do you have suggestions for other ones? <a href="mailto:lara@notlaura.com">Let me know.</a></p>',
     						'type' => 'title',
-    						'id' => $prefix . 'test_title'
+    						'id' => $prefix . 'feedback'
 					),
                     
                 ),

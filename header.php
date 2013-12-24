@@ -17,24 +17,10 @@
 		<meta name="HandheldFriendly" content="True">
 		<meta name="MobileOptimized" content="320">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
- 
-		<!-- icons & favicons (for more: http://www.jonathantneal.com/blog/understand-the-favicon/) -->
-		<!-- This stuff is cool, but doesn't play well with Options Framework. 
-		TODO: Remove it when OF favicon is working -->
-		<!-- <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/library/images/apple-icon-touch.png">
-		<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png"> -->
-		<!--[if IE]>
-			<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
-		<![endif]-->
-		<!-- or, set /favicon.ico for IE10 win -->
-		<!-- <meta name="msapplication-TileColor" content="#f01d4f">
-		<meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/library/images/win8-tile-icon.png">
-		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>"> -->
 
-		<!-- wordpress head functions -->
 		<?php wp_head(); ?>
-
 		<!-- end of wordpress head -->
+		
 	</head>
 
 	<body <?php body_class(); ?>>
@@ -50,7 +36,12 @@
 						<p class="site-description"><?php bloginfo('description'); ?></p>
 					</div>
 					
-					<a href="#main-nav" class="menu-link"><i class="fa fa-caret-down"></i>  Menu</a>
+					<?php 
+						//TODO: echo the parent category, page name, whatever
+						// instead of just menu here
+					?>
+
+					<a href="#main-nav" class="menu-link"><i class="fa fa-caret-down"></i>  Menu<?php //wp_title(''); ?></a>
 					
 					<nav id="main-nav" role="navigation" class="site-nav">	
 						<?php bones_main_nav(); ?>

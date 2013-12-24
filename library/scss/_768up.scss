@@ -28,7 +28,7 @@ LAYOUT & GRID STYLES
 
 // Wide margins shortcode
 .widemargins {
-	margin: 0 $base-font-size*10;
+	margin: 0 em-font($base-font-size*10);
 }
 
 /*********************
@@ -181,18 +181,6 @@ POSTS & CONTENT STYLES
 
 		&:active {
 			opacity: 1;
-		}
-	}
-}
-
-
-// Video post format
-
-.single-project {
-	&.single-format-video {
-		iframe {
-			width: 100%;
-			height: 500px;
 		}
 	}
 }

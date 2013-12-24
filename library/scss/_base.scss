@@ -304,13 +304,25 @@ POSTS & CONTENT STYLES
 			time {}
 		}
 
-		.tags, .byline {
-			@include adjust-font-size-to(14px); 
+		.byline {
 			color: #999;
 		}
 
+		.tags li {
+			// margin-bottom: rhythm(2, 18px);	
+		}
+
+		.tags li a {
+			// display: inline-block;
+			// padding: em-font(5px) em-font(8px);
+			// margin-top: em-font(5px);
+			// @include border-radius(2px);
+			// background: $btn-color;
+		}
+
 		.tags-title {
-			text-transform: uppercase;
+			//text-transform: uppercase;
+			font-weight: 600;
 		}
 
 
@@ -435,9 +447,11 @@ POSTS & CONTENT STYLES
 
 
 		.post-edit-link, .post-edit-link:visited {
+			display: inline-block;
 			color: darken($alert-red, 30%);
 			font-weight: bold;
 			text-transform: uppercase;
+			margin: 1em 0;
 		}
 
 // Project type styles
@@ -465,13 +479,18 @@ POSTS & CONTENT STYLES
 	@include nobullet;
 }
 
-.single-project {
-	&.single-format-video {
-		iframe {
-			width: 100%;
-			height: 200px;
-		}
-	}
+.aw-sep {
+	margin-top: rhythm(2, 12px); 
+}
+
+.project-link a {
+	// display: inline-block;
+	// padding: em-font(5px) em-font(8px);
+	// margin-top: em-font(5px);
+	// @include border-radius(2px);
+	// background: $btn-color;
+	@extend button;
+	display: inline-block;	
 }
 
 /******************************************************************
@@ -876,11 +895,11 @@ FOOTER STYLES
 .footer {
 	clear: both;
 	@include adjust-font-size-to(14px);
-	
+	margin-top: rhythm(4, 14px);
 
 	.wrap {
 		border-top: 1px solid $accent-light;
-		margin-top: rhythm(1, 18px);
+		
 		padding: rhythm(1, 18px) 0;
 	}
 }

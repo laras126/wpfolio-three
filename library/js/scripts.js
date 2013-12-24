@@ -88,13 +88,11 @@ jQuery(document).ready(function($) {
     $menulink.click(function() {
         $menulink.toggleClass('active');
         $menu.toggleClass('active');
-        $menuicon.toggleClass('fa-caret-down fa-caret-up');
+        // TODO: toggleClass only works once, holding off on it now
+        //$(this).find('i').toggleClass('fa-caret-up fa-caret-down');
         return false;
     });
 	
-
-
-
     
     // Wrap all media in a figure element 
     // that is styled to make them fluid

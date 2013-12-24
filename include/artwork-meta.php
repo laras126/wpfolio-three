@@ -13,8 +13,9 @@ global $post;
 $aw_date = get_post_meta( $post->ID, '_ctmb_date', true );
 $aw_medium = get_post_meta( $post->ID, '_ctmb_medium', true );
 $aw_desc = get_post_meta( $post->ID, '_ctmb_description', true );
-$aw_acknow = get_post_meta( $post->ID, '_ctmb_acknowledgements', true );
+$aw_acknow = get_post_meta( $post->ID, '_ctmb_acknowledgments', true );
 $aw_link = get_post_meta( $post->ID, '_ctmb_link', true );
+$aw_link_text = get_post_meta( $post->ID, '_ctmb_link_text', true ); 
 ?>
 
 <div class="clearfix">
@@ -32,16 +33,16 @@ $aw_link = get_post_meta( $post->ID, '_ctmb_link', true );
 			echo '<li>' . $aw_medium . '</li>';
 		}
 
-		if ( $aw_acknow ) {
-			echo '<li><strong>Acknowledgements:</strong> ' . $aw_acknow . '</li>';
-		}
-
 		if ( $aw_desc ) {
 			echo '<li>' . $aw_desc . '</li>';
 		}
 
+		if ( $aw_acknow ) {
+			echo '<li class="aw-sep">' . $aw_acknow . '</li>';
+		}
+
 		if ( $aw_link ) {
-			echo '<li><a href="' . $aw_link . '">Project Link</a></li>';
+			echo '<li class="aw-sep project-link"><a href="' . $aw_link . '">' . $aw_link_text . '</a></li>';
 		}
 		
 		?>
