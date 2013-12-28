@@ -2470,13 +2470,13 @@ li {
 
 /* line 70, ../scss/libs/_typography.scss */
 ul {
-  list-style-position: outside;
+  list-style-position: inside;
   list-style-type: disc;
 }
 
 /* line 71, ../scss/libs/_typography.scss */
 ol {
-  list-style-position: outside;
+  list-style-position: inside;
   list-style-type: decimal;
 }
 

@@ -13,21 +13,21 @@
 
 // Mixins for list style types
 @mixin unordered {
-	 list-style-position: outside; 
+	 list-style-position: inside; 
 	 list-style-type: disc;
 }
 
-@mixin unordered-inside {
+@mixin unordered-outside {
 	 list-style-position: inside; 
 	 list-style-type: disc;
 }
 
 @mixin ordered {
-	list-style-position: outside; 
+	list-style-position: inside; 
 	list-style-type: decimal;
 }
 
-@mixin ordered-inside {
+@mixin ordered-outside {
 	list-style-position: inside; 
 	list-style-type: decimal;
 }
