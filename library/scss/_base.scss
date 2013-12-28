@@ -308,20 +308,7 @@ POSTS & CONTENT STYLES
 			color: #999;
 		}
 
-		.tags li {
-			// margin-bottom: rhythm(2, 18px);	
-		}
-
-		.tags li a {
-			// display: inline-block;
-			// padding: em-font(5px) em-font(8px);
-			// margin-top: em-font(5px);
-			// @include border-radius(2px);
-			// background: $btn-color;
-		}
-
 		.tags-title {
-			//text-transform: uppercase;
 			font-weight: 600;
 		}
 
@@ -342,7 +329,7 @@ POSTS & CONTENT STYLES
 			}
 
 			ul {
-
+					
 				li {}
 
 			}
@@ -455,6 +442,10 @@ POSTS & CONTENT STYLES
 		}
 
 // Project type styles
+
+.project-loop {
+	list-style: none;
+}
 
 .project-title {	
 	@include adjust-font-size-to(18px);

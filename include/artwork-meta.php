@@ -38,7 +38,7 @@ $aw_link_text = get_post_meta( $post->ID, '_ctmb_link_text', true );
 		}
 
 		if ( $aw_acknow ) {
-			echo '<li class="aw-sep">' . $aw_acknow . '</li>';
+			echo '<li class="aw-sep"><h5>Acknowledgements</h5>' . $aw_acknow . '</li>';
 		}
 
 		if ( $aw_link ) {

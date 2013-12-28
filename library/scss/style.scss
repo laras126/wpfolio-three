@@ -84,7 +84,7 @@ DESKTOP
 This is the average viewing window. So Desktops, Laptops, and
 in general anyone not viewing on a mobile device.
 */
-@media only screen and (min-width: em-font(960px)) {
+@media only screen and (min-width: em-font(1030px)) {
 
 	// styles in 1030up.scss
 	@import "1030up";
@@ -140,5 +140,4 @@ be set to display none.
 @media print {
 	@import "print";
 }
-
 

@@ -46,13 +46,12 @@ jQuery(document).ready(function($) {
     
     /* if is below 481px */
     if (responsive_viewport < 481) {
-    
+        
     } /* end smallest screen */
     
     /* if is larger than 481px */
     if (responsive_viewport > 768) {
-        
-
+        $('.project-thumb:nth-child(4n)').addClass('omega');
     } /* end larger than 481px */
     
     /* if is above or equal to 768px */

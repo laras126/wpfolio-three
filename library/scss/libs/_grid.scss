@@ -19,15 +19,15 @@ $container-style: fluid;
 // Sass not liking these in variables for some reason
 $mobile 		: 481px;
 $tablet 		: 768px;
-$desktop 		: 960px;
+$desktop 		: 1030px;
 
 .wrap {
 	@include container;
 	max-width: 1030px;
 }
 
-.prev {
-	@include span-columns(6,12);
+.prev  {
+	@include span-columns(3 omega, 9);
 }
 
 .next {
@@ -35,20 +35,14 @@ $desktop 		: 960px;
 	text-align: right;
 }
 
-	
-/* Get in there, grid! At about tablet size, we add:
-		- The sidebar to the news layout
-		- Float the site nav to the right
-*/
-
 
 // Phonez
 @include at-breakpoint(30.0625em 4) {
 
 	.project-thumb {
 		@include span-columns(2,4);
-		&:nth-child(3n) { @include remove-omega; }
-		&:nth-child(2n) { @include omega; } // every third image completes a row.
+		&:nth-child(3n+3) { @include remove-omega; }
+		&:nth-child(2n+2) { @include omega; } // every third image completes a row.
 		height: 21em;
 	}
 }
@@ -72,8 +66,8 @@ $desktop 		: 960px;
 
 	.project-thumb {
 		@include span-columns(3,9);
-		&:nth-child(2n) { @include remove-omega; }
-		&:nth-child(3n) { @include omega; } // every third image completes a row.	
+		&:nth-child(2n+2) { @include remove-omega; }
+		&:nth-child(3n+3) { @include omega; } // every third image completes a row.	
 		height: 25em;
 	}
 

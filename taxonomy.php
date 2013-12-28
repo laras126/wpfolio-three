@@ -16,28 +16,29 @@ Template for the medium taxonomy archive.
 
 					<!-- TODO: conditionally show taxonomy term (i.e. People: Lara Schenck, Places: Louvre) -->
 					<h2 class="medium-title"><span><?php _e( '', 'bonestheme' ); ?></span> <?php single_cat_title(); ?></h2>
+					
+					<ul class="clearfix project-loop">
+						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+						<li id="post-<?php the_ID(); ?>" class="project-thumb">
+							<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+								<?php if ( has_post_thumbnail() ) {
+									the_post_thumbnail('wpf-thumb-300');
+								} else { ?>
+									<img src="<?php bloginfo('template_directory'); ?>/library/images/default-thumb-image.png" alt="<?php the_title(); ?>"/>
+								<?php } ?>
+								<h5 class="project-thumb-title line-clamp"><?php the_title(); ?></h5>
+							</a>
+						</li>
 
-					<article id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix project-thumb' ); ?> role="article">
-						<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
-							<?php if ( has_post_thumbnail() ) {
-								the_post_thumbnail('wpf-thumb-300');
-							} else { ?>
-								<img src="<?php bloginfo('template_directory'); ?>/library/images/default-thumb-image.png" alt="<?php the_title(); ?>"/>
-							<?php } ?>
-							<h5 class="project-thumb-title line-clamp"><?php the_title(); ?></h5>
-						</a>
-					</article>
+						<?php endwhile; ?>
 
-					<?php endwhile; ?>
+						<?php else : ?>
 
-					<?php else : ?>
+								<?php get_template_part('include/post', 'notfound'); ?>
 
-							<?php get_template_part('include/post', 'notfound'); ?>
-
-					<?php endif; ?>
-
+						<?php endif; ?>
+					</ul>
 				</div> <!-- end #main -->
 
 			</div> <!-- end #inner-content -->
