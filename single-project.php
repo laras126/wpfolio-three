@@ -25,10 +25,6 @@ Template for single Projects
 							<?php the_content(); ?>
 							<?php include('include/artwork-meta.php'); ?>
 
-						</section>
-
-						<footer class="article-footer">
-							
 							<ul class="tags">
 								
 								<li><?php echo get_the_term_list( get_the_ID(), 'people', '<span class="tags-title">' . __( 'People:', 'bonestheme' ) . '</span> ', ', ' ) ?></li>
@@ -37,9 +33,12 @@ Template for single Projects
 
 								<li><?php echo get_the_term_list( get_the_ID(), 'post_tag', '<span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ' ) ?></li>
 							</ul>
-							
-							<?php edit_post_link('edit', '<p>', '</p>'); ?>
+	
 
+						</section>
+
+						<footer class="article-footer clearfix">
+							<?php include('include/prev-next.php'); ?>
 						</footer>
 
 						<?php comments_template(); ?>

@@ -6,9 +6,9 @@
 // TODO:
 // Note about the post thumb grid - is there a better way to do the heights?
 // It's pretty verbose and arbitrary as it...
+// Yeah, FIX IT LATER.
 
 // Susy settings
-// TODO: incorporate modular scale here
 
 $total-columns  : 12;             // a 12-column grid
 $column-width   : 4em;            // each column is 4em wide
@@ -16,28 +16,31 @@ $gutter-width   : 2em;            // 1em gutters between columns
 $grid-padding   : $gutter-width;  // grid-padding equal to gutters
 $container-style: fluid;
 
-// Sass not liking these in variables for some reason
-$mobile 		: 481px;
-$tablet 		: 768px;
-$desktop 		: 1030px;
+$mobile 		: 30.0625em;
+$tablet 		: 48em;
+$desktop 		: 60em;
 
 .wrap {
 	@include container;
 	max-width: 1030px;
 }
 
+.prev-next {
+	//@include container;
+}
+
 .prev  {
-	@include span-columns(3 omega, 9);
+	@include span-columns(1, 2);
 }
 
 .next {
-	@include span-columns(6 omega,12);
+	@include span-columns(1 omega, 2);
 	text-align: right;
 }
 
 
 // Phonez
-@include at-breakpoint(30.0625em 4) {
+@include at-breakpoint($mobile 4) {
 
 	.project-thumb {
 		@include span-columns(2,4);
@@ -47,20 +50,11 @@ $desktop 		: 1030px;
 	}
 }
 
-@include at-breakpoint(33.25em 4) {
-	.project-thumb {
-		height: 23em;
-	}
-}
 
-@include at-breakpoint(40em 4) {
-	.project-thumb {
-		height: 27em;
-	}
-}
+
 
 // Tablet size
-@include at-breakpoint(48em 9) {
+@include at-breakpoint($tablet 9) {
 
 	// Portfolio layout
 
@@ -74,10 +68,12 @@ $desktop 		: 1030px;
 	.artwork-meta {
 		@include span-columns(6, 9);
 	}
+
 }
 
+
 // Computer screen size
-@include at-breakpoint(60em 12) {
+@include at-breakpoint($desktop 12) {
 	
 	.sidebar-layout {
 	 	@include span-columns(8);
@@ -121,3 +117,22 @@ $desktop 		: 1030px;
 // 		height: 22em;
 // 	}
 // }
+
+
+
+
+// GROSS THUMBNAIL HEIGHT MQs
+@include at-breakpoint(33.25em 4) {
+	.project-thumb {
+		height: 23em;
+	}
+}
+
+@include at-breakpoint(40em 4) {
+	.project-thumb {
+		height: 27em;
+	}
+}
+// END GROSS MQs
+
+

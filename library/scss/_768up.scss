@@ -59,26 +59,18 @@ nav[role=navigation] {
 	clear: none;
 
 	ul {
-		margin: 0 0 0 -0.25em;
 		border: 0;
 	}
-		li {
-			display: inline-block;
-
-			a {
-				border: 0;
-			}
-		}
-} // End toggle nav
-
-
-.nav {
 
 	li {
-		float: left;
-		position: relative;
+		display: inline-block;
+
+		a {
+			border: 0;
+		}
 	}
-}
+} // End toggle nav
+
 
 .nav {
 	border: 0;
@@ -88,11 +80,10 @@ nav[role=navigation] {
 		a {
 			border-bottom: 0;
 			padding: rhythm(1, 18px) rhythm(2, 18px);
-			/*
-			you can use hover styles here even though this size
-			has the possibility of being a mobile device.
-			*/
-			// Hover styles set in options
+
+			&:hover {
+				background-color: $menu-item-hover;	
+			}
 		}
 
 		&:first-child {}
@@ -103,23 +94,29 @@ nav[role=navigation] {
 		*/
 		ul.sub-menu,
 		ul.children {
+			text-align: left;
 			margin-top: 0;
-			border: 1px solid #ccc;
-			border-top: 0;
 			position: absolute;
 			z-index: 8999;
-
+			display: none;
+			background-color: $accent-light;
+			width: 160px;
+			
 			li {
+				width: 100%;
+
+				&:last-child {
+					border-bottom: 0;
+				}
 
 				a {
-					padding-left: 10px;
-					border-right: 0;
-					display: block;
-					width: 180px;
-					border-bottom: 1px solid #ccc;
-
+					text-align: left;
+					padding-left: rhythm(3, 18px);
+					
 					&:hover,
-					&:focus {}
+					&:focus {
+						background-color: $menu-item-hover;
+					}
 
 					&:link {}
 				}
@@ -145,7 +142,9 @@ nav[role=navigation] {
 			li.current-menu-item,
 			li.current_page_item,
 			li.current-page-ancestor {
-				a {}
+				a {
+					background-color: $menu-item-hover;
+				}
 			}
 		}
 
@@ -203,7 +202,6 @@ SIDEBARS & ASIDES
 
 	.widget {
 		padding: 0 $small-margin*0.75;
-		margin: $small-margin*2 0;
 		border-left: $accent-light 1px solid;
 
 		ul {

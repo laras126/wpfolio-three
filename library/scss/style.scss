@@ -59,7 +59,7 @@ This is for devices like the Galaxy Note or something that's
 larger than an iPhone but smaller than a tablet. Let's call them
 phablets.
 */
-@media only screen and (min-width: em-font(481px)) {
+@media only screen and (min-width: $mobile) {
 
 	// styles in 481up.scss
 	@import "481up";
@@ -72,7 +72,7 @@ This is the average viewing window. So Desktops, Laptops, and
 in general anyone not viewing on a mobile device. Here's where
 the resource intensive styles are added, like the grid.
 */
-@media only screen and (min-width: em-font(768px)) {
+@media only screen and (min-width: $tablet) {
 	
 	// styles in 768up.scss
 	@import "768up";
@@ -84,25 +84,12 @@ DESKTOP
 This is the average viewing window. So Desktops, Laptops, and
 in general anyone not viewing on a mobile device.
 */
-@media only screen and (min-width: em-font(1030px)) {
+@media only screen and (min-width: $desktop) {
 
 	// styles in 1030up.scss
 	@import "1030up";
 
 } // end of media query
-
-/*
-LARGE VIEWING SIZE
-This is for the larger monitors and possibly full screen viewers.
-Not really using it.
-*/
-@media only screen and (min-width: em-font(1240px)) {
-
-	// styles in 1240up.scss
-	@import "1240up";
-
-} // end of media query
-
 
 /*
 RETINA (2x RESOLUTION DEVICES)

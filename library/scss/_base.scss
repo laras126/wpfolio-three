@@ -111,38 +111,23 @@ the navs on the site so our css is cleaner
 and more scalable.
 */
 
-// TODO: why are there two .navs styled here?
-
-.nav {
-	text-align: center;
-
-	li a {
-		padding-left: 10px;
-		padding-right: 10px;
-		display: block;
-		text-decoration: none;		
-	}
-
-	ul.sub-menu,
-	ul.children {
-
-		li {
-
-			a {
-				padding-left: 30px;
-			}
-		}
-	}
-
-}
 
 .nav {
 	border: 1px solid #ccc;
 	border-bottom: 0;
 
-	li {
+	//text-align: center;
 
+	li {
+		
+		@include nobullet;
 		a {
+
+			padding-left: 10px;
+			padding-right: 10px;
+			display: block;
+			text-decoration: none;		
+
 			padding-top: rhythm(1, 16px);
 			padding-bottom: rhythm(1, 16px);
 			border-bottom: 1px solid #ccc;
@@ -170,6 +155,11 @@ and more scalable.
 			li {
 
 				a {
+					padding-left: 30px;
+					
+					&:before {
+						content: '- ';
+					}
 
 					&:hover,
 					&:focus {}
@@ -210,7 +200,6 @@ a.menu-link {
     text-align: center;
     color: $primary;
     background: #eee;
-    @include border-radius(4px);
     padding: rhythm(1, 14px);
 }
 
@@ -229,18 +218,18 @@ nav[role=navigation] {
 }
 
 nav[role=navigation].active {
-	max-height: 15em;
+	max-height: 30em;
 }
 
 nav[role=navigation] ul {
 	margin: 0;
 	padding: 0;
-	border-top: 1px solid #808080;
+	// border-top: 1px solid #808080;
 }
 
 nav[role=navigation] li a {
 	display: block;
-	border-bottom: 1px solid #808080;
+	// border-bottom: 1px solid #808080;
 }
 
 
@@ -306,6 +295,10 @@ POSTS & CONTENT STYLES
 
 		.byline {
 			color: #999;
+		}
+
+		.tags {
+			@include nobullet;
 		}
 
 		.tags-title {
@@ -859,9 +852,9 @@ SIDEBARS & ASIDES
 	.widgettitle {}
 
 	.widget {
-
+		margin: $small-margin*2 0;
 		ul {
-
+			@include nobullet;
 			li {
 
 				&:first-child {}
