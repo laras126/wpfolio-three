@@ -18,18 +18,20 @@ GENERAL STYLES
 
 body {}
 
+
+
 /*********************
 LAYOUT & GRID STYLES
 *********************/
 
-.home #content, .home .footer {
-	display: none;
+// If js is active, 
+// Hide the home content for the fade in 
+.js {
+	.home #content, .home .footer {
+		display: none;
+	}
 }
 
-// Wide margins shortcode
-.widemargins {
-	margin: 0 em-font($base-font-size*10);
-}
 
 /*********************
 HEADER STYLES
@@ -79,7 +81,7 @@ nav[role=navigation] {
 
 		a {
 			border-bottom: 0;
-			padding: rhythm(1, 18px) rhythm(2, 18px);
+			padding: rhythm(1, $h5) rhythm(2, $h5);
 
 			&:hover {
 				background-color: $menu-item-hover;	
@@ -111,7 +113,7 @@ nav[role=navigation] {
 
 				a {
 					text-align: left;
-					padding-left: rhythm(3, 18px);
+					padding-left: rhythm(3, $p);
 					
 					&:hover,
 					&:focus {
@@ -184,8 +186,27 @@ POSTS & CONTENT STYLES
 	}
 }
 
+.project-taxonomies a {
+	&:hover {
+		background-color: $accent-med;
+		color: $white; 
+	}
+}
+
+.project-meta {
+	padding-bottom: 0;
+}
+
 .comment_content {
 	margin-left: 50px;
+}
+
+.mobile-hide {
+	display: block;
+}
+
+.mobile-show {
+	display: none;	
 }
 
 /*********************
@@ -201,7 +222,7 @@ SIDEBARS & ASIDES
 	}
 
 	.widget {
-		padding: 0 $small-margin*0.75;
+		padding: 0 $h5;
 		border-left: $accent-light 1px solid;
 
 		ul {

@@ -116,11 +116,9 @@ and more scalable.
 	border: 1px solid #ccc;
 	border-bottom: 0;
 
-	//text-align: center;
-
 	li {
-		
 		@include nobullet;
+		
 		a {
 
 			padding-left: 10px;
@@ -128,8 +126,7 @@ and more scalable.
 			display: block;
 			text-decoration: none;		
 
-			padding-top: rhythm(1, 16px);
-			padding-bottom: rhythm(1, 16px);
+			padding: rhythm(1, $p) rhythm(2, $p);
 			border-bottom: 1px solid #ccc;
 
 			// No need for hover styles yet since this is mobile
@@ -256,8 +253,11 @@ POSTS & CONTENT STYLES
 
 		// TODO: is this getting to be too detailed margin-wise?
 		.article-footer {
-			margin-top: rhythm(4, 18px);
+			padding: 1.5em 0;
+			border-bottom: 1px solid $accent-light;
+			border-top: 1px solid $accent-light;
 		}
+
 		.hentry {
 
 			header {}
@@ -302,13 +302,13 @@ POSTS & CONTENT STYLES
 		}
 
 		.tags-title {
-			font-weight: 600;
+			//font-weight: 600;
 		}
 
 
 		/* entry content */
 		.entry-content {
-			line-height: 1.5em;
+			//line-height: 1.5em;
 
 			p {}
 
@@ -463,23 +463,52 @@ POSTS & CONTENT STYLES
 	@include nobullet;
 }
 
+// Breaks up the artwork meta section a bit
 .aw-sep {
-	margin-top: rhythm(2, 12px); 
+	margin-top: 1.5em; 
 }
 
 .project-link a {
-	// display: inline-block;
-	// padding: em-font(5px) em-font(8px);
-	// margin-top: em-font(5px);
-	// @include border-radius(2px);
-	// background: $btn-color;
 	@extend button;
 	display: inline-block;	
+}
+
+.project-meta {
+	text-align: center;
+	padding-bottom: 1em;
+}
+
+.project-taxonomies {
+	.tags-title {
+		display: block;
+	}
+	li a {
+		background-color: $accent-light;
+		padding: 0 0.25em;
+	}
+
 }
 
 /******************************************************************
 PAGE NAVI STYLES
 ******************************************************************/
+
+// Is this mobile hide/show a shitty thing to do?
+.mobile-hide {
+	display: none;
+}
+
+.mobile-show {
+	display: block;
+}
+
+.prev {
+	float: left;
+}
+
+.next {
+	float: right;
+}
 
 .page-navigation,
 .wp-prev-next {
@@ -744,7 +773,7 @@ COMMENT STYLES
 		p {
 			margin: 0.7335em 0 1.5em;
 			font-size: 1em;
-			line-height: 1.5em;
+			//line-height: 1.5em;
 		}
 
 	} /* end .commentlist .comment_content */
@@ -759,13 +788,15 @@ COMMENT STYLES
 
 } /* end .commentlist */
 
+
+
 /******************************************************************
 COMMENT FORM STYLES
 ******************************************************************/
 
 .respond-form {
-	margin-top: rhythm(4, 18px);
-	padding-bottom: rhythm(1, 18px);
+	margin-top: 1.5em;
+	padding-bottom: 1.5em;
 
 	form {
 		margin: 0.75em 0;
@@ -852,7 +883,8 @@ SIDEBARS & ASIDES
 	.widgettitle {}
 
 	.widget {
-		margin: $small-margin*2 0;
+		margin: $h2 0;
+
 		ul {
 			@include nobullet;
 			li {
@@ -888,26 +920,8 @@ FOOTER STYLES
 	}
 }
 
-	/*
-	if you checked out the link above:
-	http://www.alistapart.com/articles/organizing-mobile/
-	you'll want to style the footer nav
-	a bit more in-depth. Remember to keep
-	it simple because you'll have to
-	override these styles for the desktop
-	view.
-	*/
-	.footer-nav {
-		list-style-type: none;
-		
-		li {
-				
-			}
-
-	} /* end .footer-links */
-
-
 	.copyright {}
+
 
 
 /*********************

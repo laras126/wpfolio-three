@@ -72,7 +72,7 @@
 	color: $text-color;
 	padding: 0.3em 0.5em;
 	line-height: 1.5;
-	@include border-radius(6px);
+	@include border-radius(2px);
 
 	&:hover,
 	&:focus {

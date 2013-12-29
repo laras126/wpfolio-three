@@ -18,27 +18,44 @@ Template for single Projects
 
 					<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
 
-						<h1 class="single-title project-title"><?php the_title(); ?></h1>
-
 						<section class="entry-content clearfix">
 
 							<?php the_content(); ?>
 							<?php include('include/artwork-meta.php'); ?>
 
-							<ul class="tags">
+							<ul class="project-taxonomies tags">
 								
-								<li><?php echo get_the_term_list( get_the_ID(), 'people', '<span class="tags-title">' . __( 'People:', 'bonestheme' ) . '</span> ', ', ' ) ?></li>
+								<li><?php echo get_the_term_list( get_the_ID(), 'people', '<span class="tags-title">' . __( 'People:', 'bonestheme' ) . '</span> ', ' ' ) ?></li>
 								
-								<li><?php echo get_the_term_list( get_the_ID(), 'places', '<span class="tags-title">' . __( 'Places:', 'bonestheme' ) . '</span> ', ', ' ) ?></li>
+								<li><?php echo get_the_term_list( get_the_ID(), 'places', '<span class="tags-title">' . __( 'Places:', 'bonestheme' ) . '</span> ', ' ' ) ?></li>
 
-								<li><?php echo get_the_term_list( get_the_ID(), 'post_tag', '<span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ' ) ?></li>
+								<li><?php echo get_the_term_list( get_the_ID(), 'post_tag', '<span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ' ' ) ?></li>
 							</ul>
 	
 
 						</section>
 
 						<footer class="article-footer clearfix">
-							<?php include('include/prev-next.php'); ?>
+						
+							<div class="prev mobile-hide">
+								<?php 
+								// NOTE: reversing these so they make more sense
+								next_post_link('%link', '<strong>&larr; Previous</strong>'); ?>
+								&nbsp;
+							</div>
+							<div class="project-meta">
+								<?php $category = get_the_term_list( get_the_ID(), 'project_category', ' ', ', ' );  ?>
+								<strong><?php the_title() ?></strong> | <?php the_date('Y'); ?> | <strong><?php echo $category; ?></strong>
+							</div>
+							<div class="next mobile-hide">
+								<?php previous_post_link('%link', '<strong>Next &rarr;</strong>'); ?>
+							</div>
+
+							<div class="mobile-show">
+								<?php next_post_link('%link', '<strong class="prev">&larr; Previous</strong>'); ?>
+								<?php previous_post_link('%link', '<strong class="next">Next &rarr;</strong>'); ?>
+							</div>
+
 						</footer>
 
 						<?php comments_template(); ?>

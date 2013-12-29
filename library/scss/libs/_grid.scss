@@ -16,28 +16,18 @@ $gutter-width   : 2em;            // 1em gutters between columns
 $grid-padding   : $gutter-width;  // grid-padding equal to gutters
 $container-style: fluid;
 
-$mobile 		: 30.0625em;
+$mobile 		: 30em;
 $tablet 		: 48em;
 $desktop 		: 60em;
 
 .wrap {
 	@include container;
-	max-width: 1030px;
+	max-width: 70em;
 }
 
-.prev-next {
-	//@include container;
+.project-meta {
+	@include span-columns(1, 1);
 }
-
-.prev  {
-	@include span-columns(1, 2);
-}
-
-.next {
-	@include span-columns(1 omega, 2);
-	text-align: right;
-}
-
 
 // Phonez
 @include at-breakpoint($mobile 4) {
@@ -52,21 +42,29 @@ $desktop 		: 60em;
 
 
 
-
 // Tablet size
-@include at-breakpoint($tablet 9) {
+@include at-breakpoint($tablet 6) {
 
 	// Portfolio layout
 
 	.project-thumb {
-		@include span-columns(3,9);
+		@include span-columns(2,6);
 		&:nth-child(2n+2) { @include remove-omega; }
 		&:nth-child(3n+3) { @include omega; } // every third image completes a row.	
 		height: 25em;
 	}
 
-	.artwork-meta {
-		@include span-columns(6, 9);
+	.prev  {
+		@include span-columns(1);
+	}
+
+	.project-meta {
+		@include span-columns(4);	
+	}
+
+	.next {
+		@include span-columns(1 omega);
+		text-align: right;
 	}
 
 }
@@ -105,6 +103,11 @@ $desktop 		: 60em;
 	.commentlist, .respond-form {	
 		@include span-columns(8);
 		@include post(4);
+	}
+
+	.widemargins {
+		@include prefix(1);
+		@include suffix(1);
 	}
 
 }

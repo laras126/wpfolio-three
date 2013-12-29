@@ -2255,7 +2255,7 @@ textarea {
   padding-right: 2em;
   margin-left: auto;
   margin-right: auto;
-  max-width: 1030px;
+  max-width: 70em;
 }
 /* line 38, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .wrap:after {
@@ -2264,124 +2264,135 @@ textarea {
   clear: both;
 }
 
-/* line 32, ../scss/libs/_grid.scss */
-.prev {
-  width: 40%;
+/* line 28, ../scss/libs/_grid.scss */
+.project-meta {
+  width: 100%;
   float: left;
-  margin-right: 20%;
+  margin-right: 50%;
   display: inline;
 }
 
-/* line 36, ../scss/libs/_grid.scss */
-.next {
-  width: 40%;
-  float: right;
-  margin-right: 0;
-  *margin-left: -2em;
-  display: inline;
-  text-align: right;
-}
-
-@media (min-width: 30.0625em) {
-  /* line 45, ../scss/libs/_grid.scss */
+@media (min-width: 30em) {
+  /* line 35, ../scss/libs/_grid.scss */
   .project-thumb {
     width: 45.45455%;
     float: left;
     margin-right: 9.09091%;
     height: 21em;
   }
-  /* line 47, ../scss/libs/_grid.scss */
+  /* line 37, ../scss/libs/_grid.scss */
   .project-thumb:nth-child(3n+3) {
     float: left;
     margin-right: 9.09091%;
   }
-  /* line 48, ../scss/libs/_grid.scss */
+  /* line 38, ../scss/libs/_grid.scss */
   .project-thumb:nth-child(2n+2) {
     float: right;
     margin-right: 0;
   }
 }
 @media (min-width: 48em) {
-  /* line 61, ../scss/libs/_grid.scss */
+  /* line 50, ../scss/libs/_grid.scss */
   .project-thumb {
-    width: 30.76923%;
+    width: 29.41176%;
     float: left;
-    margin-right: 3.84615%;
+    margin-right: 5.88235%;
     height: 25em;
   }
-  /* line 63, ../scss/libs/_grid.scss */
+  /* line 52, ../scss/libs/_grid.scss */
   .project-thumb:nth-child(2n+2) {
     float: left;
-    margin-right: 3.84615%;
+    margin-right: 5.88235%;
   }
-  /* line 64, ../scss/libs/_grid.scss */
+  /* line 53, ../scss/libs/_grid.scss */
   .project-thumb:nth-child(3n+3) {
     float: right;
     margin-right: 0;
   }
 
-  /* line 68, ../scss/libs/_grid.scss */
-  .artwork-meta {
-    width: 65.38462%;
+  /* line 57, ../scss/libs/_grid.scss */
+  .prev {
+    width: 11.76471%;
     float: left;
-    margin-right: 3.84615%;
+    margin-right: 5.88235%;
+  }
+
+  /* line 61, ../scss/libs/_grid.scss */
+  .project-meta {
+    width: 64.70588%;
+    float: left;
+    margin-right: 5.88235%;
+  }
+
+  /* line 65, ../scss/libs/_grid.scss */
+  .next {
+    width: 11.76471%;
+    float: right;
+    margin-right: 0;
+    text-align: right;
   }
 }
 @media (min-width: 60em) {
-  /* line 78, ../scss/libs/_grid.scss */
+  /* line 76, ../scss/libs/_grid.scss */
   .sidebar-layout {
     width: 65.71429%;
     float: left;
     margin-right: 2.85714%;
   }
 
-  /* line 82, ../scss/libs/_grid.scss */
+  /* line 80, ../scss/libs/_grid.scss */
   .sidebar {
     width: 31.42857%;
     float: right;
     margin-right: 0;
   }
 
-  /* line 86, ../scss/libs/_grid.scss */
+  /* line 84, ../scss/libs/_grid.scss */
   .site-name {
     width: 31.42857%;
     float: left;
     margin-right: 2.85714%;
   }
 
-  /* line 90, ../scss/libs/_grid.scss */
+  /* line 88, ../scss/libs/_grid.scss */
   .site-nav {
     width: 65.71429%;
     float: right;
     margin-right: 0;
   }
 
-  /* line 95, ../scss/libs/_grid.scss */
+  /* line 93, ../scss/libs/_grid.scss */
   .top-nav {
     float: right;
   }
 
-  /* line 100, ../scss/libs/_grid.scss */
+  /* line 98, ../scss/libs/_grid.scss */
   .project-thumb {
     height: 26em;
   }
 
-  /* line 105, ../scss/libs/_grid.scss */
+  /* line 103, ../scss/libs/_grid.scss */
   .commentlist, .respond-form {
     width: 65.71429%;
     float: left;
     margin-right: 2.85714%;
     margin-right: 34.28571%;
   }
+
+  /* line 108, ../scss/libs/_grid.scss */
+  .widemargins {
+    padding-left: 8.57143%;
+    padding-right: 8.57143%;
+  }
 }
 @media (min-width: 33.25em) {
-  /* line 126, ../scss/libs/_grid.scss */
+  /* line 129, ../scss/libs/_grid.scss */
   .project-thumb {
     height: 23em;
   }
 }
 @media (min-width: 40em) {
-  /* line 132, ../scss/libs/_grid.scss */
+  /* line 135, ../scss/libs/_grid.scss */
   .project-thumb {
     height: 27em;
   }
@@ -2390,108 +2401,115 @@ textarea {
 /*
  * Doh! Swiped this from 3.8. Thanks, WP, you doll.
  */
-/* line 15, ../scss/libs/_typography.scss */
+/* line 61, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+html * html {
+  font-size: 100%;
+}
+/* line 64, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+html html {
+  font-size: 16px;
+  line-height: 0.5em;
+}
+
+/* line 22, ../scss/libs/_typography.scss */
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/* line 19, ../scss/libs/_typography.scss */
+/* line 26, ../scss/libs/_typography.scss */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Georgia", Cambria, Times New Roman, Times, serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/* line 23, ../scss/libs/_typography.scss */
+/* line 30, ../scss/libs/_typography.scss */
 h1 {
   font-size: 2.25em;
-  line-height: 1.11111em;
-  margin: 0 0 0.66667em 0;
+  margin: 0 0 10px 0;
+  font-weight: 500;
 }
 
-/* line 28, ../scss/libs/_typography.scss */
+/* line 36, ../scss/libs/_typography.scss */
 h2 {
   font-size: 1.875em;
-  line-height: 1.33333em;
-  margin: 1.06667em 0 0.53333em 0;
+  margin: 17px 0 8px 0;
+  font-weight: 500;
 }
 
-/* line 33, ../scss/libs/_typography.scss */
+/* line 42, ../scss/libs/_typography.scss */
 h3 {
   font-size: 1.375em;
-  line-height: 1.45455em;
-  margin: 1.45455em 0 0.72727em 0;
-}
-
-/* line 38, ../scss/libs/_typography.scss */
-h4 {
-  font-size: 1.25em;
-  line-height: 1.2em;
-  margin: 0 0 0.4em 0;
-}
-
-/* line 43, ../scss/libs/_typography.scss */
-h5 {
-  font-size: 1.125em;
-  line-height: 1.33333em;
-  margin: 0 0 0.44444em 0;
+  margin: 23px 0 11px 0;
+  font-weight: 500;
 }
 
 /* line 48, ../scss/libs/_typography.scss */
-h6 {
-  font-size: 1em;
-  line-height: 1.5em;
-  margin: 0 0 0.5em 0;
+h4 {
+  font-size: 1.25em;
+  margin: 0 0 6px 0;
 }
 
 /* line 53, ../scss/libs/_typography.scss */
+h5 {
+  font-size: 1.125em;
+  margin: 0 0 7px 0;
+}
+
+/* line 58, ../scss/libs/_typography.scss */
+h6 {
+  font-size: 16px;
+  margin: 0 0 0.5em 0;
+}
+
+/* line 63, ../scss/libs/_typography.scss */
 p, pre, label {
   font-size: 1em;
   line-height: 1.5em;
   margin: 0 0 1em 0;
 }
 
-/* line 58, ../scss/libs/_typography.scss */
+/* line 68, ../scss/libs/_typography.scss */
 ol, ul {
   font-size: 1em;
   line-height: 1.5em;
   margin: 0 0 1em 0;
 }
 
-/* line 63, ../scss/libs/_typography.scss */
+/* line 73, ../scss/libs/_typography.scss */
 li {
   line-height: auto;
 }
 
-/* line 70, ../scss/libs/_typography.scss */
+/* line 80, ../scss/libs/_typography.scss */
 ul {
   list-style-position: inside;
   list-style-type: disc;
 }
 
-/* line 71, ../scss/libs/_typography.scss */
+/* line 81, ../scss/libs/_typography.scss */
 ol {
   list-style-position: inside;
   list-style-type: decimal;
 }
 
-/* line 72, ../scss/libs/_typography.scss */
+/* line 82, ../scss/libs/_typography.scss */
 strong, b {
   font-weight: 700;
   letter-spacing: 0;
 }
 
-/* line 73, ../scss/libs/_typography.scss */
+/* line 83, ../scss/libs/_typography.scss */
 em, i, q {
   font-style: italic;
 }
 
-/* line 75, ../scss/libs/_typography.scss */
+/* line 85, ../scss/libs/_typography.scss */
 blockquote {
-  padding-left: em-font(16px);
-  border-left: em-font(1px) solid #eeeeee;
+  padding-left: 1em;
+  border-left: 0.0625em solid #eeeeee;
   line-height: normal;
   margin: 0;
 }
-/* line 80, ../scss/libs/_typography.scss */
+/* line 90, ../scss/libs/_typography.scss */
 blockquote p {
   font-style: italic;
   margin: 0;
@@ -2500,7 +2518,7 @@ blockquote p {
   margin: 1.2em 0 1.2em 0;
 }
 
-/* line 88, ../scss/libs/_typography.scss */
+/* line 98, ../scss/libs/_typography.scss */
 a, a:visited {
   color: #aaaaaa;
   text-decoration: none;
@@ -2508,15 +2526,15 @@ a, a:visited {
   /* on click */
   /* mobile tap color */
 }
-/* line 93, ../scss/libs/_typography.scss */
+/* line 103, ../scss/libs/_typography.scss */
 a:hover, a:focus, a:visited:hover, a:visited:focus {
   color: #969696;
 }
-/* line 98, ../scss/libs/_typography.scss */
+/* line 108, ../scss/libs/_typography.scss */
 a:active, a:visited:active {
   color: #8b8b8b;
 }
-/* line 103, ../scss/libs/_typography.scss */
+/* line 113, ../scss/libs/_typography.scss */
 a:link, a:visited:link {
   /*
   this highlights links on iPhones/iPads.
@@ -2624,10 +2642,10 @@ input[type="email"],
 input[type="url"],
 input[type="search"],
 input[type="tel"] {
-  padding: em-font(3px) em-font(6px);
+  padding: 0.1875em 0.375em;
   background: #fff;
   color: #666666;
-  border: em-font(2px) solid #cccccc;
+  border: 0.125em solid #cccccc;
   line-height: 1.5em;
 }
 /* line 54, ../scss/libs/_forms.scss */
@@ -2645,7 +2663,7 @@ input[type="email"]:focus,
 input[type="url"]:focus,
 input[type="search"]:focus,
 input[type="tel"]:focus {
-  border: em-font(2px) solid #999999;
+  border: 0.125em solid #999999;
 }
 
 /* line 60, ../scss/libs/_forms.scss */
@@ -2681,11 +2699,11 @@ button,
   color: white;
   padding: 0.3em 0.5em;
   line-height: 1.5;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  -ms-border-radius: 6px;
-  -o-border-radius: 6px;
-  border-radius: 6px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
 }
 /* line 78, ../scss/libs/_mixins.scss */
 input[type="submit"]:hover, input[type="submit"]:focus,
@@ -2889,7 +2907,7 @@ and more scalable.
   /* highlight current page */
   /* end current highlighters */
 }
-/* line 121, ../scss/_base.scss */
+/* line 119, ../scss/_base.scss */
 .nav li {
   list-style-type: none;
   /*
@@ -2900,27 +2918,26 @@ and more scalable.
   http://www.alistapart.com/articles/organizing-mobile/
   */
 }
-/* line 124, ../scss/_base.scss */
+/* line 122, ../scss/_base.scss */
 .nav li a {
   padding-left: 10px;
   padding-right: 10px;
   display: block;
   text-decoration: none;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
+  padding: 0.5em 1em;
   border-bottom: 1px solid #ccc;
 }
-/* line 157, ../scss/_base.scss */
+/* line 154, ../scss/_base.scss */
 .nav li ul.sub-menu li a,
 .nav li ul.children li a {
   padding-left: 30px;
 }
-/* line 160, ../scss/_base.scss */
+/* line 157, ../scss/_base.scss */
 .nav li ul.sub-menu li a:before,
 .nav li ul.children li a:before {
   content: '- ';
 }
-/* line 186, ../scss/_base.scss */
+/* line 183, ../scss/_base.scss */
 .nav li.current-menu-item a,
 .nav li.current_page_item a,
 .nav li.current-page-ancestor a {
@@ -2928,7 +2945,7 @@ and more scalable.
 }
 
 /* end .nav */
-/* line 198, ../scss/_base.scss */
+/* line 195, ../scss/_base.scss */
 a.menu-link {
   display: block;
   text-align: center;
@@ -2937,7 +2954,7 @@ a.menu-link {
   padding: 0.57143em;
 }
 
-/* line 206, ../scss/_base.scss */
+/* line 203, ../scss/_base.scss */
 nav[role=navigation] {
   clear: both;
   -webkit-transition: all 0.3s ease-out;
@@ -2947,24 +2964,24 @@ nav[role=navigation] {
   transition: all 0.3s ease-out;
 }
 
-/* line 215, ../scss/_base.scss */
+/* line 212, ../scss/_base.scss */
 .js nav[role=navigation] {
   overflow: hidden;
   max-height: 0;
 }
 
-/* line 220, ../scss/_base.scss */
+/* line 217, ../scss/_base.scss */
 nav[role=navigation].active {
   max-height: 30em;
 }
 
-/* line 224, ../scss/_base.scss */
+/* line 221, ../scss/_base.scss */
 nav[role=navigation] ul {
   margin: 0;
   padding: 0;
 }
 
-/* line 230, ../scss/_base.scss */
+/* line 227, ../scss/_base.scss */
 nav[role=navigation] li a {
   display: block;
 }
@@ -2972,30 +2989,32 @@ nav[role=navigation] li a {
 /*********************
 POSTS & CONTENT STYLES
 *********************/
-/* line 240, ../scss/_base.scss */
+/* line 237, ../scss/_base.scss */
 #content {
   margin-top: 0.88889em;
 }
 
-/* line 244, ../scss/_base.scss */
+/* line 241, ../scss/_base.scss */
 .article-header {
   margin-bottom: 1.77778em;
 }
 
-/* line 247, ../scss/_base.scss */
+/* line 244, ../scss/_base.scss */
 .entry-title {
   margin-bottom: 0.36364em;
   font-size: 1.875em;
   line-height: 1.33333em;
 }
-/* line 251, ../scss/_base.scss */
+/* line 248, ../scss/_base.scss */
 .entry-title a {
   color: #666666;
 }
 
-/* line 258, ../scss/_base.scss */
+/* line 255, ../scss/_base.scss */
 .article-footer {
-  margin-top: 1.77778em;
+  padding: 1.5em 0;
+  border-bottom: 1px solid #eeeeee;
+  border-top: 1px solid #eeeeee;
 }
 
 /* end .hentry */
@@ -3035,15 +3054,9 @@ POSTS & CONTENT STYLES
   list-style-type: none;
 }
 
-/* line 304, ../scss/_base.scss */
-.tags-title {
-  font-weight: 600;
-}
-
 /* entry content */
 /* line 310, ../scss/_base.scss */
 .entry-content {
-  line-height: 1.5em;
   /*
   image alignment on a screen this size may be
   a bit difficult. It's set to start aligning
@@ -3141,26 +3154,62 @@ POSTS & CONTENT STYLES
   list-style-type: none;
 }
 
-/* line 466, ../scss/_base.scss */
+/* line 467, ../scss/_base.scss */
 .aw-sep {
-  margin-top: 1.33333em;
+  margin-top: 1.5em;
 }
 
-/* line 470, ../scss/_base.scss */
+/* line 471, ../scss/_base.scss */
 .project-link a {
   display: inline-block;
+}
+
+/* line 476, ../scss/_base.scss */
+.project-meta {
+  text-align: center;
+  padding-bottom: 1em;
+}
+
+/* line 482, ../scss/_base.scss */
+.project-taxonomies .tags-title {
+  display: block;
+}
+/* line 485, ../scss/_base.scss */
+.project-taxonomies li a {
+  background-color: #eeeeee;
+  padding: 0 0.25em;
 }
 
 /******************************************************************
 PAGE NAVI STYLES
 ******************************************************************/
-/* line 485, ../scss/_base.scss */
+/* line 497, ../scss/_base.scss */
+.mobile-hide {
+  display: none;
+}
+
+/* line 501, ../scss/_base.scss */
+.mobile-show {
+  display: block;
+}
+
+/* line 505, ../scss/_base.scss */
+.prev {
+  float: left;
+}
+
+/* line 509, ../scss/_base.scss */
+.next {
+  float: right;
+}
+
+/* line 514, ../scss/_base.scss */
 .page-navigation,
 .wp-prev-next {
   margin: 1.1em 0 2.2em;
 }
 
-/* line 488, ../scss/_base.scss */
+/* line 517, ../scss/_base.scss */
 .bones_page_navi {
   list-style-type: none;
   /* current page link */
@@ -3172,44 +3221,44 @@ PAGE NAVI STYLES
   /* first page link */
   /* last page link */
 }
-/* line 490, ../scss/_base.scss */
+/* line 519, ../scss/_base.scss */
 .bones_page_navi li {
   float: left;
   margin-left: 10px;
 }
-/* line 494, ../scss/_base.scss */
+/* line 523, ../scss/_base.scss */
 .bones_page_navi li a {
   padding: 3px 6px;
   display: block;
   text-decoration: none;
   position: relative;
 }
-/* line 501, ../scss/_base.scss */
+/* line 530, ../scss/_base.scss */
 .bones_page_navi li a:hover, .bones_page_navi li a:focus {
   color: #f01d4f;
   text-decoration: underline;
 }
-/* line 510, ../scss/_base.scss */
+/* line 539, ../scss/_base.scss */
 .bones_page_navi li.bpn-current {
   padding: 3px 6px;
   border-bottom: 2px solid #f01d4f;
   position: relative;
 }
-/* line 515, ../scss/_base.scss */
+/* line 544, ../scss/_base.scss */
 .bones_page_navi li.bpn-current a {
   /* hovering on current page link */
 }
-/* line 526, ../scss/_base.scss */
+/* line 555, ../scss/_base.scss */
 .bones_page_navi li.bpn-prev-link,
 .bones_page_navi li.bpn-next-link {
   font-weight: 700;
 }
-/* line 529, ../scss/_base.scss */
+/* line 558, ../scss/_base.scss */
 .bones_page_navi li.bpn-prev-link a,
 .bones_page_navi li.bpn-next-link a {
   padding: 0;
 }
-/* line 538, ../scss/_base.scss */
+/* line 567, ../scss/_base.scss */
 .bones_page_navi li.bpn-prev-link a:hover,
 .bones_page_navi li.bpn-next-link a:hover,
 .bones_page_navi li.bpn-first-page-link a:hover,
@@ -3219,11 +3268,11 @@ PAGE NAVI STYLES
 
 /* end .bones_page_navi */
 /* fallback previous & next links */
-/* line 581, ../scss/_base.scss */
+/* line 610, ../scss/_base.scss */
 .wp-prev-next .prev-link {
   float: left;
 }
-/* line 585, ../scss/_base.scss */
+/* line 614, ../scss/_base.scss */
 .wp-prev-next .next-link {
   float: right;
 }
@@ -3233,12 +3282,12 @@ PAGE NAVI STYLES
 COMMENT STYLES
 ******************************************************************/
 /* h3 comment title */
-/* line 596, ../scss/_base.scss */
+/* line 625, ../scss/_base.scss */
 #comments {
   /* number of comments span */
 }
 
-/* line 613, ../scss/_base.scss */
+/* line 642, ../scss/_base.scss */
 .commentlist {
   /* general comment classes */
   /* vcard */
@@ -3249,7 +3298,7 @@ COMMENT STYLES
   /* comment reply link */
   /* end .commentlist .comment-reply-link */
 }
-/* line 615, ../scss/_base.scss */
+/* line 644, ../scss/_base.scss */
 .commentlist li {
   position: relative;
   clear: both;
@@ -3259,67 +3308,67 @@ COMMENT STYLES
   padding: 0.7335em 10px;
   /* end .commentlist li ul.children */
 }
-/* line 623, ../scss/_base.scss */
+/* line 652, ../scss/_base.scss */
 .commentlist li:last-child {
   margin-bottom: 0;
 }
-/* line 627, ../scss/_base.scss */
+/* line 656, ../scss/_base.scss */
 .commentlist li ul.children {
   margin: 0;
   /* variations */
   /* change number for different depth */
 }
-/* line 645, ../scss/_base.scss */
+/* line 674, ../scss/_base.scss */
 .commentlist li[class*=depth-] {
   margin-top: 1.1em;
 }
-/* line 649, ../scss/_base.scss */
+/* line 678, ../scss/_base.scss */
 .commentlist li.depth-1 {
   margin-left: 0;
   margin-top: 0;
 }
-/* line 654, ../scss/_base.scss */
+/* line 683, ../scss/_base.scss */
 .commentlist li:not(.depth-1) {
   margin-right: -10px;
   margin-left: -10px;
   margin-top: 0;
   padding-bottom: 0;
 }
-/* line 668, ../scss/_base.scss */
+/* line 697, ../scss/_base.scss */
 .commentlist .odd {
   background: #eee;
 }
-/* line 671, ../scss/_base.scss */
+/* line 700, ../scss/_base.scss */
 .commentlist .even {
   background: #fefefe;
 }
-/* line 686, ../scss/_base.scss */
+/* line 715, ../scss/_base.scss */
 .commentlist .vcard {
   margin-left: 50px;
 }
-/* line 689, ../scss/_base.scss */
+/* line 718, ../scss/_base.scss */
 .commentlist .vcard cite.fn {
   font-weight: 700;
   font-style: normal;
 }
-/* line 697, ../scss/_base.scss */
+/* line 726, ../scss/_base.scss */
 .commentlist .vcard time {
   clear: both;
 }
-/* line 699, ../scss/_base.scss */
+/* line 728, ../scss/_base.scss */
 .commentlist .vcard time:before {
   content: ' | ';
 }
-/* line 703, ../scss/_base.scss */
+/* line 732, ../scss/_base.scss */
 .commentlist .vcard time a {
   color: #999;
   text-decoration: none;
 }
-/* line 707, ../scss/_base.scss */
+/* line 736, ../scss/_base.scss */
 .commentlist .vcard time a:hover {
   text-decoration: underline;
 }
-/* line 717, ../scss/_base.scss */
+/* line 746, ../scss/_base.scss */
 .commentlist .vcard img.avatar {
   position: absolute;
   left: 10px;
@@ -3327,13 +3376,12 @@ COMMENT STYLES
   border: 1px solid #cecece;
   background: #fff;
 }
-/* line 744, ../scss/_base.scss */
+/* line 773, ../scss/_base.scss */
 .commentlist .comment_content p {
   margin: 0.7335em 0 1.5em;
   font-size: 1em;
-  line-height: 1.5em;
 }
-/* line 753, ../scss/_base.scss */
+/* line 782, ../scss/_base.scss */
 .commentlist .comment-reply-link {
   text-decoration: none;
   float: right;
@@ -3345,11 +3393,11 @@ COMMENT STYLES
   color: white;
   padding: 0.3em 0.5em;
   line-height: 1.5;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  -ms-border-radius: 6px;
-  -o-border-radius: 6px;
-  border-radius: 6px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
 }
 /* line 78, ../scss/libs/_mixins.scss */
 .commentlist .comment-reply-link:hover, .commentlist .comment-reply-link:focus {
@@ -3376,34 +3424,34 @@ COMMENT STYLES
 /******************************************************************
 COMMENT FORM STYLES
 ******************************************************************/
-/* line 766, ../scss/_base.scss */
+/* line 797, ../scss/_base.scss */
 .respond-form {
-  margin-top: 1.77778em;
-  padding-bottom: 0.44444em;
+  margin-top: 1.5em;
+  padding-bottom: 1.5em;
 }
-/* line 770, ../scss/_base.scss */
+/* line 801, ../scss/_base.scss */
 .respond-form form {
   margin: 0.75em 0;
 }
-/* line 773, ../scss/_base.scss */
+/* line 804, ../scss/_base.scss */
 .respond-form form li {
   list-style-type: none;
   clear: both;
   margin-bottom: 0.7335em;
 }
-/* line 779, ../scss/_base.scss */
+/* line 810, ../scss/_base.scss */
 .respond-form form li label,
 .respond-form form li small {
   display: none;
 }
-/* line 787, ../scss/_base.scss */
+/* line 818, ../scss/_base.scss */
 .respond-form form input[type=text],
 .respond-form form input[type=email],
 .respond-form form input[type=url],
 .respond-form form textarea {
   /* form validation */
 }
-/* line 791, ../scss/_base.scss */
+/* line 822, ../scss/_base.scss */
 .respond-form form input[type=text]:invalid,
 .respond-form form input[type=email]:invalid,
 .respond-form form input[type=url]:invalid,
@@ -3416,14 +3464,14 @@ COMMENT FORM STYLES
   -ms-box-shadow: none;
   box-shadow: none;
 }
-/* line 804, ../scss/_base.scss */
+/* line 835, ../scss/_base.scss */
 .respond-form form input[type=text],
 .respond-form form input[type=email],
 .respond-form form input[type=url] {
   max-width: 400px;
   min-width: 250px;
 }
-/* line 809, ../scss/_base.scss */
+/* line 840, ../scss/_base.scss */
 .respond-form form textarea {
   resize: none;
   width: 97.3%;
@@ -3431,7 +3479,7 @@ COMMENT FORM STYLES
 }
 
 /* comment submit button */
-/* line 819, ../scss/_base.scss */
+/* line 850, ../scss/_base.scss */
 #submit {
   font-family: Helvetica;
   background: #999999;
@@ -3441,11 +3489,11 @@ COMMENT FORM STYLES
   color: white;
   padding: 0.3em 0.5em;
   line-height: 1.5;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  -ms-border-radius: 6px;
-  -o-border-radius: 6px;
-  border-radius: 6px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
 }
 /* line 78, ../scss/libs/_mixins.scss */
 #submit:hover, #submit:focus {
@@ -3469,7 +3517,7 @@ COMMENT FORM STYLES
 }
 
 /* comment form title */
-/* line 824, ../scss/_base.scss */
+/* line 855, ../scss/_base.scss */
 #comment-form-title {
   margin: 0 0 1.1em;
 }
@@ -3477,13 +3525,13 @@ COMMENT FORM STYLES
 /* cancel comment reply link */
 /* logged in comments */
 /* allowed tags */
-/* line 837, ../scss/_base.scss */
+/* line 868, ../scss/_base.scss */
 #allowed_tags {
   margin: 1.5em 10px 0.7335em 0;
 }
 
 /* no comments */
-/* line 842, ../scss/_base.scss */
+/* line 873, ../scss/_base.scss */
 .nocomments {
   margin: 0 20px 1.1em;
 }
@@ -3491,15 +3539,15 @@ COMMENT FORM STYLES
 /*********************
 SIDEBARS & ASIDES
 *********************/
-/* line 854, ../scss/_base.scss */
+/* line 885, ../scss/_base.scss */
 .widget {
-  margin: 32px 0;
+  margin: 1.875em 0;
 }
-/* line 856, ../scss/_base.scss */
+/* line 888, ../scss/_base.scss */
 .widget ul {
   list-style-type: none;
 }
-/* line 858, ../scss/_base.scss */
+/* line 890, ../scss/_base.scss */
 .widget ul li {
   /* deep nesting */
 }
@@ -3507,38 +3555,23 @@ SIDEBARS & ASIDES
 /*********************
 FOOTER STYLES
 *********************/
-/* line 879, ../scss/_base.scss */
+/* line 911, ../scss/_base.scss */
 .footer {
   clear: both;
   font-size: 0.875em;
   line-height: 1.71429em;
   margin-top: 2.28571em;
 }
-/* line 884, ../scss/_base.scss */
+/* line 916, ../scss/_base.scss */
 .footer .wrap {
   border-top: 1px solid #eeeeee;
   padding: 0.44444em 0;
 }
 
-/*
-if you checked out the link above:
-http://www.alistapart.com/articles/organizing-mobile/
-you'll want to style the footer nav
-a bit more in-depth. Remember to keep
-it simple because you'll have to
-override these styles for the desktop
-view.
-*/
-/* line 900, ../scss/_base.scss */
-.footer-nav {
-  list-style-type: none;
-}
-
-/* end .footer-links */
 /*********************
 WPFOLIO FEATURES
 *********************/
-/* line 920, ../scss/_base.scss */
+/* line 934, ../scss/_base.scss */
 .media-wrap {
   position: relative;
   padding-bottom: 56.25%;
@@ -3549,7 +3582,7 @@ WPFOLIO FEATURES
   margin: 0 auto 2.2em;
 }
 
-/* line 930, ../scss/_base.scss */
+/* line 944, ../scss/_base.scss */
 .media-wrap iframe, .media-wrap object, .media-wrap embed {
   position: absolute;
   top: 0;
@@ -3575,7 +3608,7 @@ LARGER MOBILE DEVICES
 larger than an iPhone but smaller than a tablet. Let's call them
 phablets.
 */
-@media only screen and (min-width: 30.0625em) {
+@media only screen and (min-width: 30em) {
   /******************************************************************
   Site Name: 
   Author: 
@@ -3708,14 +3741,9 @@ the resource intensive styles are added, like the grid.
   /*********************
   LAYOUT & GRID STYLES
   *********************/
-  /* line 25, ../scss/_tablet.scss */
-  .home #content, .home .footer {
-    display: none;
-  }
-
   /* line 30, ../scss/_tablet.scss */
-  .widemargins {
-    margin: 0 em-font(160px);
+  .js .home #content, .js .home .footer {
+    display: none;
   }
 
   /*********************
@@ -3724,57 +3752,57 @@ the resource intensive styles are added, like the grid.
   /*********************
   NAVIGATION STYLES
   *********************/
-  /* line 50, ../scss/_tablet.scss */
+  /* line 52, ../scss/_tablet.scss */
   a.menu-link {
     display: none;
   }
 
-  /* line 54, ../scss/_tablet.scss */
+  /* line 56, ../scss/_tablet.scss */
   .js nav[role=navigation] {
     max-height: none;
   }
 
-  /* line 58, ../scss/_tablet.scss */
+  /* line 60, ../scss/_tablet.scss */
   nav[role=navigation] {
     clear: none;
   }
-  /* line 61, ../scss/_tablet.scss */
+  /* line 63, ../scss/_tablet.scss */
   nav[role=navigation] ul {
     border: 0;
   }
-  /* line 65, ../scss/_tablet.scss */
+  /* line 67, ../scss/_tablet.scss */
   nav[role=navigation] li {
     display: inline-block;
   }
-  /* line 68, ../scss/_tablet.scss */
+  /* line 70, ../scss/_tablet.scss */
   nav[role=navigation] li a {
     border: 0;
   }
 
-  /* line 75, ../scss/_tablet.scss */
+  /* line 77, ../scss/_tablet.scss */
   .nav {
     border: 0;
     /* end .menu ul li */
     /* highlight current page */
     /* end current highlighters */
   }
-  /* line 78, ../scss/_tablet.scss */
+  /* line 80, ../scss/_tablet.scss */
   .nav li {
     /*
     plan your menus and drop-downs wisely.
     */
     /* showing sub-menus */
   }
-  /* line 80, ../scss/_tablet.scss */
+  /* line 82, ../scss/_tablet.scss */
   .nav li a {
     border-bottom: 0;
-    padding: 0.44444em 0.88889em;
+    padding: 7px 14px;
   }
-  /* line 84, ../scss/_tablet.scss */
+  /* line 86, ../scss/_tablet.scss */
   .nav li a:hover {
     background-color: #d4d4d4;
   }
-  /* line 96, ../scss/_tablet.scss */
+  /* line 98, ../scss/_tablet.scss */
   .nav li ul.sub-menu,
   .nav li ul.children {
     text-align: left;
@@ -3786,7 +3814,7 @@ the resource intensive styles are added, like the grid.
     width: 160px;
     /* highlight sub-menu current page */
   }
-  /* line 105, ../scss/_tablet.scss */
+  /* line 107, ../scss/_tablet.scss */
   .nav li ul.sub-menu li,
   .nav li ul.children li {
     width: 100%;
@@ -3796,29 +3824,29 @@ the resource intensive styles are added, like the grid.
     for usability. k, bai.
     */
   }
-  /* line 108, ../scss/_tablet.scss */
+  /* line 110, ../scss/_tablet.scss */
   .nav li ul.sub-menu li:last-child,
   .nav li ul.children li:last-child {
     border-bottom: 0;
   }
-  /* line 112, ../scss/_tablet.scss */
+  /* line 114, ../scss/_tablet.scss */
   .nav li ul.sub-menu li a,
   .nav li ul.children li a {
     text-align: left;
-    padding-left: 1.33333em;
+    padding-left: 1.5em;
   }
-  /* line 117, ../scss/_tablet.scss */
+  /* line 119, ../scss/_tablet.scss */
   .nav li ul.sub-menu li a:hover, .nav li ul.sub-menu li a:focus,
   .nav li ul.children li a:hover,
   .nav li ul.children li a:focus {
     background-color: #d4d4d4;
   }
-  /* line 128, ../scss/_tablet.scss */
+  /* line 130, ../scss/_tablet.scss */
   .nav li ul.sub-menu li:last-child a,
   .nav li ul.children li:last-child a {
     border-bottom: 0;
   }
-  /* line 145, ../scss/_tablet.scss */
+  /* line 147, ../scss/_tablet.scss */
   .nav li ul.sub-menu li.current-menu-item a,
   .nav li ul.sub-menu li.current_page_item a,
   .nav li ul.sub-menu li.current-page-ancestor a,
@@ -3827,7 +3855,7 @@ the resource intensive styles are added, like the grid.
   .nav li ul.children li.current-page-ancestor a {
     background-color: #d4d4d4;
   }
-  /* line 152, ../scss/_tablet.scss */
+  /* line 154, ../scss/_tablet.scss */
   .nav li:hover ul {
     top: auto;
     display: block;
@@ -3837,47 +3865,68 @@ the resource intensive styles are added, like the grid.
   /*********************
   POSTS & CONTENT STYLES
   *********************/
-  /* line 174, ../scss/_tablet.scss */
+  /* line 176, ../scss/_tablet.scss */
   .project-thumb img, .gallery-item img {
     opacity: 1;
   }
-  /* line 177, ../scss/_tablet.scss */
+  /* line 179, ../scss/_tablet.scss */
   .project-thumb img:hover, .gallery-item img:hover {
     opacity: 0.6;
   }
-  /* line 181, ../scss/_tablet.scss */
+  /* line 183, ../scss/_tablet.scss */
   .project-thumb img:active, .gallery-item img:active {
     opacity: 1;
   }
 
-  /* line 187, ../scss/_tablet.scss */
+  /* line 190, ../scss/_tablet.scss */
+  .project-taxonomies a:hover {
+    background-color: #aaaaaa;
+    color: white;
+  }
+
+  /* line 196, ../scss/_tablet.scss */
+  .project-meta {
+    padding-bottom: 0;
+  }
+
+  /* line 200, ../scss/_tablet.scss */
   .comment_content {
     margin-left: 50px;
+  }
+
+  /* line 204, ../scss/_tablet.scss */
+  .mobile-hide {
+    display: block;
+  }
+
+  /* line 208, ../scss/_tablet.scss */
+  .mobile-show {
+    display: none;
   }
 
   /*********************
   SIDEBARS & ASIDES
   *********************/
-  /* line 199, ../scss/_tablet.scss */
+  /* line 220, ../scss/_tablet.scss */
   .widgettitle {
     text-align: left;
   }
 
-  /* line 203, ../scss/_tablet.scss */
+  /* line 224, ../scss/_tablet.scss */
   .widget {
-    padding: 0 12px;
+    padding: 0 1.125em;
     border-left: #eeeeee 1px solid;
   }
-  /* line 207, ../scss/_tablet.scss */
+  /* line 228, ../scss/_tablet.scss */
   .widget ul {
     list-style-type: none;
   }
-  /* line 210, ../scss/_tablet.scss */
+  /* line 231, ../scss/_tablet.scss */
   .widget ul li {
     margin-bottom: 0.75em;
     /* deep nesting */
   }
-  /* line 218, ../scss/_tablet.scss */
+  /* line 239, ../scss/_tablet.scss */
   .widget ul li ul {
     margin-top: 0.75em;
     padding-left: 1em;
@@ -3902,7 +3951,7 @@ the resource intensive styles are added, like the grid.
   of overriding here if you styled them for
   mobile. Make sure to double check these!
   */
-  /* line 327, ../scss/_tablet.scss */
+  /* line 348, ../scss/_tablet.scss */
   .footer-nav li {
     /*
     be careful with the depth of your menus.
@@ -3910,13 +3959,13 @@ the resource intensive styles are added, like the grid.
     the footer.
     */
   }
-  /* line 328, ../scss/_tablet.scss */
+  /* line 349, ../scss/_tablet.scss */
   .footer-nav li a {
     padding-top: 0;
   }
 
   /* end .footer-nav */
-  /* line 342, ../scss/_tablet.scss */
+  /* line 363, ../scss/_tablet.scss */
   .copyright {
     text-align: right;
   }
@@ -3938,6 +3987,11 @@ in general anyone not viewing on a mobile device.
   /* line 10, ../scss/_desktop.scss */
   .header {
     text-align: left;
+  }
+
+  /* line 16, ../scss/_desktop.scss */
+  .project-taxonomies .tags-title {
+    display: inline;
   }
 }
 /*

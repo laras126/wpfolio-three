@@ -1,6 +1,13 @@
 @import "settings";
 @import "mixins";
 
+
+html {
+	@include establish-baseline;	
+}
+
+
+
 // Set up core font-sizing and rhythm
 // http://sass.fffunction.co/
 
@@ -21,32 +28,35 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 { 
-	@include adjust-font-size-to(36px); 
-	margin: 0 0 rhythm(3, 36px) 0;  						// 3 lines below, based on font size
+	font-size: $h1; 
+	margin: 0 0 rhythm(3, $h1) 0;  						// 3 lines below, based on font size
+	font-weight: 500;
 } 
 			
 h2 { 
-	@include adjust-font-size-to(30px); 
-	margin: rhythm(4, 30px) 0 rhythm(2, 30px) 0;  			// 4 lines above / 2 lines below, based on font size 
+	font-size: $h2; 
+	margin: rhythm(4, $h2) 0 rhythm(2, $h2) 0;  			// 4 lines above / 2 lines below, based on font size 
+	font-weight: 500;
 }
 
 h3 { 
-	@include adjust-font-size-to(22px); 
-	margin: rhythm(4, 22px) 0 rhythm(2, 22px) 0;  			// 4 lines above / 2 lines below, based on font size 
+	font-size: $h3;
+	margin: rhythm(4, $h3) 0 rhythm(2, $h3) 0;  			// 4 lines above / 2 lines below, based on font size 
+	font-weight: 500;
 } 
 
 h4 { 
-	@include adjust-font-size-to(20px); 
-	margin: 0 0 rhythm(1, 20px) 0;  						// 1 lines below, based on font size 
+	font-size: $h4;
+	margin: 0 0 rhythm(1, $h4) 0;  						// 1 lines below, based on font size 
 } 
 
 h5 { 
-	@include adjust-font-size-to(18px); 
-	margin: 0 0 rhythm(1, 18px) 0;  						// 1 lines below, based on font size 
+	font-size: $h5;
+	margin: 0 0 rhythm(1, $h5) 0;  						// 1 lines below, based on font size 
 } 
 
 h6 { 
-	@include adjust-font-size-to(16px); 
+	font-size: $base-font-size;
 	margin: 0 0 rhythm(1, 16px) 0;  						// 1 lines below, based on font size 
 } 	
 

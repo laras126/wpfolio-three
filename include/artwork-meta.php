@@ -18,7 +18,7 @@ $aw_link = get_post_meta( $post->ID, '_ctmb_link', true );
 $aw_link_text = get_post_meta( $post->ID, '_ctmb_link_text', true ); 
 ?>
 
-<div class="clearfix">
+<!-- <div class="clearfix"> -->
 	<h4><?php echo the_title(); ?></h4>
 
 	<ul class="artwork-meta">
@@ -33,18 +33,18 @@ $aw_link_text = get_post_meta( $post->ID, '_ctmb_link_text', true );
 			echo '<li>' . $aw_medium . '</li>';
 		}
 
+		if ( $aw_link ) {
+			echo '<li class="aw-sep project-link"><a href="' . $aw_link . '">' . $aw_link_text . '</a></li>';
+		}
+
 		if ( $aw_desc ) {
-			echo '<li>' . $aw_desc . '</li>';
+			echo '<li class="aw-sep">' . $aw_desc . '</li>';
 		}
 
 		if ( $aw_acknow ) {
 			echo '<li class="aw-sep"><h5>Acknowledgements</h5>' . $aw_acknow . '</li>';
 		}
 
-		if ( $aw_link ) {
-			echo '<li class="aw-sep project-link"><a href="' . $aw_link . '">' . $aw_link_text . '</a></li>';
-		}
-		
 		?>
 	</ul>
-</div>
+<!-- </div> -->

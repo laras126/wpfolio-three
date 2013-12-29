@@ -29,10 +29,10 @@ Should it be differentiated more?
 								<?php
 									/**
 
-									Hey WordPress: 
+									Hey, WordPress: 
 									Why does this this template need to be so complicated?
 
-									Hey anyone who actually reads this:		
+									Hey, anyone who actually reads this:		
 									Does this template need to be so complicated?
 
 									Code below taken graciously from the 

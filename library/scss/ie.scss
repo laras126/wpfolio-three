@@ -29,9 +29,9 @@ import the mixins file so SASS can understand the variables.
 @import "libs/mixins";
 
 @import "base";
-@import "481up";
-@import "768up";
-@import "1030up";
+@import "mobile";
+@import "tablet";
+@import "desktop";
 
 /* 
 you can call the larger styles if you want, but there's really no need 
