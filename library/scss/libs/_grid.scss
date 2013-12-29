@@ -51,7 +51,7 @@ $desktop 		: 60em;
 		@include span-columns(2,6);
 		&:nth-child(2n+2) { @include remove-omega; }
 		&:nth-child(3n+3) { @include omega; } // every third image completes a row.	
-		height: 25em;
+		height: 23em;
 	}
 
 	.prev  {
@@ -112,17 +112,6 @@ $desktop 		: 60em;
 
 }
 
-// // Large desktop
-// @include at-breakpoint(74em 12) {
-
-// 	// Portfolio layout
-// 	.project-thumb {
-// 		height: 22em;
-// 	}
-// }
-
-
-
 
 // GROSS THUMBNAIL HEIGHT MQs
 @include at-breakpoint(33.25em 4) {
@@ -133,7 +122,7 @@ $desktop 		: 60em;
 
 @include at-breakpoint(40em 4) {
 	.project-thumb {
-		height: 27em;
+		height: 25em;
 	}
 }
 // END GROSS MQs

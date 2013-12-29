@@ -239,11 +239,11 @@ POSTS & CONTENT STYLES
 }
 
 		.article-header {
-			margin-bottom: rhythm(4, 18px);
+			margin-bottom: rhythm(4, $h5);
 		}
 			.entry-title {
 				margin-bottom: rhythm(1, 22px);
-				@include adjust-font-size-to(30px); 
+				font-size: $h2;
 
 				a {
 					color: $primary;
@@ -251,9 +251,8 @@ POSTS & CONTENT STYLES
 			}
 			
 
-		// TODO: is this getting to be too detailed margin-wise?
 		.article-footer {
-			padding: 1.5em 0;
+			padding: rhythm(4, $h2) 0;
 			border-bottom: 1px solid $accent-light;
 			border-top: 1px solid $accent-light;
 		}
@@ -267,7 +266,7 @@ POSTS & CONTENT STYLES
 		} /* end .hentry */
 
 		// TODO: make these one class
-		.page-title, .project-title, .project-thumb-title, .medium-title {
+		.page-title, .project-cat-title, .project-thumb-title, .medium-title {
 			text-align: center;
 		}
 
@@ -440,12 +439,12 @@ POSTS & CONTENT STYLES
 	list-style: none;
 }
 
-.project-title {	
-	@include adjust-font-size-to(18px);
+.project-cat-title {	
+	font-size: $h5;
 	text-transform: uppercase;
 	text-align: center;
 	letter-spacing: 1px;
-	margin-bottom: rhythm(4, 18px);	
+	margin-bottom: rhythm(4, $h5);	
 }
 
 .project-thumb img {
@@ -456,7 +455,8 @@ POSTS & CONTENT STYLES
 }
 
 .project-thumb-title {
-	margin-bottom: rhythm(4, 18px);
+	font-size: $sml;
+	margin-bottom: rhythm(4, $h5);
 }
 
 .artwork-meta {
