@@ -4,12 +4,16 @@ Author: Lara Schenck
 
 Stylesheet: Main Stylesheet
 
-Import all necessary libraries and call in all separate 
-media queries. The base mobile goes outside any query
-and is called at the beginning, after that we call the 
-rest of the styles inside media queries. 
+Import all necessary libraries and such. 
+The base mobile goes outside any query
+and is called at the beginning, after that we 
+call the rest of the styles inside media queries. 
 
-Don't add styles here! Use a child theme.
+--
+
+Hey, you! Yeah, you!
+Don't add styles here! 
+Add them to the appropriate other files.
 ******************************************************************/
 /*!
  *  Font Awesome 4.0.3 by @davegandy - http://fontawesome.io - @fontawesome
@@ -2382,17 +2386,7 @@ textarea {
     height: 27em;
   }
 }
-/*
-BASE (MOBILE) SIZE
-These are the mobile styles.
-I set a solid foundation 
-so their aren't too many styles 
-in the other stylesheets. 
-
-Isn't that kind of like a poem?
-*/
-/* Base styles: Almost exclusively single element selectors */
-/* ------------------------------------------------------------ */
+/* Root styles: Almost exclusively single element selectors */
 /*
  * Doh! Swiped this from 3.8. Thanks, WP, you doll.
  */
@@ -2743,6 +2737,15 @@ input[type="checkbox"]:focus {
   outline-offset: -2px;
 }
 
+/*
+BASE (MOBILE) SIZE
+These are the mobile styles.
+I set a solid foundation 
+so their aren't too many styles 
+in the other stylesheets. 
+
+Isn't that kind of like a poem?
+*/
 /* ::Clearfixs and extends. Use which suits best */
 /* ----------------------------------------------------------- */
 /* line 10, ../scss/libs/_extends.scss */
@@ -3568,7 +3571,7 @@ WPFOLIO FEATURES
 
 /*
 LARGER MOBILE DEVICES
-This is for devices like the Galaxy Note or something that's
+-This is for devices like the Galaxy Note or something that's
 larger than an iPhone but smaller than a tablet. Let's call them
 phablets.
 */
@@ -3592,33 +3595,33 @@ phablets.
   /*********************
   NAVIGATION STYLES
   *********************/
-  /* line 25, ../scss/_481up.scss */
+  /* line 25, ../scss/_mobile.scss */
   .nav {
     display: inline-block;
   }
-  /* line 28, ../scss/_481up.scss */
+  /* line 28, ../scss/_mobile.scss */
   .nav li {
     text-align: center;
   }
 
   /* .menu is clearfixed inside mixins.scss */
-  /* line 36, ../scss/_481up.scss */
+  /* line 36, ../scss/_mobile.scss */
   .menu {
     /* end .menu ul */
   }
-  /* line 37, ../scss/_481up.scss */
+  /* line 37, ../scss/_mobile.scss */
   .menu ul {
     /* end .menu ul li */
     /* highlight current page */
     /* end current highlighters */
   }
-  /* line 38, ../scss/_481up.scss */
+  /* line 38, ../scss/_mobile.scss */
   .menu ul li {
     /*
     plan your menus and drop-downs wisely.
     */
   }
-  /* line 39, ../scss/_481up.scss */
+  /* line 39, ../scss/_mobile.scss */
   .menu ul li a {
     /*
     you can use hover styles here even though this size
@@ -3631,23 +3634,23 @@ phablets.
   POSTS & CONTENT STYLES
   *********************/
   /* entry content */
-  /* line 85, ../scss/_481up.scss */
+  /* line 85, ../scss/_mobile.scss */
   .entry-content {
     /* at this larger size, we can start to align images */
   }
-  /* line 89, ../scss/_481up.scss */
+  /* line 89, ../scss/_mobile.scss */
   .entry-content .alignleft, .entry-content img.alignleft {
     margin-right: 1.5em;
     display: inline;
     float: left;
   }
-  /* line 94, ../scss/_481up.scss */
+  /* line 94, ../scss/_mobile.scss */
   .entry-content .alignright, .entry-content img.alignright {
     margin-left: 1.5em;
     display: inline;
     float: right;
   }
-  /* line 99, ../scss/_481up.scss */
+  /* line 99, ../scss/_mobile.scss */
   .entry-content .aligncenter, .entry-content img.aligncenter {
     margin-right: auto;
     margin-left: auto;
@@ -3656,13 +3659,13 @@ phablets.
   }
 
   /* end .entry-content */
-  /* line 114, ../scss/_481up.scss */
+  /* line 114, ../scss/_mobile.scss */
   .single-project.single-format-video iframe {
     width: 100%;
     height: 300px;
   }
 
-  /* line 121, ../scss/_481up.scss */
+  /* line 121, ../scss/_mobile.scss */
   .line-clamp {
     overflow: hidden;
     display: -webkit-box;
@@ -3705,12 +3708,12 @@ the resource intensive styles are added, like the grid.
   /*********************
   LAYOUT & GRID STYLES
   *********************/
-  /* line 25, ../scss/_768up.scss */
+  /* line 25, ../scss/_tablet.scss */
   .home #content, .home .footer {
     display: none;
   }
 
-  /* line 30, ../scss/_768up.scss */
+  /* line 30, ../scss/_tablet.scss */
   .widemargins {
     margin: 0 em-font(160px);
   }
@@ -3721,57 +3724,57 @@ the resource intensive styles are added, like the grid.
   /*********************
   NAVIGATION STYLES
   *********************/
-  /* line 50, ../scss/_768up.scss */
+  /* line 50, ../scss/_tablet.scss */
   a.menu-link {
     display: none;
   }
 
-  /* line 54, ../scss/_768up.scss */
+  /* line 54, ../scss/_tablet.scss */
   .js nav[role=navigation] {
     max-height: none;
   }
 
-  /* line 58, ../scss/_768up.scss */
+  /* line 58, ../scss/_tablet.scss */
   nav[role=navigation] {
     clear: none;
   }
-  /* line 61, ../scss/_768up.scss */
+  /* line 61, ../scss/_tablet.scss */
   nav[role=navigation] ul {
     border: 0;
   }
-  /* line 65, ../scss/_768up.scss */
+  /* line 65, ../scss/_tablet.scss */
   nav[role=navigation] li {
     display: inline-block;
   }
-  /* line 68, ../scss/_768up.scss */
+  /* line 68, ../scss/_tablet.scss */
   nav[role=navigation] li a {
     border: 0;
   }
 
-  /* line 75, ../scss/_768up.scss */
+  /* line 75, ../scss/_tablet.scss */
   .nav {
     border: 0;
     /* end .menu ul li */
     /* highlight current page */
     /* end current highlighters */
   }
-  /* line 78, ../scss/_768up.scss */
+  /* line 78, ../scss/_tablet.scss */
   .nav li {
     /*
     plan your menus and drop-downs wisely.
     */
     /* showing sub-menus */
   }
-  /* line 80, ../scss/_768up.scss */
+  /* line 80, ../scss/_tablet.scss */
   .nav li a {
     border-bottom: 0;
     padding: 0.44444em 0.88889em;
   }
-  /* line 84, ../scss/_768up.scss */
+  /* line 84, ../scss/_tablet.scss */
   .nav li a:hover {
     background-color: #d4d4d4;
   }
-  /* line 96, ../scss/_768up.scss */
+  /* line 96, ../scss/_tablet.scss */
   .nav li ul.sub-menu,
   .nav li ul.children {
     text-align: left;
@@ -3783,7 +3786,7 @@ the resource intensive styles are added, like the grid.
     width: 160px;
     /* highlight sub-menu current page */
   }
-  /* line 105, ../scss/_768up.scss */
+  /* line 105, ../scss/_tablet.scss */
   .nav li ul.sub-menu li,
   .nav li ul.children li {
     width: 100%;
@@ -3793,29 +3796,29 @@ the resource intensive styles are added, like the grid.
     for usability. k, bai.
     */
   }
-  /* line 108, ../scss/_768up.scss */
+  /* line 108, ../scss/_tablet.scss */
   .nav li ul.sub-menu li:last-child,
   .nav li ul.children li:last-child {
     border-bottom: 0;
   }
-  /* line 112, ../scss/_768up.scss */
+  /* line 112, ../scss/_tablet.scss */
   .nav li ul.sub-menu li a,
   .nav li ul.children li a {
     text-align: left;
     padding-left: 1.33333em;
   }
-  /* line 117, ../scss/_768up.scss */
+  /* line 117, ../scss/_tablet.scss */
   .nav li ul.sub-menu li a:hover, .nav li ul.sub-menu li a:focus,
   .nav li ul.children li a:hover,
   .nav li ul.children li a:focus {
     background-color: #d4d4d4;
   }
-  /* line 128, ../scss/_768up.scss */
+  /* line 128, ../scss/_tablet.scss */
   .nav li ul.sub-menu li:last-child a,
   .nav li ul.children li:last-child a {
     border-bottom: 0;
   }
-  /* line 145, ../scss/_768up.scss */
+  /* line 145, ../scss/_tablet.scss */
   .nav li ul.sub-menu li.current-menu-item a,
   .nav li ul.sub-menu li.current_page_item a,
   .nav li ul.sub-menu li.current-page-ancestor a,
@@ -3824,7 +3827,7 @@ the resource intensive styles are added, like the grid.
   .nav li ul.children li.current-page-ancestor a {
     background-color: #d4d4d4;
   }
-  /* line 152, ../scss/_768up.scss */
+  /* line 152, ../scss/_tablet.scss */
   .nav li:hover ul {
     top: auto;
     display: block;
@@ -3834,20 +3837,20 @@ the resource intensive styles are added, like the grid.
   /*********************
   POSTS & CONTENT STYLES
   *********************/
-  /* line 174, ../scss/_768up.scss */
+  /* line 174, ../scss/_tablet.scss */
   .project-thumb img, .gallery-item img {
     opacity: 1;
   }
-  /* line 177, ../scss/_768up.scss */
+  /* line 177, ../scss/_tablet.scss */
   .project-thumb img:hover, .gallery-item img:hover {
     opacity: 0.6;
   }
-  /* line 181, ../scss/_768up.scss */
+  /* line 181, ../scss/_tablet.scss */
   .project-thumb img:active, .gallery-item img:active {
     opacity: 1;
   }
 
-  /* line 187, ../scss/_768up.scss */
+  /* line 187, ../scss/_tablet.scss */
   .comment_content {
     margin-left: 50px;
   }
@@ -3855,26 +3858,26 @@ the resource intensive styles are added, like the grid.
   /*********************
   SIDEBARS & ASIDES
   *********************/
-  /* line 199, ../scss/_768up.scss */
+  /* line 199, ../scss/_tablet.scss */
   .widgettitle {
     text-align: left;
   }
 
-  /* line 203, ../scss/_768up.scss */
+  /* line 203, ../scss/_tablet.scss */
   .widget {
     padding: 0 12px;
     border-left: #eeeeee 1px solid;
   }
-  /* line 207, ../scss/_768up.scss */
+  /* line 207, ../scss/_tablet.scss */
   .widget ul {
     list-style-type: none;
   }
-  /* line 210, ../scss/_768up.scss */
+  /* line 210, ../scss/_tablet.scss */
   .widget ul li {
     margin-bottom: 0.75em;
     /* deep nesting */
   }
-  /* line 218, ../scss/_768up.scss */
+  /* line 218, ../scss/_tablet.scss */
   .widget ul li ul {
     margin-top: 0.75em;
     padding-left: 1em;
@@ -3899,7 +3902,7 @@ the resource intensive styles are added, like the grid.
   of overriding here if you styled them for
   mobile. Make sure to double check these!
   */
-  /* line 327, ../scss/_768up.scss */
+  /* line 327, ../scss/_tablet.scss */
   .footer-nav li {
     /*
     be careful with the depth of your menus.
@@ -3907,13 +3910,13 @@ the resource intensive styles are added, like the grid.
     the footer.
     */
   }
-  /* line 328, ../scss/_768up.scss */
+  /* line 328, ../scss/_tablet.scss */
   .footer-nav li a {
     padding-top: 0;
   }
 
   /* end .footer-nav */
-  /* line 342, ../scss/_768up.scss */
+  /* line 342, ../scss/_tablet.scss */
   .copyright {
     text-align: right;
   }
@@ -3932,7 +3935,7 @@ in general anyone not viewing on a mobile device.
   be seen on the Desktop. 
   
   ******************************************************************/
-  /* line 10, ../scss/_1030up.scss */
+  /* line 10, ../scss/_desktop.scss */
   .header {
     text-align: left;
   }

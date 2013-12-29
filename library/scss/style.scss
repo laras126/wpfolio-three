@@ -4,21 +4,25 @@ Author: Lara Schenck
 
 Stylesheet: Main Stylesheet
 
-Import all necessary libraries and call in all separate 
-media queries. The base mobile goes outside any query
-and is called at the beginning, after that we call the 
-rest of the styles inside media queries. 
+Import all necessary libraries and such. 
+The base mobile goes outside any query
+and is called at the beginning, after that we 
+call the rest of the styles inside media queries. 
 
-Don't add styles here! Use a child theme.
+--
+
+Hey, you! Yeah, you!
+Don't add styles here! 
+Add them to the appropriate other files.
 ******************************************************************/
 
 //
 // IMPORTING THINGS
 //
 
-@import "modular-scale";
 @import "compass/css3";
 @import "compass/utilities";
+@import "modular-scale";
 @import "susy";
 
 @import "../font/font-awesome/scss/font-awesome";
@@ -26,6 +30,12 @@ Don't add styles here! Use a child theme.
 @import "libs/settings";
 @import "libs/mixins";
 @import "libs/grid";
+
+
+/* Root styles: Almost exclusively single element selectors */
+@import "libs/typography";
+@import "libs/forms";
+
 
 
 /*
@@ -39,32 +49,28 @@ Isn't that kind of like a poem?
 */
 
 
-/* Base styles: Almost exclusively single element selectors */
-/* ------------------------------------------------------------ */
-
-
-// Import base typography into the cascade (if required)
-@import "libs/typography";
-
-// Import form styles into the cascade (if required)
-@import "libs/forms";
-
 // Styles for all devices
 @import "base";
 @import "admin";
 
+
+
+
 /*
 LARGER MOBILE DEVICES
-This is for devices like the Galaxy Note or something that's
+-This is for devices like the Galaxy Note or something that's
 larger than an iPhone but smaller than a tablet. Let's call them
 phablets.
 */
+
 @media only screen and (min-width: $mobile) {
 
 	// styles in 481up.scss
-	@import "481up";
+	@import "mobile";
 
 } // end of media query
+
+
 
 /*
 TABLET & SMALLER LAPTOPS
@@ -75,9 +81,11 @@ the resource intensive styles are added, like the grid.
 @media only screen and (min-width: $tablet) {
 	
 	// styles in 768up.scss
-	@import "768up";
+	@import "tablet";
 
 } // end of media query
+
+
 
 /*
 DESKTOP
@@ -87,9 +95,11 @@ in general anyone not viewing on a mobile device.
 @media only screen and (min-width: $desktop) {
 
 	// styles in 1030up.scss
-	@import "1030up";
+	@import "desktop";
 
 } // end of media query
+
+
 
 /*
 RETINA (2x RESOLUTION DEVICES)
@@ -105,6 +115,7 @@ query for retina AND a certain size if you want. Go Nuts.
 	@import "2x";
 
 } // end of media query
+
 
 
 /*
@@ -127,4 +138,3 @@ be set to display none.
 @media print {
 	@import "print";
 }
-
