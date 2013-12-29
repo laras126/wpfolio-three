@@ -174,7 +174,7 @@ function bones_theme_support() {
 	add_theme_support('post-thumbnails');
 
 	// default thumb size
-	set_post_thumbnail_size(300, 300, true);
+	set_post_thumbnail_size(300, 300);
 
 	// Note: Do we need both of these? Is one not necessary at all?
 
@@ -193,6 +193,9 @@ function bones_theme_support() {
 	add_theme_support('automatic-feed-links');
 
 	// to add header image support go here: http://themble.com/support/adding-header-background-image-support/
+
+	
+	// TODO: Do we want to use these? For text based posts or something? 
 
 	// No support for post formats - sorry, WP, they aren't that useful! (IMHO)
 	// // adding post format support

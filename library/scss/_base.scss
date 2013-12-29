@@ -448,7 +448,8 @@ POSTS & CONTENT STYLES
 }
 
 .project-thumb img {
-	@extend .max-width !optional;
+	width: 100%;
+	height: auto;
 	display: block;
 	margin: auto;
 	margin-bottom: rhythm(1, 16px);
