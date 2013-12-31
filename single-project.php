@@ -19,11 +19,11 @@ Template for single Projects
 					<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
 
 						<section class="entry-content clearfix">
-
+							<h1 class="project-title single-title" itemprop="headline"><?php the_title(); ?></h1>
 							<?php the_content(); ?>
 							<?php include('include/artwork-meta.php'); ?>
 
-							<ul class="project-taxonomies tags">
+							<ul class="project-taxonomies">
 								
 								<li><?php echo get_the_term_list( get_the_ID(), 'people', '<span class="tags-title">' . __( 'People:', 'bonestheme' ) . '</span> ', ' ' ) ?></li>
 								

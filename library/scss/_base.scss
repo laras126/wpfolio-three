@@ -33,9 +33,16 @@ style a page via class
 	.search-no-results {}           // no results search page
 	.search-paged-1 {}              // individual paged search (i.e. body.search-paged-3)
 .error404 {}                      // 404 page
-.single {}                        // single post page
-	.postid-1 {}                    // individual post page by id (i.e. body.postid-73)
-	.single-paged-1 {}              // individual paged single (i.e. body.single-paged-3)
+
+.single {
+	.article-footer {
+		padding: rhythm(4, $h2) 0;
+		border-bottom: 1px solid $accent-light;
+		border-top: 1px solid $accent-light;
+	}
+}                        // single post page
+
+
 .attachment { 						// attachment page
 	// Center images on attachment pages
 	img {
@@ -249,13 +256,7 @@ POSTS & CONTENT STYLES
 					color: $primary;
 				}
 			}
-			
-
-		.article-footer {
-			padding: rhythm(4, $h2) 0;
-			border-bottom: 1px solid $accent-light;
-			border-top: 1px solid $accent-light;
-		}
+		
 
 		.hentry {
 
@@ -266,8 +267,8 @@ POSTS & CONTENT STYLES
 		} /* end .hentry */
 
 		// TODO: make these one class
-		.page-title, .project-cat-title, .project-thumb-title, .medium-title {
-			text-align: center;
+		.page-title, .project-title, .project-thumb-title {
+			@extend .text-center;
 		}
 
 		.archive-title { }
@@ -298,6 +299,7 @@ POSTS & CONTENT STYLES
 
 		.tags {
 			@include nobullet;
+			margin-bottom: 0;
 		}
 
 		.tags-title {
@@ -307,7 +309,6 @@ POSTS & CONTENT STYLES
 
 		/* entry content */
 		.entry-content {
-			//line-height: 1.5em;
 
 			p {}
 
@@ -439,17 +440,14 @@ POSTS & CONTENT STYLES
 	list-style: none;
 }
 
-.project-cat-title {	
-	font-size: $h5;
-	text-transform: uppercase;
-	text-align: center;
-	letter-spacing: 1px;
-	margin-bottom: rhythm(4, $h5);	
+.project-title, .page-title {	
+	@extend .uppercase-title;
+	margin-top: 0;
 }
 
 .project-thumb img {
-	width: 100%;
-	height: auto;
+	// width: 100%;
+	// height: auto;
 	display: block;
 	margin: auto;
 	margin-bottom: rhythm(1, 16px);
@@ -483,6 +481,7 @@ POSTS & CONTENT STYLES
 	.tags-title {
 		display: block;
 	}
+	list-style: none;
 	li a {
 		background-color: $accent-light;
 		padding: 0 0.25em;
@@ -773,8 +772,6 @@ COMMENT STYLES
 
 		p {
 			margin: 0.7335em 0 1.5em;
-			font-size: 1em;
-			//line-height: 1.5em;
 		}
 
 	} /* end .commentlist .comment_content */

@@ -15,7 +15,7 @@ Template for the Project Category taxonomy archive.
 				<div id="main" class="clearfix" role="main">
 
 					<!-- TODO: conditionally show taxonomy term (i.e. People: Lara Schenck, Places: Louvre) -->
-					<h2 class="project-cat-title"><span><?php _e( '', 'bonestheme' ); ?></span> <?php single_cat_title(); ?></h2>
+					<h2 class="project-title"><span><?php _e( '', 'bonestheme' ); ?></span> <?php single_cat_title(); ?></h2>
 					
 					<ul class="clearfix project-loop">
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>

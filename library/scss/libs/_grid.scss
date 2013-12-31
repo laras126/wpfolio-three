@@ -100,9 +100,11 @@ $desktop 		: 60em;
 	}
 
 	// Comments
-	.commentlist, .respond-form {	
-		@include span-columns(8);
-		@include post(4);
+	.single-project {
+		.commentlist, .respond-form {	
+			@include span-columns(8);
+			@include post(4);
+		}
 	}
 
 	.widemargins {

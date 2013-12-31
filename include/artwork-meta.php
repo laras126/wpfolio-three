@@ -19,7 +19,7 @@ $aw_link_text = get_post_meta( $post->ID, '_ctmb_link_text', true );
 ?>
 
 <!-- <div class="clearfix"> -->
-	<h4><?php echo the_title(); ?></h4>
+	<h3><?php echo the_title(); ?></h3>
 
 	<ul class="artwork-meta">
 		<?php 
@@ -38,7 +38,7 @@ $aw_link_text = get_post_meta( $post->ID, '_ctmb_link_text', true );
 		}
 
 		if ( $aw_desc ) {
-			echo '<li class="aw-sep">' . $aw_desc . '</li>';
+			echo '<li class="aw-sep"><h5>Description</h5>' . $aw_desc . '</li>';
 		}
 
 		if ( $aw_acknow ) {

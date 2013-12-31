@@ -34,7 +34,12 @@ span.amp {
 .text-center { text-align: center; }
 .text-right  { text-align: right; }
 
-
+.uppercase-title {
+	font-size: $h5;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin-bottom: rhythm(4, $h5);	
+}
 /*********************
 BUTTONS
 *********************/
