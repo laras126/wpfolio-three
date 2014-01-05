@@ -26,10 +26,11 @@ $link-color:				#aaa;
 $link-hover:				darken($link-color, 8%);
 $link-active:				darken($link-color, 12%);
 
-$accent:					$secondary;
-$accent-med:				$link-color;
-
 $accent-light:				#eee;
+$accent:					$secondary;
+$accent-med:				darken($accent-light, 10%);
+
+
 
 
 // Links

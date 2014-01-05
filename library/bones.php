@@ -154,12 +154,12 @@ function bones_scripts_and_styles() {
     // Load jquery in the footer using Google CDN
     if( !is_admin()){
 		wp_deregister_script('jquery');
-		wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"), false, '1.3.2', true);
+		wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"), false, '1.10.1', true);
 		wp_enqueue_script('jquery');
 	}
-	
-    wp_enqueue_script( 'wpf-js' );
+
 	wp_enqueue_script( 'wpf-plugins' );
+    wp_enqueue_script( 'wpf-js' );
   }
 }
 
@@ -228,7 +228,7 @@ function bones_main_nav() {
     	'container' => false,                           // remove nav container
     	'container_class' => 'menu clearfix',           // class of container (should you choose to use it)
     	'menu' => __( 'The Main Menu', 'bonestheme' ),  // nav name
-    	'menu_class' => 'nav top-nav clearfix',         // adding custom nav class
+    	'menu_class' => 'sf-menu',         // adding custom nav class
     	'theme_location' => 'main-nav',                 // where it's located in the theme
     	'before' => '',                                 // before the menu
         'after' => '',                                  // after the menu

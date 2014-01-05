@@ -10,10 +10,16 @@ be seen on the Desktop.
 .header {
 	text-align: left;
 }
+.sf-menu {
+	float: right;
 
-
+	li {
+		border-top: none;
+	}
+}
 .project-taxonomies {
 	.tags-title {
 		display: inline;
 	}
 }
+

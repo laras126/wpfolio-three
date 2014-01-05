@@ -78,7 +78,7 @@ function project_type() {
 			'show_admin_column' => true, 
 			'show_ui' => true,
 			'query_var' => true,
-			'rewrite' => array( 'slug' => 'category' ),
+			'rewrite' => array( 'slug' => 'project-type' ),
 		)
 	);  
 
@@ -120,7 +120,7 @@ function project_type() {
 			'show_admin_column' => true, 
 			'show_ui' => true,
 			'query_var' => true,
-			'rewrite' => array( 'slug' => 'people' ),
+			'rewrite' => array( 'slug' => 'places' ),
 		)
 	);  
 

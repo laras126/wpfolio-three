@@ -24,58 +24,23 @@ NAVIGATION STYLES
 // TODO: does this look okay?
 .nav {
 	display: inline-block;
-
-	li {
-		text-align: center;
-	}
 }
-	
-	/* .menu is clearfixed inside mixins.scss */
-	
 
-	.menu {
-		ul {
-			li {
-				a {
-					
-					/*
-					you can use hover styles here even though this size
-					has the possibility of being a mobile device.
-					*/
-					&:hover, &:focus {
-					
-					}
-				}
-				
-				&:first-child {}
-				&:last-child {}
-				
-				/*
-				plan your menus and drop-downs wisely.
-				*/
-				ul.sub-menu,
-				ul.children {
-					li {
-						a {
-							&:hover,
-							&:focus {}
-							&:link {}
-						}
-						&:first-child {}
-						&:last-child {}
-					}
-				}
-			} /* end .menu ul li */
-			
-			/* highlight current page */
-			li.current-menu-item, 
-			li.current_page_item,
-			li.current-page-ancestor {
-				a {}
-			}  /* end current highlighters */
-		} /* end .menu ul */
-	} /* end .menu */
+// Hide the dropdown since we are removing the toggle menu
+.sf-menu ul {
+	position: absolute;
+	display: none;
+	top: 100%;
+	left: 0;
+	z-index: 99;
+}
 
+.sf-menu ul li {
+	background: $accent-light;
+}
+.sf-menu ul ul li {
+	background: $accent-light;
+}	
 
 /*********************
 POSTS & CONTENT STYLES

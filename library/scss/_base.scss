@@ -17,6 +17,10 @@ body {
 	color: $primary;
 }
 
+img {
+	max-width: 100%;
+}
+
 /********************
 WORDPRESS BODY CLASSES
 style a page via class
@@ -119,82 +123,6 @@ and more scalable.
 */
 
 
-.nav {
-	border: 1px solid #ccc;
-	border-bottom: 0;
-
-	li {
-		@include nobullet;
-		
-		a {
-
-			padding-left: 10px;
-			padding-right: 10px;
-			display: block;
-			text-decoration: none;		
-
-			padding: rhythm(1, $p) rhythm(2, $p);
-			border-bottom: 1px solid #ccc;
-
-			// No need for hover styles yet since this is mobile
-			&:hover, &:focus {
-
-			}
-		}
-
-		&:first-child {}
-
-		&:last-child {}
-
-		/*
-		so you really have to rethink your dropdowns for mobile.
-		you don't want to have it expand too much because the
-		screen is so small. How you manage your menu should
-		depend on the project. Here's some great info on it:
-		http://www.alistapart.com/articles/organizing-mobile/
-		*/
-		ul.sub-menu,
-		ul.children {
-
-			li {
-
-				a {
-					padding-left: 30px;
-					
-					&:before {
-						content: '- ';
-					}
-
-					&:hover,
-					&:focus {}
-
-					&:link {}
-
-				}
-
-				&:first-child {}
-
-				&:last-child {}
-
-			}
-
-		}
-
-	} /* end .menu li */
-
-	/* highlight current page */
-	li.current-menu-item,
-	li.current_page_item,
-	li.current-page-ancestor {
-
-		a {
-			background-color: $current-menu-item;
-		}
-
-	}  /* end current highlighters */
-
-} /* end .nav */
-
 // Toggle menu by Brad Frost
 // http://codepen.io/bradfrost/pen/sHvaz
 // http:// bradfrostweb.com
@@ -207,33 +135,37 @@ a.menu-link {
     padding: rhythm(1, 14px);
 }
 
-nav[role=navigation] {
+.nav {
+
 	clear: both;
 	-webkit-transition: all 0.3s ease-out;  
 	-moz-transition: all 0.3s ease-out;
 	-ms-transition: all 0.3s ease-out;
 	-o-transition: all 0.3s ease-out;
 	transition: all 0.3s ease-out;
+
+	.js & {
+		overflow: hidden;
+		max-height: 0;
+	}
+
+	&.active {
+		max-height: 30em;
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+	}
+
+	li a {
+		display: block;
+		color: $primary;
+	}
 }
 
-.js nav[role=navigation] {
-	overflow: hidden;
-	max-height: 0;
-}
-
-nav[role=navigation].active {
-	max-height: 30em;
-}
-
-nav[role=navigation] ul {
-	margin: 0;
-	padding: 0;
-	// border-top: 1px solid #808080;
-}
-
-nav[role=navigation] li a {
-	display: block;
-	// border-bottom: 1px solid #808080;
+.sf-menu li {
+	border-top: 1px solid $accent-light;
 }
 
 
@@ -947,5 +879,8 @@ WPFOLIO FEATURES
 	    height: 100%;
 	}
 }
+
+
+
 
 

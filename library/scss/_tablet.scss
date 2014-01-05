@@ -41,6 +41,10 @@ HEADER STYLES
 	
 }
 
+#inner-header {
+	// Overriding the clearfix overflow: hidden for dropdowns
+	overflow: visible;
+}
 
 /*********************
 NAVIGATION STYLES
@@ -55,117 +59,142 @@ a.menu-link {
 
 .js nav[role=navigation] {
 	max-height: none;
+	overflow: visible;
 }
 
 nav[role=navigation] {
 	clear: none;
 
 	ul {
-		border: 0;
 	}
 
 	li {
-		display: inline-block;
-
-		a {
-			border: 0;
-		}
+		display: block;
 	}
 } // End toggle nav
 
 
-.nav {
-	border: 0;
+// .nav {
+// 	border: 0;
 
-	li {
+// 	li {
 
-		a {
-			border-bottom: 0;
-			padding: rhythm(1, $h5) rhythm(2, $h5);
+// 		a {
+// 			border-bottom: 0;
+// 			padding: rhythm(1, $h5) rhythm(2, $h5);
 
-			&:hover {
-				background-color: $menu-item-hover;	
-			}
-		}
+// 			&:hover {
+// 				background-color: $menu-item-hover;	
+// 			}
+// 		}
 
-		&:first-child {}
-		&:last-child {}
+// 		&:first-child {}
+// 		&:last-child {}
 
-		/*
-		plan your menus and drop-downs wisely.
-		*/
-		ul.sub-menu,
-		ul.children {
-			text-align: left;
-			margin-top: 0;
-			position: absolute;
-			z-index: 8999;
-			display: none;
-			background-color: $accent-light;
-			width: 160px;
+// 		/*
+// 		plan your menus and drop-downs wisely.
+// 		*/
+// 		// ul.sub-menu,
+// 		// ul.children {
+// 		// 	text-align: left;
+// 		// 	margin-top: 0;
+// 		// 	position: absolute;
+// 		// 	z-index: 8999;
+// 		// 	display: none;
+// 		// 	background-color: $accent-light;
+// 		// 	width: 160px;
 			
-			li {
-				width: 100%;
+// 		// 	li {
+// 		// 		width: 100%;
 
-				&:last-child {
-					border-bottom: 0;
-				}
+// 		// 		&:last-child {
+// 		// 			border-bottom: 0;
+// 		// 		}
 
-				a {
-					text-align: left;
-					padding-left: rhythm(3, $p);
+// 		// 		a {
+// 		// 			text-align: left;
+// 		// 			padding-left: rhythm(3, $p);
 					
-					&:hover,
-					&:focus {
-						background-color: $menu-item-hover;
-					}
+// 		// 			&:hover,
+// 		// 			&:focus {
+// 		// 				background-color: $menu-item-hover;
+// 		// 			}
 
-					&:link {}
-				}
+// 		// 			&:link {}
+// 		// 		}
 
-				&:first-child {}
+// 		// 		&:first-child {}
 
-				&:last-child {
+// 		// 		&:last-child {
 
-					a {
-						border-bottom: 0;
-					}
-				}
+// 		// 			a {
+// 		// 				border-bottom: 0;
+// 		// 			}
+// 		// 		}
 
-				/*
-				if you need to go deeper, go nuts
-				just remember deeper menus suck
-				for usability. k, bai.
-				*/
-				ul {}
-			}
+// 		// 		/*
+// 		// 		if you need to go deeper, go nuts
+// 		// 		just remember deeper menus suck
+// 		// 		for usability. k, bai.
+// 		// 		*/
+// 		// 		ul {}
+// 		// 	}
 
-			/* highlight sub-menu current page */
-			li.current-menu-item,
-			li.current_page_item,
-			li.current-page-ancestor {
-				a {
-					background-color: $menu-item-hover;
-				}
-			}
-		}
+// 		// 	/* highlight sub-menu current page */
+// 		// 	li.current-menu-item,
+// 		// 	li.current_page_item,
+// 		// 	li.current-page-ancestor {
+// 		// 		a {
+// 		// 			background-color: $menu-item-hover;
+// 		// 		}
+// 		// 	}
+// 		// }
 
-		/* showing sub-menus */
-		&:hover ul {
-			top: auto;
-			display: block;
-		}
+// 		// /* showing sub-menus */
+// 		// &:hover ul {
+// 		// 	top: auto;
+// 		// 	display: block;
+// 		// }
 
-	} /* end .menu ul li */
+// 	} /* end .menu ul li */
 
-	/* highlight current page */
-	li.current-menu-item,
-	li.current_page_item,
-	li.current-page-ancestor {
-		a {}
-	}  /* end current highlighters */
+// 	/* highlight current page */
+// 	li.current-menu-item,
+// 	li.current_page_item,
+// 	li.current-page-ancestor {
+// 		a {}
+// 	}  /* end current highlighters */
 
-} /* end .nav */
+// } /* end .nav */
+
+.sf-menu > li {
+	float: left;
+}
+
+
+// Adding superfish hover styles
+
+.sf-menu li:hover > ul,
+.sf-menu li.sfHover > ul {
+	display: block;
+}
+
+.sf-menu > li:hover,
+.sf-menu > li.sfHover {
+	background: $accent-light;
+	/* only transition out, not in */
+	-webkit-transition: none;
+	transition: none;
+
+	li:hover {
+		background-color: $accent-med;
+	}
+}
+
+.sf-arrows ul li:hover > .sf-with-ul:after,
+.sf-arrows ul .sfHover > .sf-with-ul:after {
+	border-left-color: white;
+}
 
 /*********************
 POSTS & CONTENT STYLES

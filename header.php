@@ -43,7 +43,7 @@
 
 					<a href="#main-nav" class="menu-link"><i class="fa fa-caret-down"></i>  Menu<?php //wp_title(''); ?></a>
 					
-					<nav id="main-nav" role="navigation" class="site-nav">	
+					<nav id="main-nav" role="navigation" class="site-nav nav">	
 						<?php bones_main_nav(); ?>
 					</nav>
 					

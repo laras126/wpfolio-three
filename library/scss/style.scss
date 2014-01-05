@@ -11,9 +11,13 @@ call the rest of the styles inside media queries.
 
 --
 
-Hey, you! Yeah, you!
+Hey, you! Yeah, YOU!
 Don't add styles here! 
-Add them to the appropriate other files.
+Add them to the appropriate other files
+if you are a contributing developer.
+
+Otherwise make a child theme, homie!
+
 ******************************************************************/
 
 //
@@ -29,6 +33,7 @@ Add them to the appropriate other files.
 @import "libs/normalize";
 @import "libs/settings";
 @import "libs/mixins";
+@import "libs/superfish_custom";
 @import "libs/grid";
 
 
@@ -41,7 +46,7 @@ Add them to the appropriate other files.
 /*
 BASE (MOBILE) SIZE
 These are the mobile styles.
-I set a solid foundation 
+I set a solid foundation (I think) 
 so their aren't too many styles 
 in the other stylesheets. 
 

@@ -31,9 +31,6 @@ if (!window.getComputedStyle) {
 jQuery(document).ready(function($) {
 
 
-    // Fade in homepage
-    $('.home #content, .home .footer').fadeIn(700);
-
     /*
     Responsive jQuery is a tricky thing.
     There's a bunch of different ways to handle
@@ -79,7 +76,7 @@ jQuery(document).ready(function($) {
     // Toggle menu for mobile
     // http://codepen.io/bradfrost/pen/sHvaz
 
-    $('body').addClass('js');
+    //$('body').addClass('js');
     var $menu = $('#main-nav'),
         $menulink = $('.menu-link');
         $menuicon = $('.menu-link .fa');
@@ -97,6 +94,21 @@ jQuery(document).ready(function($) {
     // that is styled to make them fluid
     var $media = $('iframe, object, embed');
     $media.wrap( '<figure class="media-wrap"></figure>' );
+
+
+    // Fade in homepage
+    $('.home #content, .home .footer').fadeIn(700);
+
+    $('ul.sf-menu').superfish({ /* <-- error occurs here */
+        delay:       0,      // one second delay on mouseout 
+        animation:   {
+                opacity:'show',
+                height:'show'
+            }, // fade-in and slide-down animation 
+        speed:       'fast',  // faster animation speed 
+        autoArrows:  true,   // generation of arrow mark-up (for submenu) 
+        dropShadows: false   // drop shadows (for submenu)
+    });
 
 
 }); /* end of as page load scripts */
