@@ -20,27 +20,6 @@ upon your base.scss styles.
 NAVIGATION STYLES
 *********************/
 
-// Center the menu
-// TODO: does this look okay?
-.nav {
-	display: inline-block;
-}
-
-// Hide the dropdown since we are removing the toggle menu
-.sf-menu ul {
-	position: absolute;
-	display: none;
-	top: 100%;
-	left: 0;
-	z-index: 99;
-}
-
-.sf-menu ul li {
-	background: $accent-light;
-}
-.sf-menu ul ul li {
-	background: $accent-light;
-}	
 
 /*********************
 POSTS & CONTENT STYLES

@@ -2287,7 +2287,7 @@ textarea {
 
 /* line 27, ../scss/libs/_superfish_custom.scss */
 .sf-menu ul {
-  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   min-width: 12em;
   /* allow long menu items to determine submenu width */
   *width: 12em;
@@ -3718,51 +3718,27 @@ phablets.
   /*********************
   NAVIGATION STYLES
   *********************/
-  /* line 25, ../scss/_mobile.scss */
-  .nav {
-    display: inline-block;
-  }
-
-  /* line 30, ../scss/_mobile.scss */
-  .sf-menu ul {
-    position: absolute;
-    display: none;
-    top: 100%;
-    left: 0;
-    z-index: 99;
-  }
-
-  /* line 38, ../scss/_mobile.scss */
-  .sf-menu ul li {
-    background: #eeeeee;
-  }
-
-  /* line 41, ../scss/_mobile.scss */
-  .sf-menu ul ul li {
-    background: #eeeeee;
-  }
-
   /*********************
   POSTS & CONTENT STYLES
   *********************/
   /* entry content */
-  /* line 50, ../scss/_mobile.scss */
+  /* line 29, ../scss/_mobile.scss */
   .entry-content {
     /* at this larger size, we can start to align images */
   }
-  /* line 54, ../scss/_mobile.scss */
+  /* line 33, ../scss/_mobile.scss */
   .entry-content .alignleft, .entry-content img.alignleft {
     margin-right: 1.5em;
     display: inline;
     float: left;
   }
-  /* line 59, ../scss/_mobile.scss */
+  /* line 38, ../scss/_mobile.scss */
   .entry-content .alignright, .entry-content img.alignright {
     margin-left: 1.5em;
     display: inline;
     float: right;
   }
-  /* line 64, ../scss/_mobile.scss */
+  /* line 43, ../scss/_mobile.scss */
   .entry-content .aligncenter, .entry-content img.aligncenter {
     margin-right: auto;
     margin-left: auto;
@@ -3771,13 +3747,13 @@ phablets.
   }
 
   /* end .entry-content */
-  /* line 79, ../scss/_mobile.scss */
+  /* line 58, ../scss/_mobile.scss */
   .single-project.single-format-video iframe {
     width: 100%;
     height: 300px;
   }
 
-  /* line 86, ../scss/_mobile.scss */
+  /* line 65, ../scss/_mobile.scss */
   .line-clamp {
     overflow: hidden;
     display: -webkit-box;
@@ -3841,33 +3817,52 @@ the resource intensive styles are added, like the grid.
     display: none;
   }
 
-  /* line 60, ../scss/_tablet.scss */
-  .js nav[role=navigation] {
+  /* line 61, ../scss/_tablet.scss */
+  .nav {
+    clear: none;
+    display: inline-block;
+  }
+  /* line 65, ../scss/_tablet.scss */
+  .js .nav {
     max-height: none;
     overflow: visible;
   }
-
-  /* line 65, ../scss/_tablet.scss */
-  nav[role=navigation] {
-    clear: none;
-  }
-  /* line 71, ../scss/_tablet.scss */
-  nav[role=navigation] li {
+  /* line 70, ../scss/_tablet.scss */
+  .nav li {
     display: block;
   }
 
-  /* line 170, ../scss/_tablet.scss */
+  /* line 78, ../scss/_tablet.scss */
+  .sf-menu ul {
+    position: absolute;
+    display: none;
+    top: 100%;
+    left: 0;
+    z-index: 99;
+  }
+
+  /* line 86, ../scss/_tablet.scss */
+  .sf-menu ul li {
+    background: #eeeeee;
+  }
+
+  /* line 89, ../scss/_tablet.scss */
+  .sf-menu ul ul li {
+    background: #eeeeee;
+  }
+
+  /* line 93, ../scss/_tablet.scss */
   .sf-menu > li {
     float: left;
   }
 
-  /* line 178, ../scss/_tablet.scss */
+  /* line 101, ../scss/_tablet.scss */
   .sf-menu li:hover > ul,
   .sf-menu li.sfHover > ul {
     display: block;
   }
 
-  /* line 183, ../scss/_tablet.scss */
+  /* line 106, ../scss/_tablet.scss */
   .sf-menu > li:hover,
   .sf-menu > li.sfHover {
     background: #eeeeee;
@@ -3875,13 +3870,18 @@ the resource intensive styles are added, like the grid.
     -webkit-transition: none;
     transition: none;
   }
-  /* line 189, ../scss/_tablet.scss */
+  /* line 112, ../scss/_tablet.scss */
   .sf-menu > li:hover li:hover,
   .sf-menu > li.sfHover li:hover {
     background-color: #d4d4d4;
   }
+  /* line 114, ../scss/_tablet.scss */
+  .sf-menu > li:hover li:hover a,
+  .sf-menu > li.sfHover li:hover a {
+    color: #666666;
+  }
 
-  /* line 195, ../scss/_tablet.scss */
+  /* line 121, ../scss/_tablet.scss */
   .sf-arrows ul li:hover > .sf-with-ul:after,
   .sf-arrows ul .sfHover > .sf-with-ul:after {
     border-left-color: white;
@@ -3890,41 +3890,41 @@ the resource intensive styles are added, like the grid.
   /*********************
   POSTS & CONTENT STYLES
   *********************/
-  /* line 205, ../scss/_tablet.scss */
+  /* line 131, ../scss/_tablet.scss */
   .project-thumb img, .gallery-item img {
     opacity: 1;
   }
-  /* line 208, ../scss/_tablet.scss */
+  /* line 134, ../scss/_tablet.scss */
   .project-thumb img:hover, .gallery-item img:hover {
     opacity: 0.6;
   }
-  /* line 212, ../scss/_tablet.scss */
+  /* line 138, ../scss/_tablet.scss */
   .project-thumb img:active, .gallery-item img:active {
     opacity: 1;
   }
 
-  /* line 219, ../scss/_tablet.scss */
+  /* line 145, ../scss/_tablet.scss */
   .project-taxonomies a:hover {
     background-color: #d4d4d4;
     color: white;
   }
 
-  /* line 225, ../scss/_tablet.scss */
+  /* line 151, ../scss/_tablet.scss */
   .project-meta {
     padding-bottom: 0;
   }
 
-  /* line 229, ../scss/_tablet.scss */
+  /* line 155, ../scss/_tablet.scss */
   .comment_content {
     margin-left: 50px;
   }
 
-  /* line 233, ../scss/_tablet.scss */
+  /* line 159, ../scss/_tablet.scss */
   .mobile-hide {
     display: block;
   }
 
-  /* line 237, ../scss/_tablet.scss */
+  /* line 163, ../scss/_tablet.scss */
   .mobile-show {
     display: none;
   }
@@ -3932,26 +3932,26 @@ the resource intensive styles are added, like the grid.
   /*********************
   SIDEBARS & ASIDES
   *********************/
-  /* line 249, ../scss/_tablet.scss */
+  /* line 175, ../scss/_tablet.scss */
   .widgettitle {
     text-align: left;
   }
 
-  /* line 253, ../scss/_tablet.scss */
+  /* line 179, ../scss/_tablet.scss */
   .widget {
     padding: 0 1.125em;
     border-left: #eeeeee 1px solid;
   }
-  /* line 257, ../scss/_tablet.scss */
+  /* line 183, ../scss/_tablet.scss */
   .widget ul {
     list-style-type: none;
   }
-  /* line 260, ../scss/_tablet.scss */
+  /* line 186, ../scss/_tablet.scss */
   .widget ul li {
     margin-bottom: 0.75em;
     /* deep nesting */
   }
-  /* line 268, ../scss/_tablet.scss */
+  /* line 194, ../scss/_tablet.scss */
   .widget ul li ul {
     margin-top: 0.75em;
     padding-left: 1em;
@@ -3976,7 +3976,7 @@ the resource intensive styles are added, like the grid.
   of overriding here if you styled them for
   mobile. Make sure to double check these!
   */
-  /* line 377, ../scss/_tablet.scss */
+  /* line 303, ../scss/_tablet.scss */
   .footer-nav li {
     /*
     be careful with the depth of your menus.
@@ -3984,13 +3984,13 @@ the resource intensive styles are added, like the grid.
     the footer.
     */
   }
-  /* line 378, ../scss/_tablet.scss */
+  /* line 304, ../scss/_tablet.scss */
   .footer-nav li a {
     padding-top: 0;
   }
 
   /* end .footer-nav */
-  /* line 392, ../scss/_tablet.scss */
+  /* line 318, ../scss/_tablet.scss */
   .copyright {
     text-align: right;
   }
