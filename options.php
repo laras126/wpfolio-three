@@ -1,4 +1,8 @@
 <?php
+
+// Included in extensions/options-functions.php 
+// which is then included in functions.php
+
 /**
  * A unique identifier is defined to store the options in the database and reference them from the theme.
  * By default it uses the theme name, in lowercase and without spaces, but this can be changed if needed.
@@ -22,6 +26,28 @@ function optionsframework_option_name() {
  */
 
 function optionsframework_options() {
+	
+
+	// -----------
+	/************* ARRAYS ********************/
+	// -----------
+	
+	// Set up some value arrays because they are nice:
+
+	// Comments options
+    $comments_arr = array(
+        'all' => __('Keep all comments', 'options_check'),
+        'blog' => __('Show only on the Blog', 'options_check'),
+        'none' => __('Disable all comments', 'options_check'),
+    );
+
+    // Background Defaults
+    $background_defaults = array(
+        'color' => '#ffffff',
+        'image' => '',
+        'repeat' => 'repeat',
+        'position' => 'top center',
+        'attachment'=>'scroll' );
 
 	
 	// Merge the OS and Google font arrays
@@ -29,10 +55,18 @@ function optionsframework_options() {
 	asort($typography_mixed_fonts);
 
 
+
+	// Typography TODO: maybe use different
+	// font sets for each title/headings/body
+	// so people don't use Lobster as a body font
+
+
 	//
 	// Title Font
 	//
 
+	// TODO: use a textbox like in WPF2 - maybe?
+	
 	$title_font_options = array(
 		'sizes' => false,
 		'faces' => $typography_mixed_fonts,
@@ -41,7 +75,7 @@ function optionsframework_options() {
 	);
 
 	$title_font_defaults = array(
-		'face' => 'Oswald',
+		'face' => 'Merriweather',
 	);
 	
 
@@ -57,7 +91,7 @@ function optionsframework_options() {
 	);
 
 	$heading_font_defaults = array(
-		'face' => 'Oswald',
+		'face' => 'Arvo',
 	);
 
 
@@ -65,27 +99,24 @@ function optionsframework_options() {
 	// Body Typography
 	//
 
-	$body_typography_options = array(
+	$body_font_options = array(
 		'sizes' => false,
 		'faces' => $typography_mixed_fonts,
 		'styles' => false,
 		'color' => false
 	);
 
+	$body_font_defaults = array(
+		'face' => 'Open Sans',
+	);
+
 	
 
-	// Pull all the categories into an array
-	// TODO: remove this when you decide to take 
-	// all of blog cat option out
-	$options_categories = array();
-	$options_categories_obj = get_categories();
-	foreach ($options_categories_obj as $category) {
-		$options_categories[$category->cat_ID] = $category->cat_name;
-	}
 
-	// If using image radio buttons, define a directory path
-	$imagepath =  get_template_directory_uri() . '/images/';
-	
+
+	// -----------
+	/************* THE OPTIONS ********************/
+	// -----------
 
 
 
@@ -125,13 +156,15 @@ function optionsframework_options() {
 	/************* STYLES ********************/
 	
 	/* 	This includes:
-		1. Body Typography
-		2. Heading Typography
-		3. Color Scheme
+		1. Typography
+			- Title 
+			- Headings
+			- Body
+		2. Background
+		3. Color Scheme (TODO)
 		4. Custom CSS
-		5. Background
 
-		-- is that too many?
+		TODO: should this be only a Pro option?
 	*/
 
 
@@ -140,7 +173,7 @@ function optionsframework_options() {
 		'type' => 'heading');
 
 
-	// --- TYPOGRAPHY --- //
+	// --- 1. Typography --- //
 
 	// 1. Title Font
 	$options[] = array( 
@@ -156,7 +189,7 @@ function optionsframework_options() {
 
 	// 2. Header font
 	$options[] = array( 
-		'name' => __('Headings Typography', 'options_check'),
+		'name' => __('Headings Font', 'options_check'),
 		'desc' => __('You can choose a different font and color for the heading text.', 'options_check'),
 		'id' => "heading_font",
 		'std' => $heading_font_defaults,
@@ -164,28 +197,27 @@ function optionsframework_options() {
 		'options' => $heading_font_options );
 	
 
-	// 3. Choose font, base font size, and color for body typography
+	// 3. Body font
 	$options[] = array( 
 		'name' => __('Body Font', 'options_check'),
 		'desc' => __('Choose the font for your website\'s content text.', 'options_check'),
 		'id' => 'body_typography',
-		'std' => $body_typography_defaults,
+		'std' => $body_font_defaults,
 		'type' => 'typography', 
-		'options' => $body_typography_options );
+		'options' => $body_font_options );
 
 		
 	//	
-	// TODO: add logo option
+	// TODO: add logo option -- maybe?
 	//
 
 	//
 	// TODO: add color scheme option instead of specific colors
-	//
+	// -- Pro only?
 	
-	/* 
-	*	Background
-	*/
-
+	
+	// --- 2. Background --- //
+	
 	// Change the background color or upload an image
 	$options[] = array(
 		'name' =>  __('Background', 'options_check'),
@@ -194,7 +226,10 @@ function optionsframework_options() {
 		'std' => $background_defaults,
 		'type' => 'background' );
 
-	// Custom CSS ftw
+
+	// --- 3. Custom CSS FTW --- //
+
+	// Textarea for custom CSS
 	$options[] = array(
 		'name' => __('Custom CSS', 'options_check'),
 		'desc' => __('Quickly add some CSS by typing it here. If you are adding more than 5 or 6 styles, consider using a <a href="http://themeshaper.com/modify-wordpress-themes/" target="blank">Child Theme.</a>', 'options_check'),
@@ -202,12 +237,14 @@ function optionsframework_options() {
 		'std' => '#wrapper {'."\n\t".'border-radius: 0.3em;'."\n".'}',
 		'type' => 'textarea');
 
+
+
 	return $options;
+
+
 
 } // end main options function
 
-// Include functions to return options
-require_once( TEMPLATEPATH . '/extensions/options-functions.php' );
 
 
 ?>
