@@ -41,6 +41,7 @@ style a page via class
 .single {
 	.article-footer {
 		padding: rhythm(4, $h2) 0;
+		margin-bottom: rhythm(4, $h2);
 		border-bottom: 1px solid $accent-light;
 		border-top: 1px solid $accent-light;
 	}
@@ -432,6 +433,10 @@ PAGE NAVI STYLES
 
 .mobile-show {
 	display: block;
+}
+
+.prev-next {
+	padding-top: $h3;
 }
 
 .prev {

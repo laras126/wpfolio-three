@@ -23,9 +23,25 @@
 									<?php the_content(); ?>
 								</section>
 
-								<footer class="article-footer">
-									<?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
-									<?php include('include/prev-next.php'); ?>
+								<footer class="article-footer clearfix">
+									
+									<div class="prev mobile-hide">
+										<?php 
+										// NOTE: reversing these so they make more sense
+										next_post_link('%link', '<strong>&larr; Previous</strong>'); ?>
+									</div>
+									<div class="project-meta">
+										<?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
+									</div>
+									<div class="next mobile-hide">
+										<?php previous_post_link('%link', '<strong>Next &rarr;</strong>'); ?>
+									</div>
+
+									<div class="mobile-show">
+										<?php next_post_link('%link', '<strong class="prev">&larr; Previous</strong>'); ?>
+										<?php previous_post_link('%link', '<strong class="next">Next &rarr;</strong>'); ?>
+									</div>
+
 								</footer>
 
 								<?php comments_template(); ?>

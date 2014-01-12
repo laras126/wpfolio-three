@@ -41,7 +41,6 @@ Template for single Projects
 								<?php 
 								// NOTE: reversing these so they make more sense
 								next_post_link('%link', '<strong>&larr; Previous</strong>'); ?>
-								&nbsp;
 							</div>
 							<div class="project-meta">
 								<?php $category = get_the_term_list( get_the_ID(), 'project_category', ' ', ', ' );  ?>
