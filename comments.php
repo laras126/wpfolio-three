@@ -27,6 +27,7 @@
 <?php 
 
 
+// TODO: would it be better to do this with a filter?
 // If disable comments option is not enabled
 if ( of_get_option('comments') != 'none' ) :
 

@@ -7,7 +7,7 @@
 			<div id="main" class="clearfix sidebar-layout" role="main">
 
 				<h1 class="archive-title h2">
-					<span><?php echo wp_title(''); ?>
+					<?php echo wp_title(''); ?>
 				</h1>
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					

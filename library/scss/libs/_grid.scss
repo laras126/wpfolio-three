@@ -100,7 +100,7 @@ $desktop 		: 60em;
 	}
 
 	// Comments
-	.single-project {
+	.single-project, .page {
 		.commentlist, .respond-form {	
 			@include span-columns(8);
 			@include post(4);

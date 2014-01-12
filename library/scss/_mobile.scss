@@ -31,12 +31,12 @@ POSTS & CONTENT STYLES
 	
 	/* at this larger size, we can start to align images */
 	.alignleft, img.alignleft { 
-		margin-right: 1.5em; 
+		margin-right: $h2; 
 		display: inline; 
 		float: left; 
 	}
 	.alignright, img.alignright { 
-		margin-left: 1.5em; 
+		margin-left: $h2; 
 		display: inline; 
 		float: right; 
 	}
