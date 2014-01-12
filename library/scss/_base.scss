@@ -581,6 +581,10 @@ COMMENT STYLES
 		margin-bottom: $h3;
 		padding: $sml;
 
+		article {
+			padding: $default;
+		}
+
 		&:last-child {
 			margin-bottom: 0;
 		}
@@ -645,7 +649,7 @@ COMMENT STYLES
 
 	/* vcard */
 	.vcard {
-		margin-left: 50px;
+		margin-left: $h2;
 
 		cite.fn {
 			font-weight: 700;
@@ -677,8 +681,9 @@ COMMENT STYLES
 
 		img.avatar {
 			position: absolute;
-			left: 10px;
+			left: $sml;
 			padding: 2px;
+			top: $h4;
 			border: 1px solid #cecece;
 			background: #fff;
 		}

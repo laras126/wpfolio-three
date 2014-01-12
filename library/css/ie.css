@@ -612,78 +612,83 @@ COMMENT STYLES
   /* end .commentlist li ul.children */
 }
 /* line 584, ../scss/_base.scss */
+.commentlist li article {
+  padding: 1em;
+}
+/* line 588, ../scss/_base.scss */
 .commentlist li:last-child {
   margin-bottom: 0;
 }
-/* line 588, ../scss/_base.scss */
+/* line 592, ../scss/_base.scss */
 .commentlist li ul.children {
   margin: 0;
   /* variations */
   /* change number for different depth */
 }
-/* line 606, ../scss/_base.scss */
+/* line 610, ../scss/_base.scss */
 .commentlist li[class*=depth-] {
   margin-top: 1.125em;
 }
-/* line 610, ../scss/_base.scss */
+/* line 614, ../scss/_base.scss */
 .commentlist li.depth-1 {
   margin-left: 0;
   margin-top: 0;
 }
-/* line 615, ../scss/_base.scss */
+/* line 619, ../scss/_base.scss */
 .commentlist li:not(.depth-1) {
   margin-right: -0.825em;
   margin-left: -0.825em;
   margin-top: 0;
   padding-bottom: 0;
 }
-/* line 629, ../scss/_base.scss */
+/* line 633, ../scss/_base.scss */
 .commentlist .odd {
   background: #eee;
 }
-/* line 632, ../scss/_base.scss */
+/* line 636, ../scss/_base.scss */
 .commentlist .even {
   background: #fefefe;
 }
-/* line 647, ../scss/_base.scss */
+/* line 651, ../scss/_base.scss */
 .commentlist .vcard {
-  margin-left: 50px;
+  margin-left: 1.875em;
 }
-/* line 650, ../scss/_base.scss */
+/* line 654, ../scss/_base.scss */
 .commentlist .vcard cite.fn {
   font-weight: 700;
   font-style: normal;
 }
-/* line 658, ../scss/_base.scss */
+/* line 662, ../scss/_base.scss */
 .commentlist .vcard time {
   clear: both;
 }
-/* line 660, ../scss/_base.scss */
+/* line 664, ../scss/_base.scss */
 .commentlist .vcard time:before {
   content: ' | ';
 }
-/* line 664, ../scss/_base.scss */
+/* line 668, ../scss/_base.scss */
 .commentlist .vcard time a {
   color: #999;
   text-decoration: none;
 }
-/* line 668, ../scss/_base.scss */
+/* line 672, ../scss/_base.scss */
 .commentlist .vcard time a:hover {
   text-decoration: underline;
 }
-/* line 678, ../scss/_base.scss */
+/* line 682, ../scss/_base.scss */
 .commentlist .vcard img.avatar {
   position: absolute;
-  left: 10px;
+  left: 0.825em;
   padding: 2px;
+  top: 1.25em;
   border: 1px solid #cecece;
   background: #fff;
 }
-/* line 705, ../scss/_base.scss */
+/* line 710, ../scss/_base.scss */
 .commentlist .comment_content p {
   margin: 0.825em 0 1.375em;
 }
-/* line 712, ../scss/_base.scss */
+/* line 717, ../scss/_base.scss */
 .commentlist .comment-reply-link {
   text-decoration: none;
   float: right;
@@ -726,34 +731,34 @@ COMMENT STYLES
 /******************************************************************
 COMMENT FORM STYLES
 ******************************************************************/
-/* line 727, ../scss/_base.scss */
+/* line 732, ../scss/_base.scss */
 .respond-form {
   margin-top: 1.875em;
   padding-bottom: 1.875em;
 }
-/* line 731, ../scss/_base.scss */
+/* line 736, ../scss/_base.scss */
 .respond-form form {
   margin: 0.825em 0;
 }
-/* line 734, ../scss/_base.scss */
+/* line 739, ../scss/_base.scss */
 .respond-form form li {
   list-style-type: none;
   clear: both;
   margin-bottom: 0.825em;
 }
-/* line 740, ../scss/_base.scss */
+/* line 745, ../scss/_base.scss */
 .respond-form form li label,
 .respond-form form li small {
   display: none;
 }
-/* line 748, ../scss/_base.scss */
+/* line 753, ../scss/_base.scss */
 .respond-form form input[type=text],
 .respond-form form input[type=email],
 .respond-form form input[type=url],
 .respond-form form textarea {
   /* form validation */
 }
-/* line 752, ../scss/_base.scss */
+/* line 757, ../scss/_base.scss */
 .respond-form form input[type=text]:invalid,
 .respond-form form input[type=email]:invalid,
 .respond-form form input[type=url]:invalid,
@@ -766,14 +771,14 @@ COMMENT FORM STYLES
   -ms-box-shadow: none;
   box-shadow: none;
 }
-/* line 765, ../scss/_base.scss */
+/* line 770, ../scss/_base.scss */
 .respond-form form input[type=text],
 .respond-form form input[type=email],
 .respond-form form input[type=url] {
   max-width: 400px;
   min-width: 250px;
 }
-/* line 770, ../scss/_base.scss */
+/* line 775, ../scss/_base.scss */
 .respond-form form textarea {
   resize: none;
   width: 97.3%;
@@ -781,7 +786,7 @@ COMMENT FORM STYLES
 }
 
 /* comment submit button */
-/* line 780, ../scss/_base.scss */
+/* line 785, ../scss/_base.scss */
 #submit {
   font-family: Helvetica;
   background: #999999;
@@ -819,7 +824,7 @@ COMMENT FORM STYLES
 }
 
 /* comment form title */
-/* line 785, ../scss/_base.scss */
+/* line 790, ../scss/_base.scss */
 #comment-form-title {
   margin: 0 0 1.375em;
 }
@@ -827,13 +832,13 @@ COMMENT FORM STYLES
 /* cancel comment reply link */
 /* logged in comments */
 /* allowed tags */
-/* line 798, ../scss/_base.scss */
+/* line 803, ../scss/_base.scss */
 #allowed_tags {
   margin: 1.875em 1.875em 1.875em 0;
 }
 
 /* no comments */
-/* line 803, ../scss/_base.scss */
+/* line 808, ../scss/_base.scss */
 .nocomments {
   margin: 0 1.375em 1.125em;
 }
@@ -841,15 +846,15 @@ COMMENT FORM STYLES
 /*********************
 SIDEBARS & ASIDES
 *********************/
-/* line 815, ../scss/_base.scss */
+/* line 820, ../scss/_base.scss */
 .widget {
   margin: 1.875em 0;
 }
-/* line 818, ../scss/_base.scss */
+/* line 823, ../scss/_base.scss */
 .widget ul {
   list-style-type: none;
 }
-/* line 820, ../scss/_base.scss */
+/* line 825, ../scss/_base.scss */
 .widget ul li {
   /* deep nesting */
 }
@@ -857,14 +862,14 @@ SIDEBARS & ASIDES
 /*********************
 FOOTER STYLES
 *********************/
-/* line 841, ../scss/_base.scss */
+/* line 846, ../scss/_base.scss */
 .footer {
   clear: both;
   font-size: 0.875em;
   line-height: 1.71429em;
   margin-top: 38px;
 }
-/* line 846, ../scss/_base.scss */
+/* line 851, ../scss/_base.scss */
 .footer .wrap {
   border-top: 1px solid #eeeeee;
   padding: 7px 0;
@@ -873,7 +878,7 @@ FOOTER STYLES
 /*********************
 WPFOLIO FEATURES
 *********************/
-/* line 864, ../scss/_base.scss */
+/* line 869, ../scss/_base.scss */
 .media-wrap {
   position: relative;
   padding-bottom: 56.25%;
@@ -884,7 +889,7 @@ WPFOLIO FEATURES
   margin: 0 auto 2.25em;
 }
 
-/* line 874, ../scss/_base.scss */
+/* line 879, ../scss/_base.scss */
 .media-wrap iframe, .media-wrap object, .media-wrap embed {
   position: absolute;
   top: 0;

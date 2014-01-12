@@ -23,39 +23,39 @@ body {
 	font-family: $primary-font;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 	font-family: $secondary-font;
 }
 
-h1 { 
+h1, .h1 { 
 	font-size: $h1; 
 	margin: 0 0 rhythm(3, $h1) 0;  						// 3 lines below, based on font size
 	font-weight: 500;
 } 
 			
-h2 { 
+h2, .h2 { 
 	font-size: $h2; 
 	margin: rhythm(4, $h2) 0 rhythm(2, $h2) 0;  			// 4 lines above / 2 lines below, based on font size 
 	font-weight: 500;
 }
 
-h3 { 
+h3, .h3 { 
 	font-size: $h3;
 	margin: rhythm(4, $h3) 0 rhythm(2, $h3) 0;  			// 4 lines above / 2 lines below, based on font size 
 	font-weight: 500;
 } 
 
-h4 { 
+h4, .h4 { 
 	font-size: $h4;
 	margin: 0 0 rhythm(1, $h4) 0;  						// 1 lines below, based on font size 
 } 
 
-h5 { 
+h5, .h5 { 
 	font-size: $h5;
 	margin: 0 0 rhythm(1, $h5) 0;  						// 1 lines below, based on font size 
 } 
 
-h6 { 
+h6, .h6 { 
 	font-size: $base-font-size;
 	margin: 0 0 rhythm(1, 16px) 0;  						// 1 lines below, based on font size 
 } 	

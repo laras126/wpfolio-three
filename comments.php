@@ -34,7 +34,7 @@ if ( of_get_option('comments') != 'none' ) :
 ?>
 
 	<?php if ( have_comments() ) : ?>
-		<h3 id="comments" class="h2"><?php comments_number(__('<span>No</span> Responses', 'bonestheme'), __('<span>One</span> Response', 'bonestheme'), _n('<span>%</span> Response', '<span>%</span> Responses', get_comments_number(),'bonestheme') );?> to &#8220;<?php the_title(); ?>&#8221;</h3>
+		<h3 id="comments" class="h4"><?php comments_number(__('<span>No</span> Responses', 'bonestheme'), __('<span>One</span> Response', 'bonestheme'), _n('<span>%</span> Response', '<span>%</span> Responses', get_comments_number(),'bonestheme') );?> to &#8220;<?php the_title(); ?>&#8221;</h3>
 
 
 		<!-- TODO Do we need this? -->
@@ -75,7 +75,7 @@ if ( of_get_option('comments') != 'none' ) :
 
 	<section id="respond" class="respond-form">
 
-		<h3 id="comment-form-title" class="h2"><?php comment_form_title( __('Leave a Reply', 'bonestheme'), __('Leave a Reply to %s', 'bonestheme' )); ?></h3>
+		<h3 id="comment-form-title"><?php comment_form_title( __('Leave a Reply', 'bonestheme'), __('Leave a Reply to %s', 'bonestheme' )); ?></h3>
 
 		<div id="cancel-comment-reply">
 			<p class="small"><?php cancel_comment_reply_link(); ?></p>
@@ -124,10 +124,12 @@ if ( of_get_option('comments') != 'none' ) :
 			<?php comment_id_fields(); ?>
 		</p>
 
-		<div class="alert alert-info">
+
+		<!-- NOTE: This may be confusing, so bye -->
+		<!-- <div class="alert alert-info">
 			<p id="allowed_tags" class="byline"><strong>XHTML:</strong> <?php _e('You can use these tags', 'bonestheme'); ?>: <code><?php echo allowed_tags(); ?></code></p>
 		</div>
-
+ -->
 		<?php do_action('comment_form', $post->ID); ?>
 
 		</form>

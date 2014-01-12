@@ -49,19 +49,19 @@ function options_typography_get_google_fonts() {
     $google_faces = array(
         'Abril Fatface, serif' => 'Abril Fatface',
         'Arvo, serif' => 'Arvo',
-        // 'Droid Serif, serif' => 'Droid Serif',
-        // 'Gentium Book Basic, serif' => 'Gentium Book Basic',
+        'Droid Serif, serif' => 'Droid Serif',
+        'Gentium Book Basic, serif' => 'Gentium Book Basic',
         'Josefin Slab, sans-serif' => 'Josefin Slab',
         'Merriweather, serif' => 'Merriweather',
         'Open Sans, sans-serif' => 'Open Sans',
-        // 'Oswald, sans-serif' => 'Oswald',
-        // 'Pacifico, cursive' => 'Pacifico',
-        // 'PT Sans, sans-serif' => 'PT Sans',
-        // 'Quattrocento, serif' => 'Quattrocento',
-        // 'Old Standard TT, serif' => 'Old Standard TT',
-        // 'Raleway, cursive' => 'Raleway',
-        // 'Ubuntu, sans-serif' => 'Ubuntu',
-        // 'Yanone Kaffeesatz, sans-serif' => 'Yanone Kaffeesatz',
+        'Oswald, sans-serif' => 'Oswald',
+        'Pacifico, cursive' => 'Pacifico',
+        'PT Sans, sans-serif' => 'PT Sans',
+        'Quattrocento, serif' => 'Quattrocento',
+        'Old Standard TT, serif' => 'Old Standard TT',
+        'Raleway, cursive' => 'Raleway',
+        'Ubuntu, sans-serif' => 'Ubuntu',
+        'Yanone Kaffeesatz, sans-serif' => 'Yanone Kaffeesatz',
     );
     return $google_faces;
 }
@@ -74,13 +74,13 @@ function options_typography_get_os_fonts() {
     // OS Font Defaults
     $os_faces = array(
         'Arial, sans-serif' => 'Arial',
-        //'"Avant Garde", sans-serif' => 'Avant Garde',
-        //'Cambria, Georgia, serif' => 'Cambria',
-        //'Copse, sans-serif' => 'Copse',
-        //'Garamond, "Hoefler Text", Times New Roman, Times, serif' => 'Garamond',
+        '"Avant Garde", sans-serif' => 'Avant Garde',
+        'Cambria, Georgia, serif' => 'Cambria',
+        'Copse, sans-serif' => 'Copse',
+        'Garamond, "Hoefler Text", Times New Roman, Times, serif' => 'Garamond',
         'Georgia, serif' => 'Georgia',
         '"Helvetica Neue", Helvetica, sans-serif' => 'Helvetica Neue',
-        //'Tahoma, Geneva, sans-serif' => 'Tahoma'
+        'Tahoma, Geneva, sans-serif' => 'Tahoma'
     );
     return $os_faces;
 }
@@ -204,7 +204,7 @@ function options_head_css() {
 
     if ( of_get_option( 'heading_font' ) ) {
         $input = of_get_option( 'heading_font' );
-        $output .= options_font_family( $input , 'h1,h2,h3,h4,h5,h6');
+        $output .= options_font_family( $input , 'h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6');
     }
 
     if ( of_get_option( 'title_font' ) ) {
