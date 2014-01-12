@@ -4,7 +4,7 @@
 /************* ARTWORK METABOX ********************/
 
 // This metabox shows up in all posts
-
+// TODO: maybe add an option to hide it?
 function wpf_artinfo_metaboxes( $meta_boxes ) {
     $post_title = the_title();
     $prefix = '_ctmb_'; // Prefix for all fields
@@ -23,12 +23,6 @@ function wpf_artinfo_metaboxes( $meta_boxes ) {
 						'type' => 'title',
 						'id' => $prefix . 'fields_description'
 					),
-                    // array(
-                    //         'name' => 'Title',
-                    //         'desc' => 'The title of your artwork.',
-                    //         'id' => $prefix . 'title',
-                    //         'type' => 'text'
-                    //     ),
                     array(
                             'name' => 'Medium',
                             'desc' => 'A few words describing your work\'s medium.',

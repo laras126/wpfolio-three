@@ -449,7 +449,7 @@ POSTS & CONTENT STYLES
 }
 
 /* line 393, ../scss/_base.scss */
-.artwork-meta {
+.artwork-meta ul {
   list-style-type: none;
 }
 

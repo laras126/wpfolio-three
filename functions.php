@@ -11,6 +11,9 @@ sidebars, comments, ect.
 
 /************* INCLUDE NEEDED FILES ***************/
 
+// Sets up the options panel and default functions
+require_once( TEMPLATEPATH . '/extensions/options-functions.php' );
+
 /*
 1. library/bones.php
 	- head cleanup (remove rsd, uri links, junk css, ect)

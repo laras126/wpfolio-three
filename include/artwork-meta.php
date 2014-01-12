@@ -18,10 +18,10 @@ $aw_link = get_post_meta( $post->ID, '_ctmb_link', true );
 $aw_link_text = get_post_meta( $post->ID, '_ctmb_link_text', true ); 
 ?>
 
-<!-- <div class="clearfix"> -->
+<div class="artwork-meta">
 	<h3><?php echo the_title(); ?></h3>
 
-	<ul class="artwork-meta">
+	<ul>
 		<?php 
 		// Put each meta item in a list item if it isn't empty
 
@@ -47,4 +47,4 @@ $aw_link_text = get_post_meta( $post->ID, '_ctmb_link_text', true );
 
 		?>
 	</ul>
-<!-- </div> -->
+</div>

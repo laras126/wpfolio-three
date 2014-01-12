@@ -23,70 +23,7 @@ function optionsframework_option_name() {
 
 function optionsframework_options() {
 
-	// Comments options
-	$comments_arr = array(
-		'all' => __('Keep all comments', 'options_check'),
-		'blog' => __('Show only on the Blog', 'options_check'),
-		'none' => __('Disable all comments', 'options_check'),
-	);
-
-	// Background Defaults
-	$background_defaults = array(
-		'color' => '#ffffff',
-		'image' => '',
-		'repeat' => 'repeat',
-		'position' => 'top center',
-		'attachment'=>'scroll' );
-
-
-	// Use a mixture of Google Fonts and system fonts
-	// What an excellent tutorial by Devin at WP Theming!
-	// http://wptheming.com/2012/06/loading-google-fonts-from-theme-options/
-
-	/**
-	 * Returns a select list of Google fonts
-	 */
-	function options_typography_get_google_fonts() {
-		// Google Font Defaults
-		$google_faces = array(
-			'Abril Fatface, serif' => 'Abril Fatface',
-			'Arvo, serif' => 'Arvo',
-			// 'Droid Serif, serif' => 'Droid Serif',
-			// 'Gentium Book Basic, serif' => 'Gentium Book Basic',
-			'Josefin Slab, sans-serif' => 'Josefin Slab',
-			'Merriweather, serif' => 'Merriweather',
-			'Open Sans, sans-serif' => 'Open Sans',
-			// 'Oswald, sans-serif' => 'Oswald',
-			// 'Pacifico, cursive' => 'Pacifico',
-			// 'PT Sans, sans-serif' => 'PT Sans',
-			// 'Quattrocento, serif' => 'Quattrocento',
-			// 'Old Standard TT, serif' => 'Old Standard TT',
-			// 'Raleway, cursive' => 'Raleway',
-			// 'Ubuntu, sans-serif' => 'Ubuntu',
-			// 'Yanone Kaffeesatz, sans-serif' => 'Yanone Kaffeesatz',
-		);
-		return $google_faces;
-	}
-
-	/**
-	 * Returns an array of system fonts
-	 */
-
-	function options_typography_get_os_fonts() {
-		// OS Font Defaults
-		$os_faces = array(
-			'Arial, sans-serif' => 'Arial',
-			//'"Avant Garde", sans-serif' => 'Avant Garde',
-			//'Cambria, Georgia, serif' => 'Cambria',
-			//'Copse, sans-serif' => 'Copse',
-			//'Garamond, "Hoefler Text", Times New Roman, Times, serif' => 'Garamond',
-			'Georgia, serif' => 'Georgia',
-			'"Helvetica Neue", Helvetica, sans-serif' => 'Helvetica Neue',
-			//'Tahoma, Geneva, sans-serif' => 'Tahoma'
-		);
-		return $os_faces;
-	}
-
+	
 	// Merge the OS and Google font arrays
 	$typography_mixed_fonts = array_merge( options_typography_get_os_fonts() , options_typography_get_google_fonts() );
 	asort($typography_mixed_fonts);
@@ -269,11 +206,8 @@ function optionsframework_options() {
 
 } // end main options function
 
-
-
 // Include functions to return options
-require_once( TEMPLATEPATH . '/library/options-functions.php' );
-
+require_once( TEMPLATEPATH . '/extensions/options-functions.php' );
 
 
 ?>
