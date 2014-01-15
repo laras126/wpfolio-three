@@ -14,7 +14,7 @@
 					<?php get_template_part('include/post', 'standard'); ?>
 
 				<?php endwhile; ?>
-
+						
 						<?php if (function_exists('bones_page_navi')) { ?>
 								<?php bones_page_navi(); ?>
 						<?php } else { ?>

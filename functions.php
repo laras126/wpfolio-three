@@ -175,6 +175,8 @@ function bones_comments($comment, $args, $depth) {
 <?php
 } // don't remove this bracket!
 
+
+
 /************* SEARCH FORM LAYOUT *****************/
 
 // Search Form
@@ -187,5 +189,9 @@ function bones_wpsearch($form) {
 	return $form;
 } // don't remove this bracket!
 
+
+/************* MISC THEME REQUIREMENTS *****************/
+
+if ( ! isset( $content_width ) ) $content_width = 960;
 
 ?>

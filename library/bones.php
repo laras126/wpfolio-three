@@ -199,11 +199,11 @@ function bones_theme_support() {
 
 	// No support for post formats - sorry, WP, they aren't that useful! (IMHO)
 	// // adding post format support
-	add_theme_support( 'post-formats',
-		array(
-			'image',
-		)
-	);
+	// add_theme_support( 'post-formats',
+	// 	array(
+	// 		'image',
+	// 	)
+	// );
 
 	// wp menus
 	add_theme_support( 'menus' );
@@ -323,7 +323,7 @@ function bones_page_navi($before = '', $after = '') {
 		echo '<li class="bpn-first-page-link"><a href="'.get_pagenum_link().'" title="'.$first_page_text.'">'.$first_page_text.'</a></li>';
 	}
 	echo '<li class="bpn-prev-link">';
-	previous_posts_link('<<');
+	previous_posts_link('&larr; Previous');
 	echo '</li>';
 	for($i = $start_page; $i  <= $end_page; $i++) {
 		if($i == $paged) {
@@ -333,7 +333,7 @@ function bones_page_navi($before = '', $after = '') {
 		}
 	}
 	echo '<li class="bpn-next-link">';
-	next_posts_link('>>');
+	next_posts_link('Next &rarr;');
 	echo '</li>';
 	if ($end_page < $max_page) {
 		$last_page_text = __( "Last", 'bonestheme' );

@@ -39,6 +39,19 @@ Template for the Project Category taxonomy archive.
 
 						<?php endif; ?>
 					</ul>
+
+					<?php if ( function_exists( 'bones_page_navi' ) ) { ?>
+						<?php bones_page_navi(); ?>
+					<?php } else { ?>
+						<nav class="wp-prev-next">
+							<ul class="clearfix">
+								<li class="prev"><?php next_posts_link( __( '&larr; Previous', 'bonestheme' )) ?></li>
+								<li class="next"><?php previous_posts_link( __( 'Next &rarr;', 'bonestheme' )) ?></li>
+							</ul>
+						</nav>
+					<?php } ?>
+				
+
 				</div> <!-- end #main -->
 
 			</div> <!-- end #inner-content -->

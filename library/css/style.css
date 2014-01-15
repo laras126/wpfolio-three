@@ -3177,20 +3177,20 @@ POSTS & CONTENT STYLES
 
 /* end .entry-content */
 /* line 313, ../scss/_base.scss */
-.wp-caption {
+.wp-caption, .gallery-caption {
   max-width: 100%;
-  background: #eee;
+  background: #eeeeee;
   padding: 5px;
   /* images inside wp-caption */
 }
 /* line 319, ../scss/_base.scss */
-.wp-caption img {
+.wp-caption img, .gallery-caption img {
   max-width: 100%;
   margin-bottom: 0;
   width: 100%;
 }
 /* line 325, ../scss/_base.scss */
-.wp-caption p.wp-caption-text {
+.wp-caption p.wp-caption-text, .gallery-caption p.wp-caption-text {
   font-size: 0.825em;
   margin: 4px 0 7px;
   text-align: center;
@@ -3303,10 +3303,10 @@ PAGE NAVI STYLES
 /* line 451, ../scss/_base.scss */
 .page-navigation,
 .wp-prev-next {
-  margin: 1.125em 0 2.25em;
+  text-align: center;
 }
 
-/* line 454, ../scss/_base.scss */
+/* line 456, ../scss/_base.scss */
 .bones_page_navi {
   list-style-type: none;
   /* current page link */
@@ -3318,58 +3318,69 @@ PAGE NAVI STYLES
   /* first page link */
   /* last page link */
 }
-/* line 456, ../scss/_base.scss */
+/* line 459, ../scss/_base.scss */
 .bones_page_navi li {
-  float: left;
+  display: inline-block;
   margin-left: 0.825em;
 }
-/* line 460, ../scss/_base.scss */
+/* line 464, ../scss/_base.scss */
 .bones_page_navi li a {
-  padding: 3px 6px;
+  padding: 0 0.275em;
   display: block;
   text-decoration: none;
   position: relative;
 }
-/* line 467, ../scss/_base.scss */
+/* line 471, ../scss/_base.scss */
 .bones_page_navi li a:hover, .bones_page_navi li a:focus {
-  color: #f01d4f;
+  background-color: #eeeeee;
   text-decoration: underline;
 }
-/* line 476, ../scss/_base.scss */
+/* line 480, ../scss/_base.scss */
 .bones_page_navi li.bpn-current {
-  padding: 3px 6px;
-  border-bottom: 2px solid #f01d4f;
+  padding: 0 0.275em;
+  border-bottom: 1px solid #aaaaaa;
   position: relative;
+  background-color: #eeeeee;
 }
-/* line 481, ../scss/_base.scss */
+/* line 486, ../scss/_base.scss */
 .bones_page_navi li.bpn-current a {
   /* hovering on current page link */
 }
-/* line 492, ../scss/_base.scss */
+/* line 497, ../scss/_base.scss */
 .bones_page_navi li.bpn-prev-link,
 .bones_page_navi li.bpn-next-link {
   font-weight: 700;
 }
-/* line 495, ../scss/_base.scss */
+/* line 500, ../scss/_base.scss */
 .bones_page_navi li.bpn-prev-link a,
 .bones_page_navi li.bpn-next-link a {
   padding: 0;
 }
-/* line 504, ../scss/_base.scss */
+/* line 509, ../scss/_base.scss */
 .bones_page_navi li.bpn-prev-link a:hover,
 .bones_page_navi li.bpn-next-link a:hover,
 .bones_page_navi li.bpn-first-page-link a:hover,
 .bones_page_navi li.bpn-last-page-link a:hover {
   background: none;
 }
+/* line 514, ../scss/_base.scss */
+.bones_page_navi li.bpn-prev-link {
+  margin-left: 0;
+  margin-right: 1.875em;
+}
+/* line 524, ../scss/_base.scss */
+.bones_page_navi li.bpn-next-link {
+  margin-right: 0;
+  margin-left: 1.875em;
+}
 
 /* end .bones_page_navi */
 /* fallback previous & next links */
-/* line 547, ../scss/_base.scss */
+/* line 556, ../scss/_base.scss */
 .wp-prev-next .prev-link {
   float: left;
 }
-/* line 551, ../scss/_base.scss */
+/* line 560, ../scss/_base.scss */
 .wp-prev-next .next-link {
   float: right;
 }
@@ -3379,12 +3390,12 @@ PAGE NAVI STYLES
 COMMENT STYLES
 ******************************************************************/
 /* h3 comment title */
-/* line 562, ../scss/_base.scss */
+/* line 571, ../scss/_base.scss */
 #comments {
   /* number of comments span */
 }
 
-/* line 579, ../scss/_base.scss */
+/* line 588, ../scss/_base.scss */
 .commentlist {
   /* general comment classes */
   /* vcard */
@@ -3395,7 +3406,7 @@ COMMENT STYLES
   /* comment reply link */
   /* end .commentlist .comment-reply-link */
 }
-/* line 581, ../scss/_base.scss */
+/* line 590, ../scss/_base.scss */
 .commentlist li {
   position: relative;
   clear: both;
@@ -3405,71 +3416,75 @@ COMMENT STYLES
   padding: 0.825em;
   /* end .commentlist li ul.children */
 }
-/* line 589, ../scss/_base.scss */
+/* line 598, ../scss/_base.scss */
 .commentlist li article {
   padding: 1em;
 }
-/* line 593, ../scss/_base.scss */
+/* line 602, ../scss/_base.scss */
 .commentlist li:last-child {
   margin-bottom: 0;
 }
-/* line 597, ../scss/_base.scss */
+/* line 606, ../scss/_base.scss */
 .commentlist li ul.children {
   margin: 0;
   /* variations */
   /* change number for different depth */
 }
-/* line 615, ../scss/_base.scss */
+/* line 618, ../scss/_base.scss */
+.commentlist li ul.children .bypostauthor {
+  font-size: 0.825em;
+}
+/* line 626, ../scss/_base.scss */
 .commentlist li[class*=depth-] {
   margin-top: 1.125em;
 }
-/* line 619, ../scss/_base.scss */
+/* line 630, ../scss/_base.scss */
 .commentlist li.depth-1 {
   margin-left: 0;
   margin-top: 0;
 }
-/* line 624, ../scss/_base.scss */
+/* line 635, ../scss/_base.scss */
 .commentlist li:not(.depth-1) {
   margin-right: -0.825em;
   margin-left: -0.825em;
   margin-top: 0;
   padding-bottom: 0;
 }
-/* line 638, ../scss/_base.scss */
+/* line 649, ../scss/_base.scss */
 .commentlist .odd {
   background: #eee;
 }
-/* line 641, ../scss/_base.scss */
+/* line 652, ../scss/_base.scss */
 .commentlist .even {
   background: #fefefe;
 }
-/* line 656, ../scss/_base.scss */
+/* line 667, ../scss/_base.scss */
 .commentlist .vcard {
   margin-left: 1.875em;
 }
-/* line 659, ../scss/_base.scss */
+/* line 670, ../scss/_base.scss */
 .commentlist .vcard cite.fn {
   font-weight: 700;
   font-style: normal;
 }
-/* line 667, ../scss/_base.scss */
+/* line 678, ../scss/_base.scss */
 .commentlist .vcard time {
   clear: both;
 }
-/* line 669, ../scss/_base.scss */
+/* line 680, ../scss/_base.scss */
 .commentlist .vcard time:before {
   content: ' | ';
 }
-/* line 673, ../scss/_base.scss */
+/* line 684, ../scss/_base.scss */
 .commentlist .vcard time a {
   color: #999;
   text-decoration: none;
 }
-/* line 677, ../scss/_base.scss */
+/* line 688, ../scss/_base.scss */
 .commentlist .vcard time a:hover {
   text-decoration: underline;
 }
-/* line 687, ../scss/_base.scss */
+/* line 698, ../scss/_base.scss */
 .commentlist .vcard img.avatar {
   position: absolute;
   left: 0.825em;
@@ -3478,11 +3493,11 @@ COMMENT STYLES
   border: 1px solid #cecece;
   background: #fff;
 }
-/* line 715, ../scss/_base.scss */
+/* line 726, ../scss/_base.scss */
 .commentlist .comment_content p {
   margin: 0.825em 0 1.375em;
 }
-/* line 722, ../scss/_base.scss */
+/* line 733, ../scss/_base.scss */
 .commentlist .comment-reply-link {
   text-decoration: none;
   float: right;
@@ -3525,34 +3540,34 @@ COMMENT STYLES
 /******************************************************************
 COMMENT FORM STYLES
 ******************************************************************/
-/* line 737, ../scss/_base.scss */
+/* line 748, ../scss/_base.scss */
 .respond-form {
   margin-top: 1.875em;
   padding-bottom: 1.875em;
 }
-/* line 741, ../scss/_base.scss */
+/* line 752, ../scss/_base.scss */
 .respond-form form {
   margin: 0.825em 0;
 }
-/* line 744, ../scss/_base.scss */
+/* line 755, ../scss/_base.scss */
 .respond-form form li {
   list-style-type: none;
   clear: both;
   margin-bottom: 0.825em;
 }
-/* line 750, ../scss/_base.scss */
+/* line 761, ../scss/_base.scss */
 .respond-form form li label,
 .respond-form form li small {
   display: none;
 }
-/* line 758, ../scss/_base.scss */
+/* line 769, ../scss/_base.scss */
 .respond-form form input[type=text],
 .respond-form form input[type=email],
 .respond-form form input[type=url],
 .respond-form form textarea {
   /* form validation */
 }
-/* line 762, ../scss/_base.scss */
+/* line 773, ../scss/_base.scss */
 .respond-form form input[type=text]:invalid,
 .respond-form form input[type=email]:invalid,
 .respond-form form input[type=url]:invalid,
@@ -3565,14 +3580,14 @@ COMMENT FORM STYLES
   -ms-box-shadow: none;
   box-shadow: none;
 }
-/* line 775, ../scss/_base.scss */
+/* line 786, ../scss/_base.scss */
 .respond-form form input[type=text],
 .respond-form form input[type=email],
 .respond-form form input[type=url] {
   max-width: 400px;
   min-width: 250px;
 }
-/* line 780, ../scss/_base.scss */
+/* line 791, ../scss/_base.scss */
 .respond-form form textarea {
   resize: none;
   width: 97.3%;
@@ -3580,7 +3595,7 @@ COMMENT FORM STYLES
 }
 
 /* comment submit button */
-/* line 790, ../scss/_base.scss */
+/* line 801, ../scss/_base.scss */
 #submit {
   font-family: Helvetica;
   background: #999999;
@@ -3618,7 +3633,7 @@ COMMENT FORM STYLES
 }
 
 /* comment form title */
-/* line 795, ../scss/_base.scss */
+/* line 806, ../scss/_base.scss */
 #comment-form-title {
   margin: 0 0 1.375em;
 }
@@ -3626,13 +3641,13 @@ COMMENT FORM STYLES
 /* cancel comment reply link */
 /* logged in comments */
 /* allowed tags */
-/* line 808, ../scss/_base.scss */
+/* line 819, ../scss/_base.scss */
 #allowed_tags {
   margin: 1.875em 1.875em 1.875em 0;
 }
 
 /* no comments */
-/* line 813, ../scss/_base.scss */
+/* line 824, ../scss/_base.scss */
 .nocomments {
   margin: 0 1.375em 1.125em;
 }
@@ -3640,15 +3655,15 @@ COMMENT FORM STYLES
 /*********************
 SIDEBARS & ASIDES
 *********************/
-/* line 825, ../scss/_base.scss */
+/* line 836, ../scss/_base.scss */
 .widget {
   margin: 1.875em 0;
 }
-/* line 828, ../scss/_base.scss */
+/* line 839, ../scss/_base.scss */
 .widget ul {
   list-style-type: none;
 }
-/* line 830, ../scss/_base.scss */
+/* line 841, ../scss/_base.scss */
 .widget ul li {
   /* deep nesting */
 }
@@ -3656,14 +3671,14 @@ SIDEBARS & ASIDES
 /*********************
 FOOTER STYLES
 *********************/
-/* line 851, ../scss/_base.scss */
+/* line 862, ../scss/_base.scss */
 .footer {
   clear: both;
   font-size: 0.875em;
   line-height: 1.71429em;
   margin-top: 38px;
 }
-/* line 856, ../scss/_base.scss */
+/* line 867, ../scss/_base.scss */
 .footer .wrap {
   border-top: 1px solid #eeeeee;
   padding: 7px 0;
@@ -3672,7 +3687,7 @@ FOOTER STYLES
 /*********************
 WPFOLIO FEATURES
 *********************/
-/* line 874, ../scss/_base.scss */
+/* line 885, ../scss/_base.scss */
 .media-wrap {
   position: relative;
   padding-bottom: 56.25%;
@@ -3683,7 +3698,7 @@ WPFOLIO FEATURES
   margin: 0 auto 2.25em;
 }
 
-/* line 884, ../scss/_base.scss */
+/* line 895, ../scss/_base.scss */
 .media-wrap iframe, .media-wrap object, .media-wrap embed {
   position: absolute;
   top: 0;

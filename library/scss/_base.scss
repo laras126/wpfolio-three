@@ -310,9 +310,9 @@ POSTS & CONTENT STYLES
 
 		} /* end .entry-content */
 
-		.wp-caption {
+		.wp-caption, .gallery-caption {
 			max-width: 100%;
-			background: #eee;
+			background: $accent-light;
 			padding: 5px;
 
 			/* images inside wp-caption */
@@ -449,23 +449,27 @@ PAGE NAVI STYLES
 
 .page-navigation,
 .wp-prev-next {
-	margin: $h5 0 $h1;
+	// margin: $h5 0 $h1;
+	text-align: center;
+	
 }
 	.bones_page_navi {
 		list-style-type: none;
+
 		li {
-			float: left;
+			display: inline-block;
 			margin-left: $sml;
 
+
 			a {
-				padding: 3px 6px;
+				padding: 0 $sml/3;
 				display: block;
 				text-decoration: none;
 				position: relative;
 
 				&:hover,
 				&:focus {
-					color: #f01d4f;
+					background-color: $accent-light;
 					text-decoration: underline;
 				}
 			}
@@ -474,9 +478,10 @@ PAGE NAVI STYLES
 
 		/* current page link */
 		li.bpn-current {
-			padding: 3px 6px;
-			border-bottom: 2px solid #f01d4f;
+			padding: 0 $sml/3;
+			border-bottom: 1px solid $link-color;
 			position: relative;
+			background-color: $accent-light;
 
 			a {
 				/* hovering on current page link */
@@ -507,6 +512,8 @@ PAGE NAVI STYLES
 
 		/* previous link */
 		li.bpn-prev-link {
+			margin-left: 0;
+			margin-right: $h2; 
 			a {
 				&:hover,
 				&:focus {}
@@ -515,6 +522,8 @@ PAGE NAVI STYLES
 
 		/* next page link */
 		li.bpn-next-link {
+			margin-right: 0;
+			margin-left: $h2; 
 			a {
 				&:hover,
 				&:focus {}
@@ -606,7 +615,9 @@ COMMENT STYLES
 			.even {}
 			.depth-1 {}           /* change number for different depth */
 			.byuser {}
-			.bypostauthor {}
+			.bypostauthor {
+				font-size: $sml;
+			}
 			.comment-author-admin {}
 
 		} /* end .commentlist li ul.children */
