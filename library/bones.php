@@ -225,11 +225,10 @@ MENUS & NAVIGATION
 function bones_main_nav() {
 	// display the wp3 menu if available
     wp_nav_menu(array(
-    	'container' => false,                           // remove nav container
-    	'container_class' => 'menu clearfix',           // class of container (should you choose to use it)
-    	'menu' => __( 'The Main Menu', 'bonestheme' ),  // nav name
-    	'menu_class' => 'sf-menu',         // adding custom nav class
-    	'theme_location' => 'main-nav',                 // where it's located in the theme
+    	'container' => false,
+    	'menu' => __( 'The Main Menu', 'bonestheme' ),
+    	'menu_class' => 'sf-menu',
+    	'theme_location' => 'main-nav',
     	'before' => '',                                 // before the menu
         'after' => '',                                  // after the menu
         'link_before' => '',                            // before each link
@@ -243,7 +242,9 @@ function bones_main_nav() {
 function bones_main_nav_fallback() {
 	wp_page_menu( array(
 		'show_home' => true,
-    	'menu_class' => 'nav top-nav clearfix',      // adding custom nav class
+		'container' => false,
+    	'menu_class' => 'sf-menu',
+    	'theme_location' => 'main-nav',
 		'include'     => '',
 		'exclude'     => '',
 		'echo'        => true,

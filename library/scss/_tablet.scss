@@ -74,10 +74,9 @@ a.menu-link {
 // End toggle nav
 
 
-// Hide the dropdown since we are removing the toggle menu
 .sf-menu ul {
-	position: absolute;
-	display: none;
+	// position: absolute;
+	// display: none;
 	top: 100%;
 	left: 0;
 	z-index: 99;

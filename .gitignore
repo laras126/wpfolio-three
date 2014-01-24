@@ -18,17 +18,6 @@ Thumbs.db
 *[Tt]humbs.db
 *.Trashes
 
-
-# WordPress
-wp-content/backup/*
-wp-content/cache/*
-wp-content/upgrade/*
-wp-content/uploads/*
-sitemap.*
-wp-config.php
- 
-# Include these files in previously blocked directories
-!wp-content/uploads/.htaccess
-
-# Sass
+# Dev
 .sass-cache/
+node_modules/
