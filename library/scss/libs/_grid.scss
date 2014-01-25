@@ -80,6 +80,8 @@ $desktop 		: 60em;
 		@include span-columns(8 omega);
 	}
 	
+	.project-thumb { @include isolate-grid(4); }
+
 	// Make the list float right too
 	.top-nav {
 		float: right;
