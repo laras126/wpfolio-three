@@ -78,6 +78,7 @@ Should it be differentiated more?
 					<footer class="article-footer clearfix">
 
 						<div class="prev mobile-hide">
+							&nbsp;
 							<?php 
 							// NOTE: reversing these so they make more sense
 							next_image_link( false, __( '&larr; Previous' , 'wpfolio' ) ); ?>
@@ -100,11 +101,12 @@ Should it be differentiated more?
 						</div>
 
 						<div class="next mobile-hide">
+							&nbsp;
 							<?php previous_image_link( false, __( 'Next &rarr;' , 'wpfolio' ) ); ?>
 						</div>
 
 						<div class="mobile-show">
-							<?php previous_image_link( false, __( '<span class="prev">&larr; Previous</span>' , 'wpfolio' ) ); ?>
+							<?php previous_image_link( false, __( '<span class="prev">&larr; Previous</span>&nbsp;' , 'wpfolio' ) ); ?>
 							<?php next_image_link( false, __( '<span class="next">Next &rarr;</span>' , 'wpfolio' ) ); ?>
 						</div>
 

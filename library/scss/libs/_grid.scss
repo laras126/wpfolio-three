@@ -16,7 +16,7 @@ $gutter-width   : 2em;            // 1em gutters between columns
 $grid-padding   : $gutter-width;  // grid-padding equal to gutters
 $container-style: fluid;
 
-$mobile 		: 30em;
+$mobile 		: 25em;
 $tablet 		: 48em;
 $desktop 		: 60em;
 
@@ -29,15 +29,12 @@ $desktop 		: 60em;
 	@include span-columns(1, 1);
 }
 
+.project-thumb { @include isolate-grid(1, 1); }
+
 // Phonez
 @include at-breakpoint($mobile 4) {
 
-	.project-thumb {
-		@include span-columns(2,4);
-		&:nth-child(3n+3) { @include remove-omega; }
-		&:nth-child(2n+2) { @include omega; } // every third image completes a row.
-		height: 21em;
-	}
+	.project-thumb { @include isolate-grid(2); }
 }
 
 
@@ -47,12 +44,13 @@ $desktop 		: 60em;
 
 	// Portfolio layout
 
-	.project-thumb {
-		@include span-columns(2,6);
-		&:nth-child(2n+2) { @include remove-omega; }
-		&:nth-child(3n+3) { @include omega; } // every third image completes a row.	
-		height: 23em;
-	}
+	// .project-thumb {
+	// 	@include span-columns(2,6);
+	// 	&:nth-child(2n+2) { @include remove-omega; }
+	// 	&:nth-child(3n+3) { @include omega; } // every third image completes a row.	
+	// 	height: 23em;
+	// }
+	// .project-thumb { @include isolate-grid(4); }
 
 	.prev  {
 		@include span-columns(2);
@@ -66,6 +64,13 @@ $desktop 		: 60em;
 		@include span-columns(2 omega);
 		text-align: right;
 	}
+
+	.artwork-meta {
+		@include suffix(1);
+	}
+
+	.project-thumb { @include isolate-grid(2.666); }
+	
 
 }
 
@@ -95,10 +100,11 @@ $desktop 		: 60em;
 	}
 
 	// Portfolio layout
-	.project-thumb {
-		height: 26em;
-	}
-
+	// .project-thumb {
+	// 	height: 26em;
+	// }
+	
+	
 	// Comments
 	.single-project, .page {
 		.commentlist, .respond-form {	
@@ -116,17 +122,17 @@ $desktop 		: 60em;
 
 
 // GROSS THUMBNAIL HEIGHT MQs
-@include at-breakpoint(33.25em 4) {
-	.project-thumb {
-		height: 23em;
-	}
-}
+// @include at-breakpoint(33.25em 4) {
+// 	.project-thumb {
+// 		height: 23em;
+// 	}
+// }
 
-@include at-breakpoint(40em 4) {
-	.project-thumb {
-		height: 25em;
-	}
-}
+// @include at-breakpoint(40em 4) {
+// 	.project-thumb {
+// 		height: 25em;
+// 	}
+// }
 // END GROSS MQs
 
 

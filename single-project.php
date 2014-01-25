@@ -20,7 +20,9 @@ Template for single Projects
 
 						<section class="entry-content clearfix">
 							<h1 class="project-title single-title" itemprop="headline"><?php the_title(); ?></h1>
-							<?php the_content(); ?>
+							<div class="clearfix">
+								<?php the_content(); ?>
+							</div>
 							<?php include('include/artwork-meta.php'); ?>
 
 							<ul class="project-taxonomies">
@@ -38,6 +40,7 @@ Template for single Projects
 						<footer class="article-footer clearfix">
 						
 							<div class="prev mobile-hide">
+								&nbsp;
 								<?php 
 								// NOTE: reversing these so they make more sense
 								next_post_link('%link', '<strong>&larr; Previous</strong>'); ?>
@@ -49,10 +52,12 @@ Template for single Projects
 							</div>
 
 							<div class="next mobile-hide">
+								&nbsp;
 								<?php previous_post_link('%link', '<strong>Next &rarr;</strong>'); ?>
 							</div>
 
 							<div class="mobile-show">
+								&nbsp;
 								<?php next_post_link('%link', '<strong class="prev">&larr; Previous</strong>'); ?>
 								<?php previous_post_link('%link', '<strong class="next">Next &rarr;</strong>'); ?>
 							</div>

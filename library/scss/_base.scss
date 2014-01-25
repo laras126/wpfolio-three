@@ -19,6 +19,7 @@ body {
 
 img {
 	max-width: 100%;
+	height: auto;
 }
 
 /********************
@@ -386,10 +387,6 @@ POSTS & CONTENT STYLES
 }
 
 .project-thumb img {
-	// width: 100%;
-	// height: auto;
-	display: block;
-	margin: auto;
 	margin-bottom: rhythm(1, $default);
 }
 
