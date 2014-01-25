@@ -1,13 +1,8 @@
 <?php 
 
-// ********* NOTE NOTE NOTE!! ********* //
-
-/*  WPFolio Three's default page template 
-	has no sidebar because, well, who wants a sidebar?
-	If the answer is you, use the Sidebar 
-	template in the Page Attributes->Template option */
-
-// ************* END NOTE ************* //
+/*
+Template Name: Full Width Page
+*/
 
 get_header(); ?>
 
@@ -27,9 +22,9 @@ get_header(); ?>
 
 						</header> <!-- end article header -->
 
-						<section class="entry-content clearfix widemargins" itemprop="articleBody">
+						<section class="entry-content clearfix" itemprop="articleBody">
 							<?php the_content(); ?>
-						</section> <!-- end article section -->
+					</section> <!-- end article section -->
 
 						<footer class="article-footer">
 							<?php the_tags('<span class="tags">' . __('Tags:', 'bonestheme') . '</span> ', ', ', ''); ?>

@@ -30,7 +30,7 @@
 										// NOTE: reversing these so they make more sense
 										next_post_link('%link', '<strong>&larr; Previous</strong>'); ?>
 									</div>
-									<div class="project-meta">
+									<div class="pv-middle">
 										<?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
 									</div>
 									<div class="next mobile-hide">

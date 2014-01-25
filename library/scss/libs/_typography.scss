@@ -6,18 +6,12 @@ html {
 	@include establish-baseline;
 }
 
-
-
 // Set up core font-sizing and rhythm
-// http://sass.fffunction.co/
+// based on http://sass.fffunction.co/
 
-// TODO: incorporate modular-scale?
 
 // Default Sizing and spacing
 // ------------------------------------------------------------
-
-// You'll often get better results here if you work in numbers the divide into the baseline.
-// IE, if you have a baseline of 6px, multiples or divisions of often provide best results in ems 
 
 body {
 	font-family: $primary-font;

@@ -25,7 +25,7 @@ $desktop 		: 60em;
 	max-width: 70em;
 }
 
-.project-meta {
+.pv-middle {
 	@include span-columns(1, 1);
 }
 
@@ -43,7 +43,7 @@ $desktop 		: 60em;
 
 
 // Tablet size
-@include at-breakpoint($tablet 6) {
+@include at-breakpoint($tablet 8) {
 
 	// Portfolio layout
 
@@ -55,15 +55,15 @@ $desktop 		: 60em;
 	}
 
 	.prev  {
-		@include span-columns(1);
+		@include span-columns(2);
 	}
 
-	.project-meta {
+	.pv-middle {
 		@include span-columns(4);	
 	}
 
 	.next {
-		@include span-columns(1 omega);
+		@include span-columns(2 omega);
 		text-align: right;
 	}
 

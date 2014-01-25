@@ -45,7 +45,7 @@ input[type="email"],
 input[type="url"],
 input[type="search"],
 input[type="tel"] {
-	padding: em-font(3px) em-font(6px);
+	padding: 0.2em 0.5em;
 	background: #fff;
 	color: $primary;
 	border: em-font(2px) solid #ccc;
