@@ -139,7 +139,7 @@ function wpf_register_required_plugins() {
 
         array(
             'name'                  => 'Options Framework', // The plugin name
-            'slug'                  => 'options-framework-plugin', // The plugin slug (typically the folder name)
+            'slug'                  => 'options-framework', // The plugin slug (typically the folder name)
             'required'              => true,
             'force_activation'      => true,
             'external_url'          => 'http://wordpress.org/plugins/options-framework/',
