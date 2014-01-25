@@ -223,33 +223,31 @@ MENUS & NAVIGATION
 
 // the main menu
 function bones_main_nav() {
-	// display the wp3 menu if available
     wp_nav_menu(array(
     	'container' => false,
     	'menu' => __( 'The Main Menu', 'bonestheme' ),
     	'menu_class' => 'sf-menu',
     	'theme_location' => 'main-nav',
-    	'before' => '',                                 // before the menu
-        'after' => '',                                  // after the menu
-        'link_before' => '',                            // before each link
-        'link_after' => '',                             // after each link
-        'depth' => 0,                                   // limit the depth of the nav
-    	'fallback_cb' => 'bones_main_nav_fallback'      // fallback function
+        'depth' => 0,
+    	'fallback_cb' => 'bones_main_nav_fallback'
 	));
 } /* end bones main nav */
 
 // this is the fallback for header menu
+// BIG NOTE: This should be wp_page_menu but
+// Superfish dunn like having a div.sf-menu around the ul
+// This will likely be a problem in future
+// so need to rewrite css to account for it 
+// and use wp_page_menu
+// http://wordpress.stackexchange.com/questions/116656/menu-fallback-menu-class-rendering-a-div-instead-of-a-ul
+// https://github.com/laras126/wpfolio-three/issues/1
+
 function bones_main_nav_fallback() {
-	wp_page_menu( array(
-		'show_home' => true,
+	wp_nav_menu( array(
 		'container' => false,
-    	'menu_class' => 'sf-menu',
-    	'theme_location' => 'main-nav',
-		'include'     => '',
-		'exclude'     => '',
-		'echo'        => true,
-        'link_before' => '',                            // before each link
-        'link_after' => ''                             // after each link
+		'menu_class' => 'sf-menu',
+		'show_home' => true,
+        'depth' => 0,
 	) );
 }
 	

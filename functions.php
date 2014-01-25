@@ -43,11 +43,14 @@ require_once( 'library/custom-post-type.php' );
 	- WPFolio features functions
 		- Wide margins shortcode
 	- Call Options Framework
+	// TODO: Merge bones.php into this when
+	// we change all of the bones names
 */
 require_once('library/wpfolio.php'); // you can disable this if you like
 
+
 /*
-3. library/admin.php
+4. library/admin.php
 	- removing some default WordPress dashboard widgets
 	- an example custom dashboard widget
 	- adding custom login css
@@ -56,41 +59,27 @@ require_once('library/wpfolio.php'); // you can disable this if you like
 */
 // require_once('library/admin.php'); // this comes turned off by default
 
+
 /*
 4. library/translation/translation.php
 	- adding support for other languages
 */
-// require_once('library/translation/translation.php'); // this comes turned off by default
+require_once('library/translation/translation.php'); // this comes turned off by default
 
+
+/*
+5. extensions/class-tgm-plugin-activation.php
+	- Require/recommend some plugins
+	- https://github.com/thomasgriffin/TGM-Plugin-Activation
+*/
+require_once('library/translation/translation.php'); // this comes turned off by default
  
 
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes
 
-// TODO customize these
-
 add_image_size( 'wpf-thumb-300', 300, 300, true );
-
-/*
-to add more sizes, simply copy a line from above
-and change the dimensions & name. As long as you
-upload a "featured image" as large as the biggest
-set width or height, all the other sizes will be
-auto-cropped.
-
-To call a different size, simply change the text
-inside the thumbnail function.
-
-For example, to call the 300 x 300 sized image,
-we would use the function:
-<?php the_post_thumbnail( 'bones-thumb-300' ); ?>
-for the 600 x 100 image:
-<?php the_post_thumbnail( 'bones-thumb-600' ); ?>
-
-You can change the names and dimensions to whatever
-you like. Enjoy!
-*/
 
 // remove inline style for gallery shortcode
 add_filter( 'use_default_gallery_style', '__return_false' );
@@ -109,32 +98,10 @@ function bones_register_sidebars() {
 		'before_title' => '<h4 class="widgettitle">',
 		'after_title' => '</h4>',
 	));
-
-	/*
-	to add more sidebars or widgetized areas, just copy
-	and edit the above sidebar code. In order to call
-	your new sidebar just use the following code:
-
-	Just change the name to whatever your new
-	sidebar's id is, for example:
-
-	register_sidebar(array(
-		'id' => 'sidebar2',
-		'name' => __('Sidebar 2', 'bonestheme'),
-		'description' => __('The second (secondary) sidebar.', 'bonestheme'),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h4 class="widgettitle">',
-		'after_title' => '</h4>',
-	));
-
-	To call the sidebar in your template, you can just copy
-	the sidebar.php file and rename it to your sidebar's name.
-	So using the above example, it would be:
-	sidebar-sidebar2.php
-
-	*/
+	
 } // don't remove this bracket!
+
+
 
 /************* COMMENT LAYOUT *********************/
 
@@ -177,6 +144,7 @@ function bones_comments($comment, $args, $depth) {
 
 
 
+
 /************* SEARCH FORM LAYOUT *****************/
 
 // Search Form
@@ -188,6 +156,8 @@ function bones_wpsearch($form) {
 	</form>';
 	return $form;
 } // don't remove this bracket!
+
+
 
 
 /************* MISC THEME REQUIREMENTS *****************/
