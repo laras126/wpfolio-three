@@ -3,11 +3,6 @@
 // Grid Stylesheet
 // Susy! http://susy.oddbird.net/
 
-// TODO:
-// Note about the post thumb grid - is there a better way to do the heights?
-// It's pretty verbose and arbitrary as it...
-// Yeah, FIX IT LATER.
-
 // Susy settings
 
 $total-columns  : 12;             // a 12-column grid
@@ -15,6 +10,8 @@ $column-width   : 4em;            // each column is 4em wide
 $gutter-width   : 2em;            // 1em gutters between columns
 $grid-padding   : $gutter-width;  // grid-padding equal to gutters
 $container-style: fluid;
+
+// Breakpoints
 
 $mobile 		: 25em;
 $tablet 		: 48em;
@@ -33,7 +30,6 @@ $desktop 		: 60em;
 
 // Phonez
 @include at-breakpoint($mobile 4) {
-
 	.project-thumb { @include isolate-grid(2); }
 }
 
@@ -41,16 +37,6 @@ $desktop 		: 60em;
 
 // Tablet size
 @include at-breakpoint($tablet 8) {
-
-	// Portfolio layout
-
-	// .project-thumb {
-	// 	@include span-columns(2,6);
-	// 	&:nth-child(2n+2) { @include remove-omega; }
-	// 	&:nth-child(3n+3) { @include omega; } // every third image completes a row.	
-	// 	height: 23em;
-	// }
-	// .project-thumb { @include isolate-grid(4); }
 
 	.prev  {
 		@include span-columns(2);
@@ -98,12 +84,6 @@ $desktop 		: 60em;
 	.top-nav {
 		float: right;
 	}
-
-	// Portfolio layout
-	// .project-thumb {
-	// 	height: 26em;
-	// }
-	
 	
 	// Comments
 	.single-project, .page {
@@ -119,20 +99,4 @@ $desktop 		: 60em;
 	}
 
 }
-
-
-// GROSS THUMBNAIL HEIGHT MQs
-// @include at-breakpoint(33.25em 4) {
-// 	.project-thumb {
-// 		height: 23em;
-// 	}
-// }
-
-// @include at-breakpoint(40em 4) {
-// 	.project-thumb {
-// 		height: 25em;
-// 	}
-// }
-// END GROSS MQs
-
 

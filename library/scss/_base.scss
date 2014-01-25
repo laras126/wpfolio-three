@@ -387,7 +387,9 @@ POSTS & CONTENT STYLES
 }
 
 .project-thumb img {
-	margin-bottom: rhythm(1, $default);
+	margin-bottom: rhythm(3, $default);
+	display: block;
+	margin: 0 auto;
 }
 
 .project-thumb-title {
