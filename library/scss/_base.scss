@@ -212,7 +212,10 @@ POSTS & CONTENT STYLES
 		.attachment {}      /* general style on an attatchment */
 		
 		.sticky {
-			
+			background-color: lighten($alert-yellow, 20%);
+			border: 2px solid $alert-yellow;
+			padding-left: $h3;
+			padding-right: $h3; 
 		}
 
 		.hentry {}          /* hentry class */
