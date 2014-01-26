@@ -16,6 +16,17 @@ $aw_desc = get_post_meta( $post->ID, '_ctmb_description', true );
 $aw_acknow = get_post_meta( $post->ID, '_ctmb_acknowledgments', true );
 $aw_link = get_post_meta( $post->ID, '_ctmb_link', true );
 $aw_link_text = get_post_meta( $post->ID, '_ctmb_link_text', true ); 
+
+$meta_vals = array( $aw_date,
+					$aw_medium,
+					$aw_desc,
+					$aw_acknow,
+					$aw_link,
+					$aw_link_text 
+				);
+
+// This is a little sloppy to do every single one, but oh well
+if ($aw_date || $aw_medium || $aw_desc || $aw_acknow || $aw_link || $aw_link_text):
 ?>
 
 <div class="artwork-meta">
@@ -48,3 +59,7 @@ $aw_link_text = get_post_meta( $post->ID, '_ctmb_link_text', true );
 		?>
 	</ul>
 </div>
+
+<?php 
+endif;
+?>
