@@ -36,26 +36,26 @@ $desktop 		: 60em;
 
 
 // Tablet size
-@include at-breakpoint($tablet 8) {
+@include at-breakpoint($tablet 12) {
 
 	.prev  {
-		@include span-columns(2);
+		@include span-columns(3);
 	}
 
 	.pv-middle {
-		@include span-columns(4);	
+		@include span-columns(6);	
 	}
 
 	.next {
-		@include span-columns(2 omega);
+		@include span-columns(3 omega);
 		text-align: right;
 	}
 
 	.artwork-meta {
-		@include suffix(1);
+		@include suffix(3);
 	}
 
-	.project-thumb { @include isolate-grid(2.666); }
+	.project-thumb { @include isolate-grid(4); }
 	
 
 }
@@ -79,8 +79,6 @@ $desktop 		: 60em;
 	.site-nav {
 		@include span-columns(8 omega);
 	}
-	
-	.project-thumb { @include isolate-grid(4); }
 
 	// Make the list float right too
 	.top-nav {

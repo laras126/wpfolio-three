@@ -36,9 +36,9 @@ function optionsframework_options() {
 
 	// Comments options
     $comments_arr = array(
-        'all' => __('Keep all comments', 'options_check'),
-        'blog' => __('Show only on the Blog', 'options_check'),
-        'none' => __('Disable all comments', 'options_check'),
+        'all' => __('Keep all comments', 'wpfolio'),
+        'blog' => __('Show only on the Blog', 'wpfolio'),
+        'none' => __('Disable all comments', 'wpfolio'),
     );
 
     // Background Defaults
@@ -130,13 +130,13 @@ function optionsframework_options() {
 	$options = array();
 
 	$options[] = array(
-		'name' => __('Basic Settings', 'options_check'),
+		'name' => __('Basic Settings', 'wpfolio'),
 		'type' => 'heading');
 	
 	// 1. Comments
 	$options[] = array(
-		'name' => __('Comments', 'options_check'),
-		'desc' => __('Where would you like to see comments to show? By default they are only in the Blog category.', 'options_check'),
+		'name' => __('Comments', 'wpfolio'),
+		'desc' => __('Where would you like to see comments to show? By default they are only in the Blog category.', 'wpfolio'),
 		'id' => 'comments',
 		'std' => 'all',
 		'type' => 'radio',
@@ -144,8 +144,8 @@ function optionsframework_options() {
 
 	// 2. Favicon
 	$options[] = array(
-		'name' => __('Custom Favicon', 'options_check'),
-		'desc' => __('Upload a 16px x 16px png/gif/ico image for your website\'s favicon. You can create a favicon from a larger image with the <a href="http://www.degraeve.com/favicon/" taget="blank">Favicon Generator</a> then upload it here.', 'options_check'),
+		'name' => __('Custom Favicon', 'wpfolio'),
+		'desc' => __('Upload a 16px x 16px png/gif/ico image for your website\'s favicon. You can create a favicon from a larger image with the <a href="http://www.degraeve.com/favicon/" taget="blank">Favicon Generator</a> then upload it here.', 'wpfolio'),
 		'id' => 'custom_favicon',
 		'type' => 'upload');
 
@@ -169,7 +169,7 @@ function optionsframework_options() {
 
 
 	$options[] = array(
-		'name' => __('Styles', 'options_check'),
+		'name' => __('Styles', 'wpfolio'),
 		'type' => 'heading');
 
 
@@ -177,8 +177,8 @@ function optionsframework_options() {
 
 	// 1. Title Font
 	$options[] = array( 
-		'name' => __('Title Font', 'options_check'),
-		'desc' => __('Choose a font for your site title.'),
+		'name' => __('Title Font', 'wpfolio'),
+		'desc' => __('Choose a font for your site title.', 'wpfolio'),
 		'id' => 'title_font',
 		'std' => $title_font_defaults,
 		'type' => 'typography',
@@ -189,8 +189,8 @@ function optionsframework_options() {
 
 	// 2. Header font
 	$options[] = array( 
-		'name' => __('Headings Font', 'options_check'),
-		'desc' => __('You can choose a different font and color for the heading text.', 'options_check'),
+		'name' => __('Headings Font', 'wpfolio'),
+		'desc' => __('You can choose a different font and color for the heading text.', 'wpfolio'),
 		'id' => "heading_font",
 		'std' => $heading_font_defaults,
 		'type' => 'typography',
@@ -199,8 +199,8 @@ function optionsframework_options() {
 
 	// 3. Body font
 	$options[] = array( 
-		'name' => __('Body Font', 'options_check'),
-		'desc' => __('Choose the font for your website\'s content text.', 'options_check'),
+		'name' => __('Body Font', 'wpfolio'),
+		'desc' => __('Choose the font for your website\'s content text.', 'wpfolio'),
 		'id' => 'body_typography',
 		'std' => $body_font_defaults,
 		'type' => 'typography', 
@@ -220,8 +220,8 @@ function optionsframework_options() {
 	
 	// Change the background color or upload an image
 	$options[] = array(
-		'name' =>  __('Background', 'options_check'),
-		'desc' => __('Choose a color or texture or upload an image for your background. Check out <a href="http://subtlepatterns.com" target="blank">Subtle Patterns</a> for some excellent quality textures. Note that an image will override a color.', 'options_check'),
+		'name' =>  __('Background', 'wpfolio'),
+		'desc' => __('Choose a color or texture or upload an image for your background. Check out <a href="http://subtlepatterns.com" target="blank">Subtle Patterns</a> for some excellent quality textures. Note that an image will override a color.', 'wpfolio'),
 		'id' => 'body_background',
 		'std' => $background_defaults,
 		'type' => 'background' );
@@ -231,8 +231,8 @@ function optionsframework_options() {
 
 	// Textarea for custom CSS
 	$options[] = array(
-		'name' => __('Custom CSS', 'options_check'),
-		'desc' => __('Quickly add some CSS by typing it here. If you are adding more than 5 or 6 styles, consider using a <a href="http://themeshaper.com/modify-wordpress-themes/" target="blank">Child Theme.</a>', 'options_check'),
+		'name' => __('Custom CSS', 'wpfolio'),
+		'desc' => __('Quickly add some CSS by typing it here. If you are adding more than 5 or 6 styles, consider using a <a href="http://themeshaper.com/modify-wordpress-themes/" target="blank">Child Theme.</a>', 'wpfolio'),
 		'id' => 'custom_css',
 		'std' => '#wrapper {'."\n\t".'border-radius: 0.3em;'."\n".'}',
 		'type' => 'textarea');

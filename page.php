@@ -33,6 +33,7 @@ get_header(); ?>
 
 						<footer class="article-footer">
 							<?php the_tags('<span class="tags">' . __('Tags:', 'bonestheme') . '</span> ', ', ', ''); ?>
+							<?php wp_link_pages('before=<div id="page-links">&after=</div>'); ?>
 
 						</footer> <!-- end article footer -->
 

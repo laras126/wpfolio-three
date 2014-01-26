@@ -5,7 +5,7 @@
 
 
 // Include functions to return options
-require_once( TEMPLATEPATH . '/options.php' );
+require_once( get_template_directory() . '/options.php' );
 
 
 if ( !function_exists( 'of_get_option' ) ) {
@@ -27,7 +27,6 @@ if ( !function_exists( 'of_get_option' ) ) {
         }
     }
 }
-
 
 
 

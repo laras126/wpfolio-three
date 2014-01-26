@@ -25,7 +25,7 @@ Template for the Project Category taxonomy archive.
 								<?php if ( has_post_thumbnail() ) {
 									the_post_thumbnail('wpf-thumb-300');
 								} else { ?>
-									<img src="<?php bloginfo('template_directory'); ?>/library/images/default-thumb-image.png" alt="<?php the_title(); ?>"/>
+									<img src="<?php get_template_directory_uri(); ?>/library/images/default-thumb-image.png" alt="<?php the_title(); ?>"/>
 								<?php } ?>
 								<h5 class="project-thumb-title line-clamp"><?php the_title(); ?></h5>
 							</a>

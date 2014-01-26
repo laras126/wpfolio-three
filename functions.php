@@ -12,7 +12,7 @@ sidebars, comments, ect.
 /************* INCLUDE NEEDED FILES ***************/
 
 // Sets up the options panel and default functions
-require_once( TEMPLATEPATH . '/extensions/options-functions.php' );
+require_once( get_template_directory() . '/extensions/options-functions.php' );
 
 /*
 1. library/bones.php

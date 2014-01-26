@@ -40,6 +40,7 @@ Template for single Projects
 						<footer class="article-footer clearfix">
 						
 							<div class="prev mobile-hide">
+								<?php //TODO: better way to placehold in case this is empty (entity not very semantic) ?>
 								&nbsp;
 								<?php 
 								// NOTE: reversing these so they make more sense

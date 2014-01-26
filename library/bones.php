@@ -209,7 +209,7 @@ function bones_theme_support() {
 	// registering wp3+ menus
 	register_nav_menus(
 		array(
-			'main-nav' => __( 'The Main Menu', 'bonestheme' ),   // main nav in header
+			'main-nav' => __( 'The Main Menu', 'wpfolio' ),   // main nav in header
 		)
 	);
 } /* end bones theme support */
@@ -223,7 +223,7 @@ MENUS & NAVIGATION
 function bones_main_nav() {
     wp_nav_menu(array(
     	'container' => false,
-    	'menu' => __( 'The Main Menu', 'bonestheme' ),
+    	'menu' => __( 'The Main Menu', 'wpfolio' ),
     	'menu_class' => 'sf-menu',
     	'theme_location' => 'main-nav',
         'depth' => 0,
@@ -272,7 +272,7 @@ function bones_related_posts() {
 	           	<li class="related_post"><a class="entry-unrelated" href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
 	        <?php endforeach; }
 	    else { ?>
-            <?php echo '<li class="no_related_post">' . __( 'No Related Posts Yet!', 'bonestheme' ) . '</li>'; ?>
+            <?php echo '<li class="no_related_post">' . __( 'No Related Posts Yet!', 'wpfolio' ) . '</li>'; ?>
 		<?php }
 	}
 	wp_reset_query();
@@ -316,7 +316,7 @@ function bones_page_navi($before = '', $after = '') {
 	}
 	echo $before.'<nav class="page-navigation"><ol class="bones_page_navi clearfix">'."";
 	if ($start_page >= 2 && $pages_to_show < $max_page) {
-		$first_page_text = __( "First", 'bonestheme' );
+		$first_page_text = __( "First", 'wpfolio' );
 		echo '<li class="bpn-first-page-link"><a href="'.get_pagenum_link().'" title="'.$first_page_text.'">'.$first_page_text.'</a></li>';
 	}
 	echo '<li class="bpn-prev-link">';
@@ -333,7 +333,7 @@ function bones_page_navi($before = '', $after = '') {
 	next_posts_link('Next &rarr;');
 	echo '</li>';
 	if ($end_page < $max_page) {
-		$last_page_text = __( "Last", 'bonestheme' );
+		$last_page_text = __( "Last", 'wpfolio' );
 		echo '<li class="bpn-last-page-link"><a href="'.get_pagenum_link($max_page).'" title="'.$last_page_text.'">'.$last_page_text.'</a></li>';
 	}
 	echo '</ol></nav>'.$after."";
@@ -352,7 +352,7 @@ function bones_filter_ptags_on_images($content){
 function bones_excerpt_more($more) {
 	global $post;
 	// edit here if you like
-return '...  <a class="excerpt-read-more" href="'. get_permalink($post->ID) . '" title="'. __('Read', 'bonestheme') . get_the_title($post->ID).'">'. __('Read more &raquo;', 'bonestheme') .'</a>';
+return '...  <a class="excerpt-read-more" href="'. get_permalink($post->ID) . '" title="'. __('Read', 'wpfolio') . get_the_title($post->ID).'">'. __('Read more &raquo;', 'wpfolio') .'</a>';
 }
 
 /*
@@ -367,7 +367,7 @@ function bones_get_the_author_posts_link() {
 	$link = sprintf(
 		'<a href="%1$s" title="%2$s" rel="author">%3$s</a>',
 		get_author_posts_url( $authordata->ID, $authordata->user_nicename ),
-		esc_attr( sprintf( __( 'Posts by %s' ), get_the_author() ) ), // No further l10n needed, core will take care of this one
+		esc_attr( sprintf( __( 'Posts by %s', 'wpfolio' ), get_the_author() ) ), // No further l10n needed, core will take care of this one
 		get_the_author()
 	);
 	return $link;
