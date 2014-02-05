@@ -44,10 +44,6 @@ if ($aw_date || $aw_medium || $aw_desc || $aw_acknow || $aw_link || $aw_link_tex
 			echo '<li>' . $aw_medium . '</li>';
 		}
 
-		if ( $aw_link ) {
-			echo '<li class="aw-sep project-link"><a href="' . $aw_link . '">' . $aw_link_text . '</a></li>';
-		}
-
 		if ( $aw_desc ) {
 			echo '<li class="aw-sep"><h5>Description</h5>' . $aw_desc . '</li>';
 		}
@@ -55,6 +51,11 @@ if ($aw_date || $aw_medium || $aw_desc || $aw_acknow || $aw_link || $aw_link_tex
 		if ( $aw_acknow ) {
 			echo '<li class="aw-sep"><h5>Acknowledgements</h5>' . $aw_acknow . '</li>';
 		}
+		
+		if ( $aw_link ) {
+			echo '<li class="aw-sep project-link"><a href="' . $aw_link . '">' . $aw_link_text . '</a></li>';
+		}
+
 
 		?>
 	</ul>

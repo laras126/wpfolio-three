@@ -234,7 +234,7 @@ function optionsframework_options() {
 		'name' => __('Custom CSS', 'wpfolio'),
 		'desc' => __('Quickly add some CSS by typing it here. If you are adding more than 5 or 6 styles, consider using a <a href="http://themeshaper.com/modify-wordpress-themes/" target="blank">Child Theme.</a>', 'wpfolio'),
 		'id' => 'custom_css',
-		'std' => '#wrapper {'."\n\t".'border-radius: 0.3em;'."\n".'}',
+		'std' => '',
 		'type' => 'textarea');
 
 
