@@ -24,19 +24,12 @@
 $comment_option = of_get_option('comments');
 if ( $comment_option == 'all' || $comment_option == 'blog' && is_singular('post') ): ?>
 	<?php if ( have_comments() ) : ?>
-		
+
 		<h3 id="comments" class="h4"><?php comments_number(__('<span>No</span> Responses', 'wpfolio'), __('<span>One</span> Response', 'wpfolio'), _n('<span>%</span> Response', '<span>%</span> Responses', get_comments_number(),'wpfolio') );?> to &#8220;<?php the_title(); ?>&#8221;</h3>
 
 		<ol class="commentlist">
 			<?php wp_list_comments('type=comment&callback=bones_comments'); ?>
 		</ol>
-
-		<nav id="comment-nav">
-			<ul class="clearfix">
-					<li><?php previous_comments_link() ?></li>
-					<li><?php next_comments_link() ?></li>
-			</ul>
-		</nav>
 
 		<?php else : // this is displayed if there are no comments so far ?>
 
