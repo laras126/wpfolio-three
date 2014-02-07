@@ -1,8 +1,12 @@
 			<footer class="footer" role="contentinfo">
 
 				<div id="inner-footer" class="wrap clearfix">
-
-					<p class="source-org copyright fourcol last">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>.</p>
+					<?php 
+						$credit_option = of_get_option('credits');
+						if ( $credit_option == 'yes' ): ?>
+							<p class="credits">Proudly Powered by <a href="http://wordpress.org">WordPress</a>, theme <a href="http://wpfolio.notlaura.com">WPFolio</a>.</p>
+					<?php endif; ?>
+					<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>.</p>
 
 				</div> <!-- end #inner-footer -->
 

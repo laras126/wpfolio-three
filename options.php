@@ -41,6 +41,11 @@ function optionsframework_options() {
         'none' => __('Disable all comments', 'wpfolio'),
     );
 
+	$credits_arr = array(
+		'yes' => __('Yes', 'wpfolio'),
+        'no' => __('No', 'wpfolio'),
+	);
+
     // Background Defaults
     $background_defaults = array(
         'color' => '#ffffff',
@@ -125,6 +130,7 @@ function optionsframework_options() {
 	/* 	This includes:
 		1. Comments (radio)
 		2. Custom Favicon (upload)
+		3. Show theme creds?
 	*/
 
 	$options = array();
@@ -149,6 +155,15 @@ function optionsframework_options() {
 		'id' => 'custom_favicon',
 		'type' => 'upload');
 
+
+	// 3. Theme Creds
+	$options[] = array(
+		'name' => __('Theme Credits', 'wpfolio'),
+		'desc' => __('Show theme credits in the footer? It\'s a nice thing to do, but up to you!', 'wpfolio'),
+		'id' => 'credits',
+		'std' => 'no',
+		'type' => 'radio',
+		'options' => $credits_arr);
 
 
 
