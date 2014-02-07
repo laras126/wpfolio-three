@@ -90,6 +90,10 @@ $desktop 		: 60em;
 			@include span-columns(8);
 			@include post(4);
 		}
+
+		.commentlist .respond-form {
+			@include span-columns(12);
+		}
 	}
 
 	.widemargins {

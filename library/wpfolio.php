@@ -205,4 +205,22 @@ function wpf_remove_tax_name( $title, $sep, $seplocation ) {
 add_filter( 'wp_title', 'wpf_remove_tax_name', 10, 3 );
 
 
+
+// Add taxonomy term to body class
+// http://wordpress.org/support/topic/adding-taxonomy-term-to-body_class-on-singlephp
+function wpf_custom_taxonomy_in_body_class( $classes ){
+    if( is_singular() ) {
+        $custom_terms = get_the_terms(0, 'project_category');
+        if ($custom_terms) {
+            foreach ($custom_terms as $custom_term) {
+                $classes[] = 'project-cat-' . $custom_term->slug;
+            }
+        }
+    }
+    return $classes;
+}
+
+add_filter( 'body_class', 'wpf_custom_taxonomy_in_body_class' );
+
+
 ?>
