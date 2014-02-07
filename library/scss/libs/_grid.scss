@@ -93,12 +93,12 @@ $desktop 		: 60em;
 		}
 	}
 
-	.page-template-page-sidebar-php, .commentlist{
-		.respond-form {
+	.page-template-page-sidebar-php {
+		.respond-form, .commentlist {
 			@include span-columns(12);
 		}
 	}
-
+	
 	.widemargins {
 		@include prefix(1);
 		@include suffix(1);
