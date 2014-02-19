@@ -97,7 +97,7 @@ jQuery(document).ready(function($) {
 
 
     // Fade in homepage
-    $('.home #content, .home .footer').fadeIn(700);
+    $('.js .home #content, .js .home .footer').fadeIn(700);
 
     $('ul.sf-menu').superfish({ /* <-- error occurs here */
         delay:       0,      // one second delay on mouseout 

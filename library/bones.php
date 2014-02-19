@@ -141,7 +141,7 @@ function bones_scripts_and_styles() {
     }
 
     //adding scripts file in the footer
-    wp_register_script( 'wpf-js', get_template_directory() . '/library/build/js/production.min.js', array( 'jquery' ), '', true );
+    wp_register_script( 'wpf-js', get_template_directory_uri() . '/library/build/js/production.min.js', array( 'jquery' ), '', true );
 	
     // enqueue styles and scripts
     wp_enqueue_script( 'wpf-modernizr' );
