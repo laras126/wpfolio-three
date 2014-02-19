@@ -118,7 +118,7 @@ add_shortcode('artwork_info', 'artwork_meta_shortcode');
 // https://github.com/thomasgriffin/TGM-Plugin-Activation
 // TODO: this is not automatically activating the plugins
 
-require_once get_stylesheet_directory() . '/extensions/class-tgm-plugin-activation.php';
+require_once get_template_directory() . '/extensions/class-tgm-plugin-activation.php';
 
 add_action( 'tgmpa_register', 'wpf_register_required_plugins' );
 
