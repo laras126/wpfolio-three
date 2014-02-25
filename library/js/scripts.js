@@ -95,10 +95,6 @@ jQuery(document).ready(function($) {
     var $media = $('iframe, object, embed');
     $media.wrap( '<figure class="media-wrap"></figure>' );
 
-
-    // Fade in homepage
-    $('.js .home #content, .js .home .footer').fadeIn(700);
-
     $('ul.sf-menu').superfish({ /* <-- error occurs here */
         delay:       0,      // one second delay on mouseout 
         animation:   {
@@ -109,7 +105,6 @@ jQuery(document).ready(function($) {
         autoArrows:  true,   // generation of arrow mark-up (for submenu) 
         dropShadows: false   // drop shadows (for submenu)
     });
-
 
 }); /* end of as page load scripts */
 

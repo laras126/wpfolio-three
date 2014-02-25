@@ -36,14 +36,9 @@
 						<p class="site-description"><?php bloginfo('description'); ?></p>
 					</div>
 					
-					<?php 
-						//TODO: echo the parent category, page name, whatever
-						// instead of just menu here
-					?>
-
-					<a href="#main-nav" class="menu-link"><i class="fa fa-caret-down"></i>  Menu<?php //wp_title(''); ?></a>
+					<a href="#main-nav" class="menu-link"><i class="fa fa-caret-down"></i>  Menu</a>
 					
-					<nav id="main-nav" role="navigation" class="site-nav nav">	
+					<nav id="main-nav" role="navigation" class="site-nav nav">
 						<?php bones_main_nav(); ?>
 					</nav>
 					

@@ -130,7 +130,8 @@ function bones_scripts_and_styles() {
     wp_register_script( 'wpf-modernizr', get_template_directory_uri() . '/library/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
 
     // register main stylesheet
-    wp_register_style( 'wpf-stylesheet', get_template_directory_uri() . '/library/css/style.css', array(), '', 'all' );
+    // Using get_stylesheet_directory_uri() to allow for child themes
+    wp_register_style( 'wpf-stylesheet', get_stylesheet_directory_uri() . '/style.css', array(), '', 'all' );
 
     // ie-only style sheet
     wp_register_style( 'wpf-ie-only', get_template_directory_uri() . '/library/css/ie.css', array(), '' );
