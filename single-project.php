@@ -19,7 +19,7 @@ Template for single Projects
 					<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
 
 						<section class="entry-content clearfix">
-							<!-- <h1 class="project-title single-title" itemprop="headline"><?php the_title(); ?></h1> -->
+							<h1 class="project-title single-title" itemprop="headline"><?php the_title(); ?></h1>
 							<div class="clearfix">
 								<?php the_content(); ?>
 							</div>
