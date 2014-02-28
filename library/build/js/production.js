@@ -325,8 +325,11 @@ jQuery(document).ready(function($) {
     // Wrap all media in a figure element 
     // that is styled to make them fluid
     var $media = $('iframe, object, embed');
-    $media.wrap( '<figure class="media-wrap"></figure>' );
 
+    if(! $media.parent('.media-wrap').length > 0) {
+        $media.wrap( '<figure class="media-wrap"></figure>' );    
+    }
+    
     $('ul.sf-menu').superfish({ /* <-- error occurs here */
         delay:       0,      // one second delay on mouseout 
         animation:   {

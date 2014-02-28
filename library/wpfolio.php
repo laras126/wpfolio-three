@@ -8,7 +8,7 @@ function wpf_theme_setup(){
 
 /************* ARTWORK METABOX ********************/
 
-// This metabox shows up in all posts
+// This metabox shows up in all projects
 // TODO: maybe add an option to hide it?
 function wpf_artinfo_metaboxes( $meta_boxes ) {
     $post_title = the_title();
