@@ -45,11 +45,15 @@ if ($aw_date || $aw_medium || $aw_desc || $aw_acknow || $aw_link || $aw_link_tex
 		}
 
 		if ( $aw_desc ) {
-			echo '<li class="aw-sep"><h5>Description</h5>' . $aw_desc . '</li>';
+			echo '<li class="aw-sep"><h5>Description</h5>'; 
+			echo wpautop( $aw_desc );
+			echo '</li>';
 		}
 
 		if ( $aw_acknow ) {
-			echo '<li class="aw-sep"><h5>Acknowledgements</h5>' . $aw_acknow . '</li>';
+			echo '<li class="aw-sep"><h5>Acknowledgements</h5>';
+			echo wpautop( $aw_acknow );
+			echo '</li>';
 		}
 		
 		if ( $aw_link ) {
