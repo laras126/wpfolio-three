@@ -401,7 +401,7 @@ POSTS & CONTENT STYLES
 	margin-bottom: rhythm(4, $h5);
 }
 
-.artwork-meta ul {
+.artwork-meta > ul {
 	@include nobullet;
 }
 
