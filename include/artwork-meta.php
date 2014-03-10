@@ -60,7 +60,6 @@ if ($aw_date || $aw_medium || $aw_desc || $aw_acknow || $aw_link || $aw_link_tex
 			echo '<li class="aw-sep project-link"><a href="' . $aw_link . '">' . $aw_link_text . '</a></li>';
 		}
 
-
 		?>
 	</ul>
 </div>
