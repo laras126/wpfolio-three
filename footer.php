@@ -7,7 +7,7 @@
 							<p class="credits">Proudly Powered by <a href="http://wordpress.org">WordPress</a>, theme <a href="http://wpfolio.notlaura.com">WPFolio</a>.</p>
 					<?php endif; ?>
 					<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>.</p>
-
+					
 				</div> <!-- end #inner-footer -->
 
 			</footer> <!-- end footer -->
