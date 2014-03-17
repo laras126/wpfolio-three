@@ -2,13 +2,12 @@
 
 WPFolio Three
 The super-revamped WPFolio WordPress Theme for visual artists. 
+Demo: wpfolio.notlaura.com
 
-It's not done yet!
-
-Designed and developed by Lara Schenck
+Designed and developed by Lara Schenck:
 - http://notlaura.com
 
-Original WPFolio by Steve Lambert at Eyebeam
+Original WPFolio by Steve Lambert and others at Eyebeam:
 - http://visitsteve.com
 - https://eyebeam.org/projects/wpfolio
 
@@ -17,31 +16,45 @@ License URI: http://www.gnu.org/licenses/gpl.html
 
 ----
 
-What's the difference between WPFolios Two and Three?
+
+=== IMPORTANT! ===
+
+This version of WPFolio contains a custom post type for Projects.
+If you are migrating from an older version of WPFolio, you will need to 
+transfer all of your project posts from posts to the Project type.
+
+I recommend this plugin:
+http://wptheming.com/2013/08/convert-custom-post-types/
+
+(More helpful instructions specifically for WPF coming soon)
+
+
+
+
+=== FEATURES ===
+
+You may have noticed there are a few versions of WPFolio. 
+Well, what's the difference?
+
 So far, these things:
-- Responsive
-- Webfonts for both body and title text
-- Typography overall
+- Project custom type
+- Taxonomies for People and Places
+- Revised Artwork Meta fields
+- Mobile first and responsive
+- Easy webfonts options for both body, headings, and title text
+- Typography improvements overall
 - Styled with Sass
 - Uses the Options Framework plugin rather than embedding it in the theme
-- No more Thematic, hello Bones!
+- No more Thematic, hello Bones! (http://themble.com/bones)
 
-So, about Bones:
-- http://themble.com/bones
-- A lightweight WordPress development theme
-- Createds by Eddie Machado
-- Adorable skeleton character
-
-WPFolio Three is now truly it's own theme - before I used Thematic, which was fine, but made it very diffcult to really customize templates. 
-Gosh, Bones is great.
-
-Other tools/frameworks I used:
+Other tools/frameworks I used and referenced:
 - Compass, of course: http://compass-style.org
 - Sassaparilla for typography and general stylesheet structure: http://sass.fffunction.co/
 - Susy for grids: http://susy.oddbird.net
 - Modular scale: https://github.com/Team-Sass/modular-scale
 
+
+
+=== CHANGELOG ===
+
 /******************************************************************/
-
-WPF3 ain't ready for a changes log yet, but it will be here soon enough.
-

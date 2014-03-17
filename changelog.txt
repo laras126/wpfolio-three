@@ -1,0 +1,5 @@
+WPFolio Three Changelog
+
+=== 0.8 ===
+- update readme
+- add changelog and official version
