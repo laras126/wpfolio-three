@@ -1,5 +1,11 @@
 WPFolio Three Changelog
+http://semver.org/
 
-=== 0.8 ===
+=== 0.9.1 ===
+- make artwork meta info full width
+
+
+=== 0.9.0 ===
 - update readme
 - add changelog and official version
+- add sample child theme

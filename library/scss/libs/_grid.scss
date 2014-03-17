@@ -50,11 +50,9 @@ $desktop 		: 60em;
 		text-align: right;
 	}
 
-	.artwork-meta {
-		@include suffix(3);
+	.project-thumb { 
+		@include isolate-grid(4); 
 	}
-
-	.project-thumb { @include isolate-grid(4); }
 	
 
 }

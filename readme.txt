@@ -55,6 +55,9 @@ Other tools/frameworks I used and referenced:
 
 
 
-=== CHANGELOG ===
+=== TODOS ===
+(For the project on Github to help!)
+- Hooks for child themes
+
 
 /******************************************************************/
