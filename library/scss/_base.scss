@@ -616,8 +616,7 @@ COMMENT STYLES
 		}
 
 		ul.children {
-			margin: 0;
-
+			margin: $sml;
 			li {}
 
 			/* variations */
@@ -628,7 +627,7 @@ COMMENT STYLES
 			.depth-1 {}           /* change number for different depth */
 			.byuser {}
 			.bypostauthor {
-				font-size: $sml;
+				// font-size: $sml;
 			}
 			.comment-author-admin {}
 

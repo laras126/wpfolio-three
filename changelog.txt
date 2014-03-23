@@ -1,6 +1,20 @@
 WPFolio Three Changelog
 http://semver.org/
 
+
+=== 0.9.3 ===
+- fix small comment reply text
+- comments testing and debugging
+
+
+=== 0.9.2 ===
+- misc cleanup before submitting
+- center text on mobile in footer
+- add post type icon
+- link font awesome to cdn instead of font file
+- update example in sample child
+
+
 === 0.9.1 ===
 - make artwork meta info full width
 

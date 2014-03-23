@@ -46,6 +46,7 @@ So far, these things:
 - Styled with Sass
 - Uses the Options Framework plugin rather than embedding it in the theme
 - No more Thematic, hello Bones! (http://themble.com/bones)
+- FitVid jQuery plugin for responsive video (http://fitvidsjs.com)
 
 Other tools/frameworks I used and referenced:
 - Compass, of course: http://compass-style.org
