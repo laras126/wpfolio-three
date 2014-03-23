@@ -223,19 +223,19 @@ POSTS & CONTENT STYLES
 		.tag-slug {}        /* style by tag (i.e. tag-news) */
 
 		/* post meta */
-		.byline {
+		.byline, .form-allowed-tags {
 			font-style: italic;
 
 			time {}
 		}
 
-		.byline {
+		.byline, .form-allowed-tags {
 			color: #999;
 		}
 
 		.tags {
 			@include nobullet;
-			margin-bottom: 0;
+			margin-bottom: 0; 
 		}
 
 		.tags-title {
@@ -756,7 +756,7 @@ COMMENT STYLES
 COMMENT FORM STYLES
 ******************************************************************/
 
-.respond-form {
+.comment-respond {
 	margin-top: $h2;
 	padding-bottom: $h2;
 
