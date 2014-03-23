@@ -72,7 +72,9 @@ require_once('library/translation/translation.php'); // this comes turned off by
 	- Require/recommend some plugins
 	- https://github.com/thomasgriffin/TGM-Plugin-Activation
 */
-require_once('library/translation/translation.php'); // this comes turned off by default
+
+require_once get_template_directory() . '/extensions/class-tgm-plugin-activation.php';
+
  
 
 /************* THUMBNAIL SIZE OPTIONS *************/

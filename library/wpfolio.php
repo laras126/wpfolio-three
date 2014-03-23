@@ -1,11 +1,5 @@
 <?php 
 
-add_action('after_setup_theme', 'wpf_theme_setup');
-function wpf_theme_setup(){
-    load_theme_textdomain( 'wpfolio', get_template_directory() .'/library/translation' );
-}
-
-
 /************* ARTWORK METABOX ********************/
 
 // This metabox shows up in all projects
@@ -115,10 +109,6 @@ add_shortcode('artwork_info', 'artwork_meta_shortcode');
 
 /************* REQUIRE SOME PLUGINS ********************/
 
-// https://github.com/thomasgriffin/TGM-Plugin-Activation
-// TODO: this is not automatically activating the plugins
-
-require_once get_template_directory() . '/extensions/class-tgm-plugin-activation.php';
 
 add_action( 'tgmpa_register', 'wpf_register_required_plugins' );
 
