@@ -234,7 +234,7 @@ function bones_main_nav() {
 
 // this is the fallback for header menu
 // BIG NOTE: This should be wp_page_menu but
-// Superfish dunn like having a div.sf-menu around the ul
+// Superfish doesn't like having a div.sf-menu around the ul
 // This will likely be a problem in future
 // so need to rewrite css to account for it 
 // and use wp_page_menu
