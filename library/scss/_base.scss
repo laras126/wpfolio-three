@@ -872,13 +872,13 @@ FOOTER STYLES
 *********************/
 
 .footer {
-	clear: both;
 	@include adjust-font-size-to(14px);
 	margin-top: rhythm(4, $sml);
+	text-align: center;
 
 	.wrap {
 		border-top: 1px solid $accent-light;
-		padding: rhythm(1, $h5) 0;
+		padding: rhythm(1, $sml);
 	}
 }
 
