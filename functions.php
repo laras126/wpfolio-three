@@ -36,9 +36,9 @@ require_once('library/bones.php'); // if you remove this, bones will break
 	- Medium Taxonomy
 	- Custom fields
 */
-require_once( 'library/custom-post-type.php' );
+// require_once( 'library/custom-post-type.php' );
 
-/* 
+/*
 3. library/wpfolio.php
 	- WPFolio features functions
 		- Wide margins shortcode
@@ -75,7 +75,7 @@ require_once('library/translation/translation.php'); // this comes turned off by
 
 require_once get_template_directory() . '/extensions/class-tgm-plugin-activation.php';
 
- 
+
 
 /************* THUMBNAIL SIZE OPTIONS *************/
 
@@ -100,7 +100,7 @@ function bones_register_sidebars() {
 		'before_title' => '<h4 class="widgettitle">',
 		'after_title' => '</h4>',
 	));
-	
+
 } // don't remove this bracket!
 
 
@@ -112,9 +112,9 @@ function bones_comments($comment, $args, $depth) {
    $GLOBALS['comment'] = $comment; ?>
 
 	<li <?php comment_class(); ?>>
-	
+
 		<article id="comment-<?php comment_ID(); ?>" class="clearfix">
-	
+
 			<header class="comment-author vcard">
 				<?php
 				/*

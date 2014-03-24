@@ -1,7 +1,7 @@
 <?php
 /*
 
-Template for single Projects
+Template for Single portfolio (non-news) posts
 
 */
 ?>
@@ -23,32 +23,32 @@ Template for single Projects
 							<div class="clearfix">
 								<?php the_content(); ?>
 							</div>
-							<?php include('include/artwork-meta.php'); ?>
+							<?php include('artwork-meta.php'); ?>
 
 							<ul class="project-taxonomies">
-								
+
 								<li><?php echo get_the_term_list( get_the_ID(), 'people', '<span class="tags-title">' . __( 'People:', 'bonestheme' ) . '</span> ', ' ' ) ?></li>
-								
+
 								<li><?php echo get_the_term_list( get_the_ID(), 'places', '<span class="tags-title">' . __( 'Places:', 'bonestheme' ) . '</span> ', ' ' ) ?></li>
 
 								<li><?php echo get_the_term_list( get_the_ID(), 'post_tag', '<span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ' ' ) ?></li>
 							</ul>
-	
+
 
 						</section>
 
 						<footer class="article-footer clearfix">
-						
+
 							<div class="prev mobile-hide">
 								<?php //TODO: better way to placehold in case this is empty (entity not very semantic) ?>
 								&nbsp;
-								<?php 
+								<?php
 								// NOTE: reversing these so they make more sense
 								next_post_link('%link', '<strong>&larr; Previous</strong>'); ?>
 							</div>
 
 							<div class="pv-middle">
-								<?php $category = get_the_term_list( get_the_ID(), 'project_category', ' ', ', ' );  ?>
+								<?php $category = get_the_term_list( get_the_ID(), 'category', ' ', ', ' );  ?>
 								<strong><?php the_title() ?></strong> | <?php the_date('Y'); ?> | <strong><?php echo $category; ?></strong>
 							</div>
 

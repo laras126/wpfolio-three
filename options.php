@@ -1,6 +1,6 @@
 <?php
 
-// Included in extensions/options-functions.php 
+// Included in extensions/options-functions.php
 // which is then included in functions.php
 
 /**
@@ -11,11 +11,11 @@
  */
 
 function optionsframework_option_name() {
-	
+
 	$optionsframework_settings = get_option('optionsframework');
 	$optionsframework_settings['id'] = 'wpfolio';
 	update_option('optionsframework', $optionsframework_settings);
-	
+
 }
 
 
@@ -26,12 +26,12 @@ function optionsframework_option_name() {
  */
 
 function optionsframework_options() {
-	
+
 
 	// -----------
 	/************* ARRAYS ********************/
 	// -----------
-	
+
 	// Set up some value arrays because they are nice:
 
 	// Comments options
@@ -54,7 +54,7 @@ function optionsframework_options() {
         'position' => 'top center',
         'attachment'=>'scroll' );
 
-	
+
 	// Merge the OS and Google font arrays
 	$typography_mixed_fonts = array_merge( options_typography_get_os_fonts() , options_typography_get_google_fonts() );
 	asort($typography_mixed_fonts);
@@ -71,7 +71,7 @@ function optionsframework_options() {
 	//
 
 	// TODO: use a textbox like in WPF2 - maybe?
-	
+
 	$title_font_options = array(
 		'sizes' => false,
 		'faces' => $typography_mixed_fonts,
@@ -82,7 +82,7 @@ function optionsframework_options() {
 	$title_font_defaults = array(
 		'face' => 'Merriweather',
 	);
-	
+
 
 	//
 	// Heading Typography
@@ -115,7 +115,19 @@ function optionsframework_options() {
 		'face' => 'Open Sans',
 	);
 
-	
+
+
+  //
+  // Categories
+  //
+
+  // Pull all the categories into an array
+	$options_categories = array();
+	$options_categories_obj = get_categories();
+	foreach ($options_categories_obj as $category) {
+		$options_categories[$category->cat_ID] = $category->cat_name;
+	}
+
 
 
 
@@ -128,9 +140,10 @@ function optionsframework_options() {
 	/************* BASIC SETTINGS ********************/
 
 	/* 	This includes:
-		1. Comments (radio)
-		2. Custom Favicon (upload)
-		3. Show theme creds?
+    1. Blog Layout (multicheck)
+		2. Comments (radio)
+		3. Custom Favicon (upload)
+		4. Show theme creds? (radio)
 	*/
 
 	$options = array();
@@ -138,8 +151,19 @@ function optionsframework_options() {
 	$options[] = array(
 		'name' => __('Basic Settings', 'wpfolio'),
 		'type' => 'heading');
-	
-	// 1. Comments
+
+
+  // 1. Blog Layout
+	$options[] = array(
+		'name' => __('Blog Category', 'options_check'),
+		'desc' => __('Select the categories use the blog layout.', 'wpfolio'),
+		'id' => 'blog_cat',
+		'std' => '0',
+		'type' => 'multicheck',
+		'options' => $options_categories);
+
+
+  // 2. Comments
 	$options[] = array(
 		'name' => __('Comments', 'wpfolio'),
 		'desc' => __('Where would you like to see comments to show? By default they are only in the Blog category.', 'wpfolio'),
@@ -148,7 +172,7 @@ function optionsframework_options() {
 		'type' => 'radio',
 		'options' => $comments_arr);
 
-	// 2. Favicon
+	// 3. Favicon
 	$options[] = array(
 		'name' => __('Custom Favicon', 'wpfolio'),
 		'desc' => __('Upload a 16px x 16px png/gif/ico image for your website\'s favicon. You can create a favicon from a larger image with the <a href="http://www.degraeve.com/favicon/" taget="blank">Favicon Generator</a> then upload it here.', 'wpfolio'),
@@ -156,7 +180,7 @@ function optionsframework_options() {
 		'type' => 'upload');
 
 
-	// 3. Theme Creds
+	// 4. Theme Creds
 	$options[] = array(
 		'name' => __('Theme Credits', 'wpfolio'),
 		'desc' => __('Show theme credits in the footer? It\'s a nice thing to do, but up to you!', 'wpfolio'),
@@ -169,10 +193,10 @@ function optionsframework_options() {
 
 
 	/************* STYLES ********************/
-	
+
 	/* 	This includes:
 		1. Typography
-			- Title 
+			- Title
 			- Headings
 			- Body
 		2. Background
@@ -191,7 +215,7 @@ function optionsframework_options() {
 	// --- 1. Typography --- //
 
 	// 1. Title Font
-	$options[] = array( 
+	$options[] = array(
 		'name' => __('Title Font', 'wpfolio'),
 		'desc' => __('Choose a font for your site title.', 'wpfolio'),
 		'id' => 'title_font',
@@ -200,39 +224,39 @@ function optionsframework_options() {
 		'class' => 'small',
 		// Using same font set for headings and title
 		'options' => $heading_font_options );
-	
+
 
 	// 2. Header font
-	$options[] = array( 
+	$options[] = array(
 		'name' => __('Headings Font', 'wpfolio'),
 		'desc' => __('You can choose a different font and color for the heading text.', 'wpfolio'),
 		'id' => "heading_font",
 		'std' => $heading_font_defaults,
 		'type' => 'typography',
 		'options' => $heading_font_options );
-	
+
 
 	// 3. Body font
-	$options[] = array( 
+	$options[] = array(
 		'name' => __('Body Font', 'wpfolio'),
 		'desc' => __('Choose the font for your website\'s content text.', 'wpfolio'),
 		'id' => 'body_typography',
 		'std' => $body_font_defaults,
-		'type' => 'typography', 
+		'type' => 'typography',
 		'options' => $body_font_options );
 
-		
-	//	
+
+	//
 	// TODO: add logo option -- maybe?
 	//
 
 	//
 	// TODO: add color scheme option instead of specific colors
 	// -- Pro only?
-	
-	
+
+
 	// --- 2. Background --- //
-	
+
 	// Change the background color or upload an image
 	$options[] = array(
 		'name' =>  __('Background', 'wpfolio'),

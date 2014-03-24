@@ -42,7 +42,7 @@ $desktop 		: 60em;
 	}
 
 	.pv-middle {
-		@include span-columns(6);	
+		@include span-columns(6);
 	}
 
 	.next {
@@ -50,18 +50,18 @@ $desktop 		: 60em;
 		text-align: right;
 	}
 
-	.project-thumb { 
-		@include isolate-grid(4); 
+	.project-thumb {
+		@include isolate-grid(4);
 	}
-	
+
 
 }
 
 
 // Computer screen size
 @include at-breakpoint($desktop 12) {
-	
-	.sidebar-layout {
+
+	.standard-layout #main {
 	 	@include span-columns(8);
 	}
 
@@ -70,7 +70,7 @@ $desktop 		: 60em;
 	}
 
 	.site-name {
-		@include span-columns(4);	
+		@include span-columns(4);
 	}
 
 	.site-nav {
@@ -81,11 +81,11 @@ $desktop 		: 60em;
 	.top-nav {
 		float: right;
 	}
-	
+
 	// Comments
 
 	.single-project, .page {
-		.commentlist, .respond-form {	
+		.commentlist, .respond-form {
 			@include span-columns(8);
 			@include post(4);
 		}
@@ -96,11 +96,10 @@ $desktop 		: 60em;
 			@include span-columns(12);
 		}
 	}
-	
+
 	.widemargins {
 		@include prefix(1);
 		@include suffix(1);
 	}
 
 }
-

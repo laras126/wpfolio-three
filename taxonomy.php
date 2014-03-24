@@ -1,7 +1,7 @@
 <?php
 /*
 
-Template for the Project Category taxonomy archive. 
+Template for the Project Category taxonomy archive.
 
 */
 ?>
@@ -16,11 +16,11 @@ Template for the Project Category taxonomy archive.
 
 					<!-- TODO: conditionally show taxonomy term (i.e. People: Lara Schenck, Places: Louvre) -->
 					<h2 class="project-title"><span><?php _e( '', 'bonestheme' ); ?></span> <?php single_cat_title(); ?></h2>
-					
+
 					<ul class="clearfix project-loop">
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-							<?php get_template_part('include/loop', 'project'); ?>
+							<?php wpf_layout(); ?>
 
 						<?php endwhile; ?>
 
@@ -41,7 +41,7 @@ Template for the Project Category taxonomy archive.
 							</ul>
 						</nav>
 					<?php } ?>
-				
+
 
 				</div> <!-- end #main -->
 

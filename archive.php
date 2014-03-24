@@ -4,7 +4,7 @@
 
 				<div id="inner-content" class="wrap clearfix">
 
-					<div id="main" class="sidebar-layout clearfix" role="main">
+					<div id="main" class="clearfix" role="main">
 
 						<?php if (is_category()) { ?>
 							<h1 class="archive-title h2">
@@ -43,9 +43,10 @@
 
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-							<?php get_template_part('include/post', 'standard'); ?>
+							<?php wpf_layout(); ?>
 
 						<?php endwhile; ?>
+
 							<?php if ( function_exists( 'bones_page_navi' ) ) { ?>
 								<?php bones_page_navi(); ?>
 							<?php } else { ?>
@@ -65,7 +66,7 @@
 
 					</div> <!-- end #main -->
 
-					<?php get_sidebar(); ?>
+					<?php wpf_sidebar(); ?>
 
 				</div> <!-- end #inner-content -->
 

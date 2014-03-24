@@ -9,13 +9,13 @@
 
 	<section class="entry-content clearfix">
 
-		<?php 
+		<?php
 		if ( has_excerpt() ) {
 			the_excerpt();
 		} else {
 			the_content();
 		} ?>
-		
+
 	</section> <!-- end article section -->
 
 	<footer class="article-footer">

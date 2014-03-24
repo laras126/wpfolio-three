@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /************* ARTWORK METABOX ********************/
 
@@ -10,7 +10,7 @@ function wpf_artinfo_metaboxes( $meta_boxes ) {
     $meta_boxes[] = array(
             'id' => 'artwork-info',
             'title' => 'Artwork Info',
-            'pages' => array('project'), // post type
+            'pages' => array('post'), // post type
             'context' => 'normal',
             'priority' => 'high',
             'show_names' => true, // Show field names on left
@@ -64,7 +64,7 @@ function wpf_artinfo_metaboxes( $meta_boxes ) {
     						'type' => 'title',
     						'id' => $prefix . 'feedback'
 					),
-                    
+
                 ),
         );
 
@@ -83,13 +83,73 @@ function wpf_initialize_cmb_meta_boxes() {
 add_action( 'init', 'wpf_initialize_cmb_meta_boxes', 999);
 
 
+
+
+
+
+
+/************* BODY CLASSES & LAYOUT ********************/
+
+/*  Add a specific classes for news and portfolio layouts.
+    Check to see if it's the blog category
+*/
+
+// Add portfolio body class to anything that isn't the blog
+function add_body_class($class) {
+
+    global $post;
+
+    if ( in_category('blog') || is_home() ) {
+        $class[] = 'standard-layout';
+        return $class;
+    } else {
+        $class[] = 'portfolio-layout';
+        return $class;
+    }
+}
+
+add_filter('body_class','add_body_class');
+
+// Use the appropriate markup according to the body class
+// http://stackoverflow.com/questions/15033888/how-to-check-for-class-in-body-class-in-wordpress
+
+function wpf_layout() {
+    $classes = get_body_class();
+    if (in_array('standard-layout',$classes)) {
+        if(is_single()) {
+            get_template_part('include/single', 'standard');
+        } else {
+            get_template_part('include/loop','standard');
+        }
+    } else {
+        if(is_single()) {
+            get_template_part('include/single', 'portfolio');
+        } else {
+            get_template_part('include/loop', 'portfolio');
+        }
+    }
+}
+
+// Only show the sidebars on news layouts
+function wpf_sidebar() {
+    $classes = get_body_class();
+    if (in_array('standard-layout',$classes)) {
+        get_sidebar();
+    }
+}
+
+
+
+
+
+
 /************* SHORTCODES ********************/
 
 // Shortcode to add wide margins to a post page - works as is, but is applied in post lists
 
 function wide_margins_shortcode ($atts, $content = null) {
     return '<div class="widemargins">' . do_shortcode($content) . '</div>';
-} 
+}
 add_shortcode('margin', 'wide_margins_shortcode');
 
 
@@ -100,7 +160,7 @@ function artwork_meta_shortcode ($atts) {
     $path = get_template_directory();
     get_template_part($path . '/include/artwork-meta.php');
     return ob_get_clean();
-} 
+}
 add_shortcode('artwork_info', 'artwork_meta_shortcode');
 
 
@@ -118,7 +178,7 @@ function wpf_register_required_plugins() {
  **/
 
     $plugins = array(
- 
+
         array(
             'name'                  => 'Cleaner Gallery Plugin', // The plugin name
             'slug'                  => 'cleaner-gallery', // The plugin slug (typically the folder name)
@@ -134,10 +194,10 @@ function wpf_register_required_plugins() {
             'force_activation'      => true,
             'external_url'          => 'http://wordpress.org/plugins/options-framework/',
         ),
- 
- 
+
+
     );
- 
+
     $config = array(
         'domain'            => 'wpfolio',           // Text domain - likely want to be the same as your theme.
         'default_path'      => '',                           // Default absolute path to pre-packaged plugins
@@ -167,10 +227,63 @@ function wpf_register_required_plugins() {
             'complete'                                  => __( 'All plugins installed and activated successfully. %s', 'wpfolio' ) // %1$s = dashboard link
         )
     );
- 
+
     tgmpa( $plugins, $config );
- 
+
 }
+
+
+/************* TAXONOMIES ********************/
+
+
+	register_taxonomy( 'people',
+		array('post'),
+		array('hierarchical' => false,     /* if this i8s true, it acts like categories */
+			'labels' => array(
+				'name' => __( 'People', 'bonestheme' ), /* name of the custom taxonomy */
+				'singular_name' => __( 'People', 'bonestheme' ), /* single taxonomy name */
+				'search_items' =>  __( 'Search People', 'bonestheme' ), /* search title for taxomony */
+				'all_items' => __( 'All People', 'bonestheme' ), /* all title for taxonomies */
+				'parent_item' => __( 'Parent Person', 'bonestheme' ),  /* parent title for taxonomy */
+				'parent_item_colon' => __( 'Parent Person:', 'bonestheme' ), /* parent taxonomy title */
+				'edit_item' => __( 'Edit People', 'bonestheme' ), /* edit custom taxonomy title */
+				'update_item' => __( 'Update People', 'bonestheme' ), /* update title for taxonomy */
+				'add_new_item' => __( 'Add New Person', 'bonestheme' ), /* add new title for taxonomy */
+				'new_item_name' => __( 'New Person', 'bonestheme' ) /* name title for taxonomy */
+			),
+			'show_admin_column' => true,
+			'show_ui' => true,
+			'query_var' => true,
+			'rewrite' => array( 'slug' => 'people' ),
+		)
+	);
+
+	register_taxonomy( 'places',
+		array('post'),
+		array('hierarchical' => false,     /* if this i8s true, it acts like categories */
+			'labels' => array(
+				'name' => __( 'Places', 'bonestheme' ), /* name of the custom taxonomy */
+				'singular_name' => __( 'Places', 'bonestheme' ), /* single taxonomy name */
+				'search_items' =>  __( 'Search Places', 'bonestheme' ), /* search title for taxomony */
+				'all_items' => __( 'All Places', 'bonestheme' ), /* all title for taxonomies */
+				'edit_item' => __( 'Edit Places', 'bonestheme' ), /* edit custom taxonomy title */
+				'update_item' => __( 'Update Place', 'bonestheme' ), /* update title for taxonomy */
+				'add_new_item' => __( 'Add New Place', 'bonestheme' ), /* add new title for taxonomy */
+				'new_item_name' => __( 'New Place', 'bonestheme' ) /* name title for taxonomy */
+			),
+			'show_admin_column' => true,
+			'show_ui' => true,
+			'query_var' => true,
+			'rewrite' => array( 'slug' => 'places' ),
+		)
+	);
+
+	/* adds medium taxonomy (categories) to Portfolio */
+	register_taxonomy_for_object_type( 'people', 'post' );
+	register_taxonomy_for_object_type( 'place', 'post' );
+
+
+
 
 
 /************* MISC FILTERS ********************/
@@ -194,23 +307,6 @@ function wpf_remove_tax_name( $title, $sep, $seplocation ) {
 }
 add_filter( 'wp_title', 'wpf_remove_tax_name', 10, 3 );
 
-
-
-// Add taxonomy term to body class
-// http://wordpress.org/support/topic/adding-taxonomy-term-to-body_class-on-singlephp
-function wpf_custom_taxonomy_in_body_class( $classes ){
-    if( is_singular() ) {
-        $custom_terms = get_the_terms(0, 'project_category');
-        if ($custom_terms) {
-            foreach ($custom_terms as $custom_term) {
-                $classes[] = 'project-cat-' . $custom_term->slug;
-            }
-        }
-    }
-    return $classes;
-}
-
-add_filter( 'body_class', 'wpf_custom_taxonomy_in_body_class' );
 
 
 ?>
