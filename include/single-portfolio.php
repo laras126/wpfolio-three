@@ -6,81 +6,69 @@ Template for Single portfolio (non-news) posts
 */
 ?>
 
-<?php get_header(); ?>
+<div id="main" class="clearfix" role="main">
 
-		<div id="content">
+	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-			<div id="inner-content" class="wrap clearfix">
+	<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
 
-				<div id="main" class="clearfix" role="main">
+		<section class="entry-content clearfix">
+			<h1 class="project-title single-title" itemprop="headline"><?php the_title(); ?></h1>
+			<div class="clearfix">
+				<?php the_content(); ?>
+			</div>
+			<?php include('artwork-meta.php'); ?>
 
-					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+			<ul class="project-taxonomies">
 
-					<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
+				<li><?php echo get_the_term_list( get_the_ID(), 'people', '<span class="tags-title">' . __( 'People:', 'bonestheme' ) . '</span> ', ' ' ) ?></li>
 
-						<section class="entry-content clearfix">
-							<h1 class="project-title single-title" itemprop="headline"><?php the_title(); ?></h1>
-							<div class="clearfix">
-								<?php the_content(); ?>
-							</div>
-							<?php include('artwork-meta.php'); ?>
+				<li><?php echo get_the_term_list( get_the_ID(), 'places', '<span class="tags-title">' . __( 'Places:', 'bonestheme' ) . '</span> ', ' ' ) ?></li>
 
-							<ul class="project-taxonomies">
-
-								<li><?php echo get_the_term_list( get_the_ID(), 'people', '<span class="tags-title">' . __( 'People:', 'bonestheme' ) . '</span> ', ' ' ) ?></li>
-
-								<li><?php echo get_the_term_list( get_the_ID(), 'places', '<span class="tags-title">' . __( 'Places:', 'bonestheme' ) . '</span> ', ' ' ) ?></li>
-
-								<li><?php echo get_the_term_list( get_the_ID(), 'post_tag', '<span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ' ' ) ?></li>
-							</ul>
+				<li><?php echo get_the_term_list( get_the_ID(), 'post_tag', '<span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ' ' ) ?></li>
+			</ul>
 
 
-						</section>
+		</section>
 
-						<footer class="article-footer clearfix">
+		<footer class="article-footer clearfix">
 
-							<div class="prev mobile-hide">
-								<?php //TODO: better way to placehold in case this is empty (entity not very semantic) ?>
-								&nbsp;
-								<?php
-								// NOTE: reversing these so they make more sense
-								next_post_link('%link', '<strong>&larr; Previous</strong>'); ?>
-							</div>
+			<div class="prev mobile-hide">
+				<?php //TODO: better way to placehold in case this is empty (entity not very semantic) ?>
+				&nbsp;
+				<?php
+				// NOTE: reversing these so they make more sense
+				next_post_link('%link', '<strong>&larr; Previous</strong>'); ?>
+			</div>
 
-							<div class="pv-middle">
-								<?php $category = get_the_term_list( get_the_ID(), 'category', ' ', ', ' );  ?>
-								<strong><?php the_title() ?></strong> | <?php the_date('Y'); ?> | <strong><?php echo $category; ?></strong>
-							</div>
+			<div class="pv-middle">
+				<?php $category = get_the_term_list( get_the_ID(), 'category', ' ', ', ' );  ?>
+				<strong><?php the_title() ?></strong> | <?php the_date('Y'); ?> | <strong><?php echo $category; ?></strong>
+			</div>
 
-							<div class="next mobile-hide">
-								&nbsp;
-								<?php previous_post_link('%link', '<strong>Next &rarr;</strong>'); ?>
-							</div>
+			<div class="next mobile-hide">
+				&nbsp;
+				<?php previous_post_link('%link', '<strong>Next &rarr;</strong>'); ?>
+			</div>
 
-							<div class="mobile-show">
-								&nbsp;
-								<?php next_post_link('%link', '<strong class="prev">&larr; Previous</strong>'); ?>
-								<?php previous_post_link('%link', '<strong class="next">Next &rarr;</strong>'); ?>
-							</div>
+			<div class="mobile-show">
+				&nbsp;
+				<?php next_post_link('%link', '<strong class="prev">&larr; Previous</strong>'); ?>
+				<?php previous_post_link('%link', '<strong class="next">Next &rarr;</strong>'); ?>
+			</div>
 
-						</footer>
+		</footer>
 
-						<?php comments_template(); ?>
+		<?php comments_template(); ?>
 
-					</article>
+	</article>
 
-					<?php endwhile; ?>
+	<?php endwhile; ?>
 
-					<?php else : ?>
+	<?php else : ?>
 
-							<?php get_template_part('include/post', 'notfound'); ?>
+			<?php get_template_part('include/post', 'notfound'); ?>
 
-					<?php endif; ?>
+	<?php endif; ?>
 
-				</div> <!-- end #main -->
-
-			</div> <!-- end #inner-content -->
-
-		</div> <!-- end #content -->
-
-<?php get_footer(); ?>
+</div> <!-- end #main -->

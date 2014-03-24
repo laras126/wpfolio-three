@@ -55,7 +55,7 @@ style a page via class
 		display: block;
 		margin: 0 auto;
 	}
-}             
+}
 	.attachmentid-1 {}              // individual attatchment page (i.e. body.attachmentid-763)
 	.attachment-mime-type {}        // style mime type pages
 .author {}                        // author page
@@ -106,7 +106,7 @@ HEADER STYLES
 
 	.site-description {
 		font-style: italic;
-		@include adjust-font-size-to(18px); 
+		@include adjust-font-size-to(18px);
 	}
 
 /*********************
@@ -137,7 +137,7 @@ a.menu-link {
 .nav {
 
 	clear: both;
-	-webkit-transition: all 0.3s ease-out;  
+	-webkit-transition: all 0.3s ease-out;
 	-moz-transition: all 0.3s ease-out;
 	-ms-transition: all 0.3s ease-out;
 	-o-transition: all 0.3s ease-out;
@@ -187,7 +187,7 @@ POSTS & CONTENT STYLES
 					color: $primary;
 				}
 			}
-		
+
 
 		.hentry {
 
@@ -204,18 +204,18 @@ POSTS & CONTENT STYLES
 
 		/* want to style individual post classes? Booya! */
 		.post-id {}         /* post by id (i.e. post-3) */
-		.post {
+		.standard-layout .post {
 			padding: rhythm(4, 22px) 0;
 			border-top: $accent-light 1px solid;
 		}            /* general post style */
 		.page {}            /* general article on a page style */
 		.attachment {}      /* general style on an attatchment */
-		
+
 		.sticky {
 			background-color: lighten($alert-yellow, 20%);
 			border: 2px solid $alert-yellow;
 			padding-left: $h3;
-			padding-right: $h3; 
+			padding-right: $h3;
 		}
 
 		.hentry {}          /* hentry class */
@@ -235,7 +235,7 @@ POSTS & CONTENT STYLES
 
 		.tags {
 			@include nobullet;
-			margin-bottom: 0; 
+			margin-bottom: 0;
 		}
 
 		.tags-title {
@@ -259,7 +259,7 @@ POSTS & CONTENT STYLES
 			}
 
 			ul {
-					
+
 				li {}
 
 			}
@@ -348,7 +348,7 @@ POSTS & CONTENT STYLES
 			}
 
 			dl {
-				
+
 				a {}
 
 
@@ -385,7 +385,7 @@ POSTS & CONTENT STYLES
 	list-style: none;
 }
 
-.project-title, .page-title, .archive-title {	
+.project-title, .page-title, .archive-title {
 	@extend .uppercase-title;
 	margin-top: 0;
 }
@@ -407,12 +407,12 @@ POSTS & CONTENT STYLES
 
 // Breaks up the artwork meta section a bit
 .aw-sep {
-	margin-top: $h3; 
+	margin-top: $h3;
 }
 
 .project-link a {
 	@extend button;
-	display: inline-block;	
+	display: inline-block;
 }
 
 .pv-middle {
@@ -463,7 +463,7 @@ PAGE NAVI STYLES
 .wp-prev-next {
 	// margin: $h5 0 $h1;
 	text-align: center;
-	
+
 }
 	.bones_page_navi {
 		list-style-type: none;
@@ -525,7 +525,7 @@ PAGE NAVI STYLES
 		/* previous link */
 		li.bpn-prev-link {
 			margin-left: 0;
-			margin-right: $h2; 
+			margin-right: $h2;
 			a {
 				&:hover,
 				&:focus {}
@@ -535,7 +535,7 @@ PAGE NAVI STYLES
 		/* next page link */
 		li.bpn-next-link {
 			margin-right: 0;
-			margin-left: $h2; 
+			margin-left: $h2;
 			a {
 				&:hover,
 				&:focus {}
@@ -778,7 +778,7 @@ COMMENT FORM STYLES
 		input[type=email],
 		input[type=url],
 		textarea {
-			
+
 
 			/* form validation */
 			&:invalid {
@@ -905,14 +905,9 @@ WPFOLIO FEATURES
 .media-wrap {
 	iframe, object, embed {
 	    position: absolute;
-	    top: 0; 
+	    top: 0;
 	    left: 0;
 	    width: 100%;
 	    height: 100%;
 	}
 }
-
-
-
-
-
