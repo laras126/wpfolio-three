@@ -41,11 +41,18 @@
 								</h1>
 						<?php } ?>
 
-						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+						<?php
+						// TODO: there is a more elegant solution than wrapping this in a clearfix -
+						// The issue is that the portfolio items are floating and get messed up w/o it
+						?>
 
-							<?php wpf_layout(); ?>
+						<div class="clearfix">
+							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-						<?php endwhile; ?>
+								<?php wpf_layout(); ?>
+
+							<?php endwhile; ?>
+						</div>
 
 							<?php if ( function_exists( 'bones_page_navi' ) ) { ?>
 								<?php bones_page_navi(); ?>
