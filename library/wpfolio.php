@@ -233,6 +233,9 @@ function wpf_register_required_plugins() {
 }
 
 
+
+
+
 /************* TAXONOMIES ********************/
 
 
@@ -286,7 +289,7 @@ function wpf_register_required_plugins() {
 
 
 
-/************* MISC FILTERS ********************/
+/************* MISC ********************/
 
 // Remove taxonomy title from wp_title
 // http://wordpress.stackexchange.com/questions/29020/how-to-remove-taxonomy-name-from-wp-title
@@ -307,6 +310,37 @@ function wpf_remove_tax_name( $title, $sep, $seplocation ) {
 }
 add_filter( 'wp_title', 'wpf_remove_tax_name', 10, 3 );
 
+// Get post attachments
+// http://www.kingrosales.com/how-to-display-your-posts-first-image-thumbnail-automatically-in-wordpress/ -- (although this link is now dead, and function has been significantly hacked, it's worth a credit.)
+function wpf_get_attachments() {
+	global $post;
+	return get_posts(
+		array(
+			'post_parent' => get_the_ID(),
+			'post_type' => 'attachment',
+			'post_mime_type' => 'image')
+		);
+}
+
+// Pull a post image for the thumb if there isn't one set
+// Get the URL of the first attachment image.
+// If no attachments, display default-thumb.png
+
+function wpf_get_first_thumb() {
+
+	$attr = array(
+		'class'	=> "attachment-post-thumbnail wp-post-image");
+
+	$imgs = wpf_get_attachments();
+	if ($imgs) {
+		$keys = array_reverse($imgs);
+		$num = $keys[0];
+		$url = wp_get_attachment_image($num->ID, 'wpf-thumb-300', true,$attr);
+		print $url;
+	} else { ?>
+		<img src="<?php echo get_template_directory_uri(); ?>/library/images/default-thumb.png" alt="<?php the_title(); ?>"/>
+	<?php }
+}
 
 
 ?>
