@@ -4,9 +4,9 @@
 
 				<div id="inner-content" class="wrap clearfix">
 
-					<?php wpf_layout(); ?>
+					<?php wpfolio_layout(); ?>
 
-					<?php wpf_sidebar(); ?>
+					<?php wpfolio_sidebar(); ?>
 
 				</div> <!-- end #inner-content -->
 

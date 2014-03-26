@@ -49,13 +49,13 @@
 						<div class="clearfix">
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-								<?php wpf_layout(); ?>
+								<?php wpfolio_layout(); ?>
 
 							<?php endwhile; ?>
 						</div>
 
-							<?php if ( function_exists( 'bones_page_navi' ) ) { ?>
-								<?php bones_page_navi(); ?>
+							<?php if ( function_exists( 'wpfolio_page_navi' ) ) { ?>
+								<?php wpfolio_page_navi(); ?>
 							<?php } else { ?>
 								<nav class="wp-prev-next">
 									<ul class="clearfix">
@@ -73,7 +73,7 @@
 
 					</div> <!-- end #main -->
 
-					<?php wpf_sidebar(); ?>
+					<?php wpfolio_sidebar(); ?>
 
 				</div> <!-- end #inner-content -->
 

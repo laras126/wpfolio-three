@@ -76,12 +76,17 @@ a.menu-link {
 .sf-menu ul li {
 	background: $accent-light;
 }
+
 .sf-menu ul ul li {
 	background: $accent-light;
 }
 
 .sf-menu > li {
 	float: left;
+}
+
+.sf-menu a {
+	border: none;
 }
 
 

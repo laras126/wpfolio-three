@@ -10,14 +10,7 @@ module.exports = function(grunt) {
                     'js/**/*.js',
                     'js/*.js'
                 ],
-                dest: 'build/js/production.js',
-            }
-        },
-
-        uglify: {
-            build: {
-                src: 'build/js/production.js',
-                dest: 'build/js/production.min.js'
+                dest: 'js/production.js',
             }
         },
 
@@ -26,7 +19,7 @@ module.exports = function(grunt) {
                 options: {
                     sassDir: 'scss',
                     cssDir: '../',
-                    outputStyle: 'compressed'
+                    outputStyle: 'expanded'
                 }
             }
         },
@@ -34,7 +27,7 @@ module.exports = function(grunt) {
         watch: {
             scripts: {
                 files: ['js/*.js', '**/*.scss'],
-                tasks: ['concat', 'uglify', 'compass'],
+                tasks: ['concat', 'compass'],
                 options: {
                     spawn: false,
                 }
@@ -54,11 +47,10 @@ module.exports = function(grunt) {
     });
 
     grunt.loadNpmTasks('grunt-contrib-concat');
-    grunt.loadNpmTasks('grunt-contrib-uglify' );
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-compass');
     
-    grunt.registerTask('default', ['compass', 'uglify', 'concat']);
+    grunt.registerTask('default', ['compass', 'concat']);
 
     
 

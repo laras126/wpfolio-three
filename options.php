@@ -140,7 +140,7 @@ function optionsframework_options() {
 	/************* BASIC SETTINGS ********************/
 
 	/* 	This includes:
-    1. Blog Layout (multicheck)
+    	1. Blog Layout (multicheck)
 		2. Comments (radio)
 		3. Custom Favicon (upload)
 		4. Show theme creds? (radio)

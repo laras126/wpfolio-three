@@ -3,8 +3,10 @@
 		<?php if ( has_post_thumbnail() ) {
 			the_post_thumbnail('wpf-thumb-300');
 		} else {
-			wpf_get_first_thumb();
+			wpfolio_get_first_thumb();
 		} ?>
-		<h5 class="project-thumb-title line-clamp"><?php the_title(); ?></h5>
+		<figcaption>
+			<h5 class="project-thumb-title line-clamp"><?php the_title(); ?></h5>
+		</figcaption>
 	</a>
 </figure>

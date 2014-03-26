@@ -11,7 +11,7 @@
 				</h1>
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-					<?php wpf_layout(); ?>
+					<?php wpfolio_layout(); ?>
 
 				<?php endwhile; ?>
 
@@ -34,7 +34,7 @@
 
 			</div> <!-- end #main -->
 
-			<?php wpf_sidebar(); ?>
+			<?php wpfolio_sidebar(); ?>
 
 		</div> <!-- end #inner-content -->
 

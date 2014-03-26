@@ -1,22 +1,26 @@
 <?php
 
 /*
-Author: Eddie Machado
-URL: htp://themble.com/bones/
 
-This is where you can drop your custom functions or
-just edit things like thumbnail sizes, header images,
-sidebars, comments, ect.
+Author: Lara Schenck
+URL: htp://notlaura.com
+
+Theme WPFolio, built from the starter theme
+Bones by Eddie Machado:
+http://themble.com/bones
+
 */
 
-/************* INCLUDE NEEDED FILES ***************/
+
+/********************* 
+INCLUDE NEEDED FILES 
+*********************/
 
 // Sets up the options panel and default functions
 require_once( get_template_directory() . '/extensions/options-functions.php' );
 
 /*
-1. library/bones.php
-	- head cleanup (remove rsd, uri links, junk css, ect)
+1. library/wpfolio.php
 	- enqueueing scripts & styles
 	- theme support functions
 	- custom menu output & fallbacks
@@ -24,33 +28,16 @@ require_once( get_template_directory() . '/extensions/options-functions.php' );
 	- page-navi function
 	- removing <p> from around images
 	- customizing the post excerpt
-	- custom google+ integration
-	- adding custom fields to user profiles
-	- include jquery in site footer
+	- auto assign featured image
+	- portfolio vs. blog body classes
+	- conditional layouts for said classes
+	- TODO: fill this in more
+	- require plugins
 */
-require_once('library/bones.php'); // if you remove this, bones will break
-/*
-
-2. library/custom-post-type.php
-	- Project custom post type
-	- Medium Taxonomy
-	- Custom fields
-*/
-// require_once( 'library/custom-post-type.php' );
+require_once('library/wpfolio.php');
 
 /*
-3. library/wpfolio.php
-	- WPFolio features functions
-		- Wide margins shortcode
-	- Call Options Framework
-	// TODO: Merge bones.php into this when
-	// we change all of the bones names
-*/
-require_once('library/wpfolio.php'); // you can disable this if you like
-
-
-/*
-4. library/translation/translation.php
+2. library/translation/translation.php
 	- adding support for other languages
 */
 require_once('library/translation/translation.php'); // this comes turned off by default
@@ -66,17 +53,20 @@ require_once get_template_directory() . '/extensions/class-tgm-plugin-activation
 
 
 
-/************* THUMBNAIL SIZE OPTIONS *************/
+/*********************
+THUMBNAIL SIZE OPTIONS 
+*********************/
 
 // Thumbnail sizes
-
 add_image_size( 'wpf-thumb-300', 300, 300, true );
 
 // remove inline style for gallery shortcode
 add_filter( 'use_default_gallery_style', '__return_false' );
 
 
-/************* ACTIVE SIDEBARS ********************/
+/********************* 
+ACTIVE SIDEBARS 
+********************/
 
 // Sidebars & Widgetizes Areas
 if ( ! function_exists( 'wpfolio_register_sidebars' ) ):
@@ -91,21 +81,15 @@ if ( ! function_exists( 'wpfolio_register_sidebars' ) ):
 			'after_title' => '</h4>',
 		));
 
-		register_sidebar(array(
-			'id' => 'footer1',
-			'name' => __('Left footer widget.', 'bonestheme'),
-			'description' => __('The first (primary) sidebar.', 'bonestheme'),
-			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget' => '</div>',
-			'before_title' => '<h4 class="widgettitle">',
-			'after_title' => '</h4>',
-		));
-
 	} // don't remove this bracket!
+endif;
 
 
 
-/************* COMMENT LAYOUT *********************/
+
+/*********************
+COMMENT LAYOUT 
+*********************/
 
 // Comment Layout
 function wpfolio_comments($comment, $args, $depth) {
@@ -156,7 +140,9 @@ function wpfolio_comments($comment, $args, $depth) {
 
 
 
-/************* SEARCH FORM LAYOUT *****************/
+/********************* 
+SEARCH FORM LAYOUT 
+*********************/
 
 // Search Form
 function wpfolio_wpsearch($form) {
@@ -171,7 +157,9 @@ function wpfolio_wpsearch($form) {
 
 
 
-/************* MISC THEME REQUIREMENTS *****************/
+/*********************
+MISC THEME REQUIREMENTS 
+*****************/
 
 if ( ! isset( $content_width ) ) $content_width = 960;
 

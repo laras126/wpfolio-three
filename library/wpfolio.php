@@ -1,121 +1,209 @@
 <?php
 
-/************* ARTWORK METABOX ********************/
+/*********************
+SET UP ZE THEME
+*********************/
 
-// This metabox shows up in all posts
-function wpf_artinfo_metaboxes( $meta_boxes ) {
-    $post_title = the_title();
-    $prefix = '_ctmb_'; // Prefix for all fields
-    $meta_boxes[] = array(
-            'id' => 'artwork-info',
-            'title' => 'Artwork Info',
-            'pages' => array('post'), // post type
-            'context' => 'normal',
-            'priority' => 'high',
-            'show_names' => true, // Show field names on left
-            'fields' => array(
-					array(
-						'name' => '',
-						'desc' => '<p>This information will display by default at the bottom of the post. You should add any images or embed content in the main WordPress editor above.</p>
-						',
-						'type' => 'title',
-						'id' => $prefix . 'fields_description'
-					),
-                    array(
-                            'name' => 'Medium',
-                            'desc' => 'A few words describing your work\'s medium.',
-                            'id' => $prefix . 'medium',
-                            'type' => 'text'
-                        ),
-                    array(
-                            'name' => 'Date',
-                            'desc' => 'The year this work was created.',
-                            'id' => $prefix . 'date',
-                            'type' => 'text'
-                        ),
-                    array(
-                            'name' => 'Short Description',
-                            'desc' => 'A short, text description of the work. Good for things like price or dimensions.',
-                            'id' => $prefix . 'description',
-                            'type' => 'wysiwyg'
-                        ),
-					array(
-                            'name' => 'Acknowledgments',
-                            'desc' => 'Use this space to describe any people or places related to this project.',
-                            'id' => $prefix . 'acknowledgments',
-                            'type' => 'wysiwyg'
-                        ),
-					array(
-                            'name' => 'Link',
-                            'desc' => 'If the project has it\'s own website, paste the URL here.',
-                            'id' => $prefix . 'link',
-                            'type' => 'text'
-                        ),
-                    array(
-                            'name' => 'Link Text',
-                            'desc' => 'What do you want the text of the link to be? e.g. Project Link, Download, View it on Etsy, etc.',
-                            'id' => $prefix . 'link_text',
-                            'type' => 'text'
-                        ),
-					array(
-    						'name' => '',
-    						'desc' => '<p>Are these fields useful? Do you have suggestions for other ones? <a href="mailto:lara@notlaura.com">Let me know.</a></p>',
-    						'type' => 'title',
-    						'id' => $prefix . 'feedback'
-					),
+// Firing all out initial functions at the start
+add_action('after_setup_theme','wpfolio_ahoy', 16);
 
-                ),
-        );
+function wpfolio_ahoy() {
 
-    return $meta_boxes;
-}
+    // clean up gallery output in wp
+    add_filter('gallery_style', 'wpfolio_gallery_style');
 
-add_filter( 'cmb_meta_boxes', 'wpf_artinfo_metaboxes');
+    // enqueue base scripts and styles
+    add_action('wp_enqueue_scripts', 'wpfolio_scripts_and_styles', 999);
+
+    // launch theme support functions
+    wpfolio_theme_support();
+
+    // adding sidebars to Wordpress (these are created in functions.php)
+    add_action( 'widgets_init', 'wpfolio_register_sidebars' );
+
+    // adding the bones search form (created in functions.php)
+    add_filter( 'get_search_form', 'wpfolio_wpsearch' );
+
+    // cleaning up random code around images
+    add_filter('the_content', 'wpfolio_filter_ptags_on_images');
+    
+    // cleaning up excerpt
+    add_filter('excerpt_more', 'wpfolio_excerpt_more');
+
+    // add body classes according to blog category to determine layout
+    add_filter('body_class','wpfolio_body_class');
+
+} /* end wpfolio ahoy */
 
 
-function wpf_initialize_cmb_meta_boxes() {
-    if ( !class_exists('cmb_Meta_Box') ) {
-        require_once('metabox/init.php');
+
+
+
+/*********************
+THEME SUPPORT 
+*********************/
+
+// Adding WP 3+ Functions & Theme Support
+// Hooked in wpfolio_ahoy
+function wpfolio_theme_support() {
+
+    // wp thumbnails (sizes handled in functions.php)
+    add_theme_support('post-thumbnails');
+
+    // default thumb size
+    set_post_thumbnail_size(300, 300);
+
+    // Customize the Media option defaults
+    // http://wordpress.org/support/topic/how-set-default-image-size
+    update_option('thumbnail_size_w', 300);
+    update_option('thumbnail_size_h', 300);
+
+    update_option('medium_size_w', 450);
+    update_option('medium_size_h', 450);
+
+    update_option('large_size_w', 600);
+    update_option('large_size_h', 600);
+
+    // rss thingy
+    add_theme_support('automatic-feed-links');
+
+    // to add header image support go here: http://themble.com/support/adding-header-background-image-support/
+
+    // wp menus
+    add_theme_support( 'menus' );
+
+    // Custom background
+    add_theme_support( 'custom-background' );
+
+    // registering wp3+ menus
+    register_nav_menus(
+        array(
+            'main-nav' => __( 'The Main Menu', 'wpfolio' ),   // main nav in header
+        )
+    );
+} /* end wpfolio theme support */
+
+
+
+
+
+/*********************
+SCRIPTS & ENQUEUEING
+*********************/
+
+// loading modernizr and jquery, and reply script
+function wpfolio_scripts_and_styles() {
+  global $wp_styles; // call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
+  if (!is_admin()) {
+
+    // modernizr (without media query polyfill)
+    wp_register_script( 'wpf-modernizr', get_template_directory_uri() . '/library/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
+
+    // register main stylesheet
+    // Using get_stylesheet_directory_uri() to allow for child themes
+    wp_register_style( 'wpf-stylesheet', get_stylesheet_directory_uri() . '/style.css', array(), '', 'all' );
+
+    // ie-only style sheet
+    wp_register_style( 'wpf-ie-only', get_template_directory_uri() . '/library/css/ie.css', array(), '' );
+
+    // comment reply script for threaded comments
+    if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
+      wp_enqueue_script( 'comment-reply' );
     }
+
+    //adding scripts file in the footer
+    wp_register_script( 'wpf-js', get_template_directory_uri() . '/library/js/production.js', array( 'jquery' ), '', true );
+    
+    // enqueue styles and scripts
+    wp_enqueue_script( 'wpf-modernizr' );
+    wp_enqueue_style( 'wpf-stylesheet' );
+    wp_enqueue_style('wpf-ie-only');
+
+    $wp_styles->add_data( 'wpf-ie-only', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet
+
+    wp_enqueue_script( 'wpf-js' );
+  }
 }
 
-add_action( 'init', 'wpf_initialize_cmb_meta_boxes', 999);
+
+
+
+/*********************
+MENUS & NAVIGATION 
+*********************/
+
+// the main menu
+function wpfolio_main_nav() {
+    wp_nav_menu(array(
+        'container' => false,
+        'menu' => __( 'The Main Menu', 'wpfolio' ),
+        'menu_class' => 'sf-menu',
+        'theme_location' => 'main-nav',
+        'depth' => 0,
+        'fallback_cb' => 'wpfolio_main_nav_fallback'
+    ));
+} /* end bones main nav */
+
+// this is the fallback for header menu
+// NOTE: This should be wp_page_menu but
+// Superfish doesn't like having a div.sf-menu around the ul
+// This will likely be a problem in future
+// so need to rewrite css to account for it 
+// and use wp_page_menu
+// http://wordpress.stackexchange.com/questions/116656/menu-fallback-menu-class-rendering-a-div-instead-of-a-ul
+// https://github.com/laras126/wpfolio-three/issues/1
+
+function wpfolio_main_nav_fallback() {
+    wp_nav_menu( array(
+        'container' => false,
+        'menu_class' => 'sf-menu',
+        'show_home' => true,
+        'depth' => 0,
+    ) );
+}
 
 
 
 
 
 
+/*********************
+BODY CLASSES & LAYOUT
+*********************/
 
+// Add a specific classes for news and portfolio layouts.
+// Check to see if it's the blog category
 
-/************* BODY CLASSES & LAYOUT ********************/
-
-/*  Add a specific classes for news and portfolio layouts.
-    Check to see if it's the blog category
-*/
-
-// Add portfolio body class to anything that isn't the blog
-function add_body_class($class) {
+function wpfolio_body_class($classes) {
 
     global $post;
 
-    if ( in_category('blog') || is_home() ) {
-        $class[] = 'standard-layout';
-        return $class;
+    $wpf_blog_cats = array('news','latest', 'updates', 'blog', 'notable', );
+    // TODO: fix the blog option
+    // $wpf_blog_option = of_get_option('blog_cat', 'none');
+    print_r($wpf_blog_option);
+
+
+    if ( in_category($wpf_blog_cats) || is_home() ) {
+        $classes[] = 'standard-layout';
     } else {
-        $class[] = 'portfolio-layout';
-        return $class;
+        $classes[] = 'portfolio-layout';
     }
+
+    return $classes;
+
 }
 
-add_filter('body_class','add_body_class');
 
 // Use the appropriate markup according to the body class
+// Called in the templates
 // http://stackoverflow.com/questions/15033888/how-to-check-for-class-in-body-class-in-wordpress
 
-function wpf_layout() {
+function wpfolio_layout() {
+
     $classes = get_body_class();
-    if (in_array('standard-layout',$classes)) {
+    
+    if (in_array('standard-layout', $classes)) {
         if(is_single()) {
             get_template_part('include/single', 'standard');
         } else {
@@ -124,16 +212,19 @@ function wpf_layout() {
     } else {
         if(is_single()) {
             get_template_part('include/single', 'portfolio');
+            echo 'poop';
         } else {
             get_template_part('include/loop', 'portfolio');
         }
     }
 }
 
-// Only show the sidebars on news layouts
-function wpf_sidebar() {
+// Only show the sidebars on blog layouts
+function wpfolio_sidebar() {
+
     $classes = get_body_class();
-    if (in_array('standard-layout',$classes)) {
+    
+    if (in_array('standard-layout', $classes)) {
         get_sidebar();
     }
 }
@@ -143,108 +234,74 @@ function wpf_sidebar() {
 
 
 
-/************* SHORTCODES ********************/
+/*********************
+PAGE NAVI
+*********************/
 
-// Shortcode to add wide margins to a post page - works as is, but is applied in post lists
-
-function wide_margins_shortcode ($atts, $content = null) {
-    return '<div class="widemargins">' . do_shortcode($content) . '</div>';
-}
-add_shortcode('margin', 'wide_margins_shortcode');
-
-
-// Shortcode to print artwork meta info
-
-function artwork_meta_shortcode ($atts) {
-    ob_start();
-    $path = get_template_directory();
-    get_template_part($path . '/include/artwork-meta.php');
-    return ob_get_clean();
-}
-add_shortcode('artwork_info', 'artwork_meta_shortcode');
-
-
-
-
-
-
-
-/************* TAXONOMIES ********************/
-
-
-	register_taxonomy( 'people',
-		array('post'),
-		array('hierarchical' => false,     /* if this i8s true, it acts like categories */
-			'labels' => array(
-				'name' => __( 'People', 'bonestheme' ), /* name of the custom taxonomy */
-				'singular_name' => __( 'People', 'bonestheme' ), /* single taxonomy name */
-				'search_items' =>  __( 'Search People', 'bonestheme' ), /* search title for taxomony */
-				'all_items' => __( 'All People', 'bonestheme' ), /* all title for taxonomies */
-				'parent_item' => __( 'Parent Person', 'bonestheme' ),  /* parent title for taxonomy */
-				'parent_item_colon' => __( 'Parent Person:', 'bonestheme' ), /* parent taxonomy title */
-				'edit_item' => __( 'Edit People', 'bonestheme' ), /* edit custom taxonomy title */
-				'update_item' => __( 'Update People', 'bonestheme' ), /* update title for taxonomy */
-				'add_new_item' => __( 'Add New Person', 'bonestheme' ), /* add new title for taxonomy */
-				'new_item_name' => __( 'New Person', 'bonestheme' ) /* name title for taxonomy */
-			),
-			'show_admin_column' => true,
-			'show_ui' => true,
-			'query_var' => true,
-			'rewrite' => array( 'slug' => 'people' ),
-		)
-	);
-
-	register_taxonomy( 'places',
-		array('post'),
-		array('hierarchical' => false,     /* if this i8s true, it acts like categories */
-			'labels' => array(
-				'name' => __( 'Places', 'bonestheme' ), /* name of the custom taxonomy */
-				'singular_name' => __( 'Places', 'bonestheme' ), /* single taxonomy name */
-				'search_items' =>  __( 'Search Places', 'bonestheme' ), /* search title for taxomony */
-				'all_items' => __( 'All Places', 'bonestheme' ), /* all title for taxonomies */
-				'edit_item' => __( 'Edit Places', 'bonestheme' ), /* edit custom taxonomy title */
-				'update_item' => __( 'Update Place', 'bonestheme' ), /* update title for taxonomy */
-				'add_new_item' => __( 'Add New Place', 'bonestheme' ), /* add new title for taxonomy */
-				'new_item_name' => __( 'New Place', 'bonestheme' ) /* name title for taxonomy */
-			),
-			'show_admin_column' => true,
-			'show_ui' => true,
-			'query_var' => true,
-			'rewrite' => array( 'slug' => 'places' ),
-		)
-	);
-
-	/* adds medium taxonomy (categories) to Portfolio */
-	register_taxonomy_for_object_type( 'people', 'post' );
-	register_taxonomy_for_object_type( 'place', 'post' );
-
-
-
-
-
-
-
-/************* MISC ********************/
-
-//** Remove taxonomy title from wp_title
-// http://wordpress.stackexchange.com/questions/29020/how-to-remove-taxonomy-name-from-wp-title
-
-function wpf_remove_tax_name( $title, $sep, $seplocation ) {
-    if ( is_tax() ) {
-        $term_title = single_term_title( '', false );
-
-        // Determines position of separator
-        if ( 'right' == $seplocation ) {
-            $title = $term_title . " $sep ";
+// Numeric Page Navi (built into the theme by default)
+function wpfolio_page_navi($before = '', $after = '') {
+    global $wpdb, $wp_query;
+    $request = $wp_query->request;
+    $posts_per_page = intval(get_query_var('posts_per_page'));
+    $paged = intval(get_query_var('paged'));
+    $numposts = $wp_query->found_posts;
+    $max_page = $wp_query->max_num_pages;
+    if ( $numposts <= $posts_per_page ) { return; }
+    if(empty($paged) || $paged == 0) {
+        $paged = 1;
+    }
+    $pages_to_show = 7;
+    $pages_to_show_minus_1 = $pages_to_show-1;
+    $half_page_start = floor($pages_to_show_minus_1/2);
+    $half_page_end = ceil($pages_to_show_minus_1/2);
+    $start_page = $paged - $half_page_start;
+    if($start_page <= 0) {
+        $start_page = 1;
+    }
+    $end_page = $paged + $half_page_end;
+    if(($end_page - $start_page) != $pages_to_show_minus_1) {
+        $end_page = $start_page + $pages_to_show_minus_1;
+    }
+    if($end_page > $max_page) {
+        $start_page = $max_page - $pages_to_show_minus_1;
+        $end_page = $max_page;
+    }
+    if($start_page <= 0) {
+        $start_page = 1;
+    }
+    echo $before.'<nav class="page-navigation"><ol class="bones_page_navi clearfix">'."";
+    if ($start_page >= 2 && $pages_to_show < $max_page) {
+        $first_page_text = __( "First", 'wpfolio' );
+        echo '<li class="bpn-first-page-link"><a href="'.get_pagenum_link().'" title="'.$first_page_text.'">'.$first_page_text.'</a></li>';
+    }
+    echo '<li class="bpn-prev-link">';
+    previous_posts_link('&larr; Previous');
+    echo '</li>';
+    for($i = $start_page; $i  <= $end_page; $i++) {
+        if($i == $paged) {
+            echo '<li class="bpn-current">'.$i.'</li>';
         } else {
-            $title = " $sep " . $term_title;
+            echo '<li><a href="'.get_pagenum_link($i).'">'.$i.'</a></li>';
         }
     }
+    echo '<li class="bpn-next-link">';
+    next_posts_link('Next &rarr;');
+    echo '</li>';
+    if ($end_page < $max_page) {
+        $last_page_text = __( "Last", 'wpfolio' );
+        echo '<li class="bpn-last-page-link"><a href="'.get_pagenum_link($max_page).'" title="'.$last_page_text.'">'.$last_page_text.'</a></li>';
+    }
+    echo '</ol></nav>'.$after."";
+} /* end page navi */
 
-    return $title;
-}
-add_filter( 'wp_title', 'wpf_remove_tax_name', 10, 3 );
 
+
+
+
+
+/********************* 
+AUTO FEATURED IMAGE
+*********************/
 
 
 //** Use the first attachment image if there is no featured thumbnail
@@ -267,7 +324,7 @@ function wpf_get_attachments() {
 // Get the URL of the first attachment image.
 // If no attachments, display default-thumb.png
 
-function wpf_get_first_thumb() {
+function wpfolio_get_first_thumb() {
 
 	$attr = array(
 		'class'	=> "attachment-post-thumbnail wp-post-image");
@@ -285,12 +342,94 @@ function wpf_get_first_thumb() {
 
 
 
+    
+
+/*********************
+RELATED POSTS FUNCTION
+*********************/
+
+// NOTE not used anywhere
+// Related Posts Function (call using wpfolio_related_posts(); )
+function wpfolio_related_posts() {
+    echo '<ul id="wpfolio-related-posts">';
+    global $post;
+    $tags = wp_get_post_tags($post->ID);
+    if($tags) {
+        foreach($tags as $tag) { $tag_arr .= $tag->slug . ','; }
+        $args = array(
+            'tag' => $tag_arr,
+            'numberposts' => 5, /* you can change this to show more */
+            'post__not_in' => array($post->ID)
+        );
+        $related_posts = get_posts($args);
+        if($related_posts) {
+            foreach ($related_posts as $post) : setup_postdata($post); ?>
+                <li class="related_post"><a class="entry-unrelated" href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
+            <?php endforeach; }
+        else { ?>
+            <?php echo '<li class="no_related_post">' . __( 'No Related Posts Yet!', 'wpfolio' ) . '</li>'; ?>
+        <?php }
+    }
+    wp_reset_query();
+    echo '</ul>';
+} /* end wpfolio related posts function */
 
 
 
 
 
-/************* REQUIRE SOME PLUGINS ********************/
+
+/*********************
+RANDOM CLEANUP ITEMS
+*********************/
+
+// remove the p from around imgs (http://css-tricks.com/snippets/wordpress/remove-paragraph-tags-from-around-images/)
+function wpfolio_filter_ptags_on_images($content){
+   return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
+}
+
+// This removes the […] to a Read More link
+function wpfolio_excerpt_more($more) {
+    global $post;
+    // edit here if you like
+    return '...  <a class="excerpt-read-more" href="'. get_permalink($post->ID) . '" title="'. __('Read', 'wpfolio') . get_the_title($post->ID).'">'. __('Read more &raquo;', 'wpfolio') .'</a>';
+}
+
+/*
+ * This is a modified the_author_posts_link() which just returns the link.
+ *
+ * This is necessary to allow usage of the usual l10n process with printf().
+ */
+function wpfolio_get_the_author_posts_link() {
+    global $authordata;
+    if ( !is_object( $authordata ) )
+        return false;
+    $link = sprintf(
+        '<a href="%1$s" title="%2$s" rel="author">%3$s</a>',
+        get_author_posts_url( $authordata->ID, $authordata->user_nicename ),
+        esc_attr( sprintf( __( 'Posts by %s', 'wpfolio' ), get_the_author() ) ), // No further l10n needed, core will take care of this one
+        get_the_author()
+    );
+    return $link;
+}
+
+// remove injected CSS from gallery
+function wpfolio_gallery_style($css) {
+  return preg_replace("!<style type='text/css'>(.*?)</style>!s", '', $css);
+}
+
+
+
+
+
+
+
+
+
+
+/*********************
+REQUIRE SOME PLUGINS 
+*********************/
 
 
 add_action( 'tgmpa_register', 'wpf_register_required_plugins' );
@@ -354,80 +493,6 @@ function wpf_register_required_plugins() {
     tgmpa( $plugins, $config );
 
 }
-
-
-
-
-
-// Convert WPF2 meta to WPF3
-
-/*
- * Converts Old Content
- */
-function kia_convert_content(){
-$wpf_posts = get_posts(array('numberposts'=>-1,'post_type'=>'post'));
-
-foreach( $wpf_posts as $post ) : setup_postdata($post);
-
-    // get old meta
-    $wpf2_meta = get_post_meta($post->ID,'_custom_meta');
-
-    $wpf2_medium = $wpf2_meta[0]['medium'];
-    $wpf2_title = $wpf2_meta[0]['title'];
-    $wpf2_add = $wpf2_meta[0]['additional'];
-    $wpf2_collabs = $wpf2_meta[0]['collabs'];
-
-
-    // update new meta
-    update_post_meta($post->ID, $wpf2_medium, '_cmtb_medium');
-
-    // delete old meta
-    // delete_post_meta($post->ID, '_custom_meta');
-
-    endforeach;
-
-}
-
-
-/*
-* run Once class
-* http://en.bainternet.info/2011/wordpress-run-once-only
-*/
-if (!class_exists('run_once')){
-    class run_once{
-        function run($key){
-            $test_case = get_option('run_once');
-            if (isset($test_case[$key]) && $test_case[$key]){
-                return false;
-            }else{
-                $test_case[$key] = true;
-                update_option('run_once',$test_case);
-                return true;
-            }
-        }
-
-        function clear($key){
-            $test_case = get_option('run_once');
-            if (isset($test_case[$key])){
-                unset($test_case[$key]);
-            }
-        }
-    }
-}
-
-
-
-
-/*
- * convert the content exactly 1 time
- */
-// NOT YET!
-$run_once = new run_once;
-if ($run_once->run('kia_convert_content')){
-    // add_action('init','kia_convert_content');
-}
-
-
 
 
 

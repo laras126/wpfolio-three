@@ -20,7 +20,7 @@ Template for the Project Category taxonomy archive.
 					<ul class="clearfix project-loop">
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-							<?php wpf_layout(); ?>
+							<?php wpfolio_layout(); ?>
 
 						<?php endwhile; ?>
 
