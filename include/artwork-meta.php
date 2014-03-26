@@ -1,17 +1,13 @@
 <?php
 
-/* 	A file for the artwork meta!
-   	It includes some lovely variables and markup to display said variables
-   	via the [artwork_info] shortcode on Projects
-	The custom fields are defined in wpfolio.php in the Artwork Info Metabox section
-*/
+echo '<hr>';
 
-global $post;
+// Transfer old WPF2 meta info into new keys
 $wpf2_meta = get_post_meta($post->ID, '_custom_meta');
 $wpf3_medium = get_post_meta($post->ID, '_ctmb_medium', true);
 
 echo '<pre>';
-echo $wpf2_meta[0]['medium'];
+print_r($wpf2_meta);
 echo '</pre>';
 
 $wpf2_medium = $wpf2_meta[0]['medium'];
@@ -25,14 +21,35 @@ echo '</pre>';
 // print_r(get_post_meta($post->ID, '_ctmb_'));
 // Artwork Info Metabox fields
 //$aw_title = the_title();
-$aw_date = get_post_meta( $post->ID, '_custom_metawpf_title', true );?>
+$aw_date = get_post_meta( $post->ID, '_custom_metawpf_title', true );
 
-<hr/>
+print_r(get_post_meta( $post->ID, '_ctmb_medium' ));
 
-<?php print_r(get_post_meta( $post->ID, '_ctmb_medium' ));
+echo '<hr>';
 
 
-$aw_desc = get_post_meta( $post->ID, 'wpf_description', true );
+
+
+
+
+
+
+
+
+
+
+/* 	A file for the artwork meta!
+   	It includes some lovely variables and markup to display said variables
+   	via the [artwork_info] shortcode on Projects
+	The custom fields are defined in wpfolio.php in the Artwork Info Metabox section
+*/
+
+global $post;
+
+// Artwork Info Metabox fields
+$aw_title = the_title();
+$aw_date = get_post_meta( $post->ID, '_ctmb_date', true );
+$aw_desc = get_post_meta( $post->ID, '_ctmb_description', true );
 $aw_acknow = get_post_meta( $post->ID, '_ctmb_acknowledgments', true );
 $aw_link = get_post_meta( $post->ID, '_ctmb_link', true );
 $aw_link_text = get_post_meta( $post->ID, '_ctmb_link_text', true );
@@ -44,8 +61,6 @@ $meta_vals = array( $aw_date,
 					$aw_link,
 					$aw_link_text
 				);
-
-// echo $aw_medium . '   s  ' . $aw_date;
 
 // This is a little sloppy to do every single one, but oh well
 if ($aw_date || $aw_medium || $aw_desc || $aw_acknow || $aw_link || $aw_link_text):
@@ -88,4 +103,5 @@ if ($aw_date || $aw_medium || $aw_desc || $aw_acknow || $aw_link || $aw_link_tex
 
 <?php
 endif;
+
 ?>

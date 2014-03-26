@@ -156,7 +156,7 @@ function optionsframework_options() {
   // 1. Blog Layout
 	$options[] = array(
 		'name' => __('Blog Category', 'options_check'),
-		'desc' => __('Select the categories use the blog layout.', 'wpfolio'),
+		'desc' => __('Select the categories use the blog layout. All other categories will use the portfolio thumbnail layout.', 'wpfolio'),
 		'id' => 'blog_cat',
 		'std' => '0',
 		'type' => 'multicheck',

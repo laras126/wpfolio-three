@@ -35,7 +35,7 @@ if ( $comment_option == 'all' || $comment_option == 'blog' && is_singular('post'
 		<ol class="commentlist">
 			<?php 
 
-			wp_list_comments('type=comment&callback=bones_comments'); ?>
+			wp_list_comments('type=comment&callback=wpfolio_comments'); ?>
 		</ol>
 
 		<?php else : // this is displayed if there are no comments so far ?>

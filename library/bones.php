@@ -18,20 +18,25 @@ right up top and clean.
 *********************/
 
 // we're firing all out initial functions at the start
-add_action('after_setup_theme','bones_ahoy', 16);
+add_action('after_setup_theme','wpfolio_ahoy', 16);
 
 function bones_ahoy() {
 
+	// NOTE Removing per theme review "don't disable core features request"
     // launching operation cleanup
-    add_action('init', 'bones_head_cleanup');
+    // add_action('init', 'wpfolio_head_cleanup');
+
     // remove WP version from RSS
-    add_filter('the_generator', 'bones_rss_version');
-    // remove pesky injected css for recent comments widget
-    add_filter( 'wp_head', 'bones_remove_wp_widget_recent_comments_style', 1 );
+    add_filter('the_generator', 'wpfolio_rss_version');
+    
+    // remove injected css for recent comments widget
+    add_filter( 'wp_head', 'wpfolio_remove_wp_widget_recent_comments_style', 1 );
+    
     // clean up comment styles in the head
-    add_action('wp_head', 'bones_remove_recent_comments_style', 1);
+    add_action('wp_head', 'wpfolio_remove_recent_comments_style', 1);
+
     // clean up gallery output in wp
-    add_filter('gallery_style', 'bones_gallery_style');
+    add_filter('gallery_style', 'wpfolio_gallery_style');
 
     // enqueue base scripts and styles
     add_action('wp_enqueue_scripts', 'bones_scripts_and_styles', 999);
@@ -41,14 +46,15 @@ function bones_ahoy() {
     bones_theme_support();
 
     // adding sidebars to Wordpress (these are created in functions.php)
-    add_action( 'widgets_init', 'bones_register_sidebars' );
+    add_action( 'widgets_init', 'wpfolio_register_sidebars' );
+
     // adding the bones search form (created in functions.php)
-    add_filter( 'get_search_form', 'bones_wpsearch' );
+    add_filter( 'get_search_form', 'wpfolio_wpsearch' );
 
     // cleaning up random code around images
-    add_filter('the_content', 'bones_filter_ptags_on_images');
+    add_filter('the_content', 'wpfolio_filter_ptags_on_images');
     // cleaning up excerpt
-    add_filter('excerpt_more', 'bones_excerpt_more');
+    add_filter('excerpt_more', 'wpfolio_excerpt_more');
 
 } /* end bones ahoy */
 
@@ -60,11 +66,11 @@ removing all the junk we don't
 need.
 *********************/
 
-function bones_head_cleanup() {
+function wpfolio_head_cleanup() {
 	// category feeds
-	// remove_action( 'wp_head', 'feed_links_extra', 3 );
+	remove_action( 'wp_head', 'feed_links_extra', 3 );
 	// post and comment feeds
-	// remove_action( 'wp_head', 'feed_links', 2 );
+	remove_action( 'wp_head', 'feed_links', 2 );
 	// EditURI link
 	remove_action( 'wp_head', 'rsd_link' );
 	// windows live writer
@@ -87,24 +93,24 @@ function bones_head_cleanup() {
 } /* end bones head cleanup */
 
 // remove WP version from RSS
-function bones_rss_version() { return ''; }
+function wpfolio_rss_version() { return ''; }
 
 // remove WP version from scripts
-function bones_remove_wp_ver_css_js( $src ) {
+function wpfolio_remove_wp_ver_css_js( $src ) {
     if ( strpos( $src, 'ver=' ) )
         $src = remove_query_arg( 'ver', $src );
     return $src;
 }
 
 // remove injected CSS for recent comments widget
-function bones_remove_wp_widget_recent_comments_style() {
+function wpfolio_remove_wp_widget_recent_comments_style() {
    if ( has_filter('wp_head', 'wp_widget_recent_comments_style') ) {
       remove_filter('wp_head', 'wp_widget_recent_comments_style' );
    }
 }
 
 // remove injected CSS from recent comments widget
-function bones_remove_recent_comments_style() {
+function wpfolio_remove_recent_comments_style() {
   global $wp_widget_factory;
   if (isset($wp_widget_factory->widgets['WP_Widget_Recent_Comments'])) {
     remove_action('wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style'));
@@ -112,7 +118,7 @@ function bones_remove_recent_comments_style() {
 }
 
 // remove injected CSS from gallery
-function bones_gallery_style($css) {
+function wpfolio_gallery_style($css) {
   return preg_replace("!<style type='text/css'>(.*?)</style>!s", '', $css);
 }
 
@@ -122,7 +128,7 @@ SCRIPTS & ENQUEUEING
 *********************/
 
 // loading modernizr and jquery, and reply script
-function bones_scripts_and_styles() {
+function wpfolio_scripts_and_styles() {
   global $wp_styles; // call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
   if (!is_admin()) {
 
@@ -167,15 +173,13 @@ THEME SUPPORT
 *********************/
 
 // Adding WP 3+ Functions & Theme Support
-function bones_theme_support() {
+function wpfolio_theme_support() {
 
 	// wp thumbnails (sizes handled in functions.php)
 	add_theme_support('post-thumbnails');
 
 	// default thumb size
 	set_post_thumbnail_size(300, 300);
-
-	// Note: Do we need both of these? Is one not necessary at all?
 
 	// Customize the Media option defaults
 	// http://wordpress.org/support/topic/how-set-default-image-size
@@ -192,18 +196,7 @@ function bones_theme_support() {
 	add_theme_support('automatic-feed-links');
 
 	// to add header image support go here: http://themble.com/support/adding-header-background-image-support/
-
 	
-	// TODO: Do we want to use these? For text based posts or something? 
-
-	// No support for post formats - sorry, WP, they aren't that useful! (IMHO)
-	// // adding post format support
-	// add_theme_support( 'post-formats',
-	// 	array(
-	// 		'image',
-	// 	)
-	// );
-
 	// wp menus
 	add_theme_support( 'menus' );
 
@@ -213,7 +206,7 @@ function bones_theme_support() {
 			'main-nav' => __( 'The Main Menu', 'wpfolio' ),   // main nav in header
 		)
 	);
-} /* end bones theme support */
+} /* end wpfolio theme support */
 
 
 /*********************
@@ -221,19 +214,19 @@ MENUS & NAVIGATION
 *********************/
 
 // the main menu
-function bones_main_nav() {
+function wpfolio_main_nav() {
     wp_nav_menu(array(
     	'container' => false,
     	'menu' => __( 'The Main Menu', 'wpfolio' ),
     	'menu_class' => 'sf-menu',
     	'theme_location' => 'main-nav',
         'depth' => 0,
-    	'fallback_cb' => 'bones_main_nav_fallback'
+    	'fallback_cb' => 'wpfolio_main_nav_fallback'
 	));
 } /* end bones main nav */
 
 // this is the fallback for header menu
-// BIG NOTE: This should be wp_page_menu but
+// NOTE: This should be wp_page_menu but
 // Superfish doesn't like having a div.sf-menu around the ul
 // This will likely be a problem in future
 // so need to rewrite css to account for it 
@@ -241,7 +234,7 @@ function bones_main_nav() {
 // http://wordpress.stackexchange.com/questions/116656/menu-fallback-menu-class-rendering-a-div-instead-of-a-ul
 // https://github.com/laras126/wpfolio-three/issues/1
 
-function bones_main_nav_fallback() {
+function wpfolio_main_nav_fallback() {
 	wp_nav_menu( array(
 		'container' => false,
 		'menu_class' => 'sf-menu',
@@ -249,15 +242,18 @@ function bones_main_nav_fallback() {
         'depth' => 0,
 	) );
 }
+
+
 	
 
 /*********************
 RELATED POSTS FUNCTION
 *********************/
 
-// Related Posts Function (call using bones_related_posts(); )
-function bones_related_posts() {
-	echo '<ul id="bones-related-posts">';
+// NOTE not used anywhere
+// Related Posts Function (call using wpfolio_related_posts(); )
+function wpfolio_related_posts() {
+	echo '<ul id="wpfolio-related-posts">';
 	global $post;
 	$tags = wp_get_post_tags($post->ID);
 	if($tags) {
@@ -278,14 +274,18 @@ function bones_related_posts() {
 	}
 	wp_reset_query();
 	echo '</ul>';
-} /* end bones related posts function */
+} /* end wpfolio related posts function */
+
+
+
+
 
 /*********************
 PAGE NAVI
 *********************/
 
 // Numeric Page Navi (built into the theme by default)
-function bones_page_navi($before = '', $after = '') {
+function wpfolio_page_navi($before = '', $after = '') {
 	global $wpdb, $wp_query;
 	$request = $wp_query->request;
 	$posts_per_page = intval(get_query_var('posts_per_page'));
@@ -340,20 +340,24 @@ function bones_page_navi($before = '', $after = '') {
 	echo '</ol></nav>'.$after."";
 } /* end page navi */
 
+
+
+
+
 /*********************
 RANDOM CLEANUP ITEMS
 *********************/
 
 // remove the p from around imgs (http://css-tricks.com/snippets/wordpress/remove-paragraph-tags-from-around-images/)
-function bones_filter_ptags_on_images($content){
+function wpfolio_filter_ptags_on_images($content){
    return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
 }
 
-// This removes the annoying […] to a Read More link
-function bones_excerpt_more($more) {
+// This removes the […] to a Read More link
+function wpfolio_excerpt_more($more) {
 	global $post;
 	// edit here if you like
-return '...  <a class="excerpt-read-more" href="'. get_permalink($post->ID) . '" title="'. __('Read', 'wpfolio') . get_the_title($post->ID).'">'. __('Read more &raquo;', 'wpfolio') .'</a>';
+	return '...  <a class="excerpt-read-more" href="'. get_permalink($post->ID) . '" title="'. __('Read', 'wpfolio') . get_the_title($post->ID).'">'. __('Read more &raquo;', 'wpfolio') .'</a>';
 }
 
 /*
@@ -361,7 +365,7 @@ return '...  <a class="excerpt-read-more" href="'. get_permalink($post->ID) . '"
  *
  * This is necessary to allow usage of the usual l10n process with printf().
  */
-function bones_get_the_author_posts_link() {
+function wpfolio_get_the_author_posts_link() {
 	global $authordata;
 	if ( !is_object( $authordata ) )
 		return false;

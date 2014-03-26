@@ -2,8 +2,7 @@
 
 /************* ARTWORK METABOX ********************/
 
-// This metabox shows up in all projects
-// TODO: maybe add an option to hide it?
+// This metabox shows up in all posts
 function wpf_artinfo_metaboxes( $meta_boxes ) {
     $post_title = the_title();
     $prefix = '_ctmb_'; // Prefix for all fields
@@ -81,6 +80,7 @@ function wpf_initialize_cmb_meta_boxes() {
 }
 
 add_action( 'init', 'wpf_initialize_cmb_meta_boxes', 999);
+
 
 
 
@@ -167,6 +167,129 @@ add_shortcode('artwork_info', 'artwork_meta_shortcode');
 
 
 
+
+
+/************* TAXONOMIES ********************/
+
+
+	register_taxonomy( 'people',
+		array('post'),
+		array('hierarchical' => false,     /* if this i8s true, it acts like categories */
+			'labels' => array(
+				'name' => __( 'People', 'bonestheme' ), /* name of the custom taxonomy */
+				'singular_name' => __( 'People', 'bonestheme' ), /* single taxonomy name */
+				'search_items' =>  __( 'Search People', 'bonestheme' ), /* search title for taxomony */
+				'all_items' => __( 'All People', 'bonestheme' ), /* all title for taxonomies */
+				'parent_item' => __( 'Parent Person', 'bonestheme' ),  /* parent title for taxonomy */
+				'parent_item_colon' => __( 'Parent Person:', 'bonestheme' ), /* parent taxonomy title */
+				'edit_item' => __( 'Edit People', 'bonestheme' ), /* edit custom taxonomy title */
+				'update_item' => __( 'Update People', 'bonestheme' ), /* update title for taxonomy */
+				'add_new_item' => __( 'Add New Person', 'bonestheme' ), /* add new title for taxonomy */
+				'new_item_name' => __( 'New Person', 'bonestheme' ) /* name title for taxonomy */
+			),
+			'show_admin_column' => true,
+			'show_ui' => true,
+			'query_var' => true,
+			'rewrite' => array( 'slug' => 'people' ),
+		)
+	);
+
+	register_taxonomy( 'places',
+		array('post'),
+		array('hierarchical' => false,     /* if this i8s true, it acts like categories */
+			'labels' => array(
+				'name' => __( 'Places', 'bonestheme' ), /* name of the custom taxonomy */
+				'singular_name' => __( 'Places', 'bonestheme' ), /* single taxonomy name */
+				'search_items' =>  __( 'Search Places', 'bonestheme' ), /* search title for taxomony */
+				'all_items' => __( 'All Places', 'bonestheme' ), /* all title for taxonomies */
+				'edit_item' => __( 'Edit Places', 'bonestheme' ), /* edit custom taxonomy title */
+				'update_item' => __( 'Update Place', 'bonestheme' ), /* update title for taxonomy */
+				'add_new_item' => __( 'Add New Place', 'bonestheme' ), /* add new title for taxonomy */
+				'new_item_name' => __( 'New Place', 'bonestheme' ) /* name title for taxonomy */
+			),
+			'show_admin_column' => true,
+			'show_ui' => true,
+			'query_var' => true,
+			'rewrite' => array( 'slug' => 'places' ),
+		)
+	);
+
+	/* adds medium taxonomy (categories) to Portfolio */
+	register_taxonomy_for_object_type( 'people', 'post' );
+	register_taxonomy_for_object_type( 'place', 'post' );
+
+
+
+
+
+
+
+/************* MISC ********************/
+
+//** Remove taxonomy title from wp_title
+// http://wordpress.stackexchange.com/questions/29020/how-to-remove-taxonomy-name-from-wp-title
+
+function wpf_remove_tax_name( $title, $sep, $seplocation ) {
+    if ( is_tax() ) {
+        $term_title = single_term_title( '', false );
+
+        // Determines position of separator
+        if ( 'right' == $seplocation ) {
+            $title = $term_title . " $sep ";
+        } else {
+            $title = " $sep " . $term_title;
+        }
+    }
+
+    return $title;
+}
+add_filter( 'wp_title', 'wpf_remove_tax_name', 10, 3 );
+
+
+
+//** Use the first attachment image if there is no featured thumbnail
+
+// Get post attachments
+// http://www.kingrosales.com/how-to-display-your-posts-first-image-thumbnail-automatically-in-wordpress/
+// -- (although this link is now dead, and function has been significantly hacked, it's worth a credit.)
+
+function wpf_get_attachments() {
+	global $post;
+	return get_posts(
+		array(
+			'post_parent' => get_the_ID(),
+			'post_type' => 'attachment',
+			'post_mime_type' => 'image')
+		);
+}
+
+// Pull a post image for the thumb if there isn't one set
+// Get the URL of the first attachment image.
+// If no attachments, display default-thumb.png
+
+function wpf_get_first_thumb() {
+
+	$attr = array(
+		'class'	=> "attachment-post-thumbnail wp-post-image");
+
+	$imgs = wpf_get_attachments();
+	if ($imgs) {
+		$keys = array_reverse($imgs);
+		$num = $keys[0];
+		$url = wp_get_attachment_image($num->ID, 'wpf-thumb-300', true,$attr);
+		print $url;
+	} else { ?>
+		<img src="<?php echo get_template_directory_uri(); ?>/library/images/default-thumb.png" alt="<?php the_title(); ?>"/>
+	<?php }
+}
+
+
+
+
+
+
+
+
 /************* REQUIRE SOME PLUGINS ********************/
 
 
@@ -236,111 +359,76 @@ function wpf_register_required_plugins() {
 
 
 
-/************* TAXONOMIES ********************/
+// Convert WPF2 meta to WPF3
+
+/*
+ * Converts Old Content
+ */
+function kia_convert_content(){
+$wpf_posts = get_posts(array('numberposts'=>-1,'post_type'=>'post'));
+
+foreach( $wpf_posts as $post ) : setup_postdata($post);
+
+    // get old meta
+    $wpf2_meta = get_post_meta($post->ID,'_custom_meta');
+
+    $wpf2_medium = $wpf2_meta[0]['medium'];
+    $wpf2_title = $wpf2_meta[0]['title'];
+    $wpf2_add = $wpf2_meta[0]['additional'];
+    $wpf2_collabs = $wpf2_meta[0]['collabs'];
 
 
-	register_taxonomy( 'people',
-		array('post'),
-		array('hierarchical' => false,     /* if this i8s true, it acts like categories */
-			'labels' => array(
-				'name' => __( 'People', 'bonestheme' ), /* name of the custom taxonomy */
-				'singular_name' => __( 'People', 'bonestheme' ), /* single taxonomy name */
-				'search_items' =>  __( 'Search People', 'bonestheme' ), /* search title for taxomony */
-				'all_items' => __( 'All People', 'bonestheme' ), /* all title for taxonomies */
-				'parent_item' => __( 'Parent Person', 'bonestheme' ),  /* parent title for taxonomy */
-				'parent_item_colon' => __( 'Parent Person:', 'bonestheme' ), /* parent taxonomy title */
-				'edit_item' => __( 'Edit People', 'bonestheme' ), /* edit custom taxonomy title */
-				'update_item' => __( 'Update People', 'bonestheme' ), /* update title for taxonomy */
-				'add_new_item' => __( 'Add New Person', 'bonestheme' ), /* add new title for taxonomy */
-				'new_item_name' => __( 'New Person', 'bonestheme' ) /* name title for taxonomy */
-			),
-			'show_admin_column' => true,
-			'show_ui' => true,
-			'query_var' => true,
-			'rewrite' => array( 'slug' => 'people' ),
-		)
-	);
+    // update new meta
+    update_post_meta($post->ID, $wpf2_medium, '_cmtb_medium');
 
-	register_taxonomy( 'places',
-		array('post'),
-		array('hierarchical' => false,     /* if this i8s true, it acts like categories */
-			'labels' => array(
-				'name' => __( 'Places', 'bonestheme' ), /* name of the custom taxonomy */
-				'singular_name' => __( 'Places', 'bonestheme' ), /* single taxonomy name */
-				'search_items' =>  __( 'Search Places', 'bonestheme' ), /* search title for taxomony */
-				'all_items' => __( 'All Places', 'bonestheme' ), /* all title for taxonomies */
-				'edit_item' => __( 'Edit Places', 'bonestheme' ), /* edit custom taxonomy title */
-				'update_item' => __( 'Update Place', 'bonestheme' ), /* update title for taxonomy */
-				'add_new_item' => __( 'Add New Place', 'bonestheme' ), /* add new title for taxonomy */
-				'new_item_name' => __( 'New Place', 'bonestheme' ) /* name title for taxonomy */
-			),
-			'show_admin_column' => true,
-			'show_ui' => true,
-			'query_var' => true,
-			'rewrite' => array( 'slug' => 'places' ),
-		)
-	);
+    // delete old meta
+    // delete_post_meta($post->ID, '_custom_meta');
 
-	/* adds medium taxonomy (categories) to Portfolio */
-	register_taxonomy_for_object_type( 'people', 'post' );
-	register_taxonomy_for_object_type( 'place', 'post' );
+    endforeach;
+
+}
 
 
+/*
+* run Once class
+* http://en.bainternet.info/2011/wordpress-run-once-only
+*/
+if (!class_exists('run_once')){
+    class run_once{
+        function run($key){
+            $test_case = get_option('run_once');
+            if (isset($test_case[$key]) && $test_case[$key]){
+                return false;
+            }else{
+                $test_case[$key] = true;
+                update_option('run_once',$test_case);
+                return true;
+            }
+        }
 
-
-
-/************* MISC ********************/
-
-// Remove taxonomy title from wp_title
-// http://wordpress.stackexchange.com/questions/29020/how-to-remove-taxonomy-name-from-wp-title
-
-function wpf_remove_tax_name( $title, $sep, $seplocation ) {
-    if ( is_tax() ) {
-        $term_title = single_term_title( '', false );
-
-        // Determines position of separator
-        if ( 'right' == $seplocation ) {
-            $title = $term_title . " $sep ";
-        } else {
-            $title = " $sep " . $term_title;
+        function clear($key){
+            $test_case = get_option('run_once');
+            if (isset($test_case[$key])){
+                unset($test_case[$key]);
+            }
         }
     }
-
-    return $title;
-}
-add_filter( 'wp_title', 'wpf_remove_tax_name', 10, 3 );
-
-// Get post attachments
-// http://www.kingrosales.com/how-to-display-your-posts-first-image-thumbnail-automatically-in-wordpress/ -- (although this link is now dead, and function has been significantly hacked, it's worth a credit.)
-function wpf_get_attachments() {
-	global $post;
-	return get_posts(
-		array(
-			'post_parent' => get_the_ID(),
-			'post_type' => 'attachment',
-			'post_mime_type' => 'image')
-		);
 }
 
-// Pull a post image for the thumb if there isn't one set
-// Get the URL of the first attachment image.
-// If no attachments, display default-thumb.png
 
-function wpf_get_first_thumb() {
 
-	$attr = array(
-		'class'	=> "attachment-post-thumbnail wp-post-image");
 
-	$imgs = wpf_get_attachments();
-	if ($imgs) {
-		$keys = array_reverse($imgs);
-		$num = $keys[0];
-		$url = wp_get_attachment_image($num->ID, 'wpf-thumb-300', true,$attr);
-		print $url;
-	} else { ?>
-		<img src="<?php echo get_template_directory_uri(); ?>/library/images/default-thumb.png" alt="<?php the_title(); ?>"/>
-	<?php }
+/*
+ * convert the content exactly 1 time
+ */
+// NOT YET!
+$run_once = new run_once;
+if ($run_once->run('kia_convert_content')){
+    // add_action('init','kia_convert_content');
 }
+
+
+
 
 
 ?>

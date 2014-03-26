@@ -90,25 +90,36 @@ add_filter( 'use_default_gallery_style', '__return_false' );
 /************* ACTIVE SIDEBARS ********************/
 
 // Sidebars & Widgetizes Areas
-function bones_register_sidebars() {
-	register_sidebar(array(
-		'id' => 'sidebar1',
-		'name' => __('Sidebar', 'bonestheme'),
-		'description' => __('The first (primary) sidebar.', 'bonestheme'),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h4 class="widgettitle">',
-		'after_title' => '</h4>',
-	));
+if ( ! function_exists( 'wpfolio_register_sidebars' ) ):
+	function wpfolio_register_sidebars() {
+		register_sidebar(array(
+			'id' => 'sidebar1',
+			'name' => __('Sidebar', 'bonestheme'),
+			'description' => __('The first (primary) sidebar.', 'bonestheme'),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget' => '</div>',
+			'before_title' => '<h4 class="widgettitle">',
+			'after_title' => '</h4>',
+		));
 
-} // don't remove this bracket!
+		register_sidebar(array(
+			'id' => 'footer1',
+			'name' => __('Left footer widget.', 'bonestheme'),
+			'description' => __('The first (primary) sidebar.', 'bonestheme'),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget' => '</div>',
+			'before_title' => '<h4 class="widgettitle">',
+			'after_title' => '</h4>',
+		));
+
+	} // don't remove this bracket!
 
 
 
 /************* COMMENT LAYOUT *********************/
 
 // Comment Layout
-function bones_comments($comment, $args, $depth) {
+function wpfolio_comments($comment, $args, $depth) {
    $GLOBALS['comment'] = $comment; ?>
 
 	<li <?php comment_class(); ?>>
@@ -159,7 +170,7 @@ function bones_comments($comment, $args, $depth) {
 /************* SEARCH FORM LAYOUT *****************/
 
 // Search Form
-function bones_wpsearch($form) {
+function wpfolio_wpsearch($form) {
 	$form = '<form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
 	<label class="screen-reader-text" for="s">' . __('Search for:', 'bonestheme') . '</label>
 	<input type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="'.esc_attr__('Search the Site...','bonestheme').'" />

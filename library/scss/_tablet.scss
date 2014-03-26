@@ -29,7 +29,7 @@ HEADER STYLES
 *********************/
 
 .header {
-	
+
 }
 
 #inner-header {
@@ -52,10 +52,10 @@ a.menu-link {
 .nav {
 	clear: none;
 	display: inline-block;
-	
+
 	.js & {
 		max-height: none;
-		overflow: visible;	
+		overflow: visible;
 	}
 
 	li {
@@ -78,7 +78,7 @@ a.menu-link {
 }
 .sf-menu ul ul li {
 	background: $accent-light;
-}	
+}
 
 .sf-menu > li {
 	float: left;
@@ -118,15 +118,20 @@ POSTS & CONTENT STYLES
 
 // Hover styles for gallery and project thumbs
 .project-thumb, .gallery-item {
+
+	// Fix shaky Chrome hover deal
+	// http://stackoverflow.com/questions/12980153/image-moves-on-hover-chrome-opacity-issue
+	-webkit-transform: translateZ(0);
+
 	img {
-		opacity: 1;
-		
+		@include transition(0.3s opacity);
+		@include opacity(1);
 		&:hover {
-			opacity: 0.6;
+			@include opacity(0.6);
 		}
 
 		&:active {
-			opacity: 1;
+			@include opacity(1);
 		}
 	}
 }
@@ -134,7 +139,7 @@ POSTS & CONTENT STYLES
 .project-taxonomies a {
 	&:hover {
 		background-color: $accent-med;
-		color: $white; 
+		color: $white;
 	}
 }
 
@@ -151,7 +156,7 @@ POSTS & CONTENT STYLES
 }
 
 .mobile-show {
-	display: none;	
+	display: none;
 }
 
 /*********************
@@ -159,7 +164,7 @@ SIDEBARS & ASIDES
 *********************/
 
 .sidebar {
-	
+
 }
 
 	.widgettitle {
@@ -289,4 +294,3 @@ FOOTER STYLES
 .credits {
 	float: left;
 }
-
