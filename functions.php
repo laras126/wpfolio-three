@@ -50,17 +50,6 @@ require_once('library/wpfolio.php'); // you can disable this if you like
 
 
 /*
-4. library/admin.php
-	- removing some default WordPress dashboard widgets
-	- an example custom dashboard widget
-	- adding custom login css
-	- sidebars
-	- custom menus
-*/
-// require_once('library/admin.php'); // this comes turned off by default
-
-
-/*
 4. library/translation/translation.php
 	- adding support for other languages
 */
