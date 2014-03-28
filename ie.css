@@ -219,8 +219,8 @@ HEADER STYLES
 *********************/
 /* line 94, library/scss/_base.scss */
 .header {
-  padding-top: 2.25em;
   text-align: center;
+  padding-top: 1.375em;
 }
 
 /* line 99, library/scss/_base.scss */
@@ -1114,11 +1114,11 @@ a.menu-link {
 /*********************
 POSTS & CONTENT STYLES
 *********************/
-/* line 125, library/scss/_tablet.scss */
+/* line 127, library/scss/_tablet.scss */
 .project-thumb, .gallery-item {
   -webkit-transform: translateZ(0);
 }
-/* line 131, library/scss/_tablet.scss */
+/* line 133, library/scss/_tablet.scss */
 .project-thumb img, .gallery-item img {
   -webkit-transition: 0.3s opacity;
   -moz-transition: 0.3s opacity;
@@ -1127,39 +1127,39 @@ POSTS & CONTENT STYLES
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
-/* line 134, library/scss/_tablet.scss */
+/* line 136, library/scss/_tablet.scss */
 .project-thumb img:hover, .gallery-item img:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
   opacity: 0.6;
 }
-/* line 138, library/scss/_tablet.scss */
+/* line 140, library/scss/_tablet.scss */
 .project-thumb img:active, .gallery-item img:active {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
 
-/* line 145, library/scss/_tablet.scss */
+/* line 147, library/scss/_tablet.scss */
 .project-taxonomies a:hover {
   background-color: #d4d4d4;
   color: white;
 }
 
-/* line 151, library/scss/_tablet.scss */
+/* line 153, library/scss/_tablet.scss */
 .pv-middle {
   padding-bottom: 0;
 }
 
-/* line 155, library/scss/_tablet.scss */
+/* line 157, library/scss/_tablet.scss */
 .comment_content {
   margin-left: 3.75em;
 }
 
-/* line 159, library/scss/_tablet.scss */
+/* line 161, library/scss/_tablet.scss */
 .mobile-hide {
   display: block;
 }
 
-/* line 163, library/scss/_tablet.scss */
+/* line 165, library/scss/_tablet.scss */
 .mobile-show {
   display: none;
 }
@@ -1167,26 +1167,26 @@ POSTS & CONTENT STYLES
 /*********************
 SIDEBARS & ASIDES
 *********************/
-/* line 175, library/scss/_tablet.scss */
+/* line 177, library/scss/_tablet.scss */
 .widgettitle {
   text-align: left;
 }
 
-/* line 179, library/scss/_tablet.scss */
+/* line 181, library/scss/_tablet.scss */
 .widget {
   padding: 0 1.125em;
   border-left: #eeeeee 1px solid;
 }
-/* line 183, library/scss/_tablet.scss */
+/* line 185, library/scss/_tablet.scss */
 .widget ul {
   list-style-type: none;
 }
-/* line 186, library/scss/_tablet.scss */
+/* line 188, library/scss/_tablet.scss */
 .widget ul li {
   margin-bottom: 0.825em;
   /* deep nesting */
 }
-/* line 194, library/scss/_tablet.scss */
+/* line 196, library/scss/_tablet.scss */
 .widget ul li ul {
   margin-top: 0.825em;
   padding-left: 1em;
@@ -1206,12 +1206,12 @@ SIDEBARS & ASIDES
 /*********************
 FOOTER STYLES
 *********************/
-/* line 295, library/scss/_tablet.scss */
+/* line 297, library/scss/_tablet.scss */
 .copyright {
   float: right;
 }
 
-/* line 299, library/scss/_tablet.scss */
+/* line 301, library/scss/_tablet.scss */
 .credits {
   float: left;
 }
@@ -1224,21 +1224,27 @@ This is the desktop size. It's larger than an iPad so it will only
 be seen on the Desktop. 
 
 ******************************************************************/
-/* line 10, library/scss/_desktop.scss */
+/* line 11, library/scss/_desktop.scss */
+#container {
+  margin-top: 2.25em;
+  margin-bottom: 2.25em;
+}
+
+/* line 16, library/scss/_desktop.scss */
 .header {
   text-align: left;
 }
 
-/* line 13, library/scss/_desktop.scss */
+/* line 19, library/scss/_desktop.scss */
 .sf-menu {
   float: right;
 }
-/* line 16, library/scss/_desktop.scss */
+/* line 22, library/scss/_desktop.scss */
 .sf-menu li {
   border-top: none;
 }
 
-/* line 21, library/scss/_desktop.scss */
+/* line 27, library/scss/_desktop.scss */
 .project-taxonomies .tags-title {
   display: inline;
 }

@@ -21,15 +21,15 @@ http://themeshaper.com/modify-wordpress-themes/
 /* ---
 Stylesheet: Main Stylesheet
 
-Import all necessary libraries and such. 
+Import all necessary libraries and such.
 The base mobile goes outside any query
-and is called at the beginning, after that we 
-call the rest of the styles inside media queries. 
+and is called at the beginning, after that we
+call the rest of the styles inside media queries.
 
 --
 
 Hey, you! Yeah, YOU!
-Don't add styles here! 
+Don't add styles here!
 Add them to the appropriate other files
 if you are a contributing developer.
 
@@ -45,7 +45,8 @@ Otherwise make a child theme, homie!
 @import "compass/utilities";
 @import "susy";
 
-@import "../font/font-awesome/scss/font-awesome";
+// Premium only
+// @import "../font/font-awesome/scss/font-awesome";
 @import "libs/normalize";
 @import "libs/settings";
 @import "libs/mixins";
@@ -62,9 +63,9 @@ Otherwise make a child theme, homie!
 /*
 BASE (MOBILE) SIZE
 These are the mobile styles.
-I set a solid foundation (I think) 
-so their aren't too many styles 
-in the other stylesheets. 
+I set a solid foundation (I think)
+so their aren't too many styles
+in the other stylesheets.
 
 Isn't that kind of like a poem?
 */
@@ -100,7 +101,7 @@ in general anyone not viewing on a mobile device. Here's where
 the resource intensive styles are added, like the grid.
 */
 @media only screen and (min-width: $tablet) {
-	
+
 	// styles in 768up.scss
 	@import "tablet";
 
@@ -145,9 +146,9 @@ Want to get fancy for no good reason? Knock yourself out.
 I didn't.
 */
 @media (device-height: 568px) and (-webkit-min-device-pixel-ratio: 2) {
-  
+
   // iPhone 5 or iPod Touch 5th generation styles (you can include your own file if you want)
-  
+
 }
 
 /*

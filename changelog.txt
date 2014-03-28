@@ -1,6 +1,17 @@
 WPFolio Three Changelog
 http://semver.org/
 
+=== 1.0.0 ===
+- revert to old WPF for an update
+- remove custom type
+- remove actions modifying WP core features
+- replace "bones" with "wpfolio" in function names
+- change default.po, etc to theme name
+- add orig WPF features
+  - auto assign featured image
+  -
+- add back blog option (not using yet)
+- evaluate available fonts
 
 === 0.9.3 ===
 - fix small comment reply text

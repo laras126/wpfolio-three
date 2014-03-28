@@ -140,7 +140,7 @@ function optionsframework_options() {
 	/************* BASIC SETTINGS ********************/
 
 	/* 	This includes:
-    	1. Blog Layout (multicheck)
+    	1. Blog Layout (multicheck) - out for now/couldn't get it working
 		2. Comments (radio)
 		3. Custom Favicon (upload)
 		4. Show theme creds? (radio)
@@ -154,13 +154,15 @@ function optionsframework_options() {
 
 
   // 1. Blog Layout
-	$options[] = array(
-		'name' => __('Blog Category', 'options_check'),
-		'desc' => __('Select the categories use the blog layout. All other categories will use the portfolio thumbnail layout.', 'wpfolio'),
-		'id' => 'blog_cat',
-		'std' => '0',
-		'type' => 'multicheck',
-		'options' => $options_categories);
+	// This is staying out for now - will be added in an update
+
+	// $options[] = array(
+	// 	'name' => __('Blog Category', 'options_check'),
+	// 	'desc' => __('Select the categories use the blog layout. All other categories will use the portfolio thumbnail layout.', 'wpfolio'),
+	// 	'id' => 'blog_cat',
+	// 	'std' => '0',
+	// 	'type' => 'multicheck',
+	// 	'options' => $options_categories);
 
 
   // 2. Comments
@@ -194,16 +196,20 @@ function optionsframework_options() {
 
 	/************* STYLES ********************/
 
-	/* 	This includes:
+	/*
+
+  This includes:
 		1. Typography
 			- Title
 			- Headings
 			- Body
 		2. Background
-		3. Color Scheme (TODO)
+    3. Container color
+		3. Colors
+			- Main font color
+			-
 		4. Custom CSS
 
-		TODO: should this be only a Pro option?
 	*/
 
 
@@ -229,7 +235,7 @@ function optionsframework_options() {
 	// 2. Header font
 	$options[] = array(
 		'name' => __('Headings Font', 'wpfolio'),
-		'desc' => __('You can choose a different font and color for the heading text.', 'wpfolio'),
+		'desc' => __('You can choose a different font for the heading text.', 'wpfolio'),
 		'id' => "heading_font",
 		'std' => $heading_font_defaults,
 		'type' => 'typography',
@@ -264,6 +270,16 @@ function optionsframework_options() {
 		'id' => 'body_background',
 		'std' => $background_defaults,
 		'type' => 'background' );
+
+
+  // TODO: make this a background option
+  // Change the background of the container
+	$options[] = array(
+		'name' => __('Container Background Color', 'options_check'),
+		'desc' => __('Select a color for the content container. No color selected by default.', 'options_check'),
+		'id' => 'container_background',
+		'std' => '',
+		'type' => 'color' );
 
 
 	// --- 3. Custom CSS FTW --- //

@@ -20,28 +20,29 @@
 
 		<?php wp_head(); ?>
 		<!-- end of wordpress head -->
-		
+
 	</head>
 
 	<body <?php body_class(); ?>>
-	
-		<div id="container">
+
+		<?php // TODO: reevaluate the .wrap ?>
+		<div id="container" class="wrap">
 
 			<header class="header" role="banner">
 
-				<div id="inner-header" class="wrap clearfix">
+				<div id="inner-header wrap" class="clearfix">
 
 					<div class="site-name">
 						<h1 class="site-title"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></h1>
 						<p class="site-description"><?php bloginfo('description'); ?></p>
 					</div>
-					
+
 					<a href="#main-nav" class="menu-link"><i class="fa fa-caret-down"></i>  Menu</a>
-					
+
 					<nav id="main-nav" role="navigation" class="site-nav nav">
 						<?php wpfolio_main_nav(); ?>
 					</nav>
-					
+
 				</div> <!-- end #inner-header -->
 
 			</header> <!-- end header -->

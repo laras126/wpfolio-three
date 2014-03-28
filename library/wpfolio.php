@@ -1,7 +1,7 @@
 <?php
 
 /*********************
-SET UP ZE THEME
+SET UP DA THEME
 *********************/
 
 // Firing all out initial functions at the start
@@ -26,7 +26,7 @@ function wpfolio_ahoy() {
 
     // cleaning up random code around images
     add_filter('the_content', 'wpfolio_filter_ptags_on_images');
-    
+
     // cleaning up excerpt
     add_filter('excerpt_more', 'wpfolio_excerpt_more');
 
@@ -40,7 +40,7 @@ function wpfolio_ahoy() {
 
 
 /*********************
-THEME SUPPORT 
+THEME SUPPORT
 *********************/
 
 // Adding WP 3+ Functions & Theme Support
@@ -72,9 +72,6 @@ function wpfolio_theme_support() {
     // wp menus
     add_theme_support( 'menus' );
 
-    // Custom background
-    add_theme_support( 'custom-background' );
-
     // registering wp3+ menus
     register_nav_menus(
         array(
@@ -96,15 +93,12 @@ function wpfolio_scripts_and_styles() {
   global $wp_styles; // call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
   if (!is_admin()) {
 
-    // modernizr (without media query polyfill)
-    wp_register_script( 'wpf-modernizr', get_template_directory_uri() . '/library/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
-
     // register main stylesheet
     // Using get_stylesheet_directory_uri() to allow for child themes
-    wp_register_style( 'wpf-stylesheet', get_stylesheet_directory_uri() . '/style.css', array(), '', 'all' );
+    wp_register_style( 'wpfolio-stylesheet', get_stylesheet_directory_uri() . '/style.css', array(), '', 'all' );
 
     // ie-only style sheet
-    wp_register_style( 'wpf-ie-only', get_template_directory_uri() . '/library/css/ie.css', array(), '' );
+    wp_register_style( 'wpfolio-ie-only', get_template_directory_uri() . '/ie.css', array(), '' );
 
     // comment reply script for threaded comments
     if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
@@ -112,16 +106,14 @@ function wpfolio_scripts_and_styles() {
     }
 
     //adding scripts file in the footer
-    wp_register_script( 'wpf-js', get_template_directory_uri() . '/library/js/production.js', array( 'jquery' ), '', true );
-    
-    // enqueue styles and scripts
-    wp_enqueue_script( 'wpf-modernizr' );
-    wp_enqueue_style( 'wpf-stylesheet' );
-    wp_enqueue_style('wpf-ie-only');
+    wp_register_script( 'wpfolio-js', get_template_directory_uri() . '/library/js/production.js', array( 'jquery' ), '', true );
 
-    $wp_styles->add_data( 'wpf-ie-only', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet
+    wp_enqueue_style( 'wpfolio-stylesheet' );
+    wp_enqueue_style('wpfolio-ie-only');
 
-    wp_enqueue_script( 'wpf-js' );
+    $wp_styles->add_data( 'wpfolio-ie-only', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet
+
+    wp_enqueue_script( 'wpfolio-js' );
   }
 }
 
@@ -129,7 +121,7 @@ function wpfolio_scripts_and_styles() {
 
 
 /*********************
-MENUS & NAVIGATION 
+MENUS & NAVIGATION
 *********************/
 
 // the main menu
@@ -144,11 +136,12 @@ function wpfolio_main_nav() {
     ));
 } /* end bones main nav */
 
+
 // this is the fallback for header menu
 // NOTE: This should be wp_page_menu but
 // Superfish doesn't like having a div.sf-menu around the ul
 // This will likely be a problem in future
-// so need to rewrite css to account for it 
+// so need to rewrite css to account for it
 // and use wp_page_menu
 // http://wordpress.stackexchange.com/questions/116656/menu-fallback-menu-class-rendering-a-div-instead-of-a-ul
 // https://github.com/laras126/wpfolio-three/issues/1
@@ -181,6 +174,7 @@ function wpfolio_body_class($classes) {
     $wpf_blog_cats = array('news','latest', 'updates', 'blog', 'notable', );
     // TODO: fix the blog option
     // $wpf_blog_option = of_get_option('blog_cat', 'none');
+
     print_r($wpf_blog_option);
 
 
@@ -202,7 +196,7 @@ function wpfolio_body_class($classes) {
 function wpfolio_layout() {
 
     $classes = get_body_class();
-    
+
     if (in_array('standard-layout', $classes)) {
         if(is_single()) {
             get_template_part('include/single', 'standard');
@@ -212,7 +206,6 @@ function wpfolio_layout() {
     } else {
         if(is_single()) {
             get_template_part('include/single', 'portfolio');
-            echo 'poop';
         } else {
             get_template_part('include/loop', 'portfolio');
         }
@@ -223,7 +216,7 @@ function wpfolio_layout() {
 function wpfolio_sidebar() {
 
     $classes = get_body_class();
-    
+
     if (in_array('standard-layout', $classes)) {
         get_sidebar();
     }
@@ -299,7 +292,7 @@ function wpfolio_page_navi($before = '', $after = '') {
 
 
 
-/********************* 
+/*********************
 AUTO FEATURED IMAGE
 *********************/
 
@@ -342,7 +335,7 @@ function wpfolio_get_first_thumb() {
 
 
 
-    
+
 
 /*********************
 RELATED POSTS FUNCTION
@@ -428,7 +421,7 @@ function wpfolio_gallery_style($css) {
 
 
 /*********************
-REQUIRE SOME PLUGINS 
+REQUIRE SOME PLUGINS
 *********************/
 
 
@@ -494,6 +487,15 @@ function wpf_register_required_plugins() {
 
 }
 
+
+/************* SHORTCODES ********************/
+
+// Shortcode to add wide margins to a post page
+
+function wide_margins_shortcode ($atts, $content = null) {
+  return '<div class="widemargins">' . do_shortcode($content) . '</div>';
+}
+add_shortcode('margin', 'wide_margins_shortcode');
 
 
 ?>

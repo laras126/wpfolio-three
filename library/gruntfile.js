@@ -7,8 +7,8 @@ module.exports = function(grunt) {
         concat: {   
             dist: {
                 src: [
-                    'js/**/*.js',
-                    'js/*.js'
+                    'js/plugins/*.js',
+                    'js/scripts.js'
                 ],
                 dest: 'js/production.js',
             }
@@ -33,13 +33,6 @@ module.exports = function(grunt) {
                 }
             },
 
-            css: {
-                files: ['css/*.scss'],
-                tasks: ['compass'],
-                options: {
-                    spawn: false,
-                }
-            }
         }
 
     

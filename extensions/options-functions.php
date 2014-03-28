@@ -10,16 +10,16 @@ require_once( get_template_directory() . '/options.php' );
 
 if ( !function_exists( 'of_get_option' ) ) {
     function of_get_option($name, $default = false) {
-        
+
         $optionsframework_settings = get_option('optionsframework');
-        
+
         // Gets the unique option id
         $option_name = $optionsframework_settings['id'];
-        
+
         if ( get_option($option_name) ) {
             $options = get_option($option_name);
         }
-            
+
         if ( isset($options[$name]) ) {
             return $options[$name];
         } else {
@@ -94,7 +94,7 @@ function options_typography_get_os_fonts() {
 if ( !function_exists( 'options_typography_google_fonts' ) ) {
     function options_typography_google_fonts() {
         $all_google_fonts = array_keys( options_typography_get_google_fonts() );
-        
+
         // Define all the options that possibly have a unique Google font
         $body_google_mixed = of_get_option('body_typography', false);
         $heading_google_mixed = of_get_option('heading_font', false);
@@ -109,7 +109,7 @@ if ( !function_exists( 'options_typography_google_fonts' ) ) {
 
         // Remove any duplicates in the list
         $selected_fonts = array_unique($selected_fonts);
-        
+
         // Check each of the unique fonts against the defined Google fonts
         // If it is a Google font, go ahead and call the function to enqueue it
         foreach ( $selected_fonts as $font ) {
@@ -148,15 +148,15 @@ function options_typography_enqueue_google_font($font) {
  */
 
 function options_background_style($option, $selectors) {
-    
+
     // http://stackoverflow.com/questions/13906286/php-css-output-options-framework-content
-    
+
     $background = $option;
     $output = $selectors . ' { ';
 
     if ($background['color'] || $background['image']) {
 
-        if ($background['color']) {   
+        if ($background['color']) {
             $output .= 'background: ' .$background['color']. ';';
         }
 
@@ -165,19 +165,27 @@ function options_background_style($option, $selectors) {
             $output .= $background['repeat']. ' ';
             $output .= $background['position']. ' ';
             $output .= $background['attachment']. ';';
-        } 
+        }
 
         $output .=  '}';
         $output .= "\n";
-        
+
         return $output;
     }
-    
+
 }
 
 function options_font_family($option, $selectors) {
     $output = $selectors . ' { ';
     $output .= 'font-family: ' . $option['face'] . '; ';
+    $output .= '}';
+    $output .= "\n";
+    return $output;
+}
+
+function options_background_color($option, $selectors) {
+    $output = $selectors . ' { ';
+    $output .= 'background-color: ' . $option . '; ';
     $output .= '}';
     $output .= "\n";
     return $output;
@@ -211,6 +219,11 @@ function options_head_css() {
         $output .= options_font_family( $input , 'h1.site-title a');
     }
 
+    if ( of_get_option( 'container_background' ) ) {
+        $input = of_get_option( 'container_background' );
+        $output .= options_background_color( $input , '#container');
+    }
+
     if ( of_get_option( 'custom_css' ) ) {
         $input = of_get_option( 'custom_css' );
         $output .= "/* Custom CSS */\n";
@@ -240,8 +253,6 @@ function options_favicon() {
 }
 
 add_action('wp_head', 'options_favicon');
-
-
 
 
 
