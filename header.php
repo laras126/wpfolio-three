@@ -45,3 +45,7 @@
 				</div> <!-- end #inner-header -->
 
 			</header> <!-- end header -->
+
+
+<?php $blog_cats = of_get_option( 'blog_cat' ); print_r( $blog_cats );?>
+

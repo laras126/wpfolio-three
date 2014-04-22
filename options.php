@@ -159,7 +159,7 @@ function optionsframework_options() {
 		'desc' => __('Select the categories use the blog layout.', 'wpfolio'),
 		'id' => 'blog_cat',
 		'std' => '0',
-		'type' => 'multicheck',
+		'type' => 'select',
 		'options' => $options_categories);
 
 

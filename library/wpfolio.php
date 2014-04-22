@@ -98,8 +98,9 @@ add_action( 'init', 'wpf_initialize_cmb_meta_boxes', 999);
 function add_body_class($class) {
 
     global $post;
+    $blog_cats = of_get_option( 'blog_cat' );
 
-    if ( in_category('blog') || is_home() ) {
+    if ( in_category( $blog_cats ) || is_home() ) {
         $class[] = 'standard-layout';
         return $class;
     } else {
