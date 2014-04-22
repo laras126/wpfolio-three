@@ -236,79 +236,7 @@ function wpf_register_required_plugins() {
 
 
 
-/************* TAXONOMIES ********************/
-
-
-	register_taxonomy( 'people',
-		array('post'),
-		array('hierarchical' => false,     /* if this i8s true, it acts like categories */
-			'labels' => array(
-				'name' => __( 'People', 'bonestheme' ), /* name of the custom taxonomy */
-				'singular_name' => __( 'People', 'bonestheme' ), /* single taxonomy name */
-				'search_items' =>  __( 'Search People', 'bonestheme' ), /* search title for taxomony */
-				'all_items' => __( 'All People', 'bonestheme' ), /* all title for taxonomies */
-				'parent_item' => __( 'Parent Person', 'bonestheme' ),  /* parent title for taxonomy */
-				'parent_item_colon' => __( 'Parent Person:', 'bonestheme' ), /* parent taxonomy title */
-				'edit_item' => __( 'Edit People', 'bonestheme' ), /* edit custom taxonomy title */
-				'update_item' => __( 'Update People', 'bonestheme' ), /* update title for taxonomy */
-				'add_new_item' => __( 'Add New Person', 'bonestheme' ), /* add new title for taxonomy */
-				'new_item_name' => __( 'New Person', 'bonestheme' ) /* name title for taxonomy */
-			),
-			'show_admin_column' => true,
-			'show_ui' => true,
-			'query_var' => true,
-			'rewrite' => array( 'slug' => 'people' ),
-		)
-	);
-
-	register_taxonomy( 'places',
-		array('post'),
-		array('hierarchical' => false,     /* if this i8s true, it acts like categories */
-			'labels' => array(
-				'name' => __( 'Places', 'bonestheme' ), /* name of the custom taxonomy */
-				'singular_name' => __( 'Places', 'bonestheme' ), /* single taxonomy name */
-				'search_items' =>  __( 'Search Places', 'bonestheme' ), /* search title for taxomony */
-				'all_items' => __( 'All Places', 'bonestheme' ), /* all title for taxonomies */
-				'edit_item' => __( 'Edit Places', 'bonestheme' ), /* edit custom taxonomy title */
-				'update_item' => __( 'Update Place', 'bonestheme' ), /* update title for taxonomy */
-				'add_new_item' => __( 'Add New Place', 'bonestheme' ), /* add new title for taxonomy */
-				'new_item_name' => __( 'New Place', 'bonestheme' ) /* name title for taxonomy */
-			),
-			'show_admin_column' => true,
-			'show_ui' => true,
-			'query_var' => true,
-			'rewrite' => array( 'slug' => 'places' ),
-		)
-	);
-
-	/* adds medium taxonomy (categories) to Portfolio */
-	register_taxonomy_for_object_type( 'people', 'post' );
-	register_taxonomy_for_object_type( 'place', 'post' );
-
-
-
-
-
 /************* MISC ********************/
-
-// Remove taxonomy title from wp_title
-// http://wordpress.stackexchange.com/questions/29020/how-to-remove-taxonomy-name-from-wp-title
-
-function wpf_remove_tax_name( $title, $sep, $seplocation ) {
-    if ( is_tax() ) {
-        $term_title = single_term_title( '', false );
-
-        // Determines position of separator
-        if ( 'right' == $seplocation ) {
-            $title = $term_title . " $sep ";
-        } else {
-            $title = " $sep " . $term_title;
-        }
-    }
-
-    return $title;
-}
-add_filter( 'wp_title', 'wpf_remove_tax_name', 10, 3 );
 
 // Get post attachments
 // http://www.kingrosales.com/how-to-display-your-posts-first-image-thumbnail-automatically-in-wordpress/ -- (although this link is now dead, and function has been significantly hacked, it's worth a credit.)
