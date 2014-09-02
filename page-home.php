@@ -22,7 +22,7 @@ Template Name: Home Page
 								</section> <!-- end article section -->
 
 								<footer class="article-footer">
-									<p class="clearfix"><?php the_tags('<span class="tags">' . __('Tags:', 'bonestheme') . '</span> ', ', ', ''); ?></p>
+									<p class="clearfix"><?php the_tags('<span class="tags">' . __('Tags:', 'wpfolio') . '</span> ', ', ', ''); ?></p>
 								</footer> <!-- end article footer -->
 
 							</article> <!-- end article -->

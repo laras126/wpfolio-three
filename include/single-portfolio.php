@@ -19,7 +19,7 @@ Template for Single portfolio (non-news) posts
 			</div>
 			<?php include('artwork-meta.php'); ?>
 
-			<p><?php echo get_the_term_list( get_the_ID(), 'post_tag', '<span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ' ' ) ?></p>
+			<p><?php echo get_the_term_list( get_the_ID(), 'post_tag', '<span class="tags-title">' . __( 'Tags:', 'wpfolio' ) . '</span> ', ' ' ) ?></p>
 		</section>
 
 		<footer class="article-footer clearfix">

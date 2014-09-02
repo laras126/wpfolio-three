@@ -1,4 +1,4 @@
-/******************************************************************/
+w/******************************************************************/
 
 WPFolio Three
 The super-revamped WPFolio WordPress Theme for visual artists. 

@@ -43,9 +43,9 @@ Otherwise make a child theme, homie!
 
 @import "compass/css3";
 @import "compass/utilities";
-@import "susy";
+@import "susyone";
 
-@import "../font/font-awesome/scss/font-awesome";
+// @import "../font/font-awesome/scss/font-awesome";
 @import "libs/normalize";
 @import "libs/settings";
 @import "libs/mixins";
@@ -57,7 +57,9 @@ Otherwise make a child theme, homie!
 @import "libs/typography";
 @import "libs/forms";
 
-
+body {
+	background-color: yellow;
+}
 
 /*
 BASE (MOBILE) SIZE

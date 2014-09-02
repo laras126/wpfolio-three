@@ -1,64 +1,29 @@
 <?php
 
-/*
-Author: Eddie Machado
-URL: htp://themble.com/bones/
-
-This is where you can drop your custom functions or
-just edit things like thumbnail sizes, header images,
-sidebars, comments, ect.
-*/
-
-/************* INCLUDE NEEDED FILES ***************/
+// ----
+// ---- Include Files
+// ----
 
 // Sets up the options panel and default functions
 require_once( get_template_directory() . '/extensions/options-functions.php' );
 
 /*
 1. library/bones.php
-	- head cleanup (remove rsd, uri links, junk css, ect)
-	- enqueueing scripts & styles
 	- theme support functions
 	- custom menu output & fallbacks
-	- related post function
 	- page-navi function
-	- removing <p> from around images
 	- customizing the post excerpt
-	- custom google+ integration
-	- adding custom fields to user profiles
-	- include jquery in site footer
 */
 require_once('library/bones.php'); // if you remove this, bones will break
 /*
 
-2. library/custom-post-type.php
-	- Project custom post type
-	- Medium Taxonomy
-	- Custom fields
-*/
-// require_once( 'library/custom-post-type.php' );
-
 /*
-3. library/wpfolio.php
+2. library/wpfolio.php
 	- WPFolio features functions
 		- Wide margins shortcode
 	- Call Options Framework
-	// TODO: Merge bones.php into this when
-	// we change all of the bones names
 */
 require_once('library/wpfolio.php'); // you can disable this if you like
-
-
-/*
-4. library/admin.php
-	- removing some default WordPress dashboard widgets
-	- an example custom dashboard widget
-	- adding custom login css
-	- sidebars
-	- custom menus
-*/
-// require_once('library/admin.php'); // this comes turned off by default
-
 
 /*
 4. library/translation/translation.php
@@ -76,39 +41,29 @@ require_once('library/translation/translation.php'); // this comes turned off by
 require_once get_template_directory() . '/extensions/class-tgm-plugin-activation.php';
 
 
+// ---- 
+// ---- Sidebar/Widget Area
+// ----
 
-/************* THUMBNAIL SIZE OPTIONS *************/
-
-// Thumbnail sizes
-
-add_image_size( 'wpf-thumb-300', 300, 300, true );
-
-// remove inline style for gallery shortcode
-add_filter( 'use_default_gallery_style', '__return_false' );
-
-
-/************* ACTIVE SIDEBARS ********************/
-
-// Sidebars & Widgetizes Areas
-function bones_register_sidebars() {
+function wpf_register_sidebars() {
 	register_sidebar(array(
-		'id' => 'sidebar1',
-		'name' => __('Sidebar', 'bonestheme'),
-		'description' => __('The first (primary) sidebar.', 'bonestheme'),
+		'id' => 'primary-sidebar',
+		'name' => __('Sidebar', 'wpfolio'),
+		'description' => __('The first (primary) sidebar.', 'wpfolio'),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
 		'after_title' => '</h4>',
 	));
 
-} // don't remove this bracket!
+}
 
 
+// ----
+// ---- Comment Layout 
+// ----
 
-/************* COMMENT LAYOUT *********************/
-
-// Comment Layout
-function bones_comments($comment, $args, $depth) {
+function wpf_comments($comment, $args, $depth) {
    $GLOBALS['comment'] = $comment; ?>
 
 	<li <?php comment_class(); ?>>
@@ -129,14 +84,14 @@ function bones_comments($comment, $args, $depth) {
 				?>
 				<img data-gravatar="http://www.gravatar.com/avatar/<?php echo md5($bgauthemail); ?>?s=32" class="load-gravatar avatar avatar-48 photo" height="32" width="32" src="<?php echo get_template_directory_uri(); ?>/library/images/nothing.gif" />
 				<!-- end custom gravatar call -->
-				<?php printf(__('<cite class="fn">%s</cite>', 'bonestheme'), get_comment_author_link()) ?>
-				<time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__('F jS, Y', 'bonestheme')); ?> </a></time>
-				<?php edit_comment_link(__('(Edit)', 'bonestheme'),'  ','') ?>
+				<?php printf(__('<cite class="fn">%s</cite>', 'wpfolio'), get_comment_author_link()) ?>
+				<time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__('F jS, Y', 'wpfolio')); ?> </a></time>
+				<?php edit_comment_link(__('(Edit)', 'wpfolio'),'  ','') ?>
 			</header>
 
 			<?php if ($comment->comment_approved == '0') : ?>
 				<div class="alert alert-info">
-					<p><?php _e('Your comment is awaiting moderation.', 'bonestheme') ?></p>
+					<p><?php _e('Your comment is awaiting moderation.', 'wpfolio') ?></p>
 				</div>
 			<?php endif; ?>
 
@@ -148,30 +103,31 @@ function bones_comments($comment, $args, $depth) {
 
 		</article>
 
-	<!-- </li> is added by WordPress automatically -->
+	<?php // </li> is added by WordPress automatically ?>
 
 <?php
-} // don't remove this bracket!
+} 
 
 
 
+// ----
+// ---- Search Form Layout
+// ----
 
-/************* SEARCH FORM LAYOUT *****************/
-
-// Search Form
-function bones_wpsearch($form) {
+function wpf_wpsearch($form) {
 	$form = '<form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
-	<label class="screen-reader-text" for="s">' . __('Search for:', 'bonestheme') . '</label>
-	<input type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="'.esc_attr__('Search the Site...','bonestheme').'" />
+	<label class="screen-reader-text" for="s">' . __('Search for:', 'wpfolio') . '</label>
+	<input type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="'.esc_attr__('Search the Site...','wpfolio').'" />
 	<input type="submit" id="searchsubmit" value="'. esc_attr__('Search') .'" />
 	</form>';
 	return $form;
-} // don't remove this bracket!
+}
 
 
 
-
-/************* MISC THEME REQUIREMENTS *****************/
+// ----
+// ---- Misc Theme Requirements
+// ----
 
 if ( ! isset( $content_width ) ) $content_width = 960;
 

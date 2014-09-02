@@ -15,7 +15,7 @@ Template for the Project Category taxonomy archive.
 				<div id="main" class="clearfix" role="main">
 
 					<!-- TODO: conditionally show taxonomy term (i.e. People: Lara Schenck, Places: Louvre) -->
-					<h2 class="project-title"><span><?php _e( '', 'bonestheme' ); ?></span> <?php single_cat_title(); ?></h2>
+					<h2 class="project-title"><span><?php _e( '', 'wpfolio' ); ?></span> <?php single_cat_title(); ?></h2>
 
 					<ul class="clearfix project-loop">
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -36,8 +36,8 @@ Template for the Project Category taxonomy archive.
 					<?php } else { ?>
 						<nav class="wp-prev-next">
 							<ul class="clearfix">
-								<li class="prev"><?php next_posts_link( __( '&larr; Previous', 'bonestheme' )) ?></li>
-								<li class="next"><?php previous_posts_link( __( 'Next &rarr;', 'bonestheme' )) ?></li>
+								<li class="prev"><?php next_posts_link( __( '&larr; Previous', 'wpfolio' )) ?></li>
+								<li class="next"><?php previous_posts_link( __( 'Next &rarr;', 'wpfolio' )) ?></li>
 							</ul>
 						</nav>
 					<?php } ?>

@@ -27,7 +27,7 @@ get_header(); ?>
 					</section> <!-- end article section -->
 
 						<footer class="article-footer">
-							<?php the_tags('<span class="tags">' . __('Tags:', 'bonestheme') . '</span> ', ', ', ''); ?>
+							<?php the_tags('<span class="tags">' . __('Tags:', 'wpfolio') . '</span> ', ', ', ''); ?>
 
 						</footer> <!-- end article footer -->
 

@@ -1,6 +1,8 @@
 <?php
 
-/************* ARTWORK METABOX ********************/
+// ----
+// ---- Artwork Info Metabox
+// ----
 
 // This metabox shows up in all projects
 // TODO: maybe add an option to hide it?
@@ -88,14 +90,21 @@ add_action( 'init', 'wpf_initialize_cmb_meta_boxes', 999);
 
 
 
-/************* BODY CLASSES & LAYOUT ********************/
+// ---- 
+// ---- Body Classes and Layout
+// ----
 
-/*  Add a specific classes for news and portfolio layouts.
-    Check to see if it's the blog category
+/*  
+    Add a specific classes for News and Portfolio layouts.
+    
+    Check to see if it's the blog category. If it is,
+    add the standard-layout class, if not,
+    add portfolio-layout class
+
 */
+add_filter('body_class','wpf_add_body_class');
 
-// Add portfolio body class to anything that isn't the blog
-function add_body_class($class) {
+function wpf_add_body_class($class) {
 
     global $post;
     $blog_cats = of_get_option( 'blog_cat' );
@@ -109,7 +118,15 @@ function add_body_class($class) {
     }
 }
 
-add_filter('body_class','add_body_class');
+
+/* 
+
+These are custom functions to include the appropriate templates
+according to the News category specified in Theme Options.
+
+wpf_layout and wpf_sidebar are called in place of the primary loop and get_sidebar.
+
+*/
 
 // Use the appropriate markup according to the body class
 // http://stackoverflow.com/questions/15033888/how-to-check-for-class-in-body-class-in-wordpress
@@ -142,19 +159,20 @@ function wpf_sidebar() {
 
 
 
-
-
-/************* SHORTCODES ********************/
+// ---- 
+// ---- Shortcodes 
+// ----
 
 // Shortcode to add wide margins to a post page - works as is, but is applied in post lists
+add_shortcode('margin', 'wide_margins_shortcode');
 
 function wide_margins_shortcode ($atts, $content = null) {
     return '<div class="widemargins">' . do_shortcode($content) . '</div>';
 }
-add_shortcode('margin', 'wide_margins_shortcode');
 
 
 // Shortcode to print artwork meta info
+add_shortcode('artwork_info', 'artwork_meta_shortcode');
 
 function artwork_meta_shortcode ($atts) {
     ob_start();
@@ -162,15 +180,17 @@ function artwork_meta_shortcode ($atts) {
     get_template_part($path . '/include/artwork-meta.php');
     return ob_get_clean();
 }
-add_shortcode('artwork_info', 'artwork_meta_shortcode');
 
 
 
 
 
-/************* REQUIRE SOME PLUGINS ********************/
 
+// ----
+// ---- Require some plugins
+// ----
 
+// Require them with the plugin
 add_action( 'tgmpa_register', 'wpf_register_required_plugins' );
 
 function wpf_register_required_plugins() {

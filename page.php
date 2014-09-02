@@ -32,7 +32,7 @@ get_header(); ?>
 						</section> <!-- end article section -->
 
 						<footer class="article-footer">
-							<?php the_tags('<span class="tags">' . __('Tags:', 'bonestheme') . '</span> ', ', ', ''); ?>
+							<?php the_tags('<span class="tags">' . __('Tags:', 'wpfolio') . '</span> ', ', ', ''); ?>
 							<?php wp_link_pages('before=<div id="page-links">&after=</div>'); ?>
 
 						</footer> <!-- end article footer -->

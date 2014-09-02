@@ -26,10 +26,10 @@ Template Name: Sidebar
 
 						<section class="entry-content clearfix" itemprop="articleBody">
 							<?php the_content(); ?>
-					</section> <!-- end article section -->
+						</section> <!-- end article section -->
 
 						<footer class="article-footer">
-							<?php the_tags('<span class="tags">' . __('Tags:', 'bonestheme') . '</span> ', ', ', ''); ?>
+							<?php the_tags('<span class="tags">' . __('Tags:', 'wpfolio') . '</span> ', ', ', ''); ?>
 
 						</footer> <!-- end article footer -->
 
@@ -39,7 +39,7 @@ Template Name: Sidebar
 
 					<?php endwhile; else :
 
-							get_template_part('include/post', 'notfound');
+						get_template_part('include/post', 'notfound');
 
 					endif; ?>
 

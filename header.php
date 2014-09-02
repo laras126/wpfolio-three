@@ -39,7 +39,7 @@
 					<a href="#main-nav" class="menu-link"><i class="fa fa-caret-down"></i>  Menu</a>
 					
 					<nav id="main-nav" role="navigation" class="site-nav nav">
-						<?php bones_main_nav(); ?>
+						<?php wpf_main_nav(); ?>
 					</nav>
 					
 				</div> <!-- end #inner-header -->
