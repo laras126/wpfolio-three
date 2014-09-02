@@ -1,17 +1,4 @@
-@import "partials/extends";
 
-/******************************************************************
-Site Name: WPFolio Three
-Author: Lara Schenck
-
-Stylesheet: Base Mobile Stylesheet
-
-Be light and don't over style since everything here will be
-loaded by mobile devices. You want to keep it as minimal as
-possible. This is called at the top of the main stylsheet
-and will be used across all viewports.
-
-******************************************************************/
 
 body {
 	color: $primary;
