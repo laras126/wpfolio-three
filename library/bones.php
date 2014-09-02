@@ -1,47 +1,41 @@
 <?php
 
-/* Welcome to Bones :)
-This is the core Bones file where most of the
-main functions & features reside. If you have
-any custom functions, it's best to put them
-in the functions.php file.
+/*
 
-Developed by: Eddie Machado
-URL: http://themble.com/bones/
+Hello!
+
+This theme was originally built using the starter theme
+Bones (http://themble.com) but has since been refactored
+to fit WordPress's theme repo standards using 
+Underscores (http://underscores.me) as a guide.
+
 */
 
-/*********************
-LAUNCH BONES
-Let's fire off all the functions
-and tools. I put it up here so it's
-right up top and clean.
-*********************/
 
-// we're firing all out initial functions at the start
-add_action('after_setup_theme','bones_ahoy', 16);
+// ----
+// ---- Add everything to the theme
+// ----
 
-function bones_ahoy() {
+add_action('after_setup_theme','wpf_setup');
 
-    // launching operation cleanup
-    // add_action('init', 'bones_head_cleanup');
-    // remove WP version from RSS
-    // add_filter('the_generator', 'bones_rss_version');
-    // remove pesky injected css for recent comments widget
-    // add_filter( 'wp_head', 'bones_remove_wp_widget_recent_comments_style', 1 );
-    // clean up comment styles in the head
-    // add_action('wp_head', 'bones_remove_recent_comments_style', 1);
-    // clean up gallery output in wp
-    // add_filter('gallery_style', 'bones_gallery_style');
+function wpf_setup() {
 
-    // enqueue base scripts and styles
-    // add_action('wp_enqueue_scripts', 'bones_scripts_and_styles', 999);
-    // ie conditional wrapper
+	// Multi language support
+	load_theme_textdomain( '_s', get_template_directory() . '/library/translation' );
 
-    // launching this stuff after theme setup
-    wpf_theme_support();
+	// Support for RSS links in header
+	add_theme_support('automatic-feed-links');
 
-    // adding sidebars to Wordpress (these are created in functions.php)
-    add_action( 'widgets_init', 'wpf_register_sidebars' );
+	// Custom menus
+	add_theme_support( 'menus' );
+
+	// Register main menu in header
+	register_nav_menus(
+		array(
+			'main-nav' => __( 'The Main Menu', 'wpfolio' )
+		)
+	);
+
     // adding the bones search form (created in functions.php)
     add_filter( 'get_search_form', 'wpf_wpsearch' );
 
@@ -50,57 +44,10 @@ function bones_ahoy() {
     // cleaning up excerpt
     add_filter('excerpt_more', 'bones_excerpt_more');
 
-} /* end bones ahoy */
-
-
-/*********************
-SCRIPTS & ENQUEUEING
-*********************/
-
-// loading modernizr and jquery, and reply script
-function bones_scripts_and_styles() {
-  global $wp_styles; // call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
-  if (!is_admin()) {
-
-    // modernizr (without media query polyfill)
-    wp_register_script( 'wpf-modernizr', get_template_directory_uri() . '/library/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
-
-    // register main stylesheet
-    // Using get_stylesheet_directory_uri() to allow for child themes
-    wp_register_style( 'wpf-stylesheet', get_stylesheet_directory_uri() . '/style.css', array(), '', 'all' );
-
-    // ie-only style sheet
-    wp_register_style( 'wpf-ie-only', get_template_directory_uri() . '/library/css/ie.css', array(), '' );
-
-    // comment reply script for threaded comments
-    if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
-      wp_enqueue_script( 'comment-reply' );
-    }
-
-    //adding scripts file in the footer
-    wp_register_script( 'wpf-js', get_template_directory_uri() . '/library/build/js/production.min.js', array( 'jquery' ), '', true );
-	
-    // enqueue styles and scripts
-    wp_enqueue_script( 'wpf-modernizr' );
-    wp_enqueue_style( 'wpf-stylesheet' );
-    wp_enqueue_style('wpf-ie-only');
-
-    $wp_styles->add_data( 'wpf-ie-only', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet
-
-  }
-}
-
-/*********************
-THEME SUPPORT
-*********************/
-
-// Adding WP 3+ Functions & Theme Support
-function wpf_theme_support() {
-
-	// wp thumbnails (sizes handled in functions.php)
+	// Post thumbnails
 	add_theme_support('post-thumbnails');
 
-	// default thumb size
+    // default thumb size
 	set_post_thumbnail_size(300, 300);
 
 	// Customize the Media option defaults
@@ -113,19 +60,45 @@ function wpf_theme_support() {
 
 	update_option('large_size_w', 600);
 	update_option('large_size_h', 600);
+}
 
-	// rss thingy
-	add_theme_support('automatic-feed-links');
 
-	// WP menus
-	add_theme_support( 'menus' );
 
-	// registering WP3+ menus
-	register_nav_menus(
-		array(
-			'main-nav' => __( 'The Main Menu', 'wpfolio' ),   // main nav in header
-		)
-	);
+// ----
+// ---- Loading Scripts and Styles
+// ----
+
+// Load basic styles and theme JS
+add_action( 'wp_enqueue_scripts', 'wpf_scripts_and_styles' );
+
+function wpf_scripts_and_styles() {
+  
+  	wp_enqueue_style( 'wpf-style', get_stylesheet_uri() );
+  
+	if (!is_admin()) {
+    // Add minified JS file to footer if it isn't the admin
+    	wp_register_script( 'wpf-js', get_template_directory_uri() . '/assets/js/scripts.min.js', array( 'jquery' ), '', true );
+  	}
+}
+
+
+// ----
+// ---- Sidebar and Widgets
+// ----
+
+add_action( 'widgets_init', 'wpf_widgets_init' );
+    
+function wpf_widgets_init() {
+	register_sidebar(array(
+		'id' => 'primary-sidebar',
+		'name' => __('Sidebar', 'wpfolio'),
+		'description' => __('The first (primary) sidebar.', 'wpfolio'),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widgettitle">',
+		'after_title' => '</h4>',
+	));
+
 }
 
 
@@ -164,36 +137,7 @@ function wpf_main_nav_fallback() {
 	) );
 }
 	
-
-/*********************
-RELATED POSTS FUNCTION
-*********************/
-
-// Related Posts Function (call using bones_related_posts(); )
-function bones_related_posts() {
-	echo '<ul id="bones-related-posts">';
-	global $post;
-	$tags = wp_get_post_tags($post->ID);
-	if($tags) {
-		foreach($tags as $tag) { $tag_arr .= $tag->slug . ','; }
-        $args = array(
-        	'tag' => $tag_arr,
-        	'numberposts' => 5, /* you can change this to show more */
-        	'post__not_in' => array($post->ID)
-     	);
-        $related_posts = get_posts($args);
-        if($related_posts) {
-        	foreach ($related_posts as $post) : setup_postdata($post); ?>
-	           	<li class="related_post"><a class="entry-unrelated" href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
-	        <?php endforeach; }
-	    else { ?>
-            <?php echo '<li class="no_related_post">' . __( 'No Related Posts Yet!', 'wpfolio' ) . '</li>'; ?>
-		<?php }
-	}
-	wp_reset_query();
-	echo '</ul>';
-} /* end bones related posts function */
-
+	
 /*********************
 PAGE NAVI
 *********************/
@@ -254,14 +198,6 @@ function bones_page_navi($before = '', $after = '') {
 	echo '</ol></nav>'.$after."";
 } /* end page navi */
 
-/*********************
-RANDOM CLEANUP ITEMS
-*********************/
-
-// remove the p from around imgs (http://css-tricks.com/snippets/wordpress/remove-paragraph-tags-from-around-images/)
-function bones_filter_ptags_on_images($content){
-   return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
-}
 
 // This removes the annoying […] to a Read More link
 function bones_excerpt_more($more) {
