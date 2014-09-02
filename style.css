@@ -324,7 +324,7 @@ textarea {
     margin-right: 34.28571%;
   }
 
-  .page-template-page-sidebar-php .respond-form, .page-template-page-sidebar-php .commentlist {
+  .sidebar-layout .respond-form, .sidebar-layout .commentlist {
     width: 100%;
     float: left;
     margin-right: 2.85714%;
@@ -1378,22 +1378,6 @@ larger than an iPhone but smaller than a tablet. Let's call them
 phablets.
 */
 @media only screen and (min-width: 25em) {
-  /******************************************************************
-  Site Name: 
-  Author: 
-  
-  Stylesheet: 481px and Up Stylesheet
-  
-  This stylesheet is loaded for larger devices. It's set to 
-  481px because at 480px it would load on a landscaped iPhone.
-  This isn't ideal because then you would be loading all those
-  extra styles on that same mobile connection. 
-  
-  A word of warning. This size COULD be a larger mobile device,
-  so you still want to keep it pretty light and simply expand
-  upon your base.scss styles.
-  
-  ******************************************************************/
   /*********************
   NAVIGATION STYLES
   *********************/
@@ -1573,9 +1557,6 @@ the resource intensive styles are added, like the grid.
     display: none;
   }
 
-  /*********************
-  SIDEBARS & ASIDES
-  *********************/
   .widgettitle {
     text-align: left;
   }
@@ -1607,9 +1588,6 @@ the resource intensive styles are added, like the grid.
   /* recent-comments widget */
   /* search widget */
   /* text widget */
-  /*********************
-  FOOTER STYLES
-  *********************/
   .copyright {
     float: right;
   }

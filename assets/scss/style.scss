@@ -32,16 +32,16 @@ Don't add styles here!
 @import "susyone";
 
 // @import "../font/font-awesome/scss/font-awesome";
-@import "libs/normalize";
-@import "libs/settings";
-@import "libs/mixins";
-@import "libs/superfish_custom";
-@import "libs/grid";
+@import "partials/normalize";
+@import "partials/settings";
+@import "partials/mixins";
+@import "partials/superfish_custom";
+@import "partials/grid";
 
 
 /* Root styles: Almost exclusively single element selectors */
-@import "libs/typography";
-@import "libs/forms";
+@import "partials/typography";
+@import "partials/forms";
 
 /*
 BASE (MOBILE) SIZE
