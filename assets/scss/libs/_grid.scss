@@ -68,6 +68,10 @@ $desktop 		: 60em;
 	.sidebar {
 		@include span-columns(4 omega);
 	}
+	
+	.sidebar-layout {
+		@include span-columns(8);
+	}
 
 	.site-name {
 		@include span-columns(4);
@@ -91,7 +95,7 @@ $desktop 		: 60em;
 		}
 	}
 
-	.page-template-page-sidebar-php {
+	.sidebar-layout {
 		.respond-form, .commentlist {
 			@include span-columns(12);
 		}

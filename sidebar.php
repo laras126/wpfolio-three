@@ -1,17 +1,17 @@
-	<aside id="primary-sidebar" class="sidebar clearfix" role="complementary">
+<aside id="primary-sidebar" class="sidebar clearfix" role="complementary">
 
-		<?php if ( is_active_sidebar( 'sidebar1' ) ) : ?>
+	<?php if ( is_active_sidebar( 'primary-sidebar' ) ) : ?>
 
-			<?php dynamic_sidebar( 'primary-sidebar' ); ?>
+		<?php dynamic_sidebar( 'primary-sidebar' ); ?>
+asdasd
+	<?php else : ?>
 
-		<?php else : ?>
+		<!-- This content shows up if there are no widgets defined in the backend. -->
 
-			<!-- This content shows up if there are no widgets defined in the backend. -->
+		<div class="alert alert-help">
+			<p><?php _e("Please activate some Widgets.", "wpfolio");  ?></p>
+		</div>
 
-			<div class="alert alert-help">
-				<p><?php _e("Please activate some Widgets.", "wpfolio");  ?></p>
-			</div>
+	<?php endif; ?>
 
-		<?php endif; ?>
-
-	</aside> <!-- end #sidebar1 -->
+</aside> <!-- end #sidebar1 -->

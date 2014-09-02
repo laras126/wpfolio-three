@@ -20,21 +20,7 @@ http://themeshaper.com/modify-wordpress-themes/
 
 /* ---
 Stylesheet: Main Stylesheet
-
-Import all necessary libraries and such. 
-The base mobile goes outside any query
-and is called at the beginning, after that we 
-call the rest of the styles inside media queries. 
-
---
-
-Hey, you! Yeah, YOU!
-Don't add styles here! 
-Add them to the appropriate other files
-if you are a contributing developer.
-
-Otherwise make a child theme, homie!
-
+Don't add styles here!
 --- */
 
 //
@@ -56,10 +42,6 @@ Otherwise make a child theme, homie!
 /* Root styles: Almost exclusively single element selectors */
 @import "libs/typography";
 @import "libs/forms";
-
-body {
-	background-color: yellow;
-}
 
 /*
 BASE (MOBILE) SIZE
@@ -88,7 +70,6 @@ phablets.
 
 @media only screen and (min-width: $mobile) {
 
-	// styles in 481up.scss
 	@import "mobile";
 
 } // end of media query
@@ -103,7 +84,6 @@ the resource intensive styles are added, like the grid.
 */
 @media only screen and (min-width: $tablet) {
 	
-	// styles in 768up.scss
 	@import "tablet";
 
 } // end of media query

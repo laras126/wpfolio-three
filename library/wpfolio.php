@@ -4,8 +4,13 @@
 // ---- Artwork Info Metabox
 // ----
 
-// This metabox shows up in all projects
-// TODO: maybe add an option to hide it?
+/**
+ *
+ * This metabox shows up in all projects
+ * TODO: maybe add an option to hide it?
+ *
+ */
+
 function wpf_artinfo_metaboxes( $meta_boxes ) {
     $post_title = the_title();
     $prefix = '_ctmb_'; // Prefix for all fields
@@ -94,14 +99,15 @@ add_action( 'init', 'wpf_initialize_cmb_meta_boxes', 999);
 // ---- Body Classes and Layout
 // ----
 
-/*  
-    Add a specific classes for News and Portfolio layouts.
-    
-    Check to see if it's the blog category. If it is,
-    add the standard-layout class, if not,
-    add portfolio-layout class
+/**  
+ * Add a specific classes for News and Portfolio layouts.
+ *    
+ * Check to see if it's the blog category. If it is,
+ * add the standard-layout class, if not,
+ * add portfolio-layout class
+ *
+ */
 
-*/
 add_filter('body_class','wpf_add_body_class');
 
 function wpf_add_body_class($class) {
@@ -120,12 +126,12 @@ function wpf_add_body_class($class) {
 
 
 /* 
-
-These are custom functions to include the appropriate templates
-according to the News category specified in Theme Options.
-
-wpf_layout and wpf_sidebar are called in place of the primary loop and get_sidebar.
-
+ *
+ * These are custom functions to include the appropriate templates
+ * according to the News category specified in Theme Options.
+ *
+ * wpf_layout and wpf_sidebar are called in place of the primary loop and get_sidebar in post templates.
+ *
 */
 
 // Use the appropriate markup according to the body class
@@ -148,14 +154,71 @@ function wpf_layout() {
     }
 }
 
-// Only show the sidebars on news layouts
+
+// Only show the sidebars on News layouts
 function wpf_sidebar() {
     $classes = get_body_class();
-    if (in_array('standard-layout',$classes)) {
+    if (in_array('standard-layout', $classes)) {
         get_sidebar();
     }
 }
 
+
+// Numeric Page Navi (built into the theme by default)
+function bones_page_navi($before = '', $after = '') {
+    global $wpdb, $wp_query;
+    $request = $wp_query->request;
+    $posts_per_page = intval(get_query_var('posts_per_page'));
+    $paged = intval(get_query_var('paged'));
+    $numposts = $wp_query->found_posts;
+    $max_page = $wp_query->max_num_pages;
+    if ( $numposts <= $posts_per_page ) { return; }
+    if(empty($paged) || $paged == 0) {
+        $paged = 1;
+    }
+    $pages_to_show = 7;
+    $pages_to_show_minus_1 = $pages_to_show-1;
+    $half_page_start = floor($pages_to_show_minus_1/2);
+    $half_page_end = ceil($pages_to_show_minus_1/2);
+    $start_page = $paged - $half_page_start;
+    if($start_page <= 0) {
+        $start_page = 1;
+    }
+    $end_page = $paged + $half_page_end;
+    if(($end_page - $start_page) != $pages_to_show_minus_1) {
+        $end_page = $start_page + $pages_to_show_minus_1;
+    }
+    if($end_page > $max_page) {
+        $start_page = $max_page - $pages_to_show_minus_1;
+        $end_page = $max_page;
+    }
+    if($start_page <= 0) {
+        $start_page = 1;
+    }
+    echo $before.'<nav class="page-navigation"><ol class="bones_page_navi clearfix">'."";
+    if ($start_page >= 2 && $pages_to_show < $max_page) {
+        $first_page_text = __( "First", 'wpfolio' );
+        echo '<li class="bpn-first-page-link"><a href="'.get_pagenum_link().'" title="'.$first_page_text.'">'.$first_page_text.'</a></li>';
+    }
+    echo '<li class="bpn-prev-link">';
+    previous_posts_link('&larr; Previous');
+    echo '</li>';
+    for($i = $start_page; $i  <= $end_page; $i++) {
+        if($i == $paged) {
+            echo '<li class="bpn-current">'.$i.'</li>';
+        } else {
+            echo '<li><a href="'.get_pagenum_link($i).'">'.$i.'</a></li>';
+        }
+    }
+    echo '<li class="bpn-next-link">';
+    next_posts_link('Next &rarr;');
+    echo '</li>';
+    if ($end_page < $max_page) {
+        $last_page_text = __( "Last", 'wpfolio' );
+        echo '<li class="bpn-last-page-link"><a href="'.get_pagenum_link($max_page).'" title="'.$last_page_text.'">'.$last_page_text.'</a></li>';
+    }
+    echo '</ol></nav>'.$after."";
+} /* end page navi */
 
 
 
@@ -163,7 +226,10 @@ function wpf_sidebar() {
 // ---- Shortcodes 
 // ----
 
-// Shortcode to add wide margins to a post page - works as is, but is applied in post lists
+/** 
+ * Shortcode to add wide margins to a post page - works as is, but is applied in post lists
+ */
+
 add_shortcode('margin', 'wide_margins_shortcode');
 
 function wide_margins_shortcode ($atts, $content = null) {
@@ -190,6 +256,14 @@ function artwork_meta_shortcode ($atts) {
 // ---- Require some plugins
 // ----
 
+/**
+ * 
+ * Specifically:
+ * Cleaner Gallery (TODO: bake this into theme)
+ * Option Framework (TODO: also bake this into theme with default WP options)
+ *
+ */
+
 // Require them with the plugin
 add_action( 'tgmpa_register', 'wpf_register_required_plugins' );
 
@@ -215,8 +289,6 @@ function wpf_register_required_plugins() {
             'force_activation'      => true,
             'external_url'          => 'http://wordpress.org/plugins/options-framework/',
         ),
-
-
     );
 
     $config = array(
@@ -257,7 +329,9 @@ function wpf_register_required_plugins() {
 
 
 
-/************* MISC ********************/
+//---- 
+//---- Misc Display Functions
+//---- 
 
 // Get post attachments
 // http://www.kingrosales.com/how-to-display-your-posts-first-image-thumbnail-automatically-in-wordpress/ -- (although this link is now dead, and function has been significantly hacked, it's worth a credit.)

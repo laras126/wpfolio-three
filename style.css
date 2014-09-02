@@ -18,21 +18,7 @@ http://themeshaper.com/modify-wordpress-themes/
 ******************************************************************/
 /* ---
 Stylesheet: Main Stylesheet
-
-Import all necessary libraries and such. 
-The base mobile goes outside any query
-and is called at the beginning, after that we 
-call the rest of the styles inside media queries. 
-
---
-
-Hey, you! Yeah, YOU!
-Don't add styles here! 
-Add them to the appropriate other files
-if you are a contributing developer.
-
-Otherwise make a child theme, homie!
-
+Don't add styles here!
 --- */
 * {
   -moz-box-sizing: border-box;
@@ -307,6 +293,12 @@ textarea {
     width: 31.42857%;
     float: right;
     margin-right: 0;
+  }
+
+  .sidebar-layout {
+    width: 65.71429%;
+    float: left;
+    margin-right: 2.85714%;
   }
 
   .site-name {
@@ -654,10 +646,6 @@ input[type="checkbox"]:focus {
   outline: thin dotted #333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
-}
-
-body {
-  background-color: yellow;
 }
 
 /*

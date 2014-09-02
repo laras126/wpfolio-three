@@ -28,9 +28,9 @@ function optionsframework_option_name() {
 function optionsframework_options() {
 
 
-	// -----------
-	/************* ARRAYS ********************/
-	// -----------
+	// ----
+	// ---- Arrays
+	// ----
 
 	// Set up some value arrays because they are nice:
 
@@ -54,17 +54,9 @@ function optionsframework_options() {
         'position' => 'top center',
         'attachment'=>'scroll' );
 
-
 	// Merge the OS and Google font arrays
 	$typography_mixed_fonts = array_merge( options_typography_get_os_fonts() , options_typography_get_google_fonts() );
 	asort($typography_mixed_fonts);
-
-
-
-	// Typography TODO: maybe use different
-	// font sets for each title/headings/body
-	// so people don't use Lobster as a body font
-
 
 	//
 	// Title Font
@@ -84,39 +76,6 @@ function optionsframework_options() {
 	);
 
 
-	//
-	// Heading Typography
-	//
-
-	$heading_font_options = array(
-		'sizes' => false,
-		'faces' => $typography_mixed_fonts,
-		'styles' => false,
-		'color' => false,
-	);
-
-	$heading_font_defaults = array(
-		'face' => 'Arvo',
-	);
-
-
-	//
-	// Body Typography
-	//
-
-	$body_font_options = array(
-		'sizes' => false,
-		'faces' => $typography_mixed_fonts,
-		'styles' => false,
-		'color' => false
-	);
-
-	$body_font_defaults = array(
-		'face' => 'Open Sans',
-	);
-
-
-
   //
   // Categories
   //
@@ -131,16 +90,16 @@ function optionsframework_options() {
 
 
 
-	// -----------
-	/************* THE OPTIONS ********************/
-	// -----------
+	// ----
+	// ---- The Options
+	// ----
 
 
 
-	/************* BASIC SETTINGS ********************/
+	// ---- Basic Settings
 
 	/* 	This includes:
-    1. Blog Layout (multicheck)
+    	1. Blog Layout (multicheck)
 		2. Comments (radio)
 		3. Custom Favicon (upload)
 		4. Show theme creds? (radio)
@@ -153,7 +112,7 @@ function optionsframework_options() {
 		'type' => 'heading');
 
 
-  // 1. Blog Layout
+  		// 1. Blog Layout
 	$options[] = array(
 		'name' => __('Blog Category', 'options_check'),
 		'desc' => __('Select the categories use the blog layout.', 'wpfolio'),
@@ -163,7 +122,7 @@ function optionsframework_options() {
 		'options' => $options_categories);
 
 
-  // 2. Comments
+  	// 2. Comments
 	$options[] = array(
 		'name' => __('Comments', 'wpfolio'),
 		'desc' => __('Where would you like to see comments to show? By default they are only in the Blog category.', 'wpfolio'),
@@ -179,7 +138,6 @@ function optionsframework_options() {
 		'id' => 'custom_favicon',
 		'type' => 'upload');
 
-
 	// 4. Theme Creds
 	$options[] = array(
 		'name' => __('Theme Credits', 'wpfolio'),
@@ -192,27 +150,16 @@ function optionsframework_options() {
 
 
 
-	/************* STYLES ********************/
+	// ---- Styles --- //
 
 	/* 	This includes:
-		1. Typography
-			- Title
-			- Headings
-			- Body
-		2. Background
-		3. Color Scheme (TODO)
-		4. Custom CSS
+		1. Title Font
+		2. Custom CSS
 
 		TODO: should this be only a Pro option?
 	*/
 
-
-	$options[] = array(
-		'name' => __('Styles', 'wpfolio'),
-		'type' => 'heading');
-
-
-	// --- 1. Typography --- //
+	// --- 1. Typography
 
 	// 1. Title Font
 	$options[] = array(
@@ -222,51 +169,10 @@ function optionsframework_options() {
 		'std' => $title_font_defaults,
 		'type' => 'typography',
 		'class' => 'small',
-		// Using same font set for headings and title
-		'options' => $heading_font_options );
+		'options' => $title_font_options );
 
 
-	// 2. Header font
-	$options[] = array(
-		'name' => __('Headings Font', 'wpfolio'),
-		'desc' => __('You can choose a different font and color for the heading text.', 'wpfolio'),
-		'id' => "heading_font",
-		'std' => $heading_font_defaults,
-		'type' => 'typography',
-		'options' => $heading_font_options );
-
-
-	// 3. Body font
-	$options[] = array(
-		'name' => __('Body Font', 'wpfolio'),
-		'desc' => __('Choose the font for your website\'s content text.', 'wpfolio'),
-		'id' => 'body_typography',
-		'std' => $body_font_defaults,
-		'type' => 'typography',
-		'options' => $body_font_options );
-
-
-	//
-	// TODO: add logo option -- maybe?
-	//
-
-	//
-	// TODO: add color scheme option instead of specific colors
-	// -- Pro only?
-
-
-	// --- 2. Background --- //
-
-	// Change the background color or upload an image
-	$options[] = array(
-		'name' =>  __('Background', 'wpfolio'),
-		'desc' => __('Choose a color or texture or upload an image for your background. Check out <a href="http://subtlepatterns.com" target="blank">Subtle Patterns</a> for some excellent quality textures. Note that an image will override a color.', 'wpfolio'),
-		'id' => 'body_background',
-		'std' => $background_defaults,
-		'type' => 'background' );
-
-
-	// --- 3. Custom CSS FTW --- //
+	// --- 2. Custom CSS FTW
 
 	// Textarea for custom CSS
 	$options[] = array(
@@ -276,11 +182,7 @@ function optionsframework_options() {
 		'std' => '',
 		'type' => 'textarea');
 
-
-
 	return $options;
-
-
 
 } // end main options function
 

@@ -3,10 +3,8 @@
 // All the functions for applying the Options Framework
 // Included in functions.php
 
-
 // Include functions to return options
 require_once( get_template_directory() . '/options.php' );
-
 
 if ( !function_exists( 'of_get_option' ) ) {
     function of_get_option($name, $default = false) {
@@ -29,20 +27,14 @@ if ( !function_exists( 'of_get_option' ) ) {
 }
 
 
-
-// --- GOOGLE FONTS FUNCTIONS --- //
-
-// What an excellent tutorial by Devin at WP Theming!
-// http://wptheming.com/2012/06/loading-google-fonts-from-theme-options/
-
-
-// Use a mixture of Google Fonts and system fonts
-// What an excellent tutorial by Devin at WP Theming!
-// http://wptheming.com/2012/06/loading-google-fonts-from-theme-options/
+// ----
+// ---- Google Fonts
+// ----
 
 /**
  * Returns a select list of Google fonts
  */
+
 function options_typography_get_google_fonts() {
     // Google Font Defaults
     $google_faces = array(
@@ -96,14 +88,10 @@ if ( !function_exists( 'options_typography_google_fonts' ) ) {
         $all_google_fonts = array_keys( options_typography_get_google_fonts() );
         
         // Define all the options that possibly have a unique Google font
-        $body_google_mixed = of_get_option('body_typography', false);
-        $heading_google_mixed = of_get_option('heading_font', false);
         $title_google_mixed = of_get_option('title_font', false);
 
         // Get the font face for each option and put it in an array
         $selected_fonts = array(
-            $body_google_mixed['face'],
-            $heading_google_mixed['face'],
             $title_google_mixed['face']
             );
 
@@ -122,7 +110,6 @@ if ( !function_exists( 'options_typography_google_fonts' ) ) {
 add_action( 'wp_enqueue_scripts', 'options_typography_google_fonts' );
 
 
-
 /**
  * Enqueues the Google $font that is passed
  */
@@ -134,6 +121,7 @@ function options_typography_enqueue_google_font($font) {
     // Like our friend "Raleway"
     if ( $font == 'Raleway' )
         $font = 'Raleway:100';
+    
     $font = str_replace(" ", "+", $font);
     wp_enqueue_style( "options_typography_$font", "http://fonts.googleapis.com/css?family=$font", false, null, 'all' );
 }
@@ -141,7 +129,9 @@ function options_typography_enqueue_google_font($font) {
 
 
 
-// --- RETURN STLYE OPTIONS --- //
+// ---- 
+// ---- Return Style Options 
+// ----
 
 /*
  * Returns styling options so they can be printed in the <head>
@@ -191,24 +181,9 @@ function options_head_css() {
     $output = '';
     $input = '';
 
-    if ( of_get_option( 'body_typography' ) ) {
-        $input = of_get_option( 'body_typography' );
-        $output .= options_font_family( $input, 'body, input, textarea, button' );
-    }
-
-    if ( of_get_option( 'body_background' ) ) {
-        $input = of_get_option( 'body_background' );
-        $output .= options_background_style( $input , 'body');
-    }
-
-    if ( of_get_option( 'heading_font' ) ) {
-        $input = of_get_option( 'heading_font' );
-        $output .= options_font_family( $input , 'h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6');
-    }
-
     if ( of_get_option( 'title_font' ) ) {
         $input = of_get_option( 'title_font' );
-        $output .= options_font_family( $input , 'h1.site-title a');
+        $output .= options_font_family( $input , '.site-title a');
     }
 
     if ( of_get_option( 'custom_css' ) ) {
@@ -230,7 +205,7 @@ add_action('wp_head', 'options_head_css');
 
 
 
-// --- FAVICON OPTION --- //
+// --- Favicon --- //
 
 function options_favicon() {
     $favicon = of_get_option('custom_favicon', false);
@@ -240,10 +215,6 @@ function options_favicon() {
 }
 
 add_action('wp_head', 'options_favicon');
-
-
-
-
 
 
 ?>
