@@ -63,7 +63,7 @@ span.amp {
   text-align: right;
 }
 
-.uppercase-title, .project-title, .page-title, .archive-title {
+.uppercase-title {
   font-size: 1.125em;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -1990,23 +1990,23 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-button, .project-link a, input {
+button, input {
   line-height: normal;
 }
 
-button, .project-link a, input, select, textarea {
+button, input, select, textarea {
   font-size: 100%;
   margin: 0;
   vertical-align: baseline;
   *vertical-align: middle;
 }
 
-button, .project-link a, input[type="button"], input[type="reset"], input[type="submit"] {
+button, input[type="button"], input[type="reset"], input[type="submit"] {
   cursor: pointer;
   *overflow: visible;
 }
 
-button::-moz-focus-inner, .project-link a::-moz-focus-inner, input::-moz-focus-inner {
+button::-moz-focus-inner, input::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
@@ -2123,75 +2123,265 @@ textarea {
   border-left-color: white;
 }
 
+html html {
+  font-size: 100%;
+  line-height: 0.5em;
+}
+
 body {
-  color: #666;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/********************
-WORDPRESS BODY CLASSES
-style a page via class
-********************/
-.single .article-footer {
-  padding: 17px 0;
-  margin: 17px 0;
-  border-bottom: 1px solid #eee;
-  border-top: 1px solid #eee;
+h1, .h1 {
+  font-size: 2.25em;
+  margin: 0 0 10px 0;
+  font-weight: 500;
 }
 
-.attachment img {
-  display: block;
-  margin: 0 auto;
+h2, .h2 {
+  font-size: 1.875em;
+  margin: 17px 0 8px 0;
+  font-weight: 500;
 }
 
-/*********************
-GENERAL STYLES
-*********************/
-video {
-  width: 100%    !important;
-  height: auto   !important;
+h3, .h3 {
+  font-size: 1.375em;
+  margin: 23px 0 11px 0;
+  font-weight: 500;
 }
 
-/*********************
-HEADER STYLES
-*********************/
-.header {
-  padding-top: 2.25em;
-  text-align: center;
+h4, .h4 {
+  font-size: 1.25em;
+  margin: 0 0 6px 0;
 }
 
-.site-title {
-  margin: 0 0 0.22222em 0;
-}
-.site-title a {
-  color: inherit;
-  text-decoration: inherit;
-  cursor: inherit;
-}
-.site-title a:active, .site-title a:focus {
-  outline: none;
-}
-
-.site-description {
-  font-style: italic;
+h5, .h5 {
   font-size: 1.125em;
-  line-height: 1.33333em;
+  margin: 0 0 7px 0;
 }
 
-/*********************
-NAVIGATION STYLES
-*********************/
-/*
-all navs have a .nav class applied via
-the wp_menu function; this is so we can
-easily write one group of styles for
-the navs on the site so our css is cleaner
-and more scalable.
-*/
+h6, .h6 {
+  font-size: 16px;
+  margin: 0 0 0.5em 0;
+}
+
+p, pre, label {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin: 0 0 1em 0;
+}
+
+ol, ul {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin: 0 0 1em 0;
+}
+
+li {
+  line-height: auto;
+}
+
+ul {
+  list-style-position: inside;
+  list-style-type: disc;
+}
+
+ol {
+  list-style-position: inside;
+  list-style-type: decimal;
+}
+
+strong, b {
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+em, i, q {
+  font-style: italic;
+}
+
+blockquote {
+  padding-left: 1em;
+  border-left: 0.0625em solid #eee;
+  line-height: normal;
+  margin: 0;
+}
+blockquote p {
+  font-style: italic;
+  margin: 0;
+  font-size: 1.25em;
+  line-height: 1.2em;
+  margin: 1.2em 0 1.2em 0;
+}
+
+a, a:visited {
+  color: #aaa;
+  text-decoration: none;
+  /* on hover */
+  /* on click */
+  /* mobile tap color */
+}
+a:hover, a:focus, a:visited:hover, a:visited:focus {
+  color: #969696;
+}
+a:active, a:visited:active {
+  color: #8b8b8b;
+}
+a:link, a:visited:link {
+  /*
+  this highlights links on iPhones/iPads.
+  so it basically works like the :hover selector
+  for mobile devices.
+  */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
+}
+
+*:focus {
+  outline: 0;
+}
+
+label, select {
+  display: block;
+}
+
+input[type="search"] {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  -webkit-appearance: textfield;
+  box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"] {
+  padding: 0.2em 0.5em;
+  background: #fff;
+  color: #666;
+  border: 0.125em solid #ccc;
+  line-height: 1.5em;
+}
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus {
+  border: 0.125em solid #999;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 4px 0 0;
+  margin-top: 1px \9;
+  *margin-top: 0;
+  line-height: normal;
+  cursor: pointer;
+}
+
+input[type="file"],
+input[type="image"],
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input[type="radio"],
+input[type="checkbox"] {
+  width: auto;
+}
+
+input[type="submit"],
+button {
+  font-family: Helvetica;
+  background: #999;
+  border: none;
+  border-width: 0.2em;
+  color: white;
+  padding: 0.3em 0.5em;
+  line-height: 1.5;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+input[type="submit"]:hover, input[type="submit"]:focus,
+button:hover,
+button:focus {
+  background: #666666;
+  color: white;
+}
+input[type="submit"]:active,
+button:active {
+  background: #7a7a7a;
+  border-color: #737373;
+  color: white;
+  -webkit-box-shadow: inset 0 2px 5px -3px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 2px 5px -3px rgba(0, 0, 0, 0.5);
+}
+input[type="submit"][disabled], input[type="submit"]:disabled, input[type="submit"].button-primary-disabled,
+button[disabled],
+button:disabled,
+button.button-primary-disabled {
+  color: #d1c7c7 !important;
+  background: #858585 !important;
+  border-color: #737373 !important;
+  text-shadow: none !important;
+}
+
+select,
+input[type="file"] {
+  *margin-top: 4px;
+  /* In IE7, the height of the select element cannot be changed by height, only font-size */
+}
+
+select:focus,
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+/*****
+ * Site Nav Styles
+ *****/
+/**
+ * Toggle menu by Brad Frost
+ * http://codepen.io/bradfrost/pen/sHvaz
+ * http:// bradfrostweb.com
+ *
+ */
 a.menu-link {
   display: block;
   text-align: center;
@@ -2226,6 +2416,145 @@ a.menu-link {
 
 .sf-menu li {
   border-top: 1px solid #eee;
+}
+
+/*****
+ * Page Nav Styles
+ *****/
+.mobile-hide {
+  display: none;
+}
+
+.mobile-show {
+  display: block;
+}
+
+.prev-next {
+  padding-top: 1.375em;
+}
+
+.prev {
+  float: left;
+  font-weight: 700;
+}
+
+.next {
+  float: right;
+  font-weight: 700;
+}
+
+.page-navigation,
+.wp-prev-next {
+  text-align: center;
+}
+
+.bones_page_navi {
+  list-style-type: none;
+  /* current page link */
+  /* end .bones_page_navi .bpn-current */
+  /* common styles for page-navi links */
+  /* remove the bg on end links */
+  /* previous link */
+  /* next page link */
+  /* first page link */
+  /* last page link */
+}
+.bones_page_navi li {
+  display: inline-block;
+  margin-left: 0.825em;
+}
+.bones_page_navi li a {
+  padding: 0 0.275em;
+  display: block;
+  text-decoration: none;
+  position: relative;
+}
+.bones_page_navi li a:hover, .bones_page_navi li a:focus {
+  background-color: #eee;
+  text-decoration: underline;
+}
+.bones_page_navi li.bpn-current {
+  padding: 0 0.275em;
+  border-bottom: 1px solid #aaa;
+  position: relative;
+  background-color: #eee;
+}
+.bones_page_navi li.bpn-current a {
+  /* hovering on current page link */
+}
+.bones_page_navi li.bpn-prev-link,
+.bones_page_navi li.bpn-next-link {
+  font-weight: 700;
+}
+.bones_page_navi li.bpn-prev-link a,
+.bones_page_navi li.bpn-next-link a {
+  padding: 0;
+}
+.bones_page_navi li.bpn-prev-link a:hover,
+.bones_page_navi li.bpn-next-link a:hover,
+.bones_page_navi li.bpn-first-page-link a:hover,
+.bones_page_navi li.bpn-last-page-link a:hover {
+  background: none;
+}
+.bones_page_navi li.bpn-prev-link {
+  margin-left: 0;
+  margin-right: 1.875em;
+}
+.bones_page_navi li.bpn-next-link {
+  margin-right: 0;
+  margin-left: 1.875em;
+}
+
+/* end .bones_page_navi */
+/* fallback previous & next links */
+.wp-prev-next .prev-link {
+  float: left;
+}
+.wp-prev-next .next-link {
+  float: right;
+}
+
+/* end .wp-prev-next */
+/********************
+WORDPRESS BODY CLASSES
+style a page via class
+********************/
+.single .article-footer {
+  padding: 17px 0;
+  margin: 17px 0;
+  border-bottom: 1px solid #eee;
+  border-top: 1px solid #eee;
+}
+
+.attachment img {
+  display: block;
+  margin: 0 auto;
+}
+
+/*********************
+HEADER STYLES
+*********************/
+.header {
+  padding-top: 2.25em;
+  text-align: center;
+}
+
+.site-title {
+  margin: 0 0 0.22222em 0;
+}
+.site-title a {
+  color: inherit;
+  text-decoration: inherit;
+  cursor: inherit;
+}
+.site-title a:active, .site-title a:focus {
+  outline: none;
+}
+
+.site-description {
+  font-style: italic;
+  font-size: 1.125em;
+  line-height: 1.33333em;
 }
 
 /*********************
@@ -2350,150 +2679,6 @@ POSTS & CONTENT STYLES
   margin: 1em 0;
 }
 
-.project-loop {
-  list-style: none;
-}
-
-.project-title, .page-title, .archive-title {
-  margin-top: 0;
-}
-
-.project-thumb img {
-  margin-bottom: 24px;
-  display: block;
-  margin: 0 auto;
-}
-
-.project-thumb-title {
-  font-size: 0.825em;
-  margin-bottom: 28px;
-}
-
-.artwork-meta > ul {
-  list-style-type: none;
-}
-
-.aw-sep {
-  margin-top: 1.375em;
-}
-
-.project-link a {
-  display: inline-block;
-}
-
-.pv-middle {
-  text-align: center;
-  padding-bottom: 1em;
-}
-
-.project-taxonomies {
-  list-style: none;
-}
-.project-taxonomies .tags-title {
-  display: block;
-}
-.project-taxonomies li a {
-  background-color: #eee;
-  padding: 0 0.25em;
-}
-
-/******************************************************************
-PAGE NAVI STYLES
-******************************************************************/
-.mobile-hide {
-  display: none;
-}
-
-.mobile-show {
-  display: block;
-}
-
-.prev-next {
-  padding-top: 1.375em;
-}
-
-.prev {
-  float: left;
-  font-weight: 700;
-}
-
-.next {
-  float: right;
-  font-weight: 700;
-}
-
-.page-navigation,
-.wp-prev-next {
-  text-align: center;
-}
-
-.bones_page_navi {
-  list-style-type: none;
-  /* current page link */
-  /* end .bones_page_navi .bpn-current */
-  /* common styles for page-navi links */
-  /* remove the bg on end links */
-  /* previous link */
-  /* next page link */
-  /* first page link */
-  /* last page link */
-}
-.bones_page_navi li {
-  display: inline-block;
-  margin-left: 0.825em;
-}
-.bones_page_navi li a {
-  padding: 0 0.275em;
-  display: block;
-  text-decoration: none;
-  position: relative;
-}
-.bones_page_navi li a:hover, .bones_page_navi li a:focus {
-  background-color: #eee;
-  text-decoration: underline;
-}
-.bones_page_navi li.bpn-current {
-  padding: 0 0.275em;
-  border-bottom: 1px solid #aaa;
-  position: relative;
-  background-color: #eee;
-}
-.bones_page_navi li.bpn-current a {
-  /* hovering on current page link */
-}
-.bones_page_navi li.bpn-prev-link,
-.bones_page_navi li.bpn-next-link {
-  font-weight: 700;
-}
-.bones_page_navi li.bpn-prev-link a,
-.bones_page_navi li.bpn-next-link a {
-  padding: 0;
-}
-.bones_page_navi li.bpn-prev-link a:hover,
-.bones_page_navi li.bpn-next-link a:hover,
-.bones_page_navi li.bpn-first-page-link a:hover,
-.bones_page_navi li.bpn-last-page-link a:hover {
-  background: none;
-}
-.bones_page_navi li.bpn-prev-link {
-  margin-left: 0;
-  margin-right: 1.875em;
-}
-.bones_page_navi li.bpn-next-link {
-  margin-right: 0;
-  margin-left: 1.875em;
-}
-
-/* end .bones_page_navi */
-/* fallback previous & next links */
-.wp-prev-next .prev-link {
-  float: left;
-}
-.wp-prev-next .next-link {
-  float: right;
-}
-
-/* end .wp-prev-next */
 /******************************************************************
 COMMENT STYLES
 ******************************************************************/
@@ -2742,25 +2927,21 @@ FOOTER STYLES
   padding: 9px;
 }
 
-/*********************
-WPFOLIO FEATURES
-*********************/
-.media-wrap {
-  position: relative;
-  padding-bottom: 56.25%;
-  /* proportion value to aspect ratio 16:9 (9 / 16 = 0.5625 or 56.25%) */
-  padding-top: 2.25em;
-  height: 0;
-  overflow: hidden;
-  margin: 0 auto 2.25em;
+body {
+  color: #666;
 }
 
-.media-wrap iframe, .media-wrap object, .media-wrap embed {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*********************
+GENERAL STYLES
+*********************/
+video {
+  width: 100%    !important;
+  height: auto   !important;
 }
 
 @media only screen and (min-width: 25em) {

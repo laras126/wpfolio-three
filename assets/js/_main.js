@@ -48,7 +48,6 @@ jQuery(document).ready(function($) {
     
     /* if is larger than 481px */
     if (responsive_viewport > 768) {
-        $('.project-thumb:nth-child(4n)').addClass('omega');
     } /* end larger than 481px */
     
     /* if is above or equal to 768px */
@@ -69,14 +68,13 @@ jQuery(document).ready(function($) {
 
 
 	// ------------------
-	// Author scripts (i.e. not from Bones)
+	// Author scripts
     // ------------------
 
     // Gosh, this is great!
     // Toggle menu for mobile
     // http://codepen.io/bradfrost/pen/sHvaz
 
-    //$('body').addClass('js');
     var $menu = $('#main-nav'),
         $menulink = $('.menu-link');
         $menuicon = $('.menu-link .fa');
@@ -89,18 +87,10 @@ jQuery(document).ready(function($) {
         return false;
     });
 	
-    
-    // Wrap all media in a figure element 
-    // that is styled to make them fluid
-    // var $media = $('iframe, object, embed');
 
-    // if(! $media.parent('.media-wrap').length > 0) {
-    //     $media.wrap( '<figure class="media-wrap"></figure>' );    
-    // }
-
-
-    // Nah, let's use fitvid..
-    // Basic FitVids Test
+    // ----
+    // FitVids plugin
+    // ----
     $("#container").fitVids();
     
     $('ul.sf-menu').superfish({ /* <-- error occurs here */

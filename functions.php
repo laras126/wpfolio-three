@@ -50,7 +50,6 @@ Underscores (http://underscores.me) as a guide.
 
 */
 
-
 // ----
 // ---- Add everything to the theme
 // ----
@@ -186,5 +185,33 @@ function wpf_excerpt_more($more) {
 	return '...  <a class="excerpt-read-more" href="'. get_permalink($post->ID) . '" title="'. __('Read', 'wpfolio') . get_the_title($post->ID).'">'. __('Read more &raquo;', 'wpfolio') .'</a>';
 }
 
+
+// Customize the <title> display
+add_filter( 'wp_title', 'wpf_wp_title', 10, 2 );
+
+function wpf_wp_title( $title, $sep ) {
+	global $paged, $page;
+ 
+	if ( is_feed() ) {
+		return $title;
+	} // end if
+ 
+	// Add the site name.
+	$title .= get_bloginfo( 'name' );
+ 
+	// Add the site description for the home/front page.
+	$site_description = get_bloginfo( 'description', 'display' );
+	if ( $site_description && ( is_home() || is_front_page() ) ) {
+		$title = "$title $sep $site_description";
+	} // end if
+ 
+	// Add a page number if necessary.
+	if ( $paged >= 2 || $page >= 2 ) {
+		$title = sprintf( __( 'Page %s', 'wpfolio' ), max( $paged, $page ) ) . " $sep $title";
+	} // end if
+ 
+	return $title;
+ 
+} // end mayer_wp_title
 
 ?>

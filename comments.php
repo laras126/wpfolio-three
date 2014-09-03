@@ -22,6 +22,7 @@
 <?php
 // Comments option - in options.php
 $comment_option = of_get_option('comments');
+
 if ( $comment_option == 'all' || $comment_option == 'blog' && is_singular('post') ): ?>
 	<?php if ( have_comments() ) : ?>
 

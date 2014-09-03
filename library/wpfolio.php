@@ -361,7 +361,7 @@ function wpf_get_first_thumb() {
 		$url = wp_get_attachment_image($num->ID, 'wpf-thumb-300', true,$attr);
 		print $url;
 	} else { ?>
-		<img src="<?php echo get_template_directory_uri(); ?>/library/images/default-thumb.png" alt="<?php the_title(); ?>"/>
+		<img src="<?php echo get_template_directory_uri(); ?>/assets/images/default-thumb.png" alt="<?php the_title(); ?>"/>
 	<?php }
 }
 

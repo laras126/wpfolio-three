@@ -2,7 +2,6 @@
 /*
 Template Name: Home Page
 */
-// Large image only, with fade in
 ?>
 
 <?php get_header(); ?>
