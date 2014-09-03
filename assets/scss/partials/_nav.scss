@@ -39,6 +39,22 @@ a.menu-link {
 	li a {
 		display: block;
 		color: $primary;
+
+		&:hover {
+			color: $primary;
+		}
+	}
+}
+
+.current-menu-item,
+.current-category-ancestor, 
+.current-menu-ancestor, 
+.current-menu-parent, 
+.current-category-parent {
+	background-color: lighten($accent-light, 2%);
+
+	.sub-menu & {
+		background-color: darken($accent-light, 5%);
 	}
 }
 
@@ -65,16 +81,32 @@ a.menu-link {
 
 .prev-next {
 	padding-top: $h3;
+	a {
+		@extend %unstyled-link;
+	}
+}
+
+.mobile-prevnext {
+	@extend .mobile-show;
+	@include clearfix();
+	margin-top: $h3;
+	width: 100%;
 }
 
 .prev {
 	float: left;
 	font-weight: 700;
+	@extend .mobile-hide;
 }
 
 .next {
 	float: right;
 	font-weight: 700;
+	@extend .mobile-hide;
+}
+
+.nav-meta {
+	text-align: center;
 }
 
 .page-navigation,
@@ -89,41 +121,39 @@ a.menu-link {
 			display: inline-block;
 			margin-left: $sml;
 
-
 			a {
 				padding: 0 $sml/3;
 				display: block;
-				text-decoration: none;
 				position: relative;
 
 				&:hover,
 				&:focus {
 					background-color: $accent-light;
-					text-decoration: underline;
+					text-decoration: none;
 				}
 			}
 
 		}
 
 		/* current page link */
-		li.bpn-current {
+		.bpn-current {
 			padding: 0 $sml/3;
-			border-bottom: 1px solid $link-color;
 			position: relative;
 			background-color: $accent-light;
 
 			a {
 				/* hovering on current page link */
 				&:hover,
-				&:focus {}
+				&:focus {
+				}
 
 			}
 
 		} /* end .bones_page_navi .bpn-current */
 
 		/* common styles for page-navi links */
-		li.bpn-prev-link,
-		li.bpn-next-link {
+		.bpn-prev-link,
+		.bpn-next-link {
 			font-weight: 700;
 
 			a {
@@ -132,15 +162,15 @@ a.menu-link {
 		}
 
 		/* remove the bg on end links */
-		li.bpn-prev-link a:hover,
-		li.bpn-next-link a:hover,
-		li.bpn-first-page-link a:hover,
-		li.bpn-last-page-link a:hover {
+		.bpn-prev-link a:hover,
+		.bpn-next-link a:hover,
+		.bpn-first-page-link a:hover,
+		.bpn-last-page-link a:hover {
 			background: none;
 		}
 
 		/* previous link */
-		li.bpn-prev-link {
+		.bpn-prev-link {
 			margin-left: 0;
 			margin-right: $h2;
 			a {
@@ -150,25 +180,9 @@ a.menu-link {
 		}
 
 		/* next page link */
-		li.bpn-next-link {
+		.bpn-next-link {
 			margin-right: 0;
 			margin-left: $h2;
-			a {
-				&:hover,
-				&:focus {}
-			}
-		}
-
-		/* first page link */
-		li.bpn-first-page-link {
-			a {
-				&:hover,
-				&:focus {}
-			}
-		}
-
-		/* last page link */
-		li.bpn-last-page-link {
 			a {
 				&:hover,
 				&:focus {}

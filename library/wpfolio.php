@@ -92,19 +92,16 @@ add_action( 'init', 'wpf_initialize_cmb_meta_boxes', 999);
 
 
 
-
-
-
 // ---- 
 // ---- Body Classes and Layout
 // ----
 
 /**  
- * Add a specific classes for News and Portfolio layouts.
+ *
+ * Add a specific classes for Standard and Portfolio layouts.
  *    
- * Check to see if it's the blog category. If it is,
- * add the standard-layout class, if not,
- * add portfolio-layout class
+ * Check to see if it's the blog category. 
+ * If it is, use the standard layout template, if not use the portfolio layout template
  *
  */
 
@@ -112,7 +109,6 @@ add_filter('body_class','wpf_add_body_class');
 
 function wpf_add_body_class($class) {
 
-    global $post;
     $blog_cats = of_get_option( 'blog_cat' );
 
     if ( in_category( $blog_cats ) || is_home() ) {
@@ -127,8 +123,7 @@ function wpf_add_body_class($class) {
 
 /* 
  *
- * These are custom functions to include the appropriate templates
- * according to the News category specified in Theme Options.
+ * These are custom functions to include the appropriate templates according to the News category specified in Theme Options.
  *
  * wpf_layout and wpf_sidebar are called in place of the primary loop and get_sidebar in post templates.
  *
@@ -138,8 +133,11 @@ function wpf_add_body_class($class) {
 // http://stackoverflow.com/questions/15033888/how-to-check-for-class-in-body-class-in-wordpress
 
 function wpf_layout() {
-    $classes = get_body_class();
-    if (in_array('standard-layout',$classes)) {
+    // $classes = get_body_class();
+    $blog_cats = of_get_option( 'blog_cat' );
+
+    // if (in_array('standard-layout',$classes)) {
+    if ( in_category( $blog_cats ) || is_home() ) {
         if(is_single()) {
             get_template_part('include/single', 'standard');
         } else {

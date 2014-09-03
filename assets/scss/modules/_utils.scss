@@ -1,5 +1,4 @@
 
-
 // Use clearfix if you need general clearfixing
 .clearfix { @include clearfix; }
 
@@ -15,6 +14,13 @@
 .text-right  { text-align: right; }
 
 
+// Remove text decoration from links
+%unstyled-link {
+	text-decoration: none;
+	&:hover {
+		text-decoration: none;
+	}
+}
 
 // Keep the thumb titles from overflowing on mobile
 
@@ -26,13 +32,30 @@
 }
 
 
+// Sneeky layout things
+
+.first {
+	float: left;
+}
+
+.last {
+	float: right;
+}
 
 // Mobile Utilities to be added on classes
 
 .mobile-hide {
-	display: none;
+	display: none;	
+
+	@include bp(mama) {
+		display: block;	
+	}
 }
 
 .mobile-show {
 	display: block;
+
+	@include bp(mama) {
+		display: none;	
+	}
 }
