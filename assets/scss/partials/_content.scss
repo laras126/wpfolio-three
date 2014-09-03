@@ -56,266 +56,280 @@ style a page via class
 
 
 
-/*********************
-HEADER STYLES
-*********************/
+// ----
+// ---- Site Header
+// ----
 
 .header {
 	padding-top: $h1;
 	text-align: center;
+
+	@media (min-width: $desktop) {
+		text-align: left;
+	}
 }
 
-	.site-title {
-		margin: 0 0 rhythm(1, 36px) 0;
-
-		a {
-			@include unstyled-link;
-		}
+#inner-header {
+	@include bp(mama) {
+		
+		// Overriding the clearfix overflow: hidden for dropdowns
+		overflow: visible;
 	}
+}
 
-	.site-description {
-		font-style: italic;
-		@include adjust-font-size-to(18px);
+
+.site-title {
+	margin: 0 0 rhythm(1, 36px) 0;
+
+	a {
+		@include unstyled-link;
 	}
+}
+
+.site-description {
+	font-style: italic;
+	@include adjust-font-size-to(18px);
+}
 
 
 
 
-/*********************
-POSTS & CONTENT STYLES
-*********************/
+// ----
+// ---- Posts & Content
+// ----
 
 #content {
 	margin-top: rhythm(2, 18px);
 }
 
-		.article-header {
-			margin-bottom: rhythm(4, $h5);
+// Article
+.article-header {
+	margin-bottom: rhythm(4, $h5);
+}
+	.entry-title {
+		margin-bottom: rhythm(1, 22px);
+		font-size: $h2;
+
+		a {
+			color: $primary;
 		}
-			.entry-title {
-				margin-bottom: rhythm(1, 22px);
-				font-size: $h2;
+	}
 
-				a {
-					color: $primary;
-				}
-			}
 
+.hentry {
 
-		.hentry {
+	header {}
 
-			header {}
+	footer {}
 
-			footer {}
+} /* end .hentry */
 
-		} /* end .hentry */
-
-		// TODO: make these one class
-		.archive-title, .page-title, .project-title, .project-thumb-title {
-			@extend .text-center;
-		}
-
-		/* want to style individual post classes? Booya! */
-		.post-id {}         /* post by id (i.e. post-3) */
-		.standard-layout .post {
-			padding: rhythm(4, 22px) 0;
-			border-top: $accent-light 1px solid;
-		}            /* general post style */
-		.page {}            /* general article on a page style */
-		.attachment {}      /* general style on an attatchment */
-
-		.sticky {
-			background-color: lighten($alert-yellow, 20%);
-			border: 2px solid $alert-yellow;
-			padding-left: $h3;
-			padding-right: $h3;
-		}
-
-		.hentry {}          /* hentry class */
-		.category-slug {}   /* style by category (i.e. category-videos) */
-		.tag-slug {}        /* style by tag (i.e. tag-news) */
-
-		/* post meta */
-		.byline, .form-allowed-tags {
-			font-style: italic;
-
-			time {}
-		}
-
-		.byline, .form-allowed-tags {
-			color: #999;
-		}
-
-		.tags {
-			@include nobullet;
-			margin-bottom: 0;
-		}
-
-		.tags-title {
-			//font-weight: 600;
-		}
-
-
-		/* entry content */
-		.entry-content {
-			margin-bottom: $h1;
-
-			p {}
-
-
-			ul, ol, table, dl {}
-
-			ul, ol {
-
-				li {}
-
-			}
-
-			ul {
-
-				li {}
-
-			}
-
-			ol {
-
-				li {}
-
-			}
-
-			blockquote {
-
-				&:before {}
-
-			}
-
-			dl {}
-
-			dt {}
-
-			dd {
-				margin-left: 0;
-				font-size: $sml;
-				color: #787878;
-				margin-bottom: $h3;
-			}
-
-			img {
-				@extend .max-width !optional;
-			}
-
-			/*
-			image alignment on a screen this size may be
-			a bit difficult. It's set to start aligning
-			and floating images at the next breakpoint,
-			but it's up to you. Feel free to change it up.
-			*/
-			.alignleft, img.alignleft {}
-			.alignright, img.alignright {}
-			.aligncenter, img.aligncenter {}
-
-			video, object {
-				max-width: 100%;
-				height: auto;
-			}
-
-			pre {
-				background: #eee;
-				border: 1px solid #cecece;
-				padding: 10px;
-			}
-
-		} /* end .entry-content */
-
-		.wp-caption, .gallery-caption {
-			max-width: 100%;
-			padding: 5px;
-			margin-bottom: $h3;
-
-			/* images inside wp-caption */
-			img {
-				max-width: 100%;
-				margin-bottom: 0;
-				width: 100%;
-			}
-
-			p.wp-caption-text {
-				font-size: $sml;
-				margin: 4px 0 7px;
-				text-align: center;
-			}
-
-		} /* end .wp-caption */
-
-		.wp-caption {
-			background: $accent-light;
-		}
-
-
-
-		/* image gallery styles */
-		.gallery {
-			margin: $base-font-size 0;
-			img {
-				@extend .max-width;
-			}
-
-			dl {
-
-				a {}
-
-
-			}
-
-			dt {}
-
-			dd {}
-
-		} /* end .gallery */
-
-		/* gallery caption styles */
-		.gallery-caption {
-			font-size: $sml;
-		}
-
-		.size-full {}
-		.size-large {}
-		.size-medium {}
-		.size-thumbnail {}
-
-
-		.post-edit-link, .post-edit-link:visited {
-			display: inline-block;
-			color: darken($alert-red, 30%);
-			font-weight: bold;
-			text-transform: uppercase;
-			margin: $default 0;
-		}
-
-
-
-
-/******************************************************************
-COMMENT STYLES
-******************************************************************/
-
-/* h3 comment title */
-#comments {
-
-	/* number of comments span */
-	span {}
-
+// TODO: make these one class
+.archive-title, .page-title, .project-title, .project-thumb-title {
+	@extend .text-center;
 }
 
-.comment-nav {
+// Project thumbnail styles
+
+.project-thumb {
+	@include bp(papa) {
+		&:hover	 { opacity: 0.6; }
+		&:active { opacity: 0.8; }
+	}
+}
+
+.project-thumb-title {
+	@extend %line-clamp;
+}
+
+.standard-layout .post {
+	padding: rhythm(4, 22px) 0;
+	border-top: $accent-light 1px solid;
+}
+
+.sticky {
+	background-color: lighten($alert-yellow, 20%);
+	border: 2px solid $alert-yellow;
+	padding-left: $h3;
+	padding-right: $h3;
+}
+
+// Post meta
+.byline, .form-allowed-tags {
+	font-style: italic;
+
+	time {}
+}
+
+.byline, .form-allowed-tags {
+	color: #999;
+}
+
+.tags {
+	@include nobullet;
+	margin-bottom: 0;
+}
+
+.tags-title {
+	//font-weight: 600;
+}
+
+
+// ----
+// Entry Content
+// ----
+
+.entry-content {
+	margin-bottom: $h1;
+
+	p {}
+
+
+	ul, ol, table, dl {}
+
+	ul, ol {
+
+		li {}
+
+	}
 
 	ul {
 
 		li {}
 
 	}
+
+	ol {
+
+		li {}
+
+	}
+
+	blockquote {
+
+		&:before {}
+
+	}
+
+	dl {}
+
+	dt {}
+
+	dd {
+		margin-left: 0;
+		font-size: $sml;
+		color: #787878;
+		margin-bottom: $h3;
+	}
+
+	img {
+		@extend .max-width !optional;
+	}
+
+	// Add image alignment at large sizes
+	@include bp(mama) {
+		
+		.alignleft, img.alignleft { 
+			margin-right: $h2; 
+			display: inline; 
+			float: left; 
+		}
+		.alignright, img.alignright { 
+			margin-left: $h2; 
+			display: inline; 
+			float: right; 
+		}
+		.aligncenter, img.aligncenter { 
+			margin-right: auto; 
+			margin-left: auto; 
+			display: block; 
+			clear: both; 
+		}
+	}
+
+	pre {
+		background: #eee;
+		border: 1px solid #cecece;
+		padding: 10px;
+	}
+
 }
 
+// ----
+// WordPress Gallery styles
+// ----
+
+.wp-caption, .gallery-caption {
+	max-width: 100%;
+	padding: 5px;
+	margin-bottom: $h3;
+
+	/* images inside wp-caption */
+	img {
+		max-width: 100%;
+		margin-bottom: 0;
+		width: 100%;
+	}
+
+	p.wp-caption-text {
+		font-size: $sml;
+		margin: 4px 0 7px;
+		text-align: center;
+	}
+
+}
+
+.wp-caption {
+	background: $accent-light;
+}
+
+
+
+/* image gallery styles */
+.gallery {
+	margin: $base-font-size 0;
+	img {
+		max-width: 100%;
+	}
+
+	dl {
+
+		a {}
+
+
+	}
+
+	dt {}
+
+	dd {}
+
+} /* end .gallery */
+
+/* gallery caption styles */
+.gallery-caption {
+	font-size: $sml;
+}
+
+.size-full {}
+.size-large {}
+.size-medium {}
+.size-thumbnail {}
+
+
+.post-edit-link, .post-edit-link:visited {
+	display: inline-block;
+	color: darken($alert-red, 30%);
+	font-weight: bold;
+	text-transform: uppercase;
+	margin: $default 0;
+}
+
+
+
+
+// ----
+// ---- Comment Styles
+// ----
 
 .commentlist {
 
@@ -339,19 +353,18 @@ COMMENT STYLES
 			margin: $sml;
 			li {}
 
-			/* variations */
 			.comment {}
 			.alt {}
 			.odd {}
 			.even {}
-			.depth-1 {}           /* change number for different depth */
+			.depth-1 {}
 			.byuser {}
 			.bypostauthor {
 				font-size: $default;
 			}
 			.comment-author-admin {}
 
-		} /* end .commentlist li ul.children */
+		}
 	}
 
 	li[class*=depth-] {
@@ -375,7 +388,6 @@ COMMENT STYLES
 	li.depth-4 {}
 	li.depth-5 {}
 
-	/* general comment classes */
 	.alt {}
 	.odd {
 		background: #eee;
@@ -394,7 +406,6 @@ COMMENT STYLES
 	.thread-odd {}
 	.thread-even {}
 
-	/* vcard */
 	.vcard {
 		margin-left: $h2;
 
@@ -435,46 +446,46 @@ COMMENT STYLES
 			background: #fff;
 		}
 
-	} /* end .commentlist .vcard */
+	}
 
 
-	/* comment meta */
+	// Comment Meta
+
 	.comment-meta {
-
 		a {}
-
 	}
 
 	.commentmetadata {
-
 		a {}
-
 	}
 
-	/* comment content */
+
+	// Comment Content
+
 	.comment_content {
 
 		p {
 			margin: $sml 0 $h3;
 		}
 
-	} /* end .commentlist .comment_content */
+	}
 
-	/* comment reply link */
+
+	// Comment Reply Link
+
 	.comment-reply-link {
 		text-decoration: none;
 		float: right;
 		@include button($secondary);
+	}
 
-	} /* end .commentlist .comment-reply-link */
-
-} /* end .commentlist */
-
+}
 
 
-/******************************************************************
-COMMENT FORM STYLES
-******************************************************************/
+
+// ----
+// ---- Comment Form Styles
+// ----
 
 .comment-respond {
 	margin-top: $h2;
@@ -556,40 +567,43 @@ COMMENT FORM STYLES
 		margin: 0 $h3 $h5;
 	}
 
-/*********************
-SIDEBARS & ASIDES
-*********************/
 
-.sidebar {}
 
-	.widgettitle {}
+// ----
+// ---- Sidebar and Asides
+// ----
+
+.widget {
+	margin: $h2 0;
+
+	ul { @include nobullet; }
+}
+
+
+@include bp(mama) {
+	.widgettitle {
+		text-align: left;
+	}
 
 	.widget {
-		margin: $h2 0;
+		padding: 0 $h5;
+		border-left: $accent-light 1px solid;
 
 		ul {
 			@include nobullet;
+
 			li {
-
-				&:first-child {}
-
-				&:last-child {}
-
-				a {}
-
-				/* deep nesting */
-				ul {}
-
+				margin-bottom: $sml;
 			}
-
 		}
-
 	}
+}
 
 
-/*********************
-FOOTER STYLES
-*********************/
+	
+// ----
+// ---- Footer
+// ----
 
 .footer {
 	@include adjust-font-size-to(14px);
@@ -602,6 +616,17 @@ FOOTER STYLES
 	}
 }
 
-	.copyright {}
+
+@include bp(mama) {
+
+	.copyright {
+		float: right;
+	}
+
+	.credits {
+		float: left;
+	}
+
+}
 
 

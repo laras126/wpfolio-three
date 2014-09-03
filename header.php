@@ -25,7 +25,7 @@
 
 			<header class="header" role="banner">
 
-				<div id="inner-header" class="wrap clearfix">
+				<div id="inner-header" class="wrap">
 
 					<div class="site-name">
 						<h1 class="site-title"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></h1>

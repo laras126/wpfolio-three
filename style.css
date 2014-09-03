@@ -21,8 +21,6 @@ http://themeshaper.com/modify-wordpress-themes/
 Stylesheet: Main Stylesheet
 Don't add styles here!
 --- */
-/* ::Clearfixs and extends. Use which suits best */
-/* ----------------------------------------------------------- */
 .clearfix {
   overflow: hidden;
   *zoom: 1;
@@ -37,20 +35,6 @@ Don't add styles here!
   clear: both;
 }
 
-.max-width, .entry-content img, .gallery img {
-  max-width: 100%;
-  height: auto;
-}
-
-/*
-use the best ampersand
-http://simplebits.com/notebook/2008/08/14/ampersands-2/
-*/
-span.amp {
-  font-family: Baskerville,'Goudy Old Style',Palatino,'Book Antiqua',serif !important;
-  font-style: italic;
-}
-
 .text-left {
   text-align: left;
 }
@@ -63,16 +47,21 @@ span.amp {
   text-align: right;
 }
 
-.uppercase-title {
-  font-size: 1.125em;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 28px;
+.project-thumb-title {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
-/*********************
-BUTTONS
-*********************/
+.mobile-hide {
+  display: none;
+}
+
+.mobile-show {
+  display: block;
+}
+
 /*
  * Doh! Swiped this from 3.8. Thanks, WP, you doll.
  */
@@ -2373,6 +2362,23 @@ input[type="checkbox"]:focus {
   outline-offset: -2px;
 }
 
+body {
+  color: #666;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*********************
+GENERAL STYLES
+*********************/
+video {
+  width: 100%    !important;
+  height: auto   !important;
+}
+
 /*****
  * Site Nav Styles
  *****/
@@ -2392,10 +2398,6 @@ a.menu-link {
 
 .nav {
   clear: both;
-  -webkit-transition: all 0.3s ease-out;
-  -moz-transition: all 0.3s ease-out;
-  -ms-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
 .js .nav {
@@ -2414,19 +2416,18 @@ a.menu-link {
   color: #666;
 }
 
+@media (min-width: 60em) {
+  .sf-menu {
+    float: right;
+  }
+}
 .sf-menu li {
   border-top: 1px solid #eee;
 }
-
-/*****
- * Page Nav Styles
- *****/
-.mobile-hide {
-  display: none;
-}
-
-.mobile-show {
-  display: block;
+@media (min-width: 60em) {
+  .sf-menu li {
+    border-top: none;
+  }
 }
 
 .prev-next {
@@ -2515,6 +2516,68 @@ a.menu-link {
 }
 
 /* end .wp-prev-next */
+@media (min-width: 48em) {
+  a.menu-link {
+    display: none;
+  }
+
+  .nav {
+    clear: none;
+    display: inline-block;
+  }
+  .js .nav {
+    max-height: none;
+    overflow: visible;
+  }
+  .nav li {
+    display: block;
+  }
+
+  .sf-menu ul {
+    position: absolute;
+    display: none;
+    top: 100%;
+    left: 0;
+    z-index: 99;
+  }
+
+  .sf-menu ul li {
+    background: #eee;
+  }
+
+  .sf-menu ul ul li {
+    background: #eee;
+  }
+
+  .sf-menu > li {
+    float: left;
+  }
+
+  .sf-menu li:hover > ul,
+  .sf-menu li.sfHover > ul {
+    display: block;
+  }
+
+  .sf-menu > li:hover,
+  .sf-menu > li.sfHover {
+    background: #eee;
+    -webkit-transition: none;
+    transition: none;
+  }
+  .sf-menu > li:hover li:hover,
+  .sf-menu > li.sfHover li:hover {
+    background-color: #d4d4d4;
+  }
+  .sf-menu > li:hover li:hover a,
+  .sf-menu > li.sfHover li:hover a {
+    color: #666;
+  }
+
+  .sf-arrows ul li:hover > .sf-with-ul:after,
+  .sf-arrows ul .sfHover > .sf-with-ul:after {
+    border-left-color: white;
+  }
+}
 /********************
 WORDPRESS BODY CLASSES
 style a page via class
@@ -2531,12 +2594,20 @@ style a page via class
   margin: 0 auto;
 }
 
-/*********************
-HEADER STYLES
-*********************/
 .header {
   padding-top: 2.25em;
   text-align: center;
+}
+@media (min-width: 60em) {
+  .header {
+    text-align: left;
+  }
+}
+
+@media (min-width: 48em) {
+  #inner-header {
+    overflow: visible;
+  }
 }
 
 .site-title {
@@ -2557,9 +2628,6 @@ HEADER STYLES
   line-height: 1.33333em;
 }
 
-/*********************
-POSTS & CONTENT STYLES
-*********************/
 #content {
   margin-top: 0.88889em;
 }
@@ -2577,16 +2645,20 @@ POSTS & CONTENT STYLES
 }
 
 /* end .hentry */
-/* want to style individual post classes? Booya! */
-/* post by id (i.e. post-3) */
+@media (min-width: 60em) {
+  .project-thumb:hover {
+    opacity: 0.6;
+  }
+  .project-thumb:active {
+    opacity: 0.8;
+  }
+}
+
 .standard-layout .post {
   padding: 1.45455em 0;
   border-top: #eee 1px solid;
 }
 
-/* general post style */
-/* general article on a page style */
-/* general style on an attatchment */
 .sticky {
   background-color: #f7f4c9;
   border: 2px solid #ebe16f;
@@ -2594,10 +2666,6 @@ POSTS & CONTENT STYLES
   padding-right: 1.375em;
 }
 
-/* hentry class */
-/* style by category (i.e. category-videos) */
-/* style by tag (i.e. tag-news) */
-/* post meta */
 .byline, .form-allowed-tags {
   font-style: italic;
 }
@@ -2611,15 +2679,8 @@ POSTS & CONTENT STYLES
   margin-bottom: 0;
 }
 
-/* entry content */
 .entry-content {
   margin-bottom: 2.25em;
-  /*
-  image alignment on a screen this size may be
-  a bit difficult. It's set to start aligning
-  and floating images at the next breakpoint,
-  but it's up to you. Feel free to change it up.
-  */
 }
 .entry-content dd {
   margin-left: 0;
@@ -2627,9 +2688,23 @@ POSTS & CONTENT STYLES
   color: #787878;
   margin-bottom: 1.375em;
 }
-.entry-content video, .entry-content object {
-  max-width: 100%;
-  height: auto;
+@media (min-width: 48em) {
+  .entry-content .alignleft, .entry-content img.alignleft {
+    margin-right: 1.875em;
+    display: inline;
+    float: left;
+  }
+  .entry-content .alignright, .entry-content img.alignright {
+    margin-left: 1.875em;
+    display: inline;
+    float: right;
+  }
+  .entry-content .aligncenter, .entry-content img.aligncenter {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    clear: both;
+  }
 }
 .entry-content pre {
   background: #eee;
@@ -2637,7 +2712,6 @@ POSTS & CONTENT STYLES
   padding: 10px;
 }
 
-/* end .entry-content */
 .wp-caption, .gallery-caption {
   max-width: 100%;
   padding: 5px;
@@ -2655,7 +2729,6 @@ POSTS & CONTENT STYLES
   text-align: center;
 }
 
-/* end .wp-caption */
 .wp-caption {
   background: #eee;
 }
@@ -2663,6 +2736,9 @@ POSTS & CONTENT STYLES
 /* image gallery styles */
 .gallery {
   margin: 16px 0;
+}
+.gallery img {
+  max-width: 100%;
 }
 
 /* end .gallery */
@@ -2679,24 +2755,6 @@ POSTS & CONTENT STYLES
   margin: 1em 0;
 }
 
-/******************************************************************
-COMMENT STYLES
-******************************************************************/
-/* h3 comment title */
-#comments {
-  /* number of comments span */
-}
-
-.commentlist {
-  /* general comment classes */
-  /* vcard */
-  /* end .commentlist .vcard */
-  /* comment meta */
-  /* comment content */
-  /* end .commentlist .comment_content */
-  /* comment reply link */
-  /* end .commentlist .comment-reply-link */
-}
 .commentlist li {
   position: relative;
   clear: both;
@@ -2704,7 +2762,6 @@ COMMENT STYLES
   list-style-type: none;
   margin-bottom: 1.375em;
   padding: 0.825em;
-  /* end .commentlist li ul.children */
 }
 .commentlist li article {
   padding: 1em;
@@ -2714,8 +2771,6 @@ COMMENT STYLES
 }
 .commentlist li ul.children {
   margin: 0.825em;
-  /* variations */
-  /* change number for different depth */
 }
 .commentlist li ul.children .bypostauthor {
   font-size: 1em;
@@ -2802,10 +2857,6 @@ COMMENT STYLES
   text-shadow: none !important;
 }
 
-/* end .commentlist */
-/******************************************************************
-COMMENT FORM STYLES
-******************************************************************/
 .comment-respond {
   margin-top: 1.875em;
   padding-bottom: 1.875em;
@@ -2900,224 +2951,14 @@ COMMENT FORM STYLES
   margin: 0 1.375em 1.125em;
 }
 
-/*********************
-SIDEBARS & ASIDES
-*********************/
 .widget {
   margin: 1.875em 0;
 }
 .widget ul {
   list-style-type: none;
 }
-.widget ul li {
-  /* deep nesting */
-}
 
-/*********************
-FOOTER STYLES
-*********************/
-.footer {
-  font-size: 0.875em;
-  line-height: 1.71429em;
-  margin-top: 38px;
-  text-align: center;
-}
-.footer .wrap {
-  border-top: 1px solid #eee;
-  padding: 9px;
-}
-
-body {
-  color: #666;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/*********************
-GENERAL STYLES
-*********************/
-video {
-  width: 100%    !important;
-  height: auto   !important;
-}
-
-@media only screen and (min-width: 25em) {
-  /*********************
-  NAVIGATION STYLES
-  *********************/
-  /*********************
-  POSTS & CONTENT STYLES
-  *********************/
-  /* entry content */
-  .entry-content {
-    /* at this larger size, we can start to align images */
-  }
-  .entry-content .alignleft, .entry-content img.alignleft {
-    margin-right: 1.875em;
-    display: inline;
-    float: left;
-  }
-  .entry-content .alignright, .entry-content img.alignright {
-    margin-left: 1.875em;
-    display: inline;
-    float: right;
-  }
-  .entry-content .aligncenter, .entry-content img.aligncenter {
-    margin-right: auto;
-    margin-left: auto;
-    display: block;
-    clear: both;
-  }
-
-  /* end .entry-content */
-  .single-project.single-format-video iframe {
-    width: 100%;
-    height: 300px;
-  }
-
-  .line-clamp {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-  }
-
-  /*********************
-  FOOTER STYLES
-  *********************/
-  /*
-  check your menus here. do they look good?
-  do they need tweaking?
-  */
-  /* end .footer-links */
-}
-@media only screen and (min-width: 48em) {
-  /******************************************************************
-  Site Name: WPFolio Three
-  Author: Lara Schenck
-  
-  Stylesheet: Tablet & Small Desktop Stylesheet
-  
-  Hey grid, come on in!
-  Widemargins shortcode styles, hey!
-  More detailed menu styling, nice to see you!
-  
-  ******************************************************************/
-  /*********************
-  GENERAL STYLES
-  *********************/
-  /*********************
-  LAYOUT & GRID STYLES
-  *********************/
-  /*********************
-  HEADER STYLES
-  *********************/
-  #inner-header {
-    overflow: visible;
-  }
-
-  /*********************
-  NAVIGATION STYLES
-  *********************/
-  a.menu-link {
-    display: none;
-  }
-
-  .nav {
-    clear: none;
-    display: inline-block;
-  }
-  .js .nav {
-    max-height: none;
-    overflow: visible;
-  }
-  .nav li {
-    display: block;
-  }
-
-  .sf-menu ul {
-    position: absolute;
-    display: none;
-    top: 100%;
-    left: 0;
-    z-index: 99;
-  }
-
-  .sf-menu ul li {
-    background: #eee;
-  }
-
-  .sf-menu ul ul li {
-    background: #eee;
-  }
-
-  .sf-menu > li {
-    float: left;
-  }
-
-  .sf-menu li:hover > ul,
-  .sf-menu li.sfHover > ul {
-    display: block;
-  }
-
-  .sf-menu > li:hover,
-  .sf-menu > li.sfHover {
-    background: #eee;
-    /* only transition out, not in */
-    -webkit-transition: none;
-    transition: none;
-  }
-  .sf-menu > li:hover li:hover,
-  .sf-menu > li.sfHover li:hover {
-    background-color: #d4d4d4;
-  }
-  .sf-menu > li:hover li:hover a,
-  .sf-menu > li.sfHover li:hover a {
-    color: #666;
-  }
-
-  .sf-arrows ul li:hover > .sf-with-ul:after,
-  .sf-arrows ul .sfHover > .sf-with-ul:after {
-    border-left-color: white;
-  }
-
-  /*********************
-  POSTS & CONTENT STYLES
-  *********************/
-  .project-thumb img, .gallery-item img {
-    opacity: 1;
-  }
-  .project-thumb img:hover, .gallery-item img:hover {
-    opacity: 0.6;
-  }
-  .project-thumb img:active, .gallery-item img:active {
-    opacity: 1;
-  }
-
-  .project-taxonomies a:hover {
-    background-color: #d4d4d4;
-    color: #fff;
-  }
-
-  .pv-middle {
-    padding-bottom: 0;
-  }
-
-  .comment_content {
-    margin-left: 3.75em;
-  }
-
-  .mobile-hide {
-    display: block;
-  }
-
-  .mobile-show {
-    display: none;
-  }
-
+@media (min-width: 48em) {
   .widgettitle {
     text-align: left;
   }
@@ -3131,54 +2972,26 @@ video {
   }
   .widget ul li {
     margin-bottom: 0.825em;
-    /* deep nesting */
   }
-  .widget ul li ul {
-    margin-top: 0.825em;
-    padding-left: 1em;
-  }
+}
+.footer {
+  font-size: 0.875em;
+  line-height: 1.71429em;
+  margin-top: 38px;
+  text-align: center;
+}
+.footer .wrap {
+  border-top: 1px solid #eee;
+  padding: 9px;
+}
 
-  /* links widget */
-  /* meta widget */
-  /* pages widget */
-  /* recent-posts widget */
-  /* archives widget */
-  /* tag-cloud widget */
-  /* calendar widget */
-  /* category widget */
-  /* recent-comments widget */
-  /* search widget */
-  /* text widget */
+@media (min-width: 48em) {
   .copyright {
     float: right;
   }
 
   .credits {
     float: left;
-  }
-}
-@media only screen and (min-width: 60em) {
-  /******************************************************************
-  
-  Stylesheet: Desktop Stylsheet
-  
-  This is the desktop size. It's larger than an iPad so it will only
-  be seen on the Desktop. 
-  
-  ******************************************************************/
-  .header {
-    text-align: left;
-  }
-
-  .sf-menu {
-    float: right;
-  }
-  .sf-menu li {
-    border-top: none;
-  }
-
-  .project-taxonomies .tags-title {
-    display: inline;
   }
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
@@ -3224,81 +3037,6 @@ video {
   */
   body {
     font-size: 0.9em;
-  }
-}
-@media print {
-  /******************************************************************
-  Site Name: WPFolio Two
-  Author: Lara Schenck (Eddie Machado really, I didn't change this)
-  
-  Stylesheet: Print Stylesheet
-  
-  This is the print stylesheet. There's probably not a lot
-  of reasons to edit this stylesheet. If you want to
-  though, go for it.
-  
-  ******************************************************************/
-  * {
-    background: transparent !important;
-    color: black !important;
-    text-shadow: none !important;
-    filter: none !important;
-    -ms-filter: none !important;
-  }
-
-  a, a:visited {
-    color: #444 !important;
-    text-decoration: underline;
-  }
-  a:after, a:visited:after {
-    content: " (" attr(href) ")";
-  }
-  a abbr[title]:after, a:visited abbr[title]:after {
-    content: " (" attr(title) ")";
-  }
-
-  .ir a:after,
-  a[href^="javascript:"]:after,
-  a[href^="#"]:after {
-    content: "";
-  }
-
-  pre, blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
-
-  thead {
-    display: table-header-group;
-  }
-
-  tr, img {
-    page-break-inside: avoid;
-  }
-
-  img {
-    max-width: 100% !important;
-  }
-
-  @page {
-    margin: 0.5cm;
-  }
-  p, h2, h3 {
-    orphans: 3;
-    widows: 3;
-  }
-
-  h2,
-  h3 {
-    page-break-after: avoid;
-  }
-
-  .sidebar,
-  .page-navigation,
-  .wp-prev-next,
-  .respond-form,
-  nav {
-    display: none;
   }
 }
 

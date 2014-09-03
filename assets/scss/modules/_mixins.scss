@@ -101,3 +101,27 @@
 
 
 
+// Media Query mixin
+// Awwwww
+// http://css-tricks.com/conditional-media-query-mixins/
+
+$MQs: true;
+
+@mixin bp($point) {
+	@if ($MQs) {
+		$bp-babybear: "(min-width: #{$mobile})";
+		$bp-mamabear: "(min-width: #{$tablet})";
+		$bp-papabear: "(min-width: #{$desktop})";
+
+		@if $point == papa {
+			@media #{$bp-papabear} { @content; }
+		}
+		@else if $point == mama {
+			@media #{$bp-mamabear} { @content; }
+		}
+		@else if $point == baby {
+			@media #{$bp-babybear}  { @content; }
+		}
+	}
+}
+

@@ -1,0 +1,38 @@
+
+
+// Use clearfix if you need general clearfixing
+.clearfix { @include clearfix; }
+
+
+// Use pie-clearfix if you need clearfixing that doesn't use overflow: hidden
+.pie-clearfix { @include pie-clearfix; }
+
+
+// Text alignment
+
+.text-left   { text-align: left; }
+.text-center { text-align: center; }
+.text-right  { text-align: right; }
+
+
+
+// Keep the thumb titles from overflowing on mobile
+
+%line-clamp {
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;  
+}
+
+
+
+// Mobile Utilities to be added on classes
+
+.mobile-hide {
+	display: none;
+}
+
+.mobile-show {
+	display: block;
+}

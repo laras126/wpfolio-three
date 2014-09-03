@@ -1,4 +1,3 @@
-
 /*****
  * Site Nav Styles
  *****/
@@ -21,10 +20,6 @@ a.menu-link {
 .nav {
 
 	clear: both;
-	-webkit-transition: all 0.3s ease-out;
-	-moz-transition: all 0.3s ease-out;
-	-ms-transition: all 0.3s ease-out;
-	-o-transition: all 0.3s ease-out;
 	transition: all 0.3s ease-out;
 
 	.js & {
@@ -47,24 +42,26 @@ a.menu-link {
 	}
 }
 
-.sf-menu li {
-	border-top: 1px solid $accent-light;
+.sf-menu {
+	@include bp(papa) {
+		float: right;
+	}
+
+	li {
+		border-top: 1px solid $accent-light;
+
+		@include bp(papa) {
+			border-top: none;
+		}
+	}	
 }
 
 
-
-/*****
- * Page Nav Styles
- *****/
+// ----
+// ---- Page Nav Styles
+// ----
 
 // Is this mobile hide/show a shitty thing to do?
-.mobile-hide {
-	display: none;
-}
-
-.mobile-show {
-	display: block;
-}
 
 .prev-next {
 	padding-top: $h3;
@@ -194,3 +191,80 @@ a.menu-link {
 		}
 
 	} /* end .wp-prev-next */
+
+
+@include bp(mama) {
+
+	// ----
+	// ---- Mobile Nav
+	// ----
+
+	// Toggle menu by Brad Frost
+	// http://codepen.io/bradfrost/pen/sHvaz
+
+	// Hide the mobile nav link
+	a.menu-link {
+	   display: none;
+	}
+
+	.nav {
+		clear: none;
+		display: inline-block;
+		
+		.js & {
+			max-height: none;
+			overflow: visible;	
+		}
+
+		li {
+			display: block;
+		}
+	}
+	// End toggle nav
+
+	.sf-menu ul {
+		position: absolute;
+		display: none;
+		top: 100%;
+		left: 0;
+		z-index: 99;
+	}
+
+	.sf-menu ul li {
+		background: $accent-light;
+	}
+	.sf-menu ul ul li {
+		background: $accent-light;
+	}	
+
+	.sf-menu > li {
+		float: left;
+	}
+
+	// Adding superfish hover styles
+
+	.sf-menu li:hover > ul,
+	.sf-menu li.sfHover > ul {
+		display: block;
+	}
+
+	.sf-menu > li:hover,
+	.sf-menu > li.sfHover {
+		background: $accent-light;
+		-webkit-transition: none;
+		transition: none;
+
+		li:hover {
+			background-color: $accent-med;
+			a {
+				color: $primary;
+			}
+		}
+	}
+
+	.sf-arrows ul li:hover > .sf-with-ul:after,
+	.sf-arrows ul .sfHover > .sf-with-ul:after {
+		border-left-color: white;
+	}
+
+}

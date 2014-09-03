@@ -33,34 +33,6 @@ Don't add styles here!
 @import "vendor/all";
 @import "partials/all";
 
-
-// Styles for all devices
-@import "base";
-
-// TODO: these should be MQ bubbles, not separate stylesheets
-
-// Mobile size
-@media only screen and (min-width: $mobile) {
-
-	@import "mobile";
-
-} // end of media query
-
-// Tablet size
-@media only screen and (min-width: $tablet) {
-	
-	@import "tablet";
-
-} // end of media query
-
-// Bigger screen sizes
-@media only screen and (min-width: $desktop) {
-
-	// styles in 1030up.scss
-	@import "desktop";
-
-} // end of media query
-
 // Retina
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
        only screen and (min--moz-device-pixel-ratio: 1.5),
@@ -74,5 +46,5 @@ Don't add styles here!
 
 // Print stylesheet
 @media print {
-	@import "print";
+	// @import "print";
 }
