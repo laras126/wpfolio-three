@@ -65,8 +65,8 @@ $btn-color:					$accent-light;
 // ------------------------------------------------------------
 
 // Font families
-$sans-serif:        "Helvetica Neue", Helvetica, Arial, sans-serif;
-$serif:             "Georgia", Cambria, Times New Roman, Times, serif;
+$sans-serif:        		"Helvetica Neue", Helvetica, Arial, sans-serif;
+$serif:             		"Georgia", Cambria, Times New Roman, Times, serif;
 
 $primary-font:				$sans-serif;
 $secondary-font:			$sans-serif;
@@ -75,46 +75,20 @@ $secondary-font:			$sans-serif;
 // Define some font sizes to be used for
 // margins and whatnot as well
 
-$base-font-size:			16px;
-$base-line-height:			8px;
+$base:  			1.2rem;
+$line-height-base: 	1.5;
+$sml:  				$base*0.8;
 
-$h1: 		2.25em;
-$h2: 		1.875em;
-$h3: 		1.375em;
-$h4: 		1.25em;
-$h5: 	 	1.125em;
-
-$default: 	1em;
-$sml: 		0.825em;
-
-// Baseline grid. Set to a sensible, small size.
-
-$round-to-nearest-half-line: false;  				
-// Round the line height to the nearest half line height. Off by default
+$h1:  				$base*2.8;
+$h2:  				$base*1.8;
+$h3:  				$base*1.6;
+$h4:  				$base*1.2;
+$h5:  				$base;
+$h6:  				$sml;
 
 
-
-
-// Functions for px to em conversions
-// ------------------------------------------------------------
-
-@function emify($target, $context) {
-   @if $target == 0 { @return 0 }
-   @return $target / $context + 0em;
-}
-
-// Make px to ems using base-font-size
-// echo as: font-size: em-font(#px);
-
-@function em-font($target, $context: $base-font-size) {
-   @return emify($target, $context);
-}
-
-// Make px to ems using base-line-height
-// echo as: font-size: em-base(#px);
-
-@function em-base($target, $context: $base-line-height) {
-   @return emify($target, $context);
-}
-
+// ----
+// ---- Utilities
+// ----
+$accent-border: $accent-light 1px solid;
 

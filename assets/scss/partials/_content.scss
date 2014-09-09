@@ -22,6 +22,7 @@
 }
 	
 
+
 // ----
 // ---- Site Header
 // ----
@@ -54,7 +55,7 @@
 
 .site-description {
 	font-style: italic;
-	@include adjust-font-size-to(18px);
+	font-size: $h4;
 }
 
 
@@ -65,15 +66,15 @@
 // ----
 
 #content {
-	margin-top: rhythm(2, 18px);
+	margin-top: $h3;
 }
 
 // Article
 .article-header {
-	margin-bottom: rhythm(4, $h5);
+	margin-bottom: $h5;
 }
 	.entry-title {
-		margin-bottom: rhythm(1, 22px);
+		margin-bottom: $h5;
 		font-size: $h2;
 
 		a {
@@ -96,6 +97,7 @@
 }
 
 // Project thumbnail styles
+// e.g. all post icons in the Portfolio layout
 
 .project-thumb {
 	@include bp(papa) {
@@ -109,7 +111,7 @@
 }
 
 .standard-layout .post {
-	padding: rhythm(4, 22px) 0;
+	padding: $base 0;
 	border-top: $accent-light 1px solid;
 }
 
@@ -121,6 +123,7 @@
 }
 
 // Post meta
+
 .byline, .form-allowed-tags {
 	font-style: italic;
 
@@ -136,13 +139,10 @@
 	margin-bottom: 0;
 }
 
-.tags-title {
-	//font-weight: 600;
-}
 
 
 // ----
-// Entry Content
+// ---- Entry Content
 // ----
 
 .entry-content {
@@ -222,15 +222,17 @@
 }
 
 // ----
-// WordPress Gallery styles
+// ---- WordPress Gallery styles
 // ----
+
+// Using the Cleaner Gallery plugin right now
+// TODO: don't use plugin and actually style it
 
 .wp-caption, .gallery-caption {
 	max-width: 100%;
 	padding: 5px;
 	margin-bottom: $h3;
 
-	/* images inside wp-caption */
 	img {
 		max-width: 100%;
 		margin-bottom: 0;
@@ -249,11 +251,8 @@
 	background: $accent-light;
 }
 
-
-
-/* image gallery styles */
 .gallery {
-	margin: $base-font-size 0;
+	margin: $base 0;
 	img {
 		max-width: 100%;
 	}
@@ -269,9 +268,8 @@
 
 	dd {}
 
-} /* end .gallery */
+}
 
-/* gallery caption styles */
 .gallery-caption {
 	font-size: $sml;
 }
@@ -287,7 +285,7 @@
 	color: darken($alert-red, 30%);
 	font-weight: bold;
 	text-transform: uppercase;
-	margin: $default 0;
+	margin: $base 0;
 }
 
 
@@ -308,7 +306,7 @@
 		padding: $sml;
 
 		article {
-			padding: $default;
+			padding: $base;
 		}
 
 		&:last-child {
@@ -326,7 +324,7 @@
 			.depth-1 {}
 			.byuser {}
 			.bypostauthor {
-				font-size: $default;
+				font-size: $base;
 			}
 			.comment-author-admin {}
 
@@ -480,8 +478,8 @@
 			/* form validation */
 			&:invalid {
 				outline: none;
-				border-color: #fbc2c4;
-				background-color: #f6e7eb;
+				border-color: $alert-red;
+				background-color: lighten($alert-red, 20%);
 				-webkit-box-shadow: none;
 				   -moz-box-shadow: none;
 				    -ms-box-shadow: none;
@@ -505,30 +503,24 @@
 	}
 }
 
-	/* comment submit button */
 	#submit {
 		@include button($secondary);
 	}
 
-	/* comment form title */
 	#comment-form-title {
 		margin: 0 0 $h3;
 	}
 
-	/* cancel comment reply link */
 	#cancel-comment-reply {
 		a {}
 	}
 
-	/* logged in comments */
 	.comments-logged-in-as {}
 
-	/* allowed tags */
 	#allowed_tags {
 		margin: $h2 $h2 $h2 0;
 	}
 
-	/* no comments */
 	.nocomments {
 		margin: 0 $h3 $h5;
 	}
@@ -553,7 +545,7 @@
 
 	.widget {
 		padding: 0 $h5;
-		border-left: $accent-light 1px solid;
+		border-left: $accent-border;
 
 		ul {
 			@include nobullet;
@@ -572,13 +564,13 @@
 // ----
 
 .footer {
-	@include adjust-font-size-to(14px);
-	margin-top: rhythm(4, $sml);
+	font-size: $sml;
+	margin-top: $sml;
 	text-align: center;
 
 	.wrap {
 		border-top: 1px solid $accent-light;
-		padding: rhythm(1, $sml);
+		padding: $sml 0;
 	}
 }
 

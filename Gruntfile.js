@@ -33,7 +33,7 @@ module.exports = function(grunt) {
                     style: 'expanded',
                     compass: true,
                     require: 'susy',
-                    sourcemap: false
+                    sourcemap: 'none'
                 },
                 files: {
                     'style.css': ['assets/scss/style.scss']
@@ -53,11 +53,6 @@ module.exports = function(grunt) {
 
     });
 
-    // grunt.loadNpmTasks('grunt-contrib-concat');
-    // grunt.loadNpmTasks('grunt-bower-concat');
-    // grunt.loadNpmTasks('grunt-contrib-uglify' );
-    // grunt.loadNpmTasks('grunt-contrib-watch');
-    // grunt.loadNpmTasks('grunt-contrib-sass');
 
     require('load-grunt-tasks')(grunt);
     

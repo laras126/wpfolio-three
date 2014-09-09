@@ -9,24 +9,23 @@ Tags: translation-ready, microformats, rtl-language-support, responsive-layout, 
 
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
-
----
-DON'T EDIT THIS FILE!
-http://themeshaper.com/modify-wordpress-themes/
---
-
 ******************************************************************/
 
 
-/* ---
-Stylesheet: Main Stylesheet
-Don't add styles here!
---- */
+// ----
+// ---- Main Stylesheet (style.css)
+// ----
 
-// Tools not in theme
+// DON'T EDIT THIS FILE! 
+// Use a Child Theme:
+// http://themeshaper.com/modify-wordpress-themes/
+
+
+// Import third party tools
 @import "compass/css3";
 @import "compass/utilities";
-@import "susyone";
+@import "susy";
+
 
 // This is like a table of contents
 @import "modules/all";
