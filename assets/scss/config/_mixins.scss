@@ -60,18 +60,17 @@
 }
 
 
-/*
- * Doh! Swiped this from 3.8. Thanks, WP, you doll.
- */
+// Doh! Swiped this from 3.8. Thanks, WP, you doll.
+
 @mixin button( $button-color, $text-color: white ) {
 	font-family: Helvetica;
 	background: $button-color;
 	border: none;
-	// text-shadow: 0.08em 0.08em 0.91em #666;
+	text-shadow: 0.01em 0.01em 0.1em darken($button-color, 30%);
 	border-width: 0.2em;
 	color: $text-color;
-	padding: 0.3em 0.5em;
-	line-height: 1.5;
+	padding: $sml/1.5 $sml;
+	line-height: 2;
 	@include border-radius(2px);
 
 	&:hover,

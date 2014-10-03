@@ -1,0 +1,110 @@
+/**
+ *
+ * Typography
+ *
+ */
+
+
+// Base Settings
+
+html {
+	font-size: 100%;
+}
+
+body {
+	font-family: $primary-font;
+	line-height: $line-height-base;
+}
+
+
+// ----
+// ---- Headings
+// ----
+
+h1, %h1, 
+h2, %h2, 
+h3, %h3, 
+h4, %h4, 
+h5, %h5,
+h6, %h6 {
+    font-family: $sans-serif;
+    text-rendering: optimizelegibility;
+    margin-bottom: $sml;
+    padding: 0;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+h1, %h1 {
+    font-size: $h1;
+    margin-top: $h3;
+}
+
+h2, %h2 {
+    font-size: $h3;
+    margin-top: $h2;
+}
+
+h3, %h3 {
+    font-size: $h3;
+    margin-top: $h2;
+}
+
+h4, %h4 {
+    font-size: $h4;
+    margin-top: $h3;
+}
+
+h5, %h5 {
+    font-size: $base;
+    margin-top: $h4;
+}
+
+h6, %h6 {
+	font-size: $h6;
+    margin-top: $h4;
+}
+
+
+
+// ----
+// ---- Core typography
+// ----
+
+a, a:visited {
+	color: $link-color;
+	text-decoration: none;
+
+	&:hover, &:focus {
+		color: $link-hover;
+	}
+
+	&:active {
+		color: $link-active;
+	}
+
+	&:link {
+		// Highlight links on iOS devices (like hover/active).
+		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
+	}
+}
+
+p, pre, label, ul, ol {
+	font-size: $base;
+	margin: 0 0 $sml 0;
+}
+
+ul 			{ @include unordered; }
+ol 			{ @include ordered;	}
+strong, b 	{ font-weight: 700; letter-spacing: 0; }
+em, i, q 	{ font-style: italic; }
+
+blockquote {
+	font-style: italic;
+	font-size: $h4;
+	padding-left: $base;
+	margin: $base 0;
+	border-left: $accent-border;
+}

@@ -187,6 +187,7 @@ function wpf_excerpt_more($more) {
 
 
 // Customize the <title> display
+// TODO: this may not be so wise as it filters all of the WP titles, not just the title tag
 add_filter( 'wp_title', 'wpf_wp_title', 10, 2 );
 
 function wpf_wp_title( $title, $sep ) {

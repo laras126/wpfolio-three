@@ -28,24 +28,15 @@ Should it be differentiated more?
 						<div class="attachment">
 						<?php
 							/**
-
-							Hey, WordPress: 
-							Why does this this template need to be so complicated?
-
-							Hey, anyone who actually reads this:		
-							Does this template need to be so complicated?
-
-							Code below taken graciously from the 
-							Portfolio Press theme by
-							Devin Price at WP Theming:
-							http://wptheming.com/2010/07/portfolio-theme/
-
-							Thx! &hearts; Lara
-							 
-							 ---
-							 
+							 *
+							 * Code below taken graciously from the 
+							 * Portfolio Press theme by Devin Price at WP Theming:
+							 * http://wptheming.com/2010/07/portfolio-theme/
+							 *
+							 *
 							 * Grab the IDs of all the image attachments in a gallery so we can get the URL of the next adjacent image in a gallery,
 							 * or the first image (if we're looking at the last image in a gallery), or, in a gallery of one, just the link to that image file
+							 *
 							 */
 
 							$attachments = array_values( get_children( array( 'post_parent' => $post->post_parent, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => 'ASC', 'orderby' => 'menu_order ID' ) ) );
@@ -75,41 +66,40 @@ Should it be differentiated more?
 					</div><!-- .attachment -->
 					</section>
 
-					<footer class="article-footer clearfix">
+					<footer class="article-footer">
+						<nav class="prev-next">
+							<div class="prev">
+								&nbsp;
+								<?php 
+								// NOTE: reversing these so they make more sense
+								next_image_link( false, __( '&larr; Previous' , 'wpfolio' ) ); ?>
+							</div>
+							<div class="nav-meta">
+								<?php
+								// TODO is there unused information being pulled in here?
+								$metadata = wp_get_attachment_metadata();
+								printf( __( '<abbr class="published" title="%1$s">%2$s</abbr> | <strong><a href="%6$s" title="Return to %7$s" rel="gallery">%7$s</a></strong>', 'wpfolio	' ),
+									esc_attr( get_the_time() ),
+									get_the_date('Y'),
+									wp_get_attachment_url(),
+									$metadata['width'],
+									$metadata['height'],
+									get_permalink( $post->post_parent ),
+									get_the_title( $post->post_parent )
+								);
+							?>
+							</div>
 
-						<div class="prev mobile-hide">
-							&nbsp;
-							<?php 
-							// NOTE: reversing these so they make more sense
-							next_image_link( false, __( '&larr; Previous' , 'wpfolio' ) ); ?>
-						</div>
-						<div class="pv-middle">
-							<?php
-							// TODO is there unused information being pulled in here?
-							// Figure that out and remove it!
-							$metadata = wp_get_attachment_metadata();
-							printf( __( '<span class="entry-date"><abbr class="published" title="%1$s">%2$s</abbr></span> | <a href="%6$s" title="Return to %7$s" rel="gallery">%7$s</a>', 'wpfolio	' ),
-								esc_attr( get_the_time() ),
-								get_the_date('Y'),
-								wp_get_attachment_url(),
-								$metadata['width'],
-								$metadata['height'],
-								get_permalink( $post->post_parent ),
-								get_the_title( $post->post_parent )
-							);
-						?>
-						</div>
+							<div class="next">
+								&nbsp;
+								<?php previous_image_link( false, __( 'Next &rarr;' , 'wpfolio' ) ); ?>
+							</div>
 
-						<div class="next mobile-hide">
-							&nbsp;
-							<?php previous_image_link( false, __( 'Next &rarr;' , 'wpfolio' ) ); ?>
-						</div>
-
-						<div class="mobile-show">
-							<?php previous_image_link( false, __( '<span class="prev">&larr; Previous</span>&nbsp;' , 'wpfolio' ) ); ?>
-							<?php next_image_link( false, __( '<span class="next">Next &rarr;</span>' , 'wpfolio' ) ); ?>
-						</div>
-
+							<div class="mobile-prevnext">
+								<?php previous_image_link( false, __( '<span class="first">&larr; Previous</span>&nbsp;' , 'wpfolio' ) ); ?>
+								<?php next_image_link( false, __( '<span class="last">Next &rarr;</span>' , 'wpfolio' ) ); ?>
+							</div>
+						</nav>
 
 					</footer>
 

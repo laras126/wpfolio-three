@@ -28,7 +28,7 @@
 // ----
 
 .header {
-	padding-top: $h1;
+	padding-top: $h3;
 	text-align: center;
 
 	@media (min-width: $desktop) {
@@ -44,9 +44,8 @@
 	}
 }
 
-
 .site-title {
-	margin: 0 0 rhythm(1, 36px) 0;
+	margin: 0;
 
 	a {
 		@include unstyled-link;
@@ -55,9 +54,14 @@
 
 .site-description {
 	font-style: italic;
-	font-size: $h4;
+	// font-size: $base;
 }
 
+.site-nav {
+	@include bp(papa) {
+		padding-top: $h4;
+	}
+}
 
 
 
@@ -83,33 +87,6 @@
 	}
 
 
-.hentry {
-
-	header {}
-
-	footer {}
-
-} /* end .hentry */
-
-// TODO: make these one class
-.archive-title, .page-title, .project-title, .project-thumb-title {
-	@extend .text-center;
-}
-
-// Project thumbnail styles
-// e.g. all post icons in the Portfolio layout
-
-.project-thumb {
-	@include bp(papa) {
-		&:hover	 { opacity: 0.6; }
-		&:active { opacity: 0.8; }
-	}
-}
-
-.project-thumb-title {
-	@extend %line-clamp;
-}
-
 .standard-layout .post {
 	padding: $base 0;
 	border-top: $accent-light 1px solid;
@@ -126,12 +103,10 @@
 
 .byline, .form-allowed-tags {
 	font-style: italic;
+	font-size: $sml;
+	color: #999;
 
 	time {}
-}
-
-.byline, .form-allowed-tags {
-	color: #999;
 }
 
 .tags {
@@ -139,6 +114,51 @@
 	margin-bottom: 0;
 }
 
+
+// TODO: make these one class, maybe in conjunction with portfolio layout
+.archive-title, .page-title, .project-title, .project-thumb-title {
+	@extend .text-center;
+}
+
+.project-title {
+	@extend %h5;
+	text-transform: uppercase;
+	font-weight: 500;
+	margin-bottom: $h3;
+	letter-spacing: 1px;
+}
+
+// Project thumbnail styles
+// e.g. all post icons in the Portfolio layout
+
+.project-thumb {
+	@include bp(papa) {
+		&:hover	 { opacity: 0.6; }
+		&:active { opacity: 0.8; }
+	}
+}
+
+.project-thumb-title {
+	@extend %line-clamp;
+	margin-top: 0;
+	margin-bottom: $base;
+}
+
+
+// Artwork Meta (on non-blog category posts)
+
+.artwork-meta ul {
+	@include nobullet;
+	
+	.meta-title {
+		// margin-bottom: 0;
+		// margin-top: $sml;
+	}
+}
+
+.project-link a {
+	@include button($secondary);
+}
 
 
 // ----
@@ -564,7 +584,6 @@
 // ----
 
 .footer {
-	font-size: $sml;
 	margin-top: $sml;
 	text-align: center;
 
@@ -572,8 +591,15 @@
 		border-top: 1px solid $accent-light;
 		padding: $sml 0;
 	}
+
+	p {
+		font-size: $sml;
+	}
 }
 
+.article-footer {
+	
+}
 
 @include bp(mama) {
 

@@ -1,15 +1,16 @@
-/*****
- * Site Nav Styles
- *****/
-
 /**
- * Toggle menu by Brad Frost
- * http://codepen.io/bradfrost/pen/sHvaz
- * http:// bradfrostweb.com
+ *
+ * Site Nav Styles
  *
  */
 
-a.menu-link {
+//
+// Toggle menu by Brad Frost
+// http://codepen.io/bradfrost/pen/sHvaz
+// http:// bradfrostweb.com
+//
+
+.menu-link {
     display: block;
     text-align: center;
     color: $primary;
@@ -80,7 +81,8 @@ a.menu-link {
 // Is this mobile hide/show a shitty thing to do?
 
 .prev-next {
-	padding-top: $h3;
+	padding: $h3 0;
+	@include clearfix;
 	a {
 		@extend %unstyled-link;
 	}

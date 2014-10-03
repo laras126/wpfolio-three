@@ -4,31 +4,52 @@
 
 // Susy settings
 
-$container-width: $desktop;
-$total-columns  : 12;             // a 12-column grid
-$column-width   : 4em;            // each column is 4em wide
-$gutter-width   : 2em;            // 1em gutters between columns
-$grid-padding   : $gutter-width;  // grid-padding equal to gutters
+// advanced
+$container-width: false;
+$container-style: magic;
+$from-direction: left;
+$omega-float: right;
+
+// media-query fallbacks
+$breakpoint-media-output: true;
+$breakpoint-ie-output: true;
+$breakpoint-raw-output: false;
+
+
+$total-columns  : 12;
+$column-width   : 4em;
+$gutter-width   : 2em;
+$grid-padding   : $gutter-width;
 $container-style: fluid;
-$from-direction : ltr;
-$omega-float	: $from-direction;
+$container-width: $desktop;
 
 $susy: (
-  // the basics
-  columns: $total-columns,
-  gutters: $gutter-width / $column-width,
-  column-width: $column-width,
+	columns: $total-columns,
+	gutters: $gutter-width / $column-width,
+	column-width: $column-width,
 
-  // advanced
-  container: $container-width,
-  math: if($container-style == magic, fluid, $container-style),
-  flow: if($from-direction == right, rtl, ltr),
-  last-flow: if($omega-float == $from-direction, from, to),
+	container: $container-width,
+	math: if($container-style == magic, fluid, $container-style),
+	flow: if($from-direction == right, rtl, ltr),
+	last-flow: if($omega-float == $from-direction, from, to),
+
+	debug: (
+		image: show,
+		color: rgba(122,122,122,0.3),
+		output: overlay,
+		toggle: top right,
+	),
 );
 
+
 .wrap {
-	@include container;
+	@include container($total-columns);
 	max-width: $desktop;
+	padding: 0 $h3;
+
+	@include bp(papa) {
+		padding: 0;
+	}
 }
 
 .project-thumb { @include gallery(1, 1); }
@@ -42,15 +63,15 @@ $susy: (
 @include bp(mama) {
 
 	.prev  {
-		@include columns(3 alpha);
+		@include span(1 of 4 alpha);
 	}
 
 	.nav-meta {
-		@include columns(6);
+		@include span(2 of 4);
 	}
 
 	.next {
-		@include columns(3 omega);
+		@include span(1 of 4 omega);
 		text-align: right;
 	}
 
@@ -66,23 +87,23 @@ $susy: (
 @include bp(papa) {
 
 	.standard-layout #main {
-	 	@include columns(8);
+	 	@include span(8 of 12);
 	}
 
 	.sidebar {
-		@include columns(4 omega);
+		@include span(4 of 12 omega);
 	}
-	
+
 	.sidebar-layout {
-		@include columns(8);
+		@include span(8 of 12);
 	}
 
 	.site-name {
-		@include columns(4);
+		@include span(4 of 12);
 	}
 
 	.site-nav {
-		@include columns(8 omega);
+		@include span(8 of 12 omega);
 	}
 
 	// Make the list float right too
@@ -92,22 +113,16 @@ $susy: (
 
 	// Comments
 
-	.single-project, .page {
-		.commentlist, .respond-form {
-			@include columns(8);
+	.portfolio-layout {
+		.comment-respond, .commentlist {
+			@include span(8 of 12);
 			@include post(4);
 		}
 	}
 
-	.sidebar-layout {
-		.respond-form, .commentlist {
-			@include columns(12);
-		}
-	}
-
 	.widemargins {
-		@include prefix(1);
-		@include suffix(1);
+		@include prefix(2);
+		@include suffix(2);
 	}
 
 }
