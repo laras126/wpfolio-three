@@ -1,0 +1,15 @@
+
+// Sneeky layout things
+
+.first {
+	float: left;
+}
+
+.last {
+	float: right;
+}
+
+.clearfix { 
+	@include clearfix; 
+}
+

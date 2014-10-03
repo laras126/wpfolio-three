@@ -117,7 +117,7 @@
 
 // TODO: make these one class, maybe in conjunction with portfolio layout
 .archive-title, .page-title, .project-title, .project-thumb-title {
-	@extend .text-center;
+	@extend %text-center;
 }
 
 .project-title {

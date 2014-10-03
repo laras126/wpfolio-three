@@ -20,7 +20,6 @@ License URI: http://www.gnu.org/licenses/gpl.html
 // Use a Child Theme:
 // http://themeshaper.com/modify-wordpress-themes/
 
-
 // Import third party tools
 @import "compass/css3";
 @import "compass/utilities";
@@ -32,19 +31,3 @@ License URI: http://www.gnu.org/licenses/gpl.html
 @import "modules/all";
 @import "vendor/all";
 @import "partials/all";
-
-// Retina
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-       only screen and (min--moz-device-pixel-ratio: 1.5),
-       only screen and (min-device-pixel-ratio: 1.5) {
-
-	// styles in 2x.scss
-	@import "2x";
-
-} // end of media query
-
-
-// Print stylesheet
-@media print {
-	// @import "print";
-}

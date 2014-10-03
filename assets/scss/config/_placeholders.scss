@@ -1,17 +1,9 @@
 
-// Use clearfix if you need general clearfixing
-.clearfix { @include clearfix; }
-
-
-// Use pie-clearfix if you need clearfixing that doesn't use overflow: hidden
-.pie-clearfix { @include pie-clearfix; }
-
-
 // Text alignment
 
-.text-left   { text-align: left; }
-.text-center { text-align: center; }
-.text-right  { text-align: right; }
+%text-left   { text-align: left; }
+%text-center { text-align: center; }
+%text-right  { text-align: right; }
 
 
 // Remove text decoration from links
@@ -33,15 +25,6 @@
 }
 
 
-// Sneeky layout things
-
-.first {
-	float: left;
-}
-
-.last {
-	float: right;
-}
 
 // Mobile Utilities to be added on classes
 
